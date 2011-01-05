@@ -1,0 +1,12 @@
+ActionSheetPicker
+https://github.com/sickanimations/ActionSheetPicker
+
+Improvements more than welcome.
+
+Created by Tim Cinel
+http://www.timcinel.com/
+
+Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutible options.
+Based on the HTML drop-down alternative found in mobilesafari.
+
+Some code derived from marcio's post on Stack Overflow [ http://stackoverflow.com/questions/1262574/add-uipickerview-a-button-in-action-sheet-how ]  
