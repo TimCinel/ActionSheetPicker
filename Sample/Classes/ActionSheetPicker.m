@@ -1,11 +1,9 @@
 //
 //  ActionSheetPicker.m
-//	https://github.com/sickanimations/ActionSheetPicker
-//  
-//  Improvements more than welcome.
+//  Spent
 //
-//  Created by Tim Cinel
-//  http://www.timcinel.com/
+//  Created by Tim Cinel on 3/01/11.
+//  Copyright 2011 Thunderous Playground. All rights reserved.
 //
 
 #import "ActionSheetPicker.h"
@@ -14,29 +12,60 @@
 @implementation ActionSheetPicker
 
 @synthesize view = _view;
+
 @synthesize data = _data;
 @synthesize selectedIndex = _selectedIndex;
+
+@synthesize selectedDate = _selectedDate;
+@synthesize datePickerMode = _datePickerMode;
+
 @synthesize target = _target;
 @synthesize action = _action;
 
 @synthesize actionSheet = _actionSheet;
 @synthesize pickerView = _pickerView;
+@synthesize datePickerView = _datePickerView;
 @synthesize pickerPosition = _pickerPosition;
+
 @synthesize convenientObject = _convenientObject;
 
+#pragma mark -
+#pragma mark NSObject
+
 + (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
-	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action];
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action];
 	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
 }
 
-- (id)initWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
++ (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action {
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action];
+	actionSheetPicker.convenientObject = YES;
+	[actionSheetPicker showActionPicker];
+}
+
+
+- (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
 	if ((self = [super init]) != nil) {
 		self.view = aView;
-		self.data = data;
-		self.selectedIndex = selectedIndex;
 		self.target = target;
 		self.action = action;
+	}
+	return self;
+}
+
+- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
+	if ([self initWithContainingView:aView target:target action:action] != nil) {
+		self.data = data;
+		self.selectedIndex = selectedIndex;
+	}
+	return self;
+}
+
+- (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action {
+	if ([self initWithContainingView:aView target:target action:action] != nil) {
+		self.datePickerMode = datePickerMode;
+		self.selectedDate = selectedDate;
 	}
 	return self;
 }
@@ -46,22 +75,17 @@
 
 - (void)showActionPicker {
 	//spawn actionsheet
-	self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+	_actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 	[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
 	
-	//spawn pickerview
-	CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
-	self.pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+	if (nil != self.data)
+		//show data picker
+		[self showDataPicker];
+	else
+		//show date picker
+		[self showDatePicker];
 	
-	self.pickerView.delegate = self;
-	self.pickerView.dataSource = self;
-	self.pickerView.showsSelectionIndicator = YES;
-	[self.pickerView selectRow:self.selectedIndex inComponent:0 animated:NO];
-	
-	[self.actionSheet addSubview:self.pickerView];
-	[self.pickerView release];
-	
-	//spawn segmentedcontrol
+	//spawn segmentedcontrol (faux done button)
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Done"]];
 	
 	segmentedControl.momentary = YES;
@@ -78,19 +102,57 @@
 	[self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
+- (void)showDataPicker {
+	//spawn pickerview
+	CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+	_pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+	
+	self.pickerView.delegate = self;
+	self.pickerView.dataSource = self;
+	self.pickerView.showsSelectionIndicator = YES;
+	[self.pickerView selectRow:self.selectedIndex inComponent:0 animated:NO];
+	
+	[self.actionSheet addSubview:self.pickerView];
+}
+
+- (void)showDatePicker {
+	//spawn datepickerview
+	CGRect datePickerFrame = CGRectMake(0, 40, 0, 0);
+	_datePickerView = [[UIDatePicker alloc] initWithFrame:datePickerFrame];
+	self.datePickerView.datePickerMode = self.datePickerMode;
+	
+	[self.datePickerView setDate:self.selectedDate];
+	[self.datePickerView addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
+	
+	[self.actionSheet addSubview:self.datePickerView];
+}
 
 - (void)actionPickerDone {
 		
 	[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-
-	[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex]];
 	
-	if (self.convenientObject) {
-		[self release]; //release convenient object
+	if (nil != self.data) {
+		//send data picker message
+		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex]];
+	} else {
+		//send date picker message
+		[self.target performSelector:self.action withObject:self.selectedDate];
 	}
+	
+	if (self.convenientObject)
+		[self release]; //release convenient object
+	
 }
 
-
+#pragma mark -
+#pragma mark Callbacks 
+	 
+- (void)eventForDatePicker:(id)sender {
+	UIDatePicker *datePicker = (UIDatePicker *)sender;
+	
+	self.selectedDate = datePicker.date;
+}
+	 
 #pragma mark -
 #pragma mark UIPickerViewDelegate
 
@@ -118,10 +180,16 @@
 
 
 - (void)dealloc {
-	[self.actionSheet release];
+	NSLog(@"ActionSheet Dealloc");
+	self.actionSheet = nil;
+		
 	self.pickerView.delegate = nil;
 	self.pickerView.dataSource = nil;
-	[self.pickerView release];
+	self.pickerView = nil;
+	
+	[self.datePickerView removeTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
+	self.datePickerView = nil;
+	self.selectedDate = nil;
 	
     [super dealloc];
 }
