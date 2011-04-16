@@ -26,24 +26,24 @@
 @synthesize pickerView = _pickerView;
 @synthesize datePickerView = _datePickerView;
 @synthesize pickerPosition = _pickerPosition;
+@synthesize title = _title;
 
 @synthesize convenientObject = _convenientObject;
 
 #pragma mark -
 #pragma mark NSObject
 
-+ (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
-	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action];
++ (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action title:title];
 	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
 }
 
-+ (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action {
-	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action];
++ (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title{
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action title:title];
 	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
 }
-
 
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
 	if ((self = [super init]) != nil) {
@@ -54,18 +54,20 @@
 	return self;
 }
 
-- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
+- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title{
 	if ([self initWithContainingView:aView target:target action:action] != nil) {
 		self.data = data;
 		self.selectedIndex = selectedIndex;
+		self.title = title;
 	}
 	return self;
 }
 
-- (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action {
+- (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title {
 	if ([self initWithContainingView:aView target:target action:action] != nil) {
 		self.datePickerMode = datePickerMode;
 		self.selectedDate = selectedDate;
+		self.title = title;
 	}
 	return self;
 }
@@ -75,7 +77,7 @@
 
 - (void)showActionPicker {
 	//spawn actionsheet
-	_actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+	_actionSheet = [[UIActionSheet alloc] initWithTitle:[self isViewPortrait]?nil:@"\n\n\n" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 	[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
 	
 	if (nil != self.data)
@@ -84,22 +86,55 @@
 	else
 		//show date picker
 		[self showDatePicker];
+	 
+	UIToolbar *pickerDateToolbar = [[UIToolbar alloc] initWithFrame:[self isViewPortrait]?CGRectMake(0, 0, 320, 44):CGRectMake(0, 0, 480, 44)];
+	pickerDateToolbar.barStyle = UIBarStyleBlackOpaque;
 	
-	//spawn segmentedcontrol (faux done button)
-	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Done"]];
+	NSMutableArray *barItems = [[NSMutableArray alloc] init];
 	
-	segmentedControl.momentary = YES;
-	segmentedControl.frame = CGRectMake(260, 7, 50, 30);
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-	segmentedControl.tintColor = [UIColor blackColor];
+	UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel)];
+	[barItems addObject:cancelBtn];
+	[cancelBtn release];
 	
-	[segmentedControl addTarget:self action:@selector(actionPickerDone) forControlEvents:UIControlEventValueChanged];
+	UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+	[barItems addObject:flexSpace];
+	[flexSpace release];
 	
-	[self.actionSheet addSubview:segmentedControl];
-	[segmentedControl release];
+	//Add tool bar title label
+	if ( self.title != nil ){
+		UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
+		[toolBarItemlabel setTextAlignment:UITextAlignmentCenter];	
+		[toolBarItemlabel setTextColor:[UIColor whiteColor]];	
+		[toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];	
+		[toolBarItemlabel setBackgroundColor:[UIColor clearColor]];	
+		toolBarItemlabel.text = self.title;	
+		
+		UIBarButtonItem *buttonLabel =[[UIBarButtonItem alloc]initWithCustomView:toolBarItemlabel];
+		[toolBarItemlabel release];	
+		[barItems addObject:buttonLabel];	
+		[buttonLabel release];	
+		
+		UIBarButtonItem *flexSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+		[barItems addObject:flexSpace1];
+		[flexSpace1 release];
+	}
+	
+	//Add bar button 	
+	UIBarButtonItem *barButton;	
+	barButton =  [[UIBarButtonItem alloc] initWithTitle: @"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(actionPickerDone)];	
+	[barItems addObject:barButton];	
+	[barButton release];
+	
+	[pickerDateToolbar setItems:barItems animated:YES];
+	
+	[self.actionSheet addSubview:pickerDateToolbar];
+	[pickerDateToolbar release];
 
 	[self.actionSheet showInView:self.view];
-	[self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+	if ( [self isViewPortrait] )
+		[self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+	else 
+		[self.actionSheet setBounds:CGRectMake(0, 0, 480, 325)];
 }
 
 - (void)showDataPicker {
@@ -142,6 +177,15 @@
 	if (self.convenientObject)
 		[self release]; //release convenient object
 	
+}
+
+- (void)actionPickerCancel {
+	[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+- (BOOL) isViewPortrait {
+	UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+	return (currentOrientation == UIInterfaceOrientationPortrait || currentOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 
 #pragma mark -

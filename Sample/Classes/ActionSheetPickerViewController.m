@@ -26,7 +26,7 @@
 
 - (IBAction)selectAnItem {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:)];
+	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Titlu"];
 }
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex {
@@ -48,6 +48,13 @@
 - (void)viewDidUnload {
 	[self.textField release];
 	self.textField = nil;
+}
+
+
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return YES;
 }
 
 
