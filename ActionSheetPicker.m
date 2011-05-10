@@ -15,6 +15,7 @@
 
 @synthesize data = _data;
 @synthesize selectedIndex = _selectedIndex;
+@synthesize title = _title;
 
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
@@ -32,11 +33,16 @@
 #pragma mark -
 #pragma mark NSObject
 
-+ (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
-	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action];
++ (void)displayActionPickerWithView:(UIView *)aView title:(NSString *)title data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView title:title data:data selectedIndex:selectedIndex target:target action:action];
 	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
 }
+
++ (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
+  [self displayActionPickerWithView:aView title:nil data:data selectedIndex:selectedIndex target:target action:action];
+}
+
 
 + (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action {
 	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action];
@@ -54,10 +60,11 @@
 	return self;
 }
 
-- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action {
-	if ([self initWithContainingView:aView target:target action:action] != nil) {
+- (id)initForDataWithContainingView:(UIView *)aView title:(NSString *)title data:(NSArray *)data selectedIndex:(NSInteger)index target:(id)target action:(SEL)action{
+  if ([self initWithContainingView:aView target:target action:action] != nil) {
 		self.data = data;
-		self.selectedIndex = selectedIndex;
+    self.title = title;
+		self.selectedIndex = index;
 	}
 	return self;
 }
@@ -75,7 +82,7 @@
 
 - (void)showActionPicker {
 	//spawn actionsheet
-	_actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+	_actionSheet = [[UIActionSheet alloc] initWithTitle:self.title delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 	[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
 	
 	if (nil != self.data)
@@ -180,7 +187,7 @@
 
 
 - (void)dealloc {
-	NSLog(@"ActionSheet Dealloc");
+//	NSLog(@"ActionSheet Dealloc");
 	self.actionSheet = nil;
 		
 	self.pickerView.delegate = nil;
