@@ -26,7 +26,7 @@
 
 - (IBAction)selectAnItem {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Titlu"];
+	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Title"];
 }
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex {

@@ -19,6 +19,7 @@
 	
 	NSArray *_data;
 	NSInteger _selectedIndex;
+	NSString *_title;
 	
 	UIDatePickerMode _datePickerMode;
 	NSDate *_selectedDate;
@@ -30,7 +31,6 @@
 	UIPickerView *_pickerView;
 	UIDatePicker *_datePickerView;
 	NSInteger _pickerPosition;
-	NSString *_title;
 	
 	BOOL _convenientObject;
 }
@@ -39,6 +39,7 @@
 
 @property (nonatomic, retain) NSArray *data;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, copy) NSString *title;
 
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, retain) NSDate *selectedDate;
@@ -50,7 +51,6 @@
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIDatePicker *datePickerView;
 @property (nonatomic, assign) NSInteger pickerPosition;
-@property (nonatomic, assign) NSString *title;
 @property (nonatomic, assign) BOOL convenientObject;
 
 //no memory management required for convenience methods

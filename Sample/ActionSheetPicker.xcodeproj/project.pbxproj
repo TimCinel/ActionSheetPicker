@@ -15,7 +15,7 @@
 		2899E5220DE3E06400AC0155 /* ActionSheetPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ActionSheetPickerViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ActionSheetPickerViewController.m */; };
-		BAE7C27212D58B8F001CEE19 /* ActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE7C27112D58B8F001CEE19 /* ActionSheetPicker.m */; };
+		8B2B30A9130EF13700B90F79 /* ActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B30A8130EF13700B90F79 /* ActionSheetPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +31,9 @@
 		28D7ACF70DDB3853001CB0EB /* ActionSheetPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ActionSheetPicker_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker_Prefix.pch; sourceTree = "<group>"; };
+		8B2B30A7130EF13700B90F79 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetPicker.h; path = ../ActionSheetPicker.h; sourceTree = SOURCE_ROOT; };
+		8B2B30A8130EF13700B90F79 /* ActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetPicker.m; path = ../ActionSheetPicker.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		BAE7C27012D58B8F001CEE19 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
-		BAE7C27112D58B8F001CEE19 /* ActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +53,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8B2B30A7130EF13700B90F79 /* ActionSheetPicker.h */,
+				8B2B30A8130EF13700B90F79 /* ActionSheetPicker.m */,
 				1D3623240D0F684500981E51 /* ActionSheetPickerAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ActionSheetPickerAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ActionSheetPickerViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* ActionSheetPickerViewController.m */,
-				BAE7C27012D58B8F001CEE19 /* ActionSheetPicker.h */,
-				BAE7C27112D58B8F001CEE19 /* ActionSheetPicker.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ActionSheetPickerAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ActionSheetPickerViewController.m in Sources */,
-				BAE7C27212D58B8F001CEE19 /* ActionSheetPicker.m in Sources */,
+				8B2B30A9130EF13700B90F79 /* ActionSheetPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +194,7 @@
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				PRODUCT_NAME = ActionSheetPicker;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -206,6 +207,7 @@
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				PRODUCT_NAME = ActionSheetPicker;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

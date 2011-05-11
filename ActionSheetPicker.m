@@ -15,6 +15,7 @@
 
 @synthesize data = _data;
 @synthesize selectedIndex = _selectedIndex;
+@synthesize title = _title;
 
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
@@ -26,7 +27,6 @@
 @synthesize pickerView = _pickerView;
 @synthesize datePickerView = _datePickerView;
 @synthesize pickerPosition = _pickerPosition;
-@synthesize title = _title;
 
 @synthesize convenientObject = _convenientObject;
 
@@ -224,7 +224,7 @@
 
 
 - (void)dealloc {
-	NSLog(@"ActionSheet Dealloc");
+//	NSLog(@"ActionSheet Dealloc");
 	self.actionSheet = nil;
 		
 	self.pickerView.delegate = nil;
