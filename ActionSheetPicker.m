@@ -119,10 +119,9 @@
 		[flexSpace1 release];
 	}
 	
-	//Add bar button 	
-	UIBarButtonItem *barButton;	
-	barButton =  [[UIBarButtonItem alloc] initWithTitle: @"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(actionPickerDone)];	
-	[barItems addObject:barButton];	
+	//add "Done" button 	
+	UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone)];
+	[barItems addObject:barButton];
 	[barButton release];
 	
 	[pickerDateToolbar setItems:barItems animated:YES];
