@@ -96,13 +96,13 @@
 	[barItems addObject:cancelBtn];
 	[cancelBtn release];
 	
-	UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+	UIBarButtonItem *flexSpace = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil] autorelease];
 	[barItems addObject:flexSpace];
-	[flexSpace release];
 	
 	//Add tool bar title label
-	if ( self.title != nil ){
+	if (nil != self.title){
 		UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
+		
 		[toolBarItemlabel setTextAlignment:UITextAlignmentCenter];	
 		[toolBarItemlabel setTextColor:[UIColor whiteColor]];	
 		[toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];	
@@ -114,9 +114,7 @@
 		[barItems addObject:buttonLabel];	
 		[buttonLabel release];	
 		
-		UIBarButtonItem *flexSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-		[barItems addObject:flexSpace1];
-		[flexSpace1 release];
+		[barItems addObject:flexSpace];
 	}
 	
 	//add "Done" button 	
@@ -125,6 +123,7 @@
 	[barButton release];
 	
 	[pickerDateToolbar setItems:barItems animated:YES];
+	[barItems release];
 	
 	[self.actionSheet addSubview:pickerDateToolbar];
 	[pickerDateToolbar release];
