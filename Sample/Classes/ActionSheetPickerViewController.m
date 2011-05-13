@@ -11,9 +11,13 @@
 
 @implementation ActionSheetPickerViewController
 
-@synthesize textField = _textField;
+@synthesize itemTextField = _itemTextField;
+@synthesize dateTextField = _dateTextField;
+
 @synthesize animals = _animals;
+
 @synthesize selectedIndex = _selectedIndex;
+@synthesize selectedDate = _selectedDate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,17 +26,31 @@
 }
 
 #pragma mark -
-#pragma mark Implementation
+#pragma mark IBActions
 
 - (IBAction)selectAnItem {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Title"];
+	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Select Animal"];
 }
+
+- (IBAction)selectADate {
+	//Display the ActionSheetPicker
+	[ActionSheetPicker displayActionPickerWithView:self.view datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] target:self action:@selector(dateWasSelected:) title:@"Select Date"]; 
+}
+
+#pragma mark -
+#pragma mark Implementation
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex {
 	//Selection was made
 	self.selectedIndex = [selectedIndex intValue];
-	self.textField.text = [self.animals objectAtIndex:self.selectedIndex];
+	self.itemTextField.text = [self.animals objectAtIndex:self.selectedIndex];
+}
+
+- (void)dateWasSelected:(NSDate *)selectedDate {
+	//Date selection was made
+	self.selectedDate = selectedDate;
+	self.dateTextField.text = [self.selectedDate description];
 }
 
 #pragma mark -
@@ -46,8 +64,8 @@
 #pragma mark Memory Management
 
 - (void)viewDidUnload {
-	[self.textField release];
-	self.textField = nil;
+	self.itemTextField = nil;
+	self.dateTextField =nil;
 }
 
 
@@ -59,7 +77,9 @@
 
 
 - (void)dealloc {
-	[self.animals release];
+	self.animals = nil;
+	self.selectedDate = nil;
+	
     [super dealloc];
 }
 

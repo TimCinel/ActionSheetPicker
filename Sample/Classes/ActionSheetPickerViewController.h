@@ -9,17 +9,28 @@
 #import <UIKit/UIKit.h>
 
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate> {
-	IBOutlet UITextField *_textField;
+	IBOutlet UITextField *_itemTextField;
+	IBOutlet UITextField *_dateTextField;
+	
 	NSArray *_animals;
+	
 	NSInteger _selectedIndex;
+	NSDate *_selectedDate;
 }
 
-@property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, retain) UITextField *itemTextField;
+@property (nonatomic, retain) UITextField *dateTextField;
+
 @property (nonatomic, retain) NSArray *animals;
+
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, retain) NSDate *selectedDate;
 
 - (IBAction)selectAnItem;
+- (IBAction)selectADate;
+
 - (void)itemWasSelected:(NSNumber *)selectedIndex;
+- (void)dateWasSelected:(NSDate *)selectedDate;
 
 @end
 
