@@ -181,8 +181,7 @@
 }
 
 - (BOOL) isViewPortrait {
-	UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
-	return (currentOrientation == UIInterfaceOrientationPortrait || currentOrientation == UIInterfaceOrientationPortraitUpsideDown);
+	return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
 }
 
 #pragma mark -
