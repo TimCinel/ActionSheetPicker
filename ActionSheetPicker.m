@@ -28,21 +28,19 @@
 @synthesize datePickerView = _datePickerView;
 @synthesize pickerPosition = _pickerPosition;
 
-@synthesize convenientObject = _convenientObject;
-
 #pragma mark -
 #pragma mark NSObject
 
 + (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
 	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action title:title];
-	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
 }
 
 + (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title{
 	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action title:title];
-	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
 }
 
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
@@ -76,6 +74,8 @@
 #pragma mark Implementation
 
 - (void)showActionPicker {
+	[self retain];
+    
 	//spawn actionsheet
 	_actionSheet = [[UIActionSheet alloc] initWithTitle:[self isViewPortrait]?nil:@"\n\n\n" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 	[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
@@ -117,7 +117,7 @@
 		[barItems addObject:flexSpace];
 	}
 	
-	//add "Done" button 	
+	//add "Done" button
 	UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone)];
 	[barItems addObject:barButton];
 	[barButton release];
@@ -171,14 +171,13 @@
 		//send date picker message
 		[self.target performSelector:self.action withObject:self.selectedDate];
 	}
-	
-	if (self.convenientObject)
-		[self release]; //release convenient object
-	
+    
+	[self release];
 }
 
 - (void)actionPickerCancel {
 	[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	[self release];
 }
 
 - (BOOL) isViewPortrait {

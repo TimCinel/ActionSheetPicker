@@ -31,8 +31,6 @@
 	UIPickerView *_pickerView;
 	UIDatePicker *_datePickerView;
 	NSInteger _pickerPosition;
-	
-	BOOL _convenientObject;
 }
 
 @property (nonatomic, retain) UIView *view;
@@ -51,7 +49,6 @@
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIDatePicker *datePickerView;
 @property (nonatomic, assign) NSInteger pickerPosition;
-@property (nonatomic, assign) BOOL convenientObject;
 
 //no memory management required for convenience methods
 
