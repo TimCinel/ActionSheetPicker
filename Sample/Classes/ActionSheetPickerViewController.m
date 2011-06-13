@@ -35,7 +35,7 @@
 
 - (IBAction)selectADate {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] target:self action:@selector(dateWasSelected:) title:@"Select Date"]; 
+	[ActionSheetPicker displayActionPickerWithView:self.view datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected:) title:@"Select Date"]; 
 }
 
 #pragma mark -
