@@ -250,15 +250,19 @@
 	//	NSLog(@"ActionSheet Dealloc");
 	self.actionSheet = nil;
 	self.popOverController = nil;
-	
+
+	self.data = nil;
 	self.pickerView.delegate = nil;
 	self.pickerView.dataSource = nil;
 	self.pickerView = nil;
-	
+
 	[self.datePickerView removeTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
 	self.datePickerView = nil;
 	self.selectedDate = nil;
-	
+
+	self.view = nil;
+	self.target = nil;
+
 	[super dealloc];
 }
 
