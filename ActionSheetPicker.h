@@ -28,11 +28,10 @@
 	SEL _action;
 	
 	UIActionSheet *_actionSheet;
+	UIPopoverController *_popOverController;
 	UIPickerView *_pickerView;
 	UIDatePicker *_datePickerView;
 	NSInteger _pickerPosition;
-	
-	BOOL _convenientObject;
 }
 
 @property (nonatomic, retain) UIView *view;
@@ -48,21 +47,25 @@
 @property (nonatomic, assign) SEL action;
 
 @property (nonatomic, retain) UIActionSheet *actionSheet;
+@property (nonatomic, retain) UIPopoverController *popOverController;
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIDatePicker *datePickerView;
 @property (nonatomic, assign) NSInteger pickerPosition;
-@property (nonatomic, assign) BOOL convenientObject;
+
+@property (nonatomic, readonly) CGSize viewSize;
 
 //no memory management required for convenience methods
 
-//display actionsheet picker inside View, loaded with strings from data, with item selectedIndex selected. On dismissal, [target action:(NSNumber *)selectedIndex] is called
+//display actionsheet picker inside View, loaded with strings from data, with item selectedIndex selected. On dismissal, [target action:(NSNumber *)selectedIndex:(id)view] is called
 + (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
 
-//display actionsheet datepicker in datePickerMode inside View with selectedDate selected. On dismissal, [target action:(NSDate *)selectedDate] is called
+//display actionsheet datepicker in datePickerMode inside View with selectedDate selected. On dismissal, [target action:(NSDate *)selectedDate:(id)view] is called
 + (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
 
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action;
-- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)someData selectedIndex:(NSInteger)index target:(id)target action:(SEL)action title:(NSString *)title;
+
+- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
+
 - (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
 
 //implementation

@@ -11,9 +11,6 @@
 
 @implementation ActionSheetPickerViewController
 
-@synthesize itemTextField = _itemTextField;
-@synthesize dateTextField = _dateTextField;
-
 @synthesize animals = _animals;
 
 @synthesize selectedIndex = _selectedIndex;
@@ -28,29 +25,29 @@
 #pragma mark -
 #pragma mark IBActions
 
-- (IBAction)selectAnItem {
+- (IBAction)selectAnItem:(UIControl *)sender {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected:) title:@"Select Animal"];
+	[ActionSheetPicker displayActionPickerWithView:sender data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected::) title:@"Select Animal"];
 }
 
-- (IBAction)selectADate {
+- (IBAction)selectADate:(UIControl *)sender {
 	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:self.view datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] target:self action:@selector(dateWasSelected:) title:@"Select Date"]; 
+	[ActionSheetPicker displayActionPickerWithView:sender datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected::) title:@"Select Date"]; 
 }
 
 #pragma mark -
 #pragma mark Implementation
 
-- (void)itemWasSelected:(NSNumber *)selectedIndex {
+- (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element {
 	//Selection was made
 	self.selectedIndex = [selectedIndex intValue];
-	self.itemTextField.text = [self.animals objectAtIndex:self.selectedIndex];
+	[element setText:[self.animals objectAtIndex:self.selectedIndex]];
 }
 
-- (void)dateWasSelected:(NSDate *)selectedDate {
+- (void)dateWasSelected:(NSDate *)selectedDate:(id)element {
 	//Date selection was made
 	self.selectedDate = selectedDate;
-	self.dateTextField.text = [self.selectedDate description];
+	[element setText:[self.selectedDate description]];
 }
 
 #pragma mark -
@@ -63,13 +60,6 @@
 #pragma mark -
 #pragma mark Memory Management
 
-- (void)viewDidUnload {
-	self.itemTextField = nil;
-	self.dateTextField =nil;
-}
-
-
-
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
@@ -80,7 +70,7 @@
 	self.animals = nil;
 	self.selectedDate = nil;
 	
-    [super dealloc];
+	[super dealloc];
 }
 
 @end

@@ -24,25 +24,26 @@
 @synthesize action = _action;
 
 @synthesize actionSheet = _actionSheet;
+@synthesize popOverController = _popOverController;
 @synthesize pickerView = _pickerView;
 @synthesize datePickerView = _datePickerView;
 @synthesize pickerPosition = _pickerPosition;
 
-@synthesize convenientObject = _convenientObject;
+@dynamic viewSize;
 
 #pragma mark -
 #pragma mark NSObject
 
 + (void)displayActionPickerWithView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
 	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithContainingView:aView data:data selectedIndex:selectedIndex target:target action:action title:title];
-	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
 }
 
-+ (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title{
++ (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title {
 	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithContainingView:aView datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action title:title];
-	actionSheetPicker.convenientObject = YES;
 	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
 }
 
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
@@ -54,7 +55,7 @@
 	return self;
 }
 
-- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title{
+- (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
 	if ([self initWithContainingView:aView target:target action:action] != nil) {
 		self.data = data;
 		self.selectedIndex = selectedIndex;
@@ -76,18 +77,23 @@
 #pragma mark Implementation
 
 - (void)showActionPicker {
-	//spawn actionsheet
-	_actionSheet = [[UIActionSheet alloc] initWithTitle:[self isViewPortrait]?nil:@"\n\n\n" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-	[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+	[self retain];
 	
-	if (nil != self.data)
+	//create the new view
+	UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)] autorelease];
+	
+	if (nil != self.data) {
 		//show data picker
 		[self showDataPicker];
-	else
+		[view addSubview:self.pickerView];
+	} else {
 		//show date picker
 		[self showDatePicker];
-	 
-	UIToolbar *pickerDateToolbar = [[UIToolbar alloc] initWithFrame:[self isViewPortrait]?CGRectMake(0, 0, 320, 44):CGRectMake(0, 0, 480, 44)];
+		[view addSubview:self.datePickerView];
+	}
+	
+	CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
+	UIToolbar *pickerDateToolbar = [[UIToolbar alloc] initWithFrame:frame];
 	pickerDateToolbar.barStyle = UIBarStyleBlackOpaque;
 	
 	NSMutableArray *barItems = [[NSMutableArray alloc] init];
@@ -117,7 +123,7 @@
 		[barItems addObject:flexSpace];
 	}
 	
-	//add "Done" button 	
+	//add "Done" button
 	UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone)];
 	[barItems addObject:barButton];
 	[barButton release];
@@ -125,76 +131,95 @@
 	[pickerDateToolbar setItems:barItems animated:YES];
 	[barItems release];
 	
-	[self.actionSheet addSubview:pickerDateToolbar];
+	[view addSubview:pickerDateToolbar];
 	[pickerDateToolbar release];
-
-	[self.actionSheet showInView:self.view];
-	if ( [self isViewPortrait] )
-		[self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
-	else 
-		[self.actionSheet setBounds:CGRectMake(0, 0, 480, 325)];
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		//spawn popovercontroller
+		UIViewController *viewController = [[[UIViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+		viewController.view = view;
+		viewController.contentSizeForViewInPopover = viewController.view.frame.size;
+		_popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+		[self.popOverController presentPopoverFromRect:self.view.frame inView:self.view.superview?:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	} else {
+		//spawn actionsheet
+		_actionSheet = [[UIActionSheet alloc] initWithTitle:[self isViewPortrait]?nil:@"\n\n\n" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+		[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+		[self.actionSheet	addSubview:view];
+		[self.actionSheet showInView:self.view];
+		self.actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height+5);
+	}
 }
 
 - (void)showDataPicker {
 	//spawn pickerview
-	CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+	CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
 	_pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
 	
 	self.pickerView.delegate = self;
 	self.pickerView.dataSource = self;
 	self.pickerView.showsSelectionIndicator = YES;
 	[self.pickerView selectRow:self.selectedIndex inComponent:0 animated:NO];
-	
-	[self.actionSheet addSubview:self.pickerView];
 }
 
 - (void)showDatePicker {
 	//spawn datepickerview
-	CGRect datePickerFrame = CGRectMake(0, 40, 0, 0);
+	CGRect datePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
 	_datePickerView = [[UIDatePicker alloc] initWithFrame:datePickerFrame];
 	self.datePickerView.datePickerMode = self.datePickerMode;
 	
-	[self.datePickerView setDate:self.selectedDate];
+	[self.datePickerView setDate:self.selectedDate animated:NO];
 	[self.datePickerView addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
-	
-	[self.actionSheet addSubview:self.datePickerView];
 }
 
 - (void)actionPickerDone {
-		
-	[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	if (self.actionSheet) {
+		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	} else {
+		[self.popOverController dismissPopoverAnimated:YES];
+	}
 	
 	if (nil != self.data) {
 		//send data picker message
-		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex]];
+		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:self.view];
 	} else {
 		//send date picker message
-		[self.target performSelector:self.action withObject:self.selectedDate];
+		[self.target performSelector:self.action withObject:self.selectedDate withObject:self.view];
 	}
-	
-	if (self.convenientObject)
-		[self release]; //release convenient object
-	
+    
+	[self release];
 }
 
 - (void)actionPickerCancel {
-	[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	if (self.actionSheet) {
+		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	} else {
+		[self.popOverController dismissPopoverAnimated:YES];
+	}
+	[self release];
 }
 
 - (BOOL) isViewPortrait {
-	UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
-	return (currentOrientation == UIInterfaceOrientationPortrait || currentOrientation == UIInterfaceOrientationPortraitUpsideDown);
+	return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+}
+
+- (CGSize) viewSize {
+	CGSize size = CGSizeMake(320, 480);
+	if (![self isViewPortrait]) {
+		size = CGSizeMake(480, 320);
+	}
+	return size;
 }
 
 #pragma mark -
 #pragma mark Callbacks 
-	 
+
 - (void)eventForDatePicker:(id)sender {
 	UIDatePicker *datePicker = (UIDatePicker *)sender;
 	
 	self.selectedDate = datePicker.date;
 }
-	 
+
 #pragma mark -
 #pragma mark UIPickerViewDelegate
 
@@ -222,18 +247,23 @@
 
 
 - (void)dealloc {
-//	NSLog(@"ActionSheet Dealloc");
+	//	NSLog(@"ActionSheet Dealloc");
 	self.actionSheet = nil;
-		
+	self.popOverController = nil;
+
+	self.data = nil;
 	self.pickerView.delegate = nil;
 	self.pickerView.dataSource = nil;
 	self.pickerView = nil;
-	
+
 	[self.datePickerView removeTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
 	self.datePickerView = nil;
 	self.selectedDate = nil;
-	
-    [super dealloc];
+
+	self.view = nil;
+	self.target = nil;
+
+	[super dealloc];
 }
 
 @end
