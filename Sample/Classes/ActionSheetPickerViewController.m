@@ -41,7 +41,7 @@
     //Display the ActionSheetPicker
     [ActionSheetPicker displayActionPickerWithView:sender 
                                      bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit 
-                                   smallUnitString:@"cm" smallUnitMax:990 selectedSmallUnit:self.selectedSmallUnit
+                                   smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
                                             target:self action:@selector(measurementWasSelected:::) title:@"Select Length"];
 }
 
