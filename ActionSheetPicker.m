@@ -238,8 +238,8 @@
 	self.distancePickerView.showsSelectionIndicator = YES;
     
     [self.distancePickerView addLabel:self.bigUnitString forComponent:(self.bigUnitDigits - 1) 
-                     forLongestString:self.bigUnitString];
-    [self.distancePickerView addLabel:self.smallUnitString forComponent:(self.bigUnitDigits + self.smallUnitDigits - 1) forLongestString:self.smallUnitString];
+                     forLongestString:nil];
+    [self.distancePickerView addLabel:self.smallUnitString forComponent:(self.bigUnitDigits + self.smallUnitDigits - 1) forLongestString:nil];
     
     NSInteger unitSubtract = 0;
     NSInteger currentDigit = 0;
@@ -368,8 +368,8 @@
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     CGFloat totalWidth = pickerView.frame.size.width - 30;
     if (_isMeasurement) {
-        CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20] constrainedToSize:CGSizeMake(300, 9000)].width + 10;
-        CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20] constrainedToSize:CGSizeMake(300, 9000)].width + 10;
+        CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+        CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
         CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
         if (component == self.bigUnitDigits - 1) {
             return otherSize + bigUnitLabelSize;
@@ -396,7 +396,14 @@
 	self.pickerView.delegate = nil;
 	self.pickerView.dataSource = nil;
 	self.pickerView = nil;
+    
+    self.distancePickerView.delegate = nil;
+    self.distancePickerView.dataSource = nil;
+    self.distancePickerView = nil;
 
+    self.smallUnitString = nil;
+    self.bigUnitString = nil;
+    
 	[self.datePickerView removeTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
 	self.datePickerView = nil;
 	self.selectedDate = nil;

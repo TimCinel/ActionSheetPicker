@@ -104,8 +104,7 @@
 			
 			// align it to the right side of the wheel, with a margin.
 			// use a smaller margin for the rightmost wheel.
-			frame.origin.x = rightsideofwheel - frame.size.width - 
-			(component == self.numberOfComponents - 1 ? 5 : 7);
+			frame.origin.x = rightsideofwheel - frame.size.width - (component == self.numberOfComponents - 1 ? 5 : 7);
 			
 			// set up the label. If label already exists, just get a reference to it
 			BOOL addlabelView = NO;
