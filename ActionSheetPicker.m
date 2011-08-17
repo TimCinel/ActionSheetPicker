@@ -20,6 +20,15 @@
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
 
+@synthesize bigUnitString = _bigUnitString;
+@synthesize bigUnitMax = _bigUnitMax;
+@synthesize bigUnitDigits = _bigUnitDigits;
+@synthesize selectedBigUnit = _selectedBigUnit;
+@synthesize smallUnitString = _smallUnitString;
+@synthesize smallUnitMax = _smallUnitMax;
+@synthesize smallUnitDigits = _smallUnitDigits;
+@synthesize selectedSmallUnit = _selectedSmallUnit;
+
 @synthesize target = _target;
 @synthesize action = _action;
 
@@ -27,6 +36,7 @@
 @synthesize popOverController = _popOverController;
 @synthesize pickerView = _pickerView;
 @synthesize datePickerView = _datePickerView;
+@synthesize distancePickerView = _distancePickerView;
 @synthesize pickerPosition = _pickerPosition;
 
 @dynamic viewSize;
@@ -46,6 +56,21 @@
 	[actionSheetPicker release];
 }
 
++ (void)displayActionPickerWithView:(UIView *)aView 
+                      bigUnitString:(NSString *)bigUnitString 
+                         bigUnitMax:(NSInteger)bigUnitMax
+                    selectedBigUnit:(NSInteger)selectedBigUnit 
+                    smallUnitString:(NSString*)smallUnitString 
+                       smallUnitMax:(NSInteger)smallUnitMax
+                  selectedSmallUnit:(NSInteger)selectedSmallUnit
+                             target:(id)target
+                             action:(SEL)action 
+                              title:(NSString*)title {
+    ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForMeasurementWithContainingView:aView bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit target:target action:action title:title];
+    [actionSheetPicker showActionPicker];
+    [actionSheetPicker release];
+}
+
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
 	if ((self = [super init]) != nil) {
 		self.view = aView;
@@ -60,6 +85,7 @@
 		self.data = data;
 		self.selectedIndex = selectedIndex;
 		self.title = title;
+        _isMeasurement = NO;
 	}
 	return self;
 }
@@ -69,8 +95,35 @@
 		self.datePickerMode = datePickerMode;
 		self.selectedDate = selectedDate;
 		self.title = title;
+        _isMeasurement = NO;
 	}
 	return self;
+}
+
+- (id)initForMeasurementWithContainingView:(UIView *)aView 
+                             bigUnitString:(NSString *)bigUnitString 
+                                bigUnitMax:(NSInteger)bigUnitMax
+                           selectedBigUnit:(NSInteger)selectedBigUnit 
+                           smallUnitString:(NSString*)smallUnitString 
+                              smallUnitMax:(NSInteger)smallUnitMax
+                         selectedSmallUnit:(NSInteger)selectedSmallUnit
+                                    target:(id)target
+                                    action:(SEL)action 
+                                     title:(NSString*)title {
+    if ([self initWithContainingView:aView target:target action:action] != nil) {
+        self.bigUnitString = bigUnitString;
+        self.bigUnitMax = bigUnitMax;
+        self.selectedBigUnit = selectedBigUnit;
+        self.smallUnitString = smallUnitString;
+        self.smallUnitMax = smallUnitMax;
+        self.selectedSmallUnit = selectedSmallUnit;
+        self.title = title;
+        _isMeasurement = YES;
+        
+        self.bigUnitDigits = [[NSString stringWithFormat:@"%i", self.bigUnitMax] length];
+        self.smallUnitDigits = [[NSString stringWithFormat:@"%i", self.smallUnitMax] length];
+    }
+    return self;
 }
 
 #pragma mark -
@@ -86,7 +139,10 @@
 		//show data picker
 		[self showDataPicker];
 		[view addSubview:self.pickerView];
-	} else {
+	} else if (_isMeasurement) {
+        [self showDistancePicker];
+        [view addSubview:self.distancePickerView];
+    } else {
 		//show date picker
 		[self showDatePicker];
 		[view addSubview:self.datePickerView];
@@ -172,6 +228,37 @@
 	[self.datePickerView addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)showDistancePicker {
+    //spawn distancepickerview
+    CGRect distancePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
+	_distancePickerView = [[DistancePickerView alloc] initWithFrame:distancePickerFrame];
+	
+	self.distancePickerView.delegate = self;
+	self.distancePickerView.dataSource = self;
+	self.distancePickerView.showsSelectionIndicator = YES;
+    
+    [self.distancePickerView addLabel:self.bigUnitString forComponent:(self.bigUnitDigits - 1) 
+                     forLongestString:self.bigUnitString];
+    [self.distancePickerView addLabel:self.smallUnitString forComponent:(self.bigUnitDigits + self.smallUnitDigits - 1) forLongestString:self.smallUnitString];
+    
+    NSInteger unitSubtract = 0;
+    NSInteger currentDigit = 0;
+    for (int i = 0; i < self.bigUnitDigits; ++i) {
+        NSInteger factor = (int)pow((double)10, (double)(self.bigUnitDigits - (i+1)));
+        currentDigit = (( self.selectedBigUnit - unitSubtract ) / factor )  ;
+        [self.distancePickerView selectRow:currentDigit inComponent:i animated:NO];
+        unitSubtract += currentDigit * factor;
+    }
+    unitSubtract = 0;
+    currentDigit = 0;
+    for (int i = self.bigUnitDigits; i < self.bigUnitDigits + self.smallUnitDigits; ++i) {
+        NSInteger factor = (int)pow((double)10, (double)(self.bigUnitDigits + self.smallUnitDigits - (i+1)));
+        currentDigit = (( self.selectedSmallUnit - unitSubtract ) / factor )  ;
+        [self.distancePickerView selectRow:currentDigit inComponent:i animated:NO];
+        unitSubtract += currentDigit * factor;
+    }
+}
+
 - (void)actionPickerDone {
 	if (self.actionSheet) {
 		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
@@ -180,9 +267,21 @@
 	}
 	
 	if (nil != self.data) {
-		//send data picker message
-		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:self.view];
-	} else {
+        //send data picker message
+        [self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:self.view];
+	} else if (_isMeasurement) {
+        //send measurement picker message
+        NSInteger bigUnits = 0;
+        NSInteger smallUnits = 0;
+        for (int i = 0; i < self.bigUnitDigits; ++i) {
+            bigUnits += [self.distancePickerView selectedRowInComponent:i] * (int)pow((double)10, (double)(self.bigUnitDigits - (i + 1)));
+        }
+        for (int i = self.bigUnitDigits; i < self.bigUnitDigits + self.smallUnitDigits; ++i) {
+            smallUnits += [self.distancePickerView selectedRowInComponent:i] * (int)pow((double)10, (double)((self.distancePickerView.numberOfComponents - i - 1)));
+        }
+        //sending three objects, so no performSelector:
+        objc_msgSend(self.target, self.action, [NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], self.view);
+    } else {
 		//send date picker message
 		[self.target performSelector:self.action withObject:self.selectedDate withObject:self.view];
 	}
@@ -231,15 +330,57 @@
 #pragma mark UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-	return 1;
+    if (_isMeasurement) {
+        return self.bigUnitDigits + self.smallUnitDigits;
+    } else {
+        return 1;
+    }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-	return self.data.count;
+    if (_isMeasurement) {
+        if (component + 1 <= self.bigUnitDigits) {
+            if (component == 0) {
+                return self.bigUnitMax / (int)pow((double)10, (double)(self.bigUnitDigits - 1)) + 1;
+            } else {
+                return 10;
+            }
+        } else {
+            if (component == self.bigUnitDigits) {
+                return self.smallUnitMax / (int)pow((double)10, (double)(self.smallUnitDigits - 1)) + 1; 
+            } else {
+                return 10;
+            }
+        }
+    } else {
+        return self.data.count;
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	return [self.data objectAtIndex:row];
+	if (_isMeasurement) {
+        return [NSString stringWithFormat:@"%i", row];
+    } else {
+        return [self.data objectAtIndex:row];
+    }
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    CGFloat totalWidth = pickerView.frame.size.width - 30;
+    if (_isMeasurement) {
+        CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20] constrainedToSize:CGSizeMake(300, 9000)].width + 10;
+        CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20] constrainedToSize:CGSizeMake(300, 9000)].width + 10;
+        CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
+        if (component == self.bigUnitDigits - 1) {
+            return otherSize + bigUnitLabelSize;
+        } else if (component == self.bigUnitDigits + self.smallUnitDigits - 1) {
+            return otherSize + smallUnitLabelSize;
+        } else {
+            return otherSize;
+        }
+    } else {
+        return totalWidth;
+    }
 }
 
 #pragma mark -
