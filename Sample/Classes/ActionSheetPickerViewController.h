@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ActionSheetPicker;
+
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate> {
 	NSArray *_animals;
 	
@@ -20,8 +22,12 @@
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, retain) NSDate *selectedDate;
 
+@property (nonatomic, retain) ActionSheetPicker *actionSheetPicker;
+
 - (IBAction)selectAnItem:(id)sender;
 - (IBAction)selectADate:(id)sender;
+- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate:(id)element;

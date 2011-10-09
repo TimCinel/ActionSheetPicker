@@ -35,6 +35,7 @@
 }
 
 @property (nonatomic, retain) UIView *view;
+@property (nonatomic, retain) UIBarButtonItem *barButtonItem;
 
 @property (nonatomic, retain) NSArray *data;
 @property (nonatomic, assign) NSInteger selectedIndex;
@@ -62,11 +63,23 @@
 //display actionsheet datepicker in datePickerMode inside View with selectedDate selected. On dismissal, [target action:(NSDate *)selectedDate:(id)view] is called
 + (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
 
+//display actionsheet picker anchored to the specified bar button item, loaded with strings from data, with item selectedIndex selected. On dismissal, [target action:(NSNumber *)selectedIndex:(id)view] is called
++ (id)initActionPickerWithBarButtonItem:(UIBarButtonItem *)aButton data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
+
+//display actionsheet datepicker in datePickerMode anchored to the specified bar button item with selectedDate selected. On dismissal, [target action:(NSDate *)selectedDate:(id)view] is called
++ (id)initActionPickerWithBarButtonItem:(UIBarButtonItem *)aButton datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
+
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action;
+
+- (id)initWithBarButtonItem:(UIBarButtonItem *)aButton target:(id)target action:(SEL)action;
 
 - (id)initForDataWithContainingView:(UIView *)aView data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
 
+- (id)initForDataWithBarButtonItem:(UIBarButtonItem *)aButton data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
+
 - (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
+
+- (id)initForDateWithBarButtonItem:(UIBarButtonItem *)aButton datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
 
 //implementation
 - (void)showActionPicker;
