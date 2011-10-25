@@ -254,6 +254,9 @@
 	[pickerDateToolbar release];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentPopover) name:UIKeyboardDidHideNotification object:nil]; // Start Watching for keyboard resize
+        
 		//spawn popovercontroller
 		UIViewController *viewController = [[[UIViewController alloc] initWithNibName:nil bundle:nil] autorelease];
 		viewController.view = view;
@@ -280,6 +283,20 @@
 	}
 }
 
+-(void)presentPopover
+{
+    [self performSelector:@selector(delayedPresentPopover) withObject:nil afterDelay:0.0];
+    // Need to delay run loop otherwise keyboarddidhide has not reset the view size yet.
+}
+-(void)delayedPresentPopover
+{
+
+    [self.popOverController presentPopoverFromRect:self.view.frame inView:self.view.superview?:self.view  
+                          permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES]; // I need it in this orientation but it could be Any
+    [self.popOverController setPopoverContentSize:CGSizeMake(480,260) animated:YES]; // Need to force the size Could be done before the present but
+                                                                                     // This looks nicer as the keyboard has just dropped too.
+    
+}
 - (void)showDataPicker {
 	//spawn pickerview
 	CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
@@ -461,7 +478,13 @@
 
 
 - (void)dealloc {
-	//	NSLog(@"ActionSheet Dealloc");
+
+ 
+   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+   // Remove the Observer for the keyboard if we set it up
+       
+   }
 	self.actionSheet = nil;
 	self.popOverController = nil;
     
