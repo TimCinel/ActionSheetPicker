@@ -12,6 +12,7 @@
 @implementation ActionSheetPicker
 
 @synthesize view = _view;
+@synthesize barButtonItem = _barButtonItem;
 
 @synthesize data = _data;
 @synthesize selectedIndex = _selectedIndex;
@@ -46,9 +47,32 @@
 	[actionSheetPicker release];
 }
 
++ (id)initActionPickerWithBarButtonItem:(UIBarButtonItem *)aButton data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDataWithBarButtonItem:aButton data:data selectedIndex:selectedIndex target:target action:action title:title];
+	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
+    return actionSheetPicker;
+}
+
++ (id)initActionPickerWithBarButtonItem:(UIBarButtonItem *)aButton datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title {
+	ActionSheetPicker *actionSheetPicker = [[ActionSheetPicker alloc] initForDateWithBarButtonItem:aButton datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action title:title];
+	[actionSheetPicker showActionPicker];
+	[actionSheetPicker release];
+    return actionSheetPicker;
+}
+
 - (id)initWithContainingView:(UIView *)aView target:(id)target action:(SEL)action {
 	if ((self = [super init]) != nil) {
 		self.view = aView;
+		self.target = target;
+		self.action = action;
+	}
+	return self;
+}
+
+- (id)initWithBarButtonItem:(UIBarButtonItem *)aButton target:(id)target action:(SEL)action {
+	if ((self = [super init]) != nil) {
+		self.barButtonItem = aButton;
 		self.target = target;
 		self.action = action;
 	}
@@ -64,8 +88,26 @@
 	return self;
 }
 
+- (id)initForDataWithBarButtonItem:(UIBarButtonItem *)aButton data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title {
+	if ([self initWithBarButtonItem:aButton target:target action:action] != nil) {
+		self.data = data;
+		self.selectedIndex = selectedIndex;
+		self.title = title;
+	}
+	return self;
+}
+
 - (id)initForDateWithContainingView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title {
 	if ([self initWithContainingView:aView target:target action:action] != nil) {
+		self.datePickerMode = datePickerMode;
+		self.selectedDate = selectedDate;
+		self.title = title;
+	}
+	return self;
+}
+
+- (id)initForDateWithBarButtonItem:(UIBarButtonItem *)aButton datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title {
+	if ([self initWithBarButtonItem:aButton target:target action:action] != nil) {
 		self.datePickerMode = datePickerMode;
 		self.selectedDate = selectedDate;
 		self.title = title;
@@ -140,14 +182,24 @@
 		viewController.view = view;
 		viewController.contentSizeForViewInPopover = viewController.view.frame.size;
 		_popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
-		[self.popOverController presentPopoverFromRect:self.view.frame inView:self.view.superview?:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		if (nil != self.view) {
+            [self.popOverController presentPopoverFromRect:self.view.frame inView:self.view.superview?:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+        if (nil != self.barButtonItem) {
+            [self.popOverController presentPopoverFromBarButtonItem:self.barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];            
+        }
 	} else {
 		//spawn actionsheet
 		_actionSheet = [[UIActionSheet alloc] initWithTitle:[self isViewPortrait]?nil:@"\n\n\n" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 		[self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
 		[self.actionSheet	addSubview:view];
-		[self.actionSheet showInView:self.view];
-		self.actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height+5);
+        if (nil != self.view) {
+            [self.actionSheet showInView:self.view];
+        }
+		if (nil != self.barButtonItem) {
+            [self.actionSheet showFromBarButtonItem:self.barButtonItem animated:YES];
+		}
+        self.actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height+5);
 	}
 }
 
@@ -181,10 +233,10 @@
 	
 	if (nil != self.data) {
 		//send data picker message
-		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:self.view];
+		[self.target performSelector:self.action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:self.view?(id)self.view:self.barButtonItem];
 	} else {
 		//send date picker message
-		[self.target performSelector:self.action withObject:self.selectedDate withObject:self.view];
+		[self.target performSelector:self.action withObject:self.selectedDate withObject:self.view?(id)self.view:self.barButtonItem];
 	}
     
 	[self release];
@@ -250,19 +302,20 @@
 	//	NSLog(@"ActionSheet Dealloc");
 	self.actionSheet = nil;
 	self.popOverController = nil;
-
+    
 	self.data = nil;
 	self.pickerView.delegate = nil;
 	self.pickerView.dataSource = nil;
 	self.pickerView = nil;
-
+    
 	[self.datePickerView removeTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
 	self.datePickerView = nil;
 	self.selectedDate = nil;
-
+    
 	self.view = nil;
+    self.barButtonItem = nil;
 	self.target = nil;
-
+    
 	[super dealloc];
 }
 
