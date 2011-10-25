@@ -12,7 +12,7 @@
 //	Some code derived from marcio's post on Stack Overflow [ http://stackoverflow.com/questions/1262574/add-uipickerview-a-button-in-action-sheet-how ]  
 
 #import <Foundation/Foundation.h>
-
+#import "DistancePickerView.h"
 
 @interface ActionSheetPicker : NSObject <UIPickerViewDelegate, UIPickerViewDataSource> {
 	UIView *_view;
@@ -23,6 +23,16 @@
 	
 	UIDatePickerMode _datePickerMode;
 	NSDate *_selectedDate;
+    
+    BOOL _isMeasurement;
+    NSString *_bigUnitString;
+    NSInteger _selectedBigUnit;
+    NSInteger _bigUnitMax;
+    NSInteger _bigUnitDigits;
+    NSString *_smallUnitString;
+    NSInteger _selectedSmallUnit;
+    NSInteger _smallUnitMax;
+    NSInteger _smallUnitDigits;
 	
 	id _target;
 	SEL _action;
@@ -31,6 +41,7 @@
 	UIPopoverController *_popOverController;
 	UIPickerView *_pickerView;
 	UIDatePicker *_datePickerView;
+    DistancePickerView *_distancePickerView;
 	NSInteger _pickerPosition;
 }
 
@@ -44,6 +55,15 @@
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, retain) NSDate *selectedDate;
 
+@property (nonatomic, retain) NSString *bigUnitString;
+@property (nonatomic, assign) NSInteger selectedBigUnit;
+@property (nonatomic, assign) NSInteger bigUnitMax;
+@property (nonatomic, assign) NSInteger bigUnitDigits;
+@property (nonatomic, retain) NSString *smallUnitString;
+@property (nonatomic, assign) NSInteger selectedSmallUnit;
+@property (nonatomic, assign) NSInteger smallUnitMax;
+@property (nonatomic, assign) NSInteger smallUnitDigits;
+
 @property (nonatomic, retain) id target;
 @property (nonatomic, assign) SEL action;
 
@@ -51,6 +71,7 @@
 @property (nonatomic, retain) UIPopoverController *popOverController;
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIDatePicker *datePickerView;
+@property (nonatomic, retain) DistancePickerView *distancePickerView;
 @property (nonatomic, assign) NSInteger pickerPosition;
 
 @property (nonatomic, readonly) CGSize viewSize;
@@ -62,6 +83,17 @@
 
 //display actionsheet datepicker in datePickerMode inside View with selectedDate selected. On dismissal, [target action:(NSDate *)selectedDate:(id)view] is called
 + (void)displayActionPickerWithView:(UIView *)aView datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
+
++ (void)displayActionPickerWithView:(UIView *)aView 
+                      bigUnitString:(NSString *)bigUnitString  
+                         bigUnitMax:(NSInteger)bigUnitMax
+                    selectedBigUnit:(NSInteger)selectedBigUnit 
+                    smallUnitString:(NSString*)smallUnitString 
+                       smallUnitMax:(NSInteger)smallUnitMax
+                  selectedSmallUnit:(NSInteger)selectedSmallUnit
+                             target:(id)target
+                             action:(SEL)action 
+                              title:(NSString*)title;
 
 //display actionsheet picker anchored to the specified bar button item, loaded with strings from data, with item selectedIndex selected. On dismissal, [target action:(NSNumber *)selectedIndex:(id)view] is called
 + (id)initActionPickerWithBarButtonItem:(UIBarButtonItem *)aButton data:(NSArray *)data selectedIndex:(NSInteger)selectedIndex target:(id)target action:(SEL)action title:(NSString *)title;
@@ -81,10 +113,23 @@
 
 - (id)initForDateWithBarButtonItem:(UIBarButtonItem *)aButton datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action title:(NSString *)title;
 
+- (id)initForMeasurementWithContainingView:(UIView *)aView 
+                             bigUnitString:(NSString *)bigUnitString 
+                                bigUnitMax:(NSInteger)bigUnitMax
+                           selectedBigUnit:(NSInteger)selectedBigUnit 
+                           smallUnitString:(NSString*)smallUnitString 
+                              smallUnitMax:(NSInteger)smallUnitMax
+                         selectedSmallUnit:(NSInteger)selectedSmallUnit
+                                    target:(id)target
+                                    action:(SEL)action 
+                                     title:(NSString*)title;
+
+
 //implementation
 - (void)showActionPicker;
 - (void)showDataPicker;
 - (void)showDatePicker;
+- (void)showDistancePicker;
 
 - (void)actionPickerDone;
 - (void)actionPickerCancel;

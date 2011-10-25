@@ -15,12 +15,16 @@
 	
 	NSInteger _selectedIndex;
 	NSDate *_selectedDate;
+    NSInteger _selectedBigUnit;
+    NSInteger _selectedSmallUnit;
 }
 
 @property (nonatomic, retain) NSArray *animals;
 
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, retain) NSDate *selectedDate;
+@property (nonatomic, assign) NSInteger selectedBigUnit;
+@property (nonatomic, assign) NSInteger selectedSmallUnit;
 
 @property (nonatomic, retain) ActionSheetPicker *actionSheetPicker;
 
@@ -28,8 +32,10 @@
 - (IBAction)selectADate:(id)sender;
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)selectAMeasurement:(id)sender;
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate:(id)element;
+- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element;
 
 @end

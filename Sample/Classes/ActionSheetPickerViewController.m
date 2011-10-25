@@ -15,6 +15,8 @@
 
 @synthesize selectedIndex = _selectedIndex;
 @synthesize selectedDate = _selectedDate;
+@synthesize selectedBigUnit = _selectedBigUnit;
+@synthesize selectedSmallUnit = _selectedSmallUnit;
 
 @synthesize actionSheetPicker = _actionSheetPicker;
 
@@ -37,8 +39,7 @@
 	[ActionSheetPicker displayActionPickerWithView:sender datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected::) title:@"Select Date"]; 
 }
 
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender
-{
+- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
 	if (nil != self.actionSheetPicker) {
         [self.actionSheetPicker actionPickerCancel];
     }
@@ -47,14 +48,21 @@
     self.actionSheetPicker = [[ActionSheetPicker initActionPickerWithBarButtonItem:sender data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected::) title:@"Select Animal"] retain];    
 }
 
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-{
+- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender {
 	if (nil != self.actionSheetPicker) {
         [self.actionSheetPicker actionPickerCancel];
     }
     
 	//Display the ActionSheetPicker
 	self.actionSheetPicker = [[ActionSheetPicker initActionPickerWithBarButtonItem:sender datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected::) title:@"Select Date"] retain];     
+}
+
+- (IBAction)selectAMeasurement:(UIControl *)sender {
+    //Display the ActionSheetPicker
+    [ActionSheetPicker displayActionPickerWithView:sender 
+                                     bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit 
+                                   smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
+                                            target:self action:@selector(measurementWasSelected:::) title:@"Select Length"];
 }
 
 #pragma mark -
@@ -74,6 +82,12 @@
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.selectedDate description]];
     }
+}
+
+- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element {
+    self.selectedBigUnit = [bigUnit intValue];
+    self.selectedSmallUnit = [smallUnit intValue];
+    [element setText:[NSString stringWithFormat:@"%i m and %i cm", [bigUnit intValue], [smallUnit intValue]]];
 }
 
 #pragma mark -
