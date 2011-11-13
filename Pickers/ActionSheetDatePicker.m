@@ -26,21 +26,21 @@
 //
 
 
-#import "DatePicker.h"
+#import "ActionSheetDatePicker.h"
 
-@interface DatePicker()
+@interface ActionSheetDatePicker()
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, retain) NSDate *selectedDate;
 @end
 
-@implementation DatePicker
+@implementation ActionSheetDatePicker
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
                  delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin {
-    DatePicker *picker = [[[DatePicker alloc] initWithTitle:title 
+    ActionSheetDatePicker *picker = [[[ActionSheetDatePicker alloc] initWithTitle:title 
                                              datePickerMode:datePickerMode selectedDate:selectedDate    
                                                    delegate:delegate onSuccess:action origin:origin] autorelease];
     [picker showActionPicker];

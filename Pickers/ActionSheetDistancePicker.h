@@ -28,7 +28,7 @@
 #import "ActionSheetPicker.h"
 #import "DistancePickerView.h"
 
-@interface DistancePicker : ActionSheetPicker
+@interface ActionSheetDistancePicker : ActionSheetPicker
 
 + (id)showPickerWithTitle:(NSString *)title 
             bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 

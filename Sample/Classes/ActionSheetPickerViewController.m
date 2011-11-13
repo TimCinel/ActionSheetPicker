@@ -28,8 +28,8 @@
 
 #import "ActionSheetPickerViewController.h"
 #import "ActionSheetPicker.h"
-#import "DistancePicker.h"
-#import "DatePicker.h"
+#import "ActionSheetDistancePicker.h"
+#import "ActionSheetDatePicker.h"
 
 @implementation ActionSheetPickerViewController
 
@@ -62,7 +62,7 @@
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-    self.actionSheetPicker = [DatePicker showPickerWithTitle:@"Select Date" 
+    self.actionSheetPicker = [ActionSheetDatePicker showPickerWithTitle:@"Select Date" 
                 datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date]                                                                             
                       delegate:self onSuccess:@selector(dateWasSelected::) origin:sender];
 }
@@ -82,10 +82,10 @@
 }
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
-    self.actionSheetPicker = [DistancePicker showPickerWithTitle:@"Select Length" 
-                                                   bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
-                                                 smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
-                                                        delegate:self onSuccess:@selector(measurementWasSelected:::) origin:sender];                                                        
+    self.actionSheetPicker = [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" 
+                                                              bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
+                                                            smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
+                                                                   delegate:self onSuccess:@selector(measurementWasSelected:::) origin:sender];                                                        
 }
 
 #pragma mark -

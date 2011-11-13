@@ -27,7 +27,7 @@
 
 #import "ActionSheetPicker.h"
 
-@interface DatePicker : ActionSheetPicker
+@interface ActionSheetDatePicker : ActionSheetPicker
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             

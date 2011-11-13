@@ -25,10 +25,11 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "DistancePicker.h"
+#import "ActionSheetDistancePicker.h"
+
 #import <objc/message.h>
 
-@interface DistancePicker()
+@interface ActionSheetDistancePicker()
 @property (nonatomic, retain) NSString *bigUnitString;
 @property (nonatomic, assign) NSInteger selectedBigUnit;
 @property (nonatomic, assign) NSInteger bigUnitMax;
@@ -39,7 +40,7 @@
 @property (nonatomic, assign) NSInteger smallUnitDigits;
 @end
 
-@implementation DistancePicker
+@implementation ActionSheetDistancePicker
 @synthesize bigUnitString = _bigUnitString;
 @synthesize bigUnitMax = _bigUnitMax;
 @synthesize bigUnitDigits = _bigUnitDigits;
@@ -53,7 +54,7 @@
             bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
           smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
                  delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin {
-   DistancePicker *picker = [[[DistancePicker alloc] initWithTitle:title 
+   ActionSheetDistancePicker *picker = [[[ActionSheetDistancePicker alloc] initWithTitle:title 
                                                      bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit 
                                                    smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit 
                                                           delegate:delegate onSuccess:action origin:origin] autorelease];
