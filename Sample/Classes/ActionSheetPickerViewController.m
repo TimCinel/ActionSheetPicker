@@ -19,7 +19,7 @@
 //DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
 //DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 //ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -28,6 +28,8 @@
 
 #import "ActionSheetPickerViewController.h"
 #import "ActionSheetPicker.h"
+#import "DistancePicker.h"
+#import "DatePicker.h"
 
 @implementation ActionSheetPickerViewController
 
@@ -37,68 +39,67 @@
 @synthesize selectedDate = _selectedDate;
 @synthesize selectedBigUnit = _selectedBigUnit;
 @synthesize selectedSmallUnit = _selectedSmallUnit;
-
 @synthesize actionSheetPicker = _actionSheetPicker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
+    
+    self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
+}
+
+- (void)viewDidUnload {
+    self.actionSheetPicker = nil;
+    [super viewDidUnload];
 }
 
 #pragma mark -
 #pragma mark IBActions
 
 - (IBAction)selectAnItem:(UIControl *)sender {
-	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:sender data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected::) title:@"Select Animal"];
+    self.actionSheetPicker = [ActionSheetPicker showPickerWithTitle:@"Select Animal" 
+                                      rows:self.animals initialSelection:self.selectedIndex 
+                                  delegate:self onSuccess:@selector(itemWasSelected::) origin:sender];
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-	//Display the ActionSheetPicker
-	[ActionSheetPicker displayActionPickerWithView:sender datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected::) title:@"Select Date"]; 
+    self.actionSheetPicker = [DatePicker showPickerWithTitle:@"Select Date" 
+                datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date]                                                                             
+                      delegate:self onSuccess:@selector(dateWasSelected::) origin:sender];
 }
 
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
-	if (nil != self.actionSheetPicker) {
-        [self.actionSheetPicker actionPickerCancel];
+    if (nil != self.actionSheetPicker) {
+        [self.actionSheetPicker actionPickerCancel:sender];
     }
-    
-    //Display the ActionSheetPicker
-    self.actionSheetPicker = [[ActionSheetPicker initActionPickerWithBarButtonItem:sender data:self.animals selectedIndex:self.selectedIndex target:self action:@selector(itemWasSelected::) title:@"Select Animal"] retain];    
+    [self selectAnItem:sender];
 }
 
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender {
-	if (nil != self.actionSheetPicker) {
-        [self.actionSheetPicker actionPickerCancel];
+    if (nil != self.actionSheetPicker) {
+        [self.actionSheetPicker actionPickerCancel:sender];
     }
-    
-	//Display the ActionSheetPicker
-	self.actionSheetPicker = [[ActionSheetPicker initActionPickerWithBarButtonItem:sender datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date] target:self action:@selector(dateWasSelected::) title:@"Select Date"] retain];     
+    [self selectADate:sender];
 }
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
-    //Display the ActionSheetPicker
-    [ActionSheetPicker displayActionPickerWithView:sender 
-                                     bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit 
-                                   smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
-                                            target:self action:@selector(measurementWasSelected:::) title:@"Select Length"];
+    self.actionSheetPicker = [DistancePicker showPickerWithTitle:@"Select Length" 
+                                                   bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
+                                                 smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
+                                                        delegate:self onSuccess:@selector(measurementWasSelected:::) origin:sender];                                                        
 }
 
 #pragma mark -
 #pragma mark Implementation
 
 - (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element {
-	//Selection was made
-	self.selectedIndex = [selectedIndex intValue];
+    self.selectedIndex = [selectedIndex intValue];
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.animals objectAtIndex:self.selectedIndex]];
     }
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate:(id)element {
-	//Date selection was made
-	self.selectedDate = selectedDate;
+    self.selectedDate = selectedDate;
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.selectedDate description]];
     }
@@ -114,25 +115,23 @@
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-	return NO;
+    return NO;
 }
 
 #pragma mark -
 #pragma mark Memory Management
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return YES;
+    return YES;
 }
 
 
 - (void)dealloc {
-	self.animals = nil;
-	self.selectedDate = nil;
-    
+    self.animals = nil;
+    self.selectedDate = nil;
     self.actionSheetPicker = nil;
-	
-	[super dealloc];
+    [super dealloc];
 }
 
 @end
