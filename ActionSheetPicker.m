@@ -219,8 +219,7 @@
     if (self.barButtonItem)
         [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     else if (self.containerView) {
-        #warning  This operation looks wrong ... I'm thinking there should be a view or superview between the "?" and the ":" ??? 
-        UIView *popoverContents = (_containerView.superview ? : _containerView);
+        UIView *popoverContents = (_containerView.superview ? _containerView.superview : _containerView);
         [popover presentPopoverFromRect:_containerView.frame inView:popoverContents permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 }
