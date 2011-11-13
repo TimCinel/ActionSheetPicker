@@ -19,33 +19,24 @@
 //DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
 //DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-//LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//åLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 //ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+#import "ActionSheetPicker.h"
+#import "DistancePickerView.h"
 
-#import <UIKit/UIKit.h>
+@interface DistancePicker : ActionSheetPicker
 
-@class ActionSheetPicker;
++ (id)showPickerWithTitle:(NSString *)title 
+            bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
+          smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
+                 delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin;
 
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
-
-@property (nonatomic, retain) NSArray *animals;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, retain) NSDate *selectedDate;
-@property (nonatomic, assign) NSInteger selectedBigUnit;
-@property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) ActionSheetPicker *actionSheetPicker;
-
-- (IBAction)selectAnItem:(id)sender;
-- (IBAction)selectADate:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)selectAMeasurement:(id)sender;
-- (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element;
-- (void)dateWasSelected:(NSDate *)selectedDate:(id)element;
-- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element;
-
+- (id)initWithTitle:(NSString *)title 
+      bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
+    smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
+           delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin;
 @end

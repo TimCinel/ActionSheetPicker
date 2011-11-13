@@ -25,27 +25,18 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+#import "ActionSheetPicker.h"
 
-#import <UIKit/UIKit.h>
+@interface DatePicker : ActionSheetPicker
 
-@class ActionSheetPicker;
++ (id)showPickerWithTitle:(NSString *)title 
+           datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
+                 delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin;
 
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+- (id)initWithTitle:(NSString *)title 
+     datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate 
+           delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin;
 
-@property (nonatomic, retain) NSArray *animals;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, retain) NSDate *selectedDate;
-@property (nonatomic, assign) NSInteger selectedBigUnit;
-@property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) ActionSheetPicker *actionSheetPicker;
-
-- (IBAction)selectAnItem:(id)sender;
-- (IBAction)selectADate:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)selectAMeasurement:(id)sender;
-- (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element;
-- (void)dateWasSelected:(NSDate *)selectedDate:(id)element;
-- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element;
+- (void)eventForDatePicker:(id)sender;
 
 @end
