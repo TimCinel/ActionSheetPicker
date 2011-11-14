@@ -53,22 +53,23 @@
 + (id)showPickerWithTitle:(NSString *)title 
             bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
           smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
-                 delegate:(id)delegate onSuccess:(SEL)action origin:(id)origin {
+                   target:(id)target action:(SEL)action origin:(id)origin {
    ActionSheetDistancePicker *picker = [[[ActionSheetDistancePicker alloc] initWithTitle:title 
                                                      bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit 
                                                    smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit 
-                                                          delegate:delegate onSuccess:action origin:origin] autorelease];
-    [picker showActionPicker];
+                                                          target:target action:action origin:origin] autorelease];
+    [picker showActionSheetPicker];
     return picker;
 }
 
 - (id)initWithTitle:(NSString *)title 
                         bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
                       smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
-                             delegate:(id)delegate 
-                            onSuccess:(SEL)action 
+                               target:(id)target 
+                               action:(SEL)action 
                                origin:(id)origin {
-    self = [super initWithTitle:title rows:nil initialSelection:0 delegate:delegate onSuccess:action origin:origin];
+    
+    self = [super initWithTitle:title rows:nil initialSelection:0 target:target action:action origin:origin];
     if (self) {
         self.bigUnitString = bigUnitString;
         self.bigUnitMax = bigUnitMax;
@@ -99,14 +100,16 @@
     
     NSInteger unitSubtract = 0;
     NSInteger currentDigit = 0;
+    
     for (int i = 0; i < self.bigUnitDigits; ++i) {
         NSInteger factor = (int)pow((double)10, (double)(self.bigUnitDigits - (i+1)));
         currentDigit = (( self.selectedBigUnit - unitSubtract ) / factor )  ;
         [picker selectRow:currentDigit inComponent:i animated:NO];
         unitSubtract += currentDigit * factor;
     }
+    
     unitSubtract = 0;
-    currentDigit = 0;
+    
     for (int i = self.bigUnitDigits; i < self.bigUnitDigits + self.smallUnitDigits; ++i) {
         NSInteger factor = (int)pow((double)10, (double)(self.bigUnitDigits + self.smallUnitDigits - (i+1)));
         currentDigit = (( self.selectedSmallUnit - unitSubtract ) / factor )  ;
@@ -116,7 +119,7 @@
     return picker;
 }
 
-- (void)notifyDelegate:(id)delegate didSucceedWithAction:(SEL)action origin:(id)origin {
+- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
     NSInteger bigUnits = 0;
     NSInteger smallUnits = 0;
     DistancePickerView *picker = (DistancePickerView *)self.pickerView;
@@ -127,8 +130,11 @@
         smallUnits += [picker selectedRowInComponent:i] * (int)pow((double)10, (double)((picker.numberOfComponents - i - 1)));
 
         //sending three objects, so can't use performSelector:
-    if ([delegate respondsToSelector:action])
-        objc_msgSend(delegate, action, [NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits],origin);
+    if ([target respondsToSelector:action])
+        objc_msgSend(target, action, [NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], origin);
+    else
+        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
+    
 }
 
 #pragma mark -
@@ -163,6 +169,11 @@
     else if (component == self.bigUnitDigits + self.smallUnitDigits - 1)
         return otherSize + smallUnitLabelSize;
     return otherSize;
+}
+
+
+- (void)customButtonPressed:(id)sender {
+    NSLog(@"Not implemented. If you get around to it, please contribute back to the projcet :)");
 }
 
 @end

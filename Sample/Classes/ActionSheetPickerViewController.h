@@ -44,8 +44,9 @@
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
-- (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element;
-- (void)dateWasSelected:(NSDate *)selectedDate:(id)element;
-- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element;
+
+- (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
+- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
+- (void)itemWasSelected:(NSNumber *)selectedIndex element:(id)element;
 
 @end

@@ -30,6 +30,7 @@
 #import "ActionSheetPicker.h"
 #import "ActionSheetDistancePicker.h"
 #import "ActionSheetDatePicker.h"
+#import "NSDate+TCUtils.h"
 
 @implementation ActionSheetPickerViewController
 
@@ -45,6 +46,7 @@
     [super viewDidLoad];
     
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
+    self.selectedDate = [NSDate date];
 }
 
 - (void)viewDidUnload {
@@ -56,56 +58,87 @@
 #pragma mark IBActions
 
 - (IBAction)selectAnItem:(UIControl *)sender {
-    self.actionSheetPicker = [ActionSheetPicker showPickerWithTitle:@"Select Animal" 
-                                      rows:self.animals initialSelection:self.selectedIndex 
-                                  delegate:self onSuccess:@selector(itemWasSelected::) origin:sender];
+    [ActionSheetPicker showPickerWithTitle:@"Select Animal" 
+                                      rows:self.animals 
+                          initialSelection:self.selectedIndex 
+                                    target:self
+                                    action:@selector(itemWasSelected:element:) 
+                                    origin:sender];
+    
+    
+    //Example ActionSheetPicker using customButtons
+//    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle:@"Select Animal" 
+//                                                                 rows:self.animals 
+//                                                     initialSelection:self.selectedIndex 
+//                                                               target:self
+//                                                               action:@selector(itemWasSelected:element:) 
+//                                                               origin:sender];
+//    
+//    [self.actionSheetPicker addCustomButtonWithTitle:@"Special" value:[NSNumber numberWithInt:1]];
+//    self.actionSheetPicker.hideCancel = YES;
+//    
+//    [self.actionSheetPicker showActionSheetPicker];    
+    
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-    self.actionSheetPicker = [ActionSheetDatePicker showPickerWithTitle:@"Select Date" 
-                datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate?:[NSDate date]                                                                             
-                      delegate:self onSuccess:@selector(dateWasSelected::) origin:sender];
+    self.actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" 
+                                                           datePickerMode:UIDatePickerModeDate 
+                                                             selectedDate:self.selectedDate
+                                                                   target:self 
+                                                                   action:@selector(dateWasSelected:element:) 
+                                                                   origin:sender];
+    
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] dateByAdddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    self.actionSheetPicker.hideCancel = YES;
+    
+    [self.actionSheetPicker showActionSheetPicker];
+    
+//    [ActionSheetDatePicker showPickerWithTitle:@"Select Date" 
+//                                datePickerMode:UIDatePickerModeDate 
+//                                  selectedDate:self.selectedDate                                                                             
+//                                        target:self 
+//                                        action:@selector(dateWasSelected:element:) 
+//                                        origin:sender];
 }
 
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
-    if (nil != self.actionSheetPicker) {
-        [self.actionSheetPicker actionPickerCancel:sender];
-    }
     [self selectAnItem:sender];
 }
 
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender {
-    if (nil != self.actionSheetPicker) {
-        [self.actionSheetPicker actionPickerCancel:sender];
-    }
     [self selectADate:sender];
 }
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
-    self.actionSheetPicker = [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" 
-                                                              bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
-                                                            smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
-                                                                   delegate:self onSuccess:@selector(measurementWasSelected:::) origin:sender];                                                        
+    [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" 
+                                     bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
+                                   smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
+                                            target:self 
+                                            action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) 
+                                            origin:sender];
 }
 
 #pragma mark -
 #pragma mark Implementation
 
-- (void)itemWasSelected:(NSNumber *)selectedIndex:(id)element {
+- (void)itemWasSelected:(NSNumber *)selectedIndex element:(id)element {
     self.selectedIndex = [selectedIndex intValue];
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.animals objectAtIndex:self.selectedIndex]];
     }
 }
 
-- (void)dateWasSelected:(NSDate *)selectedDate:(id)element {
+
+- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     self.selectedDate = selectedDate;
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.selectedDate description]];
     }
 }
 
-- (void)measurementWasSelected:(NSNumber *)bigUnit:(NSNumber *)smallUnit:(id)element {
+- (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element {
     self.selectedBigUnit = [bigUnit intValue];
     self.selectedSmallUnit = [smallUnit intValue];
     [element setText:[NSString stringWithFormat:@"%i m and %i cm", [bigUnit intValue], [smallUnit intValue]]];
