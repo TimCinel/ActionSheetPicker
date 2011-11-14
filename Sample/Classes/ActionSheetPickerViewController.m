@@ -82,12 +82,12 @@
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-    self.actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" 
-                                                           datePickerMode:UIDatePickerModeDate 
-                                                             selectedDate:self.selectedDate
-                                                                   target:self 
-                                                                   action:@selector(dateWasSelected:element:) 
-                                                                   origin:sender];
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" 
+                                                       datePickerMode:UIDatePickerModeDate 
+                                                         selectedDate:self.selectedDate
+                                                               target:self 
+                                                               action:@selector(dateWasSelected:element:) 
+                                                               origin:sender];
     
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] dateByAdddingCalendarUnits:NSDayCalendarUnit amount:-1]];
