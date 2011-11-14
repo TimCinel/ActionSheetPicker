@@ -260,15 +260,15 @@
     NSAssert(self.target != NULL, @"Cannot perform an action on a null target");
     NSAssert(self.action != NULL, @"Cannot perform a null action");
     [self notifyTarget:self.target didSucceedWithAction:self.action origin:[self storedOrigin]];
-    [self dismissPicker];
     
+    [self dismissPicker];
 }
 
 - (void)actionPickerCancel:(id)sender {
-    [self dismissPicker];
-    
     if (nil != self.delegate)
         [self.delegate actionPickerCancelled];
+    
+    [self dismissPicker];
 }
 
 - (void)dismissPicker {
