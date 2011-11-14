@@ -28,9 +28,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class ActionSheetPicker;
+#import "ActionSheetPicker.h"
 
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate, ActionSheetPickerDelegate>
 
 @property (nonatomic, retain) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
@@ -48,5 +48,8 @@
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)itemWasSelected:(NSNumber *)selectedIndex element:(id)element;
+
+- (void)actionPickerCancelled;
+- (void)actionPickerDoneWithValue:(id)value;
 
 @end

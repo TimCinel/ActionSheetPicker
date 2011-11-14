@@ -27,7 +27,6 @@
 
 
 #import "ActionSheetPickerViewController.h"
-#import "ActionSheetPicker.h"
 #import "ActionSheetDistancePicker.h"
 #import "ActionSheetDatePicker.h"
 #import "NSDate+TCUtils.h"
@@ -82,6 +81,9 @@
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
+    
+    //this example uses custom buttons and demonstrates delegate protocol
+    
     _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" 
                                                        datePickerMode:UIDatePickerModeDate 
                                                          selectedDate:self.selectedDate
@@ -92,6 +94,7 @@
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] dateByAdddingCalendarUnits:NSDayCalendarUnit amount:-1]];
     self.actionSheetPicker.hideCancel = YES;
+    self.actionSheetPicker.delegate = self;
     
     [self.actionSheetPicker showActionSheetPicker];
     
@@ -165,6 +168,16 @@
     self.selectedDate = nil;
     self.actionSheetPicker = nil;
     [super dealloc];
+}
+
+#pragma - ActionSheetPickerDelegate
+
+- (void)actionPickerCancelled {
+    NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
+}
+
+- (void)actionPickerDoneWithValue:(id)value {
+    NSLog(@"Delegate has been informed that ActionSheetPicker completed with value: %@", value);
 }
 
 @end
