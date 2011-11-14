@@ -135,6 +135,10 @@
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
     
+    //notify delegate
+    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
+        [self.delegate actionPickerDoneWithValue:[NSArray arrayWithObjects:[NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], nil]];
+    
 }
 
 #pragma mark -

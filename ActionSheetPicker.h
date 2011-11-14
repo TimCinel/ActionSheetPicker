@@ -27,9 +27,16 @@
 
 #import <Foundation/Foundation.h>
 
+
+@protocol ActionSheetPickerDelegate<NSObject>
+- (void)actionPickerCancelled;
+@optional
+- (void)actionPickerDoneWithValue:(id)value;
+@end
+
 @interface ActionSheetPicker : NSObject <UIPickerViewDelegate, UIPickerViewDataSource>
 
-
+@property (nonatomic, assign) id<ActionSheetPickerDelegate> delegate;
 @property (nonatomic, retain) UIView *pickerView;
 @property (nonatomic, readonly) CGSize viewSize;
 @property (nonatomic, retain) NSMutableArray *customButtons; // ((NSString *title, id value),(NSString *title, id value), ... )

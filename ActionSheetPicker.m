@@ -70,6 +70,7 @@
 @synthesize popOverController = _popOverController;
 @synthesize selfReference = _selfReference;
 
+@synthesize delegate = _delegate;
 @synthesize pickerView = _pickerView;
 @dynamic viewSize;
 @synthesize customButtons = _customButtons;
@@ -167,12 +168,14 @@
     // subclasses should override this for custom behavior
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
     
-    if (!self.data)
-        return;
     if ([target respondsToSelector:action])
         [target performSelector:action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:origin];
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
+    
+    //notify delegate
+    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
+        [self.delegate actionPickerDoneWithValue:[self.data objectAtIndex:self.selectedIndex]];
 
 }
 
@@ -258,10 +261,14 @@
     NSAssert(self.action != NULL, @"Cannot perform a null action");
     [self notifyTarget:self.target didSucceedWithAction:self.action origin:[self storedOrigin]];
     [self dismissPicker];
+    
 }
 
 - (void)actionPickerCancel:(id)sender {
     [self dismissPicker];
+    
+    if (nil != self.delegate)
+        [self.delegate actionPickerCancelled];
 }
 
 - (void)dismissPicker {
