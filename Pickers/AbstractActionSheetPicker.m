@@ -105,12 +105,12 @@
 }
 
 - (UIView *)configuredPickerView {
-    NSAssert(NO, @"This is an abstract class, you must use a subclass of ActionSheetPicker (like ActionSheetStringPicker)");
+    NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
     return nil;
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)sucessAction origin:(id)origin {    
-    NSAssert(NO, @"This is an abstract class, you must use a subclass of ActionSheetPicker (like ActionSheetStringPicker)");
+    NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
 }
 
 - (void)notifyTarget:(id)target didCancelWithAction:(SEL)cancelAction origin:(id)origin {

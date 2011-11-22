@@ -26,29 +26,6 @@
 //
 
 #import "ActionSheetStringPicker.h"
-/*
-
-
-- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
-    if (self.onActionSheetDone)
-        _onActionSheetDone(self, self.selectedIndex, [self.data objectAtIndex:self.selectedIndex]);
-    if ([target respondsToSelector:action])
-        [target performSelector:action withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:origin];
-    else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
-    
-        //notify delegate
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
-        [self.delegate actionPickerDoneWithValue:[self.data objectAtIndex:self.selectedIndex]];
-    
-}
-
-
-if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
-[self.delegate actionPickerDoneWithValue:[self.data objectAtIndex:self.selectedIndex]];
-
-@end
-*/
 
 @interface ActionSheetStringPicker()
 @property (nonatomic,retain) NSArray *data;
