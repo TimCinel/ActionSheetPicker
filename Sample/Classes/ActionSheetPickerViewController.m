@@ -27,14 +27,18 @@
 
 
 #import "ActionSheetPickerViewController.h"
-#import "ActionSheetDistancePicker.h"
-#import "ActionSheetDatePicker.h"
+#import "ActionSheetPicker.h"
 #import "NSDate+TCUtils.h"
+
+@interface ActionSheetPickerViewController()
+- (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
+- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
+- (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
+@end
 
 @implementation ActionSheetPickerViewController
 
 @synthesize animals = _animals;
-
 @synthesize selectedIndex = _selectedIndex;
 @synthesize selectedDate = _selectedDate;
 @synthesize selectedBigUnit = _selectedBigUnit;
@@ -43,9 +47,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
     self.selectedDate = [NSDate date];
+}
+
+- (void)dealloc {
+    self.animals = nil;
+    self.selectedDate = nil;
+    self.actionSheetPicker = nil;
+    [super dealloc];
 }
 
 - (void)viewDidUnload {
@@ -53,61 +63,48 @@
     [super viewDidUnload];
 }
 
-#pragma mark -
-#pragma mark IBActions
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
 
-- (IBAction)selectAnItem:(UIControl *)sender {
-    [ActionSheetPicker showPickerWithTitle:@"Select Animal" 
-                                      rows:self.animals 
-                          initialSelection:self.selectedIndex 
-                                    target:self
-                                    action:@selector(itemWasSelected:element:) 
-                                    origin:sender];
+#pragma mark - IBActions
+
+- (IBAction)selectABlock:(UIControl *)sender {
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+}
+
+- (IBAction)selectAnAnimal:(UIControl *)sender {
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self sucessAction:@selector(animalWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
     
-    
-    //Example ActionSheetPicker using customButtons
-//    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle:@"Select Animal" 
-//                                                                 rows:self.animals 
-//                                                     initialSelection:self.selectedIndex 
-//                                                               target:self
-//                                                               action:@selector(itemWasSelected:element:) 
-//                                                               origin:sender];
-//    
-//    [self.actionSheetPicker addCustomButtonWithTitle:@"Special" value:[NSNumber numberWithInt:1]];
-//    self.actionSheetPicker.hideCancel = YES;
-//    
-//    [self.actionSheetPicker showActionSheetPicker];    
-    
+ /* Example ActionSheetPicker using customButtons
+    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self sucessAction:@selector(itemWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender
+ 
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Special" value:[NSNumber numberWithInt:1]];
+    self.actionSheetPicker.hideCancel = YES;
+    [self.actionSheetPicker showActionSheetPicker];
+ */
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-    
-    //this example uses custom buttons and demonstrates delegate protocol
-    
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" 
-                                                       datePickerMode:UIDatePickerModeDate 
-                                                         selectedDate:self.selectedDate
-                                                               target:self 
-                                                               action:@selector(dateWasSelected:element:) 
-                                                               origin:sender];
-    
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] dateByAdddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
     self.actionSheetPicker.hideCancel = YES;
-    self.actionSheetPicker.delegate = self;
-    
     [self.actionSheetPicker showActionSheetPicker];
-    
-//    [ActionSheetDatePicker showPickerWithTitle:@"Select Date" 
-//                                datePickerMode:UIDatePickerModeDate 
-//                                  selectedDate:self.selectedDate                                                                             
-//                                        target:self 
-//                                        action:@selector(dateWasSelected:element:) 
-//                                        origin:sender];
 }
 
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
-    [self selectAnItem:sender];
+    [self selectAnAnimal:sender];
 }
 
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender {
@@ -115,24 +112,17 @@
 }
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
-    [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" 
-                                     bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit
-                                   smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit
-                                            target:self 
-                                            action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) 
-                                            origin:sender];
+    [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
 }
 
-#pragma mark -
-#pragma mark Implementation
+#pragma mark - Implementation
 
-- (void)itemWasSelected:(NSNumber *)selectedIndex element:(id)element {
+- (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {
     self.selectedIndex = [selectedIndex intValue];
     if ([element respondsToSelector:@selector(setText:)]) {
         [element setText:[self.animals objectAtIndex:self.selectedIndex]];
     }
 }
-
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     self.selectedDate = selectedDate;
@@ -147,37 +137,15 @@
     [element setText:[NSString stringWithFormat:@"%i m and %i cm", [bigUnit intValue], [smallUnit intValue]]];
 }
 
-#pragma mark -
-#pragma mark UITextFieldDelegate
+- (void)actionPickerCancelled:(id)sender {
+    NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
+}
+
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return NO;
 }
 
-#pragma mark -
-#pragma mark Memory Management
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
-
-- (void)dealloc {
-    self.animals = nil;
-    self.selectedDate = nil;
-    self.actionSheetPicker = nil;
-    [super dealloc];
-}
-
-#pragma - ActionSheetPickerDelegate
-
-- (void)actionPickerCancelled {
-    NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
-}
-
-- (void)actionPickerDoneWithValue:(id)value {
-    NSLog(@"Delegate has been informed that ActionSheetPicker completed with value: %@", value);
-}
 
 @end

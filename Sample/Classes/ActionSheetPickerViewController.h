@@ -28,28 +28,20 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ActionSheetPicker.h"
-
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate, ActionSheetPickerDelegate>
-
+@class AbstractActionSheetPicker;
+@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, retain) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, retain) NSDate *selectedDate;
 @property (nonatomic, assign) NSInteger selectedBigUnit;
 @property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) ActionSheetPicker *actionSheetPicker;
+@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
 
-- (IBAction)selectAnItem:(id)sender;
+- (IBAction)selectABlock:(id)sender;
+- (IBAction)selectAnAnimal:(id)sender;
 - (IBAction)selectADate:(id)sender;
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
-
-- (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
-- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
-- (void)itemWasSelected:(NSNumber *)selectedIndex element:(id)element;
-
-- (void)actionPickerCancelled;
-- (void)actionPickerDoneWithValue:(id)value;
 
 @end

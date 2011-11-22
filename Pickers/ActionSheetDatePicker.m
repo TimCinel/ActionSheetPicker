@@ -27,7 +27,6 @@
 
 
 #import "ActionSheetDatePicker.h"
-
 #import <objc/message.h>
 
 @interface ActionSheetDatePicker()
@@ -42,18 +41,15 @@
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
                  target:(id)target action:(SEL)action origin:(id)origin {
-    ActionSheetDatePicker *picker = [[[ActionSheetDatePicker alloc] initWithTitle:title 
-                                             datePickerMode:datePickerMode selectedDate:selectedDate    
-                                                   target:target action:action origin:origin] autorelease];
+    ActionSheetDatePicker *picker = [[ActionSheetDatePicker alloc] initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin];
     [picker showActionSheetPicker];
-    return picker;
+    return [picker autorelease];
 }
 
-- (id)initWithTitle:(NSString *)title 
-     datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate 
-           target:(id)target action:(SEL)action origin:(id)origin {
-    self = [super initWithTitle:title rows:nil initialSelection:0 target:target action:action origin:origin];
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin {
+    self = [super initWithTarget:target successAction:action cancelAction:nil origin:origin];
     if (self) {
+        self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
     }
@@ -79,31 +75,23 @@
         objc_msgSend(target, action, self.selectedDate, origin);
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
-    
-    //notify delegate
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
-        [self.delegate actionPickerDoneWithValue:self.selectedDate];
 }
 
 - (void)eventForDatePicker:(id)sender {
-    if (sender && [sender isKindOfClass:[UIDatePicker class]]) {
-        UIDatePicker *datePicker = (UIDatePicker *)sender;
-        self.selectedDate = datePicker.date;
-    }
+    if (!sender || ![sender isKindOfClass:[UIDatePicker class]])
+        return;
+    UIDatePicker *datePicker = (UIDatePicker *)sender;
+    self.selectedDate = datePicker.date;
 }
-
 
 - (void)customButtonPressed:(id)sender {
     UIBarButtonItem *button = (UIBarButtonItem*)sender;
     NSInteger index = button.tag;
-    
-    NSAssert((0 <= index && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);    
+    NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);    
     NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
-
-    //retrieve custom button's associated value index
-    NSDate *itemValue = [[self.customButtons objectAtIndex:index] objectAtIndex:1];
+    NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
+    NSDate *itemValue = [buttonDetails objectForKey:@"buttonValue"];
     UIDatePicker *picker = (UIDatePicker *)self.pickerView;    
-    
     [picker setDate:itemValue animated:YES];
     [self eventForDatePicker:picker];
 }
