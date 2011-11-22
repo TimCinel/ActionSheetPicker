@@ -69,16 +69,17 @@
 @dynamic viewSize;
 @synthesize customButtons = _customButtons;
 @synthesize hideCancel = _hideCancel;
+@synthesize presentFromRect = _presentFromRect;
 
 #pragma mark - Abstract Implementation
 
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin  {
-    NSParameterAssert( (origin != NULL) );
     self = [super init];
     if (self) {
         self.target = target;
         self.successAction = successAction;
         self.cancelAction = cancelActionOrNil;
+        self.presentFromRect = CGRectZero;
         if ([origin isKindOfClass:[UIBarButtonItem class]])
             self.barButtonItem = origin;
         else if ([origin isKindOfClass:[UIView class]])
@@ -98,7 +99,6 @@
     self.containerView = nil;
     self.barButtonItem = nil;
     self.target = nil;
-        // should these two be included?
     self.successAction = nil;
     self.cancelAction = nil;
     [super dealloc];
@@ -282,7 +282,9 @@
     NSParameterAssert(actionSheet != NULL);
     if (self.barButtonItem)
         [actionSheet showFromBarButtonItem:_barButtonItem animated:YES];
-    else if (self.containerView)
+    else if (self.containerView && NO == CGRectIsEmpty(self.presentFromRect))
+        [actionSheet showFromRect:_presentFromRect inView:_containerView animated:YES];
+    else
         [actionSheet showInView:_containerView];
 }
 
@@ -297,11 +299,26 @@
 
 - (void)presentPopover:(UIPopoverController *)popover {
     NSParameterAssert(popover != NULL);
-    if (self.barButtonItem)
+    if (self.barButtonItem) {
         [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    else if (self.containerView) {
-        UIView *popoverContents = (_containerView.superview ? _containerView.superview : _containerView);
-        [popover presentPopoverFromRect:_containerView.frame inView:popoverContents permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        return;
+    }
+    else if (self.containerView && NO == CGRectIsEmpty(self.presentFromRect)) {
+        [popover presentPopoverFromRect:_presentFromRect inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        return;
+    }
+    // Unfortunately, things go to hell whenever you try to present a popover from a table view cell.  These are failsafes.
+    UIView *origin = nil;
+    CGRect presentRect = CGRectZero;
+    @try {
+        origin = (_containerView.superview ? _containerView.superview : _containerView);
+        presentRect = origin.bounds;
+        [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    @catch (NSException *exception) {
+        origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+        presentRect = CGRectMake(origin.center.x, origin.center.y, 1, 1);
+        [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 }
 

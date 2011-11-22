@@ -60,7 +60,6 @@
 }
 
 - (id)initWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target sucessAction:(SEL)sucessAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
-    NSParameterAssert( (origin != NULL) );
     self = [self initWithTarget:target successAction:sucessAction cancelAction:cancelActionOrNil origin:origin];
     if (self) {
         self.data = data;
