@@ -10,7 +10,7 @@
 
 @implementation NSDate (TCUtils)
 
-- (NSDate *)dateByAdddingCalendarUnits:(NSCalendarUnit)calendarUnit amount:(NSInteger)amount {
+- (NSDate *)TC_dateByAddingCalendarUnits:(NSCalendarUnit)calendarUnit amount:(NSInteger)amount {
 	NSDateComponents *components = [[NSDateComponents alloc] init];
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDate *newDate;
