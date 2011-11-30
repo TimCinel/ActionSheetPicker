@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (TCUtils)
-
-- (NSDate *)dateByAdddingCalendarUnits:(NSCalendarUnit)calendarUnit amount:(NSInteger)amount;
-
+@interface NSDate(TCUtils)
+- (NSDate *)TC_dateByAddingCalendarUnits:(NSCalendarUnit)calendarUnit amount:(NSInteger)amount;
 @end

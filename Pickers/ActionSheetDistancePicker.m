@@ -26,7 +26,6 @@
 //
 
 #import "ActionSheetDistancePicker.h"
-
 #import <objc/message.h>
 
 @interface ActionSheetDistancePicker()
@@ -50,27 +49,16 @@
 @synthesize smallUnitDigits = _smallUnitDigits;
 @synthesize selectedSmallUnit = _selectedSmallUnit;
 
-+ (id)showPickerWithTitle:(NSString *)title 
-            bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
-          smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
-                   target:(id)target action:(SEL)action origin:(id)origin {
-   ActionSheetDistancePicker *picker = [[[ActionSheetDistancePicker alloc] initWithTitle:title 
-                                                     bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit 
-                                                   smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit 
-                                                          target:target action:action origin:origin] autorelease];
++ (id)showPickerWithTitle:(NSString *)title bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit target:(id)target action:(SEL)action origin:(id)origin {
+   ActionSheetDistancePicker *picker = [[ActionSheetDistancePicker alloc] initWithTitle:title bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit target:target action:action origin:origin];
     [picker showActionSheetPicker];
-    return picker;
+    return [picker autorelease];
 }
 
-- (id)initWithTitle:(NSString *)title 
-                        bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit 
-                      smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit
-                               target:(id)target 
-                               action:(SEL)action 
-                               origin:(id)origin {
-    
-    self = [super initWithTitle:title rows:nil initialSelection:0 target:target action:action origin:origin];
+- (id)initWithTitle:(NSString *)title bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit target:(id)target action:(SEL)action origin:(id)origin {
+    self = [super initWithTarget:target successAction:action cancelAction:nil origin:origin];
     if (self) {
+        self.title = title;
         self.bigUnitString = bigUnitString;
         self.bigUnitMax = bigUnitMax;
         self.selectedBigUnit = selectedBigUnit;
@@ -134,11 +122,6 @@
         objc_msgSend(target, action, [NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], origin);
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
-    
-    //notify delegate
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(actionPickerDoneWithValue:)])
-        [self.delegate actionPickerDoneWithValue:[NSArray arrayWithObjects:[NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], nil]];
-    
 }
 
 #pragma mark -
@@ -164,7 +147,7 @@
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    CGFloat totalWidth = [super pickerView:pickerView widthForComponent:component];
+    CGFloat totalWidth = pickerView.frame.size.width - 30;
     CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
     CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
     CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
@@ -177,7 +160,7 @@
 
 
 - (void)customButtonPressed:(id)sender {
-    NSLog(@"Not implemented. If you get around to it, please contribute back to the projcet :)");
+    NSLog(@"Not implemented. If you get around to it, please contribute back to the project :)");
 }
 
 @end
