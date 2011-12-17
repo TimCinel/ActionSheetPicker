@@ -104,6 +104,10 @@
         [picker selectRow:currentDigit inComponent:i animated:NO];
         unitSubtract += currentDigit * factor;
     }
+    
+    //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
+    self.pickerView = picker;
+    
     return picker;
 }
 

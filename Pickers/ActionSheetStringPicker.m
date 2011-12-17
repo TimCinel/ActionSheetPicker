@@ -71,8 +71,10 @@
 
 - (void)dealloc {
     self.data = nil;
+    
     Block_release(_onActionSheetDone);
     Block_release(_onActionSheetCancel);
+    
     [super dealloc];
 }
 
@@ -85,6 +87,10 @@
     stringPicker.dataSource = self;
     stringPicker.showsSelectionIndicator = YES;
     [stringPicker selectRow:self.selectedIndex inComponent:0 animated:NO];
+    
+    //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
+    self.pickerView = stringPicker;
+    
     return stringPicker;
 }
 

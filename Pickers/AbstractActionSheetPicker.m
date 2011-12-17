@@ -92,6 +92,14 @@
 }
 
 - (void)dealloc {
+    
+    //need to clear picker delegates and datasources, otherwise they may call this object after it's gone
+    if ([self.pickerView respondsToSelector:@selector(setDelegate:)])
+        [self.pickerView performSelector:@selector(setDelegate:) withObject:nil];
+    
+    if ([self.pickerView respondsToSelector:@selector(setDataSource:)])
+        [self.pickerView performSelector:@selector(setDataSource:) withObject:nil];
+    
     self.actionSheet = nil;
     self.popOverController = nil;
     self.customButtons = nil;
@@ -99,8 +107,7 @@
     self.containerView = nil;
     self.barButtonItem = nil;
     self.target = nil;
-    self.successAction = nil;
-    self.cancelAction = nil;
+    
     [super dealloc];
 }
 
