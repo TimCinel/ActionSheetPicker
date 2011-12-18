@@ -282,7 +282,7 @@
     [_actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     [_actionSheet addSubview:aView];
     [self presentActionSheet:_actionSheet];
-    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height+5);
+    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height - 47);
 }
 
 - (void)presentActionSheet:(UIActionSheet *)actionSheet {
