@@ -80,10 +80,13 @@
         self.successAction = successAction;
         self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
+        
         if ([origin isKindOfClass:[UIBarButtonItem class]])
             self.barButtonItem = origin;
         else if ([origin isKindOfClass:[UIView class]])
             self.containerView = origin;
+        else
+            NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
         
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
@@ -268,6 +271,8 @@
 #pragma mark - Popovers and ActionSheets
 
 - (void)presentPickerForView:(UIView *)aView {
+    self.presentFromRect = aView.frame;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [self configureAndPresentPopoverForView:aView];
     else
@@ -310,7 +315,7 @@
         [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         return;
     }
-    else if (self.containerView && NO == CGRectIsEmpty(self.presentFromRect)) {
+    else if ((self.containerView) && NO == CGRectIsEmpty(self.presentFromRect)) {
         [popover presentPopoverFromRect:_presentFromRect inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         return;
     }
