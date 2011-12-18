@@ -38,6 +38,9 @@
 
 @implementation ActionSheetPickerViewController
 
+@synthesize animalTextField = _animalTextField;
+@synthesize dateTextField = _dateTextField;
+
 @synthesize animals = _animals;
 @synthesize selectedIndex = _selectedIndex;
 @synthesize selectedDate = _selectedDate;
@@ -60,6 +63,10 @@
 
 - (void)viewDidUnload {
     self.actionSheetPicker = nil;
+    
+    self.animalTextField = nil;
+    self.dateTextField = nil;
+    
     [super viewDidUnload];
 }
 
@@ -119,16 +126,16 @@
 
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {
     self.selectedIndex = [selectedIndex intValue];
-    if ([element respondsToSelector:@selector(setText:)]) {
-        [element setText:[self.animals objectAtIndex:self.selectedIndex]];
-    }
+    
+    //may have originated from textField or barButtonItem, use an IBOutlet instead of element
+    self.animalTextField.text = [self.animals objectAtIndex:self.selectedIndex];
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     self.selectedDate = selectedDate;
-    if ([element respondsToSelector:@selector(setText:)]) {
-        [element setText:[self.selectedDate description]];
-    }
+    
+    //may have originated from textField or barButtonItem, use an IBOutlet instead of element
+    self.dateTextField.text = [self.selectedDate description];
 }
 
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element {

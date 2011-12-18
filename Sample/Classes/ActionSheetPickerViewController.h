@@ -30,6 +30,10 @@
 
 @class AbstractActionSheetPicker;
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, retain) IBOutlet UITextField *animalTextField;
+@property (nonatomic, retain) IBOutlet UITextField *dateTextField;
+
 @property (nonatomic, retain) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, retain) NSDate *selectedDate;
