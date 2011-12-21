@@ -214,7 +214,7 @@
 					<object class="IBUILabel" id="685455592">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{20, 419}, {280, 21}}</string>
+						<string key="NSFrame">{{17, 419}, {296, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -222,7 +222,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">https://github.com/sickanimations/ActionSheetPicker</string>
+						<string key="IBUIText">https://github.com/TimCinel/ActionSheetPicker</string>
 						<reference key="IBUITextColor" ref="897324028"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -451,13 +451,13 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="791119645"/>
-							<reference ref="685455592"/>
 							<reference ref="1004339132"/>
 							<reference ref="502593390"/>
 							<reference ref="506316691"/>
 							<reference ref="366061364"/>
 							<reference ref="117506181"/>
 							<reference ref="424092331"/>
+							<reference ref="685455592"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

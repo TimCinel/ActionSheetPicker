@@ -8,7 +8,7 @@ Well, that's how it started. Now, the following is more accurate:
 
 ## Overview ##
 ActionSheetPicker
-https://github.com/sickanimations/ActionSheetPicker
+https://github.com/TimCinel/ActionSheetPicker
 
 Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutible options. Based on the HTML drop-down alternative found in mobilesafari.
 
@@ -54,7 +54,7 @@ Thanks to all of the contributors for making ActionSheetPicker better for the iO
 
 ### Creator ###
 
-[Tim Cinel](http://github.com/sickanimations)
+[Tim Cinel](http://github.com/TimCinel)
 
 [@TimCinel](http://twitter.com/TimCinel)
 
