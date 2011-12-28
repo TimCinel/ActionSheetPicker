@@ -119,7 +119,7 @@
     return nil;
 }
 
-- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)sucessAction origin:(id)origin {    
+- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
 }
 
