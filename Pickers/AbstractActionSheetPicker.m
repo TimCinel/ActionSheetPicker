@@ -153,7 +153,11 @@
 }
 
 - (void)dismissPicker {
-    if (self.actionSheet && self.actionSheet.visible)
+#if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
+    if (self.actionSheet)
+#else
+    if (self.actionSheet && [self.actionSheet isVisible])
+#endif
         [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     else if (self.popOverController && self.popOverController.popoverVisible)
         [_popOverController dismissPopoverAnimated:YES];
