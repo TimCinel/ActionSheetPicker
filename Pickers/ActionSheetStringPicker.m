@@ -45,7 +45,7 @@
 }
 
 - (id)initWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSInteger)index doneBlock:(ActionStringDoneBlock)doneBlock cancelBlock:(ActionStringCancelBlock)cancelBlockOrNil origin:(id)origin {
-    self = [self initWithTitle:title rows:strings initialSelection:index target:nil sucessAction:nil cancelAction:nil origin:origin];
+    self = [self initWithTitle:title rows:strings initialSelection:index target:nil successAction:nil cancelAction:nil origin:origin];
     if (self) {
         self.onActionSheetDone = doneBlock;
         self.onActionSheetCancel = cancelBlockOrNil;
@@ -53,14 +53,14 @@
     return self;
 }
 
-+ (id)showPickerWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target sucessAction:(SEL)sucessAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
-    ActionSheetStringPicker *picker = [[[ActionSheetStringPicker alloc] initWithTitle:title rows:data initialSelection:index target:target sucessAction:sucessAction cancelAction:cancelActionOrNil origin:origin] autorelease];
++ (id)showPickerWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
+    ActionSheetStringPicker *picker = [[[ActionSheetStringPicker alloc] initWithTitle:title rows:data initialSelection:index target:target successAction:successAction cancelAction:cancelActionOrNil origin:origin] autorelease];
     [picker showActionSheetPicker];
     return picker;
 }
 
-- (id)initWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target sucessAction:(SEL)sucessAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
-    self = [self initWithTarget:target successAction:sucessAction cancelAction:cancelActionOrNil origin:origin];
+- (id)initWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
+    self = [self initWithTarget:target successAction:successAction cancelAction:cancelActionOrNil origin:origin];
     if (self) {
         self.data = data;
         self.selectedIndex = index;
@@ -94,16 +94,16 @@
     return stringPicker;
 }
 
-- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)sucessAction origin:(id)origin {    
+- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     if (self.onActionSheetDone) {
         _onActionSheetDone(self, self.selectedIndex, [self.data objectAtIndex:self.selectedIndex]);
         return;
     }
-    else if (target && [target respondsToSelector:sucessAction]) {
-        [target performSelector:sucessAction withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:origin];
+    else if (target && [target respondsToSelector:successAction]) {
+        [target performSelector:successAction withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:origin];
         return;
     }
-    NSLog(@"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)sucessAction);
+    NSLog(@"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)successAction);
 }
 
 - (void)notifyTarget:(id)target didCancelWithAction:(SEL)cancelAction origin:(id)origin {
