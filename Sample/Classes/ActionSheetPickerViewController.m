@@ -91,10 +91,10 @@
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {
-    [ActionSheetStringPicker showPickerWithTitle:@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self sucessAction:@selector(animalWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self successAction:@selector(animalWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
     
  /* Example ActionSheetPicker using customButtons
-    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self sucessAction:@selector(itemWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender
+    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self successAction:@selector(itemWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender
  
     [self.actionSheetPicker addCustomButtonWithTitle:@"Special" value:[NSNumber numberWithInt:1]];
     self.actionSheetPicker.hideCancel = YES;
