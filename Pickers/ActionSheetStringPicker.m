@@ -136,22 +136,4 @@
     return pickerView.frame.size.width - 30;
 }
 
-#pragma mark - Block setters
-
-    // NOTE: Sometimes see crashes when relying on just the copy property. Using Block_copy ensures correct behavior
-
-- (void)setOnActionSheetDone:(ActionStringDoneBlock)onActionSheetDone {
-    if (_onActionSheetDone) {
-        _onActionSheetDone = nil;
-    }
-    _onActionSheetDone = onActionSheetDone;
-}
-
-- (void)setOnActionSheetCancel:(ActionStringCancelBlock)onActionSheetCancel {
-    if (_onActionSheetCancel) {
-        _onActionSheetCancel = nil;
-    }
-    _onActionSheetCancel = onActionSheetCancel;
-}
-
 @end
