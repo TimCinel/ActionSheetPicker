@@ -110,7 +110,7 @@
             BOOL addlabelView = NO;
             UILabel *label = (UILabel*)[self viewWithTag:component + 1];
             if(!label) {
-                label = [[[UILabel alloc] initWithFrame:frame] autorelease];
+                label = [[UILabel alloc] initWithFrame:frame];
                 addlabelView = YES;
             }
             
@@ -151,10 +151,6 @@
     
 }
 
-- (void)dealloc {
-    [labels release];
-    [super dealloc];
-}
 
 
 @end

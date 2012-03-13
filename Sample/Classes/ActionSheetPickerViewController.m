@@ -54,12 +54,6 @@
     self.selectedDate = [NSDate date];
 }
 
-- (void)dealloc {
-    self.animals = nil;
-    self.selectedDate = nil;
-    self.actionSheetPicker = nil;
-    [super dealloc];
-}
 
 - (void)viewDidUnload {
     self.actionSheetPicker = nil;
