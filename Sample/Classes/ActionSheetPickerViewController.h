@@ -27,6 +27,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "ActionSheetPicker.h"
 
 @class AbstractActionSheetPicker;
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
@@ -47,5 +48,6 @@
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
+- (IBAction)selectAMusicalScale:(UIControl *)sender;
 
 @end
