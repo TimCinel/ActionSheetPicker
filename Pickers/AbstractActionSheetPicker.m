@@ -285,13 +285,18 @@
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView {
     NSString *paddedSheetTitle = nil;
-    if ([self isViewPortrait])
+    CGFloat sheetHeight;
+    if ([self isViewPortrait]) {
         paddedSheetTitle = @"\n\n\n"; // looks hacky to me
+        sheetHeight = self.viewSize.height - 47;
+    } else {
+        sheetHeight = self.viewSize.width;
+    }
     _actionSheet = [[UIActionSheet alloc] initWithTitle:paddedSheetTitle delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     [_actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     [_actionSheet addSubview:aView];
     [self presentActionSheet:_actionSheet];
-    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, self.viewSize.height - 47);
+    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
 }
 
 - (void)presentActionSheet:(UIActionSheet *)actionSheet {
