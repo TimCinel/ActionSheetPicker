@@ -55,6 +55,6 @@
 - (void)addCustomButtonWithTitle:(NSString *)title value:(id)value;
 
     //For subclasses. This responds to a custom button being pressed.
-- (void)customButtonPressed:(id)sender;
+- (IBAction)customButtonPressed:(id)sender;
 
 @end
