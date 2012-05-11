@@ -37,6 +37,8 @@
 @implementation ActionSheetDatePicker
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
+@synthesize onActionSheetDone = _onActionSheetDone;
+@synthesize onActionSheetCancel = _onActionSheetCancel;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
@@ -56,8 +58,25 @@
     return self;
 }
 
++ (id)showPickerWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate doneBlock:(ActionSheetDatePickerDoneBlock)doneBlock cancelBlock:(ActionSheetDatePickerCancelBlock)cancelBlock origin:(id)origin {
+    ActionSheetDatePicker *picker = [[ActionSheetDatePicker alloc] initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate doneBlock:doneBlock cancelBlock:cancelBlock origin:origin];
+    [picker showActionSheetPicker];
+    return [picker autorelease];
+}
+
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate doneBlock:(ActionSheetDatePickerDoneBlock)doneBlock cancelBlock:(ActionSheetDatePickerCancelBlock)cancelBlock origin:(id)origin {
+    self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:nil action:nil origin:origin];
+    if (self) {
+        self.onActionSheetDone = doneBlock;
+        self.onActionSheetCancel = cancelBlock;
+    }
+    return self;
+}
+
 - (void)dealloc {
     self.selectedDate = nil;
+    Block_release(_onActionSheetDone);
+    Block_release(_onActionSheetCancel);
     [super dealloc];
 }
 
@@ -75,10 +94,15 @@
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
-    if ([target respondsToSelector:action])
+    if ([target respondsToSelector:action]) {
         objc_msgSend(target, action, self.selectedDate, origin);
-    else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
+        return;
+    } else if (nil != self.onActionSheetDone) {
+        self.onActionSheetDone(self, self.selectedDate, origin);
+        return;
+    }
+        
+    NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
 }
 
 - (void)eventForDatePicker:(id)sender {
