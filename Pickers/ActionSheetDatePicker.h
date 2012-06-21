@@ -29,6 +29,12 @@
 
 @interface ActionSheetDatePicker : AbstractActionSheetPicker
 
+// The following properties correspond to the UIDatePicker properties with the same name.
+// Set them *before* the ActionSheetDatePicker is shown.
+@property (nonatomic, retain) NSDate *minimumDate;
+@property (nonatomic, retain) NSDate *maximumDate;
+@property (nonatomic) NSInteger minuteInterval;
+
 + (id)showPickerWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin;
 
 - (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin;

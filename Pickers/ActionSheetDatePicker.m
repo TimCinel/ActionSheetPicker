@@ -37,6 +37,9 @@
 @implementation ActionSheetDatePicker
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
+@synthesize maximumDate = _maximumDate;
+@synthesize minimumDate = _minimumDate;
+@synthesize minuteInterval = _minuteInterval;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
@@ -52,6 +55,7 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
+		self.minuteInterval = 1;
     }
     return self;
 }
@@ -65,6 +69,9 @@
     CGRect datePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
     UIDatePicker *datePicker = [[[UIDatePicker alloc] initWithFrame:datePickerFrame] autorelease];
     datePicker.datePickerMode = self.datePickerMode;
+	datePicker.maximumDate = self.maximumDate;
+	datePicker.minimumDate = self.minimumDate;
+	datePicker.minuteInterval = self.minuteInterval;
     [datePicker setDate:self.selectedDate animated:NO];
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
     
