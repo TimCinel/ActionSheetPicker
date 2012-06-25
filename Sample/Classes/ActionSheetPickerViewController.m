@@ -36,7 +36,12 @@
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
 @end
 
-@implementation ActionSheetPickerViewController
+@implementation ActionSheetPickerViewController {
+    int selectedHeightFootIndex, 
+        selectedHeightInchIndex,
+        selectedWeightWholeIndex,
+        selectedWeightHalfIndex;
+}
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
@@ -52,6 +57,12 @@
     [super viewDidLoad];
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
     self.selectedDate = [NSDate date];
+    
+    selectedHeightFootIndex = 4;
+    selectedHeightInchIndex = 8;
+    
+    selectedWeightWholeIndex = 113;
+    selectedWeightHalfIndex = 0;
 }
 
 - (void)dealloc {
@@ -120,6 +131,42 @@
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
+}
+
+- (IBAction)selectAHeight:(id)sender {
+    
+    [ActionSheetHeightPicker showPickerWithTitle:@"Select Height" initialFootSelection:selectedHeightFootIndex initialInchSelection:selectedHeightInchIndex doneBlock:^(ActionSheetHeightPicker *picker, NSInteger feetSelection, NSInteger inchSelection) {        
+
+        selectedHeightFootIndex = picker.selectedFootIndex;
+        selectedHeightInchIndex = picker.selectedInchIndex;
+        
+        NSString *formattedOutput = [NSString stringWithFormat:@"%d ft %d in", feetSelection, inchSelection];
+
+            if ([sender respondsToSelector:@selector(setText:)]) {
+                [sender performSelector:@selector(setText:) withObject:formattedOutput];
+            }
+        }                            cancelBlock:^(ActionSheetHeightPicker *picker) {
+        }                                 origin:sender];
+}
+
+- (IBAction)selectAWeight:(id)sender {
+    
+    [ActionSheetWeightPicker showPickerWithTitle:@"Select Weight" initialWholeUnitSelection:selectedWeightWholeIndex initialHalfUnitSelection:selectedWeightHalfIndex doneBlock:^(ActionSheetWeightPicker *picker, NSInteger wholeUnitSelection, NSInteger halfUnitSelection) {
+        
+        selectedWeightWholeIndex = picker.selectedWholeUnitIndex;
+        selectedWeightHalfIndex = picker.selectedHalfUnitIndex;
+        
+        float weight = wholeUnitSelection;
+        if(halfUnitSelection == 1) {
+            weight += 0.5f;
+        }
+        
+        NSString *formattedOutput = [NSString stringWithFormat:@"%.01f lbs", weight];
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:formattedOutput];
+        }
+    } cancelBlock:^(ActionSheetWeightPicker *picker) {
+    } origin:sender];
 }
 
 #pragma mark - Implementation

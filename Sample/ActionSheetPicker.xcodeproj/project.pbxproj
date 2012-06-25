@@ -23,6 +23,8 @@
 		37037557147B73F000B59AA2 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 37037556147B73EE00B59AA2 /* AbstractActionSheetPicker.m */; };
 		52CFA62313A4D6FA0022667F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CFA62213A4D6FA0022667F /* MainWindow-iPad.xib */; };
 		52FDE22813A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FDE22713A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib */; };
+		AF6F640E15936D6A00E57CA3 /* ActionSheetHeightPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F640D15936D6A00E57CA3 /* ActionSheetHeightPicker.m */; };
+		AFD20A26159605160089E12A /* ActionSheetWeightPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD20A25159605160089E12A /* ActionSheetWeightPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		52CFA62213A4D6FA0022667F /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		52FDE22713A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ActionSheetPickerViewController-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		AF6F640C15936D6A00E57CA3 /* ActionSheetHeightPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetHeightPicker.h; path = ../../Pickers/ActionSheetHeightPicker.h; sourceTree = "<group>"; };
+		AF6F640D15936D6A00E57CA3 /* ActionSheetHeightPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetHeightPicker.m; path = ../../Pickers/ActionSheetHeightPicker.m; sourceTree = "<group>"; };
+		AFD20A24159605160089E12A /* ActionSheetWeightPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; name = ActionSheetWeightPicker.h; path = ../../Pickers/ActionSheetWeightPicker.h; sourceTree = "<group>"; };
+		AFD20A25159605160089E12A /* ActionSheetWeightPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetWeightPicker.m; path = ../../Pickers/ActionSheetWeightPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		2237C393146FC07400C74831 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				AF6F640C15936D6A00E57CA3 /* ActionSheetHeightPicker.h */,
+				AF6F640D15936D6A00E57CA3 /* ActionSheetHeightPicker.m */,
 				37037555147B73EE00B59AA2 /* AbstractActionSheetPicker.h */,
 				37037556147B73EE00B59AA2 /* AbstractActionSheetPicker.m */,
 				37037551147B387900B59AA2 /* ActionSheetStringPicker.h */,
@@ -104,6 +112,8 @@
 				2237C38A146FBABC00C74831 /* ActionSheetDistancePicker.m */,
 				2237C390146FBC3000C74831 /* DistancePickerView.h */,
 				2237C391146FBC3000C74831 /* DistancePickerView.m */,
+				AFD20A24159605160089E12A /* ActionSheetWeightPicker.h */,
+				AFD20A25159605160089E12A /* ActionSheetWeightPicker.m */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 				2237C3971470D1F300C74831 /* NSDate+TCUtils.m in Sources */,
 				37037553147B387900B59AA2 /* ActionSheetStringPicker.m in Sources */,
 				37037557147B73F000B59AA2 /* AbstractActionSheetPicker.m in Sources */,
+				AF6F640E15936D6A00E57CA3 /* ActionSheetHeightPicker.m in Sources */,
+				AFD20A26159605160089E12A /* ActionSheetWeightPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
