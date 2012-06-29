@@ -249,9 +249,13 @@
 #pragma mark - Utilities and Accessors
 
 - (CGSize)viewSize {
-    if (![self isViewPortrait])
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return CGSizeMake(480, 480);
+    } else {
+        if (![self isViewPortrait])
+            return CGSizeMake(480, 320);
+        return CGSizeMake(320, 480);
+    }
 }
 
 - (BOOL)isViewPortrait {
@@ -275,12 +279,13 @@
 #pragma mark - Popovers and ActionSheets
 
 - (void)presentPickerForView:(UIView *)aView {
-    self.presentFromRect = aView.frame;
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.containerView) {
+        self.presentFromRect = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
         [self configureAndPresentPopoverForView:aView];
-    else
+    } else {
+        self.presentFromRect = aView.frame;
         [self configureAndPresentActionSheetForView:aView];
+    }
 }
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView {
