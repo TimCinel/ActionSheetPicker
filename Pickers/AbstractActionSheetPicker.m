@@ -279,7 +279,7 @@
 #pragma mark - Popovers and ActionSheets
 
 - (void)presentPickerForView:(UIView *)aView {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.containerView) {
         self.presentFromRect = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
         [self configureAndPresentPopoverForView:aView];
     } else {
