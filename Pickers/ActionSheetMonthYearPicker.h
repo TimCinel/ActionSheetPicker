@@ -1,5 +1,6 @@
 //
-//Copyright (c) 2011, Tim Cinel
+//Copyright (c) 2012, pyanfield@gmail.com
+//Extend Tim Cinel's ActionSheetPicker
 //All rights reserved.
 //
 //Redistribution and use in source and binary forms, with or without
@@ -25,29 +26,24 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/*
+ This class inherit the base class AbstractActionSheetPicker which created by Tim Cinel.
+ You can use this class to create a action picker that just display month and years. and you need to set the begin date and end date.
+ Then it will display data.
+ */
 
-#import <UIKit/UIKit.h>
+#import "AbstractActionSheetPicker.h"
 
-@class AbstractActionSheetPicker;
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+@interface ActionSheetMonthYearPicker : AbstractActionSheetPicker<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (nonatomic, retain) IBOutlet UITextField *animalTextField;
-@property (nonatomic, retain) IBOutlet UITextField *dateTextField;
+// the "start" is the start date that you want to display the begin data. you can set it like this : 2012.07 or 2012-07
+// the "end" is the end date that you want to display the begin data. you can set it like this : 2012.07 or 2012-07
++ (id)showPickerWithTitle:(NSString*)title start:(NSString*)start end:(NSString*)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin;
 
-@property (nonatomic, retain) NSArray *animals;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, retain) NSDate *selectedDate;
-@property (nonatomic, assign) NSInteger selectedBigUnit;
-@property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
+- (id)initWithTitle:(NSString*)title start:(NSString*)start end:(NSString*)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin;
 
-- (IBAction)selectABlock:(id)sender;
-- (IBAction)selectAnAnimal:(id)sender;
-- (IBAction)selectADate:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)selectAMeasurement:(id)sender;
-@property (retain, nonatomic) IBOutlet UITextField *myTextField;
-- (IBAction)selectedMonthYear:(id)sender;
+@property (nonatomic, retain) NSString *selectedData;
+@property (nonatomic, retain) NSString *selectedMonth;
+@property (nonatomic, retain) NSString *selectedYear;
 
 @end

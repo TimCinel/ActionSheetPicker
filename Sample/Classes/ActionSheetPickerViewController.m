@@ -34,9 +34,11 @@
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
+- (void)monthAndYearSelected:(NSString*)selectedDate;
 @end
 
 @implementation ActionSheetPickerViewController
+@synthesize myTextField = _myTextField;
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
@@ -58,6 +60,7 @@
     self.animals = nil;
     self.selectedDate = nil;
     self.actionSheetPicker = nil;
+    [_myTextField release];
     [super dealloc];
 }
 
@@ -67,6 +70,7 @@
     self.animalTextField = nil;
     self.dateTextField = nil;
     
+    [self setMyTextField:nil];
     [super viewDidUnload];
 }
 
@@ -154,5 +158,15 @@
     return NO;
 }
 
+
+- (IBAction)selectedMonthYear:(id)sender {
+    [ActionSheetMonthYearPicker showPickerWithTitle:@"MMYY" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+}
+
+- (void)monthAndYearSelected:(NSString*)selectedDate
+{
+    NSLog(@" >> Month and Years has selected %@",selectedDate);
+    _myTextField.text = selectedDate;
+}
 
 @end
