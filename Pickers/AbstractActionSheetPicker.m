@@ -44,6 +44,7 @@
 - (void)configureAndPresentActionSheetForView:(UIView *)aView;
 - (void)presentActionSheet:(UIActionSheet *)actionSheet;
 - (void)presentPopover:(UIPopoverController *)popover;
+- (void)hidePicker;
 - (void)dismissPicker;
 - (BOOL)isViewPortrait;
 - (BOOL)isValidOrigin:(id)origin;
@@ -90,6 +91,11 @@
         
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
+        
+        //Add autorotation notification observer
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didRotate:)
+                                                     name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     }
     return self;
 }
@@ -111,7 +117,20 @@
     self.barButtonItem = nil;
     self.target = nil;
     
+    //Remove rotation notification observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [super dealloc];
+}
+
+/**
+ Received rotation notification
+ @param NSNotification
+ @return    void
+ */
+- (void) didRotate:(NSNotification *)notification{
+    [self hidePicker];
+    [self showActionSheetPicker];
 }
 
 - (UIView *)configuredPickerView {
@@ -131,6 +150,7 @@
 #pragma mark - Actions
 
 - (void)showActionSheetPicker {
+    [self hidePicker];
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
     UIToolbar *pickerToolbar = [self createPickerToolbarWithTitle:self.title];
     [pickerToolbar setBarStyle:UIBarStyleBlackTranslucent];
@@ -152,15 +172,19 @@
     [self dismissPicker];
 }
 
+- (void)hidePicker{
+    #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
+        if (self.actionSheet)
+    #else
+        if (self.actionSheet && [self.actionSheet isVisible])
+    #endif
+            [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+        else if (self.popOverController && self.popOverController.popoverVisible)
+            [_popOverController dismissPopoverAnimated:YES];
+}
+
 - (void)dismissPicker {
-#if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-    if (self.actionSheet)
-#else
-    if (self.actionSheet && [self.actionSheet isVisible])
-#endif
-        [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-    else if (self.popOverController && self.popOverController.popoverVisible)
-        [_popOverController dismissPopoverAnimated:YES];
+    [self hidePicker];
     self.actionSheet = nil;
     self.popOverController = nil;
     self.selfReference = nil;
@@ -249,9 +273,13 @@
 #pragma mark - Utilities and Accessors
 
 - (CGSize)viewSize {
-    if (![self isViewPortrait])
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return CGSizeMake(480, 480);
+    } else {
+        if (![self isViewPortrait])
+            return CGSizeMake(480, 320);
+        return CGSizeMake(320, 480);
+    }
 }
 
 - (BOOL)isViewPortrait {
@@ -275,12 +303,13 @@
 #pragma mark - Popovers and ActionSheets
 
 - (void)presentPickerForView:(UIView *)aView {
-    self.presentFromRect = aView.frame;
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.containerView) {
+        self.presentFromRect = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
         [self configureAndPresentPopoverForView:aView];
-    else
+    } else {
+        self.presentFromRect = aView.frame;
         [self configureAndPresentActionSheetForView:aView];
+    }
 }
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView {
