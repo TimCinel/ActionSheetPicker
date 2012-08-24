@@ -103,10 +103,14 @@
 }
 
 - (IBAction)selectADate:(UIControl *)sender {
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
-    self.actionSheetPicker.hideCancel = YES;
+    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDateAndTime selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
+    [datePicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
+    [datePicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    datePicker.hideCancel = YES;
+	datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:-24*60*60]; // yesterday
+	datePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:24*60*60*7]; // in one week
+	datePicker.minuteInterval = 15;
+	self.actionSheetPicker = datePicker;
     [self.actionSheetPicker showActionSheetPicker];
 }
 
