@@ -70,6 +70,7 @@
 @synthesize customButtons = _customButtons;
 @synthesize hideCancel = _hideCancel;
 @synthesize presentFromRect = _presentFromRect;
+@synthesize customDoneButton = _customDoneButton;
 
 #pragma mark - Abstract Implementation
 
@@ -119,7 +120,7 @@
     return nil;
 }
 
-- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
+- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {
     NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
 }
 
@@ -131,7 +132,7 @@
 #pragma mark - Actions
 
 - (void)showActionSheetPicker {
-    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
+    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];
     UIToolbar *pickerToolbar = [self createPickerToolbarWithTitle:self.title];
     [pickerToolbar setBarStyle:UIBarStyleBlackTranslucent];
     [masterView addSubview:pickerToolbar];
@@ -143,7 +144,7 @@
 }
 
 - (IBAction)actionPickerDone:(id)sender {
-    [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:[self storedOrigin]];    
+    [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:[self storedOrigin]];
     [self dismissPicker];
 }
 
@@ -156,11 +157,11 @@
 #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     if (self.actionSheet)
 #else
-    if (self.actionSheet && [self.actionSheet isVisible])
+		if (self.actionSheet && [self.actionSheet isVisible])
 #endif
-        [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-    else if (self.popOverController && self.popOverController.popoverVisible)
-        [_popOverController dismissPopoverAnimated:YES];
+			[_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+		else if (self.popOverController && self.popOverController.popoverVisible)
+			[_popOverController dismissPopoverAnimated:YES];
     self.actionSheet = nil;
     self.popOverController = nil;
     self.selfReference = nil;
@@ -205,7 +206,7 @@
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons) {
         NSString *buttonTitle = [buttonDetails objectForKey:@"buttonTitle"];
-      //NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
+		//NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
         UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered target:self action:@selector(customButtonPressed:)];
         button.tag = index;
         [barItems addObject:button];
@@ -220,25 +221,35 @@
     [barItems addObject:flexSpace];
     if (title){
         UIBarButtonItem *labelButton = [self createToolbarLabelWithTitle:title];
-        [barItems addObject:labelButton];    
+        [barItems addObject:labelButton];
         [barItems addObject:flexSpace];
     }
-    UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
-    [barItems addObject:doneButton];
+    [barItems addObject:[self createDoneButton]];
     [pickerToolbar setItems:barItems animated:YES];
     [barItems release];
     return pickerToolbar;
 }
 
+- (UIBarButtonItem*) createDoneButton {
+	if (_customDoneButton) {
+		_customDoneButton.target = self;
+		_customDoneButton.action = @selector(actionPickerDone:);
+		return _customDoneButton;
+	}
+	else {
+		return [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
+	}
+}
+
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle {
     UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
-    [toolBarItemlabel setTextAlignment:UITextAlignmentCenter];    
-    [toolBarItemlabel setTextColor:[UIColor whiteColor]];    
-    [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];    
-    [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];    
-    toolBarItemlabel.text = aTitle;    
+    [toolBarItemlabel setTextAlignment:UITextAlignmentCenter];
+    [toolBarItemlabel setTextColor:[UIColor whiteColor]];
+    [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];
+    [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];
+    toolBarItemlabel.text = aTitle;
     UIBarButtonItem *buttonLabel = [[[UIBarButtonItem alloc]initWithCustomView:toolBarItemlabel] autorelease];
-    [toolBarItemlabel release];    
+    [toolBarItemlabel release];
     return buttonLabel;
 }
 
