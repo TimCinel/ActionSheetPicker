@@ -129,8 +129,8 @@
  @return    void
  */
 - (void) didRotate:(NSNotification *)notification{
-    [self hidePicker];
-    [self showActionSheetPicker];
+    if (self.popOverController.popoverVisible)
+        [self showActionSheetPicker];
 }
 
 - (UIView *)configuredPickerView {
