@@ -94,7 +94,7 @@
         if (text) {
             
             // set up the frame for the label using our longestString length
-            NSString *keyName = [NSString stringWithFormat:@"%@_%@", [NSString stringWithString:@"longestString"], [NSNumber numberWithInt:component]]; 
+            NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]]; 
             NSString *longestString = [labels objectForKey:keyName];
             CGRect frame;
             frame.size = [longestString sizeWithFont:labelfont];
