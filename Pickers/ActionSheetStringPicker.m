@@ -96,7 +96,8 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     if (self.onActionSheetDone) {
-        _onActionSheetDone(self, self.selectedIndex, [self.data objectAtIndex:self.selectedIndex]);
+        id selectedObject = (self.data.count > 0) ? [self.data objectAtIndex:self.selectedIndex] : nil;
+        _onActionSheetDone(self, self.selectedIndex, selectedObject);
         return;
     }
     else if (target && [target respondsToSelector:successAction]) {
