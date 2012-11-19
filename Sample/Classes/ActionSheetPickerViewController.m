@@ -29,6 +29,7 @@
 #import "ActionSheetPickerViewController.h"
 #import "ActionSheetPicker.h"
 #import "NSDate+TCUtils.h"
+#import "ActionSheetPickerCustomPickerDelegate.h"
 
 @interface ActionSheetPickerViewController()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
@@ -54,12 +55,6 @@
     self.selectedDate = [NSDate date];
 }
 
-- (void)dealloc {
-    self.animals = nil;
-    self.selectedDate = nil;
-    self.actionSheetPicker = nil;
-    [super dealloc];
-}
 
 - (void)viewDidUnload {
     self.actionSheetPicker = nil;
@@ -120,6 +115,12 @@
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
+}
+
+- (IBAction)selectAMusicalScale:(UIControl *)sender {
+    
+    ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
+    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender];
 }
 
 #pragma mark - Implementation

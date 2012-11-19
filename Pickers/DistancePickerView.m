@@ -94,7 +94,7 @@
         if (text) {
             
             // set up the frame for the label using our longestString length
-            NSString *keyName = [NSString stringWithFormat:@"%@_%@", [NSString stringWithString:@"longestString"], [NSNumber numberWithInt:component]]; 
+            NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]]; 
             NSString *longestString = [labels objectForKey:keyName];
             CGRect frame;
             frame.size = [longestString sizeWithFont:labelfont];
@@ -110,7 +110,7 @@
             BOOL addlabelView = NO;
             UILabel *label = (UILabel*)[self viewWithTag:component + 1];
             if(!label) {
-                label = [[[UILabel alloc] initWithFrame:frame] autorelease];
+                label = [[UILabel alloc] initWithFrame:frame];
                 addlabelView = YES;
             }
             
@@ -151,10 +151,6 @@
     
 }
 
-- (void)dealloc {
-    [labels release];
-    [super dealloc];
-}
 
 
 @end

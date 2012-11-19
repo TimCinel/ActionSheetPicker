@@ -27,19 +27,20 @@
 
 
 #import <UIKit/UIKit.h>
+#import "ActionSheetPicker.h"
 
 @class AbstractActionSheetPicker;
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, retain) IBOutlet UITextField *animalTextField;
-@property (nonatomic, retain) IBOutlet UITextField *dateTextField;
+@property (nonatomic, strong) IBOutlet UITextField *animalTextField;
+@property (nonatomic, strong) IBOutlet UITextField *dateTextField;
 
-@property (nonatomic, retain) NSArray *animals;
+@property (nonatomic, strong) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, retain) NSDate *selectedDate;
+@property (nonatomic, strong) NSDate *selectedDate;
 @property (nonatomic, assign) NSInteger selectedBigUnit;
 @property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
+@property (nonatomic, strong) AbstractActionSheetPicker *actionSheetPicker;
 
 - (IBAction)selectABlock:(id)sender;
 - (IBAction)selectAnAnimal:(id)sender;
@@ -47,5 +48,6 @@
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
+- (IBAction)selectAMusicalScale:(UIControl *)sender;
 
 @end
