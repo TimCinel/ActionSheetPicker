@@ -148,7 +148,13 @@
     }
     self.actionSheet = nil;
     self.popOverController = nil;
-    self.selfReference = nil;
+
+    //Destory self after the actionsheet dismiss animation, so the picker will still have it's data on screen during the "dismissing animation".
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.selfReference = nil;
+    });
 }
 
 #pragma mark - Custom Buttons
