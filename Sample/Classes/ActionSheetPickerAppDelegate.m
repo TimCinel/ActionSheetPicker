@@ -101,7 +101,6 @@
 - (void)dealloc {
     self.viewController = nil;
     self.window = nil;
-    [super dealloc];
 }
 
 

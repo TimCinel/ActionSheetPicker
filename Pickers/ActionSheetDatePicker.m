@@ -30,20 +30,18 @@
 #import <objc/message.h>
 
 @interface ActionSheetDatePicker()
-@property (nonatomic, assign) UIDatePickerMode datePickerMode;
-@property (nonatomic, retain) NSDate *selectedDate;
+@property (nonatomic)         UIDatePickerMode datePickerMode;
+@property (nonatomic, strong) NSDate           *selectedDate;
 @end
 
 @implementation ActionSheetDatePicker
-@synthesize selectedDate = _selectedDate;
-@synthesize datePickerMode = _datePickerMode;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
                  target:(id)target action:(SEL)action origin:(id)origin {
     ActionSheetDatePicker *picker = [[ActionSheetDatePicker alloc] initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin];
     [picker showActionSheetPicker];
-    return [picker autorelease];
+    return picker;
 }
 
 - (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin {
@@ -58,12 +56,11 @@
 
 - (void)dealloc {
     self.selectedDate = nil;
-    [super dealloc];
 }
 
 - (UIView *)configuredPickerView {
     CGRect datePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
-    UIDatePicker *datePicker = [[[UIDatePicker alloc] initWithFrame:datePickerFrame] autorelease];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:datePickerFrame];
     datePicker.datePickerMode = self.datePickerMode;
     [datePicker setDate:self.selectedDate animated:NO];
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
