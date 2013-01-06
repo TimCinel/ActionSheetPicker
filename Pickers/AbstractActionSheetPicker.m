@@ -45,6 +45,7 @@
 - (void)presentActionSheet:(UIActionSheet *)actionSheet;
 - (void)presentPopover:(UIPopoverController *)popover;
 - (void)dismissPicker;
++ (BOOL)hasFourInchScreen; // taken from: http://stackoverflow.com/a/12502356/347339
 - (BOOL)isViewPortrait;
 - (BOOL)isValidOrigin:(id)origin;
 - (id)storedOrigin;
@@ -119,7 +120,7 @@
     return nil;
 }
 
-- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
+- (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {
     NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
 }
 
@@ -131,7 +132,7 @@
 #pragma mark - Actions
 
 - (void)showActionSheetPicker {
-    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
+    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];
     UIToolbar *pickerToolbar = [self createPickerToolbarWithTitle:self.title];
     [pickerToolbar setBarStyle:UIBarStyleBlackTranslucent];
     [masterView addSubview:pickerToolbar];
@@ -143,7 +144,7 @@
 }
 
 - (IBAction)actionPickerDone:(id)sender {
-    [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:[self storedOrigin]];    
+    [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:[self storedOrigin]];
     [self dismissPicker];
 }
 
@@ -156,11 +157,11 @@
 #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     if (self.actionSheet)
 #else
-    if (self.actionSheet && [self.actionSheet isVisible])
+        if (self.actionSheet && [self.actionSheet isVisible])
 #endif
-        [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-    else if (self.popOverController && self.popOverController.popoverVisible)
-        [_popOverController dismissPopoverAnimated:YES];
+            [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+        else if (self.popOverController && self.popOverController.popoverVisible)
+            [_popOverController dismissPopoverAnimated:YES];
     self.actionSheet = nil;
     self.popOverController = nil;
     self.selfReference = nil;
@@ -205,7 +206,7 @@
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons) {
         NSString *buttonTitle = [buttonDetails objectForKey:@"buttonTitle"];
-      //NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
+        //NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
         UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered target:self action:@selector(customButtonPressed:)];
         button.tag = index;
         [barItems addObject:button];
@@ -220,7 +221,7 @@
     [barItems addObject:flexSpace];
     if (title){
         UIBarButtonItem *labelButton = [self createToolbarLabelWithTitle:title];
-        [barItems addObject:labelButton];    
+        [barItems addObject:labelButton];
         [barItems addObject:flexSpace];
     }
     UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
@@ -232,13 +233,13 @@
 
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle {
     UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
-    [toolBarItemlabel setTextAlignment:UITextAlignmentCenter];    
-    [toolBarItemlabel setTextColor:[UIColor whiteColor]];    
-    [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];    
-    [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];    
-    toolBarItemlabel.text = aTitle;    
+    [toolBarItemlabel setTextAlignment:UITextAlignmentCenter];
+    [toolBarItemlabel setTextColor:[UIColor whiteColor]];
+    [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];
+    [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];
+    toolBarItemlabel.text = aTitle;
     UIBarButtonItem *buttonLabel = [[[UIBarButtonItem alloc]initWithCustomView:toolBarItemlabel] autorelease];
-    [toolBarItemlabel release];    
+    [toolBarItemlabel release];
     return buttonLabel;
 }
 
@@ -248,10 +249,25 @@
 
 #pragma mark - Utilities and Accessors
 
+// taken from: http://stackoverflow.com/a/12502356/347339
++ (BOOL)hasFourInchScreen {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        CGSize result = [[UIScreen mainScreen] bounds].size;
+        if (result.height == 480) {
+            // iPhone Classic
+        } if (result.height == 568) {
+            // iPhone 5
+            return YES;
+        }
+    }
+    return NO;
+}
+
 - (CGSize)viewSize {
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     if (![self isViewPortrait])
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
+        return CGSizeMake(screenSize.height, screenSize.width);
+    return CGSizeMake(screenSize.width, screenSize.height);
 }
 
 - (BOOL)isViewPortrait {
@@ -288,13 +304,25 @@
     CGFloat sheetHeight = self.viewSize.height - 47;
     if ([self isViewPortrait]) {
         paddedSheetTitle = @"\n\n\n"; // looks hacky to me
+        
+        if ([AbstractActionSheetPicker hasFourInchScreen]) {
+            // iPhone 5
+            sheetHeight = self.viewSize.width + 110;
+        }
     } else {
         NSString *reqSysVer = @"5.0";
         NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
         if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending) {
-            sheetHeight = self.viewSize.width;
+            // 5.0+
+            sheetHeight = self.viewSize.width - 97;
         } else {
+            // pre-5.0
             sheetHeight += 103;
+        }
+        
+        if ([AbstractActionSheetPicker hasFourInchScreen]) {
+            // iPhone 5
+            sheetHeight = self.viewSize.width - 185;
         }
     }
     _actionSheet = [[UIActionSheet alloc] initWithTitle:paddedSheetTitle delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
