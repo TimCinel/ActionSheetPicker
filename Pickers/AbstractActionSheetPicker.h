@@ -35,7 +35,7 @@
 @property (nonatomic, retain) NSMutableArray *customButtons;
 @property (nonatomic, assign) BOOL hideCancel;
 @property (nonatomic, assign) CGRect presentFromRect;
-@property (nonatomic, retain) NSMutableArray *pickers;
+//@property (nonatomic, retain) NSMutableArray *pickers;
 
     // For subclasses.
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
@@ -57,6 +57,5 @@
 
     //For subclasses. This responds to a custom button being pressed.
 - (IBAction)customButtonPressed:(id)sender;
-    //For subclasses. This is for Mutiple Pickers on the action sheet. e.g ActionSheetMonthYearPicker
-- (NSMutableArray*)configurePickers;
+
 @end

@@ -70,7 +70,7 @@
 @synthesize customButtons = _customButtons;
 @synthesize hideCancel = _hideCancel;
 @synthesize presentFromRect = _presentFromRect;
-@synthesize pickers = _pickers;
+//@synthesize pickers = _pickers;
 
 #pragma mark - Abstract Implementation
 
@@ -111,20 +111,12 @@
     self.containerView = nil;
     self.barButtonItem = nil;
     self.target = nil;
-    [_pickers release];
-    _pickers = nil;
     
     [super dealloc];
 }
 
 - (UIView *)configuredPickerView {
     NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetStringPicker)");
-    return nil;
-}
-
-- (NSMutableArray*)configurePickers
-{
-    NSAssert(NO, @"This is an abstract class, you must use a subclass of AbstractActionSheetPicker (like ActionSheetMonthYearPicker)");
     return nil;
 }
 
@@ -144,21 +136,11 @@
     UIToolbar *pickerToolbar = [self createPickerToolbarWithTitle:self.title];
     [pickerToolbar setBarStyle:UIBarStyleBlackTranslucent];
     [masterView addSubview:pickerToolbar];
-    if (!self.pickers) {
-        self.pickerView = [self configuredPickerView];
-        NSAssert(_pickerView != NULL, @"Picker view failed to instantiate, perhaps you have invalid component data.");
-        [masterView addSubview:_pickerView];
-        [self presentPickerForView:masterView];
-        [masterView release];
-    }else {
-        self.pickers = [self configurePickers];
-        for (UIView* p in self.pickers) {
-            [masterView addSubview:p];
-        }
-        [self presentPickerForView:masterView];
-        [masterView release];
-    }
-    
+    self.pickerView = [self configuredPickerView];
+    NSAssert(_pickerView != NULL, @"Picker view failed to instantiate, perhaps you have invalid component data.");
+    [masterView addSubview:_pickerView];
+    [self presentPickerForView:masterView];
+    [masterView release]; 
 }
 
 - (IBAction)actionPickerDone:(id)sender {

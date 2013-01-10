@@ -160,7 +160,10 @@
 
 
 - (IBAction)selectedMonthYear:(id)sender {
-    [ActionSheetMonthYearPicker showPickerWithTitle:@"MMYY" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+//    [ActionSheetMonthYearPicker showPickerWithTitle:@"MMYY" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+    ActionSheetMonthYearPicker *actionSheet = [[ActionSheetMonthYearPicker alloc] initWithTitle:@"Expire" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+    [actionSheet showActionSheetPicker];
+    [actionSheet release];
 }
 
 - (void)monthAndYearSelected:(NSString*)selectedDate

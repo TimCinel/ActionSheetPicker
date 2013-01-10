@@ -28,18 +28,23 @@
 
 #import "ActionSheetMonthYearPicker.h"
 
+#define YEAR_COMPONENT 0
+#define MONTH_COMPONENT 1
+#define AVAILABLE @"avaiblable"
+#define UNAVAILABLE @"canNotSelected"
+#define AVAILABLE_COLOR [UIColor blueColor]
+#define UNAVAILABLE_COLOR [UIColor lightGrayColor]
+
 @interface ActionSheetMonthYearPicker()
 
 @property (nonatomic, retain) NSString *startDate;
 @property (nonatomic, retain) NSString *endDate;
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) NSMutableArray *years;
-@property (nonatomic, retain) UIPickerView *yearPicker;
-@property (nonatomic, retain) UIPickerView *monthPicker;
+@property (nonatomic, retain) NSArray *months;
 @property (nonatomic, retain) NSString *separator;
 
 - (void)parseData;
-- (NSMutableArray*)numbersArrFrom:(int)small toEnd:(int)big;
 
 @end
 
@@ -49,8 +54,7 @@
 @synthesize endDate = _endDate;
 @synthesize data = _data;
 @synthesize years = _years;
-@synthesize yearPicker = _yearPicker;
-@synthesize monthPicker = _monthPicker;
+@synthesize months = _months;
 @synthesize selectedData = _selectedData;
 @synthesize selectedYear = _selectedYear;
 @synthesize selectedMonth = _selectedMonth;
@@ -71,11 +75,8 @@
         _startDate = start;
         _endDate = end;
         _data = [[NSMutableArray alloc] init];
-        self.pickers = [[NSMutableArray alloc] init];
         [self parseData];
-        self.selectedMonth = [[self.data objectAtIndex:0] objectAtIndex:0];
-        self.selectedYear = [self.years objectAtIndex:0];
-        self.selectedData = [NSString stringWithFormat:@"%@.%@",self.selectedYear,self.selectedMonth];    }
+    }
     return self;
 }
 
@@ -85,10 +86,6 @@
     _data = nil;
     [_years release];
     _years = nil;
-    [_yearPicker release];
-    _yearPicker = nil;
-    [_monthPicker release];
-    _monthPicker = nil;
     [_selectedData release];
     _selectedData = nil;
     [super dealloc];
@@ -97,30 +94,39 @@
 - (void)parseData
 {
     // date string e.g 2012/09 or 2012.09
+//    Logger(@"From   %@     --    %@",self.startDate,self.endDate);
     NSString *startYear = [self.startDate substringToIndex:4];
     NSString *endYear = [self.endDate substringToIndex:4];
     NSString *startMonth = [self.startDate substringFromIndex:5];
     NSString *endMonth = [self.endDate substringFromIndex:5];
+    
     self.separator = [self.startDate substringWithRange:NSMakeRange(4, 1)];
     if (([startYear isEqualToString:endYear] && [startMonth intValue] >= [endMonth intValue]) || ([startYear intValue] > [endYear intValue])) {
         NSAssert(NO,@"Invalid start date and end date.");
     }
-    self.years = [self numbersArrFrom:[startYear intValue] toEnd:[endYear intValue]];
+    self.years = [self yearsFrom:[startYear intValue] toEnd:[endYear intValue]];
+    self.months = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
+    
+    // set the default selected value
+    self.selectedMonth = self.months[[startMonth intValue]-1];
+    self.selectedYear = [self.years objectAtIndex:0];
+    self.selectedData = [NSString stringWithFormat:@"%@.%@",self.selectedYear,self.selectedMonth];
+    
     if ([self.years count] == 1) {
-        [self.data addObject:[self numbersArrFrom:[startMonth intValue] toEnd:[endMonth intValue]]];
+        [self.data addObject:[self monthFlagsFrom:[startMonth intValue] toEnd:[endMonth intValue]]];
         return;
     }
     if ([self.years count] > 1) {
-        [self.data addObject:[self numbersArrFrom:[startMonth intValue] toEnd:12]];
+        [self.data addObject:[self monthFlagsFrom:[startMonth intValue] toEnd:12]];
         for (int i=1; i<[endYear intValue]-[startYear intValue]; i++) {
-            [self.data addObject:[self numbersArrFrom:1 toEnd:12]];
+            [self.data addObject:[self monthFlagsFrom:1 toEnd:12]];
         }
-        [self.data addObject:[self numbersArrFrom:1 toEnd:[endMonth intValue]]];
+        [self.data addObject:[self monthFlagsFrom:1 toEnd:[endMonth intValue]]];
         return;
     }
 }
 
-- (NSMutableArray*)numbersArrFrom:(int)small toEnd:(int)big
+- (NSMutableArray*)yearsFrom:(int)small toEnd:(int)big
 {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     for (int i=small; i<=big; i++) {
@@ -129,28 +135,37 @@
     return [arr autorelease];
 }
 
-- (NSMutableArray*)configurePickers
+- (NSMutableArray*)monthFlagsFrom:(int)small toEnd:(int)big
 {
-    if (!self.data) {
-        return nil;
-    }
     NSMutableArray *arr = [[NSMutableArray alloc] init];
-    CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width*0.6, 216);
-    self.yearPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
-    self.yearPicker.delegate = self;
-    self.yearPicker.dataSource = self;
-    self.yearPicker.showsSelectionIndicator = YES;
-    [arr addObject:self.yearPicker];
-    //self.pickerView = yearPicker;
     
-    CGRect mFrame = CGRectMake(self.viewSize.width*0.6, 40, self.viewSize.width*0.4, 216);
-    self.monthPicker = [[UIPickerView alloc] initWithFrame:mFrame];
-    self.monthPicker .delegate = self;
-    self.monthPicker .dataSource = self;
-    self.monthPicker .showsSelectionIndicator = YES;
-    [arr addObject:self.monthPicker ];
+    for (int i=1; i<= 12; i++) {
+        if (i < small || i > big) {
+            [arr addObject:UNAVAILABLE];
+        }else{
+            [arr addObject:AVAILABLE];
+        }
+    }
     
+    // save the flag AVAILABLE 's start and end index
+    [arr addObject:[NSNumber numberWithInt:(small-1)]];
+    [arr addObject:[NSNumber numberWithInt:(big-1)]];
     return [arr autorelease];
+}
+
+
+- (UIView *)configuredPickerView {
+    if (!self.data)
+        return nil;
+    CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
+    UIPickerView *yearPicker = [[[UIPickerView alloc] initWithFrame:pickerFrame] autorelease];
+    yearPicker.delegate = self;
+    yearPicker.dataSource = self;
+    yearPicker.showsSelectionIndicator = YES;
+    self.pickerView = yearPicker;
+    [yearPicker selectRow:0 inComponent:YEAR_COMPONENT animated:YES];
+    [yearPicker selectRow:([[self.startDate substringFromIndex:5] intValue]-1) inComponent:MONTH_COMPONENT animated:YES];
+    return yearPicker;
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin
@@ -162,44 +177,78 @@
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)successAction);
 }
 
+-(UILabel *)componentLabel
+{
+    CGRect frame = CGRectMake(0.f, 0.f,self.pickerView.bounds.size.width/2,43);
+    UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = AVAILABLE_COLOR;
+    label.font = [UIFont boldSystemFontOfSize:17];
+    label.userInteractionEnabled = NO;
+    return label;
+}
+
 #pragma mark - 
 #pragma UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if ([pickerView isEqual:self.yearPicker]) {
+    if (component == YEAR_COMPONENT) {
         return [self.years count];
-    }else {
-        return [[self.data objectAtIndex:[self.yearPicker selectedRowInComponent:0]] count];
-    };
+    }
+    return 12;
 }
 
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    if ([pickerView isEqual:self.yearPicker]) {
-        return [self.years objectAtIndex:row];
-    }else {
-        return [[self.data objectAtIndex:[self.yearPicker selectedRowInComponent:0]] objectAtIndex:row];
-    }
-}
 
 #pragma mark -
 #pragma mark UIPickerViewDelegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if ([pickerView isEqual:self.yearPicker]) {
-        [self.monthPicker reloadAllComponents];
+    [pickerView reloadComponent:MONTH_COMPONENT];
+    
+    int monthCurrentIndex = [pickerView selectedRowInComponent:MONTH_COMPONENT];
+    NSMutableArray *currentMonthFlags = [self.data objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]];
+    int small = [[currentMonthFlags objectAtIndex:12] intValue];
+    int big = [[currentMonthFlags objectAtIndex:13] intValue];
+    if (monthCurrentIndex < small) {
+        [pickerView selectRow:small inComponent:MONTH_COMPONENT animated:YES];
+    }else if (monthCurrentIndex > big){
+        [pickerView selectRow:big inComponent:MONTH_COMPONENT animated:YES];
     }
-    //NSLog(@"%@.%@",[self.years objectAtIndex:[self.yearPicker selectedRowInComponent:0]],[[self.data objectAtIndex:[self.yearPicker selectedRowInComponent:0]] objectAtIndex:[self.monthPicker selectedRowInComponent:0]]);
-    self.selectedMonth = [[self.data objectAtIndex:[self.yearPicker selectedRowInComponent:0]] objectAtIndex:[self.monthPicker selectedRowInComponent:0]];
-    self.selectedYear = [self.years objectAtIndex:[self.yearPicker selectedRowInComponent:0]];
+    
+    self.selectedMonth = self.months[[pickerView selectedRowInComponent:MONTH_COMPONENT]];
+    self.selectedYear = [self.years objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]];
     self.selectedData = [NSString stringWithFormat:@"%@%@%@",self.selectedYear,self.separator,self.selectedMonth];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *componentView = nil;
+    if(view){
+        componentView = (UILabel *)view;
+    }else{
+        componentView = [self componentLabel];
+    }
+    
+    if (component == YEAR_COMPONENT) {
+        componentView.text = [self.years objectAtIndex:row];
+        return componentView;
+    }else{
+        if ([[self.data objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]] objectAtIndex:row] == UNAVAILABLE) {
+            componentView.textColor = UNAVAILABLE_COLOR;
+        }else{
+            componentView.textColor = AVAILABLE_COLOR;
+        }
+        componentView.text = self.months[row];
+        return componentView;
+    }
 }
 
 @end
