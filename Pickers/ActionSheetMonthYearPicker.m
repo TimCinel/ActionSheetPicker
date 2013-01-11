@@ -30,8 +30,6 @@
 
 #define YEAR_COMPONENT 0
 #define MONTH_COMPONENT 1
-#define AVAILABLE @"avaiblable"
-#define UNAVAILABLE @"canNotSelected"
 #define AVAILABLE_COLOR [UIColor blueColor]
 #define UNAVAILABLE_COLOR [UIColor lightGrayColor]
 
@@ -43,6 +41,10 @@
 @property (nonatomic, retain) NSMutableArray *years;
 @property (nonatomic, retain) NSArray *months;
 @property (nonatomic, retain) NSString *separator;
+@property (nonatomic) int startYearNum;
+@property (nonatomic) int endYearNum;
+@property (nonatomic) int startMontheNum;
+@property (nonatomic) int endMonthNum;
 
 - (void)parseData;
 
@@ -59,6 +61,7 @@
 @synthesize selectedYear = _selectedYear;
 @synthesize selectedMonth = _selectedMonth;
 @synthesize separator = _separator;
+@synthesize startMontheNum = _startMontheNum,startYearNum = _startYearNum, endMonthNum = _endMonthNum, endYearNum = _endYearNum;
 
 + (id)showPickerWithTitle:(NSString *)title start:(NSString *)start end:(NSString *)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin
 {
@@ -94,36 +97,22 @@
 - (void)parseData
 {
     // date string e.g 2012/09 or 2012.09
-//    Logger(@"From   %@     --    %@",self.startDate,self.endDate);
-    NSString *startYear = [self.startDate substringToIndex:4];
-    NSString *endYear = [self.endDate substringToIndex:4];
-    NSString *startMonth = [self.startDate substringFromIndex:5];
-    NSString *endMonth = [self.endDate substringFromIndex:5];
+    _startYearNum = [[self.startDate substringToIndex:4] intValue];
+    _startMontheNum = [[self.startDate substringFromIndex:5] intValue];
+    _endYearNum = [[self.endDate substringToIndex:4] intValue];
+    _endMonthNum = [[self.endDate substringFromIndex:5] intValue];
     
     self.separator = [self.startDate substringWithRange:NSMakeRange(4, 1)];
-    if (([startYear isEqualToString:endYear] && [startMonth intValue] >= [endMonth intValue]) || ([startYear intValue] > [endYear intValue])) {
+    if ((_startYearNum == _endYearNum && _startMontheNum >= _endMonthNum) || (_startYearNum > _endYearNum)) {
         NSAssert(NO,@"Invalid start date and end date.");
     }
-    self.years = [self yearsFrom:[startYear intValue] toEnd:[endYear intValue]];
+    self.years = [self yearsFrom:_startYearNum toEnd:_endYearNum];
     self.months = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
     
     // set the default selected value
-    self.selectedMonth = self.months[[startMonth intValue]-1];
+    self.selectedMonth = self.months[_startMontheNum-1];
     self.selectedYear = [self.years objectAtIndex:0];
     self.selectedData = [NSString stringWithFormat:@"%@.%@",self.selectedYear,self.selectedMonth];
-    
-    if ([self.years count] == 1) {
-        [self.data addObject:[self monthFlagsFrom:[startMonth intValue] toEnd:[endMonth intValue]]];
-        return;
-    }
-    if ([self.years count] > 1) {
-        [self.data addObject:[self monthFlagsFrom:[startMonth intValue] toEnd:12]];
-        for (int i=1; i<[endYear intValue]-[startYear intValue]; i++) {
-            [self.data addObject:[self monthFlagsFrom:1 toEnd:12]];
-        }
-        [self.data addObject:[self monthFlagsFrom:1 toEnd:[endMonth intValue]]];
-        return;
-    }
 }
 
 - (NSMutableArray*)yearsFrom:(int)small toEnd:(int)big
@@ -135,25 +124,6 @@
     return [arr autorelease];
 }
 
-- (NSMutableArray*)monthFlagsFrom:(int)small toEnd:(int)big
-{
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    
-    for (int i=1; i<= 12; i++) {
-        if (i < small || i > big) {
-            [arr addObject:UNAVAILABLE];
-        }else{
-            [arr addObject:AVAILABLE];
-        }
-    }
-    
-    // save the flag AVAILABLE 's start and end index
-    [arr addObject:[NSNumber numberWithInt:(small-1)]];
-    [arr addObject:[NSNumber numberWithInt:(big-1)]];
-    return [arr autorelease];
-}
-
-
 - (UIView *)configuredPickerView {
     if (!self.data)
         return nil;
@@ -163,8 +133,11 @@
     yearPicker.dataSource = self;
     yearPicker.showsSelectionIndicator = YES;
     self.pickerView = yearPicker;
+    
+    // set the year and month default value to init picker view
     [yearPicker selectRow:0 inComponent:YEAR_COMPONENT animated:YES];
-    [yearPicker selectRow:([[self.startDate substringFromIndex:5] intValue]-1) inComponent:MONTH_COMPONENT animated:YES];
+    [yearPicker selectRow:(_startMontheNum-1) inComponent:MONTH_COMPONENT animated:YES];
+    
     return yearPicker;
 }
 
@@ -214,13 +187,11 @@
     [pickerView reloadComponent:MONTH_COMPONENT];
     
     int monthCurrentIndex = [pickerView selectedRowInComponent:MONTH_COMPONENT];
-    NSMutableArray *currentMonthFlags = [self.data objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]];
-    int small = [[currentMonthFlags objectAtIndex:12] intValue];
-    int big = [[currentMonthFlags objectAtIndex:13] intValue];
-    if (monthCurrentIndex < small) {
-        [pickerView selectRow:small inComponent:MONTH_COMPONENT animated:YES];
-    }else if (monthCurrentIndex > big){
-        [pickerView selectRow:big inComponent:MONTH_COMPONENT animated:YES];
+    self.selectedYear = [self.years objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]];
+    if ([self.selectedYear intValue] == self.startYearNum && monthCurrentIndex < self.startMontheNum-1) {
+        [pickerView selectRow:(self.startMontheNum-1) inComponent:MONTH_COMPONENT animated:YES];
+    }else if ([self.selectedYear intValue] == self.endYearNum && monthCurrentIndex > self.endMonthNum-1){
+        [pickerView selectRow:(self.endMonthNum-1) inComponent:MONTH_COMPONENT animated:YES];
     }
     
     self.selectedMonth = self.months[[pickerView selectedRowInComponent:MONTH_COMPONENT]];
@@ -241,11 +212,19 @@
         componentView.text = [self.years objectAtIndex:row];
         return componentView;
     }else{
-        if ([[self.data objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]] objectAtIndex:row] == UNAVAILABLE) {
-            componentView.textColor = UNAVAILABLE_COLOR;
+        if ([pickerView selectedRowInComponent:YEAR_COMPONENT] != -1) {
+            self.selectedYear = [self.years objectAtIndex:[pickerView selectedRowInComponent:YEAR_COMPONENT]];
+        }
+        if ([self.selectedYear intValue] == self.startYearNum || [self.selectedYear intValue] == self.endYearNum) {
+            if (([self.selectedYear intValue] == self.startYearNum && row < self.startMontheNum-1) || ([self.selectedYear intValue] == self.endYearNum && row > self.endMonthNum-1)) {
+                componentView.textColor = UNAVAILABLE_COLOR;
+            }else{
+                componentView.textColor = AVAILABLE_COLOR;
+            }
         }else{
             componentView.textColor = AVAILABLE_COLOR;
         }
+        
         componentView.text = self.months[row];
         return componentView;
     }
