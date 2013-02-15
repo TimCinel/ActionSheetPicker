@@ -28,7 +28,7 @@
 #import "AbstractActionSheetPicker.h"
 #import <objc/message.h>
 
-@interface AbstractActionSheetPicker()
+@interface AbstractActionSheetPicker() <UIPopoverControllerDelegate>
 
 @property (nonatomic, retain) UIBarButtonItem *barButtonItem;
 @property (nonatomic, retain) UIView *containerView;
@@ -275,7 +275,9 @@
 #pragma mark - Popovers and ActionSheets
 
 - (void)presentPickerForView:(UIView *)aView {
-    self.presentFromRect = aView.frame;
+    if (CGRectIsEmpty(self.presentFromRect)) {
+        self.presentFromRect = aView.frame;
+    }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [self configureAndPresentPopoverForView:aView];
@@ -319,6 +321,7 @@
     viewController.view = aView;
     viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController.delegate = self;
     [self presentPopover:_popOverController];
     [viewController release];
 }
@@ -346,6 +349,12 @@
         presentRect = CGRectMake(origin.center.x, origin.center.y, 1, 1);
         [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
+}
+
+#pragma mark - UIPopoverController delegate methods
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [self actionPickerCancel:nil];
 }
 
 @end
