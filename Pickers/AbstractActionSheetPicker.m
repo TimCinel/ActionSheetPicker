@@ -70,7 +70,7 @@
 @synthesize customButtons = _customButtons;
 @synthesize hideCancel = _hideCancel;
 @synthesize presentFromRect = _presentFromRect;
-//@synthesize pickers = _pickers;
+@synthesize onActionSheetCustomButton = _onActionSheetCustomButton;
 
 #pragma mark - Abstract Implementation
 
@@ -111,6 +111,8 @@
     self.containerView = nil;
     self.barButtonItem = nil;
     self.target = nil;
+    
+    Block_release(_onActionSheetCustomButton);
     
     [super dealloc];
 }
@@ -169,6 +171,19 @@
 
 #pragma mark - Custom Buttons
 
+- (void)addCustomButtonWithTitle:(NSString *)title actionBlock:(ActionSheetCustomButtonBlock)block
+{
+    if (!self.customButtons)
+        _customButtons = [[NSMutableArray alloc] init];
+    if (!title)
+        title = @"";
+    self.onActionSheetCustomButton = block;
+    
+    NSDictionary *buttonDetails = [[NSDictionary alloc] initWithObjectsAndKeys:title, @"buttonTitle", self.onActionSheetCustomButton, @"buttonBlock", nil];
+    [self.customButtons addObject:buttonDetails];
+    [buttonDetails release];
+}
+
 - (void)addCustomButtonWithTitle:(NSString *)title value:(id)value {
     if (!self.customButtons)
         _customButtons = [[NSMutableArray alloc] init];
@@ -188,13 +203,18 @@
     NSAssert([self.pickerView respondsToSelector:@selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
     NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
-    UIPickerView *picker = (UIPickerView *)self.pickerView;
-    NSAssert(picker != NULL, @"PickerView is invalid");
-    [picker selectRow:buttonValue inComponent:0 animated:YES];
-    if ([self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
-        void (*objc_msgSendTyped)(id self, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
-        objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
+    if ([buttonDetails objectForKey:@"buttonValue"] == nil) {
+        ActionSheetCustomButtonBlock block = [buttonDetails objectForKey:@"buttonBlock"];
+        block();
+    }else{
+        NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
+        UIPickerView *picker = (UIPickerView *)self.pickerView;
+        NSAssert(picker != NULL, @"PickerView is invalid");
+        [picker selectRow:buttonValue inComponent:0 animated:YES];
+        if ([self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
+            void (*objc_msgSendTyped)(id self, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
+            objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
+        }
     }
 }
 
@@ -347,6 +367,17 @@
         presentRect = CGRectMake(origin.center.x, origin.center.y, 1, 1);
         [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
+}
+
+#pragma mark - Block setter
+
+- (void)setOnActionSheetCustomButton:(ActionSheetCustomButtonBlock)onActionSheetCustomButton
+{
+    if (_onActionSheetCustomButton) {
+        Block_release(_onActionSheetCustomButton);
+        _onActionSheetCustomButton = nil;
+    }
+    _onActionSheetCustomButton = Block_copy(onActionSheetCustomButton);
 }
 
 @end

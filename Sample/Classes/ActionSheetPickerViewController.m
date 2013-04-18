@@ -93,7 +93,11 @@
         NSLog(@"Block Picker Canceled");
     };
     NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
-    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    self.actionSheetPicker =  [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Test" actionBlock:^{
+        NSLog(@"Test the block");
+    }];
+    [self.actionSheetPicker showActionSheetPicker];
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {
@@ -111,7 +115,10 @@
 - (IBAction)selectADate:(UIControl *)sender {
     _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+//    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+        NSLog(@">>> block");
+    }];
     self.actionSheetPicker.hideCancel = YES;
     [self.actionSheetPicker showActionSheetPicker];
 }

@@ -101,7 +101,6 @@
         self.onActionSheetDone(self, self.selectedDate, origin);
         return;
     }
-        
     NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
 }
 
@@ -118,10 +117,15 @@
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);    
     NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
     NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
-    NSDate *itemValue = [buttonDetails objectForKey:@"buttonValue"];
-    UIDatePicker *picker = (UIDatePicker *)self.pickerView;    
-    [picker setDate:itemValue animated:YES];
-    [self eventForDatePicker:picker];
+    if ([buttonDetails objectForKey:@"buttonValue"] == nil) {
+        ActionSheetCustomButtonBlock block = [buttonDetails objectForKey:@"buttonBlock"];
+        block();
+    }else{
+        NSDate *itemValue = [buttonDetails objectForKey:@"buttonValue"];
+        UIDatePicker *picker = (UIDatePicker *)self.pickerView;    
+        [picker setDate:itemValue animated:YES];
+        [self eventForDatePicker:picker];
+    }
 }
 
 @end
