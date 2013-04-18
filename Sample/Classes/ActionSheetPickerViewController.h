@@ -33,6 +33,7 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *animalTextField;
 @property (nonatomic, retain) IBOutlet UITextField *dateTextField;
+@property (nonatomic, retain) IBOutlet UITextField *dateWithBLockTextField;
 
 @property (nonatomic, retain) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
@@ -44,6 +45,7 @@
 - (IBAction)selectABlock:(id)sender;
 - (IBAction)selectAnAnimal:(id)sender;
 - (IBAction)selectADate:(id)sender;
+- (IBAction)selectADateWithBlock:(id)sender;
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
