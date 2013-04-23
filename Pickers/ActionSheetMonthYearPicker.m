@@ -147,14 +147,14 @@
         //objc_msgSend(target, successAction, self.selectedData, origin);
         [target performSelector:successAction withObject:self.selectedData];
     else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)successAction);
+        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(successAction));
 }
 
 -(UILabel *)componentLabel
 {
     CGRect frame = CGRectMake(0.f, 0.f,self.pickerView.bounds.size.width/2,43);
     UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     label.textColor = AVAILABLE_COLOR;
     label.font = [UIFont boldSystemFontOfSize:17];
