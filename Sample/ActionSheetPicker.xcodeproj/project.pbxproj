@@ -23,6 +23,8 @@
 		37037557147B73F000B59AA2 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 37037556147B73EE00B59AA2 /* AbstractActionSheetPicker.m */; };
 		52CFA62313A4D6FA0022667F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CFA62213A4D6FA0022667F /* MainWindow-iPad.xib */; };
 		52FDE22813A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FDE22713A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib */; };
+		CE455FE4150F95A600D8FD8E /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE455FE2150F959700D8FD8E /* ActionSheetCustomPicker.m */; };
+		CE455FE7150F978F00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE455FE6150F978E00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,11 @@
 		52CFA62213A4D6FA0022667F /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		52FDE22713A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ActionSheetPickerViewController-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CE455FE1150F959300D8FD8E /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetCustomPicker.h; path = ../../Pickers/ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		CE455FE2150F959700D8FD8E /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetCustomPicker.m; path = ../../Pickers/ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		CE455FE3150F959C00D8FD8E /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetCustomPickerDelegate.h; path = ../../Pickers/ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		CE455FE5150F978D00D8FD8E /* ActionSheetPickerCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerCustomPickerDelegate.h; sourceTree = "<group>"; };
+		CE455FE6150F978E00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerCustomPickerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +85,8 @@
 				1D3623250D0F684500981E51 /* ActionSheetPickerAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ActionSheetPickerViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* ActionSheetPickerViewController.m */,
+				CE455FE5150F978D00D8FD8E /* ActionSheetPickerCustomPickerDelegate.h */,
+				CE455FE6150F978E00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m */,
 				2237C39B1470D23300C74831 /* Utilities */,
 			);
 			path = Classes;
@@ -96,6 +105,9 @@
 			children = (
 				37037555147B73EE00B59AA2 /* AbstractActionSheetPicker.h */,
 				37037556147B73EE00B59AA2 /* AbstractActionSheetPicker.m */,
+				CE455FE1150F959300D8FD8E /* ActionSheetCustomPicker.h */,
+				CE455FE2150F959700D8FD8E /* ActionSheetCustomPicker.m */,
+				CE455FE3150F959C00D8FD8E /* ActionSheetCustomPickerDelegate.h */,
 				37037551147B387900B59AA2 /* ActionSheetStringPicker.h */,
 				37037552147B387900B59AA2 /* ActionSheetStringPicker.m */,
 				2237C387146FBABC00C74831 /* ActionSheetDatePicker.h */,
@@ -252,6 +264,8 @@
 				2237C3971470D1F300C74831 /* NSDate+TCUtils.m in Sources */,
 				37037553147B387900B59AA2 /* ActionSheetStringPicker.m in Sources */,
 				37037557147B73F000B59AA2 /* AbstractActionSheetPicker.m in Sources */,
+				CE455FE4150F95A600D8FD8E /* ActionSheetCustomPicker.m in Sources */,
+				CE455FE7150F978F00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -280,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
