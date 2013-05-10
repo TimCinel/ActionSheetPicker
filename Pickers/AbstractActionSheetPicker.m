@@ -293,7 +293,11 @@
     [_actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     [_actionSheet addSubview:aView];
     [self presentActionSheet:_actionSheet];
+    
+    // Use beginAnimations for a smoother popup animation, otherwise the UIActionSheet pops into view
+    [UIView beginAnimations:nil context:nil];
     _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
+    [UIView commitAnimations];    
 }
 
 - (void)presentActionSheet:(UIActionSheet *)actionSheet {
