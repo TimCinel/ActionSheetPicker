@@ -56,6 +56,8 @@
 @end
 
 @implementation AbstractActionSheetPicker
+@synthesize doneButtonTitle = _doneButtonTitle;
+@synthesize cancelButtonTitle = _cancelButtonTitle;
 @synthesize title = _title;
 @synthesize containerView = _containerView;
 @synthesize barButtonItem = _barButtonItem;
@@ -207,7 +209,12 @@
         index++;
     }
     if (NO == self.hideCancel) {
-        UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel:)];
+        UIBarButtonItem *cancelBtn;
+        if (self.cancelButtonTitle != nil)
+            cancelBtn = [self createButtonWithTitle:self.cancelButtonTitle style:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel:)];
+            
+        else
+            cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel:)];
         [barItems addObject:cancelBtn];
     }
     UIBarButtonItem *flexSpace = [self createButtonWithType:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -217,7 +224,14 @@
         [barItems addObject:labelButton];    
         [barItems addObject:flexSpace];
     }
-    UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
+   UIBarButtonItem *doneButton;
+    
+    if (self.doneButtonTitle != nil)
+        doneButton = [self createButtonWithTitle:self.doneButtonTitle style:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerDone:)];
+        
+    else
+        doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
+
     [barItems addObject:doneButton];
     [pickerToolbar setItems:barItems animated:YES];
     return pickerToolbar;
@@ -236,6 +250,10 @@
 
 - (UIBarButtonItem *)createButtonWithType:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction {
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target action:buttonAction];
+}
+
+- (UIBarButtonItem *)createButtonWithTitle:(NSString *)btnTitle style:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction {
+    return [[UIBarButtonItem alloc] initWithTitle:btnTitle style:type target:target action:buttonAction];
 }
 
 #pragma mark - Utilities and Accessors
