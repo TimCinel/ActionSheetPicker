@@ -78,7 +78,7 @@
     if ([target respondsToSelector:action])
         objc_msgSend(target, action, self.selectedDate, origin);
     else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
+        NSAssert(NO, @"Invalid target/action ( %s / %@ ) combination used for ActionSheetPicker", object_getClassName(target), NSStringFromSelector(action));
 }
 
 - (void)eventForDatePicker:(id)sender {
