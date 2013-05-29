@@ -26,7 +26,7 @@
 		CE455FE4150F95A600D8FD8E /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE455FE2150F959700D8FD8E /* ActionSheetCustomPicker.m */; };
 		CE455FE7150F978F00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE455FE6150F978E00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m */; };
 		DA2C6694175674BC00E453ED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2C6693175674BC00E453ED /* Default-568h@2x.png */; };
-		DA2C6696175678BC00E453ED /* ActionSheetPicker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DA2C6695175678BC00E453ED /* ActionSheetPicker.podspec */; };
+		DA2C669817567AC800E453ED /* ActionSheetPicker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DA2C669717567AC800E453ED /* ActionSheetPicker.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +64,7 @@
 		CE455FE5150F978D00D8FD8E /* ActionSheetPickerCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerCustomPickerDelegate.h; sourceTree = "<group>"; };
 		CE455FE6150F978E00D8FD8E /* ActionSheetPickerCustomPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerCustomPickerDelegate.m; sourceTree = "<group>"; };
 		DA2C6693175674BC00E453ED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		DA2C6695175678BC00E453ED /* ActionSheetPicker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActionSheetPicker.podspec; sourceTree = "<group>"; };
+		DA2C669717567AC800E453ED /* ActionSheetPicker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ActionSheetPicker.podspec; path = ../ActionSheetPicker.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				DA2C6695175678BC00E453ED /* ActionSheetPicker.podspec */,
+				DA2C669717567AC800E453ED /* ActionSheetPicker.podspec */,
 				DA2C6693175674BC00E453ED /* Default-568h@2x.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -252,7 +252,7 @@
 				52CFA62313A4D6FA0022667F /* MainWindow-iPad.xib in Resources */,
 				52FDE22813A51D2600D8D2C0 /* ActionSheetPickerViewController-iPad.xib in Resources */,
 				DA2C6694175674BC00E453ED /* Default-568h@2x.png in Resources */,
-				DA2C6696175678BC00E453ED /* ActionSheetPicker.podspec in Resources */,
+				DA2C669817567AC800E453ED /* ActionSheetPicker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
