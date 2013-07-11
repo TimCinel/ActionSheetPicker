@@ -31,6 +31,8 @@
 @interface AbstractActionSheetPicker()
 
 @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
+@property (nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem *cancelBarButtonItem;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, unsafe_unretained) id target;
 @property (nonatomic, assign) SEL successAction;
@@ -87,6 +89,12 @@
             self.containerView = origin;
         else
             NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
+
+        // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
+        UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel:)];
+        [self setCancelBarButtonItem:cancelBtn];
+        UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
+        [self setDoneBarButtonItem:doneButton];
         
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
@@ -192,6 +200,21 @@
     }
 }
 
+// Allow the user to specify a custom cancel button
+- (void) setCancelButton: (UIBarButtonItem *)button {
+    [button setTarget:self];
+    [button setAction:@selector(actionPickerCancel:)];
+    self.cancelBarButtonItem = button;
+}
+
+// Allow the user to specify a custom done button
+- (void) setDoneButton: (UIBarButtonItem *)button {
+    [button setTarget:self];
+    [button setAction:@selector(actionPickerDone:)];
+    self.doneBarButtonItem = button;
+}
+
+
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title  {
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
@@ -207,8 +230,7 @@
         index++;
     }
     if (NO == self.hideCancel) {
-        UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self action:@selector(actionPickerCancel:)];
-        [barItems addObject:cancelBtn];
+        [barItems addObject:self.cancelBarButtonItem];
     }
     UIBarButtonItem *flexSpace = [self createButtonWithType:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [barItems addObject:flexSpace];
@@ -217,8 +239,8 @@
         [barItems addObject:labelButton];    
         [barItems addObject:flexSpace];
     }
-    UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self action:@selector(actionPickerDone:)];
-    [barItems addObject:doneButton];
+    [barItems addObject:self.doneBarButtonItem];
+    
     [pickerToolbar setItems:barItems animated:YES];
     return pickerToolbar;
 }
