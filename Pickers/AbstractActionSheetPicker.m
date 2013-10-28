@@ -28,6 +28,10 @@
 #import "AbstractActionSheetPicker.h"
 #import <objc/message.h>
 
+BOOL OSAtLeast(NSString* v) {
+    return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending;
+}
+
 @interface AbstractActionSheetPicker()
 
 @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -133,8 +137,7 @@
     [masterView addSubview: self.toolbar];
     
     //ios7 picker draws a darkened alpha-only region on the first and last 8 pixels horizontally, but blurs the rest of its background.  To make the whole popup appear to be edge-to-edge, we have to add blurring to the remaining left and right edges.
-    BOOL osBelow7 = [[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending;
-    if (!osBelow7) {
+    if (OSAtLeast(@"7.0")) {
         CGRect f = CGRectMake(0,self.toolbar.frame.origin.y, 8, masterView.frame.size.height - self.toolbar.frame.origin.y);
         UIToolbar* leftEdge = [[UIToolbar alloc] initWithFrame: f];
         f.origin.x = masterView.frame.size.width - 8;
@@ -207,8 +210,7 @@
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title  {
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
-    BOOL osBelow7 = [[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending;
-    pickerToolbar.barStyle = osBelow7 ? UIBarStyleBlackTranslucent : UIBarStyleDefault;
+    pickerToolbar.barStyle = OSAtLeast(@"7.0") ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons) {
@@ -239,7 +241,7 @@
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle {
     UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
     [toolBarItemlabel setTextAlignment:NSTextAlignmentCenter];
-    [toolBarItemlabel setTextColor:[UIColor whiteColor]];    
+    [toolBarItemlabel setTextColor: OSAtLeast(@"7.0") ? [UIColor blackColor] : [UIColor whiteColor]];
     [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];    
     [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];    
     toolBarItemlabel.text = aTitle;    
