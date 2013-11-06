@@ -120,7 +120,7 @@
     if ([target respondsToSelector:action])
         objc_msgSend(target, action, [NSNumber numberWithInt:bigUnits], [NSNumber numberWithInt:smallUnits], origin);
     else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), (char *)action);
+        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
 }
 
 #pragma mark -
