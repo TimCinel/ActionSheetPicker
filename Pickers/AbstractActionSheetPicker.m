@@ -319,6 +319,10 @@
     viewController.view = aView;
     viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    if (self.popoverBackgroundViewClass)
+    {
+        [_popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
+    }
     [self presentPopover:_popOverController];
     [viewController release];
 }
