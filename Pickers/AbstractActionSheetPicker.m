@@ -70,6 +70,7 @@
 @synthesize customButtons = _customButtons;
 @synthesize hideCancel = _hideCancel;
 @synthesize presentFromRect = _presentFromRect;
+@synthesize popoverBackgroundViewClass = _popoverBackgroundViewClass;
 
 #pragma mark - Abstract Implementation
 
@@ -80,6 +81,7 @@
         self.successAction = successAction;
         self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
+        self.popoverBackgroundViewClass = nil;
         
         if ([origin isKindOfClass:[UIBarButtonItem class]])
             self.barButtonItem = origin;
@@ -319,6 +321,10 @@
     viewController.view = aView;
     viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    if (self.popoverBackgroundViewClass)
+    {
+        [_popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
+    }
     [self presentPopover:_popOverController];
     [viewController release];
 }
