@@ -120,7 +120,13 @@
 - (IBAction)selectAMusicalScale:(UIControl *)sender {
     
     ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
-    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender];
+    
+    NSNumber *yass1 = [NSNumber numberWithInt:1];
+    NSNumber *yass2 = [NSNumber numberWithInt:2];
+    
+    NSArray *initialSelections = [[NSArray alloc] initWithObjects:yass1, yass2, nil];
+    
+    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" initialSelections:initialSelections delegate:delg showCancelButton:NO origin:sender];
 }
 
 #pragma mark - Implementation
