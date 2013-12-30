@@ -7,6 +7,9 @@
 //
 
 #import "ActionSheetCustomPicker.h"
+@interface ActionSheetCustomPicker()
+@property (nonatomic, strong) NSArray *myInitialSelections;
+@end
 
 @implementation ActionSheetCustomPicker
 
@@ -14,23 +17,24 @@
 #pragma mark - Init
 /////////////////////////////////////////////////////////////////////////
 
-- (id)initWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
+- (id)initWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections  delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
 {
     if (self = [self initWithTarget:nil successAction:nil cancelAction:nil origin:origin]) {;
         
         self.title = title;
         self.hideCancel = !showCancelButton;
         _delegate = delegate;
+        self.myInitialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }
-
+    
     return self;
 }
 
 /////////////////////////////////////////////////////////////////////////
 
-+ (id)showPickerWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
++ (id)showPickerWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections  delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
 {
-    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title delegate:delegate showCancelButton:showCancelButton origin:origin];
+    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title initialSelections:initialSelections delegate:delegate showCancelButton:showCancelButton origin:origin];
     [picker showActionSheetPicker];
     return picker;
 }
@@ -47,6 +51,11 @@
     pv.delegate = _delegate;
     pv.dataSource = _delegate;
     pv.showsSelectionIndicator = YES;
+    
+    for (int i = 0; i < [self.myInitialSelections count]; i++) {
+        int initialValue = [(NSNumber *)self.myInitialSelections[i] intValue];
+        [pv selectRow:initialValue inComponent:i animated:NO];
+    }
     
     // Allow the delegate to override and set additional configs
     //to backward compatibility:

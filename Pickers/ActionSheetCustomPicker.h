@@ -24,10 +24,10 @@
 /////////////////////////////////////////////////////////////////////////
 
 /** Designated init */
-- (id)initWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
+- (id)initWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
 
 /** Convenience class method for creating an launched */
-+ (id)showPickerWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
++ (id)showPickerWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
 
 
 @end
