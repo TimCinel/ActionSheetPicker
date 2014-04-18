@@ -71,11 +71,13 @@
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
-    if ([target respondsToSelector:action])
+    if ([target respondsToSelector:action]) {
         id (*perform_id_id)(id, SEL, id, id) = (id (*)(id, SEL, id, id)) objc_msgSend;
         perform_id_id(target, action, self.selectedDate, origin);
-    else
+    }
+    else {
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
+    }
 }
 
 - (void)eventForDatePicker:(id)sender {
