@@ -132,11 +132,27 @@
                  */     
                 if (self.showsSelectionIndicator) { 
                     // if this is the last wheel, add label as the third view from the top
-                    if (component==self.numberOfComponents-1) 
-                        [self insertSubview:label atIndex:[self.subviews count]-3];
+                    if (component==self.numberOfComponents-1)
+                        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+                            UIView * o = [[self.subviews[0] subviews] objectAtIndex:([[self.subviews[0] subviews] count] - 1) ];
+                            UIView *subview = [[o subviews] objectAtIndex:2];
+                            UIView * view = [[subview.subviews objectAtIndex:0] subviews][1];
+                            [self insertSubview:label aboveSubview:view];
+                        }
+                        else {
+                            [self insertSubview:label atIndex:[self.subviews count]-3];
+                        }
                     // otherwise add label as the 5th, 10th, 15th etc view from the top
                     else
-                        [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5*(component+1)]];
+                    {
+                        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+                            [self insertSubview:label aboveSubview:[[self.subviews[0] subviews] objectAtIndex:component]];
+                        }
+                        else {
+                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5*(component+1)]];
+                        }
+
+                    }
                 } else
                     // there is no selection indicator, so just add it to the top
                     [self addSubview:label];
