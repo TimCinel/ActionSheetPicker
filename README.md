@@ -1,7 +1,3 @@
- Since the main repo not updated for a year:
- I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
- My new ActionSheetPicker, with fix crashes, new pickers and additions.
- 
 # ActionSheetPicker = UIPickerView + UIActionSheet #
 
 Well, that's how it started. Now, the following is more accurate: 
