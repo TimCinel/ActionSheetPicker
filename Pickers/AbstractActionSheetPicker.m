@@ -250,12 +250,13 @@ BOOL OSAtLeast(NSString* v) {
 }
 
 - (UIBarButtonItem *)createButtonWithType:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction {
-    
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target action:buttonAction];
-    [button setTintColor: [[UIApplication sharedApplication] keyWindow].tintColor];
-    
-    return button;
-    
+
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target action:buttonAction];
+
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+        [barButton setTintColor: [[UIApplication sharedApplication] keyWindow].tintColor];
+
+    return barButton;
 }
 
 #pragma mark - Utilities and Accessors
