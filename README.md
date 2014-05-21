@@ -55,6 +55,7 @@ Thanks to all of the contributors for making ActionSheetPicker better for the iO
 
 [Greg Combs](http://github.com/grgcombs) (Refactor!)
 
+[Petr Korolev](http://github.com/skywinder) (Update, crashfix, update for iOS7, new pickers)
 
 ### Creator ###
 
