@@ -60,8 +60,8 @@
 		1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
 		1C6EE731192BB4F600A27994 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
 		1C6EE732192BB4F600A27994 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ActionSheetPicker.app; path = "/Users/petrkorolev/repo/ActionSheetPicker/build/Debug-iphoneos/ActionSheetPicker.app"; sourceTree = "<absolute>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -139,6 +139,14 @@
 			path = Example/../Pickers;
 			sourceTree = "<group>";
 		};
+		1CD15A30192C7A0A00B28881 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +155,7 @@
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
 				1C6EE704192BB41600A27994 /* Example */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				1CD15A30192C7A0A00B28881 /* Products */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -178,7 +187,7 @@
 			);
 			name = ActionSheetPicker;
 			productName = ActionSheetPicker;
-			productReference = 1D6058910D05DD3D006BFB54 /* ActionSheetPicker.app */;
+			productReference = 1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,6 +209,7 @@
 				German,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 1CD15A30192C7A0A00B28881 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -259,7 +269,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -277,7 +287,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
