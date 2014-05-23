@@ -1,10 +1,10 @@
  Since the main repo not updated for a year:
  I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
  My new ActionSheetPicker, with fix crashes, new pickers and additions.
- 
+
 # ActionSheetPicker = UIPickerView + UIActionSheet #
 
-Well, that's how it started. Now, the following is more accurate: 
+Well, that's how it started. Now, the following is more accurate:
 
  * _**iPhone/iPod** ActionSheetPicker = ActionSheetPicker = A Picker + UIActionSheet_
  * _**iPad** ActionSheetPicker = A Picker + UIPopoverController_
@@ -27,6 +27,48 @@ Improvements more than welcome - they are kindly requested :)
  * Delegate protocol available for more control
  * Universal (iPhone/iPod/iPad)
 
+## Quickstart ##
+
+There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
+
+#### Basic Usage:
+
+```objective-c
+// Inside a IBAction method:
+
+// Create an array of strings you want to show in the picker:
+NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+
+[ActionSheetStringPicker showPickerWithTitle:@"Select a Color"
+                                        rows:colors
+                            initialSelection:0
+                                   doneBlock:nil
+                                 cancelBlock:nil
+                                      origin:sender];
+```
+
+#### But you probably want to know when something happens, huh?
+
+```obj-c
+// Inside a IBAction method:
+
+// Create an array of strings you want to show in the picker:
+NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+
+[ActionSheetStringPicker showPickerWithTitle:@"Select a Color"
+                                        rows:colors
+                            initialSelection:0
+                                   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                      NSLog(@"Picker: %@", picker);
+                                      NSLog(@"Selected Index: %@", selectedIndex);
+                                      NSLog(@"Selected Value: %@", selectedValue);
+                                    }
+                                 cancelBlock:^(ActionSheetStringPicker *picker) {
+                                      NSLog(@"Block Picker Canceled");
+                                    }
+                                      origin:sender];
+// You can also use self.view if you don't have a sender
+```
 
 ## Screen Shots ##
 
