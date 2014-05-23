@@ -72,10 +72,10 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 ## Screen Shots ##
 
-![ActionSheetPicker](http://i.imgur.com/TtkuG.png "ActionSheetPicker")
-![ActionSheetDatePicker](http://i.imgur.com/IFDmw.png "ActionSheetDatePicker")
-![ActionSheetDistancePicker](http://i.imgur.com/bkWvA.png "ActionSheetDistancePicker")
-![iPad Support](http://i.imgur.com/Xu4wb.png "iPad Support")
+![ActionSheetPicker](Screenshots/string.png "ActionSheetPicker")
+![ActionSheetDatePicker](Screenshots/date.png "ActionSheetDatePicker")
+![ActionSheetDistancePicker](Screenshots/distance.png "ActionSheetDistancePicker")
+![iPad Support](Screenshots/ipad.png "iPad Support")
 
 
 ## Credits ##
