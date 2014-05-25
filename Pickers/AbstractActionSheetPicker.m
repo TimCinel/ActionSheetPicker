@@ -28,6 +28,10 @@
 #import "AbstractActionSheetPicker.h"
 #import <objc/message.h>
 
+BOOL OSAtLeast(NSString* v) {
+    return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending;
+}
+
 @interface AbstractActionSheetPicker()
 
 @property (nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -129,9 +133,20 @@
 
 - (void)showActionSheetPicker {
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
-    UIToolbar *pickerToolbar = [self createPickerToolbarWithTitle:self.title];
-    [pickerToolbar setBarStyle:UIBarStyleBlackTranslucent];
-    [masterView addSubview:pickerToolbar];
+    self.toolbar = [self createPickerToolbarWithTitle:self.title];
+    [masterView addSubview: self.toolbar];
+    
+    //ios7 picker draws a darkened alpha-only region on the first and last 8 pixels horizontally, but blurs the rest of its background.  To make the whole popup appear to be edge-to-edge, we have to add blurring to the remaining left and right edges.
+    if (OSAtLeast(@"7.0")) {
+        CGRect f = CGRectMake(0,self.toolbar.frame.origin.y, 8, masterView.frame.size.height - self.toolbar.frame.origin.y);
+        UIToolbar* leftEdge = [[UIToolbar alloc] initWithFrame: f];
+        f.origin.x = masterView.frame.size.width - 8;
+        UIToolbar* rightEdge = [[UIToolbar alloc] initWithFrame: f];
+        leftEdge.barTintColor = rightEdge.barTintColor = self.toolbar.barTintColor;
+        [masterView insertSubview: leftEdge atIndex: 0];
+        [masterView insertSubview: rightEdge atIndex: 0];
+    }
+
     self.pickerView = [self configuredPickerView];
     NSAssert(_pickerView != NULL, @"Picker view failed to instantiate, perhaps you have invalid component data.");
     [masterView addSubview:_pickerView];
@@ -195,7 +210,7 @@
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title  {
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
-    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
+    pickerToolbar.barStyle = OSAtLeast(@"7.0") ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons) {
@@ -225,8 +240,8 @@
 
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle {
     UILabel *toolBarItemlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180,30)];
-    [toolBarItemlabel setTextAlignment:UITextAlignmentCenter];    
-    [toolBarItemlabel setTextColor:[UIColor whiteColor]];    
+    [toolBarItemlabel setTextAlignment:NSTextAlignmentCenter];
+    [toolBarItemlabel setTextColor: OSAtLeast(@"7.0") ? [UIColor blackColor] : [UIColor whiteColor]];
     [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];    
     [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];    
     toolBarItemlabel.text = aTitle;    
