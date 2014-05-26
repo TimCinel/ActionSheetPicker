@@ -55,16 +55,6 @@
     self.selectedDate = [NSDate date];
 }
 
-
-- (void)viewDidUnload {
-    self.actionSheetPicker = nil;
-    
-    self.animalTextField = nil;
-    self.dateTextField = nil;
-    
-    [super viewDidUnload];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
