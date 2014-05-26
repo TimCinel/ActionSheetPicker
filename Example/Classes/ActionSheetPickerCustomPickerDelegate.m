@@ -32,7 +32,9 @@
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
 {
-    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@ selected.", self.selectedKey, self.selectedScale, nil];
+    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@ selected.",
+                                                         self.selectedKey,
+                                                         self.selectedScale];
     
     [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
 }
@@ -52,6 +54,7 @@
     switch (component) {
         case 0: return [notesToDisplayForKey count];
         case 1: return [scaleNames count];
+        default:break;
     }
     return 0;
 }
@@ -66,6 +69,7 @@
     switch (component) {
         case 0: return 60.0f;
         case 1: return 260.0f;
+        default:break;
     }
     
     return 0;
@@ -83,6 +87,7 @@
     switch (component) {
         case 0: return [notesToDisplayForKey objectAtIndex:row];
         case 1: return [scaleNames objectAtIndex:row];
+        default:break;
     }
     return nil;
 }
@@ -100,6 +105,7 @@
         case 1:
             selectedScale = [scaleNames objectAtIndex:row];
             return;
+        default:break;
     }
 }
 
