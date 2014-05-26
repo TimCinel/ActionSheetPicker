@@ -48,7 +48,7 @@
                     </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ActionSheetPicker" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="12">
-                    <rect key="frame" x="59" y="38" width="197" height="28"/>
+                    <rect key="frame" x="59" y="20" width="197" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -97,7 +97,7 @@
                         <outlet property="delegate" destination="-1" id="38"/>
                     </connections>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" translatesAutoresizingMaskIntoConstraints="NO" id="ZMX-K4-cMO">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/TimCinel/ActionSheetPicker" translatesAutoresizingMaskIntoConstraints="NO" id="ZMX-K4-cMO">
                     <rect key="frame" x="11" y="432" width="309" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -120,7 +120,7 @@
                 <constraint firstItem="8" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="23" id="9OJ-Hz-Cgt"/>
                 <constraint firstItem="25" firstAttribute="leading" secondItem="15" secondAttribute="leading" id="A5f-Te-96w"/>
                 <constraint firstAttribute="trailing" secondItem="ZMX-K4-cMO" secondAttribute="trailing" id="AEt-qv-Q2R"/>
-                <constraint firstItem="12" firstAttribute="top" secondItem="6" secondAttribute="top" constant="38" id="Eqt-NL-6pn"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="6" secondAttribute="top" constant="20" id="Eqt-NL-6pn"/>
                 <constraint firstItem="8" firstAttribute="trailing" secondItem="15" secondAttribute="trailing" id="FlN-vK-SBJ"/>
                 <constraint firstItem="8" firstAttribute="width" secondItem="15" secondAttribute="width" id="N0I-f4-l43"/>
                 <constraint firstItem="13" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="NN0-Pc-g5X"/>
