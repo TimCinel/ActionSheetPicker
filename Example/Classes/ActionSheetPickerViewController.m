@@ -35,13 +35,14 @@
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
+- (void)monthAndYearSelected:(NSString*)selectedDate;
 @end
 
 @implementation ActionSheetPickerViewController
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
-
+@synthesize monthYearTextField = _monthYearTextField;
 @synthesize animals = _animals;
 @synthesize selectedIndex = _selectedIndex;
 @synthesize selectedDate = _selectedDate;
@@ -72,7 +73,11 @@
         NSLog(@"Block Picker Canceled");
     };
     NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
-    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    self.actionSheetPicker =  [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Test" actionBlock:^{
+        NSLog(@"Test the block");
+    }];
+    [self.actionSheetPicker showActionSheetPicker];
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {
@@ -90,7 +95,10 @@
 - (IBAction)selectADate:(UIControl *)sender {
     _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+//    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+        NSLog(@">>> block");
+    }];
     self.actionSheetPicker.hideCancel = YES;
     [self.actionSheetPicker showActionSheetPicker];
 }
@@ -145,5 +153,17 @@
     return NO;
 }
 
+
+- (IBAction)selectedMonthYear:(id)sender {
+//    [ActionSheetMonthYearPicker showPickerWithTitle:@"MMYY" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+    _actionSheetPicker = [[ActionSheetMonthYearPicker alloc] initWithTitle:@"Expire" start:@"2012.06" end:@"2015.10" tartget:self successAction:@selector(monthAndYearSelected:) cancelAction:nil origin:sender];
+    [self.actionSheetPicker showActionSheetPicker];
+}
+
+- (void)monthAndYearSelected:(NSString*)selectedDate
+{
+    NSLog(@" >> Month and Years has selected %@",selectedDate);
+    self.monthYearTextField.text = selectedDate;
+}
 
 @end

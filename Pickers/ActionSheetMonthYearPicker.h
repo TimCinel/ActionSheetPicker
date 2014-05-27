@@ -1,5 +1,6 @@
 //
-//Copyright (c) 2011, Tim Cinel
+//Copyright (c) 2012, pyanfield@gmail.com
+//Extend Tim Cinel's ActionSheetPicker
 //All rights reserved.
 //
 //Redistribution and use in source and binary forms, with or without
@@ -25,31 +26,24 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+/*
+ This class inherit the base class AbstractActionSheetPicker which created by Tim Cinel.
+ You can use this class to create a action picker that just display month and years. and you need to set the begin date and end date.
+ Then it will display data.
+ */
 
-#import <UIKit/UIKit.h>
-#import "ActionSheetPicker.h"
+#import "AbstractActionSheetPicker.h"
 
-@class AbstractActionSheetPicker;
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+@interface ActionSheetMonthYearPicker : AbstractActionSheetPicker<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (nonatomic, strong) IBOutlet UITextField *animalTextField;
-@property (nonatomic, strong) IBOutlet UITextField *dateTextField;
-@property (nonatomic, strong) IBOutlet UITextField *monthYearTextField;
+// the "start" is the start date that you want to display the begin data. you can set it like this : 2012.07 or 2012-07
+// the "end" is the end date that you want to display the begin data. you can set it like this : 2012.07 or 2012-07
++ (id)showPickerWithTitle:(NSString*)title start:(NSString*)start end:(NSString*)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin;
 
-@property (nonatomic, strong) NSArray *animals;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic, assign) NSInteger selectedBigUnit;
-@property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, strong) AbstractActionSheetPicker *actionSheetPicker;
+- (id)initWithTitle:(NSString*)title start:(NSString*)start end:(NSString*)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin;
 
-- (IBAction)selectABlock:(id)sender;
-- (IBAction)selectAnAnimal:(id)sender;
-- (IBAction)selectADate:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)selectAMeasurement:(id)sender;
-- (IBAction)selectedMonthYear:(id)sender;
-- (IBAction)selectAMusicalScale:(UIControl *)sender;
+@property (nonatomic, strong) NSString *selectedData;
+@property (nonatomic, strong) NSString *selectedMonth;
+@property (nonatomic, strong) NSString *selectedYear;
 
 @end

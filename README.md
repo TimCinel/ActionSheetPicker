@@ -1,3 +1,23 @@
+#Added new picker ActionSheetMonthYearPicker that you can set the start year-month and end year-month.
+![ActionSheetMonthYearPicker start](./screenshot/2012-06.png "ActionSheetMonthYearPicker")
+![ActionSheetMonthYearPicker start](./screenshot/2015-10.png "ActionSheetMonthYearPicker")
+
+	ActionSheetMonthYearPicker *actionSheet = [[ActionSheetMonthYearPicker alloc] 			initWithTitle:@"Expire" 
+			start:@"2012.06" 
+			end:@"2015.10" 
+			tartget:self 			
+			successAction:@selector(monthAndYearSelected:) 
+			cancelAction:nil origin:sender];
+    [actionSheet showActionSheetPicker];
+    [actionSheet release];
+    
+    - (void)monthAndYearSelected:(NSString*)selectedDate
+	{
+	    NSLog(@" >>  %@ has selected",selectedDate);
+	}
+
+***
+
 # ActionSheetPicker = UIPickerView + UIActionSheet #
 
 Well, that's how it started. Now, the following is more accurate:
