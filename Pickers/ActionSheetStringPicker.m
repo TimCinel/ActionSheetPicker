@@ -77,8 +77,14 @@
     UIPickerView *stringPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
     stringPicker.delegate = self;
     stringPicker.dataSource = self;
-    stringPicker.showsSelectionIndicator = YES;
     [stringPicker selectRow:self.selectedIndex inComponent:0 animated:NO];
+    if (self.data.count == 0) {
+        stringPicker.showsSelectionIndicator = NO;
+        stringPicker.userInteractionEnabled = NO;
+    } else {
+        stringPicker.showsSelectionIndicator = YES;
+        stringPicker.userInteractionEnabled = YES;
+    }
     
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
     self.pickerView = stringPicker;
@@ -88,7 +94,8 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     if (self.onActionSheetDone) {
-        _onActionSheetDone(self, self.selectedIndex, [self.data objectAtIndex:self.selectedIndex]);
+        id selectedObject = (self.data.count > 0) ? [self.data objectAtIndex:self.selectedIndex] : nil;
+        _onActionSheetDone(self, self.selectedIndex, selectedObject);
         return;
     }
     else if (target && [target respondsToSelector:successAction]) {
