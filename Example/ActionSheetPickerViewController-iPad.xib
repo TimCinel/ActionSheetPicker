@@ -96,7 +96,7 @@
                         <outlet property="delegate" destination="-1" id="25"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a musical scale..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a musical scale..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34">
                     <rect key="frame" x="244" y="604" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
@@ -106,6 +106,19 @@
                         <outlet property="delegate" destination="-1" id="35"/>
                     </connections>
                 </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a month/year" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9a-ee-dz7">
+                    <rect key="frame" x="244" y="653" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="8IX-1k-RaM"/>
+                        <constraint firstAttribute="height" constant="30" id="vIK-BA-c4m"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="selectedMonthYear:" destination="-1" eventType="touchDown" id="bn4-iF-zaH"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="0.77254909279999995" green="0.80000007149999997" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
@@ -113,8 +126,10 @@
                 <constraint firstItem="6" firstAttribute="top" secondItem="1" secondAttribute="top" constant="917" id="ACg-la-re2"/>
                 <constraint firstAttribute="centerX" secondItem="7" secondAttribute="centerX" id="Lqc-YE-qDg"/>
                 <constraint firstItem="8" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="8" id="NHG-Pn-lZX"/>
+                <constraint firstAttribute="centerX" secondItem="r9a-ee-dz7" secondAttribute="centerX" id="QWY-Ex-DA1"/>
                 <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" constant="28" id="Ype-hA-qpS"/>
                 <constraint firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="f7V-fT-yuh"/>
+                <constraint firstItem="r9a-ee-dz7" firstAttribute="top" secondItem="34" secondAttribute="bottom" constant="19" id="jNT-5e-GnV"/>
                 <constraint firstItem="7" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="8" id="mO6-rO-0EP"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

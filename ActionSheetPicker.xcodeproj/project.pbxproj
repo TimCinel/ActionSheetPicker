@@ -27,6 +27,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		947ED33E193471B400622CF9 /* ActionSheetMonthYearPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 947ED33D193471B400622CF9 /* ActionSheetMonthYearPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		947ED33C193471B400622CF9 /* ActionSheetMonthYearPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetMonthYearPicker.h; sourceTree = "<group>"; };
+		947ED33D193471B400622CF9 /* ActionSheetMonthYearPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetMonthYearPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 		1C6EE733192BB4F600A27994 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				947ED33C193471B400622CF9 /* ActionSheetMonthYearPicker.h */,
+				947ED33D193471B400622CF9 /* ActionSheetMonthYearPicker.m */,
 				1C6EE726192BB4F600A27994 /* AbstractActionSheetPicker.h */,
 				1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */,
 				1C6EE728192BB4F600A27994 /* ActionSheetCustomPicker.h */,
@@ -250,6 +255,7 @@
 				1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */,
 				1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */,
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
+				947ED33E193471B400622CF9 /* ActionSheetMonthYearPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

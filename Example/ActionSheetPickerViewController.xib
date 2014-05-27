@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="animalTextField" destination="8" id="35"/>
                 <outlet property="dateTextField" destination="15" id="36"/>
+                <outlet property="monthYearTextField" destination="zUk-nR-t4a" id="Rhh-9a-NoJ"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
         </placeholder>
@@ -54,7 +55,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                     <rect key="frame" x="17" y="385" width="286" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
@@ -64,7 +65,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                     <rect key="frame" x="17" y="408" width="286" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
@@ -107,9 +108,23 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                 </textView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a month/year" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-nR-t4a">
+                    <rect key="frame" x="17" y="355" width="281" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1tn-re-17D"/>
+                        <constraint firstAttribute="width" constant="281" id="mGc-QS-vVm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="selectedMonthYear:" destination="-1" eventType="touchDown" id="sxN-tG-4ZG"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
+                <constraint firstItem="zUk-nR-t4a" firstAttribute="top" secondItem="37" secondAttribute="bottom" constant="17" id="02X-kV-dAN"/>
                 <constraint firstItem="25" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="0U4-gW-hIA"/>
                 <constraint firstItem="8" firstAttribute="leading" secondItem="15" secondAttribute="leading" id="0oT-Di-LVd"/>
                 <constraint firstItem="18" firstAttribute="leading" secondItem="13" secondAttribute="leading" id="0qB-cA-teA"/>
@@ -117,14 +132,16 @@
                 <constraint firstAttribute="bottom" secondItem="ZMX-K4-cMO" secondAttribute="bottom" constant="20" symbolic="YES" id="1zO-rg-aoI"/>
                 <constraint firstItem="30" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="3QG-tr-NwB"/>
                 <constraint firstItem="30" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="17" id="65A-Oc-7OO"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="zUk-nR-t4a" secondAttribute="bottom" id="7MF-g7-J0v"/>
                 <constraint firstItem="8" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="23" id="9OJ-Hz-Cgt"/>
                 <constraint firstItem="25" firstAttribute="leading" secondItem="15" secondAttribute="leading" id="A5f-Te-96w"/>
                 <constraint firstAttribute="trailing" secondItem="ZMX-K4-cMO" secondAttribute="trailing" id="AEt-qv-Q2R"/>
+                <constraint firstAttribute="centerX" secondItem="zUk-nR-t4a" secondAttribute="centerX" id="BVg-su-hkY"/>
                 <constraint firstItem="12" firstAttribute="top" secondItem="6" secondAttribute="top" constant="20" id="Eqt-NL-6pn"/>
                 <constraint firstItem="8" firstAttribute="trailing" secondItem="15" secondAttribute="trailing" id="FlN-vK-SBJ"/>
+                <constraint firstItem="zUk-nR-t4a" firstAttribute="width" secondItem="37" secondAttribute="width" id="J34-PI-pcF"/>
                 <constraint firstItem="8" firstAttribute="width" secondItem="15" secondAttribute="width" id="N0I-f4-l43"/>
                 <constraint firstItem="13" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="NN0-Pc-g5X"/>
-                <constraint firstItem="13" firstAttribute="top" secondItem="37" secondAttribute="bottom" constant="47" id="NRc-5g-Emy"/>
                 <constraint firstItem="8" firstAttribute="width" secondItem="37" secondAttribute="width" id="U4n-Qj-RO2"/>
                 <constraint firstItem="37" firstAttribute="trailing" secondItem="25" secondAttribute="trailing" id="VNQ-eC-0HF"/>
                 <constraint firstItem="18" firstAttribute="top" secondItem="37" secondAttribute="bottom" constant="70" id="Yps-Qz-3os"/>

@@ -37,6 +37,8 @@
 @implementation ActionSheetDatePicker
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
+@synthesize onActionSheetDone = _onActionSheetDone;
+@synthesize onActionSheetCancel = _onActionSheetCancel;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
@@ -56,6 +58,20 @@
     return self;
 }
 
++ (id)showPickerWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate doneBlock:(ActionSheetDatePickerDoneBlock)doneBlock cancelBlock:(ActionSheetDatePickerCancelBlock)cancelBlock origin:(id)origin {
+    ActionSheetDatePicker *picker = [[ActionSheetDatePicker alloc] initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate doneBlock:doneBlock cancelBlock:cancelBlock origin:origin];
+    [picker showActionSheetPicker];
+    return picker;
+}
+
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate doneBlock:(ActionSheetDatePickerDoneBlock)doneBlock cancelBlock:(ActionSheetDatePickerCancelBlock)cancelBlock origin:(id)origin {
+    self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:nil action:nil origin:origin];
+    if (self) {
+        self.onActionSheetDone = doneBlock;
+        self.onActionSheetCancel = cancelBlock;
+    }
+    return self;
+}
 
 - (UIView *)configuredPickerView {
     CGRect datePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
@@ -71,6 +87,14 @@
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)action origin:(id)origin {
+    if ([target respondsToSelector:action]) {
+        objc_msgSend(target, action, self.selectedDate, origin);
+        return;
+    } else if (nil != self.onActionSheetDone) {
+        self.onActionSheetDone(self, self.selectedDate, origin);
+        return;
+    }
+    NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
     if ([target respondsToSelector:action])
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -93,10 +117,15 @@
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);    
     NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
     NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
-    NSDate *itemValue = [buttonDetails objectForKey:@"buttonValue"];
-    UIDatePicker *picker = (UIDatePicker *)self.pickerView;    
-    [picker setDate:itemValue animated:YES];
-    [self eventForDatePicker:picker];
+    if ([buttonDetails objectForKey:@"buttonValue"] == nil) {
+        ActionSheetCustomButtonBlock block = [buttonDetails objectForKey:@"buttonBlock"];
+        block();
+    }else{
+        NSDate *itemValue = [buttonDetails objectForKey:@"buttonValue"];
+        UIDatePicker *picker = (UIDatePicker *)self.pickerView;    
+        [picker setDate:itemValue animated:YES];
+        [self eventForDatePicker:picker];
+    }
 }
 
 @end
