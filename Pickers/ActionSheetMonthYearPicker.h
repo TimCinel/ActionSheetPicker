@@ -42,8 +42,8 @@
 
 - (id)initWithTitle:(NSString*)title start:(NSString*)start end:(NSString*)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin;
 
-@property (nonatomic, retain) NSString *selectedData;
-@property (nonatomic, retain) NSString *selectedMonth;
-@property (nonatomic, retain) NSString *selectedYear;
+@property (nonatomic, strong) NSString *selectedData;
+@property (nonatomic, strong) NSString *selectedMonth;
+@property (nonatomic, strong) NSString *selectedYear;
 
 @end

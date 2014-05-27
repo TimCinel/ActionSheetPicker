@@ -25,10 +25,31 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "AbstractActionSheetPicker.h"
 
-#import "ActionSheetStringPicker.h"
-#import "ActionSheetDatePicker.h"
-#import "ActionSheetDistancePicker.h"
-#import "ActionSheetMonthYearPicker.h"
+#import <UIKit/UIKit.h>
+#import "ActionSheetPicker.h"
 
+@class AbstractActionSheetPicker;
+@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) IBOutlet UITextField *animalTextField;
+@property (nonatomic, strong) IBOutlet UITextField *dateTextField;
+@property (nonatomic, strong) IBOutlet UITextField *monthYearTextField;
+
+@property (nonatomic, strong) NSArray *animals;
+@property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, assign) NSInteger selectedBigUnit;
+@property (nonatomic, assign) NSInteger selectedSmallUnit;
+@property (nonatomic, strong) AbstractActionSheetPicker *actionSheetPicker;
+
+- (IBAction)selectABlock:(id)sender;
+- (IBAction)selectAnAnimal:(id)sender;
+- (IBAction)selectADate:(id)sender;
+- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)selectAMeasurement:(id)sender;
+- (IBAction)selectedMonthYear:(id)sender;
+- (IBAction)selectAMusicalScale:(UIControl *)sender;
+
+@end

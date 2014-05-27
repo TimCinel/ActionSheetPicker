@@ -25,14 +25,12 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
+#import "AbstractActionSheetPicker.h"
 
-#import <UIKit/UIKit.h>
-
-@class ActionSheetPickerViewController;
-
-@interface ActionSheetPickerAppDelegate : NSObject <UIApplicationDelegate>
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet ActionSheetPickerViewController *viewController;
-
-@end
+#import "ActionSheetCustomPicker.h"
+#import "ActionSheetCustomPickerDelegate.h"
+#import "ActionSheetStringPicker.h"
+#import "ActionSheetDatePicker.h"
+#import "ActionSheetDistancePicker.h"
+#import "ActionSheetMonthYearPicker.h"
 

@@ -27,17 +27,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class AbstractActionSheetPicker;
-
 typedef void(^ActionSheetCustomButtonBlock)();
 
 @interface AbstractActionSheetPicker : NSObject
+@property (nonatomic, strong) UIToolbar* toolbar;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, retain) UIView *pickerView;
+@property (nonatomic, strong) UIView *pickerView;
 @property (nonatomic, readonly) CGSize viewSize;
-@property (nonatomic, retain) NSMutableArray *customButtons;
+@property (nonatomic, strong) NSMutableArray *customButtons;
 @property (nonatomic, assign) BOOL hideCancel;
 @property (nonatomic, assign) CGRect presentFromRect;
+@property (nonatomic, copy) ActionSheetCustomButtonBlock onActionSheetCustomButton;
 
     // For subclasses.
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
@@ -60,8 +60,7 @@ typedef void(^ActionSheetCustomButtonBlock)();
     //For subclasses. This responds to a custom button being pressed.
 - (IBAction)customButtonPressed:(id)sender;
 
+    //This is responds to a custom button being pressed. callback in the block.
 - (void)addCustomButtonWithTitle:(NSString *)title actionBlock:(ActionSheetCustomButtonBlock)block;
-
-@property (nonatomic, copy) ActionSheetCustomButtonBlock onActionSheetCustomButton;
 
 @end

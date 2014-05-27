@@ -27,6 +27,7 @@
 //
 
 #import "ActionSheetMonthYearPicker.h"
+#import <objc/message.h>
 
 #define YEAR_COMPONENT 0
 #define MONTH_COMPONENT 1
@@ -67,7 +68,7 @@
 {
     ActionSheetMonthYearPicker *picker = [[ActionSheetMonthYearPicker alloc] initWithTitle:title start:start end:end tartget:target successAction:successAction cancelAction:cancelAction origin:origin];
     [picker showActionSheetPicker];
-    return [picker autorelease];
+    return picker;
 }
 
 - (id)initWithTitle:(NSString *)title start:(NSString *)start end:(NSString *)end tartget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelAction origin:(id)origin
@@ -81,17 +82,6 @@
         [self parseData];
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [_data release];
-    _data = nil;
-    [_years release];
-    _years = nil;
-    [_selectedData release];
-    _selectedData = nil;
-    [super dealloc];
 }
 
 - (void)parseData
@@ -121,14 +111,14 @@
     for (int i=small; i<=big; i++) {
         [arr addObject:[NSString stringWithFormat:@"%d",i]];
     }
-    return [arr autorelease];
+    return arr;
 }
 
 - (UIView *)configuredPickerView {
     if (!self.data)
         return nil;
     CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
-    UIPickerView *yearPicker = [[[UIPickerView alloc] initWithFrame:pickerFrame] autorelease];
+    UIPickerView *yearPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
     yearPicker.delegate = self;
     yearPicker.dataSource = self;
     yearPicker.showsSelectionIndicator = YES;
@@ -144,8 +134,7 @@
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin
 {
     if ([target respondsToSelector:successAction])
-        //objc_msgSend(target, successAction, self.selectedData, origin);
-        [target performSelector:successAction withObject:self.selectedData];
+        objc_msgSend(target, successAction, self.selectedData, origin);
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(successAction));
 }
@@ -153,7 +142,7 @@
 -(UILabel *)componentLabel
 {
     CGRect frame = CGRectMake(0.f, 0.f,self.pickerView.bounds.size.width/2,43);
-    UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     label.textColor = AVAILABLE_COLOR;

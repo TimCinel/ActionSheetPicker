@@ -29,6 +29,7 @@
 #import "ActionSheetPickerViewController.h"
 #import "ActionSheetPicker.h"
 #import "NSDate+TCUtils.h"
+#import "ActionSheetPickerCustomPickerDelegate.h"
 
 @interface ActionSheetPickerViewController()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
@@ -38,12 +39,10 @@
 @end
 
 @implementation ActionSheetPickerViewController
-@synthesize myTextField = _myTextField;
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
-@synthesize dateWithBLockTextField = _dateWithBLockTextField;
-
+@synthesize monthYearTextField = _monthYearTextField;
 @synthesize animals = _animals;
 @synthesize selectedIndex = _selectedIndex;
 @synthesize selectedDate = _selectedDate;
@@ -55,25 +54,6 @@
     [super viewDidLoad];
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
     self.selectedDate = [NSDate date];
-}
-
-- (void)dealloc {
-    self.animals = nil;
-    self.selectedDate = nil;
-    self.actionSheetPicker = nil;
-    [_myTextField release];
-    [super dealloc];
-}
-
-- (void)viewDidUnload {
-    self.actionSheetPicker = nil;
-    
-    self.animalTextField = nil;
-    self.dateTextField = nil;
-    self.dateWithBLockTextField = nil;
-    
-    [self setMyTextField:nil];
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -123,20 +103,6 @@
     [self.actionSheetPicker showActionSheetPicker];
 }
 
-- (IBAction)selectADateWithBlock:(UIControl *)sender {
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate doneBlock:^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
-        self.selectedDate = selectedDate;
-        self.dateWithBLockTextField.text = [self.selectedDate description];
-    } cancelBlock:^(ActionSheetDatePicker *picker) {
-        NSLog(@"did cancel date selecting");
-    } origin:sender];
-    
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
-    self.actionSheetPicker.hideCancel = YES;
-    [self.actionSheetPicker showActionSheetPicker];
-}
-
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
     [self selectAnAnimal:sender];
 }
@@ -147,6 +113,12 @@
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
+}
+
+- (IBAction)selectAMusicalScale:(UIControl *)sender {
+    
+    ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
+    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender];
 }
 
 #pragma mark - Implementation
@@ -191,7 +163,7 @@
 - (void)monthAndYearSelected:(NSString*)selectedDate
 {
     NSLog(@" >> Month and Years has selected %@",selectedDate);
-    _myTextField.text = selectedDate;
+    self.monthYearTextField.text = selectedDate;
 }
 
 @end

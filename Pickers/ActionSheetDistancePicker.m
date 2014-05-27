@@ -29,11 +29,11 @@
 #import <objc/message.h>
 
 @interface ActionSheetDistancePicker()
-@property (nonatomic, retain) NSString *bigUnitString;
+@property (nonatomic, strong) NSString *bigUnitString;
 @property (nonatomic, assign) NSInteger selectedBigUnit;
 @property (nonatomic, assign) NSInteger bigUnitMax;
 @property (nonatomic, assign) NSInteger bigUnitDigits;
-@property (nonatomic, retain) NSString *smallUnitString;
+@property (nonatomic, strong) NSString *smallUnitString;
 @property (nonatomic, assign) NSInteger selectedSmallUnit;
 @property (nonatomic, assign) NSInteger smallUnitMax;
 @property (nonatomic, assign) NSInteger smallUnitDigits;
@@ -52,7 +52,7 @@
 + (id)showPickerWithTitle:(NSString *)title bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit target:(id)target action:(SEL)action origin:(id)origin {
    ActionSheetDistancePicker *picker = [[ActionSheetDistancePicker alloc] initWithTitle:title bigUnitString:bigUnitString bigUnitMax:bigUnitMax selectedBigUnit:selectedBigUnit smallUnitString:smallUnitString smallUnitMax:smallUnitMax selectedSmallUnit:selectedSmallUnit target:target action:action origin:origin];
     [picker showActionSheetPicker];
-    return [picker autorelease];
+    return picker;
 }
 
 - (id)initWithTitle:(NSString *)title bigUnitString:(NSString *)bigUnitString bigUnitMax:(NSInteger)bigUnitMax selectedBigUnit:(NSInteger)selectedBigUnit smallUnitString:(NSString*)smallUnitString smallUnitMax:(NSInteger)smallUnitMax selectedSmallUnit:(NSInteger)selectedSmallUnit target:(id)target action:(SEL)action origin:(id)origin {
@@ -71,15 +71,10 @@
     return self;
 }
 
-- (void)dealloc {
-    self.smallUnitString = nil;
-    self.bigUnitString = nil;
-    [super dealloc]; 
-}
 
 - (UIView *)configuredPickerView {
     CGRect distancePickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
-    DistancePickerView *picker = [[[DistancePickerView alloc] initWithFrame:distancePickerFrame] autorelease];
+    DistancePickerView *picker = [[DistancePickerView alloc] initWithFrame:distancePickerFrame];
     picker.delegate = self;
     picker.dataSource = self;
     picker.showsSelectionIndicator = YES;

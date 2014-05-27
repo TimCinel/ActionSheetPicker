@@ -28,28 +28,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class AbstractActionSheetPicker;
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+@class ActionSheetPickerViewController;
 
-@property (nonatomic, retain) IBOutlet UITextField *animalTextField;
-@property (nonatomic, retain) IBOutlet UITextField *dateTextField;
-@property (nonatomic, retain) IBOutlet UITextField *dateWithBLockTextField;
-
-@property (nonatomic, retain) NSArray *animals;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, retain) NSDate *selectedDate;
-@property (nonatomic, assign) NSInteger selectedBigUnit;
-@property (nonatomic, assign) NSInteger selectedSmallUnit;
-@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
-
-- (IBAction)selectABlock:(id)sender;
-- (IBAction)selectAnAnimal:(id)sender;
-- (IBAction)selectADate:(id)sender;
-- (IBAction)selectADateWithBlock:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)selectAMeasurement:(id)sender;
-@property (retain, nonatomic) IBOutlet UITextField *myTextField;
-- (IBAction)selectedMonthYear:(id)sender;
+@interface ActionSheetPickerAppDelegate : NSObject <UIApplicationDelegate>
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet ActionSheetPickerViewController *viewController;
 
 @end
+

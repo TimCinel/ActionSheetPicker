@@ -43,8 +43,6 @@
 	}
 	
 	newDate = [gregorian dateByAddingComponents:components toDate:self options:0];
-	[components release];
-	[gregorian release];
 	return newDate;
 }
 
