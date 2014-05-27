@@ -1,4 +1,4 @@
-The pod `ActionSheetPicker`, so this pod is completly outdated!
+The pod `ActionSheetPicker` is completly outdated!
 
 Now you can use up-to-date version of ActionSheetPicker (ActionSheetPicker-3.0) 
 
