@@ -341,8 +341,8 @@ BOOL OSAtLeast(NSString* v) {
         [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         return;
     }
-    else if ((self.containerView) && NO == CGRectIsEmpty(self.presentFromRect)) {
-        [popover presentPopoverFromRect:_presentFromRect inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    else if ((self.containerView)) {
+        [popover presentPopoverFromRect:_containerView.bounds inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         return;
     }
     // Unfortunately, things go to hell whenever you try to present a popover from a table view cell.  These are failsafes.
