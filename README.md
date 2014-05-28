@@ -1,6 +1,16 @@
  Since the main repo not updated for a year:
+ 
  I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
- My new ActionSheetPicker, with fix crashes, new pickers and additions.
+
+<del>`pod ActionSheetPicker`</del> is *outdated*!
+
+You can use:
+**`pod 'ActionSheetPicker-3.0', '~> 1.0.5' `** (https://github.com/skywinder/ActionSheetPicker-3.0)
+
+New ActionSheetPicker, with fix crashes, new pickers and additions.
+I megre most of all fixes to TimCinel's branch.
+
+_Regards, Petr Korolev_
 
 # ActionSheetPicker = UIPickerView + UIActionSheet #
 
