@@ -2,8 +2,6 @@
  
  I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
 
-<del>`pod ActionSheetPicker`</del> is *outdated*!
-
 You can use:
 **`pod 'ActionSheetPicker-3.0', '~> 1.0.5' `** (https://github.com/skywinder/ActionSheetPicker-3.0)
 
