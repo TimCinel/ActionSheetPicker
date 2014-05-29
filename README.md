@@ -1,12 +1,4 @@
-The pod `ActionSheetPicker` is completly outdated!
-
-Now you can use up-to-date version of ActionSheetPicker (ActionSheetPicker-3.0) 
-
-`pod 'ActionSheetPicker-3.0', '~> 1.0.5' ` (https://github.com/skywinder/ActionSheetPicker-3.0)
-
-Now it exactly the same as master branch of TimCinel's branch.
-
-_Regards, Petr Korolev_
+`pod 'ActionSheetPicker', '~> 1.0.5' `
 
 # ActionSheetPicker = UIPickerView + UIActionSheet #
 
