@@ -2,10 +2,10 @@
  
  I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
 
-`pod 'ActionSheetPicker-3.0', '~> 1.0.6' `
+`pod 'ActionSheetPicker-3.0', '~> 1.0.7 `
 
 New ActionSheetPicker, with fix crashes, new pickers and additions.
-I megre most of all fixes to TimCinel's branch already.
+I merge most of all fixes to TimCinel's branch already.
 
 _Regards, Petr Korolev_
 
@@ -21,7 +21,7 @@ Well, that's how it started. Now, the following is more accurate:
 ActionSheetPicker
 https://github.com/TimCinel/ActionSheetPicker
 
-Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutible options. Based on the HTML drop-down alternative found in mobilesafari.
+Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. Based on the HTML drop-down alternative found in mobilesafari.
 
 Improvements more than welcome - they are kindly requested :)
 
@@ -34,7 +34,7 @@ Improvements more than welcome - they are kindly requested :)
  * Delegate protocol available for more control
  * Universal (iPhone/iPod/iPad)
 
-## Quickstart ##
+## QuickStart ##
 
 There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
@@ -104,7 +104,7 @@ Thanks to all of the contributors for making ActionSheetPicker better for the iO
 
 [Greg Combs](http://github.com/grgcombs) (Refactor!)
 
-[Petr Korolev](http://github.com/skywinder) (Update, crashfix, update for iOS7, new pickers)
+[Petr Korolev](http://github.com/skywinder) (Update, crash-fix update for iOS7, new pickers)
 
 ### Creator ###
 
