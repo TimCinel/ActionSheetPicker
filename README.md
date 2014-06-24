@@ -75,6 +75,14 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ![ActionSheetDistancePicker](Screenshots/distance.png "ActionSheetDistancePicker")
 ![iPad Support](Screenshots/ipad.png "iPad Support")
 
+## ActionSheetCustomPicker Customization
+
+ActionSheetCustomPicker provides the following delegate function that can be used for customization:
+
+```obj-c
+- (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
+```
+This method is called right before `actionSheetPicker` is presented and it can be used to customize the appearance and properties of the `actionSheetPicker` and the `pickerView` associated with it.
 
 ## Credits ##
 
@@ -96,6 +104,8 @@ Thanks to all of the contributors for making ActionSheetPicker better for the iO
 [Greg Combs](http://github.com/grgcombs) (Refactor!)
 
 [Petr Korolev](http://github.com/skywinder) (Update, crashfix, update for iOS7, new pickers)
+
+[Nikos Mouzakitis](http://github.com/NikDude)
 
 ### Creator ###
 
