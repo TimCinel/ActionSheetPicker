@@ -75,7 +75,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ![ActionSheetDistancePicker](Screenshots/distance.png "ActionSheetDistancePicker")
 ![iPad Support](Screenshots/ipad.png "iPad Support")
 
-## ActionSheetCustomPicker Customisation
+## ActionSheetCustomPicker Customization
 
 ActionSheetCustomPicker provides the following delegate function that can be used for customization:
 
