@@ -27,9 +27,18 @@
 
 #import "AbstractActionSheetPicker.h"
 #import <objc/message.h>
+#import <sys/utsname.h>
 
 BOOL OSAtLeast(NSString* v) {
     return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending;
+}
+
+BOOL isIPhone4() {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    NSString *modelName = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    return ([modelName rangeOfString:@"iPhone3"].location != NSNotFound);
 }
 
 @interface AbstractActionSheetPicker()
@@ -133,6 +142,9 @@ BOOL OSAtLeast(NSString* v) {
 
 - (void)showActionSheetPicker {
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
+    if (isIPhone4()) {
+        masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    }
     self.toolbar = [self createPickerToolbarWithTitle:self.title];
     [masterView addSubview: self.toolbar];
     
