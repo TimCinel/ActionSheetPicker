@@ -2,7 +2,7 @@
  
  I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
 
-`pod 'ActionSheetPicker-3.0', '~> 1.0.7 `
+`pod 'ActionSheetPicker-3.0', '~> 1.0.8`
 
 New ActionSheetPicker, with fix crashes, new pickers and additions.
 I merge most of all fixes to TimCinel's branch already.
