@@ -7,6 +7,8 @@
 New ActionSheetPicker, with fix crashes, new pickers and additions.
 I merge most of all fixes to TimCinel's branch already.
 
+Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.
+
 _Regards, Petr Korolev_
 
 # ActionSheetPicker = UIPickerView + UIActionSheet #
