@@ -136,7 +136,19 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.data objectAtIndex:row];
+    id obj = [self.data objectAtIndex:row];
+
+    // return the object if it is already a NSString,
+    // otherwise, return the description, just like the toString() method in Java
+    // else, return nil to prevent exception
+
+    if ([obj isKindOfClass:[NSString class]])
+        return obj;
+
+    if ([obj respondsToSelector:@selector(description)])
+        return [obj performSelector:@selector(description)];
+
+    return nil;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
