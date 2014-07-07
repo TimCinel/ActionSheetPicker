@@ -4,14 +4,13 @@ I try to resolve a lot of pull requests and issues in Tim's repo by time, but ne
 
 `pod 'ActionSheetPicker-3.0', '~> 1.0.9'`
 
-So, here it is:
-New ActionSheetPicker-3.0, with fix crashes, new pickers and additions.
+Please welcome: **ActionSheetPicker-3.0**, with fix crashes, new pickers and additions!
 
-**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
+*Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.*
 
 _Regards, Petr Korolev_
 
-# ActionSheetPicker = UIPickerView + UIActionSheet #
+## ActionSheetPicker = UIPickerView + UIActionSheet ##
 
 Well, that's how it started. Now, the following is more accurate:
 
