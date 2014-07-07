@@ -52,12 +52,19 @@
     pv.showsSelectionIndicator = YES;
     
     // Allow the delegate to override and set additional configs
-    if ([_delegate respondsToSelector:@selector(actionSheetPicker:configurePickerView:)]) {
+    //to backward compatibility:
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    if ([_delegate respondsToSelector:@selector(configurePickerView:)]) {
+        [_delegate configurePickerView:pv];
+#pragma clang diagnostic pop
+        if ([_delegate respondsToSelector:@selector(actionSheetPicker:configurePickerView:)]) {
         [_delegate actionSheetPicker:self configurePickerView:pv];
     }
     self.pickerView = pv;
     return pv;
 }
+
 
 /////////////////////////////////////////////////////////////////////////
 
