@@ -214,7 +214,7 @@ BOOL isIPhone4() {
     NSAssert(picker != NULL, @"PickerView is invalid");
     [picker selectRow:buttonValue inComponent:0 animated:YES];
     if ([self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
-        void (*objc_msgSendTyped)(id self, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
+        void (*objc_msgSendTyped)(id target, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
         objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
     }
 }
