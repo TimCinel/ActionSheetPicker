@@ -1,14 +1,13 @@
-Since the main repo is outdated, I forked from this repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
- 
-I try to resolve a lot of pull requests and issues in [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) by time, but new updates will be added here. 
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from this repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
+I try to resolve a lot of pull requests and issues in Tim's repo by time, but new updates will be added here.
 
 `pod 'ActionSheetPicker-3.0', '~> 1.0.9'`
 
-New ActionSheetPicker, with fix crashes, new pickers and additions.
-I merge most of all fixes to TimCinel's branch already.
+So, here it is:
+New ActionSheetPicker-3.0, with fix crashes, new pickers and additions.
 
-Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.
+**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
 _Regards, Petr Korolev_
 
@@ -22,7 +21,6 @@ Well, that's how it started. Now, the following is more accurate:
 
 ## Overview ##
 ActionSheetPicker
-https://github.com/TimCinel/ActionSheetPicker
 
 Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. Based on the HTML drop-down alternative found in mobilesafari.
 
