@@ -1,6 +1,7 @@
- Since the main repo not updated for a year:
+Since the main repo is outdated, I forked from this repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
  
- I'm gonna go build my own **ActionSheetPicker**, with blackjack and hookers. (c)
+I try to resolve a lot of pull requests and issues in [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) by time, but new updates will be added here. 
+
 
 `pod 'ActionSheetPicker-3.0', '~> 1.0.9'`
 
