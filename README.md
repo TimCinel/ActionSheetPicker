@@ -1,6 +1,16 @@
-`pod 'ActionSheetPicker', '~> 1.0.5' `
+## Attention:
 
-# ActionSheetPicker = UIPickerView + UIActionSheet #
+This repo is **outdated**.
+I try to resolve a lot of pull requests and issues in this repo by time, but new updates will be appeared in [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
+I forked from this repo and implement a bunch of fixes.
+You can find new version of ActionSheetPicker here: [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0).
+
+*Regards,*
+*Petr Korolev.*
+
+---
+
+### ActionSheetPicker = UIPickerView + UIActionSheet ###
 
 Well, that's how it started. Now, the following is more accurate:
 
