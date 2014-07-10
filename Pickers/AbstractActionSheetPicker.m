@@ -27,9 +27,18 @@
 
 #import "AbstractActionSheetPicker.h"
 #import <objc/message.h>
+#import <sys/utsname.h>
 
 BOOL OSAtLeast(NSString* v) {
     return [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending;
+}
+
+BOOL isIPhone4() {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    NSString *modelName = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    return ([modelName rangeOfString:@"iPhone3"].location != NSNotFound);
 }
 
 @interface AbstractActionSheetPicker()
@@ -141,6 +150,9 @@ BOOL OSAtLeast(NSString* v) {
 
 - (void)showActionSheetPicker {
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
+    if (isIPhone4()) {
+        masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    }
     self.toolbar = [self createPickerToolbarWithTitle:self.title];
     [masterView addSubview: self.toolbar];
     
@@ -210,7 +222,7 @@ BOOL OSAtLeast(NSString* v) {
     NSAssert(picker != NULL, @"PickerView is invalid");
     [picker selectRow:buttonValue inComponent:0 animated:YES];
     if ([self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
-        void (*objc_msgSendTyped)(id self, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
+        void (*objc_msgSendTyped)(id target, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void*)objc_msgSend; // sending Integers as params
         objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
     }
 }
