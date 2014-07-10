@@ -1,3 +1,7 @@
+[![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg?style=flat)](http://cocoadocs.org/docsets/DOSingleton)
+[![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg?style=flat)](http://cocoadocs.org/docsets/DOSingleton)
+[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg?style=flat)](http://cocoadocs.org/docsets/DOSingleton)
+
 Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from this repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
 I try to resolve a lot of pull requests and issues in Tim's repo by time, but new updates will be added here.
