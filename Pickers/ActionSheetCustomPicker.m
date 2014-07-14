@@ -7,6 +7,9 @@
 //
 
 #import "ActionSheetCustomPicker.h"
+@interface ActionSheetCustomPicker()
+@property (nonatomic, strong) NSArray *myInitialSelections;
+@end
 
 @implementation ActionSheetCustomPicker
 
