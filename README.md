@@ -86,7 +86,6 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 ![ActionSheetPicker](Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](Screenshots/date.png "ActionSheetDatePicker")
-![ActionSheetDistancePicker](Screenshots/distance.png "ActionSheetDistancePicker")
 ![iPad Support](Screenshots/ipad.png "iPad Support")
 
 ## ActionSheetCustomPicker Customization
