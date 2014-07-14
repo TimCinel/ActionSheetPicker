@@ -113,6 +113,9 @@
     [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender];
 }
 
+- (IBAction)selectLocation:(UITextField *)sender {
+}
+
 #pragma mark - Implementation
 
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {

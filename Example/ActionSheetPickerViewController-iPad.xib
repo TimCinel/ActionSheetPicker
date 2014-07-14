@@ -106,6 +106,17 @@
                         <outlet property="delegate" destination="-1" id="35"/>
                     </connections>
                 </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhA-0g-KD0">
+                    <rect key="frame" x="241" y="648" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="selectAMusicalScale:" destination="-1" eventType="touchDown" id="oxz-VF-aQv"/>
+                        <action selector="selectLocation:" destination="-1" eventType="editingDidEnd" id="FYz-9M-6su"/>
+                        <outlet property="delegate" destination="-1" id="ekM-Qp-7TK"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="0.77254909279999995" green="0.80000007149999997" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
