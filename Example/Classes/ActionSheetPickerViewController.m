@@ -116,7 +116,8 @@
     
     NSArray *initialSelections = [[NSArray alloc] initWithObjects:yass1, yass2, nil];
     
-    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" initialSelections:initialSelections delegate:delg showCancelButton:NO origin:sender];
+    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" origin:sender delegate:delg showCancelButton:NO
+                               initialSelections:initialSelections];
 }
 
 - (IBAction)selectLocation:(UITextField *)sender {

@@ -8,7 +8,7 @@
 
 #import "ActionSheetCustomPicker.h"
 @interface ActionSheetCustomPicker()
-@property (nonatomic, strong) NSArray *myInitialSelections;
+@property (nonatomic, strong) NSArray *initialSelections;
 @end
 
 @implementation ActionSheetCustomPicker
@@ -17,24 +17,41 @@
 #pragma mark - Init
 /////////////////////////////////////////////////////////////////////////
 
-- (id)initWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections  delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
+- (id)initWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
 {
     if (self = [self initWithTarget:nil successAction:nil cancelAction:nil origin:origin]) {;
-        
+
         self.title = title;
         self.hideCancel = !showCancelButton;
         _delegate = delegate;
-        self.myInitialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }
-    
+
+    return self;
+}
+
++ (id)showPickerWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
+{
+    return [self showPickerWithTitle:title origin:origin delegate:delegate showCancelButton:showCancelButton
+                   initialSelections:nil ];
+}
+
+- (id)initWithTitle:(NSString *)title origin:(id)origin delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton initialSelections:(NSArray *)initialSelections
+{
+    if (self = [self initWithTitle:title delegate:delegate
+                  showCancelButton:showCancelButton origin:origin]) {;
+        self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
+    }
     return self;
 }
 
 /////////////////////////////////////////////////////////////////////////
 
-+ (id)showPickerWithTitle:(NSString *)title initialSelections:(NSArray *)initialSelections  delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
++ (id)showPickerWithTitle:(NSString *)title origin:(id)origin delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton initialSelections:(NSArray *)initialSelections
 {
-    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title initialSelections:initialSelections delegate:delegate showCancelButton:showCancelButton origin:origin];
+    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title origin:origin
+                                                                            delegate:delegate
+                                                                    showCancelButton:showCancelButton
+                                                                   initialSelections:initialSelections];
     [picker showActionSheetPicker];
     return picker;
 }
@@ -52,9 +69,16 @@
     pv.dataSource = _delegate;
     pv.showsSelectionIndicator = YES;
     
-    for (int i = 0; i < [self.myInitialSelections count]; i++) {
-        int initialValue = [(NSNumber *)self.myInitialSelections[i] intValue];
-        [pv selectRow:initialValue inComponent:i animated:NO];
+    if (self.initialSelections )
+    {
+        NSAssert(pv.numberOfComponents == self.initialSelections.count, @"Number of sections not match");
+        for (NSUInteger i = 0; i < [self.initialSelections count]; i++) {
+
+            NSInteger row = [(NSNumber *)self.initialSelections[i] integerValue];
+            NSAssert([pv numberOfRowsInComponent:i] > row, @"Number of sections not match");
+            [pv selectRow:row inComponent:i animated:NO];
+        }
+
     }
     
     // Allow the delegate to override and set additional configs
