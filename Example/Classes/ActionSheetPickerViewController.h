@@ -49,5 +49,6 @@
 - (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
+- (IBAction)selectLocation:(UITextField *)sender;
 
 @end
