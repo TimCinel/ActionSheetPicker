@@ -27,6 +27,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		D66F552FF0C2F6C34E9961BA /* ActionSheetLocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5B7315F4CDB7C121259D /* ActionSheetLocationPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D66F5B7315F4CDB7C121259D /* ActionSheetLocationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetLocationPicker.m; path = Pickers/ActionSheetLocationPicker.m; sourceTree = SOURCE_ROOT; };
+		D66F5F361BBF55B0857E9C84 /* ActionSheetLocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetLocationPicker.h; path = Pickers/ActionSheetLocationPicker.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */,
 				1C6EE731192BB4F600A27994 /* DistancePickerView.h */,
 				1C6EE732192BB4F600A27994 /* DistancePickerView.m */,
+				D66F5B7315F4CDB7C121259D /* ActionSheetLocationPicker.m */,
+				D66F5F361BBF55B0857E9C84 /* ActionSheetLocationPicker.h */,
 			);
 			name = Pickers;
 			path = Example/../Pickers;
@@ -250,6 +255,7 @@
 				1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */,
 				1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */,
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
+				D66F552FF0C2F6C34E9961BA /* ActionSheetLocationPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
