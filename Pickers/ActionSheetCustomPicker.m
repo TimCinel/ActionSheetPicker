@@ -41,7 +41,7 @@
 {
     if ( self = [self initWithTitle:title delegate:delegate
                    showCancelButton:showCancelButton origin:origin] )
-    {;
+    {
         self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }
     return self;
