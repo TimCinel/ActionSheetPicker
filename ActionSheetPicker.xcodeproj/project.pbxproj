@@ -30,6 +30,13 @@
 		1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BD197B1C2F005F495B /* InfoPlist.strings */; };
 		1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */; };
 		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
+		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		1C9444D6197B1EDE005F495B /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
+		1C9444D7197B1EDE005F495B /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */; };
+		1C9444D8197B1EDE005F495B /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */; };
+		1C9444D9197B1EDE005F495B /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72E192BB4F600A27994 /* ActionSheetDistancePicker.m */; };
+		1C9444DA197B1EDE005F495B /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */; };
+		1C9444DB197B1EDE005F495B /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -94,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */,
 				1C9444B7197B1C2F005F495B /* XCTest.framework in Frameworks */,
 				1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */,
 				1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */,
@@ -328,6 +336,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9444D6197B1EDE005F495B /* AbstractActionSheetPicker.m in Sources */,
+				1C9444D7197B1EDE005F495B /* ActionSheetCustomPicker.m in Sources */,
+				1C9444D8197B1EDE005F495B /* ActionSheetDatePicker.m in Sources */,
+				1C9444D9197B1EDE005F495B /* ActionSheetDistancePicker.m in Sources */,
+				1C9444DA197B1EDE005F495B /* ActionSheetStringPicker.m in Sources */,
+				1C9444DB197B1EDE005F495B /* DistancePickerView.m in Sources */,
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
 				1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */,
 			);
@@ -412,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ActionSheetPicker Tests/ActionSheetPicker Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -452,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ActionSheetPicker Tests/ActionSheetPicker Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
@@ -535,6 +549,7 @@
 				1C9444C6197B1C2F005F495B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ActionSheetPicker" */ = {
 			isa = XCConfigurationList;
