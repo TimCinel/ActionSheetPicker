@@ -20,40 +20,38 @@
 
 - (id)initWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
 {
-    if ( self = [self initWithTarget:nil successAction:nil cancelAction:nil origin:origin] )
-    {;
-
-        self.title = title;
-        self.hideCancel = !showCancelButton;
-        _delegate = delegate;
-    }
-
-    return self;
+    return [self initWithTitle:title delegate:delegate
+              showCancelButton:showCancelButton origin:origin
+             initialSelections:nil];
 }
 
 + (id)showPickerWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin
 {
-    return [self showPickerWithTitle:title origin:origin delegate:delegate showCancelButton:showCancelButton
+    return [self showPickerWithTitle:title delegate:delegate showCancelButton:showCancelButton origin:origin
                    initialSelections:nil ];
 }
 
-- (id)initWithTitle:(NSString *)title origin:(id)origin delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton initialSelections:(NSArray *)initialSelections
+- (id)initWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin initialSelections:(NSArray *)initialSelections
 {
-    if ( self = [self initWithTitle:title delegate:delegate
-                   showCancelButton:showCancelButton origin:origin] )
+    if ( self = [self initWithTarget:nil successAction:nil cancelAction:nil origin:origin] )
     {
-        self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
+
+        self.title = title;
+        self.hideCancel = !showCancelButton;
+        NSAssert(delegate, @"Delegate can't be nil");
+        _delegate = delegate;
+        if (initialSelections)
+            self.initialSelections = [[NSArray alloc] initWithArray:initialSelections];
     }
     return self;
 }
 
 /////////////////////////////////////////////////////////////////////////
 
-+ (id)showPickerWithTitle:(NSString *)title origin:(id)origin delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton initialSelections:(NSArray *)initialSelections
++ (id)showPickerWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin initialSelections:(NSArray *)initialSelections
 {
-    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title origin:origin
-                                                                            delegate:delegate
-                                                                    showCancelButton:showCancelButton
+    ActionSheetCustomPicker *picker = [[ActionSheetCustomPicker alloc] initWithTitle:title delegate:delegate
+                                                                    showCancelButton:showCancelButton origin:origin
                                                                    initialSelections:initialSelections];
     [picker showActionSheetPicker];
     return picker;
