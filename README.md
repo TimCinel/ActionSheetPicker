@@ -84,9 +84,9 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 ## Screen Shots ##
 
-![ActionSheetPicker](Screenshots/string.png "ActionSheetPicker")
-![ActionSheetDatePicker](Screenshots/date.png "ActionSheetDatePicker")
-![iPad Support](Screenshots/ipad.png "iPad Support")
+![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
+![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
+![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 ## ActionSheetCustomPicker Customization
 
