@@ -127,7 +127,7 @@ BOOL isIPhone4()
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
-        
+
         //Add autorotation notification observer
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didRotate:)
@@ -145,7 +145,7 @@ BOOL isIPhone4()
 
     if ( [self.pickerView respondsToSelector:@selector(setDataSource:)] )
         [self.pickerView performSelector:@selector(setDataSource:) withObject:nil];
-    
+
     self.actionSheet = nil;
     self.popOverController = nil;
     self.customButtons = nil;
@@ -153,10 +153,10 @@ BOOL isIPhone4()
     self.containerView = nil;
 
     self.target = nil;
-    
+
     //Remove rotation notification observer
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+
 }
 
 /**
@@ -196,14 +196,13 @@ BOOL isIPhone4()
 - (void)showActionSheetPicker
 {
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];
-
     // to fix bug, appeared only on iPhone 4 Device: https://github.com/skywinder/ActionSheetPicker-3.0/issues/5
     if ( isIPhone4() )
     {
         masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
     }
     [self hidePicker];
-    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
+
     self.toolbar = [self createPickerToolbarWithTitle:self.title];
     [masterView addSubview:self.toolbar];
 
@@ -237,7 +236,6 @@ BOOL isIPhone4()
 }
 
 - (void)hidePicker{
-{
 #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     if ( self.actionSheet )
 #else
