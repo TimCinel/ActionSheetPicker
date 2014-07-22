@@ -61,6 +61,8 @@ BOOL isIPhone4()
 
 - (void)presentPopover:(UIPopoverController *)popover;
 
+- (void)hidePicker;
+
 - (void)dismissPicker;
 
 - (BOOL)isViewPortrait;
@@ -125,6 +127,11 @@ BOOL isIPhone4()
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
+        
+        //Add autorotation notification observer
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didRotate:)
+                                                     name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     }
     return self;
 }
@@ -138,9 +145,28 @@ BOOL isIPhone4()
 
     if ( [self.pickerView respondsToSelector:@selector(setDataSource:)] )
         [self.pickerView performSelector:@selector(setDataSource:) withObject:nil];
+    
+    self.actionSheet = nil;
+    self.popOverController = nil;
+    self.customButtons = nil;
+    self.pickerView = nil;
+    self.containerView = nil;
 
     self.target = nil;
+    
+    //Remove rotation notification observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
+/**
+ Received rotation notification
+ @param NSNotification
+ @return    void
+ */
+- (void) didRotate:(NSNotification *)notification{
+    [self hidePicker];
+    [self showActionSheetPicker];
 }
 
 - (UIView *)configuredPickerView
@@ -176,6 +202,8 @@ BOOL isIPhone4()
     {
         masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
     }
+    [self hidePicker];
+    UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];    
     self.toolbar = [self createPickerToolbarWithTitle:self.title];
     [masterView addSubview:self.toolbar];
 
@@ -208,7 +236,7 @@ BOOL isIPhone4()
     [self dismissPicker];
 }
 
-- (void)dismissPicker
+- (void)hidePicker{
 {
 #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     if ( self.actionSheet )
@@ -218,6 +246,10 @@ BOOL isIPhone4()
         [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     else if ( self.popOverController && self.popOverController.popoverVisible )
         [_popOverController dismissPopoverAnimated:YES];
+}
+
+- (void)dismissPicker {
+    [self hidePicker];
     self.actionSheet = nil;
     self.popOverController = nil;
     self.selfReference = nil;
@@ -355,9 +387,13 @@ BOOL isIPhone4()
 
 - (CGSize)viewSize
 {
-    if ( ![self isViewPortrait] )
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return CGSizeMake(480, 480);
+    } else {
+        if (![self isViewPortrait])
+            return CGSizeMake(480, 320);
+        return CGSizeMake(320, 480);
+    }
 }
 
 - (BOOL)isViewPortrait
@@ -385,12 +421,14 @@ BOOL isIPhone4()
 
 - (void)presentPickerForView:(UIView *)aView
 {
-    self.presentFromRect = aView.frame;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.containerView) {
 
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        self.presentFromRect = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
         [self configureAndPresentPopoverForView:aView];
-    else
+    } else {
+        self.presentFromRect = aView.frame;
         [self configureAndPresentActionSheetForView:aView];
+    }
 }
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView

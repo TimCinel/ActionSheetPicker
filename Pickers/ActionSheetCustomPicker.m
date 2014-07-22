@@ -9,6 +9,7 @@
 #import "ActionSheetCustomPicker.h"
 @interface ActionSheetCustomPicker()
 @property (nonatomic, strong) NSArray *initialSelections;
+@property(nonatomic,assign) id<UIPickerViewDataSource, UIPickerViewDelegate> pickerDataSource;
 @end
 
 @implementation ActionSheetCustomPicker
@@ -65,8 +66,9 @@
     UIPickerView *pv = [[UIPickerView alloc] initWithFrame:pickerFrame];
     
     // Default to our delegate being the picker's delegate and datasource
-    pv.delegate = _delegate;
-    pv.dataSource = _delegate;
+    pv.delegate = self.pickerDataSource ? self.pickerDataSource: _delegate;
+    pv.dataSource = self.pickerDataSource ? self.pickerDataSource : _delegate;
+
     pv.showsSelectionIndicator = YES;
     
     if (self.initialSelections )
