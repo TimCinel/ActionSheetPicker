@@ -116,7 +116,7 @@
     
     NSArray *initialSelections = [[NSArray alloc] initWithObjects:yass1, yass2, nil];
     
-    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" origin:sender delegate:delg showCancelButton:NO
+    [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender
                                initialSelections:initialSelections];
 }
 
