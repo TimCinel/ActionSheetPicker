@@ -1,10 +1,159 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0H4-BH-Ewc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HIQ-mT-eIh">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Action Sheet Picker View Controller - ActionSheetPicker-->
+        <scene sceneID="cJx-mW-nZA">
+            <objects>
+                <viewController id="LWr-l1-uYK" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hyf-1j-qZu"/>
+                        <viewControllerLayoutGuide type="bottom" id="4pM-YP-24v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xkq-TB-0tc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select an animal..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-Ul-Nmk">
+                                <rect key="frame" x="15" y="135" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectAnAnimal:" destination="LWr-l1-uYK" eventType="touchDown" id="fY7-y6-uCw"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a measurement..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQn-Q8-jhe">
+                                <rect key="frame" x="15" y="225" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectAMeasurement:" destination="LWr-l1-uYK" eventType="touchDown" id="KtI-zo-L24"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a date..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-Ol-1xb">
+                                <rect key="frame" x="15" y="180" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectADate:" destination="LWr-l1-uYK" eventType="touchDown" id="RaG-WX-lSl"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EV1-n7-TvQ">
+                                <rect key="frame" x="15" y="500" width="286" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="IgD-cF-3n6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jYm-Eq-vOm">
+                                <rect key="frame" x="105" y="520" width="110" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a block..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alq-in-mNW">
+                                <rect key="frame" x="15" y="90" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="T6S-pG-N0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectABlock:" destination="LWr-l1-uYK" eventType="touchDown" id="EuP-By-2Jm"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a musical scale..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AUS-Q4-Cjs">
+                                <rect key="frame" x="15" y="270" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectAMusicalScale:" destination="LWr-l1-uYK" eventType="touchDown" id="ryl-iV-VOx"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-fo-wWj">
+                                <rect key="frame" x="6" y="540" width="309" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="J3e-ob-d6T"/>
+                                    <constraint firstAttribute="width" constant="309" id="ZL8-pq-k2n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvM-rv-qGy">
+                                <rect key="frame" x="15" y="315" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectLocation:" destination="LWr-l1-uYK" eventType="touchDown" id="317-dq-pIY"/>
+                                    <outlet property="delegate" destination="LWr-l1-uYK" id="iyO-E0-gL0"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
+                                <rect key="frame" x="94" y="353" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TableView Example">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTableView:" destination="LWr-l1-uYK" eventType="touchUpInside" id="unX-Ah-bTz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xed-fo-wWj" firstAttribute="centerX" secondItem="Xkq-TB-0tc" secondAttribute="centerX" id="7Tc-ta-xW7"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="top" secondItem="2a8-Ol-1xb" secondAttribute="bottom" constant="15" id="8Ij-H1-EaG"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="nvM-rv-qGy" secondAttribute="width" id="CzB-vL-7CV"/>
+                            <constraint firstAttribute="bottom" secondItem="Xed-fo-wWj" secondAttribute="bottom" id="D0Q-oJ-TiU"/>
+                            <constraint firstItem="Xed-fo-wWj" firstAttribute="centerX" secondItem="jYm-Eq-vOm" secondAttribute="centerX" id="HjR-pc-gyt"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="2a8-Ol-1xb" secondAttribute="leading" id="Hqs-8J-jgS"/>
+                            <constraint firstItem="alq-in-mNW" firstAttribute="top" secondItem="hyf-1j-qZu" secondAttribute="bottom" constant="26" id="I97-1n-GiU"/>
+                            <constraint firstItem="jYm-Eq-vOm" firstAttribute="top" secondItem="EV1-n7-TvQ" secondAttribute="bottom" constant="3" id="J8a-fd-NQH"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="2a8-Ol-1xb" secondAttribute="width" id="LIG-02-MFa"/>
+                            <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="EV1-n7-TvQ" secondAttribute="centerX" constant="2" id="M3l-bF-B68"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="AUS-Q4-Cjs" secondAttribute="leading" id="Mzv-qW-eNT"/>
+                            <constraint firstItem="2a8-Ol-1xb" firstAttribute="top" secondItem="mkk-Ul-Nmk" secondAttribute="bottom" constant="15" id="NzU-tH-RWz"/>
+                            <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="QkB-1n-7Wg" secondAttribute="centerX" id="UEw-4k-nRi"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="nvM-rv-qGy" secondAttribute="leading" id="Vq7-po-9L6"/>
+                            <constraint firstItem="EV1-n7-TvQ" firstAttribute="width" secondItem="Xed-fo-wWj" secondAttribute="width" constant="-23" id="bD7-jU-X0q"/>
+                            <constraint firstItem="Xed-fo-wWj" firstAttribute="top" secondItem="jYm-Eq-vOm" secondAttribute="bottom" constant="3" id="bJ5-8s-eLd"/>
+                            <constraint firstItem="AUS-Q4-Cjs" firstAttribute="top" secondItem="vQn-Q8-jhe" secondAttribute="bottom" constant="15" id="fR4-Vz-NH6"/>
+                            <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="15" id="g4Q-rL-3f8"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="mkk-Ul-Nmk" secondAttribute="width" id="kQo-Mh-2q8"/>
+                            <constraint firstItem="nvM-rv-qGy" firstAttribute="leading" secondItem="EV1-n7-TvQ" secondAttribute="leading" id="lJe-TG-RIx"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="alq-in-mNW" secondAttribute="leading" id="mKd-GW-ooR"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="alq-in-mNW" secondAttribute="width" id="uZL-dS-WLp"/>
+                            <constraint firstItem="QkB-1n-7Wg" firstAttribute="top" secondItem="nvM-rv-qGy" secondAttribute="bottom" constant="8" symbolic="YES" id="uhz-ls-jYe"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="mkk-Ul-Nmk" secondAttribute="leading" id="wKi-G0-efi"/>
+                            <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="AUS-Q4-Cjs" secondAttribute="width" id="xdV-0z-hWm"/>
+                            <constraint firstItem="nvM-rv-qGy" firstAttribute="top" secondItem="AUS-Q4-Cjs" secondAttribute="bottom" constant="15" id="yjP-ua-0sp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ActionSheetPicker" id="d3J-Yq-ZFl"/>
+                    <connections>
+                        <outlet property="animalTextField" destination="mkk-Ul-Nmk" id="iQg-1G-bNg"/>
+                        <outlet property="dateTextField" destination="2a8-Ol-1xb" id="PWK-pg-3bt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8G-CG-7ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640" y="95"/>
+        </scene>
         <!--Test Table View Controller-->
         <scene sceneID="3fS-AL-124">
             <objects>
@@ -47,7 +196,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hd-lY-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="106"/>
+            <point key="canvasLocation" x="1124" y="103"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XmF-IP-8lr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HIQ-mT-eIh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPh-aa-rbL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LWr-l1-uYK" kind="relationship" relationship="rootViewController" id="bke-un-tVf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHX-ON-8fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="95"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

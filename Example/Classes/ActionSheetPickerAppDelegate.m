@@ -32,7 +32,6 @@
 @implementation ActionSheetPickerAppDelegate
 
 @synthesize window;
-@synthesize viewController;
 
 
 #pragma mark -
@@ -43,17 +42,10 @@
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
+//
+//    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+//            window.tintColor = [UIColor blueColor];
 
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
-            window.tintColor = [UIColor blueColor];
-
-    UINavigationController *navController = [[UINavigationController alloc] init];
-
-    [navController pushViewController:viewController animated:NO];
-    window.rootViewController = navController;
-
-//    window.rootViewController = viewController;
-    [window makeKeyAndVisible];
 
     return YES;
 }
