@@ -30,6 +30,7 @@
 #import "ActionSheetPicker.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
+#import "TestTableViewController.h"
 
 @interface ActionSheetPickerViewController()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
@@ -51,6 +52,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
     self.selectedDate = [NSDate date];
 }
@@ -121,6 +123,13 @@
 }
 
 - (IBAction)selectLocation:(UITextField *)sender {
+
+}
+
+- (IBAction)showTableView:(id)sender {
+    TestTableViewController *tableViewController = [[UIStoryboard storyboardWithName:@"Storyboard"
+                                                                              bundle:nil] instantiateViewControllerWithIdentifier:@"TestTableViewController"];
+    [self.navigationController pushViewController:tableViewController animated:YES];
 }
 
 #pragma mark - Implementation

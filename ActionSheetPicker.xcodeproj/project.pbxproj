@@ -37,9 +37,12 @@
 		1C9444D9197B1EDE005F495B /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72E192BB4F600A27994 /* ActionSheetDistancePicker.m */; };
 		1C9444DA197B1EDE005F495B /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */; };
 		1C9444DB197B1EDE005F495B /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
+		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
+		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,9 +94,12 @@
 		1C9444C2197B1C2F005F495B /* ActionSheetPicker Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActionSheetPicker Tests-Prefix.pch"; sourceTree = "<group>"; };
 		1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPickerTestCase.m; sourceTree = "<group>"; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CFCACFC1980FA320056A594 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		1C6EE704192BB41600A27994 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */,
 				1C6EE708192BB41600A27994 /* ActionSheetPickerViewController.xib */,
 				1C6EE709192BB41600A27994 /* Classes */,
@@ -147,6 +154,8 @@
 				1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */,
 				1C6EE710192BB41600A27994 /* NSDate+TCUtils.h */,
 				1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */,
+				D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */,
+				D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,6 +334,7 @@
 				1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */,
 				1C6EE719192BB41600A27994 /* ActionSheetPickerViewController.xib in Resources */,
 				1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */,
+				1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */,
 				1C6EE718192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +354,7 @@
 				1C9444DB197B1EDE005F495B /* DistancePickerView.m in Sources */,
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
 				1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */,
+				D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +373,7 @@
 				1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */,
 				1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */,
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
+				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

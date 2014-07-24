@@ -112,11 +112,20 @@
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="selectAMusicalScale:" destination="-1" eventType="touchDown" id="oxz-VF-aQv"/>
-                        <action selector="selectLocation:" destination="-1" eventType="editingDidEnd" id="FYz-9M-6su"/>
+                        <action selector="selectLocation:" destination="-1" eventType="touchDown" id="v51-XK-9bZ"/>
                         <outlet property="delegate" destination="-1" id="ekM-Qp-7TK"/>
                     </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-s3-8dq">
+                    <rect key="frame" x="315" y="686" width="132" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="TableView Example">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showTableView:" destination="-1" eventType="touchUpInside" id="msX-er-UOp"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.77254909279999995" green="0.80000007149999997" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
             <constraints>

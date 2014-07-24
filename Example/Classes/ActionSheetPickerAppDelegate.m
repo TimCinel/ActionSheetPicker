@@ -47,7 +47,12 @@
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
             window.tintColor = [UIColor blueColor];
 
-    window.rootViewController = viewController;
+    UINavigationController *navController = [[UINavigationController alloc] init];
+
+    [navController pushViewController:viewController animated:NO];
+    window.rootViewController = navController;
+
+//    window.rootViewController = viewController;
     [window makeKeyAndVisible];
 
     return YES;

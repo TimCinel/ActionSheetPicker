@@ -114,10 +114,20 @@
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="selectLocation:" destination="-1" eventType="touchUpInside" id="ZTS-Rb-plb"/>
+                        <action selector="selectLocation:" destination="-1" eventType="touchDown" id="WpE-Bg-2Bk"/>
                         <outlet property="delegate" destination="-1" id="Jlm-j2-Rxd"/>
                     </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scK-fD-Xxg">
+                    <rect key="frame" x="94" y="326" width="132" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="TableView Example">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showTableView:" destination="-1" eventType="touchUpInside" id="lDx-Yj-lWd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
