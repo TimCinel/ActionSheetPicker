@@ -150,8 +150,23 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     CGFloat totalWidth = pickerView.frame.size.width - 30;
-    CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
-    CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+
+    CGFloat bigUnitLabelSize;
+    CGFloat smallUnitLabelSize;
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+
+        bigUnitLabelSize = [self.bigUnitString sizeWithAttributes:
+                                                       @{NSFontAttributeName:
+                                                               [UIFont boldSystemFontOfSize:20]}].width;
+        smallUnitLabelSize = [self.smallUnitString sizeWithAttributes:
+                                                           @{NSFontAttributeName:
+                                                                   [UIFont boldSystemFontOfSize:20]}].width;
+    }
+    else {
+        bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+        smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+    }
+
     CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
     if (component == self.bigUnitDigits - 1)
         return otherSize + bigUnitLabelSize;

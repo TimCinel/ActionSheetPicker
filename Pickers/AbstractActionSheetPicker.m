@@ -327,7 +327,16 @@ BOOL isIPhone4()
     }
     else
     {
-        CGSize textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
+        CGSize textSize;
+        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+            textSize = [[toolBarItemlabel text]  sizeWithAttributes:
+                                                         @{NSFontAttributeName:
+                                                                 [toolBarItemlabel font]}];
+        }
+        else {
+            textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
+        }
+
         strikeWidth = textSize.width;
     }
     if (strikeWidth < 180)
