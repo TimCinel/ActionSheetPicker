@@ -93,14 +93,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvM-rv-qGy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Time..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvM-rv-qGy">
                                 <rect key="frame" x="15" y="315" width="281" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="selectLocation:" destination="LWr-l1-uYK" eventType="touchDown" id="317-dq-pIY"/>
-                                    <outlet property="delegate" destination="LWr-l1-uYK" id="iyO-E0-gL0"/>
+                                    <action selector="selectATime:" destination="LWr-l1-uYK" eventType="touchDown" id="DS5-Zi-rHk"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
@@ -148,6 +147,7 @@
                     <connections>
                         <outlet property="animalTextField" destination="mkk-Ul-Nmk" id="iQg-1G-bNg"/>
                         <outlet property="dateTextField" destination="2a8-Ol-1xb" id="PWK-pg-3bt"/>
+                        <outlet property="timeTextField" destination="nvM-rv-qGy" id="JB7-fT-A0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8G-CG-7ag" userLabel="First Responder" sceneMemberID="firstResponder"/>

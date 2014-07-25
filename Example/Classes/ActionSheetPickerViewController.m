@@ -55,6 +55,7 @@
 
     self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
     self.selectedDate = [NSDate date];
+    self.selectedTime = [NSDate date];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -96,6 +97,32 @@
     self.actionSheetPicker.hideCancel = YES;
     [self.actionSheetPicker showActionSheetPicker];
 }
+
+
+
+-(IBAction)selectATime:(id)sender {
+    
+   
+    
+    NSInteger minuteInterval = 15;
+    //clamp date
+    NSInteger referenceTimeInterval = (NSInteger)[self.selectedTime timeIntervalSinceReferenceDate];
+    NSInteger remainingSeconds = referenceTimeInterval % (minuteInterval *60);
+    NSInteger timeRoundedTo5Minutes = referenceTimeInterval - remainingSeconds;
+    if(remainingSeconds>((minuteInterval*60)/2)) {/// round up
+        timeRoundedTo5Minutes = referenceTimeInterval +((minuteInterval*60)-remainingSeconds);
+    }
+    
+    self.selectedTime = [NSDate dateWithTimeIntervalSinceReferenceDate:(NSTimeInterval)timeRoundedTo5Minutes];
+    
+    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
+    
+    
+    datePicker.minuteInterval = 15;
+    
+    [datePicker showActionSheetPicker];
+}
+
 
 - (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
     [self selectAnAnimal:sender];
@@ -146,6 +173,14 @@
     
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
     self.dateTextField.text = [self.selectedDate description];
+}
+
+-(void)timeWasSelected:(NSDate *)selectedTime element:(id)element {
+    self.selectedTime = selectedTime;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"h:mm a"];
+    self.timeTextField.text = [dateFormatter stringFromDate:selectedTime];
 }
 
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element {
