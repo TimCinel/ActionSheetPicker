@@ -63,6 +63,7 @@
     datePicker.datePickerMode = self.datePickerMode;
     datePicker.maximumDate = self.maximumDate;
     datePicker.maximumDate = self.minimumDate;
+    datePicker.minuteInterval = self.minuteInterval;
     datePicker.calendar = self.calendar;
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
