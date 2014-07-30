@@ -27,7 +27,6 @@
 
 
 #import "ActionSheetPickerViewController.h"
-#import "ActionSheetPicker.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
@@ -124,14 +123,6 @@
 }
 
 
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender {
-    [self selectAnAnimal:sender];
-}
-
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender {
-    [self selectADate:sender];
-}
-
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
 }
@@ -165,7 +156,7 @@
     self.selectedIndex = [selectedIndex intValue];
     
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
-    self.animalTextField.text = [self.animals objectAtIndex:self.selectedIndex];
+    self.animalTextField.text = [self.animals objectAtIndex:(NSUInteger) self.selectedIndex];
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {

@@ -48,8 +48,7 @@
 - (IBAction)selectAnAnimal:(id)sender;
 - (IBAction)selectADate:(id)sender;
 - (IBAction)selectATime:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
+
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
 - (IBAction)selectLocation:(UITextField *)sender;

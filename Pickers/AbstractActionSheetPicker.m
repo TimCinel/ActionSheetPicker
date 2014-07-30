@@ -249,7 +249,7 @@ BOOL isIPhone4()
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);
     NSAssert([self.pickerView respondsToSelector:@
             selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
-    NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
+    NSDictionary *buttonDetails = [self.customButtons objectAtIndex:(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
     UIPickerView *picker = (UIPickerView *) self.pickerView;

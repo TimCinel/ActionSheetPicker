@@ -94,7 +94,7 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     if (self.onActionSheetDone) {
-        id selectedObject = (self.data.count > 0) ? [self.data objectAtIndex:self.selectedIndex] : nil;
+        id selectedObject = (self.data.count > 0) ? [self.data objectAtIndex:(NSUInteger) self.selectedIndex] : nil;
         _onActionSheetDone(self, self.selectedIndex, selectedObject);
         return;
     }
@@ -136,7 +136,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    id obj = [self.data objectAtIndex:row];
+    id obj = [self.data objectAtIndex:(NSUInteger) row];
 
     // return the object if it is already a NSString,
     // otherwise, return the description, just like the toString() method in Java

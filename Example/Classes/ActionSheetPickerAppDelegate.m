@@ -27,12 +27,8 @@
 
 
 #import "ActionSheetPickerAppDelegate.h"
-#import "ActionSheetPickerViewController.h"
 
 @implementation ActionSheetPickerAppDelegate
-
-@synthesize window;
-
 
 #pragma mark -
 #pragma mark Application lifecycle
