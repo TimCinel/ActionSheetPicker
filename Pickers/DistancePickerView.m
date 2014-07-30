@@ -178,11 +178,11 @@
                         if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
                         {
                             [self insertSubview:label
-                                   aboveSubview:[[self.subviews[0] subviews] objectAtIndex:component]];
+                                   aboveSubview:[[self.subviews[0] subviews] objectAtIndex:(NSUInteger) component]];
                         }
                         else
                         {
-                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5 * (component + 1)]];
+                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:(NSUInteger) (5 * (component + 1))]];
                         }
 
                     }

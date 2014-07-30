@@ -6,5 +6,4 @@
 
 
 @interface TestTableViewController : UITableViewController
-@property(nonatomic, strong) NSArray *animals;
 @end

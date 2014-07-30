@@ -78,8 +78,9 @@
     picker.delegate = self;
     picker.dataSource = self;
     picker.showsSelectionIndicator = YES;
-    [picker addLabel:self.bigUnitString forComponent:(self.bigUnitDigits - 1) forLongestString:nil];
-    [picker addLabel:self.smallUnitString forComponent:(self.bigUnitDigits + self.smallUnitDigits - 1) forLongestString:nil];
+    [picker addLabel:self.bigUnitString forComponent:(NSUInteger) (self.bigUnitDigits - 1) forLongestString:nil];
+    [picker addLabel:self.smallUnitString forComponent:(NSUInteger) (self.bigUnitDigits + self.smallUnitDigits - 1)
+    forLongestString:nil];
 
     NSInteger unitSubtract = 0;
     NSInteger currentDigit = 0;

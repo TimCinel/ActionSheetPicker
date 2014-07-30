@@ -10,9 +10,7 @@
 
 @implementation ActionSheetPickerCustomPickerDelegate
 
-@synthesize selectedKey, selectedScale;
-
-- (id)init 
+- (id)init
 {
     if (self = [super init]) {
         notesToDisplayForKey = [NSArray arrayWithObjects: @"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B", nil];
@@ -85,8 +83,8 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     switch (component) {
-        case 0: return [notesToDisplayForKey objectAtIndex:row];
-        case 1: return [scaleNames objectAtIndex:row];
+        case 0: return [notesToDisplayForKey objectAtIndex:(NSUInteger) row];
+        case 1: return [scaleNames objectAtIndex:(NSUInteger) row];
         default:break;
     }
     return nil;
@@ -99,11 +97,11 @@
     NSLog(@"Row %i selected in component %i", row, component);
     switch (component) {
         case 0:
-            selectedKey = [notesToDisplayForKey objectAtIndex:row];
+            self.selectedKey = [notesToDisplayForKey objectAtIndex:(NSUInteger) row];
             return;
             
         case 1:
-            selectedScale = [scaleNames objectAtIndex:row];
+            self.selectedScale = [scaleNames objectAtIndex:(NSUInteger) row];
             return;
         default:break;
     }
