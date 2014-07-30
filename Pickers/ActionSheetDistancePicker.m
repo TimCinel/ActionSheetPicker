@@ -153,18 +153,22 @@
 
     CGFloat bigUnitLabelSize;
     CGFloat smallUnitLabelSize;
+    UIFont *font = [UIFont boldSystemFontOfSize:20];
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
         bigUnitLabelSize = [self.bigUnitString sizeWithAttributes:
                                                        @{NSFontAttributeName:
-                                                               [UIFont boldSystemFontOfSize:20]}].width;
+                                                               font}].width;
+
         smallUnitLabelSize = [self.smallUnitString sizeWithAttributes:
                                                            @{NSFontAttributeName:
-                                                                   [UIFont boldSystemFontOfSize:20]}].width;
+                                                                   font}].width;
+#pragma clang diagnostic pop
     }
     else {
-        bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
-        smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+        bigUnitLabelSize = [self.bigUnitString sizeWithFont:font].width;
+        smallUnitLabelSize = [self.smallUnitString sizeWithFont:font].width;
     }
 
     CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
