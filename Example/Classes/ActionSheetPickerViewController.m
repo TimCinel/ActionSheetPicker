@@ -104,7 +104,7 @@
     
    
     
-    NSInteger minuteInterval = 15;
+    NSInteger minuteInterval = 5;
     //clamp date
     NSInteger referenceTimeInterval = (NSInteger)[self.selectedTime timeIntervalSinceReferenceDate];
     NSInteger remainingSeconds = referenceTimeInterval % (minuteInterval *60);
@@ -118,7 +118,7 @@
     ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
     
     
-    datePicker.minuteInterval = 15;
+    datePicker.minuteInterval = minuteInterval;
     
     [datePicker showActionSheetPicker];
 }
