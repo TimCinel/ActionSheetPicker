@@ -15,9 +15,6 @@ Please welcome: **ActionSheetPicker-3.0**, with fix crashes, new pickers and add
 
 _Regards, Petr Korolev_
 
-![actionsheetpicker-demo](https://cloud.githubusercontent.com/assets/3356474/3878780/50276c2a-2172-11e4-9d4f-a261d1a1331f.gif)
-
-
 ## ActionSheetPicker = UIPickerView + UIActionSheet ##
 
 Well, that's how it started. Now, the following is more accurate:
@@ -86,6 +83,9 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ```
 
 ## Screen Shots ##
+
+
+![actionsheetpicker-demo](https://cloud.githubusercontent.com/assets/3356474/3878780/50276c2a-2172-11e4-9d4f-a261d1a1331f.gif)
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
