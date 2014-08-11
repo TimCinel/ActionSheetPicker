@@ -81,20 +81,6 @@ BOOL isIPhone4()
 @end
 
 @implementation AbstractActionSheetPicker
-@synthesize title = _title;
-@synthesize containerView = _containerView;
-@synthesize barButtonItem = _barButtonItem;
-@synthesize target = _target;
-@synthesize successAction = _successAction;
-@synthesize cancelAction = _cancelAction;
-@synthesize actionSheet = _actionSheet;
-@synthesize popOverController = _popOverController;
-@synthesize selfReference = _selfReference;
-@synthesize pickerView = _pickerView;
-@dynamic viewSize;
-@synthesize customButtons = _customButtons;
-@synthesize hideCancel = _hideCancel;
-@synthesize presentFromRect = _presentFromRect;
 
 #pragma mark - Abstract Implementation
 
