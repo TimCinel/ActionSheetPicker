@@ -12,7 +12,5 @@
 
 - (id)initWithView:(UIView *)view;
 
-- (void)showFromInView:(UIView *)uiView;
-
-- (void)showInContainerView:(UIView *)containerView;
+- (void)showInContainerView;
 @end

@@ -428,7 +428,7 @@ BOOL isIPhone4()
     NSParameterAssert(actionSheet != NULL);
     if ( self.barButtonItem )
         [actionSheet showFromBarButtonItem:_barButtonItem animated:YES];
-        [actionSheet showInContainerView:_containerView];
+        [actionSheet showInContainerView];
 }
 
 - (void)configureAndPresentPopoverForView:(UIView *)aView
