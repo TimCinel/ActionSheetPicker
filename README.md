@@ -7,7 +7,7 @@ Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdate
 
 I resolved almost all (more than 60 pull requests and issues) in Tim's repo, but new updates will be added here.
 
-`pod 'ActionSheetPicker-3.0', '~> 1.0.12'`
+`pod 'ActionSheetPicker-3.0', '~> 1.0.14'`
 
 Please welcome: **ActionSheetPicker-3.0**, with fix crashes, new pickers and additions!
 

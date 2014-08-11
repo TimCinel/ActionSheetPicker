@@ -113,7 +113,7 @@ BOOL isIPhone4()
         else if ( [origin isKindOfClass:[UIView class]] )
             self.containerView = origin;
         else
-                NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
+            NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
 
         // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
         UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
@@ -180,12 +180,16 @@ BOOL isIPhone4()
     [masterView addSubview:self.toolbar];
 
     //ios7 picker draws a darkened alpha-only region on the first and last 8 pixels horizontally, but blurs the rest of its background.  To make the whole popup appear to be edge-to-edge, we have to add blurring to the remaining left and right edges.
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+    {
         CGRect f = CGRectMake(0, self.toolbar.frame.origin.y, 8, masterView.frame.size.height - self.toolbar.frame.origin.y);
         UIToolbar *leftEdge = [[UIToolbar alloc] initWithFrame:f];
         f.origin.x = masterView.frame.size.width - 8;
         UIToolbar *rightEdge = [[UIToolbar alloc] initWithFrame:f];
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
         leftEdge.barTintColor = rightEdge.barTintColor = self.toolbar.barTintColor;
+#pragma clang diagnostic pop
         [masterView insertSubview:leftEdge atIndex:0];
         [masterView insertSubview:rightEdge atIndex:0];
     }
@@ -243,8 +247,9 @@ BOOL isIPhone4()
     UIBarButtonItem *button = (UIBarButtonItem *) sender;
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);
-    NSAssert([self.pickerView respondsToSelector:@selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
-    NSDictionary *buttonDetails = [self.customButtons objectAtIndex:index];
+    NSAssert([self.pickerView respondsToSelector:@
+            selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
+    NSDictionary *buttonDetails = [self.customButtons objectAtIndex:(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
     UIPickerView *picker = (UIPickerView *) self.pickerView;
@@ -320,26 +325,22 @@ BOOL isIPhone4()
     toolBarItemlabel.text = aTitle;
 
     CGFloat strikeWidth;
-    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+    CGSize textSize;
+    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
     {
-        CGSize textSize = [[toolBarItemlabel text] sizeWithAttributes:@{NSFontAttributeName:[toolBarItemlabel font]}];
-        strikeWidth = textSize.width;
-    }
-    else
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
+        textSize = [[toolBarItemlabel text] sizeWithAttributes:@{NSFontAttributeName : [toolBarItemlabel font]}];
+#pragma clang diagnostic pop
+    } else
     {
-        CGSize textSize;
-        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-            textSize = [[toolBarItemlabel text]  sizeWithAttributes:
-                                                         @{NSFontAttributeName:
-                                                                 [toolBarItemlabel font]}];
-        }
-        else {
-            textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
-        }
+        textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
 
-        strikeWidth = textSize.width;
     }
-    if (strikeWidth < 180)
+
+    strikeWidth = textSize.width;
+
+    if ( strikeWidth < 180 )
     {
         [toolBarItemlabel sizeToFit];
     }
@@ -354,8 +355,12 @@ BOOL isIPhone4()
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target
                                                                                action:buttonAction];
 
-    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
+    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
         [barButton setTintColor:[[UIApplication sharedApplication] keyWindow].tintColor];
+#pragma clang diagnostic pop
 
     return barButton;
 }

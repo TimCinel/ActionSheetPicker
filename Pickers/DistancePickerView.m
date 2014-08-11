@@ -111,9 +111,12 @@
 
             if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
             {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
                 frame.size = [longestString sizeWithAttributes:
                                                     @{NSFontAttributeName :
                                                             labelfont}];
+#pragma clang diagnostic pop
             }
             else
             {
@@ -123,7 +126,7 @@
 
 
             // center it vertically 
-            frame.origin.y = (self.frame.size.height / 2) - (frame.size.height / 2) - 0.5;
+            frame.origin.y = (CGFloat) ((self.frame.size.height / 2.f) - (frame.size.height / 2.f) - 0.5f);
 
             // align it to the right side of the wheel, with a margin.
             // use a smaller margin for the rightmost wheel.
@@ -175,11 +178,11 @@
                         if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
                         {
                             [self insertSubview:label
-                                   aboveSubview:[[self.subviews[0] subviews] objectAtIndex:component]];
+                                   aboveSubview:[[self.subviews[0] subviews] objectAtIndex:(NSUInteger) component]];
                         }
                         else
                         {
-                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5 * (component + 1)]];
+                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:(NSUInteger) (5 * (component + 1))]];
                         }
 
                     }
