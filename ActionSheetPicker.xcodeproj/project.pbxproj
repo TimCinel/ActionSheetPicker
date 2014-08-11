@@ -41,6 +41,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
+		D66F593F2534AEDA17D1661A /* SKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5810E056985C6A2F6981 /* SKActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		D66F5810E056985C6A2F6981 /* SKActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKActionSheet.m; sourceTree = "<group>"; };
+		D66F5EB8958A3B6064200E60 /* SKActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKActionSheet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */,
 				D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */,
 				D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */,
+				D66F5810E056985C6A2F6981 /* SKActionSheet.m */,
+				D66F5EB8958A3B6064200E60 /* SKActionSheet.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */,
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
+				D66F593F2534AEDA17D1661A /* SKActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

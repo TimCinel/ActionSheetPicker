@@ -26,6 +26,7 @@
 //
 
 #import "AbstractActionSheetPicker.h"
+#import "SKActionSheet.h"
 #import <objc/message.h>
 #import <sys/utsname.h>
 
@@ -47,7 +48,7 @@ BOOL isIPhone4()
 @property(nonatomic, unsafe_unretained) id target;
 @property(nonatomic, assign) SEL successAction;
 @property(nonatomic, assign) SEL cancelAction;
-@property(nonatomic, strong) UIActionSheet *actionSheet;
+@property(nonatomic, strong) SKActionSheet *actionSheet;
 @property(nonatomic, strong) UIPopoverController *popOverController;
 @property(nonatomic, strong) NSObject *selfReference;
 
@@ -57,7 +58,7 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView;
 
-- (void)presentActionSheet:(UIActionSheet *)actionSheet;
+- (void)presentActionSheet:(SKActionSheet *)actionSheet;
 
 - (void)presentPopover:(UIPopoverController *)popover;
 
@@ -81,20 +82,6 @@ BOOL isIPhone4()
 @end
 
 @implementation AbstractActionSheetPicker
-@synthesize title = _title;
-@synthesize containerView = _containerView;
-@synthesize barButtonItem = _barButtonItem;
-@synthesize target = _target;
-@synthesize successAction = _successAction;
-@synthesize cancelAction = _cancelAction;
-@synthesize actionSheet = _actionSheet;
-@synthesize popOverController = _popOverController;
-@synthesize selfReference = _selfReference;
-@synthesize pickerView = _pickerView;
-@dynamic viewSize;
-@synthesize customButtons = _customButtons;
-@synthesize hideCancel = _hideCancel;
-@synthesize presentFromRect = _presentFromRect;
 
 #pragma mark - Abstract Implementation
 
@@ -409,44 +396,22 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
-    NSString *paddedSheetTitle = nil;
-    CGFloat sheetHeight = self.viewSize.height - 47;
-    if ( [self isViewPortrait] )
-    {
-        paddedSheetTitle = @"\n\n\n"; // looks hacky to me
-    } else
-    {
-        NSString *reqSysVer = @"5.0";
-        NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
-        if ( [currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending )
-        {
-            sheetHeight = self.viewSize.width;
-        } else
-        {
-            sheetHeight += 103;
-        }
-    }
-    _actionSheet = [[UIActionSheet alloc] initWithTitle:paddedSheetTitle delegate:nil cancelButtonTitle:nil
-                                 destructiveButtonTitle:nil otherButtonTitles:nil];
-    [_actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    [_actionSheet addSubview:aView];
+    _actionSheet = [[SKActionSheet alloc] initWithView:aView];
+
     [self presentActionSheet:_actionSheet];
 
     // Use beginAnimations for a smoother popup animation, otherwise the UIActionSheet pops into view
     [UIView beginAnimations:nil context:nil];
-    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
+//    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
     [UIView commitAnimations];
 }
 
-- (void)presentActionSheet:(UIActionSheet *)actionSheet
+- (void)presentActionSheet:(SKActionSheet *)actionSheet
 {
     NSParameterAssert(actionSheet != NULL);
     if ( self.barButtonItem )
         [actionSheet showFromBarButtonItem:_barButtonItem animated:YES];
-    else if ( self.containerView && NO == CGRectIsEmpty(self.presentFromRect) )
-        [actionSheet showFromRect:_presentFromRect inView:_containerView animated:YES];
-    else
-        [actionSheet showInView:_containerView];
+        [actionSheet showInContainerView];
 }
 
 - (void)configureAndPresentPopoverForView:(UIView *)aView
