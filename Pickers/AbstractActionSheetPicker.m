@@ -396,25 +396,8 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
-    NSString *paddedSheetTitle = nil;
-    CGFloat sheetHeight = self.viewSize.height - 47;
-    if ( [self isViewPortrait] )
-    {
-        paddedSheetTitle = @"\n\n\n"; // looks hacky to me
-    } else
-    {
-        NSString *reqSysVer = @"5.0";
-        NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
-        if ( [currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending )
-        {
-            sheetHeight = self.viewSize.width;
-        } else
-        {
-            sheetHeight += 103;
-        }
-    }
     _actionSheet = [[SKActionSheet alloc] initWithView:aView];
-    [_actionSheet addSubview:aView];
+
     [self presentActionSheet:_actionSheet];
 
     // Use beginAnimations for a smoother popup animation, otherwise the UIActionSheet pops into view

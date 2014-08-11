@@ -6,6 +6,10 @@
 
 
 @interface SKActionSheet : UIView
+@property(nonatomic, strong) UIView *origin;
+
+@property(nonatomic, strong) UIView *bgView;
+
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated;
 
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;

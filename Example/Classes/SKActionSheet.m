@@ -7,7 +7,7 @@
 
 static const float delay = 0.f;
 
-static const float duration = .5f;
+static const float duration = .3f;
 
 static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn;
 
@@ -15,16 +15,18 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     UIView *view;
 
+    UIView *_origin;
+    UIView *_bgView;
 }
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated
 {
-    UIView *origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    CGPoint fadeOutToPoint = CGPointMake(self.center.x,
-            origin.bounds.size.height + CGRectGetHeight(self.frame) / 2.f);
+    CGPoint fadeOutToPoint = CGPointMake(view.center.x,
+            self.center.y + CGRectGetHeight(view.frame));
 
     [UIView animateWithDuration:duration delay:delay
                         options:options animations:^{
          self.center = fadeOutToPoint;
+         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
      }
                      completion:^(BOOL finished) {
                          [self removeFromSuperview];
@@ -33,11 +35,20 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 - (instancetype)initWithView:(UIView *)aView
 {
-    self = [super initWithFrame:aView.frame];
+    _origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+    CGRect rect = CGRectMake(_origin.frame.origin.x, _origin.frame.origin.y, _origin.frame.size.width, _origin.frame.size.height + aView.frame.size.height);
+    self = [super initWithFrame:rect];
     if ( self )
     {
         view = aView;
-        self.backgroundColor = [UIColor whiteColor];
+        CGRect cgRect = CGRectMake(view.frame.origin.x, _origin.frame.size.height, view.frame.size.width, view.frame.size.height);
+        view.frame = cgRect;
+        self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
+        _bgView = [[UIView alloc] initWithFrame:view.frame];
+        _bgView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:_bgView];
+        [self addSubview:aView];
+
     }
 
     return self;
@@ -50,18 +61,15 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 - (void)showInContainerView
 {
-    UIView *origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    CGRect rect = CGRectMake(self.frame.origin.x, origin.frame.size.height, self.frame.size.width, self.frame.size.height);
-    self.frame = rect;
-    [origin addSubview:self];
-
+    [_origin addSubview:self];
     CGPoint toPoint;
-    CGFloat y = origin.bounds.size.height - CGRectGetHeight(self.frame) / 2.0f;
+    CGFloat y = self.center.y - CGRectGetHeight(view.frame);
     toPoint = CGPointMake(self.center.x, y);
 
     [UIView animateWithDuration:duration delay:delay
                         options:options animations:^{
          self.center = toPoint;
+         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
      }
                      completion:^(BOOL finished) {
 
