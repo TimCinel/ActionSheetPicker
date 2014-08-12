@@ -19,3 +19,7 @@ puts bumped_vers
 
 `sed -i "" "s/#{result}/#{bumped_vers}/" README.md`
 `sed -i "" "s/#{result}/#{bumped_vers}/" ActionSheetPicker-3.0.podspec`
+`git commit --all -m "Update podspec"`
+`git tag #{bumped_vers}`
+`git push`
+`pod trunk push ./ActionSheetPicker-3.0.podspec`
