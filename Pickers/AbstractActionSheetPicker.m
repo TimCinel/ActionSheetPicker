@@ -26,7 +26,7 @@
 //
 
 #import "AbstractActionSheetPicker.h"
-#import "SKActionSheet.h"
+#import "SWActionSheet.h"
 #import <objc/message.h>
 #import <sys/utsname.h>
 
@@ -48,7 +48,7 @@ BOOL isIPhone4()
 @property(nonatomic, unsafe_unretained) id target;
 @property(nonatomic, assign) SEL successAction;
 @property(nonatomic, assign) SEL cancelAction;
-@property(nonatomic, strong) SKActionSheet *actionSheet;
+@property(nonatomic, strong) SWActionSheet *actionSheet;
 @property(nonatomic, strong) UIPopoverController *popOverController;
 @property(nonatomic, strong) NSObject *selfReference;
 
@@ -58,7 +58,7 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView;
 
-- (void)presentActionSheet:(SKActionSheet *)actionSheet;
+- (void)presentActionSheet:(SWActionSheet *)actionSheet;
 
 - (void)presentPopover:(UIPopoverController *)popover;
 
@@ -396,7 +396,7 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
-    _actionSheet = [[SKActionSheet alloc] initWithView:aView];
+    _actionSheet = [[SWActionSheet alloc] initWithView:aView];
 
     [self presentActionSheet:_actionSheet];
 
@@ -406,7 +406,7 @@ BOOL isIPhone4()
     [UIView commitAnimations];
 }
 
-- (void)presentActionSheet:(SKActionSheet *)actionSheet
+- (void)presentActionSheet:(SWActionSheet *)actionSheet
 {
     NSParameterAssert(actionSheet != NULL);
     if ( self.barButtonItem )

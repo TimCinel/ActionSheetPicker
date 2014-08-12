@@ -150,6 +150,10 @@
     [self.navigationController pushViewController:tableViewController animated:YES];
 }
 
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Implementation
 
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {

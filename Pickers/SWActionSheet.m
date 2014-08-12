@@ -2,7 +2,7 @@
 // Created by Petr Korolev on 11/08/14.
 //
 
-#import "SKActionSheet.h"
+#import "SWActionSheet.h"
 
 
 static const float delay = 0.f;
@@ -11,7 +11,7 @@ static const float duration = .3f;
 
 static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn;
 
-@implementation SKActionSheet
+@implementation SWActionSheet
 {
     UIView *view;
 
@@ -35,7 +35,8 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 - (instancetype)initWithView:(UIView *)aView
 {
-    _origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+    _origin = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+
     CGRect rect = CGRectMake(_origin.frame.origin.x, _origin.frame.origin.y, _origin.frame.size.width, _origin.frame.size.height + aView.frame.size.height);
     self = [super initWithFrame:rect];
     if ( self )

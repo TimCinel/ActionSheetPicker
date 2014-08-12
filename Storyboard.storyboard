@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ActionSheetPicker-->
@@ -90,6 +91,24 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
+                                <rect key="frame" x="16" y="462" width="132" height="30"/>
+                                <state key="normal" title="TableView Example">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTableView:" destination="LWr-l1-uYK" eventType="touchUpInside" id="unX-Ah-bTz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-WO-Hus">
+                                <rect key="frame" x="229" y="462" width="75" height="30"/>
+                                <state key="normal" title="Modal Test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9f4-IZ-fgb" kind="modal" id="QEY-yt-RH7"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Time..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvM-rv-qGy">
                                 <rect key="frame" x="15" y="315" width="281" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
@@ -99,18 +118,11 @@
                                     <outlet property="delegate" destination="LWr-l1-uYK" id="Ko2-mb-1HD"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
-                                <rect key="frame" x="94" y="353" width="132" height="30"/>
-                                <state key="normal" title="TableView Example">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showTableView:" destination="LWr-l1-uYK" eventType="touchUpInside" id="unX-Ah-bTz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EV1-n7-TvQ" firstAttribute="top" secondItem="QkB-1n-7Wg" secondAttribute="bottom" constant="8" id="19r-Le-DgG"/>
+                            <constraint firstItem="QkB-1n-7Wg" firstAttribute="leading" secondItem="Xkq-TB-0tc" secondAttribute="leadingMargin" id="6cY-Hl-Izq"/>
                             <constraint firstItem="Xed-fo-wWj" firstAttribute="centerX" secondItem="Xkq-TB-0tc" secondAttribute="centerX" id="7Tc-ta-xW7"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="top" secondItem="2a8-Ol-1xb" secondAttribute="bottom" constant="15" id="8Ij-H1-EaG"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="nvM-rv-qGy" secondAttribute="width" id="CzB-vL-7CV"/>
@@ -118,22 +130,23 @@
                             <constraint firstItem="Xed-fo-wWj" firstAttribute="centerX" secondItem="jYm-Eq-vOm" secondAttribute="centerX" id="HjR-pc-gyt"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="2a8-Ol-1xb" secondAttribute="leading" id="Hqs-8J-jgS"/>
                             <constraint firstItem="alq-in-mNW" firstAttribute="top" secondItem="hyf-1j-qZu" secondAttribute="bottom" constant="26" id="I97-1n-GiU"/>
+                            <constraint firstItem="EV1-n7-TvQ" firstAttribute="top" secondItem="nNg-WO-Hus" secondAttribute="bottom" constant="8" id="It8-T4-20K"/>
                             <constraint firstItem="jYm-Eq-vOm" firstAttribute="top" secondItem="EV1-n7-TvQ" secondAttribute="bottom" constant="3" id="J8a-fd-NQH"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="2a8-Ol-1xb" secondAttribute="width" id="LIG-02-MFa"/>
                             <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="EV1-n7-TvQ" secondAttribute="centerX" constant="2" id="M3l-bF-B68"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="AUS-Q4-Cjs" secondAttribute="leading" id="Mzv-qW-eNT"/>
                             <constraint firstItem="2a8-Ol-1xb" firstAttribute="top" secondItem="mkk-Ul-Nmk" secondAttribute="bottom" constant="15" id="NzU-tH-RWz"/>
-                            <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="QkB-1n-7Wg" secondAttribute="centerX" id="UEw-4k-nRi"/>
+                            <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="QkB-1n-7Wg" secondAttribute="centerX" constant="78" id="UEw-4k-nRi"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="nvM-rv-qGy" secondAttribute="leading" id="Vq7-po-9L6"/>
                             <constraint firstItem="EV1-n7-TvQ" firstAttribute="width" secondItem="Xed-fo-wWj" secondAttribute="width" constant="-23" id="bD7-jU-X0q"/>
                             <constraint firstItem="Xed-fo-wWj" firstAttribute="top" secondItem="jYm-Eq-vOm" secondAttribute="bottom" constant="3" id="bJ5-8s-eLd"/>
                             <constraint firstItem="AUS-Q4-Cjs" firstAttribute="top" secondItem="vQn-Q8-jhe" secondAttribute="bottom" constant="15" id="fR4-Vz-NH6"/>
                             <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="15" id="g4Q-rL-3f8"/>
+                            <constraint firstItem="nNg-WO-Hus" firstAttribute="trailing" secondItem="Xkq-TB-0tc" secondAttribute="trailingMargin" id="iNg-mz-TKc"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="mkk-Ul-Nmk" secondAttribute="width" id="kQo-Mh-2q8"/>
                             <constraint firstItem="nvM-rv-qGy" firstAttribute="leading" secondItem="EV1-n7-TvQ" secondAttribute="leading" id="lJe-TG-RIx"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="alq-in-mNW" secondAttribute="leading" id="mKd-GW-ooR"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="alq-in-mNW" secondAttribute="width" id="uZL-dS-WLp"/>
-                            <constraint firstItem="QkB-1n-7Wg" firstAttribute="top" secondItem="nvM-rv-qGy" secondAttribute="bottom" constant="8" symbolic="YES" id="uhz-ls-jYe"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="mkk-Ul-Nmk" secondAttribute="leading" id="wKi-G0-efi"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="AUS-Q4-Cjs" secondAttribute="width" id="xdV-0z-hWm"/>
                             <constraint firstItem="nvM-rv-qGy" firstAttribute="top" secondItem="AUS-Q4-Cjs" secondAttribute="bottom" constant="15" id="yjP-ua-0sp"/>
@@ -194,6 +207,84 @@
             </objects>
             <point key="canvasLocation" x="1124" y="103"/>
         </scene>
+        <!--Action Sheet Picker View Controller-->
+        <scene sceneID="N6f-0m-5XV">
+            <objects>
+                <viewController id="Rhb-1G-jv3" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YVk-LV-PQb"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzC-q3-O6g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IxT-xf-nLb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a date..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGo-Vq-gCL">
+                                <rect key="frame" x="16" y="120" width="281" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectADate:" destination="Rhb-1G-jv3" eventType="touchUpInside" id="871-zo-Ode"/>
+                                    <action selector="selectADate:" destination="Rhb-1G-jv3" eventType="touchDown" id="GvZ-Yr-IC7"/>
+                                    <outlet property="delegate" destination="Rhb-1G-jv3" id="263-Xe-Q4g"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xvX-12-Q7X">
+                                <rect key="frame" x="15" y="492" width="286" height="17"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pN6-U6-wFO">
+                                <rect key="frame" x="105" y="512" width="110" height="17"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a block..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTP-UH-c3C">
+                                <rect key="frame" x="15" y="82" width="281" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectABlock:" destination="Rhb-1G-jv3" eventType="touchDown" id="Xcw-EX-fjS"/>
+                                    <outlet property="delegate" destination="Rhb-1G-jv3" id="q2t-XH-Bme"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-in-wtU">
+                                <rect key="frame" x="6" y="532" width="309" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a musical scale..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-6k-yUi">
+                                <rect key="frame" x="15" y="158" width="281" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectAMusicalScale:" destination="Rhb-1G-jv3" eventType="touchDown" id="9Ut-Bc-nBR"/>
+                                    <action selector="selectAMusicalScale:" destination="Rhb-1G-jv3" eventType="touchUpInside" id="OTJ-92-0Qj"/>
+                                    <outlet property="delegate" destination="Rhb-1G-jv3" id="UVZ-tF-kne"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zzg-JE-oIE">
+                        <barButtonItem key="leftBarButtonItem" title="Hide" id="MrZ-8y-J6l">
+                            <connections>
+                                <action selector="dismiss:" destination="Rhb-1G-jv3" id="XfZ-qr-Cyo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="dateTextField" destination="MGo-Vq-gCL" id="I8d-Kq-V8p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtS-y4-BYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="749"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XmF-IP-8lr">
             <objects>
@@ -211,6 +302,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHX-ON-8fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="114" y="95"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KBU-t6-gEE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9f4-IZ-fgb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i9y-1l-cOn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rhb-1G-jv3" kind="relationship" relationship="rootViewController" id="W84-60-9JB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcn-ZA-bdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947" y="749"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
