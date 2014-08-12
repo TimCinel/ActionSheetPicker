@@ -1,9 +1,9 @@
 ## Attention:
 
-This repo is **outdated**.
+This repo is **outdated**. You can find new version of ActionSheetPicker (iOS 8 compatible alredy) here: [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0).
+
 I try to resolve a lot of pull requests and issues in this repo by time, but new updates will be appeared in https://github.com/skywinder/ActionSheetPicker-3.0. I forked from this repo and implement a bunch of fixes.
 
-You can find new version of ActionSheetPicker here: [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0).
 
 *Regards,*
 *Petr Korolev.*
