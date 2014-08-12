@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SKActionSheet : UIView
+@interface SWActionSheet : UIView
 @property(nonatomic, strong) UIView *origin;
 
 @property(nonatomic, strong) UIView *bgView;

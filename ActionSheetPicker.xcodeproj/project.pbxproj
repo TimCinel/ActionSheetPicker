@@ -41,7 +41,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
-		D66F5E7C0C7E16F9D7CA5748 /* SKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5547FC9E0F428DA62D5C /* SKActionSheet.m */; };
+		D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
-		D66F5547FC9E0F428DA62D5C /* SKActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKActionSheet.m; path = Pickers/SKActionSheet.m; sourceTree = SOURCE_ROOT; };
-		D66F59F6AD665928F94219C3 /* SKActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKActionSheet.h; path = Pickers/SKActionSheet.h; sourceTree = SOURCE_ROOT; };
+		D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = Pickers/SWActionSheet.m; sourceTree = SOURCE_ROOT; };
+		D66F59F6AD665928F94219C3 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = Pickers/SWActionSheet.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +181,8 @@
 				1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */,
 				1C6EE731192BB4F600A27994 /* DistancePickerView.h */,
 				1C6EE732192BB4F600A27994 /* DistancePickerView.m */,
-				D66F59F6AD665928F94219C3 /* SKActionSheet.h */,
-				D66F5547FC9E0F428DA62D5C /* SKActionSheet.m */,
+				D66F59F6AD665928F94219C3 /* SWActionSheet.h */,
+				D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */,
 			);
 			name = Pickers;
 			path = Example/../Pickers;
@@ -371,7 +371,7 @@
 				1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */,
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
-				D66F5E7C0C7E16F9D7CA5748 /* SKActionSheet.m in Sources */,
+				D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
