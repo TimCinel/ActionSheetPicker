@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-readme = File.read("README.md")
+readme = File.read("ActionSheetPicker-3.0.podspec")
 
 re = /(\d+\.\d+\.)(\d+)/m
 
@@ -27,7 +27,7 @@ end
 
 execute_line("sed -i \"\" \"s/#{result}/#{bumped_vers}/\" README.md")
 execute_line("sed -i \"\" \"s/#{result}/#{bumped_vers}/\" ActionSheetPicker-3.0.podspec")
-execute_line("git commit --all -m \"Update podspec\"")
+execute_line("git commit --all -m \"Update podspec to version #{bumped_vers}\"")
 execute_line("git tag #{bumped_vers}")
 execute_line("git push")
 execute_line("git push --tags")
