@@ -39,6 +39,8 @@ BOOL isIPhone4()
     return ([modelName rangeOfString:@"iPhone3"].location != NSNotFound);
 }
 
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 @interface AbstractActionSheetPicker ()
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -362,8 +364,8 @@ BOOL isIPhone4()
 - (CGSize)viewSize
 {
     if ( ![self isViewPortrait] )
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
+        return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
+    return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
 }
 
 - (BOOL)isViewPortrait
