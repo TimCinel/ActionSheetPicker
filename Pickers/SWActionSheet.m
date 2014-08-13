@@ -37,12 +37,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     _origin = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
 
-    CGRect rect = CGRectMake(_origin.frame.origin.x, _origin.frame.origin.y, _origin.frame.size.width, _origin.frame.size.height + aView.frame.size.height);
+    CGRect rect = [self getRectForPicker:aView];
     self = [super initWithFrame:rect];
     if ( self )
     {
         view = aView;
-        CGRect cgRect = CGRectMake(view.frame.origin.x, _origin.frame.size.height, view.frame.size.width, view.frame.size.height);
+        CGRect cgRect = CGRectMake(view.bounds.origin.x, _origin.bounds.size.height, view.bounds.size.width, view.bounds.size.height);
         view.frame = cgRect;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [[UIView alloc] initWithFrame:view.frame];
@@ -53,6 +53,13 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 
     return self;
+}
+
+- (CGRect)getRectForPicker:(UIView *)aView
+{
+    CGRect rect;
+        rect = CGRectMake(_origin.bounds.origin.x, _origin.bounds.origin.y, _origin.bounds.size.width, _origin.bounds.size.height + aView.bounds.size.height);
+    return rect;
 }
 
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated
@@ -76,6 +83,18 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
                      }];
 
+}
+
+- (BOOL)isViewPortrait
+{
+    return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+}
+
+- (CGSize)viewSize
+{
+    if ( ![self isViewPortrait] )
+        return CGSizeMake(480, 320);
+    return CGSizeMake(320, 480);
 }
 
 @end
