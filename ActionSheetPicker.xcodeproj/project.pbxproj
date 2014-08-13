@@ -35,12 +35,16 @@
 		1C9444D9197B1EDE005F495B /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72E192BB4F600A27994 /* ActionSheetDistancePicker.m */; };
 		1C9444DA197B1EDE005F495B /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */; };
 		1C9444DB197B1EDE005F495B /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
+		1CA77769199B72120076241F /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
+		D66F587C369D4D6886145ABF /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */; };
+		D66F591A4CAC63A7A1058C13 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */; };
 		D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */; };
 /* End PBXBuildFile section */
 
@@ -96,9 +100,12 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePickerTestCase.m; sourceTree = "<group>"; };
 		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = Pickers/SWActionSheet.m; sourceTree = SOURCE_ROOT; };
 		D66F59F6AD665928F94219C3 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = Pickers/SWActionSheet.h; sourceTree = SOURCE_ROOT; };
+		D66F5B444F4BC38CB3FFAAA7 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetLocalePicker.h; path = Pickers/ActionSheetLocalePicker.h; sourceTree = SOURCE_ROOT; };
+		D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetLocalePicker.m; path = Pickers/ActionSheetLocalePicker.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +190,8 @@
 				1C6EE732192BB4F600A27994 /* DistancePickerView.m */,
 				D66F59F6AD665928F94219C3 /* SWActionSheet.h */,
 				D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */,
+				D66F5B444F4BC38CB3FFAAA7 /* ActionSheetLocalePicker.h */,
+				D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */,
 			);
 			name = Pickers;
 			path = Example/../Pickers;
@@ -194,6 +203,7 @@
 				1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */,
 				1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */,
 				1C9444BB197B1C2F005F495B /* Supporting Files */,
+				D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */,
 			);
 			path = "ActionSheetPicker Tests";
 			sourceTree = "<group>";
@@ -352,6 +362,9 @@
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
 				1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */,
 				D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */,
+				D66F587C369D4D6886145ABF /* ActionSheetLocalePicker.m in Sources */,
+				D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */,
+				1CA77769199B72120076241F /* SWActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +385,7 @@
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
 				D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */,
+				D66F591A4CAC63A7A1058C13 /* ActionSheetLocalePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

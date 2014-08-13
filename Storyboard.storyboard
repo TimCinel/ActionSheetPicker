@@ -118,6 +118,15 @@
                                     <outlet property="delegate" destination="LWr-l1-uYK" id="Ko2-mb-1HD"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Locale" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoD-zC-rUG">
+                                <rect key="frame" x="15" y="363" width="281" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectALocale:" destination="LWr-l1-uYK" eventType="touchDown" id="t1g-P4-Trd"/>
+                                    <outlet property="delegate" destination="LWr-l1-uYK" id="35p-3a-Gyq"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -127,6 +136,7 @@
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="top" secondItem="2a8-Ol-1xb" secondAttribute="bottom" constant="15" id="8Ij-H1-EaG"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="nvM-rv-qGy" secondAttribute="width" id="CzB-vL-7CV"/>
                             <constraint firstAttribute="bottom" secondItem="Xed-fo-wWj" secondAttribute="bottom" id="D0Q-oJ-TiU"/>
+                            <constraint firstItem="EoD-zC-rUG" firstAttribute="leading" secondItem="nvM-rv-qGy" secondAttribute="leading" id="FWO-qd-vnv"/>
                             <constraint firstItem="Xed-fo-wWj" firstAttribute="centerX" secondItem="jYm-Eq-vOm" secondAttribute="centerX" id="HjR-pc-gyt"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="2a8-Ol-1xb" secondAttribute="leading" id="Hqs-8J-jgS"/>
                             <constraint firstItem="alq-in-mNW" firstAttribute="top" secondItem="hyf-1j-qZu" secondAttribute="bottom" constant="26" id="I97-1n-GiU"/>
@@ -142,6 +152,8 @@
                             <constraint firstItem="Xed-fo-wWj" firstAttribute="top" secondItem="jYm-Eq-vOm" secondAttribute="bottom" constant="3" id="bJ5-8s-eLd"/>
                             <constraint firstItem="AUS-Q4-Cjs" firstAttribute="top" secondItem="vQn-Q8-jhe" secondAttribute="bottom" constant="15" id="fR4-Vz-NH6"/>
                             <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="15" id="g4Q-rL-3f8"/>
+                            <constraint firstItem="EoD-zC-rUG" firstAttribute="trailing" secondItem="nvM-rv-qGy" secondAttribute="trailing" id="gFm-if-j9q"/>
+                            <constraint firstItem="EoD-zC-rUG" firstAttribute="top" secondItem="nvM-rv-qGy" secondAttribute="bottom" constant="18" id="h4H-oo-YOd"/>
                             <constraint firstItem="nNg-WO-Hus" firstAttribute="trailing" secondItem="Xkq-TB-0tc" secondAttribute="trailingMargin" id="iNg-mz-TKc"/>
                             <constraint firstItem="vQn-Q8-jhe" firstAttribute="width" secondItem="mkk-Ul-Nmk" secondAttribute="width" id="kQo-Mh-2q8"/>
                             <constraint firstItem="nvM-rv-qGy" firstAttribute="leading" secondItem="EV1-n7-TvQ" secondAttribute="leading" id="lJe-TG-RIx"/>
