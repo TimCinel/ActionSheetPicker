@@ -30,6 +30,7 @@
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
+#import "ActionSheetLocalePicker.h"
 
 @interface ActionSheetPickerViewController()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
@@ -73,8 +74,20 @@
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
-    NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
     [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+}
+
+- (IBAction)selectALocale:(UIControl *)sender {
+    ActionLocaleDoneBlock done = ^(ActionSheetLocalePicker *picker, NSTimeZone *selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue.name];
+        }
+    };
+    ActionLocaleCancelBlock cancel = ^(ActionSheetLocalePicker *picker) {
+        NSLog(@"Locale Picker Canceled");
+    };
+    [ActionSheetLocalePicker showPickerWithTitle:@"Select Locale:" initialSelection:nil doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {

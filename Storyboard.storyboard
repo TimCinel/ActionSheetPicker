@@ -118,6 +118,15 @@
                                     <outlet property="delegate" destination="LWr-l1-uYK" id="Ko2-mb-1HD"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Locale" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoD-zC-rUG">
+                                <rect key="frame" x="15" y="353" width="281" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectALocale:" destination="LWr-l1-uYK" eventType="touchDown" id="t1g-P4-Trd"/>
+                                    <outlet property="delegate" destination="LWr-l1-uYK" id="35p-3a-Gyq"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
