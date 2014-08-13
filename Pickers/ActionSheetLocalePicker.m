@@ -104,6 +104,7 @@
     if ((rowContinent != NSNotFound) && (rowCity != NSNotFound)) // to fix some crashes from prev versions http://crashes.to/s/ecb0f15ce49
     {
         [pickerView selectRow:rowContinent inComponent:0 animated:YES];
+        [pickerView reloadComponent:1];
         [pickerView selectRow:rowCity inComponent:1 animated:YES];
     }
     else
