@@ -33,10 +33,6 @@
 @end
 
 @implementation ActionSheetLocalePicker
-@synthesize data = _data;
-@synthesize selectedIndex = _selectedIndex;
-@synthesize onActionSheetDone = _onActionSheetDone;
-@synthesize onActionSheetCancel = _onActionSheetCancel;
 
 + (id)showPickerWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSInteger)index doneBlock:(ActionStringDoneBlock)doneBlock cancelBlock:(ActionStringCancelBlock)cancelBlockOrNil origin:(id)origin {
     ActionSheetLocalePicker * picker = [[ActionSheetLocalePicker alloc] initWithTitle:title rows:strings initialSelection:index doneBlock:doneBlock cancelBlock:cancelBlockOrNil origin:origin];
