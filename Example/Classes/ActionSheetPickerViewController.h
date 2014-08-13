@@ -54,7 +54,7 @@
 
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
-- (IBAction)selectLocation:(UITextField *)sender;
+
 - (IBAction)showTableView:(id)sender;
 - (IBAction)dismiss:(id)sender;
 

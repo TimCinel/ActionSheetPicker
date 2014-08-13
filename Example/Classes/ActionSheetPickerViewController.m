@@ -156,10 +156,6 @@
                                initialSelections:initialSelections];
 }
 
-- (IBAction)selectLocation:(UITextField *)sender {
-
-}
-
 - (IBAction)showTableView:(id)sender {
     TestTableViewController *tableViewController = [[UIStoryboard storyboardWithName:@"Storyboard"
                                                                               bundle:nil] instantiateViewControllerWithIdentifier:@"TestTableViewController"];
