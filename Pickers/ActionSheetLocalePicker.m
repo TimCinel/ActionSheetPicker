@@ -143,6 +143,26 @@
                     [_continents addObject:array[0]];
                 }
             }
+            else if (array.count == 3)
+            {
+                NSString *string0 = array[0];
+                NSString *string1 = array[1];
+                NSString *string2 = array[2];
+                NSString *string3 = [string1 stringByAppendingFormat:@"/%@", string2];
+                NSString *string4 = [string0 stringByAppendingFormat:@"/%@", string1];
+
+                if ( continentsDict[string0] ) //if continent exists
+                {
+                    NSMutableArray *citys = continentsDict[string0];
+                    [citys addObject:string3];
+                }
+                else //it's new continent
+                {
+                    NSMutableArray *mutableArray = [@[string3] mutableCopy];
+                    continentsDict[string0] = mutableArray;
+                    [_continents addObject:string0];
+                }
+            }
         }
 
     }];
@@ -331,7 +351,7 @@
         }
 
         case 1:
-            self.selectedCity = [self getCitiesByContinent:self.selectedContinent][row];
+            self.selectedCity = [self getCitiesByContinent:self.selectedContinent][(NSUInteger) row];
             return;
         default:break;
     }
