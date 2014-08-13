@@ -32,11 +32,18 @@ typedef void(^ActionStringDoneBlock)(ActionSheetStringPicker *picker, NSInteger 
 typedef void(^ActionStringCancelBlock)(ActionSheetStringPicker *picker);
 
 @interface ActionSheetStringPicker : AbstractActionSheetPicker <UIPickerViewDelegate, UIPickerViewDataSource>
-/* Create and display an action sheet picker. The returned picker is autoreleased. 
- "origin" must not be empty.  It can be either an originating container view or a UIBarButtonItem to use with a popover arrow.
- "target" must not be empty.  It should respond to "onSuccess" actions.
- "rows" is an array of strings to use for the picker's available selection choices. 
- "initialSelection" is used to establish the initially selected row;
+/**
+ *  Create and display an action sheet picker.
+ *
+ *  @param title             Title label for picker
+ *  @param data              is an array of strings to use for the picker's available selection choices
+ *  @param index             is used to establish the initially selected row;
+ *  @param target            must not be empty.  It should respond to "onSuccess" actions.
+ *  @param successAction
+ *  @param cancelActionOrNil cancelAction
+ *  @param origin            must not be empty.  It can be either an originating container view or a UIBarButtonItem to use with a popover arrow.
+ *
+ *  @return  return instance of picker
  */
 + (id)showPickerWithTitle:(NSString *)title rows:(NSArray *)data initialSelection:(NSInteger)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
