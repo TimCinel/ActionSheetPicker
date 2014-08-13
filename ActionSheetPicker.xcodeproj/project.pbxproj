@@ -41,6 +41,8 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
+		D66F587C369D4D6886145ABF /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */; };
+		D66F591A4CAC63A7A1058C13 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */; };
 		D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = Pickers/SWActionSheet.m; sourceTree = SOURCE_ROOT; };
 		D66F59F6AD665928F94219C3 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = Pickers/SWActionSheet.h; sourceTree = SOURCE_ROOT; };
+		D66F5B444F4BC38CB3FFAAA7 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetLocalePicker.h; path = Pickers/ActionSheetLocalePicker.h; sourceTree = SOURCE_ROOT; };
+		D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetLocalePicker.m; path = Pickers/ActionSheetLocalePicker.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 				1C6EE732192BB4F600A27994 /* DistancePickerView.m */,
 				D66F59F6AD665928F94219C3 /* SWActionSheet.h */,
 				D66F5547FC9E0F428DA62D5C /* SWActionSheet.m */,
+				D66F5B444F4BC38CB3FFAAA7 /* ActionSheetLocalePicker.h */,
+				D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */,
 			);
 			name = Pickers;
 			path = Example/../Pickers;
@@ -352,6 +358,7 @@
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
 				1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */,
 				D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */,
+				D66F587C369D4D6886145ABF /* ActionSheetLocalePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 				1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
 				D66F5E7C0C7E16F9D7CA5748 /* SWActionSheet.m in Sources */,
+				D66F591A4CAC63A7A1058C13 /* ActionSheetLocalePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
