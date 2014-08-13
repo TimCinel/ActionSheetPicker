@@ -90,11 +90,4 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
 }
 
-- (CGSize)viewSize
-{
-    if ( ![self isViewPortrait] )
-        return CGSizeMake(480, 320);
-    return CGSizeMake(320, 480);
-}
-
 @end

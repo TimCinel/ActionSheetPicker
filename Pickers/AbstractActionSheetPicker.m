@@ -118,7 +118,6 @@ BOOL isIPhone4()
 
 - (void)dealloc
 {
-
     //need to clear picker delegates and datasources, otherwise they may call this object after it's gone
     if ( [self.pickerView respondsToSelector:@selector(setDelegate:)] )
         [self.pickerView performSelector:@selector(setDelegate:) withObject:nil];
@@ -128,6 +127,7 @@ BOOL isIPhone4()
 
     self.target = nil;
 
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (UIView *)configuredPickerView
@@ -401,6 +401,8 @@ BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+
     _actionSheet = [[SWActionSheet alloc] initWithView:aView];
 
     [self presentActionSheet:_actionSheet];
@@ -409,6 +411,12 @@ BOOL isIPhone4()
     [UIView beginAnimations:nil context:nil];
 //    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
     [UIView commitAnimations];
+}
+
+
+- (void) didRotate:(NSNotification *)notification
+{
+    [self dismissPicker];
 }
 
 - (void)presentActionSheet:(SWActionSheet *)actionSheet
@@ -461,6 +469,7 @@ BOOL isIPhone4()
                                animated:YES];
     }
 }
+
 
 @end
 
