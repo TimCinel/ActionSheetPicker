@@ -87,7 +87,12 @@
     ActionLocaleCancelBlock cancel = ^(ActionSheetLocalePicker *picker) {
         NSLog(@"Locale Picker Canceled");
     };
-    [ActionSheetLocalePicker showPickerWithTitle:@"Select Locale:" initialSelection:nil doneBlock:done cancelBlock:cancel origin:sender];
+    NSArray * knownTimeZoneArray = [NSTimeZone knownTimeZoneNames];
+    NSLog(@"knownTimeZoneArray = %@", knownTimeZoneArray);
+    ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Select Locale:" initialSelection:[[NSTimeZone alloc] initWithName:@"Europe/Moscow"] doneBlock:done cancelBlock:cancel origin:sender];
+    [picker addCustomButtonWithTitle:@"Current locale" value:[NSTimeZone localTimeZone]];
+    picker.hideCancel = YES;
+    [picker showActionSheetPicker];
 }
 
 - (IBAction)selectAnAnimal:(UIControl *)sender {

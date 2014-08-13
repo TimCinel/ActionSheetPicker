@@ -88,6 +88,16 @@
 
     pickerView.showsSelectionIndicator = YES;
 
+    [self selectCurrentLocale:pickerView];
+
+    //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
+    self.pickerView = pickerView;
+    
+    return pickerView;
+}
+
+- (void)selectCurrentLocale:(UIPickerView *)pickerView
+{
     NSUInteger rowContinent = [_continents indexOfObject:self.selectedContinent];
     NSUInteger rowCity = [[self getCitiesByContinent:self.selectedContinent] indexOfObject:self.selectedCity];
 
@@ -101,10 +111,6 @@
         [pickerView selectRow:0 inComponent:0 animated:YES];
         [pickerView selectRow:0 inComponent:1 animated:YES];
     }
-    //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
-    self.pickerView = pickerView;
-    
-    return pickerView;
 }
 
 -(void)fillContinentsAndCities
@@ -335,6 +341,23 @@
     NSMutableArray *citiesIncontinent = _continentsAndCityDictionary[continent];
     return citiesIncontinent;
 };
+
+
+- (void)customButtonPressed:(id)sender {
+    UIBarButtonItem *button = (UIBarButtonItem*)sender;
+    NSInteger index = button.tag;
+    NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %d, custom button count: %d", index, self.customButtons.count);
+    NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
+    id itemValue = buttonDetails[@"buttonValue"];
+    if ( [itemValue isKindOfClass:[NSTimeZone class]] )
+    {
+        NSTimeZone *timeZone = (NSTimeZone *) itemValue;
+        self.initialTimeZone = timeZone;
+        [self setSelectedRows];
+        [self selectCurrentLocale:(UIPickerView *) self.pickerView];
+    }
+}
+
 
 
 @end
