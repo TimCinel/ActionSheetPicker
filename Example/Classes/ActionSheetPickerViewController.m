@@ -182,8 +182,6 @@
     UIButton *cancelButton =  [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
     [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
-
-//    [picker setCancelButton:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel.png"] style:UIBarButtonItemStyleBordered target:nil action:nil]];
     [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
     [picker showActionSheetPicker];
 }

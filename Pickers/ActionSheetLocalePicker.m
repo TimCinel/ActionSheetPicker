@@ -42,14 +42,14 @@
 
 @implementation ActionSheetLocalePicker
 
-+ (id)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin
++ (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin
 {
     ActionSheetLocalePicker * picker = [[ActionSheetLocalePicker alloc] initWithTitle:title initialSelection:index doneBlock:doneBlock cancelBlock:cancelBlockOrNil origin:origin];
     [picker showActionSheetPicker];
     return picker;
 }
 
-- (id)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)timeZone doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin
+- (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)timeZone doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin
 {
     self = [self initWithTitle:title initialSelection:timeZone target:nil successAction:nil cancelAction:nil origin:origin];
     if (self) {
@@ -59,14 +59,14 @@
     return self;
 }
 
-+ (id)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
++ (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
 {
     ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:title initialSelection:index target:target successAction:successAction cancelAction:cancelActionOrNil origin:origin];
     [picker showActionSheetPicker];
     return picker;
 }
 
-- (id)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
+- (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
 {
     self = [self initWithTarget:target successAction:successAction cancelAction:cancelActionOrNil origin:origin];
     if (self) {

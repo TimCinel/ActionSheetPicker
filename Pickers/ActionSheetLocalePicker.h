@@ -49,14 +49,14 @@ static const float secondColumnWidth = 160.0f;
  *
  *  @return  return instance of picker
  */
-+ (id)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
++ (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
 // Create an action sheet picker, but don't display until a subsequent call to "showActionPicker".  Receiver must release the picker when ready. */
-- (id)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
+- (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
-+ (id)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlock origin:(id)origin;
++ (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlock origin:(id)origin;
 
-- (id)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)timeZone doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin;
+- (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)timeZone doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin;
 
 @property (nonatomic, copy) ActionLocaleDoneBlock onActionSheetDone;
 @property (nonatomic, copy) ActionLocaleCancelBlock onActionSheetCancel;
