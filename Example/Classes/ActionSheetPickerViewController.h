@@ -57,5 +57,6 @@
 
 - (IBAction)showTableView:(id)sender;
 - (IBAction)dismiss:(id)sender;
+- (IBAction)customButtons:(id)sender;
 
 @end

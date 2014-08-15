@@ -256,14 +256,32 @@ BOOL isIPhone4()
 // Allow the user to specify a custom cancel button
 - (void)setCancelButton:(UIBarButtonItem *)button
 {
-    [button setTarget:self];
-    [button setAction:@selector(actionPickerCancel:)];
+    if ( [button.customView isKindOfClass:[UIButton class]] )
+    {
+        UIButton *uiButton = (UIButton *) button.customView;
+        [uiButton addTarget:self action:@selector(actionPickerCancel:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else
+    {
+        [button setTarget:self];
+        [button setAction:@selector(actionPickerCancel:)];
+    }
     self.cancelBarButtonItem = button;
 }
 
 // Allow the user to specify a custom done button
 - (void)setDoneButton:(UIBarButtonItem *)button
 {
+    if ( [button.customView isKindOfClass:[UIButton class]] )
+    {
+        UIButton *uiButton = (UIButton *) button.customView;
+        [uiButton addTarget:self action:@selector(actionPickerDone:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else
+    {
+        [button setTarget:self];
+        [button setAction:@selector(actionPickerDone:)];
+    }
     [button setTarget:self];
     [button setAction:@selector(actionPickerDone:)];
     self.doneBarButtonItem = button;

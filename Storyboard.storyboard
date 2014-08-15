@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HIQ-mT-eIh">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="5100" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
@@ -88,7 +89,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EV1-n7-TvQ">
-                                        <rect key="frame" x="-1" y="351" width="286" height="17"/>
+                                        <rect key="frame" x="-5" y="402" width="286" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="286" id="IgD-cF-3n6"/>
                                         </constraints>
@@ -97,13 +98,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jYm-Eq-vOm">
-                                        <rect key="frame" x="89" y="371" width="110" height="17"/>
+                                        <rect key="frame" x="85" y="422" width="110" height="17"/>
                                         <fontDescription key="fontDescription" type="system" size="system"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-fo-wWj">
-                                        <rect key="frame" x="-10" y="391" width="309" height="28"/>
+                                        <rect key="frame" x="-14" y="442" width="309" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="J3e-ob-d6T"/>
                                             <constraint firstAttribute="width" constant="309" id="ZL8-pq-k2n"/>
@@ -113,7 +114,7 @@
                                         <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
-                                        <rect key="frame" x="8" y="313" width="132" height="30"/>
+                                        <rect key="frame" x="4" y="364" width="132" height="30"/>
                                         <state key="normal" title="TableView Example">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -122,7 +123,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-WO-Hus">
-                                        <rect key="frame" x="205" y="313" width="75" height="30"/>
+                                        <rect key="frame" x="201" y="364" width="75" height="30"/>
                                         <state key="normal" title="Modal Test">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -130,12 +131,21 @@
                                             <segue destination="9f4-IZ-fgb" kind="modal" id="QEY-yt-RH7"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom buttons" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKa-mo-US0">
+                                        <rect key="frame" x="0.0" y="311" width="281" height="30"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="customButtons:" destination="LWr-l1-uYK" eventType="touchDown" id="aFL-52-FbG"/>
+                                            <outlet property="delegate" destination="LWr-l1-uYK" id="e4L-Z7-Zs5"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="trailing" secondItem="2a8-Ol-1xb" secondAttribute="trailing" id="4rN-nO-QzH"/>
                                     <constraint firstItem="EoD-zC-rUG" firstAttribute="leading" secondItem="nvM-rv-qGy" secondAttribute="leading" id="5R6-S4-BM3"/>
                                     <constraint firstItem="2a8-Ol-1xb" firstAttribute="leading" secondItem="mkk-Ul-Nmk" secondAttribute="leading" id="5ix-5B-BXE"/>
-                                    <constraint firstItem="EV1-n7-TvQ" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="-1" id="8px-SZ-ZhZ"/>
+                                    <constraint firstItem="EV1-n7-TvQ" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="-5" id="8px-SZ-ZhZ"/>
                                     <constraint firstItem="AUS-Q4-Cjs" firstAttribute="top" secondItem="vQn-Q8-jhe" secondAttribute="bottom" constant="15" id="B7Q-nG-B8f"/>
                                     <constraint firstItem="AUS-Q4-Cjs" firstAttribute="trailing" secondItem="vQn-Q8-jhe" secondAttribute="trailing" id="C1I-uO-2bJ"/>
                                     <constraint firstItem="2a8-Ol-1xb" firstAttribute="top" secondItem="mkk-Ul-Nmk" secondAttribute="bottom" constant="15" id="EVB-lF-Hvc"/>
@@ -147,24 +157,27 @@
                                     <constraint firstItem="nvM-rv-qGy" firstAttribute="top" secondItem="AUS-Q4-Cjs" secondAttribute="bottom" constant="15" id="SO1-gI-T2I"/>
                                     <constraint firstItem="AUS-Q4-Cjs" firstAttribute="trailing" secondItem="nvM-rv-qGy" secondAttribute="trailing" id="Sy2-nO-n8o"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="trailing" secondItem="2a8-Ol-1xb" secondAttribute="trailing" id="T8a-LZ-E3u"/>
+                                    <constraint firstItem="VKa-mo-US0" firstAttribute="top" secondItem="EoD-zC-rUG" secondAttribute="bottom" constant="15" id="TZR-ql-OyQ"/>
                                     <constraint firstItem="Xed-fo-wWj" firstAttribute="top" secondItem="jYm-Eq-vOm" secondAttribute="bottom" constant="3" id="Vus-bN-fyR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xed-fo-wWj" secondAttribute="trailing" constant="-11" id="XFc-GI-qRc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xed-fo-wWj" secondAttribute="trailing" constant="-7" id="XFc-GI-qRc"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="leading" secondItem="AUS-Q4-Cjs" secondAttribute="leading" id="XfY-K4-FGU"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="top" secondItem="2a8-Ol-1xb" secondAttribute="bottom" constant="15" id="ZXF-b3-T2B"/>
                                     <constraint firstItem="EV1-n7-TvQ" firstAttribute="top" secondItem="QkB-1n-7Wg" secondAttribute="bottom" constant="8" symbolic="YES" id="aBh-zW-SQc"/>
                                     <constraint firstItem="alq-in-mNW" firstAttribute="top" secondItem="20p-oK-ilw" secondAttribute="top" id="aNQ-vZ-aCx"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xed-fo-wWj" secondAttribute="bottom" id="es5-MJ-56z"/>
+                                    <constraint firstItem="VKa-mo-US0" firstAttribute="trailing" secondItem="EoD-zC-rUG" secondAttribute="trailing" id="coo-gN-ru6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xed-fo-wWj" secondAttribute="bottom" constant="34" id="es5-MJ-56z"/>
                                     <constraint firstItem="jYm-Eq-vOm" firstAttribute="top" secondItem="EV1-n7-TvQ" secondAttribute="bottom" constant="3" id="fSj-R8-sk5"/>
+                                    <constraint firstItem="VKa-mo-US0" firstAttribute="leading" secondItem="EoD-zC-rUG" secondAttribute="leading" id="ij3-f7-KVc"/>
                                     <constraint firstItem="jYm-Eq-vOm" firstAttribute="top" secondItem="EV1-n7-TvQ" secondAttribute="bottom" constant="3" id="jdi-73-v9i"/>
                                     <constraint firstItem="nvM-rv-qGy" firstAttribute="trailing" secondItem="EoD-zC-rUG" secondAttribute="trailing" id="kci-nF-151"/>
-                                    <constraint firstItem="Xed-fo-wWj" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="-10" id="lhl-p9-vHC"/>
-                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="top" secondItem="EoD-zC-rUG" secondAttribute="bottom" constant="17" id="nMv-nU-Gs3"/>
+                                    <constraint firstItem="Xed-fo-wWj" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="-14" id="lhl-p9-vHC"/>
+                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="top" secondItem="EoD-zC-rUG" secondAttribute="bottom" constant="68" id="nMv-nU-Gs3"/>
                                     <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="Xed-fo-wWj" secondAttribute="centerX" constant="-0.5" id="ok6-T5-eju"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="8" symbolic="YES" id="qsR-oc-yqA"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="leading" secondItem="alq-in-mNW" secondAttribute="leading" id="sLV-Ve-26s"/>
-                                    <constraint firstItem="nNg-WO-Hus" firstAttribute="trailing" secondItem="20p-oK-ilw" secondAttribute="trailingMargin" id="uv2-IY-ZcL"/>
+                                    <constraint firstItem="nNg-WO-Hus" firstAttribute="trailing" secondItem="20p-oK-ilw" secondAttribute="trailingMargin" constant="-4" id="uv2-IY-ZcL"/>
                                     <constraint firstItem="nvM-rv-qGy" firstAttribute="leading" secondItem="AUS-Q4-Cjs" secondAttribute="leading" id="w5f-cu-bdt"/>
-                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leadingMargin" id="wuZ-cd-Ir6"/>
+                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leadingMargin" constant="-4" id="wuZ-cd-Ir6"/>
                                     <constraint firstItem="QkB-1n-7Wg" firstAttribute="baseline" secondItem="nNg-WO-Hus" secondAttribute="baseline" id="zPM-Ux-PxY"/>
                                 </constraints>
                             </scrollView>
