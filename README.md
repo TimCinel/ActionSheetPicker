@@ -82,6 +82,17 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
+
+## ActionSheetCustomPicker Customization
+
+ActionSheetCustomPicker provides the following delegate function that can be used for customization:
+
+```obj-c
+- (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
+```
+This method is called right before `actionSheetPicker` is presented and it can be used to customize the appearance and properties of the `actionSheetPicker` and the `pickerView` associated with it.
+
+
 #### Want custom buttons? Ok!
 
 Example with custom text in Done button:
@@ -101,8 +112,6 @@ Example with custom button for cancel button:
     [picker showActionSheetPicker];
 ```
 
-
-
 ## Screen Shots ##
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
@@ -111,16 +120,6 @@ Example with custom button for cancel button:
 ![ActionSheetLocalePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/locale.png "ActionSheetLocalePicker")
 ![CustomButtons](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/custom.png "CustomButtons")
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
-
-
-## ActionSheetCustomPicker Customization
-
-ActionSheetCustomPicker provides the following delegate function that can be used for customization:
-
-```obj-c
-- (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
-```
-This method is called right before `actionSheetPicker` is presented and it can be used to customize the appearance and properties of the `actionSheetPicker` and the `pickerView` associated with it.
 
 ## Credits ##
 
