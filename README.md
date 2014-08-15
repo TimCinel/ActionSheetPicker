@@ -7,7 +7,7 @@ Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdate
 
 I resolved almost all (more than 60 pull requests and issues) in Tim's repo, but new updates will be added here.
 
-`pod 'ActionSheetPicker-3.0', '~> 1.1.1'` (**iOS 8** compatible already!)
+`pod 'ActionSheetPicker-3.0', '~> 1.1.2'` (**iOS 8** compatible already!)
 
 Please welcome: **ActionSheetPicker-3.0**, with fix crashes, new pickers and additions!
 
@@ -85,7 +85,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ## Screen Shots ##
 
 
-![actionsheetpicker-demo](https://cloud.githubusercontent.com/assets/3356474/3878780/50276c2a-2172-11e4-9d4f-a261d1a1331f.gif)
+![actionsheetpicker-demo](https://cloud.githubusercontent.com/assets/3356474/3878780/50276c2a-2172-11e4-9d4f-a261.1.2331f.gif)
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
