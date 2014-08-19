@@ -34,20 +34,29 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *animalTextField;
 @property (nonatomic, strong) IBOutlet UITextField *dateTextField;
+@property (nonatomic, strong) IBOutlet UITextField *timeTextField;
 
 @property (nonatomic, strong) NSArray *animals;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, strong) NSDate *selectedTime;
 @property (nonatomic, assign) NSInteger selectedBigUnit;
 @property (nonatomic, assign) NSInteger selectedSmallUnit;
 @property (nonatomic, strong) AbstractActionSheetPicker *actionSheetPicker;
 
 - (IBAction)selectABlock:(id)sender;
+
+- (IBAction)selectALocale:(UIControl *)sender;
+
 - (IBAction)selectAnAnimal:(id)sender;
 - (IBAction)selectADate:(id)sender;
-- (IBAction)animalButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)dateButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)selectATime:(id)sender;
+
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
+
+- (IBAction)showTableView:(id)sender;
+- (IBAction)dismiss:(id)sender;
+- (IBAction)customButtons:(id)sender;
 
 @end

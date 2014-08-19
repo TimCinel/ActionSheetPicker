@@ -27,13 +27,8 @@
 
 
 #import "ActionSheetPickerAppDelegate.h"
-#import "ActionSheetPickerViewController.h"
 
 @implementation ActionSheetPickerAppDelegate
-
-@synthesize window;
-@synthesize viewController;
-
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -43,12 +38,10 @@
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
+//
+//    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+//            window.tintColor = [UIColor blueColor];
 
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
-            window.tintColor = [UIColor blueColor];
-
-    window.rootViewController = viewController;
-    [window makeKeyAndVisible];
 
     return YES;
 }

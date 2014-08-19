@@ -1,16 +1,23 @@
-## Attention:
+[![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
+[![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
+[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
+[![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 
-This repo is **outdated**. You can find new version of ActionSheetPicker (iOS 8 compatible alredy) here: [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0).
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
-I try to resolve a lot of pull requests and issues in this repo by time, but new updates will be appeared in https://github.com/skywinder/ActionSheetPicker-3.0. I forked from this repo and implement a bunch of fixes.
+I resolved almost all (60+ pull requests and issues) in Tim's repo, but new updates will be added here.
 
+`pod 'ActionSheetPicker-3.0', '~> 1.1.2'` (**iOS 8** compatible already!)
 
-*Regards,*
-*Petr Korolev.*
+Please welcome: **ActionSheetPicker-3.0**!
 
----
+**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
-### ActionSheetPicker = UIPickerView + UIActionSheet ###
+_Regards, Petr Korolev_
+
+## ActionSheetPicker = UIPickerView + UIActionSheet ##
+
+![ActionSheetLocalePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/locale.png "ActionSheetLocalePicker")
 
 Well, that's how it started. Now, the following is more accurate:
 
@@ -20,9 +27,8 @@ Well, that's how it started. Now, the following is more accurate:
 
 ## Overview ##
 ActionSheetPicker
-https://github.com/TimCinel/ActionSheetPicker
 
-Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutible options. Based on the HTML drop-down alternative found in mobilesafari.
+Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. Based on the HTML drop-down alternative found in mobilesafari.
 
 Improvements more than welcome - they are kindly requested :)
 
@@ -35,7 +41,7 @@ Improvements more than welcome - they are kindly requested :)
  * Delegate protocol available for more control
  * Universal (iPhone/iPod/iPad)
 
-## Quickstart ##
+## QuickStart ##
 
 There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
@@ -78,12 +84,6 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
-## Screen Shots ##
-
-![ActionSheetPicker](Screenshots/string.png "ActionSheetPicker")
-![ActionSheetDatePicker](Screenshots/date.png "ActionSheetDatePicker")
-![ActionSheetDistancePicker](Screenshots/distance.png "ActionSheetDistancePicker")
-![iPad Support](Screenshots/ipad.png "iPad Support")
 
 ## ActionSheetCustomPicker Customization
 
@@ -93,6 +93,34 @@ ActionSheetCustomPicker provides the following delegate function that can be use
 - (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
 ```
 This method is called right before `actionSheetPicker` is presented and it can be used to customize the appearance and properties of the `actionSheetPicker` and the `pickerView` associated with it.
+
+
+#### Want custom buttons? Ok!
+
+Example with custom text in Done button:
+```obj-c
+    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    [picker setDoneButton:[[UIBarButtonItem alloc] initWithTitle:@"My Text"  style:UIBarButtonItemStylePlain target:nil action:nil]];
+    [picker showActionSheetPicker];
+```
+
+Example with custom button for cancel button:
+```obj-c
+    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    UIButton *cancelButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
+    [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
+    [picker showActionSheetPicker];
+```
+
+## Screen Shots ##
+
+![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
+![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
+![ActionSheetDatePicker](https://raw.githubusercontent.com/Jack-s/ActionSheetPicker-3.0/master/Screenshots/time.png "ActionSheetDatePicker")
+![CustomButtons](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/custom.png "CustomButtons")
+![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 ## Credits ##
 
@@ -113,7 +141,7 @@ Thanks to all of the contributors for making ActionSheetPicker better for the iO
 
 [Greg Combs](http://github.com/grgcombs) (Refactor!)
 
-[Petr Korolev](http://github.com/skywinder) (Update, crashfix, update for iOS7, new pickers)
+[Petr Korolev](http://github.com/skywinder) (Update, crash-fix update for iOS7, new pickers)
 
 [Nikos Mouzakitis](http://github.com/NikDude)
 

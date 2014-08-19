@@ -31,6 +31,7 @@
 
 @property (nonatomic) NSDate *minimumDate;
 @property (nonatomic) NSDate *maximumDate;
+@property (nonatomic) NSInteger minuteInterval;
 @property (nonatomic) NSCalendar *calendar;
 @property (nonatomic) NSTimeZone *timeZone;
 @property (nonatomic) NSLocale *locale;

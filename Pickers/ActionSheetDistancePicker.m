@@ -78,8 +78,9 @@
     picker.delegate = self;
     picker.dataSource = self;
     picker.showsSelectionIndicator = YES;
-    [picker addLabel:self.bigUnitString forComponent:(self.bigUnitDigits - 1) forLongestString:nil];
-    [picker addLabel:self.smallUnitString forComponent:(self.bigUnitDigits + self.smallUnitDigits - 1) forLongestString:nil];
+    [picker addLabel:self.bigUnitString forComponent:(NSUInteger) (self.bigUnitDigits - 1) forLongestString:nil];
+    [picker addLabel:self.smallUnitString forComponent:(NSUInteger) (self.bigUnitDigits + self.smallUnitDigits - 1)
+    forLongestString:nil];
 
     NSInteger unitSubtract = 0;
     NSInteger currentDigit = 0;
@@ -150,8 +151,27 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     CGFloat totalWidth = pickerView.frame.size.width - 30;
-    CGFloat bigUnitLabelSize = [self.bigUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
-    CGFloat smallUnitLabelSize = [self.smallUnitString sizeWithFont:[UIFont boldSystemFontOfSize:20]].width;
+
+    CGFloat bigUnitLabelSize;
+    CGFloat smallUnitLabelSize;
+    UIFont *font = [UIFont boldSystemFontOfSize:20];
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
+        bigUnitLabelSize = [self.bigUnitString sizeWithAttributes:
+                                                       @{NSFontAttributeName:
+                                                               font}].width;
+
+        smallUnitLabelSize = [self.smallUnitString sizeWithAttributes:
+                                                           @{NSFontAttributeName:
+                                                                   font}].width;
+#pragma clang diagnostic pop
+    }
+    else {
+        bigUnitLabelSize = [self.bigUnitString sizeWithFont:font].width;
+        smallUnitLabelSize = [self.smallUnitString sizeWithFont:font].width;
+    }
+
     CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
     if (component == self.bigUnitDigits - 1)
         return otherSize + bigUnitLabelSize;

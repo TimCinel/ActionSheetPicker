@@ -16,7 +16,7 @@
 /////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
 /////////////////////////////////////////////////////////////////////////
-@property (nonatomic, strong) id<ActionSheetCustomPickerDelegate> delegate;
+@property(nonatomic, strong) id <ActionSheetCustomPickerDelegate> delegate;
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -24,10 +24,14 @@
 /////////////////////////////////////////////////////////////////////////
 
 /** Designated init */
-- (id)initWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
+- (id)initWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
+
+- (id)initWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin initialSelections:(NSArray *)initialSelections;
 
 /** Convenience class method for creating an launched */
-+ (id)showPickerWithTitle:(NSString *)title delegate:(id<ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
++ (id)showPickerWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin;
+
++ (id)showPickerWithTitle:(NSString *)title delegate:(id <ActionSheetCustomPickerDelegate>)delegate showCancelButton:(BOOL)showCancelButton origin:(id)origin initialSelections:(NSArray *)initialSelections;
 
 
 @end
