@@ -149,7 +149,6 @@
                 NSString *string1 = array[1];
                 NSString *string2 = array[2];
                 NSString *string3 = [string1 stringByAppendingFormat:@"/%@", string2];
-                NSString *string4 = [string0 stringByAppendingFormat:@"/%@", string1];
 
                 if ( continentsDict[string0] ) //if continent exists
                 {
