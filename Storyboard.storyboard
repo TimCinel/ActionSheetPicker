@@ -4,7 +4,6 @@
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="5100" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ActionSheetPicker-->
@@ -148,9 +147,11 @@
                                     <constraint firstItem="EoD-zC-rUG" firstAttribute="leading" secondItem="nvM-rv-qGy" secondAttribute="leading" id="5R6-S4-BM3"/>
                                     <constraint firstItem="2a8-Ol-1xb" firstAttribute="leading" secondItem="mkk-Ul-Nmk" secondAttribute="leading" id="5ix-5B-BXE"/>
                                     <constraint firstItem="EV1-n7-TvQ" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="13" id="8px-SZ-ZhZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="nNg-WO-Hus" secondAttribute="trailing" constant="26" id="AzN-JC-o2Z"/>
                                     <constraint firstItem="AUS-Q4-Cjs" firstAttribute="top" secondItem="vQn-Q8-jhe" secondAttribute="bottom" constant="15" id="B7Q-nG-B8f"/>
                                     <constraint firstItem="AUS-Q4-Cjs" firstAttribute="trailing" secondItem="vQn-Q8-jhe" secondAttribute="trailing" id="C1I-uO-2bJ"/>
                                     <constraint firstItem="2a8-Ol-1xb" firstAttribute="top" secondItem="mkk-Ul-Nmk" secondAttribute="bottom" constant="15" id="EVB-lF-Hvc"/>
+                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leading" constant="22" id="FGw-Fb-w32"/>
                                     <constraint firstItem="Xed-fo-wWj" firstAttribute="top" secondItem="jYm-Eq-vOm" secondAttribute="bottom" constant="3" id="Jff-Ko-Zsx"/>
                                     <constraint firstItem="2a8-Ol-1xb" firstAttribute="leading" secondItem="vQn-Q8-jhe" secondAttribute="leading" id="K3L-Cb-yzz"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="centerX" secondItem="nvM-rv-qGy" secondAttribute="centerX" id="Kk6-rE-TeD"/>
@@ -182,9 +183,7 @@
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="8" symbolic="YES" id="qsR-oc-yqA"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="leading" secondItem="alq-in-mNW" secondAttribute="leading" id="sLV-Ve-26s"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="centerX" secondItem="EoD-zC-rUG" secondAttribute="centerX" id="t2F-1c-ZdE"/>
-                                    <constraint firstItem="nNg-WO-Hus" firstAttribute="trailing" secondItem="20p-oK-ilw" secondAttribute="trailingMargin" constant="-18" id="uv2-IY-ZcL"/>
                                     <constraint firstItem="nvM-rv-qGy" firstAttribute="leading" secondItem="AUS-Q4-Cjs" secondAttribute="leading" id="w5f-cu-bdt"/>
-                                    <constraint firstItem="QkB-1n-7Wg" firstAttribute="leading" secondItem="20p-oK-ilw" secondAttribute="leadingMargin" constant="14" id="wuZ-cd-Ir6"/>
                                     <constraint firstItem="QkB-1n-7Wg" firstAttribute="baseline" secondItem="nNg-WO-Hus" secondAttribute="baseline" id="zPM-Ux-PxY"/>
                                 </constraints>
                             </scrollView>

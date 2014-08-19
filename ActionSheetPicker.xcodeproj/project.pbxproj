@@ -15,7 +15,6 @@
 		1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE714192BB41600A27994 /* MainWindow-iPad.xib */; };
 		1C6EE720192BB41600A27994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
 		1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE716192BB41600A27994 /* MainWindow.xib */; };
-		1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; };
 		1C6EE734192BB4F600A27994 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
 		1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */; };
 		1C6EE736192BB4F600A27994 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */; };
@@ -357,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7A57AC199DF30B007B9B70 /* ok.png in Resources */,
-				1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */,
 				1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */,
 				1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */,
 				1C7A57A9199DEDD5007B9B70 /* cancel.png in Resources */,
