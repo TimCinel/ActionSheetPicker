@@ -1,4 +1,4 @@
-## Attention:
+## Deprecated: use [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0) instead.
 
 This repo is **outdated**. You can find new version of ActionSheetPicker (iOS 8 compatible alredy) here: [**ActionSheetPicker-3.0**](https://github.com/skywinder/ActionSheetPicker-3.0).
 
