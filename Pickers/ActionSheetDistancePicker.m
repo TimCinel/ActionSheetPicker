@@ -65,8 +65,8 @@
         self.smallUnitString = smallUnitString;
         self.smallUnitMax = smallUnitMax;
         self.selectedSmallUnit = selectedSmallUnit;
-        self.bigUnitDigits = [[NSString stringWithFormat:@"%i", self.bigUnitMax] length];
-        self.smallUnitDigits = [[NSString stringWithFormat:@"%i", self.smallUnitMax] length];
+        self.bigUnitDigits = [[NSString stringWithFormat:@"%li", (long)self.bigUnitMax] length];
+        self.smallUnitDigits = [[NSString stringWithFormat:@"%li", (long)self.smallUnitMax] length];
     }
     return self;
 }
@@ -146,7 +146,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-     return [NSString stringWithFormat:@"%i", row];
+     return [NSString stringWithFormat:@"%li", (long)row];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
