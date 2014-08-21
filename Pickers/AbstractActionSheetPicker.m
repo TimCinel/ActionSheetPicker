@@ -40,6 +40,8 @@ BOOL isIPhone4()
 }
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+
 
 @interface AbstractActionSheetPicker ()
 
@@ -381,9 +383,16 @@ BOOL isIPhone4()
 
 - (CGSize)viewSize
 {
-    if ( ![self isViewPortrait] )
-        return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
-    return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
+    if ( IS_IPAD )
+    {
+        if ( [self isViewPortrait] )
+            return CGSizeMake(320 , 480);
+        return CGSizeMake(480, 320);
+    }
+
+    if ( [self isViewPortrait] )
+        return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
+    return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
 }
 
 - (BOOL)isViewPortrait
@@ -413,7 +422,7 @@ BOOL isIPhone4()
 {
     self.presentFromRect = aView.frame;
 
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    if ( IS_IPAD )
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
