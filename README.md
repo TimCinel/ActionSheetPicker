@@ -5,17 +5,19 @@
 
 Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
-I resolved almost all (more than 60 pull requests and issues) in Tim's repo, but new updates will be added here.
+I resolved almost all (60+ pull requests and issues) in Tim's repo, but new updates will be added here.
 
-`pod 'ActionSheetPicker-3.0', '~> 1.0.14'`
+`pod 'ActionSheetPicker-3.0', '~> 1.1.2'` (**iOS 8** compatible already!)
 
-Please welcome: **ActionSheetPicker-3.0**, with fix crashes, new pickers and additions!
+Please welcome: **ActionSheetPicker-3.0**!
 
-*Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.*
+**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
 _Regards, Petr Korolev_
 
 ## ActionSheetPicker = UIPickerView + UIActionSheet ##
+
+![ActionSheetLocalePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/locale.png "ActionSheetLocalePicker")
 
 Well, that's how it started. Now, the following is more accurate:
 
@@ -82,12 +84,6 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
-## Screen Shots ##
-
-![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
-![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
-![ActionSheetDatePicker](https://raw.githubusercontent.com/Jack-s/ActionSheetPicker-3.0/master/Screenshots/time.png "ActionSheetDatePicker")
-![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 ## ActionSheetCustomPicker Customization
 
@@ -97,6 +93,34 @@ ActionSheetCustomPicker provides the following delegate function that can be use
 - (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
 ```
 This method is called right before `actionSheetPicker` is presented and it can be used to customize the appearance and properties of the `actionSheetPicker` and the `pickerView` associated with it.
+
+
+#### Want custom buttons? Ok!
+
+Example with custom text in Done button:
+```obj-c
+    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    [picker setDoneButton:[[UIBarButtonItem alloc] initWithTitle:@"My Text"  style:UIBarButtonItemStylePlain target:nil action:nil]];
+    [picker showActionSheetPicker];
+```
+
+Example with custom button for cancel button:
+```obj-c
+    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    UIButton *cancelButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
+    [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
+    [picker showActionSheetPicker];
+```
+
+## Screen Shots ##
+
+![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
+![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
+![ActionSheetDatePicker](https://raw.githubusercontent.com/Jack-s/ActionSheetPicker-3.0/master/Screenshots/time.png "ActionSheetDatePicker")
+![CustomButtons](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/custom.png "CustomButtons")
+![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 ## Credits ##
 

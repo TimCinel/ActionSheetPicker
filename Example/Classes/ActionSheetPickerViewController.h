@@ -45,13 +45,18 @@
 @property (nonatomic, strong) AbstractActionSheetPicker *actionSheetPicker;
 
 - (IBAction)selectABlock:(id)sender;
+
+- (IBAction)selectALocale:(UIControl *)sender;
+
 - (IBAction)selectAnAnimal:(id)sender;
 - (IBAction)selectADate:(id)sender;
 - (IBAction)selectATime:(id)sender;
 
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
-- (IBAction)selectLocation:(UITextField *)sender;
+
 - (IBAction)showTableView:(id)sender;
+- (IBAction)dismiss:(id)sender;
+- (IBAction)customButtons:(id)sender;
 
 @end
