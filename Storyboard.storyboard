@@ -143,7 +143,13 @@
                             <constraint firstItem="nvM-rv-qGy" firstAttribute="top" secondItem="AUS-Q4-Cjs" secondAttribute="bottom" constant="15" id="yjP-ua-0sp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ActionSheetPicker" id="d3J-Yq-ZFl"/>
+                    <navigationItem key="navigationItem" title="ActionSheetPicker" id="d3J-Yq-ZFl">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="NwK-D0-2a0">
+                            <connections>
+                                <action selector="selectATime:" destination="LWr-l1-uYK" id="GQS-hc-GzO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="animalTextField" destination="mkk-Ul-Nmk" id="iQg-1G-bNg"/>
                         <outlet property="dateTextField" destination="2a8-Ol-1xb" id="PWK-pg-3bt"/>
