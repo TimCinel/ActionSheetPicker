@@ -239,7 +239,7 @@ BOOL isIPhone4()
 {
     UIBarButtonItem *button = (UIBarButtonItem *) sender;
     NSInteger index = button.tag;
-    NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", index, (unsigned long)self.customButtons.count);
+    NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
     NSAssert([self.pickerView respondsToSelector:@
             selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
