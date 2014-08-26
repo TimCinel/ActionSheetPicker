@@ -461,6 +461,14 @@ BOOL isIPhone4()
 {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     viewController.view = aView;
+
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
+        viewController.preferredContentSize = aView.frame.size;
+#pragma clang diagnostic pop
+    }
+
     viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     [self presentPopover:_popOverController];
