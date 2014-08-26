@@ -461,6 +461,7 @@ BOOL isIPhone4()
 {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     viewController.view = aView;
+    viewController.preferredContentSize = CGSizeMake(self.viewSize.width, 260);
     viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     [self presentPopover:_popOverController];
