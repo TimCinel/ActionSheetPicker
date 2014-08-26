@@ -343,7 +343,7 @@
     switch (component) {
         case 0:
         {
-            self.selectedContinent = (self.continents)[row];
+            self.selectedContinent = (self.continents)[(NSUInteger) row];
             [pickerView reloadComponent:1];
             self.selectedCity = [self getCitiesByContinent:self.selectedContinent][(NSUInteger) [pickerView selectedRowInComponent:1]];
             return;
