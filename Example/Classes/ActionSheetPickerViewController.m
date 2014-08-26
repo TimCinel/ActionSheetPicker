@@ -261,10 +261,10 @@
     [okButton setImage:[UIImage imageNamed:@"ok.png"] forState:UIControlStateNormal];
     [okButton setFrame:CGRectMake(0, 0, 32, 32)];
 
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone  target:picker
-                                                                               action:@selector(actionPickerDone:)];
-
-    [picker setCancelButton:barButton];
+//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone  target:picker
+//                                                                               action:@selector(actionPickerDone:)];
+//
+//    [picker setCancelButton:barButton];
 
     [picker showActionSheetPicker];
 

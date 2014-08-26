@@ -106,12 +106,12 @@ BOOL isIPhone4()
         else
             NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
 
+
+        // Implement custom Cancel and Done Button (not System as before) due  #22 issue (https://github.com/skywinder/ActionSheetPicker-3.0/issues/22)
         // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
-        UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
-                                                         action:@selector(actionPickerCancel:)];
+        UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(actionPickerCancel:)];
         [self setCancelBarButtonItem:cancelBtn];
-        UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
-                                                          action:@selector(actionPickerDone:)];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(actionPickerDone:)];
         [self setDoneBarButtonItem:doneButton];
 
         //allows us to use this without needing to store a reference in calling class
@@ -326,7 +326,7 @@ BOOL isIPhone4()
     }
     [barItems addObject:self.doneBarButtonItem];
 
-    [pickerToolbar setItems:barItems animated:YES];
+    [pickerToolbar setItems:barItems animated:NO];
     return pickerToolbar;
 }
 
