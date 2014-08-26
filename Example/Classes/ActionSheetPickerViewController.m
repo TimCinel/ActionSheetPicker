@@ -30,6 +30,7 @@
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
+#import "ActionSheetLocalePicker.h"
 
 @interface ActionSheetPickerViewController()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
@@ -73,21 +74,26 @@
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
-    NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
     [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
-- (IBAction)selectAnAnimal:(UIControl *)sender {
-    [ActionSheetStringPicker showPickerWithTitle:@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self successAction:@selector(animalWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
-    
- /* Example ActionSheetPicker using customButtons
-    self.actionSheetPicker = [[ActionSheetPicker alloc] initWithTitle@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self successAction:@selector(itemWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender
- 
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Special" value:[NSNumber numberWithInt:1]];
-    self.actionSheetPicker.hideCancel = YES;
-    [self.actionSheetPicker showActionSheetPicker];
- */
+- (IBAction)selectALocale:(UIControl *)sender {
+    ActionLocaleDoneBlock done = ^(ActionSheetLocalePicker *picker, NSTimeZone *selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue.name];
+        }
+    };
+    ActionLocaleCancelBlock cancel = ^(ActionSheetLocalePicker *picker) {
+        NSLog(@"Locale Picker Canceled");
+    };
+    ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Select Locale:" initialSelection:[[NSTimeZone alloc] initWithName:@"Antarctica/McMurdo"] doneBlock:done cancelBlock:cancel origin:sender];
+    [picker addCustomButtonWithTitle:@"My locale" value:[NSTimeZone localTimeZone]];
+    picker.hideCancel = YES;
+    [picker showActionSheetPicker];
 }
+
+
 
 - (IBAction)selectADate:(UIControl *)sender {
     _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
@@ -131,23 +137,53 @@
     
     ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
     
-    NSNumber *yass1 = [NSNumber numberWithInt:1];
-    NSNumber *yass2 = [NSNumber numberWithInt:2];
+    NSNumber *yass1 = @1;
+    NSNumber *yass2 = @2;
     
-    NSArray *initialSelections = [[NSArray alloc] initWithObjects:yass1, yass2, nil];
+    NSArray *initialSelections = @[yass1, yass2];
     
     [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender
                                initialSelections:initialSelections];
-}
-
-- (IBAction)selectLocation:(UITextField *)sender {
-
 }
 
 - (IBAction)showTableView:(id)sender {
     TestTableViewController *tableViewController = [[UIStoryboard storyboardWithName:@"Storyboard"
                                                                               bundle:nil] instantiateViewControllerWithIdentifier:@"TestTableViewController"];
     [self.navigationController pushViewController:tableViewController animated:YES];
+}
+
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)selectAnAnimal:(UIControl *)sender {
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Animal" rows:self.animals initialSelection:self.selectedIndex target:self successAction:@selector(animalWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
+
+}
+
+- (IBAction)customButtons:(id)sender {
+
+    /* Example ActionSheetPicker using custom cancel and done Buttons */
+    ActionLocaleDoneBlock done = ^(ActionSheetLocalePicker *picker, NSTimeZone *selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue.name];
+        }
+    };
+
+    ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Select Locale:" initialSelection:[[NSTimeZone alloc] initWithName:@"Antarctica/McMurdo"] doneBlock:done cancelBlock:nil origin:sender];
+    [picker addCustomButtonWithTitle:@"My locale" value:[NSTimeZone localTimeZone]];
+
+    UIButton *okButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [okButton setImage:[UIImage imageNamed:@"ok.png"] forState:UIControlStateNormal];
+    [okButton setFrame:CGRectMake(0, 0, 32, 32)];
+    [picker setDoneButton:[[UIBarButtonItem alloc] initWithCustomView:okButton]];
+//    [picker setDoneButton:[[UIBarButtonItem alloc] initWithTitle:@"My Text"  style:UIBarButtonItemStylePlain target:nil action:nil]];
+
+    UIButton *cancelButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
+    [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
+    [picker showActionSheetPicker];
 }
 
 #pragma mark - Implementation
@@ -189,6 +225,5 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return NO;
 }
-
 
 @end
