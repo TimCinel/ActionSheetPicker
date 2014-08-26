@@ -99,14 +99,14 @@ This method is called right before `actionSheetPicker` is presented and it can b
 
 Example with custom text in Done button:
 ```obj-c
-    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
     [picker setDoneButton:[[UIBarButtonItem alloc] initWithTitle:@"My Text"  style:UIBarButtonItemStylePlain target:nil action:nil]];
     [picker showActionSheetPicker];
 ```
 
 Example with custom button for cancel button:
 ```obj-c
-    ActionSheetStringPicker *picker = [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
     UIButton *cancelButton =  [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
     [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
