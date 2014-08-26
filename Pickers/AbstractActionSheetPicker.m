@@ -465,7 +465,7 @@ BOOL isIPhone4()
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-        viewController.preferredContentSize = CGSizeMake(self.viewSize.width, 260);
+        viewController.preferredContentSize = aView.frame.size;
 #pragma clang diagnostic pop
     }
 
