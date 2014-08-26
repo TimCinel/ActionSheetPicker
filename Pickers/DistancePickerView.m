@@ -28,16 +28,16 @@
 
 - (void)addLabel:(NSString *)labeltext forComponent:(NSUInteger)component forLongestString:(NSString *)longestString
 {
-    [labels setObject:labeltext forKey:[NSNumber numberWithInt:component]];
+    labels[@(component)] = labeltext;
 
-    NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]];
+    NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", @(component)];
 
     if ( !longestString )
     {
         longestString = labeltext;
     }
 
-    [labels setObject:longestString forKey:keyName];
+    labels[keyName] = longestString;
 }
 
 - (void)updateLabel:(NSString *)labeltext forComponent:(NSUInteger)component
@@ -49,8 +49,8 @@
     if ( ![theLabel.text isEqualToString:labeltext] )
     {
 
-        NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]];
-        NSString *longestString = [labels objectForKey:keyName];
+        NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", @(component)];
+        NSString *longestString = labels[keyName];
 
         // Update label array with our new string value
         [self addLabel:labeltext forComponent:component forLongestString:longestString];
@@ -99,14 +99,14 @@
 
         // get the text for the label. 
         // move on to the next if there is no label for this wheel.
-        NSString *text = [labels objectForKey:[NSNumber numberWithInt:component]];
+        NSString *text = labels[@(component)];
         if ( text )
         {
 
             // set up the frame for the label using our longestString length
             NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString",
-                                                           [NSNumber numberWithInt:component]];
-            NSString *longestString = [labels objectForKey:keyName];
+                                                           @(component)];
+            NSString *longestString = labels[keyName];
             CGRect frame;
 
             if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
@@ -163,9 +163,9 @@
                     // if this is the last wheel, add label as the third view from the top
                     if ( component == self.numberOfComponents - 1 ) if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
                     {
-                        UIView *o = [[self.subviews[0] subviews] objectAtIndex:([[self.subviews[0] subviews] count] - 1)];
-                        UIView *subview = [[o subviews] objectAtIndex:2];
-                        UIView *view = [[subview.subviews objectAtIndex:0] subviews][1];
+                        UIView *o = [self.subviews[0] subviews][[[self.subviews[0] subviews] count] - 1];
+                        UIView *subview = [o subviews][2];
+                        UIView *view = [(subview.subviews)[0] subviews][1];
                         [self insertSubview:label aboveSubview:view];
                     }
                     else
@@ -178,11 +178,11 @@
                         if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
                         {
                             [self insertSubview:label
-                                   aboveSubview:[[self.subviews[0] subviews] objectAtIndex:(NSUInteger) component]];
+                                   aboveSubview:[self.subviews[0] subviews][(NSUInteger) component]];
                         }
                         else
                         {
-                            [self insertSubview:label aboveSubview:[self.subviews objectAtIndex:(NSUInteger) (5 * (component + 1))]];
+                            [self insertSubview:label aboveSubview:(self.subviews)[(NSUInteger) (5 * (component + 1))]];
                         }
 
                     }

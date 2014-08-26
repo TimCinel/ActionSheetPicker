@@ -90,14 +90,14 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {    
     if (self.onActionSheetDone) {
-        id selectedObject = (self.data.count > 0) ? [self.data objectAtIndex:(NSUInteger) self.selectedIndex] : nil;
+        id selectedObject = (self.data.count > 0) ? (self.data)[(NSUInteger) self.selectedIndex] : nil;
         _onActionSheetDone(self, self.selectedIndex, selectedObject);
         return;
     }
     else if (target && [target respondsToSelector:successAction]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [target performSelector:successAction withObject:[NSNumber numberWithInt:self.selectedIndex] withObject:origin];
+        [target performSelector:successAction withObject:@(self.selectedIndex) withObject:origin];
 #pragma clang diagnostic pop
         return;
     }
@@ -132,7 +132,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    id obj = [self.data objectAtIndex:(NSUInteger) row];
+    id obj = (self.data)[(NSUInteger) row];
 
     // return the object if it is already a NSString,
     // otherwise, return the description, just like the toString() method in Java
