@@ -220,6 +220,57 @@
     NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
 }
 
+
+
+- (IBAction)popoverButtonPressed:(id)sender {
+
+
+    UIViewController *x = [[UIViewController alloc] init];
+    x.modalPresentationStyle = UIModalPresentationFormSheet;
+
+
+    x.view.backgroundColor = [UIColor whiteColor];
+
+    UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
+    b.frame = CGRectMake(0, 0, 100, 100);
+    [b setTitle:@"Picker" forState:UIControlStateNormal];
+    [b addTarget:self action:@selector(pickerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [x.view addSubview:b];
+
+    UIButton *b2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    b2.frame = CGRectMake(0, 50, 100, 100);
+    [b2 setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [b2 addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
+    [x.view addSubview:b2];
+
+//    UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:x];
+//    navigationController1.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:x animated:YES completion:nil];
+}
+
+- (void) pickerButtonPressed:(id)sender {
+    NSLog(@"Picker");
+
+    ActionSheetStringPicker * picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title"  rows:@[@"Row1",@"Row2",@"Row3"] initialSelection:0  doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        NSLog(@"selectedIndex = %i", selectedIndex);
+    } cancelBlock:^(ActionSheetStringPicker *picker) {
+        NSLog(@"picker = %@", picker);
+    } origin: (UIView*)sender ];
+
+    UIButton *okButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [okButton setImage:[UIImage imageNamed:@"ok.png"] forState:UIControlStateNormal];
+    [okButton setFrame:CGRectMake(0, 0, 32, 32)];
+
+//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone  target:picker
+//                                                                               action:@selector(actionPickerDone:)];
+//
+//    [picker setCancelButton:barButton];
+
+    [picker showActionSheetPicker];
+
+}
+
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
