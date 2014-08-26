@@ -106,9 +106,16 @@ BOOL isIPhone4()
         else
             NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
 
+        // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
+        UIBarButtonItem *cancelBtn = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
+                                                         action:@selector(actionPickerCancel:)];
+        [self setCancelBarButtonItem:cancelBtn];
+        UIBarButtonItem *doneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
+                                                          action:@selector(actionPickerDone:)];
+        [self setDoneBarButtonItem:doneButton];
+
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
-
     }
     return self;
 }
@@ -292,19 +299,9 @@ BOOL isIPhone4()
 
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
 
-    // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
-    self.cancelBarButtonItem = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
-                                                   action:@selector(actionPickerCancel:)];
-    self.doneBarButtonItem = [self createButtonWithType:UIBarButtonSystemItemDone target:self
-                                                 action:@selector(actionPickerDone:)];
-
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self
-                                                                               action:@selector(actionPickerCancel:)];
-
-    self.cancelBarButtonItem = barButton;
     if ( !self.hideCancel )
     {
-        [barItems addObject:self.barButtonItem];
+        [barItems addObject:self.cancelBarButtonItem];
     }
 
     NSInteger index = 0;
