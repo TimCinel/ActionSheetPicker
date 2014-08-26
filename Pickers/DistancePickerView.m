@@ -30,7 +30,7 @@
 {
     labels[@(component)] = labeltext;
 
-    NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", @(component)];
+    NSString *keyName = [NSString stringWithFormat:@"%@_%ld", @"longestString", (unsigned long)component];
 
     if ( !longestString )
     {
@@ -49,7 +49,7 @@
     if ( ![theLabel.text isEqualToString:labeltext] )
     {
 
-        NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", @(component)];
+        NSString *keyName = [NSString stringWithFormat:@"%@_%ld", @"longestString", (unsigned long)component];
         NSString *longestString = labels[keyName];
 
         // Update label array with our new string value

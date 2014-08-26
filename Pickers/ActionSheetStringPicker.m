@@ -97,7 +97,7 @@
     else if (target && [target respondsToSelector:successAction]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [target performSelector:successAction withObject:@(self.selectedIndex) withObject:origin];
+        [target performSelector:successAction withObject:[NSNumber numberWithLong:self.selectedIndex] withObject:origin];
 #pragma clang diagnostic pop
         return;
     }
