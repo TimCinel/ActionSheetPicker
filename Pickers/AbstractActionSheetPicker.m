@@ -349,7 +349,10 @@ BOOL isIPhone4()
 #pragma clang diagnostic pop
     } else
     {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
+#pragma clang diagnostic pop
 
     }
 
@@ -469,8 +472,14 @@ BOOL isIPhone4()
         viewController.preferredContentSize = aView.frame.size;
 #pragma clang diagnostic pop
     }
+    else
+    {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        viewController.contentSizeForViewInPopover = viewController.view.frame.size;
+#pragma clang diagnostic pop
+    }
 
-    viewController.contentSizeForViewInPopover = viewController.view.frame.size;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     [self presentPopover:_popOverController];
 }

@@ -120,7 +120,10 @@
             }
             else
             {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
                 frame.size = [longestString sizeWithFont:labelfont];
+#pragma clang diagnostic pop
             }
 
 

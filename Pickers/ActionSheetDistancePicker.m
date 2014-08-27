@@ -168,8 +168,11 @@
 #pragma clang diagnostic pop
     }
     else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         bigUnitLabelSize = [self.bigUnitString sizeWithFont:font].width;
         smallUnitLabelSize = [self.smallUnitString sizeWithFont:font].width;
+#pragma clang diagnostic pop
     }
 
     CGFloat otherSize = (totalWidth - bigUnitLabelSize - smallUnitLabelSize)/(self.bigUnitDigits + self.smallUnitDigits);
