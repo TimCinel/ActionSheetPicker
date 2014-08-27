@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.animals = [NSArray arrayWithObjects:@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra", nil];
+    self.animals = @[@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra"];
     self.selectedDate = [NSDate date];
     self.selectedTime = [NSDate date];
 }
@@ -192,7 +192,7 @@
     self.selectedIndex = [selectedIndex intValue];
     
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
-    self.animalTextField.text = [self.animals objectAtIndex:(NSUInteger) self.selectedIndex];
+    self.animalTextField.text = (self.animals)[(NSUInteger) self.selectedIndex];
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
@@ -251,10 +251,10 @@
 - (void) pickerButtonPressed:(id)sender {
     NSLog(@"Picker");
 
-    ActionSheetStringPicker * picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title"  rows:@[@"Row1",@"Row2",@"Row3"] initialSelection:0  doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+    ActionSheetStringPicker * picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title"  rows:@[@"Row1",@"Row2",@"Row3"] initialSelection:0  doneBlock:^(ActionSheetStringPicker *stringPicker, NSInteger selectedIndex, id selectedValue) {
         NSLog(@"selectedIndex = %i", selectedIndex);
-    } cancelBlock:^(ActionSheetStringPicker *picker) {
-        NSLog(@"picker = %@", picker);
+    } cancelBlock:^(ActionSheetStringPicker *stringPicker) {
+        NSLog(@"picker = %@", stringPicker);
     } origin: (UIView*)sender ];
 
     UIButton *okButton =  [UIButton buttonWithType:UIButtonTypeCustom];

@@ -13,8 +13,8 @@
 - (id)init
 {
     if (self = [super init]) {
-        notesToDisplayForKey = [NSArray arrayWithObjects: @"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B", nil];
-        scaleNames = [NSArray arrayWithObjects: @"Major", @"Minor", @"Dorian", @"Spanish Gypsy", nil]; 
+        notesToDisplayForKey = @[@"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B"];
+        scaleNames = @[@"Major", @"Minor", @"Dorian", @"Spanish Gypsy"];
     }
     return self;
 }
@@ -83,8 +83,8 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     switch (component) {
-        case 0: return [notesToDisplayForKey objectAtIndex:(NSUInteger) row];
-        case 1: return [scaleNames objectAtIndex:(NSUInteger) row];
+        case 0: return notesToDisplayForKey[(NSUInteger) row];
+        case 1: return scaleNames[(NSUInteger) row];
         default:break;
     }
     return nil;
@@ -97,11 +97,11 @@
     NSLog(@"Row %li selected in component %li", (long)row, (long)component);
     switch (component) {
         case 0:
-            self.selectedKey = [notesToDisplayForKey objectAtIndex:(NSUInteger) row];
+            self.selectedKey = notesToDisplayForKey[(NSUInteger) row];
             return;
             
         case 1:
-            self.selectedScale = [scaleNames objectAtIndex:(NSUInteger) row];
+            self.selectedScale = scaleNames[(NSUInteger) row];
             return;
         default:break;
     }
