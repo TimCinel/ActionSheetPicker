@@ -122,33 +122,15 @@ Example with custom button for cancel button:
 ![CustomButtons](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/custom.png "CustomButtons")
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
+
+## Creator ##
+
+ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
+
+## Maintainer and Contributor ##
+
+- [Petr Korolev](http://github.com/skywinder) (bugfixing, update to iOS 7 and iOS 8, implementing new pickers, community support)
+
 ## Credits ##
 
-Thanks to all of the contributors for making ActionSheetPicker better for the iOS developer community. See AUTHORS for details.
-
-
-### Contributors ###
-
-[Filote Stefan](http://github.com/sfilo)
-
-[Brett Gibson](http://github.com/brettg)
-
-[John Garland](http://github.com/johnnyg) (iPad!)
-
-[Mark van den Broek](http://github.com/heyhoo)
-
-[Evan Cordell](http://github.com/ecordell)
-
-[Greg Combs](http://github.com/grgcombs) (Refactor!)
-
-[Petr Korolev](http://github.com/skywinder) (Update, crash-fix update for iOS7, new pickers)
-
-[Nikos Mouzakitis](http://github.com/NikDude)
-
-### Creator ###
-
-[Tim Cinel](http://github.com/TimCinel)
-
-[@TimCinel](http://twitter.com/TimCinel)
-
-[timcinel.com/](http://www.timcinel.com/)
+And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
