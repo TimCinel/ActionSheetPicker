@@ -7,12 +7,6 @@ Pod::Spec.new do | s |
     s.authors = {
         'Petr Korolev' => 'https://github.com/skywinder',
         'Tim Cinel' => 'email@timcinel.com',
-        'Filote Stefan' => 'http://github.com/sfilo',
-        'Brett Gibson' => 'http://github.com/brettg',
-        'John Garland' => 'http://github.com/johnnyg',
-        'Mark van den Broek' => 'http://github.com/heyhoo',
-        'Evan Cordell' => 'http://github.com/ecordell',
-        'Greg Combs' => 'http://github.com/grgcombs',
     }
     s.source = { :git => 'https://github.com/skywinder/ActionSheetPicker-3.0.git', :tag => "#{s.version}" }
      s.screenshots   = [ "http://skywinder.github.io/ActionSheetPicker-3.0/Screenshots/date.png",
