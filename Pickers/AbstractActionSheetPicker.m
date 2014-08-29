@@ -106,13 +106,14 @@ BOOL isIPhone4()
         else
             NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
 
+        UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
+                                                             action:@selector(actionPickerDone:)];
 
-        // Implement custom Cancel and Done Button (not System as before) due  #22 issue (https://github.com/skywinder/ActionSheetPicker-3.0/issues/22)
-        // Initialize default bar buttons so they can be overridden before the 'showActionSheetPicker' is called
-        UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(actionPickerCancel:)];
-        [self setCancelBarButtonItem:cancelBtn];
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(actionPickerDone:)];
-        [self setDoneBarButtonItem:doneButton];
+        UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
+                                                               action:@selector(actionPickerCancel:)];
+
+        [self setCancelBarButtonItem:sysCancelButton];
+        [self setDoneBarButtonItem:sysDoneButton];
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
@@ -372,14 +373,6 @@ BOOL isIPhone4()
 
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:type target:target
                                                                                action:buttonAction];
-
-
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
-        [barButton setTintColor:[[UIApplication sharedApplication] keyWindow].tintColor];
-#pragma clang diagnostic pop
-
     return barButton;
 }
 

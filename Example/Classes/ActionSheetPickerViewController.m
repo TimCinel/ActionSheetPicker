@@ -233,19 +233,22 @@
 
     UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
     b.frame = CGRectMake(0, 0, 100, 100);
+    b.backgroundColor = [UIColor greenColor];
     [b setTitle:@"Picker" forState:UIControlStateNormal];
     [b addTarget:self action:@selector(pickerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [x.view addSubview:b];
 
     UIButton *b2 = [UIButton buttonWithType:UIButtonTypeSystem];
-    b2.frame = CGRectMake(0, 50, 100, 100);
+    b2.frame = CGRectMake(540 - 100, 0, 100, 100);
+    b2.backgroundColor = [UIColor redColor];
     [b2 setTitle:@"Dismiss" forState:UIControlStateNormal];
     [b2 addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
     [x.view addSubview:b2];
 
-//    UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:x];
-//    navigationController1.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:x animated:YES completion:nil];
+    [self presentViewController:x animated:YES completion:^{
+        b2.frame = CGRectMake(x.view.bounds.size.width - 100, 0, 100, 100);
+    }];
+
 }
 
 - (void) pickerButtonPressed:(id)sender {
