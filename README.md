@@ -7,7 +7,7 @@ Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdate
 
 I resolved almost all (60+ pull requests and issues) in Tim's repo, but new updates will be added here.
 
-`pod 'ActionSheetPicker-3.0', '~> 1.1.7'` (**iOS 8** compatible already!)
+`pod 'ActionSheetPicker-3.0', '~> 1.1.8'` (**iOS 8** compatible already!)
 
 Please welcome: **ActionSheetPicker-3.0**!
 
