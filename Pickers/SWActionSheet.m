@@ -35,7 +35,8 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 - (instancetype)initWithView:(UIView *)aView
 {
-    _origin = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    _origin = (keyWindow.rootViewController ? keyWindow.rootViewController.view : keyWindow);
 
     CGRect rect = [self getRectForPicker:aView];
     self = [super initWithFrame:rect];
