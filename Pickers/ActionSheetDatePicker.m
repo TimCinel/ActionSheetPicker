@@ -46,8 +46,15 @@
     return picker;
 }
 
-- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin {
-    self = [super initWithTarget:target successAction:action cancelAction:nil origin:origin];
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin
+{
+    self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin cancelAction:nil];
+    return self;
+}
+
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin cancelAction:(SEL)cancelAction
+{
+    self = [super initWithTarget:target successAction:action cancelAction:cancelAction origin:origin];
     if (self) {
         self.title = title;
         self.datePickerMode = datePickerMode;
