@@ -30,7 +30,7 @@
 #import <objc/message.h>
 #import <sys/utsname.h>
 
-BOOL isIPhone4()
+CG_INLINE BOOL isIPhone4()
 {
     struct utsname systemInfo;
     uname(&systemInfo);
