@@ -28,6 +28,10 @@
 #import <Foundation/Foundation.h>
 
 
+static NSString *const kButtonValue = @"buttonValue";
+
+static NSString *const kButtonTitle = @"buttonTitle";
+
 @interface AbstractActionSheetPicker : NSObject<UIPopoverControllerDelegate>
 @property (nonatomic, strong) UIToolbar* toolbar;
 @property (nonatomic, copy) NSString *title;

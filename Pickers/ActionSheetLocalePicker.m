@@ -368,7 +368,7 @@
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
-    id itemValue = buttonDetails[@"buttonValue"];
+    id itemValue = buttonDetails[kButtonValue];
     if ( [itemValue isKindOfClass:[NSTimeZone class]] )
     {
         NSTimeZone *timeZone = (NSTimeZone *) itemValue;

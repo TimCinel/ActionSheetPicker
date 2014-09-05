@@ -230,8 +230,8 @@ CG_INLINE BOOL isIPhone4()
     if ( !value )
         value = @0;
     NSDictionary *buttonDetails = @{
-            @"buttonTitle" : title,
-            @"buttonValue" : value
+            kButtonTitle : title,
+            kButtonValue : value
     };
     [self.customButtons addObject:buttonDetails];
 }
@@ -245,7 +245,7 @@ CG_INLINE BOOL isIPhone4()
             selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    NSInteger buttonValue = [buttonDetails[@"buttonValue"] intValue];
+    NSInteger buttonValue = [buttonDetails[kButtonValue] intValue];
     UIPickerView *picker = (UIPickerView *) self.pickerView;
     NSAssert(picker != NULL, @"PickerView is invalid");
     [picker selectRow:buttonValue inComponent:0 animated:YES];
@@ -308,8 +308,7 @@ CG_INLINE BOOL isIPhone4()
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons)
     {
-        NSString *buttonTitle = buttonDetails[@"buttonTitle"];
-        //NSInteger buttonValue = [[buttonDetails objectForKey:@"buttonValue"] intValue];
+        NSString *buttonTitle = buttonDetails[kButtonTitle];
         UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered
                                                                   target:self action:@selector(customButtonPressed:)];
         button.tag = index;
