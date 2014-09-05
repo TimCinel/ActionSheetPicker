@@ -472,6 +472,7 @@ CG_INLINE BOOL isIPhone4()
     }
 
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController.delegate = self;
     [self presentPopover:_popOverController];
 }
 
@@ -507,6 +508,12 @@ CG_INLINE BOOL isIPhone4()
         [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny
                                animated:YES];
     }
+}
+
+#pragma mark - Popoverdelegate
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:[self storedOrigin]];
 }
 
 
