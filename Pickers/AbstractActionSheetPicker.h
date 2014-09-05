@@ -28,7 +28,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface AbstractActionSheetPicker : NSObject
+@interface AbstractActionSheetPicker : NSObject<UIPopoverControllerDelegate>
 @property (nonatomic, strong) UIToolbar* toolbar;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) UIView *pickerView;
