@@ -41,6 +41,13 @@ CG_INLINE BOOL isIPhone4()
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+#define DEVICE_ORIENTATION [UIDevice currentDevice].orientation
+
+// UIInterfaceOrientationMask vs. UIInterfaceOrientation
+// As far as I know, a function like this isn't available in the API. I derived this from the enum def for
+// UIInterfaceOrientationMask.
+#define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
+
 
 
 @interface AbstractActionSheetPicker ()
@@ -132,7 +139,7 @@ CG_INLINE BOOL isIPhone4()
 
     self.target = nil;
 
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (UIView *)configuredPickerView
@@ -431,7 +438,7 @@ CG_INLINE BOOL isIPhone4()
 
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
 
     _actionSheet = [[SWActionSheet alloc] initWithView:aView];
 
@@ -443,14 +450,13 @@ CG_INLINE BOOL isIPhone4()
     [UIView commitAnimations];
 }
 
-
 - (void) didRotate:(NSNotification *)notification
 {
-    NSUInteger supportedInterfaceOrientations = [[UIApplication sharedApplication]
-                                                 supportedInterfaceOrientationsForWindow:
-                                                 [UIApplication sharedApplication].keyWindow];
-    
-    if (supportedInterfaceOrientations != UIInterfaceOrientationMaskPortrait)
+    UIInterfaceOrientationMask supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                                                     supportedInterfaceOrientationsForWindow:
+                                                     [UIApplication sharedApplication].keyWindow];
+
+    if (OrientationMaskSupportsOrientation(supportedInterfaceOrientations, DEVICE_ORIENTATION))
         [self dismissPicker];
 }
 
