@@ -446,7 +446,12 @@ CG_INLINE BOOL isIPhone4()
 
 - (void) didRotate:(NSNotification *)notification
 {
-    [self dismissPicker];
+    NSUInteger supportedInterfaceOrientations = [[UIApplication sharedApplication]
+                                                 supportedInterfaceOrientationsForWindow:
+                                                 [UIApplication sharedApplication].keyWindow];
+    
+    if (supportedInterfaceOrientations != UIInterfaceOrientationMaskPortrait)
+        [self dismissPicker];
 }
 
 - (void)presentActionSheet:(SWActionSheet *)actionSheet
