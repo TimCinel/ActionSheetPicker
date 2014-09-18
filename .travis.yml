@@ -1,4 +1,7 @@
 language: objective-c
-xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
-xcode_scheme: ActionSheetPickerTests
-xcode_sdk: iphonesimulator
+# xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
+# xcode_scheme: ActionSheetPickerTests
+# xcode_sdk: iphonesimulator
+script:
+  - xctool -project ActionSheetPicker.xcodeproj -scheme ActionSheetPicker -sdk iphonesimulator
+  - xctool test -workspace TravisExample.xcworkspace -scheme TravisExampleTests -sdk iphonesimulator
