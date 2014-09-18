@@ -36,19 +36,19 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     UILabel * sender = cell.detailTextLabel;
-    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-        if ([sender respondsToSelector:@selector(setText:)]) {
-            [sender performSelector:@selector(setText:) withObject:selectedValue];
-        }
-    };
-    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
-        NSLog(@"Block Picker Canceled");
-    };
-    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
+//    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+//        if ([sender respondsToSelector:@selector(setText:)]) {
+//            [sender performSelector:@selector(setText:) withObject:selectedValue];
+//        }
+//    };
+//    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+//        NSLog(@"Block Picker Canceled");
+//    };
+//    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
+//    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
     ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = 5;
     [datePicker showActionSheetPicker];
-//    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 -(void)timeWasSelected:(NSDate *)selectedTime element:(id)element {
