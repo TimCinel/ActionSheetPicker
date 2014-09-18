@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg)](https://travis-ci.org/travis-ci/travis-web)
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
+[![Coverage Status](https://img.shields.io/coveralls/skywinder/ActionSheetPicker-3.0.svg)](https://coveralls.io/r/skywinder/ActionSheetPicker-3.0)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
