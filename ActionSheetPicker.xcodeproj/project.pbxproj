@@ -279,9 +279,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C9444B4197B1C2F005F495B /* ActionSheetPicker Tests */ = {
+		1C9444B4197B1C2F005F495B /* ActionSheetPickerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPicker Tests" */;
+			buildConfigurationList = 1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */;
 			buildPhases = (
 				1C9444B1197B1C2F005F495B /* Sources */,
 				1C9444B2197B1C2F005F495B /* Frameworks */,
@@ -292,7 +292,7 @@
 			dependencies = (
 				1C9444C4197B1C2F005F495B /* PBXTargetDependency */,
 			);
-			name = "ActionSheetPicker Tests";
+			name = ActionSheetPickerTests;
 			productName = "ActionSheetPicker Tests";
 			productReference = 1C9444B5197B1C2F005F495B /* ActionSheetPicker Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -344,7 +344,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ActionSheetPicker */,
-				1C9444B4197B1C2F005F495B /* ActionSheetPicker Tests */,
+				1C9444B4197B1C2F005F495B /* ActionSheetPickerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -596,7 +596,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPicker Tests" */ = {
+		1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C9444C5197B1C2F005F495B /* Debug */,
