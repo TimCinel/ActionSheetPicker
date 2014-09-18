@@ -4,4 +4,4 @@ language: objective-c
 # xcode_sdk: iphonesimulator
 script:
   - xctool -project ActionSheetPicker.xcodeproj -scheme ActionSheetPicker -sdk iphonesimulator
-  - xctool test -workspace TravisExample.xcworkspace -scheme TravisExampleTests -sdk iphonesimulator
+  - xctool test -workspace ActionSheetPicker.xcworkspace -scheme ActionSheetPickerTests -sdk iphonesimulator
