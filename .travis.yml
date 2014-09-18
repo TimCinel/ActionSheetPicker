@@ -2,6 +2,10 @@ language: objective-c
 # xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
 # xcode_scheme: ActionSheetPickerTests
 # xcode_sdk: iphonesimulator
+before_install:
+  - brew update
+  - brew upgrade xctool
+
 script:
   - xctool -project ActionSheetPicker.xcodeproj -scheme ActionSheetPicker -sdk iphonesimulator
   - xctool test -project ActionSheetPicker.xcodeproj -scheme ActionSheetPickerTests -sdk iphonesimulator
