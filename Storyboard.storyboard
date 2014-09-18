@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIQ-mT-eIh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ActionSheetPicker-->
@@ -252,11 +251,11 @@
                         <constraints>
                             <constraint firstItem="20p-oK-ilw" firstAttribute="leading" secondItem="Xkq-TB-0tc" secondAttribute="leading" id="FUO-3W-uoe"/>
                             <constraint firstItem="4pM-YP-24v" firstAttribute="top" secondItem="20p-oK-ilw" secondAttribute="bottom" id="HRo-e2-bTz"/>
-                            <constraint firstItem="20p-oK-ilw" firstAttribute="leading" secondItem="Xkq-TB-0tc" secondAttribute="leadingMargin" id="MNP-9T-Eip"/>
+                            <constraint firstItem="20p-oK-ilw" firstAttribute="leading" secondItem="Xkq-TB-0tc" secondAttribute="leading" id="MNP-9T-Eip"/>
                             <constraint firstItem="4pM-YP-24v" firstAttribute="top" secondItem="20p-oK-ilw" secondAttribute="bottom" id="NYA-AM-Nh2"/>
                             <constraint firstItem="4pM-YP-24v" firstAttribute="top" secondItem="20p-oK-ilw" secondAttribute="bottom" id="UVQ-L0-peM"/>
                             <constraint firstItem="20p-oK-ilw" firstAttribute="trailing" secondItem="hyf-1j-qZu" secondAttribute="trailing" id="fAd-4x-Kap"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="20p-oK-ilw" secondAttribute="trailing" id="hT6-M8-gar"/>
+                            <constraint firstAttribute="trailing" secondItem="20p-oK-ilw" secondAttribute="trailing" id="hT6-M8-gar"/>
                             <constraint firstAttribute="trailing" secondItem="20p-oK-ilw" secondAttribute="trailing" id="lNW-ED-j1V"/>
                             <constraint firstItem="20p-oK-ilw" firstAttribute="top" secondItem="hyf-1j-qZu" secondAttribute="bottom" id="rp1-J3-1Zz"/>
                             <constraint firstItem="20p-oK-ilw" firstAttribute="leading" secondItem="4pM-YP-24v" secondAttribute="leading" id="zr7-0r-zFP"/>
