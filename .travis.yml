@@ -3,5 +3,12 @@ language: objective-c
 # xcode_scheme: ActionSheetPickerTests
 # xcode_sdk: iphonesimulator
 
+notifications:
+  email:
+    recipients:
+      - sky4winder+actionSheetPicker@gmail.com
+    on_success: change # [always|never|change]
+    on_failure: change # [always|never|change]
+
 script:
   - xctool clean build test -project ActionSheetPicker.xcodeproj -scheme ActionSheetPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1'
