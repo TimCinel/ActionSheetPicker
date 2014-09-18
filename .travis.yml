@@ -1,2 +1,3 @@
 language: objective-c
-# script: xcodebuild -workspace ActionSheetPicker.xcworkspace -scheme ActionSheetPicker -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
+xcode_scheme: ActionSheetPickerTests
