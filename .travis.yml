@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
 xcode_scheme: ActionSheetPickerTests
+xcode_sdk: iphonesimulator
