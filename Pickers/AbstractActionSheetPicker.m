@@ -402,7 +402,7 @@ CG_INLINE BOOL isIPhone4()
         //iOS 8 or later
         return [[UIScreen mainScreen] bounds].size;
     }
-    #elif
+    #else
         if ( [self isViewPortrait] )
             return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
         return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);

@@ -95,7 +95,7 @@
 		1C6EE732192BB4F600A27994 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
 		1C7A57A8199DEDD5007B9B70 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		1C7A57AB199DF30B007B9B70 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
-		1C9444B5197B1C2F005F495B /* ActionSheetPicker Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ActionSheetPicker Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker Tests-Info.plist"; sourceTree = "<group>"; };
 		1C9444BE197B1C2F005F495B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */,
-				1C9444B5197B1C2F005F495B /* ActionSheetPicker Tests.xctest */,
+				1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 			);
 			name = ActionSheetPickerTests;
 			productName = "ActionSheetPicker Tests";
-			productReference = 1C9444B5197B1C2F005F495B /* ActionSheetPicker Tests.xctest */;
+			productReference = 1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1D6058900D05DD3D006BFB54 /* ActionSheetPicker */ = {
