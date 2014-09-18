@@ -391,6 +391,7 @@ CG_INLINE BOOL isIPhone4()
         return CGSizeMake(320, 320);
     }
 
+    #if defined(__IPHONE_8_0)
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         //iOS 7.1 or earlier
         if ( [self isViewPortrait] )
@@ -401,6 +402,11 @@ CG_INLINE BOOL isIPhone4()
         //iOS 8 or later
         return [[UIScreen mainScreen] bounds].size;
     }
+    #else
+        if ( [self isViewPortrait] )
+            return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
+        return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
+    #endif
 }
 
 - (BOOL)isViewPortrait
