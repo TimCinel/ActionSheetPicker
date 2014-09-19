@@ -13,6 +13,7 @@
 		1C243EEF19CC5AE0000EE6A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EEE19CC5AE0000EE6A6 /* Images.xcassets */; };
 		1C243EF219CC5AE0000EE6A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EF019CC5AE0000EE6A6 /* LaunchScreen.xib */; };
 		1C243EFE19CC5AE0000EE6A6 /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */; };
+		1C243F0E19CC67AE000EE6A6 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1C243EF719CC5AE0000EE6A6 /* Swift-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C243EFC19CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
+		1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				1C243EE719CC5AE0000EE6A6 /* AppDelegate.swift */,
 				1C243EE919CC5AE0000EE6A6 /* ViewController.swift */,
+				1C243F0C19CC67AE000EE6A6 /* ViewControllers */,
 				1C243EEB19CC5AE0000EE6A6 /* Main.storyboard */,
 				1C243EEE19CC5AE0000EE6A6 /* Images.xcassets */,
 				1C243EF019CC5AE0000EE6A6 /* LaunchScreen.xib */,
@@ -110,6 +113,14 @@
 				1C243EFC19CC5AE0000EE6A6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C243F0C19CC67AE000EE6A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				1C243EEA19CC5AE0000EE6A6 /* ViewController.swift in Sources */,
 				1C243EE819CC5AE0000EE6A6 /* AppDelegate.swift in Sources */,
+				1C243F0E19CC67AE000EE6A6 /* SWTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
