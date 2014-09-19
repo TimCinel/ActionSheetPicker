@@ -252,7 +252,7 @@
     NSLog(@"Picker");
 
     ActionSheetStringPicker * picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title"  rows:@[@"Row1",@"Row2",@"Row3"] initialSelection:0  doneBlock:^(ActionSheetStringPicker *stringPicker, NSInteger selectedIndex, id selectedValue) {
-        NSLog(@"selectedIndex = %i", selectedIndex);
+        NSLog(@"selectedIndex = %li", (long)selectedIndex);
     } cancelBlock:^(ActionSheetStringPicker *stringPicker) {
         NSLog(@"picker = %@", stringPicker);
     } origin: (UIView*)sender ];
