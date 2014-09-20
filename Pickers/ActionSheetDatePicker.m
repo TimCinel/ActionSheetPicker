@@ -61,6 +61,7 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
+        self.duration = 60;
     }
     return self;
 }
