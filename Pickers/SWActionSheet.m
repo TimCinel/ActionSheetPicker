@@ -42,15 +42,15 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     CGPoint fadeOutToPoint = CGPointMake(view.center.x,
             self.center.y + CGRectGetHeight(view.frame));
     // Window of app
-    UIWindow *appWindow = [UIApplication sharedApplication].windows.firstObject;
+    //UIWindow *appWindow = [UIApplication sharedApplication].windows.firstObject;
     // Actions
     void (^actions)() = ^{
         self.center = fadeOutToPoint;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
     };
     void (^completion)(BOOL) = ^(BOOL finished) {
-        if (![appWindow isKeyWindow])
-            [appWindow makeKeyAndVisible];
+    //    if (![appWindow isKeyWindow])
+    //        [appWindow makeKeyAndVisible];
         [SWActionSheet destroyWindow];
         [self removeFromSuperview];
     };
