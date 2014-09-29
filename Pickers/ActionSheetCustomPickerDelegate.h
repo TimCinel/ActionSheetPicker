@@ -19,7 +19,7 @@
  Allows for instance, ability to set separate delegates and data sources as well as GUI settings on the UIPickerView
  If not defined and explicily overridden then this class will be the delegate and dataSource.
  */
-- (void)configurePickerView:(UIPickerView *)pickerView DEPRECATED_ATTRIBUTE;
+- (void)configurePickerView:(UIPickerView *)pickerView DEPRECATED_MSG_ATTRIBUTE("use -actionSheetPicker:configurePickerView: instead.");
 - (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
 
 /** 
