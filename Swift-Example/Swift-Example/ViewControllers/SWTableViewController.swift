@@ -8,15 +8,11 @@
 
 import UIKit
 
-class SWTableViewController: UITableViewController {
+class SWTableViewController: UITableViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
-        
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +24,7 @@ class SWTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
 
     /*
