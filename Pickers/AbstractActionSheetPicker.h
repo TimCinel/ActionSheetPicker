@@ -68,4 +68,7 @@ static NSString *const kButtonTitle = @"buttonTitle";
     // Allow the user to specify a custom done button
 - (void) setDoneButton: (UIBarButtonItem *)button;
 
+    // Hide picker programmatically
+- (void) hidePickerWithCancelAction;
+
 @end

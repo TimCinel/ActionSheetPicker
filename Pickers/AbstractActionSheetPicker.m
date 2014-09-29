@@ -298,6 +298,11 @@ CG_INLINE BOOL isIPhone4()
     self.doneBarButtonItem = button;
 }
 
+- (void)hidePickerWithCancelAction
+{
+    [self actionPickerCancel:nil];
+}
+
 
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title
 {
