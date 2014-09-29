@@ -7,7 +7,7 @@ notifications:
   email:
     recipients:
       - sky4winder+actionSheetPicker@gmail.com
-    on_success: change # [always|never|change]
+    on_success: never # [always|never|change]
     on_failure: change # [always|never|change]
 
 script:
