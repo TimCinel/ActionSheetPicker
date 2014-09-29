@@ -32,11 +32,13 @@
 @interface ActionSheetDatePicker()
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, assign) NSTimeInterval duration;
 @end
 
 @implementation ActionSheetDatePicker
 @synthesize selectedDate = _selectedDate;
 @synthesize datePickerMode = _datePickerMode;
+@synthesize duration = _duration;
 
 + (id)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
@@ -77,6 +79,7 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
+        self.duration = 60;
     }
     return self;
 }
@@ -126,7 +129,11 @@
     else if ([target respondsToSelector:action])
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [target performSelector:action withObject:self.selectedDate withObject:origin];
+        if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
+            [target performSelector:action withObject:@(self.duration) withObject:origin];
+        } else {
+            [target performSelector:action withObject:self.selectedDate withObject:origin];
+        }
 #pragma clang diagnostic pop
     else
         NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
@@ -155,6 +162,7 @@
         return;
     UIDatePicker *datePicker = (UIDatePicker *)sender;
     self.selectedDate = datePicker.date;
+    self.duration = datePicker.countDownDuration;
 }
 
 - (void)customButtonPressed:(id)sender {
