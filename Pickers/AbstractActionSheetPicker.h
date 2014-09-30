@@ -25,8 +25,9 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <Foundation/Foundation.h>
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 static NSString *const kButtonValue = @"buttonValue";
 

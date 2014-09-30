@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ActionSheetPicker.h"
+
+#import <CoreActionSheetPicker/CoreActionSheetPicker.h>
+
+
 
 @interface ActionSheetPickerCustomPickerDelegate : NSObject <ActionSheetCustomPickerDelegate>
 {
