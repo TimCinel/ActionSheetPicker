@@ -3,8 +3,7 @@
 //
 
 #import "TestTableViewController.h"
-#import "ActionSheetStringPicker.h"
-#import "ActionSheetDatePicker.h"
+#import <CoreActionSheetPicker/CoreActionSheetPicker.h>
 
 
 @implementation TestTableViewController
