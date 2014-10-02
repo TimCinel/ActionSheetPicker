@@ -14,7 +14,6 @@
 		1C243EF219CC5AE0000EE6A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EF019CC5AE0000EE6A6 /* LaunchScreen.xib */; };
 		1C243EFE19CC5AE0000EE6A6 /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */; };
 		1C243F0E19CC67AE000EE6A6 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */; };
-		1C9972AF19DA9BC1004ADD27 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9972AE19DA9BC1004ADD27 /* CoreActionSheetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		1C243EFC19CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
-		1C9972AE19DA9BC1004ADD27 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9972AF19DA9BC1004ADD27 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +61,6 @@
 		1C243ED919CC5AE0000EE6A6 = {
 			isa = PBXGroup;
 			children = (
-				1C9972AE19DA9BC1004ADD27 /* CoreActionSheetPicker.framework */,
 				1C243EE419CC5AE0000EE6A6 /* Swift-Example */,
 				1C243EFA19CC5AE0000EE6A6 /* Swift-ExampleTests */,
 				1C243EE319CC5AE0000EE6A6 /* Products */,
