@@ -35,8 +35,6 @@
 @end
 
 @implementation ActionSheetDatePicker
-@synthesize selectedDate = _selectedDate;
-@synthesize datePickerMode = _datePickerMode;
 
 + (id)showPickerWithTitle:(NSString *)title 
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate                                                                             
