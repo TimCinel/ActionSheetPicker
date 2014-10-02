@@ -7,8 +7,28 @@
 //
 
 import UIKit
+import CoreActionSheetPicker
 
 class SWTableViewController: UITableViewController, UITableViewDelegate {
+    @IBOutlet var UIDatePickerModeTime: UIButton!
+    @IBAction func ActionSheetDatePickerClicked(sender: AnyObject) {
+        var datePicker = ActionSheetDatePicker(title: "Date", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: self.view)
+        
+        datePicker.minuteInterval = 20
+       
+        datePicker.showActionSheetPicker()
+        
+    }
+    
+    @IBAction func localePickerClicked(sender: AnyObject) {
+        
+    }
+    @IBOutlet var localePicker: UIButton!
+    
+    func datePicked(obj:NSDate)
+    {
+        UIDatePickerModeTime.setTitle(obj.description, forState: UIControlState.Normal)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
