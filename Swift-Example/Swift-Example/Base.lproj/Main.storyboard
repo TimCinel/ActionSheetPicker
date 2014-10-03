@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -42,8 +43,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HwN-MG-62r" id="YBf-05-8DH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-wc-8cF">
-                                                    <rect key="frame" x="235" y="5" width="132" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-wc-8cF">
+                                                    <rect key="frame" x="234" y="5" width="132" height="30"/>
                                                     <state key="normal" title="ActionLocalePicker">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -55,6 +56,27 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="JEo-wc-8cF" secondAttribute="centerX" id="HqN-2d-J5R"/>
                                                 <constraint firstAttribute="centerY" secondItem="JEo-wc-8cF" secondAttribute="centerY" id="xUC-P0-YvS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="q9h-ZM-LtB">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q9h-ZM-LtB" id="6iF-6L-rRX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-EK-DMh">
+                                                    <rect key="frame" x="260" y="5" width="81" height="30"/>
+                                                    <state key="normal" title="Push to self">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="HSJ-wC-erj" kind="show" id="y8L-qN-D82"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="tfz-EK-DMh" secondAttribute="centerX" id="Sh3-7h-U0k"/>
+                                                <constraint firstAttribute="centerY" secondItem="tfz-EK-DMh" secondAttribute="centerY" id="oC4-oD-Zi3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -121,7 +143,13 @@
                             <outlet property="delegate" destination="HSJ-wC-erj" id="Srg-OW-m2g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN"/>
+                    <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN">
+                        <barButtonItem key="rightBarButtonItem" title="picker" id="Brb-iL-vfw">
+                            <connections>
+                                <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="VsD-xT-8g5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="UIDatePickerModeTime" destination="p6F-Fu-Qq0" id="Kcf-Xo-Kq1"/>
                         <outlet property="localePicker" destination="JEo-wc-8cF" id="j7x-5m-qPY"/>
@@ -150,4 +178,7 @@
             <point key="canvasLocation" x="437" y="399"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="osL-7S-gGX"/>
+    </inferredMetricsTieBreakers>
 </document>

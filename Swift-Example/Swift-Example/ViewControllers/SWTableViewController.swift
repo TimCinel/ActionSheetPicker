@@ -20,7 +20,11 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
         
     }
     
+    @IBAction func navigationItemPicker(sender: AnyObject) {
+        ActionSheetStringPicker.showPickerWithTitle("Nav Bar From Picker", rows: ["One", "Two", "A lot"], initialSelection: 1, doneBlock: nil, cancelBlock: nil, origin: self.view)
+    }
     @IBAction func localePickerClicked(sender: AnyObject) {
+        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: nil, cancelBlock: nil, origin: self.view)
         
     }
     @IBOutlet var localePicker: UIButton!
