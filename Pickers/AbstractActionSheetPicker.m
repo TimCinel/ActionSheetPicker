@@ -321,8 +321,23 @@ CG_INLINE BOOL isIPhone4()
     for (NSDictionary *buttonDetails in self.customButtons)
     {
         NSString *buttonTitle = buttonDetails[kButtonTitle];
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered
-                                                                  target:self action:@selector(customButtonPressed:)];
+
+        UIBarButtonItem *button;
+        if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+        {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStylePlain
+                                                     target:self action:@selector(customButtonPressed:)];
+#pragma clang diagnostic pop
+        }
+        else
+        {
+
+            button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered
+                                                     target:self action:@selector(customButtonPressed:)];
+        }
+
         button.tag = index;
         [barItems addObject:button];
         index++;
