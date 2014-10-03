@@ -41,6 +41,8 @@ static NSString *const kButtonTitle = @"buttonTitle";
 @property (nonatomic, strong) NSMutableArray *customButtons;
 @property (nonatomic, assign) BOOL hideCancel;
 @property (nonatomic, assign) CGRect presentFromRect;
+@property (nonatomic) NSDictionary *titleTextAttributes;
+@property (nonatomic) NSAttributedString *attributedTitle;
 
     // For subclasses.
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;

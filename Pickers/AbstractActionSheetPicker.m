@@ -346,7 +346,16 @@ CG_INLINE BOOL isIPhone4()
     [barItems addObject:flexSpace];
     if ( title )
     {
-        UIBarButtonItem *labelButton = [self createToolbarLabelWithTitle:title];
+        UIBarButtonItem *labelButton;
+        
+        if (self.titleTextAttributes && [self.titleTextAttributes count] > 0) {
+            labelButton = [self createToolbarLabelWithTitle:title titleTextAttributes:self.titleTextAttributes];
+        } else if (self.attributedTitle && [self.attributedTitle length] > 0) {
+            labelButton = [self createToolbarLabelWithTitle:title titleTextAttributes:nil andAttributedTitle:self.attributedTitle];
+        } else {
+            labelButton = [self createToolbarLabelWithTitle:title];
+        }
+        
         [barItems addObject:labelButton];
         [barItems addObject:flexSpace];
     }
@@ -358,12 +367,30 @@ CG_INLINE BOOL isIPhone4()
 
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle
 {
+    return [self createToolbarLabelWithTitle:aTitle titleTextAttributes:nil andAttributedTitle:nil];
+}
+
+- (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle titleTextAttributes:(NSDictionary *)titleTextAttributes
+{
+    return [self createToolbarLabelWithTitle:aTitle titleTextAttributes:titleTextAttributes andAttributedTitle:nil];
+}
+
+- (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle
+                             titleTextAttributes:(NSDictionary *)titleTextAttributes
+                              andAttributedTitle:(NSAttributedString *)attributedTitle
+{
     UILabel *toolBarItemlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
     [toolBarItemlabel setTextAlignment:NSTextAlignmentCenter];
     [toolBarItemlabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
     [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];
     [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];
     toolBarItemlabel.text = aTitle;
+    
+    if (titleTextAttributes) {
+        toolBarItemlabel.attributedText = [[NSAttributedString alloc] initWithString:aTitle attributes:titleTextAttributes];
+    } else if (attributedTitle) {
+        toolBarItemlabel.attributedText = attributedTitle;
+    }
 
     CGFloat strikeWidth;
     CGSize textSize;
