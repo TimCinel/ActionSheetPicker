@@ -25,9 +25,9 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 
 static NSString *const kButtonValue = @"buttonValue";
 
@@ -68,5 +68,8 @@ static NSString *const kButtonTitle = @"buttonTitle";
 
     // Allow the user to specify a custom done button
 - (void) setDoneButton: (UIBarButtonItem *)button;
+
+    // Hide picker programmatically
+- (void) hidePickerWithCancelAction;
 
 @end
