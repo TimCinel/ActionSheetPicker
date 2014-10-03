@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--ActionSheetPicker-3.0-->
+        <scene sceneID="Jji-d7-eyq">
+            <objects>
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="HSJ-wC-erj" customClass="SWTableViewController" customModule="Swift_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mw3-TG-fMf">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Mbm-qD-1RO">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="Xwu-EP-H8c">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xwu-EP-H8c" id="w5q-y0-esj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6F-Fu-Qq0">
+                                                    <rect key="frame" x="219" y="5" width="163" height="30"/>
+                                                    <state key="normal" title="UIDatePickerModeTime">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ActionSheetDatePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="aLQ-Vv-cOT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="p6F-Fu-Qq0" secondAttribute="centerY" id="BeN-lj-kXR"/>
+                                                <constraint firstAttribute="centerX" secondItem="p6F-Fu-Qq0" secondAttribute="centerX" id="nui-H4-OsZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="HwN-MG-62r">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HwN-MG-62r" id="YBf-05-8DH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-wc-8cF">
+                                                    <rect key="frame" x="234" y="5" width="132" height="30"/>
+                                                    <state key="normal" title="ActionLocalePicker">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="localePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="rQI-SW-ueg"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="JEo-wc-8cF" secondAttribute="centerX" id="HqN-2d-J5R"/>
+                                                <constraint firstAttribute="centerY" secondItem="JEo-wc-8cF" secondAttribute="centerY" id="xUC-P0-YvS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="q9h-ZM-LtB">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q9h-ZM-LtB" id="6iF-6L-rRX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-EK-DMh">
+                                                    <rect key="frame" x="260" y="5" width="81" height="30"/>
+                                                    <state key="normal" title="Push to self">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="HSJ-wC-erj" kind="show" id="y8L-qN-D82"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="tfz-EK-DMh" secondAttribute="centerX" id="Sh3-7h-U0k"/>
+                                                <constraint firstAttribute="centerY" secondItem="tfz-EK-DMh" secondAttribute="centerY" id="oC4-oD-Zi3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" rowHeight="82" id="Kko-tQ-dNj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kko-tQ-dNj" id="YhO-3f-k6f">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-1e-rWN">
+                                                    <rect key="frame" x="230" y="8" width="140" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="286" id="1F9-jv-ctX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" size="system"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="1F9-jv-ctX"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MUa-zS-rqg">
+                                                    <rect key="frame" x="245" y="28" width="110" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" size="system"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l2d-je-V1e">
+                                                    <rect key="frame" x="146" y="45" width="309" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="309" id="DLh-Tf-4iC"/>
+                                                        <constraint firstAttribute="height" constant="28" id="fhI-Dl-Cuw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MUa-zS-rqg" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="3" id="4Ee-a3-gw1"/>
+                                                <constraint firstItem="lDt-1e-rWN" firstAttribute="leading" secondItem="YhO-3f-k6f" secondAttribute="leading" constant="158" id="4SC-Qm-6L4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="l2d-je-V1e" secondAttribute="bottom" id="4WH-WT-xCV"/>
+                                                <constraint firstAttribute="centerX" secondItem="MUa-zS-rqg" secondAttribute="centerX" id="F8I-Ss-GoL"/>
+                                                <constraint firstItem="lDt-1e-rWN" firstAttribute="centerX" secondItem="MUa-zS-rqg" secondAttribute="centerX" id="Fbq-7U-v3o"/>
+                                                <constraint firstItem="l2d-je-V1e" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="20" id="QCn-m4-mUl"/>
+                                                <constraint firstAttribute="centerX" secondItem="lDt-1e-rWN" secondAttribute="centerX" id="W5s-dj-bBC"/>
+                                                <constraint firstAttribute="centerX" secondItem="l2d-je-V1e" secondAttribute="centerX" id="amf-c2-SDa"/>
+                                                <constraint firstItem="MUa-zS-rqg" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="3" id="cJJ-CE-0o9"/>
+                                                <constraint firstItem="l2d-je-V1e" firstAttribute="centerX" secondItem="YhO-3f-k6f" secondAttribute="centerX" id="t8W-i5-Z9j"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="4SC-Qm-6L4"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="HSJ-wC-erj" id="mly-vd-94D"/>
+                            <outlet property="delegate" destination="HSJ-wC-erj" id="Srg-OW-m2g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN">
+                        <barButtonItem key="rightBarButtonItem" title="picker" id="Brb-iL-vfw">
+                            <connections>
+                                <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="VsD-xT-8g5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="UIDatePickerModeTime" destination="p6F-Fu-Qq0" id="Kcf-Xo-Kq1"/>
+                        <outlet property="localePicker" destination="JEo-wc-8cF" id="j7x-5m-qPY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFH-GB-uH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eam-JU-jtv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FKR-yZ-MrN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BWN-Rt-mXm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HSJ-wC-erj" kind="relationship" relationship="rootViewController" id="osL-7S-gGX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxb-2l-Twp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="437" y="399"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="osL-7S-gGX"/>
+    </inferredMetricsTieBreakers>
+</document>

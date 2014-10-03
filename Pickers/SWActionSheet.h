@@ -2,8 +2,9 @@
 // Created by Petr Korolev on 11/08/14.
 //
 
-#import <Foundation/Foundation.h>
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SWActionSheet : UIView
 @property(nonatomic, strong) UIView *bgView;
