@@ -19,6 +19,8 @@
 		1C7A57AA199DEDD5007B9B70 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57A8199DEDD5007B9B70 /* cancel.png */; };
 		1C7A57AC199DF30B007B9B70 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57AB199DF30B007B9B70 /* ok.png */; };
 		1C7A57AD199DF30B007B9B70 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57AB199DF30B007B9B70 /* ok.png */; };
+		1C84AF9019DE9B0000EF5B2E /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C84AF8F19DE9B0000EF5B2E /* CoreActionSheetPicker.framework */; };
+		1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		1C9444B7197B1C2F005F495B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9444B6197B1C2F005F495B /* XCTest.framework */; };
 		1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -26,14 +28,10 @@
 		1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */; };
 		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
 		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		1C9972DE19DAA51B004ADD27 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9972DD19DAA51B004ADD27 /* CoreActionSheetPicker.framework */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
 		1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100919C4C7AF0033BA4D /* Default-736w@3x.png */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
@@ -67,6 +65,7 @@
 		1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		1C7A57A8199DEDD5007B9B70 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		1C7A57AB199DF30B007B9B70 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		1C84AF8F19DE9B0000EF5B2E /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker Tests-Info.plist"; sourceTree = "<group>"; };
@@ -74,8 +73,6 @@
 		1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPicker_Tests.m; sourceTree = "<group>"; };
 		1C9444C2197B1C2F005F495B /* ActionSheetPicker Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActionSheetPicker Tests-Prefix.pch"; sourceTree = "<group>"; };
 		1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPickerTestCase.m; sourceTree = "<group>"; };
-		1C9972B019DA9BCA004ADD27 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
-		1C9972DD19DAA51B004ADD27 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFCACFC1980FA320056A594 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
@@ -105,10 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9972DE19DAA51B004ADD27 /* CoreActionSheetPicker.framework in Frameworks */,
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */,
+				1C84AF9019DE9B0000EF5B2E /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +199,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C9972DD19DAA51B004ADD27 /* CoreActionSheetPicker.framework */,
-				1C9972B019DA9BCA004ADD27 /* CoreActionSheetPicker.framework */,
+				1C84AF8F19DE9B0000EF5B2E /* CoreActionSheetPicker.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,

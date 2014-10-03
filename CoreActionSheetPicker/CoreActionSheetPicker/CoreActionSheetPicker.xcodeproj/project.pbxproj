@@ -26,9 +26,9 @@
 		1C9972D219DA9D7A004ADD27 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9972C019DA9D7A004ADD27 /* SWActionSheet.m */; };
 		1C9972D319DA9D7A004ADD27 /* ActionSheetLocalePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C9972C119DA9D7A004ADD27 /* ActionSheetLocalePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C9972D419DA9D7A004ADD27 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9972C219DA9D7A004ADD27 /* ActionSheetLocalePicker.m */; };
-		1C9972D819DA9F40004ADD27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9972D719DA9F40004ADD27 /* UIKit.framework */; };
-		1C9972DA19DA9F85004ADD27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9972D919DA9F85004ADD27 /* Foundation.framework */; };
-		1C9972DC19DA9FB5004ADD27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9972DB19DA9FB5004ADD27 /* CoreGraphics.framework */; };
+		D66F5622333F6E07F2758EDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F52AF0102B96212E95BF7 /* CoreGraphics.framework */; };
+		D66F58C0A4CB8C3C4EF4B7D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F523FB3B74DC4C65C7028 /* Foundation.framework */; };
+		D66F5F99DAD5EDEC6513DDDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F586EF483B06D21E6B2FE /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +55,9 @@
 		1C9972C019DA9D7A004ADD27 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = ../../../Pickers/SWActionSheet.m; sourceTree = "<group>"; };
 		1C9972C119DA9D7A004ADD27 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetLocalePicker.h; path = ../../../Pickers/ActionSheetLocalePicker.h; sourceTree = "<group>"; };
 		1C9972C219DA9D7A004ADD27 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetLocalePicker.m; path = ../../../Pickers/ActionSheetLocalePicker.m; sourceTree = "<group>"; };
-		1C9972D719DA9F40004ADD27 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		1C9972D919DA9F85004ADD27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1C9972DB19DA9FB5004ADD27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D66F523FB3B74DC4C65C7028 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
+		D66F52AF0102B96212E95BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
+		D66F586EF483B06D21E6B2FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9972DC19DA9FB5004ADD27 /* CoreGraphics.framework in Frameworks */,
-				1C9972DA19DA9F85004ADD27 /* Foundation.framework in Frameworks */,
-				1C9972D819DA9F40004ADD27 /* UIKit.framework in Frameworks */,
+				D66F5622333F6E07F2758EDB /* CoreGraphics.framework in Frameworks */,
+				D66F58C0A4CB8C3C4EF4B7D8 /* Foundation.framework in Frameworks */,
+				D66F5F99DAD5EDEC6513DDDF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +84,10 @@
 		1C99728B19DA9B98004ADD27 = {
 			isa = PBXGroup;
 			children = (
-				1C9972DB19DA9FB5004ADD27 /* CoreGraphics.framework */,
-				1C9972D919DA9F85004ADD27 /* Foundation.framework */,
-				1C9972D719DA9F40004ADD27 /* UIKit.framework */,
 				1C99729719DA9B98004ADD27 /* CoreActionSheetPicker */,
 				1C9972A119DA9B98004ADD27 /* CoreActionSheetPickerTests */,
 				1C99729619DA9B98004ADD27 /* Products */,
+				D66F5BAC1BAC4EE2C4549ACE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +149,16 @@
 				1C9972A319DA9B98004ADD27 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D66F5BAC1BAC4EE2C4549ACE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D66F52AF0102B96212E95BF7 /* CoreGraphics.framework */,
+				D66F523FB3B74DC4C65C7028 /* Foundation.framework */,
+				D66F586EF483B06D21E6B2FE /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
