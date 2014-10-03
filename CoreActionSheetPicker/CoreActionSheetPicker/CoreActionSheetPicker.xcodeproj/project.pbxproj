@@ -28,6 +28,7 @@
 		1C9972D419DA9D7A004ADD27 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9972C219DA9D7A004ADD27 /* ActionSheetLocalePicker.m */; };
 		D66F5622333F6E07F2758EDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F52AF0102B96212E95BF7 /* CoreGraphics.framework */; };
 		D66F58C0A4CB8C3C4EF4B7D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F523FB3B74DC4C65C7028 /* Foundation.framework */; };
+		D66F59C88F5295C6C8C40FAD /* ActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = D66F5A9F1ACBA305386A0BF6 /* ActionSheetPicker.h */; };
 		D66F5F99DAD5EDEC6513DDDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F586EF483B06D21E6B2FE /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		D66F523FB3B74DC4C65C7028 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
 		D66F52AF0102B96212E95BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
 		D66F586EF483B06D21E6B2FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
+		D66F5A9F1ACBA305386A0BF6 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				1C9972C219DA9D7A004ADD27 /* ActionSheetLocalePicker.m */,
 				1C99729A19DA9B98004ADD27 /* CoreActionSheetPicker.h */,
 				1C99729819DA9B98004ADD27 /* Supporting Files */,
+				D66F5A9F1ACBA305386A0BF6 /* ActionSheetPicker.h */,
 			);
 			path = CoreActionSheetPicker;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				1C9972CF19DA9D7A004ADD27 /* DistancePickerView.h in Headers */,
 				1C9972C619DA9D7A004ADD27 /* ActionSheetCustomPicker.h in Headers */,
 				1C9972D119DA9D7A004ADD27 /* SWActionSheet.h in Headers */,
+				D66F59C88F5295C6C8C40FAD /* ActionSheetPicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
