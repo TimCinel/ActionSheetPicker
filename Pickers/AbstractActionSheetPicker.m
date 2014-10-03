@@ -298,6 +298,11 @@ CG_INLINE BOOL isIPhone4()
     self.doneBarButtonItem = button;
 }
 
+- (void)hidePickerWithCancelAction
+{
+    [self actionPickerCancel:nil];
+}
+
 
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title
 {
@@ -316,8 +321,22 @@ CG_INLINE BOOL isIPhone4()
     for (NSDictionary *buttonDetails in self.customButtons)
     {
         NSString *buttonTitle = buttonDetails[kButtonTitle];
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered
-                                                                  target:self action:@selector(customButtonPressed:)];
+
+        UIBarButtonItem *button;
+        if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+        {
+            button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStylePlain
+                                                     target:self action:@selector(customButtonPressed:)];
+        }
+        else
+        {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            button = [[UIBarButtonItem alloc] initWithTitle:buttonTitle style:UIBarButtonItemStyleBordered
+                                                     target:self action:@selector(customButtonPressed:)];
+#pragma clang diagnostic pop
+        }
+
         button.tag = index;
         [barItems addObject:button];
         index++;

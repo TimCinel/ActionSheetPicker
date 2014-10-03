@@ -7,8 +7,8 @@ notifications:
   email:
     recipients:
       - sky4winder+actionSheetPicker@gmail.com
-    on_success: change # [always|never|change]
+    on_success: never # [always|never|change]
     on_failure: change # [always|never|change]
 
 script:
-  - xctool clean build test -project ActionSheetPicker.xcodeproj -scheme ActionSheetPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1'
+  - xctool clean build test -workspace Example.xcworkspace -scheme ActionSheetPicker -sdk iphonesimulator

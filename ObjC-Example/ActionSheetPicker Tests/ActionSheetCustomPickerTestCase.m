@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ActionSheetCustomPicker.h"
+#import <CoreActionSheetPicker/CoreActionSheetPicker.h>
 
 static const int expectedNumberOfComponents = 2;
 
