@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "ActionSheetLocalePicker.h"
-
+#import <CoreActionSheetPicker/CoreActionSheetPicker.h>
 UIView *origin;
 
 @interface ActionSheetLocalePickerTestCase : XCTestCase
