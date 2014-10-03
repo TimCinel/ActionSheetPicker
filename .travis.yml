@@ -11,4 +11,4 @@ notifications:
     on_failure: change # [always|never|change]
 
 script:
-  - xctool clean build test -workspace Example.xcworkspace -scheme ActionSheetPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=7.1'
+  - xctool clean build test -workspace Example.xcworkspace -scheme ActionSheetPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=7.1, name=iPhone 5'
