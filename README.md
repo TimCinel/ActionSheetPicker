@@ -115,9 +115,9 @@ Example with custom button for cancel button:
     [picker showActionSheetPicker];
 ```
 
-## Examples ##
-#### For iOS 8 (Objective-c + Swift):
-open `Example.xcworkspace`
+## Example Projects##
+#### For iOS 8 (Objective-C + Swift):
+`open Example.xcworkspace`
 
 Here is 3 projects:
 
@@ -130,7 +130,7 @@ Here is 3 projects:
 #### For iOS 6 and 7:
 Left just for compatability with older versions:
 
-open `Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj`
+`open Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj`
 
 
 ## Screen Shots ##
