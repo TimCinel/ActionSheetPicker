@@ -115,6 +115,24 @@ Example with custom button for cancel button:
     [picker showActionSheetPicker];
 ```
 
+## Examples ##
+#### For iOS 8 (Objective-c + Swift):
+open `Example.xcworkspace`
+
+Here is 3 projects:
+
+- **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
+- **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
+- **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
+
+
+
+#### For iOS 6 and 7:
+Left just for compatability with older versions:
+
+open `Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj`
+
+
 ## Screen Shots ##
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
