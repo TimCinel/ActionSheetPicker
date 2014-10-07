@@ -18,7 +18,6 @@ static UIView *origin;
 @interface ActionSheetCustomPickerTestCase : XCTestCase <ActionSheetCustomPickerDelegate>
 
 @property(nonatomic, strong) ActionSheetCustomPicker *actionSheetCustomPicker;
-@property(nonatomic, strong) UIView *origin;
 @property(nonatomic) int numberOfComponents;
 @property(nonatomic) int numberOfRowInComponent;
 @property(nonatomic, strong) NSArray *expectedSelections;
