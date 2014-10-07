@@ -363,31 +363,38 @@ CG_INLINE BOOL isIPhone4()
 {
     UILabel *toolBarItemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
     [toolBarItemLabel setTextAlignment:NSTextAlignmentCenter];
-    [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
-    [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
     [toolBarItemLabel setBackgroundColor:[UIColor clearColor]];
-    toolBarItemLabel.text = aTitle;
-    
-    if (titleTextAttributes) {
-        toolBarItemLabel.attributedText = [[NSAttributedString alloc] initWithString:aTitle attributes:titleTextAttributes];
-    } else if (attributedTitle) {
-        toolBarItemLabel.attributedText = attributedTitle;
-    }
 
     CGFloat strikeWidth;
     CGSize textSize;
-    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+
+
+    if (titleTextAttributes) {
+        toolBarItemLabel.attributedText = [[NSAttributedString alloc] initWithString:aTitle attributes:titleTextAttributes];
+        textSize = toolBarItemLabel.attributedText.size;
+    } else if (attributedTitle) {
+        toolBarItemLabel.attributedText = attributedTitle;
+        textSize = toolBarItemLabel.attributedText.size;
+    }
+    else
     {
+        [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
+        toolBarItemLabel.text = aTitle;
+
+        if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+        {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-        textSize = [[toolBarItemLabel text] sizeWithAttributes:@{NSFontAttributeName : [toolBarItemLabel font]}];
+            textSize = [[toolBarItemLabel text] sizeWithAttributes:@{NSFontAttributeName : [toolBarItemLabel font]}];
 #pragma clang diagnostic pop
-    } else
-    {
+        } else
+        {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        textSize = [[toolBarItemLabel text] sizeWithFont:[toolBarItemLabel font]];
+            textSize = [[toolBarItemLabel text] sizeWithFont:[toolBarItemLabel font]];
 #pragma clang diagnostic pop
+        }
     }
 
     strikeWidth = textSize.width;
