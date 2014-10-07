@@ -11,4 +11,4 @@ notifications:
     on_failure: change # [always|never|change]
 
 script:
-  - xctool clean build -workspace Example.xcworkspace -scheme ActionSheetPicker -sdk iphonesimulator
+  - xcodebuild clean build test -workspace Example.xcworkspace -scheme ActionSheetPickerTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO 
