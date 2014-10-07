@@ -179,7 +179,29 @@
     [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
     [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
     [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
+
+
+    NSString *string = @"Custom label:";
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+
+    UIFont *randomFont = [self getRandomFont];
+    NSRange range = [attString.string rangeOfString:string];
+    [attString addAttribute:NSFontAttributeName value:randomFont range:range];
+    [attString addAttribute:NSStrokeColorAttributeName value:[UIColor redColor] range:range];
+    [attString addAttribute:NSStrokeWidthAttributeName value:@5.0f range:range];
+
+    picker.attributedTitle = attString;
     [picker showActionSheetPicker];
+}
+
+- (UIFont *)getRandomFont
+{
+    NSArray *familyNames = [UIFont familyNames];
+    NSString *familyName = familyNames[arc4random() % [familyNames count]];
+    NSArray *namesForFamilyName = [UIFont fontNamesForFamilyName:familyName];
+    NSString *fontName = namesForFamilyName[arc4random() % [namesForFamilyName count]];
+    UIFont *randomFont = [UIFont fontWithName:fontName size:[UIFont systemFontSize]];
+    return randomFont;
 }
 
 #pragma mark - Implementation

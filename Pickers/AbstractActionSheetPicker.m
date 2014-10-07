@@ -81,8 +81,6 @@ CG_INLINE BOOL isIPhone4()
 
 - (id)storedOrigin;
 
-- (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle;
-
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)aTitle;
 
 - (UIBarButtonItem *)createButtonWithType:(UIBarButtonSystemItem)type target:(id)target action:(SEL)buttonAction;
@@ -346,7 +344,10 @@ CG_INLINE BOOL isIPhone4()
     [barItems addObject:flexSpace];
     if ( title )
     {
-        UIBarButtonItem *labelButton = [self createToolbarLabelWithTitle:title];
+        UIBarButtonItem *labelButton;
+
+        labelButton = [self createToolbarLabelWithTitle:title titleTextAttributes:self.titleTextAttributes andAttributedTitle:self.attributedTitle];
+
         [barItems addObject:labelButton];
         [barItems addObject:flexSpace];
     }
@@ -357,39 +358,53 @@ CG_INLINE BOOL isIPhone4()
 }
 
 - (UIBarButtonItem *)createToolbarLabelWithTitle:(NSString *)aTitle
+                             titleTextAttributes:(NSDictionary *)titleTextAttributes
+                              andAttributedTitle:(NSAttributedString *)attributedTitle
 {
-    UILabel *toolBarItemlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
-    [toolBarItemlabel setTextAlignment:NSTextAlignmentCenter];
-    [toolBarItemlabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
-    [toolBarItemlabel setFont:[UIFont boldSystemFontOfSize:16]];
-    [toolBarItemlabel setBackgroundColor:[UIColor clearColor]];
-    toolBarItemlabel.text = aTitle;
+    UILabel *toolBarItemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
+    [toolBarItemLabel setTextAlignment:NSTextAlignmentCenter];
+    [toolBarItemLabel setBackgroundColor:[UIColor clearColor]];
 
     CGFloat strikeWidth;
     CGSize textSize;
-    if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+
+
+    if (titleTextAttributes) {
+        toolBarItemLabel.attributedText = [[NSAttributedString alloc] initWithString:aTitle attributes:titleTextAttributes];
+        textSize = toolBarItemLabel.attributedText.size;
+    } else if (attributedTitle) {
+        toolBarItemLabel.attributedText = attributedTitle;
+        textSize = toolBarItemLabel.attributedText.size;
+    }
+    else
     {
+        [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
+        toolBarItemLabel.text = aTitle;
+
+        if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
+        {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-        textSize = [[toolBarItemlabel text] sizeWithAttributes:@{NSFontAttributeName : [toolBarItemlabel font]}];
+            textSize = [[toolBarItemLabel text] sizeWithAttributes:@{NSFontAttributeName : [toolBarItemLabel font]}];
 #pragma clang diagnostic pop
-    } else
-    {
+        } else
+        {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        textSize = [[toolBarItemlabel text] sizeWithFont:[toolBarItemlabel font]];
+            textSize = [[toolBarItemLabel text] sizeWithFont:[toolBarItemLabel font]];
 #pragma clang diagnostic pop
-
+        }
     }
 
     strikeWidth = textSize.width;
 
     if ( strikeWidth < 180 )
     {
-        [toolBarItemlabel sizeToFit];
+        [toolBarItemLabel sizeToFit];
     }
 
-    UIBarButtonItem *buttonLabel = [[UIBarButtonItem alloc] initWithCustomView:toolBarItemlabel];
+    UIBarButtonItem *buttonLabel = [[UIBarButtonItem alloc] initWithCustomView:toolBarItemLabel];
     return buttonLabel;
 }
 
