@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HIQ-mT-eIh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HIQ-mT-eIh">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="636"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20p-oK-ilw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20p-oK-ilw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="636"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select an animal..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-Ul-Nmk">
@@ -135,7 +135,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9f4-IZ-fgb" kind="push" id="QEY-yt-RH7"/>
+                                            <segue destination="9f4-IZ-fgb" kind="modal" id="QEY-yt-RH7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-1n-7Wg">
@@ -192,9 +192,10 @@
                                     <constraint firstItem="VKa-mo-US0" firstAttribute="leading" secondItem="EoD-zC-rUG" secondAttribute="leading" id="ij3-f7-KVc"/>
                                     <constraint firstItem="jYm-Eq-vOm" firstAttribute="top" secondItem="EV1-n7-TvQ" secondAttribute="bottom" constant="3" id="jdi-73-v9i"/>
                                     <constraint firstItem="RSP-y3-BTk" firstAttribute="top" secondItem="QkB-1n-7Wg" secondAttribute="bottom" constant="8" id="jox-WW-8Al"/>
+                                    <constraint firstAttribute="trailing" secondItem="alq-in-mNW" secondAttribute="trailing" id="lBU-eN-nbm"/>
                                     <constraint firstItem="QkB-1n-7Wg" firstAttribute="top" secondItem="EoD-zC-rUG" secondAttribute="bottom" constant="56" id="nMv-nU-Gs3"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="centerX" secondItem="AUS-Q4-Cjs" secondAttribute="centerX" id="oTE-a8-hgY"/>
-                                    <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="Xed-fo-wWj" secondAttribute="centerX" constant="-0.5" id="ok6-T5-eju"/>
+                                    <constraint firstItem="jYm-Eq-vOm" firstAttribute="centerX" secondItem="Xed-fo-wWj" secondAttribute="centerX" id="ok6-T5-eju"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="top" secondItem="alq-in-mNW" secondAttribute="bottom" constant="8" symbolic="YES" id="qsR-oc-yqA"/>
                                     <constraint firstItem="mkk-Ul-Nmk" firstAttribute="leading" secondItem="alq-in-mNW" secondAttribute="leading" id="sLV-Ve-26s"/>
                                     <constraint firstItem="vQn-Q8-jhe" firstAttribute="centerX" secondItem="EoD-zC-rUG" secondAttribute="centerX" id="t2F-1c-ZdE"/>
@@ -285,7 +286,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZzC-q3-O6g"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IxT-xf-nLb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a date..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGo-Vq-gCL">
@@ -371,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHX-ON-8fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.75" y="100.35211267605634"/>
+            <point key="canvasLocation" x="898" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBU-t6-gEE">
