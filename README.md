@@ -1,3 +1,6 @@
+ActionSheetPicker-3.0
+==================
+
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
@@ -6,11 +9,11 @@
 
 Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
-I resolved almost all (60+ pull requests and issues) in Tim's repo, but new updates will be added here.
-
-`pod 'ActionSheetPicker-3.0', '~> 1.1.19'` (**iOS 8** compatible already!)
+New updates will be added only in this repo.
 
 Please welcome: **ActionSheetPicker-3.0**!
+
+`pod 'ActionSheetPicker-3.0', '~> 1.1.19'` (**iOS 6-7-8** compatible!)
 
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
