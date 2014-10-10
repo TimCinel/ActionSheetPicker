@@ -1,5 +1,9 @@
 ActionSheetPicker-3.0
 ==================
+- [Overview](#Overview)
+- [Benefits](#Benefits)
+- [QuickStart](#QuickStart)
+- [BasicUsage](#BasicUsage)
 
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
@@ -49,7 +53,7 @@ Improvements more than welcome - they are kindly requested :)
 
 There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
-#### Basic Usage:
+## BasicUsage
 
 ```objective-c
 // Inside a IBAction method:
