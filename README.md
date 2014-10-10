@@ -1,9 +1,9 @@
 ActionSheetPicker-3.0
 ==================
-- [Overview](#Overview)
-- [Benefits](#Benefits)
-- [QuickStart](#QuickStart)
-- [BasicUsage](#BasicUsage)
+- [Overview](##Overview)
+- [Benefits](##Benefits)
+- [QuickStart](##QuickStart)
+- [BasicUsage](##BasicUsage)
 
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
@@ -23,7 +23,7 @@ Please welcome: **ActionSheetPicker-3.0**!
 
 _Regards, Petr Korolev_
 
-## ActionSheetPicker = UIPickerView + UIActionSheet ##
+##ActionSheetPicker = UIPickerView + UIActionSheet ##
 
 ![ActionSheetLocalePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/locale.png "ActionSheetLocalePicker")
 
@@ -33,7 +33,7 @@ Well, that's how it started. Now, the following is more accurate:
  * _**iPad** ActionSheetPicker = A Picker + UIPopoverController_
 
 
-## Overview ##
+##Overview##
 ActionSheetPicker
 
 Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. Based on the HTML drop-down alternative found in mobilesafari.
@@ -41,7 +41,7 @@ Easily present an ActionSheet with a PickerView, allowing user to select from a 
 Improvements more than welcome - they are kindly requested :)
 
 
-## Benefits ##
+##Benefits ##
 
  * Spawn pickers with convenience function - delegate or reference
    not required. Just provide a target/action callback.
@@ -49,11 +49,11 @@ Improvements more than welcome - they are kindly requested :)
  * Delegate protocol available for more control
  * Universal (iPhone/iPod/iPad)
 
-## QuickStart ##
+##QuickStart ##
 
 There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
-## BasicUsage
+##BasicUsage
 
 ```objective-c
 // Inside a IBAction method:
