@@ -1,15 +1,22 @@
-ActionSheetPicker-3.0
-==================
-- [Overview](##Overview)
-- [Benefits](##Benefits)
-- [QuickStart](##QuickStart)
-- [BasicUsage](##BasicUsage)
-
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
+
+ActionSheetPicker-3.0
+==================
+- [Overview](#overview)
+- [Benefits](#benefits)
+- [QuickStart](#quickstart)
+- [Basic Usage](#basic-usage)
+- [ActionSheetCustomPicker Customization](#actionsheetcustompicker-customization)
+- [Installation](#installation)
+- [Example Projects](#example-projects)
+- [Screen Shots](#screen-shots)
+- [Apps using this library](#apps-using-this-library)
+- [Maintainer and Contributor](#maintainer-and-contributor)
+- [Credits](#credits)
 
 Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
 
@@ -33,7 +40,7 @@ Well, that's how it started. Now, the following is more accurate:
  * _**iPad** ActionSheetPicker = A Picker + UIPopoverController_
 
 
-##Overview##
+## Overview ##
 ActionSheetPicker
 
 Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. Based on the HTML drop-down alternative found in mobilesafari.
@@ -41,7 +48,7 @@ Easily present an ActionSheet with a PickerView, allowing user to select from a 
 Improvements more than welcome - they are kindly requested :)
 
 
-##Benefits ##
+## Benefits ##
 
  * Spawn pickers with convenience function - delegate or reference
    not required. Just provide a target/action callback.
@@ -49,11 +56,11 @@ Improvements more than welcome - they are kindly requested :)
  * Delegate protocol available for more control
  * Universal (iPhone/iPod/iPad)
 
-##QuickStart ##
+## QuickStart
 
 There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
-##BasicUsage
+## Basic Usage ##
 
 ```objective-c
 // Inside a IBAction method:
@@ -147,7 +154,7 @@ Left just for compatability with older versions:
 `open Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj`
 
 
-## Screen Shots ##
+## Screen Shots
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
@@ -156,14 +163,17 @@ Left just for compatability with older versions:
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 
-## Creator ##
+## Apps using this library
 
-ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
+* [Economic Calendar Forex FxTeam](https://itunes.apple.com/us/app/economic-calendar-forex-fxteam/id740636885?mt=8)
+* Add yours App here! *(by pull request or write me!)*
 
-## Maintainer and Contributor ##
+## Maintainer and Contributor
 
-- [Petr Korolev](http://github.com/skywinder) (bugfixing, update to iOS 7 and iOS 8, implementing new pickers, community support)
+- [Petr Korolev](http://github.com/skywinder) (update to iOS 7 and iOS 8, implementing new pickers, community support)
 
-## Credits ##
+## Credits
+
+ActionSheetPicker was originally created by [Tim Cinema](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
 
 And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
