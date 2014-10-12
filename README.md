@@ -166,7 +166,7 @@ Left just for compatability with older versions:
 ## Apps using this library
 
 * [Economic Calendar Forex FxTeam](https://itunes.apple.com/us/app/economic-calendar-forex-fxteam/id740636885?mt=8)
-* Add yours App here! *(by pull request or write me!)*
+* Add yours App here! *(by pull request or email me!)*
 
 ## Maintainer and Contributor
 
