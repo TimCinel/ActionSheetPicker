@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "ActionSheetPicker.app"
-               BlueprintName = "ActionSheetPicker"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               BuildableName = "ActionSheetPicker-iOS6-7.app"
+               BlueprintName = "ActionSheetPicker-iOS6-7"
+               ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-               BuildableName = "ActionSheetPickerTests.xctest"
-               BlueprintName = "ActionSheetPickerTests"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               BuildableName = "ActionSheetPicker-iOS6-7Tests.xctest"
+               BlueprintName = "ActionSheetPicker-iOS6-7Tests"
+               ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BuildableName = "ActionSheetPicker-iOS6-7.app"
+            BlueprintName = "ActionSheetPicker-iOS6-7"
+            ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BuildableName = "ActionSheetPicker-iOS6-7.app"
+            BlueprintName = "ActionSheetPicker-iOS6-7"
+            ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BuildableName = "ActionSheetPicker-iOS6-7.app"
+            BlueprintName = "ActionSheetPicker-iOS6-7"
+            ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

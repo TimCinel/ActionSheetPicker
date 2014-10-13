@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--ActionSheetPicker-->
+        <!--ActionSheetPicker-iOS6-7-->
         <scene sceneID="cJx-mW-nZA">
             <objects>
                 <viewController id="LWr-l1-uYK" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                                             <action selector="popoverButtonPressed:" destination="LWr-l1-uYK" eventType="touchUpInside" id="IL1-Uc-4kv"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-fo-wWj">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-iOS6-7-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-fo-wWj">
                                         <rect key="frame" x="6" y="477" width="309" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="4df-el-zbd"/>
@@ -214,7 +214,7 @@
                             <constraint firstItem="20p-oK-ilw" firstAttribute="leading" secondItem="4pM-YP-24v" secondAttribute="leading" id="zr7-0r-zFP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ActionSheetPicker" id="d3J-Yq-ZFl">
+                    <navigationItem key="navigationItem" title="ActionSheetPicker-iOS6-7" id="d3J-Yq-ZFl">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="NwK-D0-2a0">
                             <connections>
                                 <action selector="selectATime:" destination="LWr-l1-uYK" id="GQS-hc-GzO"/>
@@ -320,7 +320,7 @@
                                     <outlet property="delegate" destination="Rhb-1G-jv3" id="q2t-XH-Bme"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-in-wtU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-iOS6-7-3.0" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-in-wtU">
                                 <rect key="frame" x="6" y="778" width="309" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
