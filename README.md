@@ -140,19 +140,12 @@ The "old school" way is manually add to your project all from [Pickers](/Pickers
 #### For iOS 8 (Objective-C + Swift):
 `open Example.xcworkspace`
 
-Here is 3 projects:
+Here is 4 projects:
 
 - **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
 - **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
-
-
-
-#### For iOS 6 and 7:
-Left just for compatability with older versions:
-
-`open Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj`
-
+- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
 ## Screen Shots
 
@@ -174,6 +167,6 @@ Left just for compatability with older versions:
 
 ## Credits
 
-ActionSheetPicker was originally created by [Tim Cinema](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
+ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
 
 And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
