@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-               BuildableName = "ActionSheetPicker-iOS6-7Tests.xctest"
-               BlueprintName = "ActionSheetPicker-iOS6-7Tests"
-               ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
+               BuildableName = "ActionSheetPickerTests.xctest"
+               BlueprintName = "ActionSheetPickerTests"
+               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-               BuildableName = "ActionSheetPicker-iOS6-7Tests.xctest"
-               BlueprintName = "ActionSheetPicker-iOS6-7Tests"
-               ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
+               BuildableName = "ActionSheetPickerTests.xctest"
+               BlueprintName = "ActionSheetPickerTests"
+               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
@@ -46,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-            BuildableName = "ActionSheetPicker-iOS6-7Tests.xctest"
-            BlueprintName = "ActionSheetPicker-iOS6-7Tests"
-            ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
+            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BuildableName = "ActionSheetPicker.app"
+            BlueprintName = "ActionSheetPicker"
+            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,15 +62,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-            BuildableName = "ActionSheetPicker-iOS6-7Tests.xctest"
-            BlueprintName = "ActionSheetPicker-iOS6-7Tests"
-            ReferencedContainer = "container:ActionSheetPicker-iOS6-7.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
