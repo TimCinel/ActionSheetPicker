@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example-for-iOS-7-and-6/ActionSheetPicker.xcodeproj">
+      location = "group:Example-for-iOS-7-and-6/ActionSheetPicker-iOS6-7.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:CoreActionSheetPicker/CoreActionSheetPicker/CoreActionSheetPicker.xcodeproj">
