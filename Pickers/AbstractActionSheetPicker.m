@@ -135,7 +135,8 @@ CG_INLINE BOOL isIPhone4()
     if ( [self.pickerView respondsToSelector:@selector(setDataSource:)] )
         [self.pickerView performSelector:@selector(setDataSource:) withObject:nil];
 
-    [((UIControl*)self.pickerView) removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    if ( [self.pickerView respondsToSelector:@selector(removeTarget:action:forControlEvents:)] )
+        [((UIControl*)self.pickerView) removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 
     self.target = nil;
 
