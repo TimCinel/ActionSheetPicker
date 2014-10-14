@@ -43,7 +43,7 @@ typedef void(^ActionDateCancelBlock)(ActionSheetDatePicker *picker);
 @property (nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar currentCalendar]. setting nil returns to default
 @property (nonatomic, retain) NSTimeZone *timeZone; // default is nil. use current time zone or time zone from calendar
 
-@property (nonatomic, assign) NSTimeInterval duration; // for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
+@property (nonatomic, assign) NSTimeInterval countDownDuration; // for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
 
 @property (nonatomic, copy) ActionDateDoneBlock onActionSheetDone;
 @property (nonatomic, copy) ActionDateCancelBlock onActionSheetCancel;

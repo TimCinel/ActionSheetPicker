@@ -75,7 +75,7 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
-        self.duration = 60;
+        self.countDownDuration = 60;
     }
     return self;
 }
@@ -87,7 +87,7 @@
     if (self) {
         self.title = title;
         self.datePickerMode = datePickerMode;
-        self.duration = duration;
+        self.countDownDuration = duration;
     }
     return self;
 }
@@ -122,7 +122,7 @@
     // if datepicker is set with a date in countdownmode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-        datePicker.countDownDuration = self.duration;
+        datePicker.countDownDuration = self.countDownDuration;
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
@@ -146,7 +146,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-            [target performSelector:action withObject:@(self.duration) withObject:origin];
+            [target performSelector:action withObject:@(self.countDownDuration) withObject:origin];
             
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
@@ -179,7 +179,7 @@
         return;
     UIDatePicker *datePicker = (UIDatePicker *)sender;
     self.selectedDate = datePicker.date;
-    self.duration = datePicker.countDownDuration;
+    self.countDownDuration = datePicker.countDownDuration;
 }
 
 - (void)customButtonPressed:(id)sender {
