@@ -32,13 +32,9 @@
 @interface ActionSheetDatePicker()
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic, assign) NSTimeInterval duration;
 @end
 
 @implementation ActionSheetDatePicker
-@synthesize selectedDate = _selectedDate;
-@synthesize datePickerMode = _datePickerMode;
-@synthesize duration = _duration;
 
 + (id)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
