@@ -103,6 +103,7 @@ CG_INLINE BOOL isIPhone4()
         self.successAction = successAction;
         self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
+        self.popoverBackgroundViewClass = nil;
 
         if ( [origin isKindOfClass:[UIBarButtonItem class]] )
             self.barButtonItem = origin;
@@ -533,6 +534,10 @@ CG_INLINE BOOL isIPhone4()
 
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
+    if (self.popoverBackgroundViewClass) {
+            [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
+    }
+    
     [self presentPopover:_popOverController];
 }
 
