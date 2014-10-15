@@ -11,16 +11,17 @@ import CoreActionSheetPicker
 
 class SWTableViewController: UITableViewController, UITableViewDelegate {
     @IBOutlet var UIDatePickerModeTime: UIButton!
-    @IBAction func TimePickerClicked(sender: AnyObject) {
-        var datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: self.view)
+    @IBAction func TimePickerClicked(sender: UIButton) {
+        
+        var datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
         
         datePicker.minuteInterval = 20
         datePicker.showActionSheetPicker()
         
     }
     
-    @IBAction func DatePickerClicked(sender: AnyObject) {
-        var datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: self.view)
+    @IBAction func DatePickerClicked(sender: UIButton) {
+        var datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: sender.superview!.superview)
         let secondsInWeek: NSTimeInterval = 7 * 24 * 60 * 60;
         datePicker.minimumDate = NSDate(timeInterval: -secondsInWeek, sinceDate: NSDate())
         datePicker.maximumDate = NSDate(timeInterval: secondsInWeek, sinceDate: NSDate())
@@ -28,8 +29,10 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
         datePicker.showActionSheetPicker()
     }
 
-    @IBAction func DateAndTimeClicked(sender: AnyObject) {
-        var datePicker = ActionSheetDatePicker(title: "DateAndTime:", datePickerMode: UIDatePickerMode.DateAndTime, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: self.view)
+    @IBAction func DateAndTimeClicked(sender: UIButton) {
+
+         
+        var datePicker = ActionSheetDatePicker(title: "DateAndTime:", datePickerMode: UIDatePickerMode.DateAndTime, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: sender.superview!.superview)
         let secondsInWeek: NSTimeInterval = 7 * 24 * 60 * 60;
         datePicker.minimumDate = NSDate(timeInterval: -secondsInWeek, sinceDate: NSDate())
         datePicker.maximumDate = NSDate(timeInterval: secondsInWeek, sinceDate: NSDate())
@@ -37,17 +40,17 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
 
         datePicker.showActionSheetPicker()
     }
-    @IBAction func CountdownTimerClicked(sender: AnyObject) {
-        var datePicker = ActionSheetDatePicker(title: "CountDownTimer:", datePickerMode: UIDatePickerMode.CountDownTimer, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: self.view)
+    @IBAction func CountdownTimerClicked(sender: UIButton) {
+        var datePicker = ActionSheetDatePicker(title: "CountDownTimer:", datePickerMode: UIDatePickerMode.CountDownTimer, selectedDate: NSDate(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: sender.superview!.superview)
         
         datePicker.countDownDuration = 60 * 7
         datePicker.showActionSheetPicker()
     }
-    @IBAction func navigationItemPicker(sender: AnyObject) {
-        ActionSheetStringPicker.showPickerWithTitle("Nav Bar From Picker", rows: ["One", "Two", "A lot"], initialSelection: 1, doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: self.view)
+    @IBAction func navigationItemPicker(sender: UIButton) {
+        ActionSheetStringPicker.showPickerWithTitle("Nav Bar From Picker", rows: ["One", "Two", "A lot"], initialSelection: 1, doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: sender.superview!.superview)
     }
-    @IBAction func localePickerClicked(sender: AnyObject) {
-        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: self.view)
+    @IBAction func localePickerClicked(sender: UIButton) {
+        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {ActionStringDoneBlock in return}, cancelBlock: {ActionStringCancelBlock in return }, origin: sender.superview!.superview)
         
     }
     @IBOutlet var localePicker: UIButton!
