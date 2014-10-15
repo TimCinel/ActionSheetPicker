@@ -75,19 +75,6 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
-        self.countDownDuration = 60;
-    }
-    return self;
-}
-
-// mgm: additional initializer which allows to set countdownduration
-- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode countDownDuration:(NSTimeInterval)duration target:(id)target action:(SEL)action origin:(id)origin cancelAction:(SEL)cancelAction
-{
-    self = [super initWithTarget:target successAction:action cancelAction:cancelAction origin:origin];
-    if (self) {
-        self.title = title;
-        self.datePickerMode = datePickerMode;
-        self.countDownDuration = duration;
     }
     return self;
 }
@@ -118,8 +105,7 @@
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
     
-    // mgm: Set the datePicker according to mode
-    // if datepicker is set with a date in countdownmode then
+    // if datepicker is set with a date in countDownMode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
         datePicker.countDownDuration = self.countDownDuration;
@@ -139,7 +125,11 @@
 {
     if (self.onActionSheetDone)
     {
-        self.onActionSheetDone(self, self.selectedDate, origin);
+        if (self.datePickerMode == UIDatePickerModeCountDownTimer)
+            self.onActionSheetDone(self, @(self.countDownDuration), origin);
+        else
+            self.onActionSheetDone(self, self.selectedDate, origin);
+
         return;
     }
     else if ([target respondsToSelector:action])

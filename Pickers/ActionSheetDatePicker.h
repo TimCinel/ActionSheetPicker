@@ -29,7 +29,7 @@
 
 @class ActionSheetDatePicker;
 
-typedef void(^ActionDateDoneBlock)(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin);
+typedef void(^ActionDateDoneBlock)(ActionSheetDatePicker *picker, id selectedDate, id origin); //selectedDate is NSDate or NSNumber for "UIDatePickerModeCountDownTimer"
 typedef void(^ActionDateCancelBlock)(ActionSheetDatePicker *picker);
 
 @interface ActionSheetDatePicker : AbstractActionSheetPicker
@@ -60,9 +60,6 @@ typedef void(^ActionDateCancelBlock)(ActionSheetDatePicker *picker);
 - (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin;
 
 - (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin cancelAction:(SEL)cancelAction;
-
-// mgm: additional initializer which allows to set countdownduration
-- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode countDownDuration:(NSTimeInterval)duration target:(id)target action:(SEL)action origin:(id)origin cancelAction:(SEL)cancelAction;
 
 
 - (instancetype)initWithTitle:(NSString *)title
