@@ -43,6 +43,7 @@ static NSString *const kButtonTitle = @"buttonTitle";
 @property (nonatomic, assign) CGRect presentFromRect;
 @property (nonatomic) NSDictionary *titleTextAttributes; // default is nil. Used to specify Title Label attributes.
 @property (nonatomic) NSAttributedString *attributedTitle; // default is nil. If titleTextAttributes not nil this value ignorred.
+@property (nonatomic, retain) Class popoverBackgroundViewClass; //allow popover customization on iPad
 
     // For subclasses.
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
