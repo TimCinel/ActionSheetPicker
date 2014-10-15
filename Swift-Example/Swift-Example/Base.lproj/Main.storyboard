@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -14,29 +15,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection id="Mbm-qD-1RO">
+                            <tableViewSection headerTitle="Main" id="Mbm-qD-1RO">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="Xwu-EP-H8c">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xwu-EP-H8c" id="w5q-y0-esj">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6F-Fu-Qq0">
-                                                    <rect key="frame" x="219" y="5" width="163" height="30"/>
-                                                    <state key="normal" title="UIDatePickerModeTime">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="ActionSheetDatePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="aLQ-Vv-cOT"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="p6F-Fu-Qq0" secondAttribute="centerY" id="BeN-lj-kXR"/>
-                                                <constraint firstAttribute="centerX" secondItem="p6F-Fu-Qq0" secondAttribute="centerX" id="nui-H4-OsZ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="HwN-MG-62r">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HwN-MG-62r" id="YBf-05-8DH">
@@ -58,57 +38,149 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="q9h-ZM-LtB">
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="DatePicker" id="I3U-3v-jNH">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="PKV-Io-373">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q9h-ZM-LtB" id="6iF-6L-rRX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKV-Io-373" id="aP3-IM-crm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-EK-DMh">
-                                                    <rect key="frame" x="260" y="5" width="81" height="30"/>
-                                                    <state key="normal" title="Push to self">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60e-hh-B1B">
+                                                    <rect key="frame" x="217" y="5" width="167" height="30"/>
+                                                    <state key="normal" title="UIDatePickerMode Time">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="HSJ-wC-erj" kind="show" id="y8L-qN-D82"/>
+                                                        <action selector="TimePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="iKc-f6-UAM"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="tfz-EK-DMh" secondAttribute="centerX" id="Sh3-7h-U0k"/>
-                                                <constraint firstAttribute="centerY" secondItem="tfz-EK-DMh" secondAttribute="centerY" id="oC4-oD-Zi3"/>
+                                                <constraint firstAttribute="centerY" secondItem="60e-hh-B1B" secondAttribute="centerY" id="698-oB-oJB"/>
+                                                <constraint firstAttribute="centerX" secondItem="60e-hh-B1B" secondAttribute="centerX" id="7t0-sl-FEf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" rowHeight="82" id="Kko-tQ-dNj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="fQj-Gy-eaI">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kko-tQ-dNj" id="YhO-3f-k6f">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQj-Gy-eaI" id="5HL-9P-BSC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-1e-rWN">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-Rl-1ga">
+                                                    <rect key="frame" x="217" y="5" width="166" height="30"/>
+                                                    <state key="normal" title="UIDatePickerMode Date">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="DatePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="3cR-j0-e5K"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="Hwg-Rl-1ga" secondAttribute="centerX" id="9bw-g7-uve"/>
+                                                <constraint firstAttribute="centerY" secondItem="Hwg-Rl-1ga" secondAttribute="centerY" id="GzK-Kw-Aal"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="03N-CA-zCk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="03N-CA-zCk" id="c2k-vn-5la">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgK-kh-kbI">
+                                                    <rect key="frame" x="187" y="5" width="227" height="30"/>
+                                                    <state key="normal" title="UIDatePickerMode DateAndTime">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="DateAndTimeClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="nbs-xk-l9c"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="lgK-kh-kbI" secondAttribute="centerY" id="Gf1-Ta-Q4U"/>
+                                                <constraint firstAttribute="centerX" secondItem="lgK-kh-kbI" secondAttribute="centerX" id="gxC-6N-PTP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="ovV-BR-3gD">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ovV-BR-3gD" id="wNc-NC-rhh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-HP-JJh">
+                                                    <rect key="frame" x="173" y="5" width="254" height="30"/>
+                                                    <state key="normal" title="UIDatePickerMode CountDownTimer">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="CountdownTimerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="qS0-aY-qp6"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="2XY-HP-JJh" secondAttribute="centerY" id="YBf-aA-xdC"/>
+                                                <constraint firstAttribute="centerX" secondItem="2XY-HP-JJh" secondAttribute="centerX" id="hQ0-kU-8bp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Other" id="W3k-MW-rph">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="SDj-Yf-ZSQ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SDj-Yf-ZSQ" id="Z1J-bh-1Hz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-ZK-0n5">
+                                                    <rect key="frame" x="181" y="5" width="239" height="30"/>
+                                                    <state key="normal" title="Push to self (for presentation tests)">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="HSJ-wC-erj" kind="show" id="cS1-5C-Uoc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="2uw-ZK-0n5" secondAttribute="centerX" id="kkP-8l-MzD"/>
+                                                <constraint firstAttribute="centerY" secondItem="2uw-ZK-0n5" secondAttribute="centerY" id="yVy-P2-WVf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" rowHeight="82" id="VZj-IG-45I">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VZj-IG-45I" id="RYb-Bv-Dca">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made improvements?" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z0B-iM-46c">
                                                     <rect key="frame" x="230" y="8" width="140" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="286" id="1F9-jv-ctX"/>
+                                                        <constraint firstAttribute="width" constant="286" id="hFz-K8-lAh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" size="system"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="1F9-jv-ctX"/>
+                                                            <exclude reference="hFz-K8-lAh"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MUa-zS-rqg">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QZy-Ni-825">
                                                     <rect key="frame" x="245" y="28" width="110" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" size="system"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l2d-je-V1e">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wFx-vz-TX0">
                                                     <rect key="frame" x="146" y="45" width="309" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="309" id="DLh-Tf-4iC"/>
-                                                        <constraint firstAttribute="height" constant="28" id="fhI-Dl-Cuw"/>
+                                                        <constraint firstAttribute="height" constant="28" id="1sB-0v-4d0"/>
+                                                        <constraint firstAttribute="width" constant="309" id="TZR-vk-yee"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -116,20 +188,20 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MUa-zS-rqg" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="3" id="4Ee-a3-gw1"/>
-                                                <constraint firstItem="lDt-1e-rWN" firstAttribute="leading" secondItem="YhO-3f-k6f" secondAttribute="leading" constant="158" id="4SC-Qm-6L4"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="l2d-je-V1e" secondAttribute="bottom" id="4WH-WT-xCV"/>
-                                                <constraint firstAttribute="centerX" secondItem="MUa-zS-rqg" secondAttribute="centerX" id="F8I-Ss-GoL"/>
-                                                <constraint firstItem="lDt-1e-rWN" firstAttribute="centerX" secondItem="MUa-zS-rqg" secondAttribute="centerX" id="Fbq-7U-v3o"/>
-                                                <constraint firstItem="l2d-je-V1e" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="20" id="QCn-m4-mUl"/>
-                                                <constraint firstAttribute="centerX" secondItem="lDt-1e-rWN" secondAttribute="centerX" id="W5s-dj-bBC"/>
-                                                <constraint firstAttribute="centerX" secondItem="l2d-je-V1e" secondAttribute="centerX" id="amf-c2-SDa"/>
-                                                <constraint firstItem="MUa-zS-rqg" firstAttribute="top" secondItem="lDt-1e-rWN" secondAttribute="bottom" constant="3" id="cJJ-CE-0o9"/>
-                                                <constraint firstItem="l2d-je-V1e" firstAttribute="centerX" secondItem="YhO-3f-k6f" secondAttribute="centerX" id="t8W-i5-Z9j"/>
+                                                <constraint firstAttribute="centerX" secondItem="QZy-Ni-825" secondAttribute="centerX" id="3aT-aO-1nd"/>
+                                                <constraint firstItem="QZy-Ni-825" firstAttribute="top" secondItem="Z0B-iM-46c" secondAttribute="bottom" constant="3" id="7ez-yw-3Fx"/>
+                                                <constraint firstItem="Z0B-iM-46c" firstAttribute="centerX" secondItem="QZy-Ni-825" secondAttribute="centerX" id="FBZ-Xh-Hhl"/>
+                                                <constraint firstAttribute="centerX" secondItem="wFx-vz-TX0" secondAttribute="centerX" id="I03-ph-fKu"/>
+                                                <constraint firstItem="Z0B-iM-46c" firstAttribute="leading" secondItem="RYb-Bv-Dca" secondAttribute="leading" constant="158" id="VDu-Of-DeD"/>
+                                                <constraint firstItem="wFx-vz-TX0" firstAttribute="centerX" secondItem="RYb-Bv-Dca" secondAttribute="centerX" id="bBz-kl-eff"/>
+                                                <constraint firstItem="QZy-Ni-825" firstAttribute="top" secondItem="Z0B-iM-46c" secondAttribute="bottom" constant="3" id="llv-wy-2rb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wFx-vz-TX0" secondAttribute="bottom" id="u72-LM-KjC"/>
+                                                <constraint firstItem="wFx-vz-TX0" firstAttribute="top" secondItem="Z0B-iM-46c" secondAttribute="bottom" constant="20" id="yFn-A0-1pS"/>
+                                                <constraint firstAttribute="centerX" secondItem="Z0B-iM-46c" secondAttribute="centerX" id="zK7-pv-WeK"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="4SC-Qm-6L4"/>
+                                                    <exclude reference="VDu-Of-DeD"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -150,7 +222,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="UIDatePickerModeTime" destination="p6F-Fu-Qq0" id="Kcf-Xo-Kq1"/>
+                        <outlet property="UIDatePickerModeTime" destination="60e-hh-B1B" id="khp-ZY-jXp"/>
                         <outlet property="localePicker" destination="JEo-wc-8cF" id="j7x-5m-qPY"/>
                     </connections>
                 </tableViewController>

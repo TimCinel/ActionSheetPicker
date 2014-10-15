@@ -32,13 +32,9 @@
 @interface ActionSheetDatePicker()
 @property (nonatomic, assign) UIDatePickerMode datePickerMode;
 @property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic, assign) NSTimeInterval duration;
 @end
 
 @implementation ActionSheetDatePicker
-@synthesize selectedDate = _selectedDate;
-@synthesize datePickerMode = _datePickerMode;
-@synthesize duration = _duration;
 
 + (id)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
@@ -79,7 +75,6 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
-        self.duration = 60;
     }
     return self;
 }
@@ -110,7 +105,14 @@
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
     
-    [datePicker setDate:self.selectedDate animated:NO];
+    // if datepicker is set with a date in countDownMode then
+    // 1h is added to the initial countdown
+    if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
+        datePicker.countDownDuration = self.countDownDuration;
+    } else {
+        [datePicker setDate:self.selectedDate animated:NO];
+    }
+    
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
     
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing (not used in this picker, but just in case somebody uses this as a template for another picker)
@@ -123,14 +125,19 @@
 {
     if (self.onActionSheetDone)
     {
-        self.onActionSheetDone(self, self.selectedDate, origin);
+        if (self.datePickerMode == UIDatePickerModeCountDownTimer)
+            self.onActionSheetDone(self, @(self.countDownDuration), origin);
+        else
+            self.onActionSheetDone(self, self.selectedDate, origin);
+
         return;
     }
     else if ([target respondsToSelector:action])
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-            [target performSelector:action withObject:@(self.duration) withObject:origin];
+            [target performSelector:action withObject:@(self.countDownDuration) withObject:origin];
+            
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
         }
@@ -162,7 +169,7 @@
         return;
     UIDatePicker *datePicker = (UIDatePicker *)sender;
     self.selectedDate = datePicker.date;
-    self.duration = datePicker.countDownDuration;
+    self.countDownDuration = datePicker.countDownDuration;
 }
 
 - (void)customButtonPressed:(id)sender {
