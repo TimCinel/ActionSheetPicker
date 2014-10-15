@@ -1,25 +1,24 @@
 #!/usr/bin/env ruby
-
 require 'optparse'
 
 @options = {:dry_run => false, :major => false, :minor => false, :revision => true}
 
-OptionParser.new do |opts|
+OptionParser.new { |opts|
   opts.banner = 'Usage: bump.rb [options]'
 
   opts.on('-d', '--dry-run', 'Dry run') do |v|
-    options[:dry_run] = v
+    @options[:dry_run] = v
   end
-  opts.on('--major', 'Bump major version') do |v|
-    options[:major] = v
+  opts.on('-a', '--major', 'Bump major version') do |v|
+    @options[:major] = v
   end
   opts.on('-m', '--minor', 'Bump minor version') do |v|
-    options[:minor] = v
+    @options[:minor] = v
   end
   opts.on('-r', '--revision', 'Bump minor version') do |v|
-    options[:revision] = v
+    @options[:revision] = v
   end
-end.parse!
+}.parse!
 
 p @options
 
@@ -79,42 +78,39 @@ end
 
 def execute_line(line)
   if @options[:dry_run]
-    puts 'Dty run: ' + line
+    puts 'Dry run: ' + line
   else
     puts line
     value =%x[#{line}]
     puts value
     if $?.exitstatus != 0
       puts "Error (exit status = #{$?} -> exit"
-    	exit
-    end
-  end
-end
-
-def main
-
-  check_repo_is_clean_or_dry_run
-  result, result_array = find_version_in_podspec
-  bumped_version = bump_version(result_array)
-
-  unless @options[:dry_run]
-
-    puts 'Are you sure? Click Y to continue:'
-    str = gets.chomp
-    if str != 'Y'
-      puts '-> exit'
       exit
     end
-
   end
-
-  execute_line("sed -i \"\" \"s/#{result}/#{bumped_version}/\" README.md")
-  execute_line("sed -i \"\" \"s/#{result}/#{bumped_version}/\" ActionSheetPicker-3.0.podspec")
-  execute_line("git commit --all -m \"Update podspec to version #{bumped_version}\"")
-  execute_line("git tag #{bumped_version}")
-  execute_line('git push')
-  execute_line('git push --tags')
-  execute_line('pod trunk push ./ActionSheetPicker-3.0.podspec')
 end
 
-main
+
+check_repo_is_clean_or_dry_run
+result, result_array = find_version_in_podspec
+bumped_version = bump_version(result_array)
+
+unless @options[:dry_run]
+
+  puts 'Are you sure? Click Y to continue:'
+  str = gets.chomp
+  if str != 'Y'
+    puts '-> exit'
+    exit
+  end
+
+end
+
+execute_line("sed -i \"\" \"s/#{result}/#{bumped_version}/\" README.md")
+execute_line("sed -i \"\" \"s/#{result}/#{bumped_version}/\" ActionSheetPicker-3.0.podspec")
+execute_line("git commit --all -m \"Update podspec to version #{bumped_version}\"")
+execute_line("git tag #{bumped_version}")
+execute_line('git push')
+execute_line('git push --tags')
+execute_line('pod trunk push ./ActionSheetPicker-3.0.podspec')
+
