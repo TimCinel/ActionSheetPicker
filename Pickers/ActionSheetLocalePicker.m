@@ -367,14 +367,44 @@
     UIBarButtonItem *button = (UIBarButtonItem*)sender;
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
+    
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
-    id itemValue = buttonDetails[kButtonValue];
-    if ( [itemValue isKindOfClass:[NSTimeZone class]] )
-    {
-        NSTimeZone *timeZone = (NSTimeZone *) itemValue;
-        self.initialTimeZone = timeZone;
-        [self setSelectedRows];
-        [self selectCurrentLocale:(UIPickerView *) self.pickerView];
+    NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
+    
+    NSInteger actionType = [buttonDetails[kActionType] intValue];
+    switch (actionType) {
+        case Value: {
+            id itemValue = buttonDetails[kButtonValue];
+            if ( [itemValue isKindOfClass:[NSTimeZone class]] )
+            {
+                NSTimeZone *timeZone = (NSTimeZone *) itemValue;
+                self.initialTimeZone = timeZone;
+                [self setSelectedRows];
+                [self selectCurrentLocale:(UIPickerView *) self.pickerView];
+            }
+            break;
+        }
+            
+        case Block: {
+            ActionBlock actionBlock = buttonDetails[kButtonValue];
+            if (actionBlock) { actionBlock(); }
+            break;
+        }
+            
+        case Selector: {
+            SEL selector = [buttonDetails[kButtonValue] pointerValue];
+            id target    = buttonDetails[kActionTarget];
+            if (target && [target respondsToSelector:selector]) {
+                SuppressPerformSelectorLeakWarning (
+                    [target performSelector:selector];
+                );
+            }
+            break;
+        }
+            
+        default:
+            NSAssert(false, @"Unknown action type");
+            break;
     }
 }
 
