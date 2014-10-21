@@ -9,7 +9,7 @@ static UIWindow *SWActionSheetWindow = nil;
 
 static const float delay = 0.f;
 
-static const float duration = .3f;
+static const float duration = .25f;
 
 static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn;
 
