@@ -255,12 +255,10 @@ CG_INLINE BOOL isIPhone4()
 
 - (void)addCustomButtonWithTitle:(NSString *)title actionBlock:(ActionBlock)block
 {
-    if (!title) {
+    if (!title)
         title = @"";
-    }
-    if (!block) {
+    if (!block)
         block = (^{});
-    }
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
                                     kActionType  : @(Block),
@@ -271,12 +269,10 @@ CG_INLINE BOOL isIPhone4()
 
 - (void)addCustomButtonWithTitle:(NSString *)title target:(id)target selector:(SEL)selector
 {
-    if (!title) {
+    if (!title)
         title = @"";
-    }
-    if (!target) {
+    if (!target)
         target = [NSNull null];
-    }
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
                                     kActionType  : @(Selector),
@@ -297,7 +293,7 @@ CG_INLINE BOOL isIPhone4()
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     
-    NSInteger actionType = [buttonDetails[kActionType] intValue];
+    ActionType actionType = [buttonDetails[kActionType] intValue];
     switch (actionType) {
         case Value: {
             NSInteger buttonValue = [buttonDetails[kButtonValue] intValue];
@@ -314,14 +310,18 @@ CG_INLINE BOOL isIPhone4()
             
         case Block: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
-            if (actionBlock) { actionBlock(); }
+            [self hidePickerWithCancelAction];
+            if (actionBlock)
+                actionBlock(); 
             break;
         }
             
         case Selector: {
             SEL selector = [buttonDetails[kButtonValue] pointerValue];
             id target    = buttonDetails[kActionTarget];
-            if (target && [target respondsToSelector:selector]) {
+            [self hidePickerWithCancelAction];
+            if (target && [target respondsToSelector:selector])
+            {
                 SuppressPerformSelectorLeakWarning (
                     [target performSelector:selector];
                 );

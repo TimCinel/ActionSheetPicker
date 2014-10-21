@@ -181,7 +181,7 @@
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     
-    NSInteger actionType = [buttonDetails[kActionType] intValue];
+    ActionType actionType = [buttonDetails[kActionType] intValue];
     switch (actionType) {
         case Value: {
             NSDate *itemValue = buttonDetails[kButtonValue];
@@ -192,19 +192,12 @@
         }
             
         case Block: {
-            ActionBlock actionBlock = buttonDetails[kButtonValue];
-            if (actionBlock) { actionBlock(); }
+            [super customButtonPressed:sender];
             break;
         }
             
         case Selector: {
-            SEL selector = [buttonDetails[kButtonValue] pointerValue];
-            id target    = buttonDetails[kActionTarget];
-            if (target && [target respondsToSelector:selector]) {
-                SuppressPerformSelectorLeakWarning (
-                    [target performSelector:selector];
-                );
-            }
+            [super customButtonPressed:sender];
             break;
         }
             
