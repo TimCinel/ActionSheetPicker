@@ -25,7 +25,6 @@
 		1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BD197B1C2F005F495B /* InfoPlist.strings */; };
-		1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */; };
 		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
 		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
@@ -71,7 +70,6 @@
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker Tests-Info.plist"; sourceTree = "<group>"; };
 		1C9444BE197B1C2F005F495B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPicker_Tests.m; sourceTree = "<group>"; };
 		1C9444C2197B1C2F005F495B /* ActionSheetPicker Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActionSheetPicker Tests-Prefix.pch"; sourceTree = "<group>"; };
 		1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPickerTestCase.m; sourceTree = "<group>"; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +155,6 @@
 		1C9444BA197B1C2F005F495B /* ActionSheetPicker Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1C9444C0197B1C2F005F495B /* ActionSheetPicker_Tests.m */,
 				1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */,
 				1C9444BB197B1C2F005F495B /* Supporting Files */,
 				D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */,
@@ -328,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
-				1C9444C1197B1C2F005F495B /* ActionSheetPicker_Tests.m in Sources */,
 				D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */,
 				D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */,
 				D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */,
