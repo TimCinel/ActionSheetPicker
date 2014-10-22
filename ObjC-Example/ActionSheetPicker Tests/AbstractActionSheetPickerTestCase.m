@@ -14,10 +14,12 @@ static UIView *origin;
 @interface AbstractActionSheetPickerTestCase : XCTestCase
 @property(nonatomic, strong) ActionSheetStringPicker *sheetStringPicker;
 @property(nonatomic, strong) UIView *origin;
-
 @end
 
 @implementation AbstractActionSheetPickerTestCase
+{
+    NSString *_title;
+}
 
 +(void)setUp{
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
@@ -28,8 +30,8 @@ static UIView *origin;
 - (void)setUp
 {
     [super setUp];
-
-    _sheetStringPicker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title" rows:@[@"1",@"2", @"3"] initialSelection:0 doneBlock:nil cancelBlock:nil origin:origin];
+    _title             = @"Title";
+    _sheetStringPicker = [[ActionSheetStringPicker alloc] initWithTitle:_title rows:@[@"1", @"2", @"3"] initialSelection:0 doneBlock:nil cancelBlock:nil origin:origin];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -76,9 +78,9 @@ static UIView *origin;
 
 - (void)testPickerWithCustomActionBlockOnButton
 {
-    NSString *title = @"Custom label:";
+    NSString *custom_title = @"Custom label:";
 
-    [_sheetStringPicker addCustomButtonWithTitle:title actionBlock:^{
+    [_sheetStringPicker addCustomButtonWithTitle:custom_title actionBlock:^{
         NSLog(@"Test block invoked");
     }];
 
@@ -98,9 +100,7 @@ static UIView *origin;
 
 - (void)testPickerWithNilCustomActionBlockOnButton
 {
-    NSString *title = @"Title";
-    
-    [_sheetStringPicker addCustomButtonWithTitle:title actionBlock:nil];
+    [_sheetStringPicker addCustomButtonWithTitle:_title actionBlock:nil];
     
     [_sheetStringPicker showActionSheetPicker];
     XCTAssertNotNil(_sheetStringPicker);
@@ -116,9 +116,7 @@ static UIView *origin;
 
 - (void)testPickerWithCustomActionSelectorOnButton
 {
-    NSString *title = @"Title";
-    
-    [_sheetStringPicker addCustomButtonWithTitle:title target:self selector:@selector(exampleSelector)];
+    [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     
     [_sheetStringPicker showActionSheetPicker];
     XCTAssertNotNil(_sheetStringPicker);
@@ -134,9 +132,7 @@ static UIView *origin;
 
 - (void)testPickerWithNilCustomActionSelectorOnButton
 {
-    NSString *title = @"Title";
-    
-    [_sheetStringPicker addCustomButtonWithTitle:title target:self selector:nil];
+    [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:nil];
     
     [_sheetStringPicker showActionSheetPicker];
     XCTAssertNotNil(_sheetStringPicker);
@@ -144,9 +140,7 @@ static UIView *origin;
 
 - (void)testPickerWithCustomActionSelectorOnButtonAndNilTarget
 {
-    NSString *title = @"Title";
-    
-    [_sheetStringPicker addCustomButtonWithTitle:title target:nil selector:@selector(exampleSelector)];
+    [_sheetStringPicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     
     [_sheetStringPicker showActionSheetPicker];
     XCTAssertNotNil(_sheetStringPicker);
@@ -154,7 +148,6 @@ static UIView *origin;
 
 - (void)testPickerWithNilCustomActionSelectorOnButtonNilTargetAndNilString
 {
-    
     [_sheetStringPicker addCustomButtonWithTitle:nil target:nil selector:nil];
     
     [_sheetStringPicker showActionSheetPicker];
