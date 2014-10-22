@@ -74,5 +74,26 @@ static UIView *origin;
     XCTAssertNotNil(_sheetStringPicker);
 }
 
+- (void)testPickerWithCustomActionBlockOnButton
+{
+    NSString *title = @"Custom label:";
+
+    [_sheetStringPicker addCustomButtonWithTitle:title actionBlock:^{
+        NSLog(@"Test block invoked");
+    }];
+
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithCustomActionBlockOnButtonAndNilString
+{
+    [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:^{
+        NSLog(@"Test block invoked");
+    }];
+
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
 
 @end
