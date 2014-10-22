@@ -230,18 +230,55 @@ CG_INLINE BOOL isIPhone4()
 
 #pragma mark - Custom Buttons
 
+- (NSMutableArray *)customButtons
+{
+    if (!_customButtons) {
+        _customButtons = [[NSMutableArray alloc] init];
+    }
+    
+    return _customButtons;
+}
+
 - (void)addCustomButtonWithTitle:(NSString *)title value:(id)value
 {
-    if ( !self.customButtons )
-        _customButtons = [[NSMutableArray alloc] init];
     if ( !title )
         title = @"";
     if ( !value )
         value = @0;
     NSDictionary *buttonDetails = @{
             kButtonTitle : title,
+            kActionType  : @(Value),
             kButtonValue : value
     };
+    [self.customButtons addObject:buttonDetails];
+}
+
+- (void)addCustomButtonWithTitle:(NSString *)title actionBlock:(ActionBlock)block
+{
+    if (!title)
+        title = @"";
+    if (!block)
+        block = (^{});
+    NSDictionary *buttonDetails = @{
+                                    kButtonTitle : title,
+                                    kActionType  : @(Block),
+                                    kButtonValue : [block copy]
+                                    };
+    [self.customButtons addObject:buttonDetails];
+}
+
+- (void)addCustomButtonWithTitle:(NSString *)title target:(id)target selector:(SEL)selector
+{
+    if (!title)
+        title = @"";
+    if (!target)
+        target = [NSNull null];
+    NSDictionary *buttonDetails = @{
+                                    kButtonTitle : title,
+                                    kActionType  : @(Selector),
+                                    kActionTarget: target,
+                                    kButtonValue : [NSValue valueWithPointer:selector]
+                                    };
     [self.customButtons addObject:buttonDetails];
 }
 
@@ -251,17 +288,50 @@ CG_INLINE BOOL isIPhone4()
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
     NSAssert([self.pickerView respondsToSelector:@
-            selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
+              selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
+    
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    NSInteger buttonValue = [buttonDetails[kButtonValue] intValue];
-    UIPickerView *picker = (UIPickerView *) self.pickerView;
-    NSAssert(picker != NULL, @"PickerView is invalid");
-    [picker selectRow:buttonValue inComponent:0 animated:YES];
-    if ( [self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)] )
-    {
-        void (*objc_msgSendTyped)(id target, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void *) objc_msgSend; // sending Integers as params
-        objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
+    
+    ActionType actionType = [buttonDetails[kActionType] intValue];
+    switch (actionType) {
+        case Value: {
+            NSInteger buttonValue = [buttonDetails[kButtonValue] intValue];
+            UIPickerView *picker = (UIPickerView *) self.pickerView;
+            NSAssert(picker != NULL, @"PickerView is invalid");
+            [picker selectRow:buttonValue inComponent:0 animated:YES];
+            if ( [self respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)] )
+            {
+                void (*objc_msgSendTyped)(id target, SEL _cmd, id pickerView, NSInteger row, NSInteger component) = (void *) objc_msgSend; // sending Integers as params
+                objc_msgSendTyped(self, @selector(pickerView:didSelectRow:inComponent:), picker, buttonValue, 0);
+            }
+            break;
+        }
+            
+        case Block: {
+            ActionBlock actionBlock = buttonDetails[kButtonValue];
+            [self hidePickerWithCancelAction];
+            if (actionBlock)
+                actionBlock(); 
+            break;
+        }
+            
+        case Selector: {
+            SEL selector = [buttonDetails[kButtonValue] pointerValue];
+            id target    = buttonDetails[kActionTarget];
+            [self hidePickerWithCancelAction];
+            if (target && [target respondsToSelector:selector])
+            {
+                SuppressPerformSelectorLeakWarning (
+                    [target performSelector:selector];
+                );
+            }
+            break;
+        }
+            
+        default:
+            NSAssert(false, @"Unknown action type");
+            break;
     }
 }
 

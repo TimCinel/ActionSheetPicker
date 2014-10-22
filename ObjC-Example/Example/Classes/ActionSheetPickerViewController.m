@@ -87,7 +87,15 @@
         NSLog(@"Locale Picker Canceled");
     };
     ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Select Locale:" initialSelection:[[NSTimeZone alloc] initWithName:@"Antarctica/McMurdo"] doneBlock:done cancelBlock:cancel origin:sender];
+    
     [picker addCustomButtonWithTitle:@"My locale" value:[NSTimeZone localTimeZone]];
+    __weak UIControl *weakSender = sender;
+    [picker addCustomButtonWithTitle:@"Hide" actionBlock:^{
+        if ([weakSender respondsToSelector:@selector(setText:)]) {
+            [weakSender performSelector:@selector(setText:) withObject:[NSTimeZone localTimeZone].name];
+        }
+    }];
+    
     picker.hideCancel = YES;
     [picker showActionSheetPicker];
 }
