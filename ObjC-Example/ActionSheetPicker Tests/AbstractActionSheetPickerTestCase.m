@@ -96,4 +96,74 @@ static UIView *origin;
     XCTAssertNotNil(_sheetStringPicker);
 }
 
+- (void)testPickerWithNilCustomActionBlockOnButton
+{
+    NSString *title = @"Title";
+    
+    [_sheetStringPicker addCustomButtonWithTitle:title actionBlock:nil];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithNilCustomActionBlockOnButtonAndNilString
+{
+    [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:nil];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButton
+{
+    NSString *title = @"Title";
+    
+    [_sheetStringPicker addCustomButtonWithTitle:title target:self selector:@selector(exampleSelector)];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButtonAndNilString
+{
+    [_sheetStringPicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithNilCustomActionSelectorOnButton
+{
+    NSString *title = @"Title";
+    
+    [_sheetStringPicker addCustomButtonWithTitle:title target:self selector:nil];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButtonAndNilTarget
+{
+    NSString *title = @"Title";
+    
+    [_sheetStringPicker addCustomButtonWithTitle:title target:nil selector:@selector(exampleSelector)];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)testPickerWithNilCustomActionSelectorOnButtonNilTargetAndNilString
+{
+    
+    [_sheetStringPicker addCustomButtonWithTitle:nil target:nil selector:nil];
+    
+    [_sheetStringPicker showActionSheetPicker];
+    XCTAssertNotNil(_sheetStringPicker);
+}
+
+- (void)exampleSelector
+{
+    NSLog(@"Test selector invoked");
+}
+
 @end
