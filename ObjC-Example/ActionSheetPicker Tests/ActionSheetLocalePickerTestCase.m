@@ -17,7 +17,9 @@ UIView *origin;
 @end
 
 @implementation ActionSheetLocalePickerTestCase
-
+{
+    NSString *_title;
+}
 
 +(void)setUp{
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
@@ -28,6 +30,8 @@ UIView *origin;
 
 - (void)setUp {
     [super setUp];
+    _title                   = @"Title";
+    _actionSheetLocalePicker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Test title" initialSelection:nil doneBlock:nil cancelBlock:nil origin:origin];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -48,5 +52,87 @@ UIView *origin;
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
+- (void)testPickerWithCustomActionBlockOnButton
+{
+    NSString *custom_title = @"Custom label:";
+    
+    [_actionSheetLocalePicker addCustomButtonWithTitle:custom_title actionBlock:^{
+        NSLog(@"Test block invoked");
+    }];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithCustomActionBlockOnButtonAndNilString
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:nil actionBlock:^{
+        NSLog(@"Test block invoked");
+    }];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithNilCustomActionBlockOnButton
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:_title actionBlock:nil];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithNilCustomActionBlockOnButtonAndNilString
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:nil actionBlock:nil];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButton
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButtonAndNilString
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithNilCustomActionSelectorOnButton
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:nil];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithCustomActionSelectorOnButtonAndNilTarget
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)testPickerWithNilCustomActionSelectorOnButtonNilTargetAndNilString
+{
+    [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:nil selector:nil];
+    
+    [_actionSheetLocalePicker showActionSheetPicker];
+    XCTAssertNotNil(_actionSheetLocalePicker);
+}
+
+- (void)exampleSelector
+{
+    NSLog(@"Test selector invoked");
+}
 
 @end
