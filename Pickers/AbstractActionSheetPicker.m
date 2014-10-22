@@ -293,10 +293,10 @@ CG_INLINE BOOL isIPhone4()
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     
-    ActionType actionType = [buttonDetails[kActionType] intValue];
+    ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
-            NSInteger buttonValue = [buttonDetails[kButtonValue] intValue];
+            NSInteger buttonValue = [buttonDetails[kButtonValue] integerValue];
             UIPickerView *picker = (UIPickerView *) self.pickerView;
             NSAssert(picker != NULL, @"PickerView is invalid");
             [picker selectRow:buttonValue inComponent:0 animated:YES];
@@ -310,16 +310,16 @@ CG_INLINE BOOL isIPhone4()
             
         case Block: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
-            [self hidePickerWithCancelAction];
+            [self dismissPicker];
             if (actionBlock)
                 actionBlock(); 
             break;
         }
-            
+
         case Selector: {
             SEL selector = [buttonDetails[kButtonValue] pointerValue];
             id target    = buttonDetails[kActionTarget];
-            [self hidePickerWithCancelAction];
+            [self dismissPicker];
             if (target && [target respondsToSelector:selector])
             {
                 SuppressPerformSelectorLeakWarning (

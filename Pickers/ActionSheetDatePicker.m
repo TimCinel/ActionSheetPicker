@@ -181,7 +181,7 @@
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     
-    ActionType actionType = [buttonDetails[kActionType] intValue];
+    ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
             NSDate *itemValue = buttonDetails[kButtonValue];
@@ -191,16 +191,11 @@
             break;
         }
             
-        case Block: {
+        case Block:
+        case Selector:
             [super customButtonPressed:sender];
             break;
-        }
-            
-        case Selector: {
-            [super customButtonPressed:sender];
-            break;
-        }
-            
+
         default:
             NSAssert(false, @"Unknown action type");
             break;
