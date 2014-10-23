@@ -98,7 +98,34 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                       origin:sender];
 // You can also use self.view if you don't have a sender
 ```
+### What about custom buttons? Let's check it out
+ 
+ ```obj-c
+ // Inside a IBAction method:
 
+ // Create an array of strings you want to show in the picker:
+NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+ 
+ //Create your picker:
+ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a color"
+                                                                                 rows:colors
+                                                                     initialSelection:0
+                                                                               target:nil
+                                                                        successAction:nil
+                                                                         cancelAction:nil
+                                                                               origin:sender];
+ 
+ //You can pass your picker a value on custom button being pressed:
+[colorPicker addCustomButtonWithTitle:@"Value" value:colors.lastObject];
+ 
+ //Or you can pass it custom block:
+[colorPicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+    NSLog(@"Custom block invoked");
+}];
+
+ //If you prefer to send selectors rather than blocks you can use this method:
+[colorPicker addCustomButtonWithTitle:@"Selector" target:self selector:@selector(awesomSelector)];
+ ```
 
 ## ActionSheetCustomPicker Customization
 
