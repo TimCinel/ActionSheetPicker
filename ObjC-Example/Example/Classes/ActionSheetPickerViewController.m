@@ -129,9 +129,18 @@
     
     ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = minuteInterval;
+    [datePicker addCustomButtonWithTitle:@"value" value:[NSDate date]];
+    [datePicker addCustomButtonWithTitle:@"sel" target:self selector:@selector(dateSelector:)];
+    [datePicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+        NSLog(@"Block invoked");
+    }];
     [datePicker showActionSheetPicker];
 }
 
+-(void)dateSelector
+{
+    NSLog(@"SELECTOR");
+}
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];

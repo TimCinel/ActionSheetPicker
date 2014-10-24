@@ -81,6 +81,13 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     
     [_actionSheetDatePicker showActionSheetPicker];
+
+    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
+    //So, check custom button:
+    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
+
+    [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 

@@ -287,15 +287,15 @@ CG_INLINE BOOL isIPhone4()
     UIBarButtonItem *button = (UIBarButtonItem *) sender;
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
-    NSAssert([self.pickerView respondsToSelector:@
-              selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
-    
+
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
     
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
+            NSAssert([self.pickerView respondsToSelector:@
+                    selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
             NSInteger buttonValue = [buttonDetails[kButtonValue] integerValue];
             UIPickerView *picker = (UIPickerView *) self.pickerView;
             NSAssert(picker != NULL, @"PickerView is invalid");
