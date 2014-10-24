@@ -18,7 +18,7 @@ ActionSheetPicker-3.0
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilities.
 
 New updates will be added only in this repo.
 
