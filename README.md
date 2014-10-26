@@ -116,7 +116,7 @@ ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWith
                                                                                origin:sender];
  
  //You can pass your picker a value on custom button being pressed:
-[colorPicker addCustomButtonWithTitle:@"Value" value:colors.lastObject];
+[colorPicker addCustomButtonWithTitle:@"Value" value:@([colors indexOfObject:colors.lastObject])];
  
  //Or you can pass it custom block:
 [colorPicker addCustomButtonWithTitle:@"Block" actionBlock:^{
