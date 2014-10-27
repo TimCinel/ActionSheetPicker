@@ -138,6 +138,9 @@ The "old school" way is manually add to your project all from [Pickers](/Pickers
 
 ## Example Projects##
 #### For iOS 8 (Objective-C + Swift):
+
+To look at Examples, open in Xcode **Example.xcworkspace**.
+
 `open Example.xcworkspace`
 
 Here is 4 projects:
@@ -145,7 +148,7 @@ Here is 4 projects:
 - **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
 - **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
-- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
+- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. You can run this project separatly: `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
 ## Screen Shots
 
