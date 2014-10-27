@@ -156,10 +156,9 @@ Here is 4 projects:
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 
-## Apps using this library
+## Apps using ActionSheetPicker-3.0
 
-* [Economic Calendar Forex FxTeam](https://itunes.apple.com/us/app/economic-calendar-forex-fxteam/id740636885?mt=8)
-* Add yours App here! *(by pull request or email me!)*
+If you are using ActionSheetPicker-3.0 in your app or know of an app that uses it, please add it to [this list](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0).
 
 ## Maintainer and Contributor
 
