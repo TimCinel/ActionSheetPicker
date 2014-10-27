@@ -14,7 +14,7 @@ ActionSheetPicker-3.0
 - [Installation](#installation)
 - [Example Projects](#example-projects)
 - [Screen Shots](#screen-shots)
-- [Apps using ActionSheetPicker-3.0](#apps-using-actionsheetpicker-3.0)
+- [Apps using ActionSheetPicker-3.0](#apps-using-actionsheetpicker-30)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 
