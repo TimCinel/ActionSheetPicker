@@ -37,6 +37,17 @@ UIView *origin;
     [super tearDown];
 }
 
+- (void)pressFirstCustomButton
+{
+    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
+    //So, check custom button:
+    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
+
+    SuppressPerformSelectorLeakWarning (
+            [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+}
+
 - (void)testPickerWithCustomActionBlockOnButton
 {
     NSString *custom_title = @"Custom label:";
@@ -44,13 +55,9 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:custom_title actionBlock:^{
         NSLog(@"Test block invoked");
     }];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -60,29 +67,19 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:nil actionBlock:^{
         NSLog(@"Test block invoked");
     }];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
-    
+    [self pressFirstCustomButton];
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
 - (void)testPickerWithNilCustomActionBlockOnButton
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title actionBlock:nil];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -90,14 +87,9 @@ UIView *origin;
 - (void)testPickerWithNilCustomActionBlockOnButtonAndNilString
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil actionBlock:nil];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -105,16 +97,9 @@ UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButton
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
-    
     [_actionSheetDatePicker showActionSheetPicker];
 
-    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
-    //So, check custom button:
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -122,14 +107,9 @@ UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButtonAndNilString
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -137,14 +117,9 @@ UIView *origin;
 - (void)testPickerWithNilCustomActionSelectorOnButton
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:nil];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -152,14 +127,9 @@ UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButtonAndNilTarget
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -167,14 +137,9 @@ UIView *origin;
 - (void)testPickerWithNilCustomActionSelectorOnButtonNilTargetAndNilString
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:nil selector:nil];
-    
     [_actionSheetDatePicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }

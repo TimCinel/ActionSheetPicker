@@ -42,6 +42,17 @@ static UIView *origin;
     [super tearDown];
 }
 
+- (void)pressFirstCustomButton
+{
+    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
+    //So, check custom button:
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+}
+
 - (void)testCustomFontNameWithTextAttributes
 {
     _sheetStringPicker.titleTextAttributes = @{NSFontAttributeName : [UIFont fontWithName:@"Palatino-BoldItalic" size:16.f]};
@@ -83,14 +94,9 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:custom_title actionBlock:^{
         NSLog(@"Test block invoked");
     }];
-
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -100,14 +106,9 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:^{
         NSLog(@"Test block invoked");
     }];
-
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -115,14 +116,9 @@ static UIView *origin;
 - (void)testPickerWithNilCustomActionBlockOnButton
 {
     [_sheetStringPicker addCustomButtonWithTitle:_title actionBlock:nil];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -130,14 +126,9 @@ static UIView *origin;
 - (void)testPickerWithNilCustomActionBlockOnButtonAndNilString
 {
     [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:nil];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -145,14 +136,9 @@ static UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButton
 {
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -160,14 +146,9 @@ static UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButtonAndNilString
 {
     [_sheetStringPicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -175,14 +156,9 @@ static UIView *origin;
 - (void)testPickerWithNilCustomActionSelectorOnButton
 {
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:nil];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -190,14 +166,9 @@ static UIView *origin;
 - (void)testPickerWithCustomActionSelectorOnButtonAndNilTarget
 {
     [_sheetStringPicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -205,14 +176,9 @@ static UIView *origin;
 - (void)testPickerWithNilCustomActionSelectorOnButtonNilTargetAndNilString
 {
     [_sheetStringPicker addCustomButtonWithTitle:nil target:nil selector:nil];
-    
     [_sheetStringPicker showActionSheetPicker];
     
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
+    [self pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
