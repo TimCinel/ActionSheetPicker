@@ -61,6 +61,13 @@ UIView *origin;
     }];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -71,6 +78,13 @@ UIView *origin;
     }];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -79,6 +93,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title actionBlock:nil];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -87,6 +108,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil actionBlock:nil];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -95,6 +123,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -103,6 +138,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -111,6 +153,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:nil];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -119,6 +168,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 
@@ -127,6 +183,13 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:nil selector:nil];
     
     [_actionSheetLocalePicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
 

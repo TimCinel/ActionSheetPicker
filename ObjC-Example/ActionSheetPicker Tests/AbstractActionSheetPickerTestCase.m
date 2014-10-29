@@ -85,6 +85,13 @@ static UIView *origin;
     }];
 
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -95,6 +102,13 @@ static UIView *origin;
     }];
 
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -103,6 +117,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title actionBlock:nil];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -111,6 +132,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:nil];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -119,6 +147,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -127,6 +162,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -135,6 +177,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:nil];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -143,6 +192,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
@@ -151,6 +207,13 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil target:nil selector:nil];
     
     [_sheetStringPicker showActionSheetPicker];
+    
+    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
+    
+    SuppressPerformSelectorLeakWarning (
+        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+    
     XCTAssertNotNil(_sheetStringPicker);
 }
 
