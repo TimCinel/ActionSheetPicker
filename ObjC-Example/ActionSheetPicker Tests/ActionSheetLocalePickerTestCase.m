@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/CoreActionSheetPicker.h>
+#import "AbstractActionSheetPicker+CustomButton.h"
 UIView *origin;
 
 @interface ActionSheetLocalePickerTestCase : XCTestCase
@@ -40,17 +41,6 @@ UIView *origin;
     [super tearDown];
 }
 
-- (void)pressFirstCustomButton
-{
-    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
-    //So, check custom button:
-    UIBarButtonItem *customBarButton = _actionSheetLocalePicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
-}
-
 - (void)testPickerWithInitWithDefaultLocale
 {
     _actionSheetLocalePicker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Test title" initialSelection:nil doneBlock:nil cancelBlock:nil origin:origin];
@@ -72,7 +62,7 @@ UIView *origin;
     }];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -84,7 +74,7 @@ UIView *origin;
     }];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -94,7 +84,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title actionBlock:nil];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -104,7 +94,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil actionBlock:nil];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -114,7 +104,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -124,7 +114,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -134,7 +124,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:self selector:nil];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -144,7 +134,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }
@@ -154,7 +144,7 @@ UIView *origin;
     [_actionSheetLocalePicker addCustomButtonWithTitle:nil target:nil selector:nil];
     [_actionSheetLocalePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetLocalePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetLocalePicker);
 }

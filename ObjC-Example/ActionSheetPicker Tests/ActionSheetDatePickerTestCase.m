@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/CoreActionSheetPicker.h>
+#import "AbstractActionSheetPicker+CustomButton.h"
 UIView *origin;
 
 @interface ActionSheetDatePickerTestCase : XCTestCase
@@ -37,17 +38,6 @@ UIView *origin;
     [super tearDown];
 }
 
-- (void)pressFirstCustomButton
-{
-    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
-    //So, check custom button:
-    UIBarButtonItem *customBarButton = _actionSheetDatePicker.toolbar.items[1];
-
-    SuppressPerformSelectorLeakWarning (
-            [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
-}
-
 - (void)testPickerWithCustomActionBlockOnButton
 {
     NSString *custom_title = @"Custom label:";
@@ -57,7 +47,7 @@ UIView *origin;
     }];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -69,7 +59,7 @@ UIView *origin;
     }];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -79,7 +69,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:_title actionBlock:nil];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -89,7 +79,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:nil actionBlock:nil];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -99,7 +89,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     [_actionSheetDatePicker showActionSheetPicker];
 
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -109,7 +99,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -119,7 +109,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:nil];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -129,7 +119,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -139,7 +129,7 @@ UIView *origin;
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:nil selector:nil];
     [_actionSheetDatePicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
 }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/ActionSheetStringPicker.h>
+#import "AbstractActionSheetPicker+CustomButton.h"
 static UIView *origin;
 
 @interface AbstractActionSheetPickerTestCase : XCTestCase
@@ -40,17 +41,6 @@ static UIView *origin;
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     _sheetStringPicker = nil;
     [super tearDown];
-}
-
-- (void)pressFirstCustomButton
-{
-    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
-    //So, check custom button:
-    UIBarButtonItem *customBarButton = _sheetStringPicker.toolbar.items[1];
-    
-    SuppressPerformSelectorLeakWarning (
-        [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
-    );
 }
 
 - (void)testCustomFontNameWithTextAttributes
@@ -96,7 +86,7 @@ static UIView *origin;
     }];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -108,7 +98,7 @@ static UIView *origin;
     }];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -118,7 +108,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title actionBlock:nil];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -128,7 +118,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil actionBlock:nil];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -138,7 +128,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:@selector(exampleSelector)];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -148,7 +138,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -158,7 +148,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:self selector:nil];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -168,7 +158,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
@@ -178,7 +168,7 @@ static UIView *origin;
     [_sheetStringPicker addCustomButtonWithTitle:nil target:nil selector:nil];
     [_sheetStringPicker showActionSheetPicker];
     
-    [self pressFirstCustomButton];
+    [_sheetStringPicker pressFirstCustomButton];
     
     XCTAssertNotNil(_sheetStringPicker);
 }
