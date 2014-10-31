@@ -14,11 +14,11 @@ ActionSheetPicker-3.0
 - [Installation](#installation)
 - [Example Projects](#example-projects)
 - [Screen Shots](#screen-shots)
-- [Apps using ActionSheetPicker-3.0](#apps-using-actionsheetpicker-30)
+- [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilites.
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilities.
 
 New updates will be added only in this repo.
 
@@ -98,7 +98,34 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                       origin:sender];
 // You can also use self.view if you don't have a sender
 ```
+### What about custom buttons? Let's check it out
+ 
+ ```obj-c
+ // Inside a IBAction method:
 
+ // Create an array of strings you want to show in the picker:
+NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+ 
+ //Create your picker:
+ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a color"
+                                                                                 rows:colors
+                                                                     initialSelection:0
+                                                                               target:nil
+                                                                        successAction:nil
+                                                                         cancelAction:nil
+                                                                               origin:sender];
+ 
+ //You can pass your picker a value on custom button being pressed:
+[colorPicker addCustomButtonWithTitle:@"Value" value:@([colors indexOfObject:colors.lastObject])];
+ 
+ //Or you can pass it custom block:
+[colorPicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+    NSLog(@"Custom block invoked");
+}];
+
+ //If you prefer to send selectors rather than blocks you can use this method:
+[colorPicker addCustomButtonWithTitle:@"Selector" target:self selector:@selector(awesomSelector)];
+ ```
 
 ## ActionSheetCustomPicker Customization
 
@@ -138,9 +165,6 @@ The "old school" way is manually add to your project all from [Pickers](/Pickers
 
 ## Example Projects##
 #### For iOS 8 (Objective-C + Swift):
-
-To look at Examples, open in Xcode **Example.xcworkspace**.
-
 `open Example.xcworkspace`
 
 Here is 4 projects:
@@ -148,7 +172,7 @@ Here is 4 projects:
 - **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
 - **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
-- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. You can run this project separatly: `open Example-for-and-6/ActionSheetPicker.xcodeproj`
+- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
 ## Screen Shots
 
@@ -159,9 +183,10 @@ Here is 4 projects:
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 
-## Apps using ActionSheetPicker-3.0
+## Apps using this library
 
-If you are using ActionSheetPicker-3.0 in your app or know of an app that uses it, please add it to [this list](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0).
+* [Economic Calendar Forex FxTeam](https://itunes.apple.com/us/app/economic-calendar-forex-fxteam/id740636885?mt=8)
+* Add yours App here! *(by pull request or email me!)*
 
 ## Maintainer and Contributor
 

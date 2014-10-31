@@ -28,10 +28,30 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
-static NSString *const kButtonValue = @"buttonValue";
+typedef NS_ENUM(NSInteger, ActionType)
+{
+    Value,
+    Selector,
+    Block
+};
 
-static NSString *const kButtonTitle = @"buttonTitle";
+typedef void (^ActionBlock)(void);
+
+static NSString *const kButtonValue   = @"buttonValue";
+
+static NSString *const kButtonTitle   = @"buttonTitle";
+
+static NSString *const kActionType    = @"buttonAction";
+
+static NSString *const kActionTarget  = @"buttonActionTarget";
 
 @interface AbstractActionSheetPicker : NSObject<UIPopoverControllerDelegate>
 @property (nonatomic, strong) UIToolbar* toolbar;
@@ -62,6 +82,12 @@ static NSString *const kButtonTitle = @"buttonTitle";
 
     // Adds custom buttons to the left of the UIToolbar that select specified values
 - (void)addCustomButtonWithTitle:(NSString *)title value:(id)value;
+
+    // Adds custom buttons to the left of the UIToolbar that implement specified block
+- (void)addCustomButtonWithTitle:(NSString *)title actionBlock:(ActionBlock)block;
+
+    // Adds custom buttons to the left of the UIToolbar that implement specified selector
+- (void)addCustomButtonWithTitle:(NSString*)title target:(id)target selector:(SEL)selector;
 
     //For subclasses. This responds to a custom button being pressed.
 - (IBAction)customButtonPressed:(id)sender;

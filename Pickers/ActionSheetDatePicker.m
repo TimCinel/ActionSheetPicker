@@ -176,12 +176,29 @@
     UIBarButtonItem *button = (UIBarButtonItem*)sender;
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %zd, custom button count: %zd", index, self.customButtons.count);
-    NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
-    NSDate *itemValue = buttonDetails[kButtonValue];
-    UIDatePicker *picker = (UIDatePicker *)self.pickerView;
-    [picker setDate:itemValue animated:YES];
-    [self eventForDatePicker:picker];
+    NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
+    
+    ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
+    switch (actionType) {
+        case Value: {
+            NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
+            NSDate *itemValue = buttonDetails[kButtonValue];
+            UIDatePicker *picker = (UIDatePicker *)self.pickerView;
+            [picker setDate:itemValue animated:YES];
+            [self eventForDatePicker:picker];
+            break;
+        }
+            
+        case Block:
+        case Selector:
+            [super customButtonPressed:sender];
+            break;
+
+        default:
+            NSAssert(false, @"Unknown action type");
+            break;
+    }
 }
 
 @end
