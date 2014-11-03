@@ -81,7 +81,7 @@ def execute_line(line)
     puts 'Dry run: ' + line
   else
     puts line
-    value =%x[#{line}]
+    value = %x[#{line}]
     puts value
     if $?.exitstatus != 0
       puts "Error (exit status = #{$?} -> exit"
