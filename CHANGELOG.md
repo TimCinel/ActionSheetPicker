@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.1)
+#### 2014/11/03
+- Fix for #84 and #63 ([\#85](https://github.com/skywinder/ActionSheetPicker-3.0/pull/85))
+ 
 ## [1.3.0] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.0)
 #### 2014/10/13
 - Added callback for custom button being pressed ([\#81](https://github.com/skywinder/ActionSheetPicker-3.0/pull/81))
