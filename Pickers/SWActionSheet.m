@@ -5,8 +5,6 @@
 #import "SWActionSheet.h"
 
 
-static UIWindow *SWActionSheetWindow = nil;
-
 static const float delay = 0.f;
 
 static const float duration = .25f;
@@ -22,6 +20,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 
 @interface SWActionSheet ()
+{
+    UIWindow *SWActionSheetWindow;
+}
 
 @property (nonatomic, assign) BOOL presented;
 
@@ -51,7 +52,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     void (^completion)(BOOL) = ^(BOOL finished) {
     //    if (![appWindow isKeyWindow])
     //        [appWindow makeKeyAndVisible];
-        [SWActionSheet destroyWindow];
+        [self destroyWindow];
         [self removeFromSuperview];
     };
     // Do actions animated or not
@@ -64,11 +65,11 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     self.presented = NO;
 }
 
-+ (void)destroyWindow
+- (void)destroyWindow
 {
     if (SWActionSheetWindow)
     {
-        [SWActionSheet actionSheetContainer].actionSheet = nil;
+        [self actionSheetContainer].actionSheet = nil;
         SWActionSheetWindow.hidden = YES;
         if ([SWActionSheetWindow isKeyWindow])
             [SWActionSheetWindow resignFirstResponder];
@@ -76,20 +77,27 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
-+ (UIWindow *)window
+- (UIWindow *)window
 {
-    return (SWActionSheetWindow ?: (SWActionSheetWindow = ({
-        UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        window.windowLevel = UIWindowLevelAlert;
-        window.backgroundColor = [UIColor clearColor];
-        window.rootViewController = [SWActionSheetVC new];
-        window;
-    })));
+    if ( SWActionSheetWindow )
+    {
+        return SWActionSheetWindow;
+    }
+    else
+    {
+        return SWActionSheetWindow = ({
+            UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+            window.windowLevel        = UIWindowLevelAlert;
+            window.backgroundColor    = [UIColor clearColor];
+            window.rootViewController = [SWActionSheetVC new];
+            window;
+        });
+    }
 }
 
-+ (SWActionSheetVC *)actionSheetContainer
+- (SWActionSheetVC *)actionSheetContainer
 {
-    return (SWActionSheetVC *) [SWActionSheet window].rootViewController;
+    return (SWActionSheetVC *) [self window].rootViewController;
 }
 
 - (instancetype)initWithView:(UIView *)aView
@@ -123,12 +131,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 - (void)showInContainerView
 {
     // Make sheet window visible and active
-    UIWindow *sheetWindow = [SWActionSheet window];
+    UIWindow *sheetWindow = [self window];
     if (![sheetWindow isKeyWindow])
         [sheetWindow makeKeyAndVisible];
     sheetWindow.hidden = NO;
     // Put our ActionSheet in Container (it will be presented as soon as possible)
-    [SWActionSheet actionSheetContainer].actionSheet = self;
+    [self actionSheetContainer].actionSheet = self;
 }
 
 - (void)showInContainerViewAnimated:(BOOL)animated
