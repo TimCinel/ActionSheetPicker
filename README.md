@@ -158,10 +158,10 @@ Example with custom button for cancel button:
 
 ##Installation##
 
-The most easiest way is through [Cocoapods](http://cocoapods.org/).
-Just add to your Podfile string: `pod 'ActionSheetPicker-3.0'
+-  The most easiest way is through [Cocoapods](http://cocoapods.org/).
+Just add to your Podfile string: `pod 'ActionSheetPicker-3.0'`
 
-The "old school" way is manually add to your project all from [Pickers](/Pickers) folder and import necessary headers.
+-  The "old school" way is manually add to your project all from [Pickers](/Pickers) folder and import necessary headers.
 
 ## Example Projects##
 #### For iOS 8 (Objective-C + Swift):
@@ -183,10 +183,8 @@ Here is 4 projects:
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 
-## Apps using this library
-
-* [Economic Calendar Forex FxTeam](https://itunes.apple.com/us/app/economic-calendar-forex-fxteam/id740636885?mt=8)
-* Add yours App here! *(by pull request or email me!)*
+## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) 
+*If you are using `ActionSheetPicker-3.0` in your app or know of an app that uses it, please add it to [this] (https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) list.*
 
 ## Maintainer and Contributor
 
@@ -194,6 +192,6 @@ Here is 4 projects:
 
 ## Credits
 
-ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
+- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
 
-And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
+- And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
