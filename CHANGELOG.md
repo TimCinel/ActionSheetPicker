@@ -1,11 +1,16 @@
 # Changelog
 
-## [1.2.0] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.2.0)
+## [1.3.0] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.0)
 #### 2014/10/13
-- Added callback for custom button being pressed (#81)
-- Added support for popover customizations. (#77)
-- General fixes for #74 & #50 (#76)
-- Further support for countdown timer (#74)
+- Added callback for custom button being pressed ([\#81](https://github.com/skywinder/ActionSheetPicker-3.0/pull/81))
+- Added support for popover customizations. ([\#77](https://github.com/skywinder/ActionSheetPicker-3.0/pull/77))
+- General fixes for #74 & #50 ([\#76](https://github.com/skywinder/ActionSheetPicker-3.0/pull/76))
+- Further support for countdown timer ([\#74](https://github.com/skywinder/ActionSheetPicker-3.0/pull/74))
+
+
+## <a href="https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.20">1.1.20</a>
+#### 13/10/14
+- Fixed crash <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pull/65">#65</a>.
 
 ## <a href="https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.20">1.1.20</a>
 #### 13/10/14
