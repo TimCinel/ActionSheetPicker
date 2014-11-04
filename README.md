@@ -18,7 +18,7 @@ ActionSheetPicker-3.0
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is outdated, I forked from his repo and implement a bunch of UI fixes, crush-fixes and different customisation abilities.
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crush-fixes and different customisation abilities.
 
 New updates will be added only in this repo.
 
@@ -98,7 +98,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                       origin:sender];
 // You can also use self.view if you don't have a sender
 ```
-### What about custom buttons? Let's check it out
+### What about custom buttons? Let's check it out:
  
  ```obj-c
  // Inside a IBAction method:
@@ -124,7 +124,7 @@ ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWith
 }];
 
  //If you prefer to send selectors rather than blocks you can use this method:
-[colorPicker addCustomButtonWithTitle:@"Selector" target:self selector:@selector(awesomSelector)];
+[colorPicker addCustomButtonWithTitle:@"Selector" target:self selector:@selector(awesomeSelector)];
  ```
 
 ## ActionSheetCustomPicker Customization
