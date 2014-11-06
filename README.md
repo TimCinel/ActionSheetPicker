@@ -202,4 +202,4 @@ Here is 4 projects:
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
 
-***Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
+**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
