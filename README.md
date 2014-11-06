@@ -193,7 +193,7 @@ Here is 4 projects:
 
 - And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
 
-# Contributing
+## Contributing
 
 1. Create an issue to discuss about your idea
 2. Fork it (https://github.com/skywinder/ActionSheetPicker-3.0/fork)
