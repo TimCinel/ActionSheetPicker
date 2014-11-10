@@ -15,7 +15,7 @@ OptionParser.new { |opts|
   opts.on('-m', '--minor', 'Bump minor version') do |v|
     @options[:minor] = v
   end
-  opts.on('-r', '--revision', 'Bump minor version') do |v|
+  opts.on('-p', '--patch', 'Bump patch version') do |v|
     @options[:revision] = v
   end
 }.parse!
