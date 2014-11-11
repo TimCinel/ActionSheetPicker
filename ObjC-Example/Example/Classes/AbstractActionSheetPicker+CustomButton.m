@@ -18,4 +18,14 @@
     );
 }
 
+- (void)pressDoneButton
+{
+    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
+    //So, check custom button:
+    UIBarButtonItem *customBarButton = self.toolbar.items[4];
+    SuppressPerformSelectorLeakWarning (
+            [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
+    );
+}
+
 @end
