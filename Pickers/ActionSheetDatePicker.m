@@ -126,7 +126,7 @@
     if (self.onActionSheetDone)
     {
         if (self.datePickerMode == UIDatePickerModeCountDownTimer)
-            self.onActionSheetDone(self, @(self.countDownDuration), origin);
+            self.onActionSheetDone(self, @(((UIDatePicker *)self.pickerView).countDownDuration), origin);
         else
             self.onActionSheetDone(self, self.selectedDate, origin);
 
