@@ -185,8 +185,11 @@
             NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
             NSDate *itemValue = buttonDetails[kButtonValue];
             UIDatePicker *picker = (UIDatePicker *)self.pickerView;
-            [picker setDate:itemValue animated:YES];
-            [self eventForDatePicker:picker];
+            if (self.datePickerMode !=  UIDatePickerModeCountDownTimer)
+            {
+                [picker setDate:itemValue animated:YES];
+                [self eventForDatePicker:picker];
+            }
             break;
         }
             
