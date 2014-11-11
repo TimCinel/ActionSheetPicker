@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/CoreActionSheetPicker.h>
 #import "AbstractActionSheetPicker+CustomButton.h"
+
+static const int countdownTestInt = 360;
 UIView *origin;
 
 @interface ActionSheetDatePickerTestCase : XCTestCase
@@ -132,6 +134,35 @@ UIView *origin;
     [_actionSheetDatePicker pressFirstCustomButton];
     
     XCTAssertNotNil(_actionSheetDatePicker);
+}
+
+- (void)testPickerCountDownTimerModeValueWithSelector
+{
+    _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test title" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil target:self action:@selector(countDownTest:) origin:origin cancelAction:nil];
+    _actionSheetDatePicker.countDownDuration = countdownTestInt;
+    [_actionSheetDatePicker showActionSheetPicker];
+    [_actionSheetDatePicker pressDoneButton];
+
+    XCTAssertNotNil(_actionSheetDatePicker);
+}
+
+- (void)testPickerCountDownTimerModeValueWithBlock
+{
+    _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+        XCTAssertEqualObjects(selectedDate, @(countdownTestInt));
+    } cancelBlock:nil origin:origin];
+
+    _actionSheetDatePicker.countDownDuration = countdownTestInt;
+    [_actionSheetDatePicker showActionSheetPicker];
+    UIDatePicker *picker = (UIDatePicker *)_actionSheetDatePicker.pickerView;
+    [_actionSheetDatePicker pressDoneButton];
+
+    XCTAssertNotNil(_actionSheetDatePicker);
+}
+
+- (void)countDownTest:(NSNumber *)number
+{
+    XCTAssertEqualObjects(number, @(countdownTestInt));
 }
 
 - (void)exampleSelector

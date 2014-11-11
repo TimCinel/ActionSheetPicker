@@ -9,4 +9,5 @@
 
 - (void)pressFirstCustomButton;
 
+- (void)pressDoneButton;
 @end
