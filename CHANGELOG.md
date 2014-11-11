@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.2] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.2)
+#### 11/11/14
+- *Merged pull-request:* Add additional check for UIDatePickerModeCountDownTimer [\#91](https://github.com/skywinder/ActionSheetPicker-3.0/pull/91)
+
+- *Merged pull-request:* Count down duration fix [\#89](https://github.com/skywinder/ActionSheetPicker-3.0/pull/89)
+
+- *Implemented enhancement:* Run picker within done block of another [\#84](https://github.com/skywinder/ActionSheetPicker-3.0/issues/84)
+
 ## [1.3.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.1)
 #### 04/11/14
 - *Merged pull-request:* Fix for #84 and #63 [\#85](https://github.com/skywinder/ActionSheetPicker-3.0/pull/85)
