@@ -136,7 +136,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-            [target performSelector:action withObject:@(self.countDownDuration) withObject:origin];
+            [target performSelector:action withObject:@(((UIDatePicker *)self.pickerView).countDownDuration) withObject:origin];
             
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
