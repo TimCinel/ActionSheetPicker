@@ -7,7 +7,7 @@ SPEC_TYPE = 'podspec'
 :minor
 :patch
 
-@options = {:dry_run => false, :bump_number => :patch}
+@options = {:dry_run => false, :bump_number => :patch, :changelog => true}
 
 OptionParser.new { |opts|
   opts.banner = 'Usage: bump.rb [options]'
@@ -15,7 +15,7 @@ OptionParser.new { |opts|
   opts.on('-d', '--dry-run', 'Dry run') do |v|
     @options[:dry_run] = v
   end
-  opts.on('-a', '--major', 'Bump major version') do |v|
+  opts.on('-r', '--release', 'Bump release version') do |v|
     @options[:bump_number] = :major
   end
   opts.on('-m', '--minor', 'Bump minor version') do |v|
@@ -27,9 +27,10 @@ OptionParser.new { |opts|
   opts.on('-r', '--revert', 'Revert last bump') do |v|
     @options[:revert] = v
   end
+  opts.on('-c', '--[no]-changelog', 'Auto generation of changelog and pushing it origin. Default is true') do |v|
+    @options[:changelog] = v
+  end
 }.parse!
-
-p @options
 
 def check_repo_is_clean_or_dry_run
   value =%x[#{'git status --porcelain'}]
@@ -197,7 +198,14 @@ def run_bumping_script
   # execute_line_if_not_dry_run("gem build #{spec_file}")
   # gem = find_current_gem_file
   # execute_line_if_not_dry_run("gem push #{gem}")
+
   execute_line_if_not_dry_run("pod trunk push #{spec_file}")
+
+  if @options[:changelog]
+    execute_line_if_not_dry_run("github_changelog_generator")
+    execute_line_if_not_dry_run("git commit CHANGELOG.md -m \"Update changelog for version #{bumped_version}\"")
+    execute_line_if_not_dry_run('git push')
+  end
 
 end
 
