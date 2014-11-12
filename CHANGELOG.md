@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.3] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.3)
+#### 12/11/14
+- *Fixed bug:* Compiler warning due to Unicode char in source [\#92](https://github.com/skywinder/ActionSheetPicker-3.0/issues/92)
+
 ## [1.3.2] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.2)
 #### 11/11/14
 - *Merged pull-request:* Add additional check for UIDatePickerModeCountDownTimer [\#91](https://github.com/skywinder/ActionSheetPicker-3.0/pull/91)
