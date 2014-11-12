@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.4] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.4)
+#### 12/11/14
+- *Merged pull-request:* Fix statusBar visibility [\#93](https://github.com/skywinder/ActionSheetPicker-3.0/pull/93)
+
 ## [1.3.3] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.3)
 #### 12/11/14
 - *Fixed bug:* Compiler warning due to Unicode char in source [\#92](https://github.com/skywinder/ActionSheetPicker-3.0/issues/92)
@@ -59,8 +63,6 @@
 - *Merged pull-request:* Update SWActionSheet.m [\#60](https://github.com/skywinder/ActionSheetPicker-3.0/pull/60)
 
 - *Merged pull-request:* Fix for UIDatePickerModeCountDownTimer callback [\#50](https://github.com/skywinder/ActionSheetPicker-3.0/pull/50)
-
-- *Implemented enhancement:* How to change font of picker data rows? [\#58](https://github.com/skywinder/ActionSheetPicker-3.0/issues/58)
 
 - *Implemented enhancement:* Selected Row color [\#59](https://github.com/skywinder/ActionSheetPicker-3.0/issues/59)
 
@@ -122,16 +124,10 @@
 #### 12/08/14
 ## [1.0.15] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.15)
 #### 11/08/14
-## [1.0.14] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.14)
-#### 01/08/14
 - *Merged pull-request:* Set minimum date properly. [\#14](https://github.com/skywinder/ActionSheetPicker-3.0/pull/14)
 
-## [1.0.13] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.13)
-#### 30/07/14
 - *Merged pull-request:* Minute Interval for ActionDatePicker [\#12](https://github.com/skywinder/ActionSheetPicker-3.0/pull/12)
 
-## [1.0.12] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.12)
-#### 24/07/14
 - *Merged pull-request:* added check for iPhone 4, to fix transparent view background problem. [\#6](https://github.com/skywinder/ActionSheetPicker-3.0/pull/6)
 
 - *Merged pull-request:* Convert screenshots over to iOS 7. [\#3](https://github.com/skywinder/ActionSheetPicker-3.0/pull/3)
