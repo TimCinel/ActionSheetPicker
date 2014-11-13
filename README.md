@@ -13,13 +13,13 @@ ActionSheetPicker-3.0
 	- [ActionSheetCustomPicker Customisation](#actionsheetcustompicker-customisation)
 - [Installation](#installation)
 - [Example Projects](#example-projects)
-- [Screen Shots](#screen-shots)
+- [Screenshots](#screen-shots)
 - [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 - [Contributing](#contributing)
 
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crush-fixes and different customisation abilities.
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crash-fixes and different customisation abilities.
 
 New updates will be added only in this repo.
 
@@ -97,7 +97,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 ### ActionSheetCustomPicker Customisation
 
-ActionSheetCustomPicker provides the following delegate function that can be used for customisation:
+ActionSheetCustomPicker provides the following delegate function that can be used for customization:
 
 ```obj-c
 - (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
