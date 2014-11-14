@@ -25,7 +25,7 @@ New updates will be added only in this repo.
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 1.3.4'` (**iOS 6-7-8** compatible!)
+`pod 'ActionSheetPicker-3.0', '~> 1.3.5'` (**iOS 6-7-8** compatible!)
 
 Improvements more than welcome - they are kindly requested :)
 
