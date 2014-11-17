@@ -21,6 +21,8 @@
 		1C7A57AD199DF30B007B9B70 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57AB199DF30B007B9B70 /* ok.png */; };
 		1C84AF9019DE9B0000EF5B2E /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C84AF8F19DE9B0000EF5B2E /* CoreActionSheetPicker.framework */; };
 		1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1C8B59471A19EA29003857EF /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8B59461A19EA29003857EF /* CoreActionSheetPicker.framework */; };
+		1C8B59481A19EA2A003857EF /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8B59461A19EA29003857EF /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C9444B7197B1C2F005F495B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9444B6197B1C2F005F495B /* XCTest.framework */; };
 		1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -49,6 +51,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1C8B59491A19EA2A003857EF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C8B59481A19EA2A003857EF /* CoreActionSheetPicker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerAppDelegate.h; sourceTree = "<group>"; };
 		1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerAppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +84,7 @@
 		1C7A57A8199DEDD5007B9B70 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		1C7A57AB199DF30B007B9B70 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		1C84AF8F19DE9B0000EF5B2E /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
+		1C8B59461A19EA29003857EF /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "/Users/petrkorolev/Library/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<absolute>"; };
 		1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker Tests-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8B59471A19EA29003857EF /* CoreActionSheetPicker.framework in Frameworks */,
 				1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */,
 				1C84AF9019DE9B0000EF5B2E /* CoreActionSheetPicker.framework in Frameworks */,
 			);
@@ -193,6 +211,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1C8B59461A19EA29003857EF /* CoreActionSheetPicker.framework */,
 				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
@@ -253,6 +272,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				1C8B59491A19EA2A003857EF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,6 +492,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -481,6 +502,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +518,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
@@ -503,6 +526,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
