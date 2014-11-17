@@ -203,3 +203,5 @@ Here is 4 projects:
 6. Create a new Pull Request
 
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
+
+[![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
