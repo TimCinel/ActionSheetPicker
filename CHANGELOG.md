@@ -20,6 +20,8 @@
 
 - *Merged pull-request:* Count down duration fix [\#89](https://github.com/skywinder/ActionSheetPicker-3.0/pull/89)
 
+- *Implemented enhancement:* Add delegate for custom button pressed [\#33](https://github.com/skywinder/ActionSheetPicker-3.0/issues/33)
+
 - *Implemented enhancement:* Run picker within done block of another [\#84](https://github.com/skywinder/ActionSheetPicker-3.0/issues/84)
 
 ## [1.3.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.1)
@@ -58,6 +60,8 @@
 #### 07/10/14
 - *Merged pull-request:* title text with attributes. [\#64](https://github.com/skywinder/ActionSheetPicker-3.0/pull/64)
 
+- *Fixed bug:* Xcode 6 / Swift incompatibility [\#36](https://github.com/skywinder/ActionSheetPicker-3.0/issues/36)
+
 ## [1.1.18] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.18)
 #### 03/10/14
 ## [1.1.17] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.17)
@@ -69,6 +73,10 @@
 - *Merged pull-request:* Update SWActionSheet.m [\#60](https://github.com/skywinder/ActionSheetPicker-3.0/pull/60)
 
 - *Merged pull-request:* Fix for UIDatePickerModeCountDownTimer callback [\#50](https://github.com/skywinder/ActionSheetPicker-3.0/pull/50)
+
+- *Implemented enhancement:* Method request: hideActionSheetPicker [\#51](https://github.com/skywinder/ActionSheetPicker-3.0/issues/51)
+
+- *Fixed bug:* DatePicker callback freezes screen [\#42](https://github.com/skywinder/ActionSheetPicker-3.0/issues/42)
 
 ## [1.1.14] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.14)
 #### 28/09/14
@@ -84,15 +92,27 @@
 
 - *Merged pull-request:* test request [\#43](https://github.com/skywinder/ActionSheetPicker-3.0/pull/43)
 
+- *Closed issue:* impossible to run in xcode 6 [\#48](https://github.com/skywinder/ActionSheetPicker-3.0/issues/48)
+
 ## [1.1.12] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.12)
 #### 17/09/14
 - *Merged pull-request:* unexpected action sheet dismissing in portrait mode only [\#40](https://github.com/skywinder/ActionSheetPicker-3.0/pull/40)
 
 - *Merged pull-request:* Support ActionSheet width to full-screen-width in 4.7 inch and 5.5 inch devices [\#38](https://github.com/skywinder/ActionSheetPicker-3.0/pull/38)
 
+- *Implemented enhancement:* ActionSheetDatePicker needs done/cancel blocks [\#37](https://github.com/skywinder/ActionSheetPicker-3.0/issues/37)
+
 ## [1.1.11] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.11)
 #### 16/09/14
 - *Merged pull-request:* Notify cancel on popover dismiss [\#34](https://github.com/skywinder/ActionSheetPicker-3.0/pull/34)
+
+- *Implemented enhancement:* Pop over direction [\#28](https://github.com/skywinder/ActionSheetPicker-3.0/issues/28)
+
+- *Fixed bug:* Show from a presented view controller [\#31](https://github.com/skywinder/ActionSheetPicker-3.0/issues/31)
+
+- *Fixed bug:* ActionSheetStringPicker not showing on iphone [\#30](https://github.com/skywinder/ActionSheetPicker-3.0/issues/30)
+
+- *Closed issue:* ActionSheetPicker needs cancel block to handle hiding [\#39](https://github.com/skywinder/ActionSheetPicker-3.0/issues/39)
 
 ## [1.1.10] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.10)
 #### 04/09/14
@@ -102,13 +122,19 @@
 #### 03/09/14
 - *Merged pull-request:* Update SWActionSheet.m [\#29](https://github.com/skywinder/ActionSheetPicker-3.0/pull/29)
 
+- *Implemented enhancement:* ActionSheetDatePicker target-action [\#27](https://github.com/skywinder/ActionSheetPicker-3.0/issues/27)
+
 ## [1.1.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.8)
 #### 29/08/14
 ## [1.1.7] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.7)
 #### 29/08/14
+- *Closed issue:* Still getting warnings [\#16](https://github.com/skywinder/ActionSheetPicker-3.0/issues/16)
+
 ## [1.1.6] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.6)
 #### 27/08/14
 - *Merged pull-request:* fix readme code [\#26](https://github.com/skywinder/ActionSheetPicker-3.0/pull/26)
+
+- *Fixed bug:* Toolbar buttons don't appear when Actionsheet is fired from an iPad Form Sheet or Page Sheet [\#22](https://github.com/skywinder/ActionSheetPicker-3.0/issues/22)
 
 ## [1.1.5] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.5)
 #### 26/08/14
@@ -116,26 +142,84 @@
 #### 26/08/14
 - *Merged pull-request:* fix iOS8 wrong popover size in iPad [\#25](https://github.com/skywinder/ActionSheetPicker-3.0/pull/25)
 
+- *Fixed bug:* iOS 8 iPad wrong frame size. [\#18](https://github.com/skywinder/ActionSheetPicker-3.0/issues/18)
+
+- *Closed issue:* iOS8 - iPad popover, wrong size [\#24](https://github.com/skywinder/ActionSheetPicker-3.0/issues/24)
+
 ## [1.1.3] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.3)
 #### 25/08/14
+- *Closed issue:* done button color [\#21](https://github.com/skywinder/ActionSheetPicker-3.0/issues/21)
+
+- *Closed issue:* Presented in wrong frame when sender is a navbar bar button item [\#23](https://github.com/skywinder/ActionSheetPicker-3.0/issues/23)
+
 ## [1.1.2] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.2)
 #### 15/08/14
+- *Closed issue:* Invalid context warning in landscape [\#13](https://github.com/skywinder/ActionSheetPicker-3.0/issues/13)
+
+- *Closed issue:* Landscape broken in iOS 7 [\#17](https://github.com/skywinder/ActionSheetPicker-3.0/issues/17)
+
 ## [1.1.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.1)
 #### 13/08/14
 ## [1.0.18] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.18)
 #### 12/08/14
 ## [1.0.17] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.17)
 #### 12/08/14
+- *Closed issue:* Issue with iOS 8 beta  [\#9](https://github.com/skywinder/ActionSheetPicker-3.0/issues/9)
+
+## [1.0.15] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.15)
+#### 11/08/14
+## [1.0.14] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.14)
+#### 01/08/14
 - *Merged pull-request:* Set minimum date properly. [\#14](https://github.com/skywinder/ActionSheetPicker-3.0/pull/14)
 
+## [1.0.13] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.13)
+#### 30/07/14
 - *Merged pull-request:* Minute Interval for ActionDatePicker [\#12](https://github.com/skywinder/ActionSheetPicker-3.0/pull/12)
 
+- *Closed issue:* Use with UITableViewCells [\#4](https://github.com/skywinder/ActionSheetPicker-3.0/issues/4)
+
+## [1.0.12] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.12)
+#### 24/07/14
+- *Closed issue:* configurePickerView for ActionSheetCustomPicker throws exception [\#10](https://github.com/skywinder/ActionSheetPicker-3.0/issues/10)
+
+- *Closed issue:* i get this warning!'sizeWithFont:' is deprecated: first deprecated in iOS 7.0 - Use -sizeWithAttributes: [\#11](https://github.com/skywinder/ActionSheetPicker-3.0/issues/11)
+
+## [1.0.11] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.11)
+#### 19/07/14
+## [1.0.10] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.10)
+#### 14/07/14
+## [1.0.9] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.9)
+#### 07/07/14
+- *Fixed bug:* On Iphone 4 the ActionSheetStringPicker doesn't work Well [\#5](https://github.com/skywinder/ActionSheetPicker-3.0/issues/5)
+
+- *Fixed bug:* Crash when using in 5s iOS 7.1 [\#8](https://github.com/skywinder/ActionSheetPicker-3.0/issues/8)
+
+## [1.0.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.8)
+#### 29/06/14
 - *Merged pull-request:* added check for iPhone 4, to fix transparent view background problem. [\#6](https://github.com/skywinder/ActionSheetPicker-3.0/pull/6)
 
+## [1.0.7] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.7)
+#### 20/06/14
+## [1.0.6] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.6)
+#### 11/06/14
+## [1.0.5] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.5)
+#### 27/05/14
+## [1.0.4] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.4)
+#### 25/05/14
 - *Merged pull-request:* Convert screenshots over to iOS 7. [\#3](https://github.com/skywinder/ActionSheetPicker-3.0/pull/3)
 
 - *Merged pull-request:* Add basic documentation to the readme. [\#2](https://github.com/skywinder/ActionSheetPicker-3.0/pull/2)
 
+## [1.0.3] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.3)
+#### 21/05/14
+## [1.0.2] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.2)
+#### 21/05/14
+- *Merged pull-request:* Get tint color for actionsheet buttons from application window [\#1](https://github.com/skywinder/ActionSheetPicker-3.0/pull/1)
+
+## [1.0.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.1)
+#### 19/05/14
+## [0.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/0.1)
+#### 11/05/12
 
 
 \* *This changelog was generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
