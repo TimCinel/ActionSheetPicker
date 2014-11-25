@@ -1,6 +1,10 @@
 language: objective-c
-# xcode_project: ActionSheetPicker.xcodeproj # path to your xcodeproj folder
-# xcode_scheme: ActionSheetPickerTests
+before_install:
+    - brew update
+    - brew install xctool
+# script: xctool -workspace Example.xcworkspace -scheme ActionSheetPickerTests test
+xcode_workspace: Example.xcworkspace
+xcode_scheme: ActionSheetPickerTests
 # xcode_sdk: iphonesimulator
 
 notifications:
@@ -9,6 +13,3 @@ notifications:
       - sky4winder+actionSheetPicker@gmail.com
     on_success: never # [always|never|change]
     on_failure: change # [always|never|change]
-
-script:
-  - xcodebuild clean build test -workspace Example.xcworkspace -scheme ActionSheetPickerTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO 
