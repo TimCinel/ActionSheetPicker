@@ -173,15 +173,15 @@
 			files = (
 				1C9972C419DA9D7A004ADD27 /* AbstractActionSheetPicker.h in Headers */,
 				1C9972C919DA9D7A004ADD27 /* ActionSheetDatePicker.h in Headers */,
-				1C99729B19DA9B98004ADD27 /* CoreActionSheetPicker.h in Headers */,
 				1C9972CD19DA9D7A004ADD27 /* ActionSheetStringPicker.h in Headers */,
 				1C9972CB19DA9D7A004ADD27 /* ActionSheetDistancePicker.h in Headers */,
 				1C9972D319DA9D7A004ADD27 /* ActionSheetLocalePicker.h in Headers */,
 				1C9972C819DA9D7A004ADD27 /* ActionSheetCustomPickerDelegate.h in Headers */,
 				1C9972CF19DA9D7A004ADD27 /* DistancePickerView.h in Headers */,
 				1C9972C619DA9D7A004ADD27 /* ActionSheetCustomPicker.h in Headers */,
-				1C9972D119DA9D7A004ADD27 /* SWActionSheet.h in Headers */,
+				1C99729B19DA9B98004ADD27 /* CoreActionSheetPicker.h in Headers */,
 				D66F59C88F5295C6C8C40FAD /* ActionSheetPicker.h in Headers */,
+				1C9972D119DA9D7A004ADD27 /* SWActionSheet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
