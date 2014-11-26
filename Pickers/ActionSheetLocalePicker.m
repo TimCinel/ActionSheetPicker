@@ -185,7 +185,11 @@
         self.selectedCity = array[1];
     }
     else
+    {
+        NSLog(@"array count = %d", array.count);
+        NSLog(@"array = %@", array);
         assert(NO);
+    }
 
 }
 
