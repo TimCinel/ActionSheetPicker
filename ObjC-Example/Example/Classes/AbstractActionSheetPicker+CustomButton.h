@@ -3,7 +3,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreActionSheetPicker/AbstractActionSheetPicker.h>
+#import <CoreActionSheetPicker/CoreActionSheetPicker.h>
 
 @interface AbstractActionSheetPicker (CustomButton)
 

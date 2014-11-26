@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CA808741A25CE49004252BA /* CoreActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808731A25CE49004252BA /* CoreActionSheetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA8087A1A25CE49004252BA /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA8086E1A25CE49004252BA /* CoreActionSheetPicker.framework */; };
+		1CA808811A25CE49004252BA /* CoreActionSheetPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA808801A25CE49004252BA /* CoreActionSheetPickerTests.m */; };
+		1CA8089C1A25CE96004252BA /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8088B1A25CE96004252BA /* AbstractActionSheetPicker.m */; };
+		1CA8089D1A25CE96004252BA /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8088C1A25CE96004252BA /* ActionSheetDatePicker.m */; };
+		1CA8089E1A25CE96004252BA /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8088D1A25CE96004252BA /* DistancePickerView.m */; };
+		1CA8089F1A25CE96004252BA /* AbstractActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA8088E1A25CE96004252BA /* AbstractActionSheetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A01A25CE96004252BA /* ActionSheetCustomPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA8088F1A25CE96004252BA /* ActionSheetCustomPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A11A25CE96004252BA /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA808901A25CE96004252BA /* ActionSheetCustomPicker.m */; };
+		1CA808A21A25CE96004252BA /* ActionSheetCustomPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808911A25CE96004252BA /* ActionSheetCustomPickerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A31A25CE96004252BA /* ActionSheetDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808921A25CE96004252BA /* ActionSheetDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A41A25CE96004252BA /* ActionSheetDistancePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808931A25CE96004252BA /* ActionSheetDistancePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A51A25CE96004252BA /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA808941A25CE96004252BA /* ActionSheetDistancePicker.m */; };
+		1CA808A61A25CE96004252BA /* ActionSheetLocalePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808951A25CE96004252BA /* ActionSheetLocalePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A71A25CE96004252BA /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA808961A25CE96004252BA /* ActionSheetLocalePicker.m */; };
+		1CA808A81A25CE96004252BA /* ActionSheetStringPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808971A25CE96004252BA /* ActionSheetStringPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808A91A25CE96004252BA /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA808981A25CE96004252BA /* ActionSheetStringPicker.m */; };
+		1CA808AA1A25CE96004252BA /* DistancePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808991A25CE96004252BA /* DistancePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CA808AB1A25CE96004252BA /* SWActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA8089A1A25CE96004252BA /* SWActionSheet.h */; };
+		1CA808AC1A25CE96004252BA /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8089B1A25CE96004252BA /* SWActionSheet.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CA8087B1A25CE49004252BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CA808651A25CE49004252BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CA8086D1A25CE49004252BA;
+			remoteInfo = CoreActionSheetPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CA8086E1A25CE49004252BA /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreActionSheetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CA808721A25CE49004252BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CA808731A25CE49004252BA /* CoreActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreActionSheetPicker.h; sourceTree = "<group>"; };
+		1CA808791A25CE49004252BA /* CoreActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CA8087F1A25CE49004252BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CA808801A25CE49004252BA /* CoreActionSheetPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreActionSheetPickerTests.m; sourceTree = "<group>"; };
+		1CA8088B1A25CE96004252BA /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractActionSheetPicker.m; path = ../../Pickers/AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		1CA8088C1A25CE96004252BA /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetDatePicker.m; path = ../../Pickers/ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		1CA8088D1A25CE96004252BA /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DistancePickerView.m; path = ../../Pickers/DistancePickerView.m; sourceTree = "<group>"; };
+		1CA8088E1A25CE96004252BA /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractActionSheetPicker.h; path = ../../Pickers/AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		1CA8088F1A25CE96004252BA /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetCustomPicker.h; path = ../../Pickers/ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		1CA808901A25CE96004252BA /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetCustomPicker.m; path = ../../Pickers/ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		1CA808911A25CE96004252BA /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetCustomPickerDelegate.h; path = ../../Pickers/ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		1CA808921A25CE96004252BA /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetDatePicker.h; path = ../../Pickers/ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		1CA808931A25CE96004252BA /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetDistancePicker.h; path = ../../Pickers/ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		1CA808941A25CE96004252BA /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetDistancePicker.m; path = ../../Pickers/ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		1CA808951A25CE96004252BA /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetLocalePicker.h; path = ../../Pickers/ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		1CA808961A25CE96004252BA /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetLocalePicker.m; path = ../../Pickers/ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		1CA808971A25CE96004252BA /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetStringPicker.h; path = ../../Pickers/ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		1CA808981A25CE96004252BA /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetStringPicker.m; path = ../../Pickers/ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		1CA808991A25CE96004252BA /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistancePickerView.h; path = ../../Pickers/DistancePickerView.h; sourceTree = "<group>"; };
+		1CA8089A1A25CE96004252BA /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = ../../Pickers/SWActionSheet.h; sourceTree = "<group>"; };
+		1CA8089B1A25CE96004252BA /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = ../../Pickers/SWActionSheet.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CA8086A1A25CE49004252BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CA808761A25CE49004252BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA8087A1A25CE49004252BA /* CoreActionSheetPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CA808641A25CE49004252BA = {
+			isa = PBXGroup;
+			children = (
+				1CA808701A25CE49004252BA /* CoreActionSheetPicker */,
+				1CA8087D1A25CE49004252BA /* CoreActionSheetPickerTests */,
+				1CA8086F1A25CE49004252BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CA8086F1A25CE49004252BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8086E1A25CE49004252BA /* CoreActionSheetPicker.framework */,
+				1CA808791A25CE49004252BA /* CoreActionSheetPickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CA808701A25CE49004252BA /* CoreActionSheetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8088A1A25CE7F004252BA /* Pickers */,
+				1CA808731A25CE49004252BA /* CoreActionSheetPicker.h */,
+				1CA808711A25CE49004252BA /* Supporting Files */,
+			);
+			path = CoreActionSheetPicker;
+			sourceTree = "<group>";
+		};
+		1CA808711A25CE49004252BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CA808721A25CE49004252BA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CA8087D1A25CE49004252BA /* CoreActionSheetPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CA808801A25CE49004252BA /* CoreActionSheetPickerTests.m */,
+				1CA8087E1A25CE49004252BA /* Supporting Files */,
+			);
+			path = CoreActionSheetPickerTests;
+			sourceTree = "<group>";
+		};
+		1CA8087E1A25CE49004252BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8087F1A25CE49004252BA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CA8088A1A25CE7F004252BA /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8088B1A25CE96004252BA /* AbstractActionSheetPicker.m */,
+				1CA8088C1A25CE96004252BA /* ActionSheetDatePicker.m */,
+				1CA8088D1A25CE96004252BA /* DistancePickerView.m */,
+				1CA8088E1A25CE96004252BA /* AbstractActionSheetPicker.h */,
+				1CA8088F1A25CE96004252BA /* ActionSheetCustomPicker.h */,
+				1CA808901A25CE96004252BA /* ActionSheetCustomPicker.m */,
+				1CA808911A25CE96004252BA /* ActionSheetCustomPickerDelegate.h */,
+				1CA808921A25CE96004252BA /* ActionSheetDatePicker.h */,
+				1CA808931A25CE96004252BA /* ActionSheetDistancePicker.h */,
+				1CA808941A25CE96004252BA /* ActionSheetDistancePicker.m */,
+				1CA808951A25CE96004252BA /* ActionSheetLocalePicker.h */,
+				1CA808961A25CE96004252BA /* ActionSheetLocalePicker.m */,
+				1CA808971A25CE96004252BA /* ActionSheetStringPicker.h */,
+				1CA808981A25CE96004252BA /* ActionSheetStringPicker.m */,
+				1CA808991A25CE96004252BA /* DistancePickerView.h */,
+				1CA8089A1A25CE96004252BA /* SWActionSheet.h */,
+				1CA8089B1A25CE96004252BA /* SWActionSheet.m */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1CA8086B1A25CE49004252BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA808AB1A25CE96004252BA /* SWActionSheet.h in Headers */,
+				1CA8089F1A25CE96004252BA /* AbstractActionSheetPicker.h in Headers */,
+				1CA808A31A25CE96004252BA /* ActionSheetDatePicker.h in Headers */,
+				1CA808AA1A25CE96004252BA /* DistancePickerView.h in Headers */,
+				1CA808A81A25CE96004252BA /* ActionSheetStringPicker.h in Headers */,
+				1CA808A41A25CE96004252BA /* ActionSheetDistancePicker.h in Headers */,
+				1CA808A61A25CE96004252BA /* ActionSheetLocalePicker.h in Headers */,
+				1CA808A21A25CE96004252BA /* ActionSheetCustomPickerDelegate.h in Headers */,
+				1CA808A01A25CE96004252BA /* ActionSheetCustomPicker.h in Headers */,
+				1CA808741A25CE49004252BA /* CoreActionSheetPicker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1CA8086D1A25CE49004252BA /* CoreActionSheetPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CA808841A25CE49004252BA /* Build configuration list for PBXNativeTarget "CoreActionSheetPicker" */;
+			buildPhases = (
+				1CA808691A25CE49004252BA /* Sources */,
+				1CA8086A1A25CE49004252BA /* Frameworks */,
+				1CA8086B1A25CE49004252BA /* Headers */,
+				1CA8086C1A25CE49004252BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreActionSheetPicker;
+			productName = CoreActionSheetPicker;
+			productReference = 1CA8086E1A25CE49004252BA /* CoreActionSheetPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1CA808781A25CE49004252BA /* CoreActionSheetPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CA808871A25CE49004252BA /* Build configuration list for PBXNativeTarget "CoreActionSheetPickerTests" */;
+			buildPhases = (
+				1CA808751A25CE49004252BA /* Sources */,
+				1CA808761A25CE49004252BA /* Frameworks */,
+				1CA808771A25CE49004252BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CA8087C1A25CE49004252BA /* PBXTargetDependency */,
+			);
+			name = CoreActionSheetPickerTests;
+			productName = CoreActionSheetPickerTests;
+			productReference = 1CA808791A25CE49004252BA /* CoreActionSheetPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CA808651A25CE49004252BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Petr Korolev";
+				TargetAttributes = {
+					1CA8086D1A25CE49004252BA = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					1CA808781A25CE49004252BA = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 1CA808681A25CE49004252BA /* Build configuration list for PBXProject "CoreActionSheetPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1CA808641A25CE49004252BA;
+			productRefGroup = 1CA8086F1A25CE49004252BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CA8086D1A25CE49004252BA /* CoreActionSheetPicker */,
+				1CA808781A25CE49004252BA /* CoreActionSheetPickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CA8086C1A25CE49004252BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CA808771A25CE49004252BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CA808691A25CE49004252BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA808A11A25CE96004252BA /* ActionSheetCustomPicker.m in Sources */,
+				1CA8089E1A25CE96004252BA /* DistancePickerView.m in Sources */,
+				1CA8089C1A25CE96004252BA /* AbstractActionSheetPicker.m in Sources */,
+				1CA808AC1A25CE96004252BA /* SWActionSheet.m in Sources */,
+				1CA808A71A25CE96004252BA /* ActionSheetLocalePicker.m in Sources */,
+				1CA808A91A25CE96004252BA /* ActionSheetStringPicker.m in Sources */,
+				1CA808A51A25CE96004252BA /* ActionSheetDistancePicker.m in Sources */,
+				1CA8089D1A25CE96004252BA /* ActionSheetDatePicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CA808751A25CE49004252BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA808811A25CE49004252BA /* CoreActionSheetPickerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CA8087C1A25CE49004252BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CA8086D1A25CE49004252BA /* CoreActionSheetPicker */;
+			targetProxy = 1CA8087B1A25CE49004252BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1CA808821A25CE49004252BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1CA808831A25CE49004252BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1CA808851A25CE49004252BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreActionSheetPicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1CA808861A25CE49004252BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreActionSheetPicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1CA808881A25CE49004252BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoreActionSheetPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1CA808891A25CE49004252BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoreActionSheetPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CA808681A25CE49004252BA /* Build configuration list for PBXProject "CoreActionSheetPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CA808821A25CE49004252BA /* Debug */,
+				1CA808831A25CE49004252BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CA808841A25CE49004252BA /* Build configuration list for PBXNativeTarget "CoreActionSheetPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CA808851A25CE49004252BA /* Debug */,
+				1CA808861A25CE49004252BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1CA808871A25CE49004252BA /* Build configuration list for PBXNativeTarget "CoreActionSheetPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CA808881A25CE49004252BA /* Debug */,
+				1CA808891A25CE49004252BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CA808651A25CE49004252BA /* Project object */;
+}
