@@ -13,7 +13,7 @@ ActionSheetPicker-3.0
 	- [ActionSheetCustomPicker Customisation](#actionsheetcustompicker-customisation)
 - [Installation](#installation)
 - [Example Projects](#example-projects)
-- [Screenshots](#screen-shots)
+- [Screenshots](#screenshots)
 - [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
@@ -171,7 +171,7 @@ Here is 4 projects:
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
 - **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
-## Screen Shots
+## Screenshots
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
