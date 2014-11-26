@@ -2,7 +2,7 @@
 //  CoreActionSheetPickerTests.m
 //  CoreActionSheetPickerTests
 //
-//  Created by Petr Korolev on 30/09/14.
+//  Created by Petr Korolev on 26/11/14.
 //  Copyright (c) 2014 Petr Korolev. All rights reserved.
 //
 
