@@ -14,9 +14,6 @@
 		1C243EF219CC5AE0000EE6A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EF019CC5AE0000EE6A6 /* LaunchScreen.xib */; };
 		1C243EFE19CC5AE0000EE6A6 /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */; };
 		1C243F0E19CC67AE000EE6A6 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */; };
-		1C8B59431A19EA15003857EF /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8B59421A19EA15003857EF /* CoreActionSheetPicker.framework */; };
-		1C8B59441A19EA15003857EF /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8B59421A19EA15003857EF /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D66F50166DE8271D3C2AE29D /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F50812999420D1626411A /* CoreActionSheetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +33,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C8B59441A19EA15003857EF /* CoreActionSheetPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,8 +51,6 @@
 		1C243EFC19CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
-		1C8B59421A19EA15003857EF /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "/Users/petrkorolev/Library/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<absolute>"; };
-		D66F50812999420D1626411A /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D66F50166DE8271D3C2AE29D /* CoreActionSheetPicker.framework in Frameworks */,
-				1C8B59431A19EA15003857EF /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +74,6 @@
 		1C243ED919CC5AE0000EE6A6 = {
 			isa = PBXGroup;
 			children = (
-				1C8B59421A19EA15003857EF /* CoreActionSheetPicker.framework */,
 				1C243EE419CC5AE0000EE6A6 /* Swift-Example */,
 				1C243EFA19CC5AE0000EE6A6 /* Swift-ExampleTests */,
 				1C243EE319CC5AE0000EE6A6 /* Products */,
@@ -149,7 +140,6 @@
 		D66F5025FE1F1ECC58FAF7AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D66F50812999420D1626411A /* CoreActionSheetPicker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -389,7 +379,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -406,7 +396,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
