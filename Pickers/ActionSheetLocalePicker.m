@@ -178,8 +178,13 @@
         string = [[NSTimeZone localTimeZone] name];
 
     NSArray *array = [string componentsSeparatedByString:@"/"];
-
-    if (array.count == 2)
+    if (array.count == 1)
+    {
+        // Unknown time zone - appeared only in travis builds.
+        self.selectedContinent = _continents[0];
+        self.selectedCity = [self getCitiesByContinent:self.selectedContinent][0];
+    }
+    else if (array.count == 2)
     {
         self.selectedContinent = array[0];
         self.selectedCity = array[1];
