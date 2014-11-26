@@ -3,7 +3,7 @@ before_install:
     - brew update
     - brew install xctool
 script:
-	- xcodebuild clean build test -workspace Example.xcworkspace -scheme ActionSheetPickerTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - xcodebuild clean build test -workspace Example.xcworkspace -scheme ActionSheetPickerTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 
 # - xctool -workspace Example.xcworkspace -scheme CoreActionSheetPicker build
 # - xctool -workspace Example.xcworkspace -scheme ActionSheetPickerTests test
