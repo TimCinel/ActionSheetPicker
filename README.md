@@ -205,3 +205,7 @@ Here is 4 projects:
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
 [![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skywinder/actionsheetpicker-3.0/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
