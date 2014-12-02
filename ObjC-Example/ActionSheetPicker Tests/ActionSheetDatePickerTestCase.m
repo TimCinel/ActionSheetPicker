@@ -67,6 +67,12 @@ UIView           *origin;
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
+- (void)testInitPicker5
+{
+    _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:[NSDate date] target:self action:@selector(exampleSelector) origin:origin];
+    XCTAssertNotNil(_actionSheetDatePicker);
+}
+
 - (void)testPickerWithCustomActionBlockOnButton
 {
     NSString *custom_title = @"Custom label:";
