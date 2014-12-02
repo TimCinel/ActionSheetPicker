@@ -181,7 +181,6 @@ UIView           *origin;
 
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
     [_actionSheetDatePicker showActionSheetPicker];
-    UIDatePicker *picker = (UIDatePicker *) _actionSheetDatePicker.pickerView;
     [_actionSheetDatePicker pressDoneButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
