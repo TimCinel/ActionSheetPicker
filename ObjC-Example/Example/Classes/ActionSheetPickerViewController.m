@@ -111,7 +111,24 @@
 }
 
 - (IBAction)selectACountdown:(UIControl *)sender {
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:self.selectedDate target:self action:@selector(countDownWasSelected:element:) origin:sender];
+    
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@""
+                                                       datePickerMode:UIDatePickerModeCountDownTimer
+                                                         selectedDate:nil
+                                                            doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                                                
+                                                                NSLog(@"selectedDate: %@", selectedDate);
+                                                                self.counDownTextField.text = [selectedDate stringValue];
+                                                                
+                                                                NSLog(@"picker.countDownDuration, %f", picker.countDownDuration);
+                                                                self.counDownTextField.text = [NSString stringWithFormat:@"%f", picker.countDownDuration];
+                                                                
+                                                            } cancelBlock:^(ActionSheetDatePicker *picker) {
+                                                                
+                                                                NSLog(@"Cancel clicked");
+                                                                
+                                                            } origin:sender];
+    
     [(ActionSheetDatePicker *) _actionSheetPicker setCountDownDuration:120];
     self.actionSheetPicker.hideCancel = YES;
     [self.actionSheetPicker showActionSheetPicker];
