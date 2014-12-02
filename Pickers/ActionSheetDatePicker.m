@@ -104,22 +104,22 @@
     datePicker.calendar = self.calendar;
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
-    
+
     // if datepicker is set with a date in countDownMode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             datePicker.countDownDuration = self.countDownDuration;
-//        });
+        });
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
-    
+
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
-    
+
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing (not used in this picker, but just in case somebody uses this as a template for another picker)
     self.pickerView = datePicker;
-    
+
     return datePicker;
 }
 
@@ -139,7 +139,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
             [target performSelector:action withObject:@(((UIDatePicker *)self.pickerView).countDownDuration) withObject:origin];
-            
+
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
         }
@@ -180,7 +180,7 @@
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %zd, custom button count: %zd", index, self.customButtons.count);
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
@@ -194,7 +194,7 @@
             }
             break;
         }
-            
+
         case Block:
         case Selector:
             [super customButtonPressed:sender];

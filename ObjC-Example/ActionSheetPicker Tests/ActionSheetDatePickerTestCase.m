@@ -25,7 +25,7 @@ UIView *origin;
 +(void)setUp{
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     UIView *topView = window.rootViewController.view;
-    origin = topView;    
+    origin = topView;
 }
 
 - (void)setUp {
@@ -43,14 +43,14 @@ UIView *origin;
 - (void)testPickerWithCustomActionBlockOnButton
 {
     NSString *custom_title = @"Custom label:";
-    
+
     [_actionSheetDatePicker addCustomButtonWithTitle:custom_title actionBlock:^{
         NSLog(@"Test block invoked");
     }];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -60,7 +60,7 @@ UIView *origin;
         NSLog(@"Test block invoked");
     }];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
@@ -70,9 +70,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title actionBlock:nil];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -80,9 +80,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil actionBlock:nil];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -100,9 +100,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:self selector:@selector(exampleSelector)];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -110,9 +110,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:self selector:nil];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -120,9 +120,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:_title target:nil selector:@selector(exampleSelector)];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -130,9 +130,9 @@ UIView *origin;
 {
     [_actionSheetDatePicker addCustomButtonWithTitle:nil target:nil selector:nil];
     [_actionSheetDatePicker showActionSheetPicker];
-    
+
     [_actionSheetDatePicker pressFirstCustomButton];
-    
+
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
@@ -141,7 +141,12 @@ UIView *origin;
     _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test title" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil target:self action:@selector(countDownTest:) origin:origin cancelAction:nil];
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
     [_actionSheetDatePicker showActionSheetPicker];
-    [_actionSheetDatePicker pressDoneButton];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.5f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_actionSheetDatePicker pressDoneButton];
+        });
+    });
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -153,10 +158,13 @@ UIView *origin;
     } cancelBlock:nil origin:origin];
 
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.5f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_actionSheetDatePicker pressDoneButton];
+        });
+    });
     [_actionSheetDatePicker showActionSheetPicker];
-    UIDatePicker *picker = (UIDatePicker *)_actionSheetDatePicker.pickerView;
-    [_actionSheetDatePicker pressDoneButton];
-
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
