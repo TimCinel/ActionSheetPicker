@@ -205,7 +205,6 @@ UIView           *origin;
         });
     });
     [_actionSheetDatePicker showActionSheetPicker];
-    [_actionSheetDatePicker pressDoneButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
