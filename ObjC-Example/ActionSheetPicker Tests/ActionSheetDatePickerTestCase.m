@@ -195,6 +195,7 @@ UIView           *origin;
 {
     _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
         XCTAssertEqualObjects(selectedDate, @(countdownTestInt));
+        XCTAssertEqualObjects(@(picker.countDownDuration), @(countdownTestInt));
     }                                                         cancelBlock:nil origin:origin];
 
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
