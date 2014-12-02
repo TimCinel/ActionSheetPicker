@@ -191,8 +191,6 @@
     }
     else
     {
-        NSLog(@"array count = %d", array.count);
-        NSLog(@"array = %@", array);
         assert(NO);
     }
 

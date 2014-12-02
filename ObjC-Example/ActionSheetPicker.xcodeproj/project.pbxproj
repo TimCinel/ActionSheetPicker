@@ -74,8 +74,7 @@
 		1C9444BE197B1C2F005F495B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C9444C2197B1C2F005F495B /* ActionSheetPicker Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActionSheetPicker Tests-Prefix.pch"; sourceTree = "<group>"; };
 		1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPickerTestCase.m; sourceTree = "<group>"; };
-		1CA808AD1A25D01A004252BA /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
-		1CA808AF1A25D0D1004252BA /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "/Users/petrkorolev/Library/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<absolute>"; };
+		1CA808AF1A25D0D1004252BA /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA808B31A25DD6A004252BA /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = "<group>"; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFCACFC1980FA320056A594 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1CA808AD1A25D01A004252BA /* CoreActionSheetPicker.framework */,
 				1CA808B31A25DD6A004252BA /* CoreActionSheetPicker.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
