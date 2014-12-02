@@ -103,7 +103,7 @@
 
 
 - (IBAction)selectADate:(UIControl *)sender {
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate minimumDate:nil maximumDate:nil target:self action:@selector(dateWasSelected:element:) origin:sender];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
     self.actionSheetPicker.hideCancel = YES;
@@ -127,7 +127,7 @@
     
     self.selectedTime = [NSDate dateWithTimeIntervalSinceReferenceDate:(NSTimeInterval)timeRoundedTo5Minutes];
     
-    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
+    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime minimumDate:nil maximumDate:nil target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = minuteInterval;
     [datePicker addCustomButtonWithTitle:@"value" value:[NSDate date]];
     [datePicker addCustomButtonWithTitle:@"sel" target:self selector:@selector(dateSelector:)];

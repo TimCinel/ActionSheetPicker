@@ -13,7 +13,7 @@ ActionSheetPicker-3.0
 	- [ActionSheetCustomPicker Customisation](#actionsheetcustompicker-customisation)
 - [Installation](#installation)
 - [Example Projects](#example-projects)
-- [Screenshots](#screen-shots)
+- [Screenshots](#screenshots)
 - [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
@@ -171,7 +171,7 @@ Here is 4 projects:
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
 - **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
-## Screen Shots
+## Screenshots
 
 ![ActionSheetPicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/string.png "ActionSheetPicker")
 ![ActionSheetDatePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/date.png "ActionSheetDatePicker")
@@ -205,3 +205,7 @@ Here is 4 projects:
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
 [![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skywinder/actionsheetpicker-3.0/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

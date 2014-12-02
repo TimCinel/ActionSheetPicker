@@ -45,7 +45,7 @@
 //    };
 //    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
 //    [ActionSheetStringPicker showPickerWithTitle:@"Select a Block" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
-    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] target:self action:@selector(timeWasSelected:element:) origin:sender];
+    ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] minimumDate:nil maximumDate:nil target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = 5;
     [datePicker showActionSheetPicker];
 }
