@@ -104,7 +104,9 @@ CG_INLINE BOOL isIPhone4()
         self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
-
+        self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                                                                                     supportedInterfaceOrientationsForWindow:
+                                                                                             [UIApplication sharedApplication].keyWindow];
         if ( [origin isKindOfClass:[UIBarButtonItem class]] )
             self.barButtonItem = origin;
         else if ( [origin isKindOfClass:[UIView class]] )
@@ -235,7 +237,7 @@ CG_INLINE BOOL isIPhone4()
     if (!_customButtons) {
         _customButtons = [[NSMutableArray alloc] init];
     }
-    
+
     return _customButtons;
 }
 
@@ -290,7 +292,7 @@ CG_INLINE BOOL isIPhone4()
 
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
@@ -307,12 +309,12 @@ CG_INLINE BOOL isIPhone4()
             }
             break;
         }
-            
+
         case Block: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
             [self dismissPicker];
             if (actionBlock)
-                actionBlock(); 
+                actionBlock();
             break;
         }
 
@@ -328,7 +330,7 @@ CG_INLINE BOOL isIPhone4()
             }
             break;
         }
-            
+
         default:
             NSAssert(false, @"Unknown action type");
             break;
@@ -566,11 +568,7 @@ CG_INLINE BOOL isIPhone4()
 
 - (void) didRotate:(NSNotification *)notification
 {
-    UIInterfaceOrientationMask supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                     supportedInterfaceOrientationsForWindow:
-                                                     [UIApplication sharedApplication].keyWindow];
-
-    if (OrientationMaskSupportsOrientation(supportedInterfaceOrientations, DEVICE_ORIENTATION))
+    if (OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION))
         [self dismissPicker];
 }
 
@@ -607,7 +605,7 @@ CG_INLINE BOOL isIPhone4()
     if (self.popoverBackgroundViewClass) {
             [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
     }
-    
+
     [self presentPopover:_popOverController];
 }
 
