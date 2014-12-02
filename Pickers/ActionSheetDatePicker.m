@@ -118,7 +118,7 @@
     return self;
 }
 
-- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate target:(id)target action:(SEL)action origin:(id)origin cancelAction:(SEL)cancelAction
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate target:(id)target action:(SEL)action cancelAction:(SEL)cancelAction origin:(id)origin
 {
     self = [super initWithTarget:target successAction:action cancelAction:cancelAction origin:origin];
     if (self) {
@@ -156,7 +156,7 @@
     datePicker.calendar = self.calendar;
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
-    
+
     // if datepicker is set with a date in countDownMode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
@@ -164,12 +164,12 @@
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
-    
+
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
-    
+
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing (not used in this picker, but just in case somebody uses this as a template for another picker)
     self.pickerView = datePicker;
-    
+
     return datePicker;
 }
 
@@ -181,7 +181,7 @@
             self.onActionSheetDone(self, @(((UIDatePicker *)self.pickerView).countDownDuration), origin);
         else
             self.onActionSheetDone(self, self.selectedDate, origin);
-        
+
         return;
     }
     else if ([target respondsToSelector:action])
@@ -189,7 +189,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
             [target performSelector:action withObject:@(((UIDatePicker *)self.pickerView).countDownDuration) withObject:origin];
-            
+
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
         }
@@ -230,7 +230,7 @@
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %zd, custom button count: %zd", index, self.customButtons.count);
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
@@ -244,12 +244,12 @@
             }
             break;
         }
-            
+
         case Block:
         case Selector:
             [super customButtonPressed:sender];
             break;
-            
+
         default:
             NSAssert(false, @"Unknown action type");
             break;

@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/CoreActionSheetPicker.h>
+#import <CoreActionSheetPicker/ActionSheetDatePicker.h>
 #import "AbstractActionSheetPicker+CustomButton.h"
 
 static const int countdownTestInt = 360;
@@ -70,6 +71,12 @@ UIView           *origin;
 - (void)testInitPicker5
 {
     _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:[NSDate date] target:self action:@selector(exampleSelector) origin:origin];
+    XCTAssertNotNil(_actionSheetDatePicker);
+}
+
+- (void)testInitPicker6
+{
+    _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:NSDate.date minimumDate:NSDate.date maximumDate:NSDate.date target:self action:@selector(exampleSelector) cancelAction:@selector(exampleSelector) origin:origin];
     XCTAssertNotNil(_actionSheetDatePicker);
 }
 
