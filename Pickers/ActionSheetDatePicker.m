@@ -108,7 +108,9 @@
     // if datepicker is set with a date in countDownMode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-        datePicker.countDownDuration = self.countDownDuration;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            datePicker.countDownDuration = self.countDownDuration;
+        });
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
