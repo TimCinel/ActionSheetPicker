@@ -45,6 +45,17 @@
 }
 
 + (id)showPickerWithTitle:(NSString *)title
+           datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
+              minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate
+                   target:(id)target action:(SEL)action origin:(id)origin {
+    ActionSheetDatePicker *picker = [[ActionSheetDatePicker alloc] initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin];
+    [picker setMinimumDate:minimumDate];
+    [picker setMaximumDate:maximumDate];
+    [picker showActionSheetPicker];
+    return picker;
+}
+
++ (id)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode
              selectedDate:(NSDate *)selectedDate
                 doneBlock:(ActionDateDoneBlock)doneBlock
@@ -61,10 +72,38 @@
     return picker;
 }
 
++ (id)showPickerWithTitle:(NSString *)title
+           datePickerMode:(UIDatePickerMode)datePickerMode
+             selectedDate:(NSDate *)selectedDate
+              minimumDate:(NSDate *)minimumDate
+              maximumDate:(NSDate *)maximumDate
+                doneBlock:(ActionDateDoneBlock)doneBlock
+              cancelBlock:(ActionDateCancelBlock)cancelBlock
+                   origin:(UIView*)view
+{
+    ActionSheetDatePicker* picker = [[ActionSheetDatePicker alloc] initWithTitle:title
+                                                                  datePickerMode:datePickerMode
+                                                                    selectedDate:selectedDate
+                                                                       doneBlock:doneBlock
+                                                                     cancelBlock:cancelBlock
+                                                                          origin:view];
+    [picker setMinimumDate:minimumDate];
+    [picker setMaximumDate:maximumDate];
+    [picker showActionSheetPicker];
+    return picker;
+}
 
 - (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate target:(id)target action:(SEL)action origin:(id)origin
 {
     self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin cancelAction:nil];
+    return self;
+}
+
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate target:(id)target action:(SEL)action origin:(id)origin
+{
+    self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:target action:action origin:origin cancelAction:nil];
+    self.minimumDate = minimumDate;
+    self.maximumDate = maximumDate;
     return self;
 }
 
@@ -75,6 +114,19 @@
         self.title = title;
         self.datePickerMode = datePickerMode;
         self.selectedDate = selectedDate;
+    }
+    return self;
+}
+
+- (id)initWithTitle:(NSString *)title datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate target:(id)target action:(SEL)action cancelAction:(SEL)cancelAction origin:(id)origin
+{
+    self = [super initWithTarget:target successAction:action cancelAction:cancelAction origin:origin];
+    if (self) {
+        self.title = title;
+        self.datePickerMode = datePickerMode;
+        self.selectedDate = selectedDate;
+        self.minimumDate = minimumDate;
+        self.maximumDate = maximumDate;
     }
     return self;
 }
@@ -104,20 +156,25 @@
     datePicker.calendar = self.calendar;
     datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
-    
+
     // if datepicker is set with a date in countDownMode then
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
         datePicker.countDownDuration = self.countDownDuration;
+        // Due to a bug in UIDatePicker, countDownDuration needs to be set asynchronously
+        // more info: http://stackoverflow.com/a/20204317/1161723
+        dispatch_async(dispatch_get_main_queue(), ^{
+            datePicker.countDownDuration = self.countDownDuration;
+        });
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
-    
+
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
-    
+
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing (not used in this picker, but just in case somebody uses this as a template for another picker)
     self.pickerView = datePicker;
-    
+
     return datePicker;
 }
 
@@ -137,13 +194,13 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
             [target performSelector:action withObject:@(((UIDatePicker *)self.pickerView).countDownDuration) withObject:origin];
-            
+
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
         }
 #pragma clang diagnostic pop
-    else
-        NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
+        else
+            NSAssert(NO, @"Invalid target/action ( %s / %s ) combination used for ActionSheetPicker", object_getClassName(target), sel_getName(action));
 }
 
 - (void)notifyTarget:(id)target didCancelWithAction:(SEL)cancelAction origin:(id)origin
@@ -178,7 +235,7 @@
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %zd, custom button count: %zd", index, self.customButtons.count);
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
-    
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case Value: {
@@ -192,7 +249,7 @@
             }
             break;
         }
-            
+
         case Block:
         case Selector:
             [super customButtonPressed:sender];
