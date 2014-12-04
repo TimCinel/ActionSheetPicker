@@ -25,11 +25,10 @@
 //SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "AbstractActionSheetPicker.h"
-
-#import "ActionSheetCustomPicker.h"
 #import "ActionSheetCustomPickerDelegate.h"
-#import "ActionSheetStringPicker.h"
+#import "AbstractActionSheetPicker.h"
+#import "ActionSheetCustomPicker.h"
 #import "ActionSheetDatePicker.h"
 #import "ActionSheetDistancePicker.h"
-
+#import "ActionSheetLocalePicker.h"
+#import "ActionSheetStringPicker.h"
