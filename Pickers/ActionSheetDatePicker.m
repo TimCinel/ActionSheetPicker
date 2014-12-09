@@ -238,7 +238,7 @@
 
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
             NSDate *itemValue = buttonDetails[kButtonValue];
             UIDatePicker *picker = (UIDatePicker *)self.pickerView;
@@ -250,8 +250,8 @@
             break;
         }
 
-        case Block:
-        case Selector:
+        case ActionTypeBlock:
+        case ActionTypeSelector:
             [super customButtonPressed:sender];
             break;
 
