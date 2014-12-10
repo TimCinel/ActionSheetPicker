@@ -38,9 +38,9 @@ _Pragma("clang diagnostic pop") \
 
 typedef NS_ENUM(NSInteger, ActionType)
 {
-    Value,
-    Selector,
-    Block
+    ActionTypeValue,
+    ActionTypeSelector,
+    ActionTypeBlock
 };
 
 typedef void (^ActionBlock)(void);

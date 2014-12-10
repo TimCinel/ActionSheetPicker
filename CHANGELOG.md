@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.7] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.7)
+#### 04/12/14
+- *Merged pull-request:* Added workaround for a bug in UIDatePicker in count down mode. [\#105](https://github.com/skywinder/ActionSheetPicker-3.0/pull/105) ([tomaskraina](https://github.com/tomaskraina))
+
+- *Merged pull-request:* Added minimumDate and maximumDate to contructor of ActionSheetDatePicker [\#98](https://github.com/skywinder/ActionSheetPicker-3.0/pull/98) ([emmanuelay](https://github.com/emmanuelay))
+
+- *Fixed bug:* Picker rotating when host view controller fixed to portrait [\#100](https://github.com/skywinder/ActionSheetPicker-3.0/issues/100)
+
+- *Fixed bug:* UIDatePicker does not fire the target-action associated with the UIControlEventValueChanged event the first time [\#104](https://github.com/skywinder/ActionSheetPicker-3.0/issues/104)
+
 ## [1.3.6] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.6)
 #### 02/12/14
 - *Merged pull-request:* Add a Bitdeli Badge to README [\#107](https://github.com/skywinder/ActionSheetPicker-3.0/pull/107) ([bitdeli-chef](https://github.com/bitdeli-chef))

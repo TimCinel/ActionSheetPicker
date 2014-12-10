@@ -181,7 +181,12 @@ UIView           *origin;
     _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test title" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil target:self action:@selector(countDownTest:) origin:origin cancelAction:nil];
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
     [_actionSheetDatePicker showActionSheetPicker];
-    [_actionSheetDatePicker pressDoneButton];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.5f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_actionSheetDatePicker pressDoneButton];
+        });
+    });
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }
@@ -190,11 +195,17 @@ UIView           *origin;
 {
     _actionSheetDatePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Test" datePickerMode:UIDatePickerModeCountDownTimer selectedDate:nil doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
         XCTAssertEqualObjects(selectedDate, @(countdownTestInt));
+        XCTAssertEqualObjects(@(picker.countDownDuration), @(countdownTestInt));
     }                                                         cancelBlock:nil origin:origin];
 
     _actionSheetDatePicker.countDownDuration = countdownTestInt;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.5f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_actionSheetDatePicker pressDoneButton];
+        });
+    });
     [_actionSheetDatePicker showActionSheetPicker];
-    [_actionSheetDatePicker pressDoneButton];
 
     XCTAssertNotNil(_actionSheetDatePicker);
 }

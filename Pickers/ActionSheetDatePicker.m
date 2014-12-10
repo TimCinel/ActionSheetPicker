@@ -161,6 +161,11 @@
     // 1h is added to the initial countdown
     if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
         datePicker.countDownDuration = self.countDownDuration;
+        // Due to a bug in UIDatePicker, countDownDuration needs to be set asynchronously
+        // more info: http://stackoverflow.com/a/20204317/1161723
+        dispatch_async(dispatch_get_main_queue(), ^{
+            datePicker.countDownDuration = self.countDownDuration;
+        });
     } else {
         [datePicker setDate:self.selectedDate animated:NO];
     }
@@ -233,7 +238,7 @@
 
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
             NSDate *itemValue = buttonDetails[kButtonValue];
             UIDatePicker *picker = (UIDatePicker *)self.pickerView;
@@ -245,8 +250,8 @@
             break;
         }
 
-        case Block:
-        case Selector:
+        case ActionTypeBlock:
+        case ActionTypeSelector:
             [super customButtonPressed:sender];
             break;
 

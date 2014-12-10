@@ -65,6 +65,7 @@
 {
     CGRect pickerFrame = CGRectMake(0, 40, self.viewSize.width, 216);
     UIPickerView *pv = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    self.pickerView = pv;
 
     // Default to our delegate being the picker's delegate and datasource
     pv.delegate = _delegate;
@@ -90,7 +91,6 @@
     {
         [_delegate actionSheetPicker:self configurePickerView:pv];
     }
-    self.pickerView = pv;
     return pv;
 }
 

@@ -249,7 +249,7 @@ CG_INLINE BOOL isIPhone4()
         value = @0;
     NSDictionary *buttonDetails = @{
             kButtonTitle : title,
-            kActionType  : @(Value),
+            kActionType  : @(ActionTypeValue),
             kButtonValue : value
     };
     [self.customButtons addObject:buttonDetails];
@@ -263,7 +263,7 @@ CG_INLINE BOOL isIPhone4()
         block = (^{});
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
-                                    kActionType  : @(Block),
+                                    kActionType  : @(ActionTypeBlock),
                                     kButtonValue : [block copy]
                                     };
     [self.customButtons addObject:buttonDetails];
@@ -277,7 +277,7 @@ CG_INLINE BOOL isIPhone4()
         target = [NSNull null];
     NSDictionary *buttonDetails = @{
                                     kButtonTitle : title,
-                                    kActionType  : @(Selector),
+                                    kActionType  : @(ActionTypeSelector),
                                     kActionTarget: target,
                                     kButtonValue : [NSValue valueWithPointer:selector]
                                     };
@@ -295,7 +295,7 @@ CG_INLINE BOOL isIPhone4()
 
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             NSAssert([self.pickerView respondsToSelector:@
                     selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
             NSInteger buttonValue = [buttonDetails[kButtonValue] integerValue];
@@ -310,7 +310,7 @@ CG_INLINE BOOL isIPhone4()
             break;
         }
 
-        case Block: {
+        case ActionTypeBlock: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
             [self dismissPicker];
             if (actionBlock)
@@ -318,7 +318,7 @@ CG_INLINE BOOL isIPhone4()
             break;
         }
 
-        case Selector: {
+        case ActionTypeSelector: {
             SEL selector = [buttonDetails[kButtonValue] pointerValue];
             id target    = buttonDetails[kActionTarget];
             [self dismissPicker];
