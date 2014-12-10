@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.8)
+#### 10/12/14
+- *Merged pull-request:* Fix for #109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
+
+- *Merged pull-request:* Fixed an issue when more than one ActionSheetCustomPicker is used in a ViewController [\#108](https://github.com/skywinder/ActionSheetPicker-3.0/pull/108) ([venj](https://github.com/venj))
+
+- *Closed issue:* Redefinition of enumerator 'Selector' [\#109](https://github.com/skywinder/ActionSheetPicker-3.0/issues/109)
+
 ## [1.3.7] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.7)
 #### 04/12/14
 - *Merged pull-request:* Added workaround for a bug in UIDatePicker in count down mode. [\#105](https://github.com/skywinder/ActionSheetPicker-3.0/pull/105) ([tomaskraina](https://github.com/tomaskraina))
