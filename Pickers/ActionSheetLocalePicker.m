@@ -380,7 +380,7 @@
     
     ActionType actionType = (ActionType) [buttonDetails[kActionType] intValue];
     switch (actionType) {
-        case Value: {
+        case ActionTypeValue: {
             id itemValue = buttonDetails[kButtonValue];
             if ( [itemValue isKindOfClass:[NSTimeZone class]] )
             {
@@ -392,8 +392,8 @@
             break;
         }
             
-        case Block:
-        case Selector:
+        case ActionTypeBlock:
+        case ActionTypeSelector:
             [super customButtonPressed:sender];
             break;
         default:
