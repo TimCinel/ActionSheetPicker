@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.3.9] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.9)
+#### 11/12/14
 ## [1.3.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.8)
 #### 10/12/14
 - *Merged pull-request:* Fix for #109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
