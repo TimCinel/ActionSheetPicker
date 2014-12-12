@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreActionSheetPicker/CoreActionSheetPicker.h>
+#import "ActionSheetCustomPickerTestDelegate.h"
+#import "AbstractActionSheetPicker+CustomButton.h"
 
 static const int expectedNumberOfComponents = 2;
 
@@ -54,12 +56,12 @@ static UIView *origin;
 }
 
 
-- (NSArray *)getArrayWithComponents:(NSUInteger)integer rows:(NSUInteger)number
+- (NSArray *)getArrayWithComponents:(NSUInteger)componentsNumber rows:(NSUInteger)rowsNumber
 {
-    NSMutableArray *selections = [NSMutableArray arrayWithCapacity:integer];
-    for (NSInteger i = 0; i < integer; i++)
+    NSMutableArray *selections = [NSMutableArray arrayWithCapacity:componentsNumber];
+    for (NSInteger i = 0; i < componentsNumber; i++)
     {
-        [selections addObject:@(number)];
+        [selections addObject:@(rowsNumber)];
     }
     return selections;
 }
@@ -170,6 +172,29 @@ static UIView *origin;
     XCTAssertThrows([ActionSheetCustomPicker showPickerWithTitle:@""
                                                     delegate:nil
                                             showCancelButton:YES origin:origin]);
+}
+
+- (void)testWithDelegateAndCustomInitSections{
+
+    ActionSheetCustomPickerTestDelegate *testDelegate = [[ActionSheetCustomPickerTestDelegate alloc] init];
+
+    NSArray *initialSelections = @[@1, @2];
+
+    ActionSheetCustomPicker* customPicker = [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:testDelegate showCancelButton:NO origin:origin
+                                                                       initialSelections:initialSelections];
+
+    testDelegate.delegateReturnCorrectValueExpectation =  [self expectationWithDescription:@"delegate raised with correct values"];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.5f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [customPicker pressDoneButton];
+        });
+    });
+    [customPicker showActionSheetPicker];
+    XCTAssertNotNil(customPicker);
+
+    [self waitForExpectationsWithTimeout:1 handler:nil];
 }
 
 
