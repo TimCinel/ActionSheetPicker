@@ -20,7 +20,7 @@
 }
 
 /////////////////////////////////////////////////////////////////////////
-#pragma mark - ActionSheetCustomPickerDelegate Optional's 
+#pragma mark - ActionSheetCustomPickerDelegate Optional's
 /////////////////////////////////////////////////////////////////////////
 - (void)configurePickerView:(UIPickerView *)pickerView
 {
@@ -30,10 +30,18 @@
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
 {
-    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@ selected.",
-                                                         self.selectedKey,
-                                                         self.selectedScale];
-    
+
+    NSString *resultMessage;
+    if (!self.selectedKey && !self.selectedScale)
+    {
+        resultMessage = [NSString stringWithFormat:@"Nothing is selected, inital selections: %@, %@",
+                                                   notesToDisplayForKey[(NSUInteger) [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:0]],
+                                                   scaleNames[(NSUInteger) [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:1]]];
+    }
+    else
+        resultMessage = [NSString stringWithFormat:@"%@ %@ selected.",
+                                                             self.selectedKey,
+                                                             self.selectedScale];
     [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
 }
 
@@ -41,13 +49,13 @@
 #pragma mark - UIPickerViewDataSource Implementation
 /////////////////////////////////////////////////////////////////////////
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView 
-{ 
-    return 2; 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{ 
+{
     // Returns
     switch (component) {
         case 0: return [notesToDisplayForKey count];
@@ -61,7 +69,7 @@
 #pragma mark UIPickerViewDelegate Implementation
 /////////////////////////////////////////////////////////////////////////
 
-// returns width of column and height of row for each component. 
+// returns width of column and height of row for each component.
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {
     switch (component) {
@@ -69,17 +77,17 @@
         case 1: return 260.0f;
         default:break;
     }
-    
+
     return 0;
 }
-/*- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component 
+/*- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
  {
- return 
+ return
  }
  */
 // these methods return either a plain UIString, or a view (e.g UILabel) to display the row for the component.
-// for the view versions, we cache any hidden and thus unused views and pass them back for reuse. 
-// If you return back a different object, the old one will be released. the view will be centered in the row rect  
+// for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
+// If you return back a different object, the old one will be released. the view will be centered in the row rect
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     switch (component) {
@@ -99,7 +107,7 @@
         case 0:
             self.selectedKey = notesToDisplayForKey[(NSUInteger) row];
             return;
-            
+
         case 1:
             self.selectedScale = scaleNames[(NSUInteger) row];
             return;
