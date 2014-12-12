@@ -81,6 +81,8 @@
             NSInteger row = [(NSNumber *) self.initialSelections[i] integerValue];
             NSAssert([pv numberOfRowsInComponent:i] > row, @"Number of sections not match");
             [pv selectRow:row inComponent:i animated:NO];
+            
+            [_delegate pickerView:pv didSelectRow:row inComponent:i];
         }
 
     }
