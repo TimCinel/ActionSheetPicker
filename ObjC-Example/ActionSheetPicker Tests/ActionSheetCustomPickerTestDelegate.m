@@ -1,14 +1,11 @@
 //
-//  ActionSheetPickerCustomPickerDelegate.m
-//  ActionSheetPicker
+// Created by Petr Korolev on 12/12/14.
 //
-//  Created by  on 13/03/2012.
-//  Copyright (c) 2012 Club 15CC. All rights reserved.
-//
+#import <XCTest/XCTest.h>
+#import "ActionSheetCustomPickerTestDelegate.h"
 
-#import "ActionSheetPickerCustomPickerDelegate.h"
 
-@implementation ActionSheetPickerCustomPickerDelegate
+@implementation ActionSheetCustomPickerTestDelegate
 
 - (id)init
 {
@@ -30,19 +27,11 @@
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
 {
+    BOOL valid1 = [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:0] == 1;
+    BOOL valid2 = [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:1] == 2;
 
-    NSString *resultMessage;
-    if (!self.selectedKey && !self.selectedScale)
-    {
-        resultMessage = [NSString stringWithFormat:@"Nothing is selected, inital selections: %@, %@",
-                                                   notesToDisplayForKey[(NSUInteger) [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:0]],
-                                                   scaleNames[(NSUInteger) [(UIPickerView *) actionSheetPicker.pickerView selectedRowInComponent:1]]];
-    }
-    else
-        resultMessage = [NSString stringWithFormat:@"%@ %@ selected.",
-                                                             self.selectedKey,
-                                                             self.selectedScale];
-    [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    if (valid1 && valid2)
+        [self.delegateReturnCorrectValueExpectation fulfill];
 }
 
 /////////////////////////////////////////////////////////////////////////

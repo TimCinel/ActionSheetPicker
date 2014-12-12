@@ -20,9 +20,9 @@
 
 - (void)pressDoneButton
 {
-    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - custom - separator - title - separator - done ]
+    //6 items in _actionSheetDatePicker.toolbar.items : [ cancel - separator - title - separator - done ]
     //So, check custom button:
-    UIBarButtonItem *customBarButton = self.toolbar.items[4];
+    UIBarButtonItem *customBarButton = self.toolbar.items.lastObject;
     SuppressPerformSelectorLeakWarning (
             [customBarButton.target performSelector:customBarButton.action withObject:customBarButton];
     );
