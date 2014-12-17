@@ -27,7 +27,6 @@
 
 
 #import <UIKit/UIKit.h>
-#import "ActionSheetPicker.h"
 
 @class AbstractActionSheetPicker;
 @interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
