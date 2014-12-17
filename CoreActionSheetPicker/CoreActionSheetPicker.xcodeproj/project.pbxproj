@@ -27,6 +27,7 @@
 		1CA808AA1A25CE96004252BA /* DistancePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA808991A25CE96004252BA /* DistancePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CA808AB1A25CE96004252BA /* SWActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA8089A1A25CE96004252BA /* SWActionSheet.h */; };
 		1CA808AC1A25CE96004252BA /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8089B1A25CE96004252BA /* SWActionSheet.m */; };
+		1CDEAE761A4229A8005F495B /* ActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CDEAE751A4229A8005F495B /* ActionSheetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		1CA808991A25CE96004252BA /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistancePickerView.h; path = ../../Pickers/DistancePickerView.h; sourceTree = "<group>"; };
 		1CA8089A1A25CE96004252BA /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = ../../Pickers/SWActionSheet.h; sourceTree = "<group>"; };
 		1CA8089B1A25CE96004252BA /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWActionSheet.m; path = ../../Pickers/SWActionSheet.m; sourceTree = "<group>"; };
+		1CDEAE751A4229A8005F495B /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetPicker.h; path = ../../Pickers/ActionSheetPicker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		1CA8088A1A25CE7F004252BA /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				1CDEAE751A4229A8005F495B /* ActionSheetPicker.h */,
 				1CA8088B1A25CE96004252BA /* AbstractActionSheetPicker.m */,
 				1CA8088C1A25CE96004252BA /* ActionSheetDatePicker.m */,
 				1CA8088D1A25CE96004252BA /* DistancePickerView.m */,
@@ -175,6 +178,7 @@
 				1CA808A81A25CE96004252BA /* ActionSheetStringPicker.h in Headers */,
 				1CA808A41A25CE96004252BA /* ActionSheetDistancePicker.h in Headers */,
 				1CA808A61A25CE96004252BA /* ActionSheetLocalePicker.h in Headers */,
+				1CDEAE761A4229A8005F495B /* ActionSheetPicker.h in Headers */,
 				1CA808A21A25CE96004252BA /* ActionSheetCustomPickerDelegate.h in Headers */,
 				1CA808A01A25CE96004252BA /* ActionSheetCustomPicker.h in Headers */,
 				1CA808741A25CE49004252BA /* CoreActionSheetPicker.h in Headers */,
@@ -472,6 +476,7 @@
 				1CA808861A25CE49004252BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CA808871A25CE49004252BA /* Build configuration list for PBXNativeTarget "CoreActionSheetPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				1CA808891A25CE49004252BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
