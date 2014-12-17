@@ -47,7 +47,6 @@
 		1C6EE715192BB41600A27994 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
 		1C6EE722192BB47000A27994 /* ActionSheetPicker-iOS6-7_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ActionSheetPicker-iOS6-7_Prefix.pch"; sourceTree = "<group>"; };
 		1C6EE723192BB47000A27994 /* ActionSheetPicker-iOS6-7-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-iOS6-7-Info.plist"; sourceTree = "<group>"; };
-		1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		1C6EE726192BB4F600A27994 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		1C6EE728192BB4F600A27994 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9BB00F19E2969C004D0271 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Example/iPad/MainWindow-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker-iOS6-7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ActionSheetPicker-iOS6-7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDEAE771A422A72005F495B /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		1CFCACFC1980FA320056A594 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
@@ -115,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */,
-				1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */,
 				1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */,
 				1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */,
 				1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */,
@@ -146,6 +145,7 @@
 				1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */,
 				1C6EE728192BB4F600A27994 /* ActionSheetCustomPicker.h */,
 				1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */,
+				1CDEAE771A422A72005F495B /* ActionSheetPicker.h */,
 				1C6EE72A192BB4F600A27994 /* ActionSheetCustomPickerDelegate.h */,
 				1C6EE72B192BB4F600A27994 /* ActionSheetDatePicker.h */,
 				1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */,

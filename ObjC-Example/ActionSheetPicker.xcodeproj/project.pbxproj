@@ -66,7 +66,6 @@
 		1C6EE716192BB41600A27994 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker_Prefix.pch; sourceTree = "<group>"; };
 		1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; sourceTree = "<group>"; };
-		1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		1C7A57A8199DEDD5007B9B70 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		1C7A57AB199DF30B007B9B70 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */,
-				1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */,
 				1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */,
 				1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */,
 				1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */,
