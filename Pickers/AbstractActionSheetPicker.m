@@ -340,6 +340,12 @@ CG_INLINE BOOL isIPhone4()
 // Allow the user to specify a custom cancel button
 - (void)setCancelButton:(UIBarButtonItem *)button
 {
+    if (!button)
+    {
+        self.hideCancel = YES;
+        return;
+    }
+
     if ( [button.customView isKindOfClass:[UIButton class]] )
     {
         UIButton *uiButton = (UIButton *) button.customView;
