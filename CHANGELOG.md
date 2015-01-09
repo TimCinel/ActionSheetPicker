@@ -1,7 +1,19 @@
 # Changelog
 
+## [1.3.10] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.10)
+#### 09/01/15
+- *Merged pull-request:* add header file to public [\#115](https://github.com/skywinder/ActionSheetPicker-3.0/pull/115) ([skywinder](https://github.com/skywinder))
+
+- *Merged pull-request:* Fix bad interaction with Git submodules.  Fixes issue #111. [\#112](https://github.com/skywinder/ActionSheetPicker-3.0/pull/112) ([JimDabell](https://github.com/JimDabell))
+
+- *Implemented enhancement:* Should have minimum/maximum date property exposed [\#97](https://github.com/skywinder/ActionSheetPicker-3.0/issues/97)
+
 ## [1.3.9] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.9)
 #### 11/12/14
+- *Closed issue:* Bad interaction with submodules [\#111](https://github.com/skywinder/ActionSheetPicker-3.0/issues/111)
+
+- *Closed issue:* No "cancel" button [\#122](https://github.com/skywinder/ActionSheetPicker-3.0/issues/122)
+
 ## [1.3.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.8)
 #### 10/12/14
 - *Merged pull-request:* Fix for #109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
@@ -16,13 +28,13 @@
 
 - *Merged pull-request:* Added minimumDate and maximumDate to contructor of ActionSheetDatePicker [\#98](https://github.com/skywinder/ActionSheetPicker-3.0/pull/98) ([emmanuelay](https://github.com/emmanuelay))
 
-- *Fixed bug:* Picker rotating when host view controller fixed to portrait [\#100](https://github.com/skywinder/ActionSheetPicker-3.0/issues/100)
-
 - *Fixed bug:* UIDatePicker does not fire the target-action associated with the UIControlEventValueChanged event the first time [\#104](https://github.com/skywinder/ActionSheetPicker-3.0/issues/104)
 
 ## [1.3.6] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.6)
 #### 02/12/14
 - *Merged pull-request:* Add a Bitdeli Badge to README [\#107](https://github.com/skywinder/ActionSheetPicker-3.0/pull/107) ([bitdeli-chef](https://github.com/bitdeli-chef))
+
+- *Fixed bug:* Picker rotating when host view controller fixed to portrait [\#100](https://github.com/skywinder/ActionSheetPicker-3.0/issues/100)
 
 - *Fixed bug:* Example projects failed to launch [\#96](https://github.com/skywinder/ActionSheetPicker-3.0/issues/96)
 
@@ -128,11 +140,11 @@
 
 - *Merged pull-request:* Support ActionSheet width to full-screen-width in 4.7 inch and 5.5 inch devices [\#38](https://github.com/skywinder/ActionSheetPicker-3.0/pull/38) ([nowsprinting](https://github.com/nowsprinting))
 
-- *Implemented enhancement:* ActionSheetDatePicker needs done/cancel blocks [\#37](https://github.com/skywinder/ActionSheetPicker-3.0/issues/37)
-
 ## [1.1.11] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.11)
 #### 16/09/14
 - *Merged pull-request:* Notify cancel on popover dismiss [\#34](https://github.com/skywinder/ActionSheetPicker-3.0/pull/34) ([ynop](https://github.com/ynop))
+
+- *Implemented enhancement:* ActionSheetDatePicker needs done/cancel blocks [\#37](https://github.com/skywinder/ActionSheetPicker-3.0/issues/37)
 
 - *Implemented enhancement:* Pop over direction [\#28](https://github.com/skywinder/ActionSheetPicker-3.0/issues/28)
 
