@@ -16,7 +16,7 @@ Pod::Spec.new do | s |
     s.requires_arc = true
     s.ios.deployment_target = '6.1'
     s.platform = :ios
-    s.public_header_files = 'ActionSheetPicker.h', 'Pickers/*.{h,m}'
+    s.public_header_files = 'ActionSheetPicker.h', 'Pickers/*.h'
     s.source_files = 'ActionSheetPicker.h', 'Pickers/*.{h,m}'
     s.framework = 'UIKit'
 end
