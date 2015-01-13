@@ -73,6 +73,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         SWActionSheetWindow.hidden = YES;
         if ([SWActionSheetWindow isKeyWindow])
             [SWActionSheetWindow resignFirstResponder];
+        SWActionSheetWindow.rootViewController = nil;
         SWActionSheetWindow = nil;
     }
 }
