@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.11] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.11)
+#### 15/01/15
+- *Merged pull-request:* Fixes a crash while closing when using the Classy framework for styling [\#128](https://github.com/skywinder/ActionSheetPicker-3.0/pull/128) ([sudeepsidhu](https://github.com/sudeepsidhu))
+
+- *Merged pull-request:* .m files should not be included in public header files [\#127](https://github.com/skywinder/ActionSheetPicker-3.0/pull/127) ([ened](https://github.com/ened))
+
 ## [1.3.10] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.10)
 #### 09/01/15
 - *Merged pull-request:* add header file to public [\#115](https://github.com/skywinder/ActionSheetPicker-3.0/pull/115) ([skywinder](https://github.com/skywinder))
@@ -8,11 +14,11 @@
 
 - *Implemented enhancement:* Should have minimum/maximum date property exposed [\#97](https://github.com/skywinder/ActionSheetPicker-3.0/issues/97)
 
+- *Closed issue:* No "cancel" button [\#122](https://github.com/skywinder/ActionSheetPicker-3.0/issues/122)
+
 ## [1.3.9] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.9)
 #### 11/12/14
 - *Closed issue:* Bad interaction with submodules [\#111](https://github.com/skywinder/ActionSheetPicker-3.0/issues/111)
-
-- *Closed issue:* No "cancel" button [\#122](https://github.com/skywinder/ActionSheetPicker-3.0/issues/122)
 
 ## [1.3.8] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.8)
 #### 10/12/14
@@ -178,6 +184,8 @@
 
 ## [1.1.5] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.5)
 #### 26/08/14
+## [compilerBug] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/compilerBug)
+#### 26/08/14
 ## [1.1.4] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.4)
 #### 26/08/14
 - *Merged pull-request:* fix iOS8 wrong popover size in iPad [\#25](https://github.com/skywinder/ActionSheetPicker-3.0/pull/25) ([AdrianFlorian](https://github.com/AdrianFlorian))
@@ -246,6 +254,8 @@
 #### 27/05/14
 ## [1.0.4] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.4)
 #### 25/05/14
+## [0.0.4] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/0.0.4)
+#### 25/05/14
 - *Merged pull-request:* Convert screenshots over to iOS 7. [\#3](https://github.com/skywinder/ActionSheetPicker-3.0/pull/3) ([markrickert](https://github.com/markrickert))
 
 - *Merged pull-request:* Add basic documentation to the readme. [\#2](https://github.com/skywinder/ActionSheetPicker-3.0/pull/2) ([markrickert](https://github.com/markrickert))
@@ -259,6 +269,8 @@
 ## [1.0.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.1)
 #### 19/05/14
 ## [0.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/0.1)
+#### 11/05/12
+## [v0.1] (https://github.com/skywinder/ActionSheetPicker-3.0/tree/v0.1)
 #### 11/05/12
 
 
