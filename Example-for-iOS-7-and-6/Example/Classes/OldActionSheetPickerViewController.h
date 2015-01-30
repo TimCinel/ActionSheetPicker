@@ -30,7 +30,7 @@
 #import "ActionSheetPicker.h"
 
 @class AbstractActionSheetPicker;
-@interface ActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
+@interface OldActionSheetPickerViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *animalTextField;
 @property (nonatomic, strong) IBOutlet UITextField *dateTextField;

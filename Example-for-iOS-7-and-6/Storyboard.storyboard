@@ -9,7 +9,7 @@
         <!--ActionSheetPicker-iOS6-7-->
         <scene sceneID="cJx-mW-nZA">
             <objects>
-                <viewController id="LWr-l1-uYK" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
+                <viewController id="LWr-l1-uYK" customClass="OldActionSheetPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hyf-1j-qZu"/>
                         <viewControllerLayoutGuide type="bottom" id="4pM-YP-24v"/>
@@ -275,7 +275,7 @@
         <!--Action Sheet Picker View Controller-->
         <scene sceneID="N6f-0m-5XV">
             <objects>
-                <viewController id="Rhb-1G-jv3" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
+                <viewController id="Rhb-1G-jv3" customClass="OldActionSheetPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YVk-LV-PQb"/>
                         <viewControllerLayoutGuide type="bottom" id="ZzC-q3-O6g"/>

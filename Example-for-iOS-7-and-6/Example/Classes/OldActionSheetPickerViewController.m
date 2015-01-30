@@ -26,19 +26,19 @@
 //
 
 
-#import "ActionSheetPickerViewController.h"
+#import "OldActionSheetPickerViewController.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
 #import "ActionSheetLocalePicker.h"
 
-@interface ActionSheetPickerViewController()
+@interface OldActionSheetPickerViewController ()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
 @end
 
-@implementation ActionSheetPickerViewController
+@implementation OldActionSheetPickerViewController
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
@@ -106,9 +106,9 @@
 
 
 -(IBAction)selectATime:(id)sender {
-    
-   
-    
+
+
+
     NSInteger minuteInterval = 5;
     //clamp date
     NSInteger referenceTimeInterval = (NSInteger)[self.selectedTime timeIntervalSinceReferenceDate];
@@ -117,9 +117,9 @@
     if(remainingSeconds>((minuteInterval*60)/2)) {/// round up
         timeRoundedTo5Minutes = referenceTimeInterval +((minuteInterval*60)-remainingSeconds);
     }
-    
+
     self.selectedTime = [NSDate dateWithTimeIntervalSinceReferenceDate:(NSTimeInterval)timeRoundedTo5Minutes];
-    
+
     ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = minuteInterval;
     [datePicker showActionSheetPicker];
@@ -131,14 +131,14 @@
 }
 
 - (IBAction)selectAMusicalScale:(UIControl *)sender {
-    
+
     ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
-    
+
     NSNumber *yass1 = @1;
     NSNumber *yass2 = @2;
-    
+
     NSArray *initialSelections = @[yass1, yass2];
-    
+
     [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender
                                initialSelections:initialSelections];
 }
@@ -187,21 +187,21 @@
 
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {
     self.selectedIndex = [selectedIndex intValue];
-    
+
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
     self.animalTextField.text = (self.animals)[(NSUInteger) self.selectedIndex];
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     self.selectedDate = selectedDate;
-    
+
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
     self.dateTextField.text = [self.selectedDate description];
 }
 
 -(void)timeWasSelected:(NSDate *)selectedTime element:(id)element {
     self.selectedTime = selectedTime;
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm a"];
     self.timeTextField.text = [dateFormatter stringFromDate:selectedTime];
