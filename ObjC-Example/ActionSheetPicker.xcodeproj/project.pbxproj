@@ -35,6 +35,7 @@
 		9691A94D7D01E0FBDF9686C3 /* AbstractActionSheetPicker+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */; };
 		9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */; };
 		D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
+		D66F51ADA2999F44F2C282BF /* ActionSheetPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F572853325E5592CF945B /* ActionSheetPickerTableViewController.m */; };
 		D66F51F7B65FE68619FB9762 /* ActionSheetCustomPickerTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F576CF2A850BF7FFA6085 /* ActionSheetCustomPickerTestDelegate.m */; };
 		D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */; };
 		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
@@ -90,8 +91,10 @@
 		D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePickerTestCase.m; sourceTree = "<group>"; };
 		D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		D66F572853325E5592CF945B /* ActionSheetPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerTableViewController.m; sourceTree = "<group>"; };
 		D66F576CF2A850BF7FFA6085 /* ActionSheetCustomPickerTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPickerTestDelegate.m; sourceTree = "<group>"; };
 		D66F5893094B8D4B8A9FCE33 /* ActionSheetCustomPickerTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerTestDelegate.h; sourceTree = "<group>"; };
+		D66F5954E97888BB98D46969 /* ActionSheetPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerTableViewController.h; sourceTree = "<group>"; };
 		D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPickerTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +154,8 @@
 				D66F5006831D8C2E94BAFA4D /* TestTableViewController.h */,
 				9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */,
 				9691ABB7429A0D6A2F235006 /* AbstractActionSheetPicker+CustomButton.h */,
+				D66F572853325E5592CF945B /* ActionSheetPickerTableViewController.m */,
+				D66F5954E97888BB98D46969 /* ActionSheetPickerTableViewController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
 				9691A94D7D01E0FBDF9686C3 /* AbstractActionSheetPicker+CustomButton.m in Sources */,
+				D66F51ADA2999F44F2C282BF /* ActionSheetPickerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
