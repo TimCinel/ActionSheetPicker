@@ -137,7 +137,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         [sheetWindow makeKeyAndVisible];
     sheetWindow.hidden = NO;
     // Put our ActionSheet in Container (it will be presented as soon as possible)
-    [self actionSheetContainer].actionSheet = self;
+    self.actionSheetContainer.actionSheet = self;
 }
 
 - (void)showInContainerViewAnimated:(BOOL)animated
@@ -164,6 +164,11 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 #pragma mark - SWActionSheet Container
 
 @implementation SWActionSheetVC
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return [UIApplication sharedApplication].statusBarStyle;
+}
 
 - (void)setActionSheet:(SWActionSheet *)actionSheet
 {
