@@ -42,7 +42,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIViewController" id="943309135">
-				<string key="IBUINibName">ActionSheetPickerViewController-iPad</string>
+				<string key="IBUINibName">OldActionSheetPickerViewController-iPad</string>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics" id="922664420">
 					<int key="IBUIStatusBarStyle">2</int>
 				</object>
@@ -155,7 +155,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIApplication</string>
 					<string>UIResponder</string>
-					<string>ActionSheetPickerViewController</string>
+					<string>OldActionSheetPickerViewController</string>
 					<string>{{234, 376}, {320, 480}}</string>
 					<object class="NSMutableDictionary">
 						<string key="NS.key.0">IBCocoaTouchFramework</string>
@@ -201,7 +201,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>ActionSheetPickerViewController</string>
+							<string>OldActionSheetPickerViewController</string>
 							<string>UIWindow</string>
 						</object>
 					</object>
@@ -216,7 +216,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">viewController</string>
-								<string key="candidateClassName">ActionSheetPickerViewController</string>
+								<string key="candidateClassName">OldActionSheetPickerViewController</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">window</string>
@@ -230,7 +230,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">ActionSheetPickerViewController</string>
+					<string key="className">OldActionSheetPickerViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -298,7 +298,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ActionSheetPickerViewController.h</string>
+						<string key="minorKey">./Classes/OldActionSheetPickerViewController.h</string>
 					</object>
 				</object>
 			</object>

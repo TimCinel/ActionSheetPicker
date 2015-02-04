@@ -69,7 +69,7 @@ static NSString *const kActionTarget  = @"buttonActionTarget";
     // For subclasses.
 - (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
-    // Present the ActionSheetPicker
+// Present the ActionSheetPicker
 - (void)showActionSheetPicker;
 
     // For subclasses.  This is used to send a message to the target upon a successful selection and dismissal of the picker (i.e. not canceled).

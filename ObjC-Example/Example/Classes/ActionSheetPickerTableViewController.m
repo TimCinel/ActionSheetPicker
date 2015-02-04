@@ -26,29 +26,24 @@
 //
 
 
-#import "ActionSheetPickerViewController.h"
+#import <CoreActionSheetPicker/ActionSheetDatePicker.h>
+#import "ActionSheetPickerTableViewController.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
-#import "ActionSheetLocalePicker.h"
 
-@interface ActionSheetPickerViewController()
+@interface ActionSheetPickerTableViewController()
+@property (strong, nonatomic) IBOutlet UISegmentedControl *statusBarSegmentControl;
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
 @end
 
-@implementation ActionSheetPickerViewController
+@implementation ActionSheetPickerTableViewController
 
-@synthesize animalTextField = _animalTextField;
-@synthesize dateTextField = _dateTextField;
-
-@synthesize animals = _animals;
-@synthesize selectedIndex = _selectedIndex;
-@synthesize selectedDate = _selectedDate;
-@synthesize selectedBigUnit = _selectedBigUnit;
-@synthesize selectedSmallUnit = _selectedSmallUnit;
-@synthesize actionSheetPicker = _actionSheetPicker;
+- (IBAction)statusBarStyleChanged:(UISegmentedControl *)sender {
+    self.navigationController.navigationBar.barStyle = (UIBarStyle) sender.selectedSegmentIndex;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,6 +51,8 @@
     self.animals = @[@"Aardvark", @"Beaver", @"Cheetah", @"Deer", @"Elephant", @"Frog", @"Gopher", @"Horse", @"Impala", @"...", @"Zebra"];
     self.selectedDate = [NSDate date];
     self.selectedTime = [NSDate date];
+
+    self.navigationController.navigationBar.barStyle = (UIBarStyle) self.statusBarSegmentControl.selectedSegmentIndex;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -88,7 +85,15 @@
         NSLog(@"Locale Picker Canceled");
     };
     ActionSheetLocalePicker *picker = [[ActionSheetLocalePicker alloc] initWithTitle:@"Select Locale:" initialSelection:[[NSTimeZone alloc] initWithName:@"Antarctica/McMurdo"] doneBlock:done cancelBlock:cancel origin:sender];
+
     [picker addCustomButtonWithTitle:@"My locale" value:[NSTimeZone localTimeZone]];
+    __weak UIControl *weakSender = sender;
+    [picker addCustomButtonWithTitle:@"Hide" actionBlock:^{
+        if ([weakSender respondsToSelector:@selector(setText:)]) {
+            [weakSender performSelector:@selector(setText:) withObject:[NSTimeZone localTimeZone].name];
+        }
+    }];
+
     picker.hideCancel = YES;
     [picker showActionSheetPicker];
 }
@@ -96,9 +101,32 @@
 
 
 - (IBAction)selectADate:(UIControl *)sender {
-    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate minimumDate:nil maximumDate:nil target:self action:@selector(dateWasSelected:element:) origin:sender];
     [self.actionSheetPicker addCustomButtonWithTitle:@"Today" value:[NSDate date]];
-    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSDayCalendarUnit amount:-1]];
+    [self.actionSheetPicker addCustomButtonWithTitle:@"Yesterday" value:[[NSDate date] TC_dateByAddingCalendarUnits:NSCalendarUnitDay amount:-1]];
+    self.actionSheetPicker.hideCancel = YES;
+    [self.actionSheetPicker showActionSheetPicker];
+}
+
+- (IBAction)selectACountdown:(UIControl *)sender {
+
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@""
+                                                       datePickerMode:UIDatePickerModeCountDownTimer
+                                                         selectedDate:nil
+                                                            doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+
+                                                                NSLog(@"selectedDate: %@", selectedDate);
+                                                                self.counDownTextField.text = [selectedDate stringValue];
+                                                                NSLog(@"picker.countDownDuration, %f", picker.countDownDuration);
+                                                                self.counDownTextField.text = [NSString stringWithFormat:@"%f", picker.countDownDuration];
+
+                                                            } cancelBlock:^(ActionSheetDatePicker *picker) {
+
+                                                                NSLog(@"Cancel clicked");
+
+                                                            } origin:sender];
+
+    [(ActionSheetDatePicker *) _actionSheetPicker setCountDownDuration:120];
     self.actionSheetPicker.hideCancel = YES;
     [self.actionSheetPicker showActionSheetPicker];
 }
@@ -106,9 +134,9 @@
 
 
 -(IBAction)selectATime:(id)sender {
-    
-   
-    
+
+
+
     NSInteger minuteInterval = 5;
     //clamp date
     NSInteger referenceTimeInterval = (NSInteger)[self.selectedTime timeIntervalSinceReferenceDate];
@@ -117,28 +145,37 @@
     if(remainingSeconds>((minuteInterval*60)/2)) {/// round up
         timeRoundedTo5Minutes = referenceTimeInterval +((minuteInterval*60)-remainingSeconds);
     }
-    
+
     self.selectedTime = [NSDate dateWithTimeIntervalSinceReferenceDate:(NSTimeInterval)timeRoundedTo5Minutes];
-    
+
     ActionSheetDatePicker *datePicker = [[ActionSheetDatePicker alloc] initWithTitle:@"Select a time" datePickerMode:UIDatePickerModeTime selectedDate:self.selectedTime target:self action:@selector(timeWasSelected:element:) origin:sender];
     datePicker.minuteInterval = minuteInterval;
+    [datePicker addCustomButtonWithTitle:@"value" value:[NSDate date]];
+    [datePicker addCustomButtonWithTitle:@"sel" target:self selector:@selector(dateSelector:)];
+    [datePicker addCustomButtonWithTitle:@"Block" actionBlock:^{
+        NSLog(@"Block invoked");
+    }];
     [datePicker showActionSheetPicker];
 }
 
+-(void)dateSelector
+{
+    NSLog(@"SELECTOR");
+}
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
     [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
 }
 
 - (IBAction)selectAMusicalScale:(UIControl *)sender {
-    
+
     ActionSheetPickerCustomPickerDelegate *delg = [[ActionSheetPickerCustomPickerDelegate alloc] init];
-    
+
     NSNumber *yass1 = @1;
     NSNumber *yass2 = @2;
-    
+
     NSArray *initialSelections = @[yass1, yass2];
-    
+
     [ActionSheetCustomPicker showPickerWithTitle:@"Select Key & Scale" delegate:delg showCancelButton:NO origin:sender
                                initialSelections:initialSelections];
 }
@@ -180,28 +217,55 @@
     [cancelButton setImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
     [cancelButton setFrame:CGRectMake(0, 0, 32, 32)];
     [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
+
+
+    NSString *string = @"Random font:";
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+
+    UIFont *randomFont = [self getRandomFont];
+    NSRange range = [attString.string rangeOfString:string];
+    [attString addAttribute:NSFontAttributeName value:randomFont range:range];
+    [attString addAttribute:NSStrokeColorAttributeName value:[UIColor redColor] range:range];
+    [attString addAttribute:NSStrokeWidthAttributeName value:@5.0f range:range];
+
+    picker.attributedTitle = attString;
     [picker showActionSheetPicker];
+}
+
+- (UIFont *)getRandomFont
+{
+    NSArray *familyNames = [UIFont familyNames];
+    NSString *familyName = familyNames[arc4random() % [familyNames count]];
+    NSArray *namesForFamilyName = [UIFont fontNamesForFamilyName:familyName];
+    NSString *fontName = namesForFamilyName[arc4random() % [namesForFamilyName count]];
+    UIFont *randomFont = [UIFont fontWithName:fontName size:[UIFont systemFontSize]];
+    return randomFont;
 }
 
 #pragma mark - Implementation
 
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element {
     self.selectedIndex = [selectedIndex intValue];
-    
+
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
     self.animalTextField.text = (self.animals)[(NSUInteger) self.selectedIndex];
 }
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
     self.selectedDate = selectedDate;
-    
+
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
     self.dateTextField.text = [self.selectedDate description];
 }
 
+- (void)countDownWasSelected:(NSNumber *)selectedDate element:(id)element {
+    //may have originated from textField or barButtonItem, use an IBOutlet instead of element
+    self.counDownTextField.text = selectedDate.stringValue;
+}
+
 -(void)timeWasSelected:(NSDate *)selectedTime element:(id)element {
     self.selectedTime = selectedTime;
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm a"];
     self.timeTextField.text = [dateFormatter stringFromDate:selectedTime];
@@ -252,7 +316,7 @@
     NSLog(@"Picker");
 
     ActionSheetStringPicker * picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Title"  rows:@[@"Row1",@"Row2",@"Row3"] initialSelection:0  doneBlock:^(ActionSheetStringPicker *stringPicker, NSInteger selectedIndex, id selectedValue) {
-        NSLog(@"selectedIndex = %i", selectedIndex);
+        NSLog(@"selectedIndex = %li", (long)selectedIndex);
     } cancelBlock:^(ActionSheetStringPicker *stringPicker) {
         NSLog(@"picker = %@", stringPicker);
     } origin: (UIView*)sender ];

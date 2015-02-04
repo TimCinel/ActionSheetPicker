@@ -94,25 +94,17 @@ CG_INLINE BOOL isIPhone4()
 
 #pragma mark - Abstract Implementation
 
-- (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
+- (instancetype)init
 {
     self = [super init];
     if ( self )
     {
-        self.target = target;
-        self.successAction = successAction;
-        self.cancelAction = cancelActionOrNil;
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
+
         self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                                                     supportedInterfaceOrientationsForWindow:
-                                                                                             [UIApplication sharedApplication].keyWindow];
-        if ( [origin isKindOfClass:[UIBarButtonItem class]] )
-            self.barButtonItem = origin;
-        else if ( [origin isKindOfClass:[UIView class]] )
-            self.containerView = origin;
-        else
-            NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
+                                                                                           supportedInterfaceOrientationsForWindow:
+                                                                                                   [UIApplication sharedApplication].keyWindow];
 
         UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
                                                              action:@selector(actionPickerDone:)];
@@ -125,6 +117,27 @@ CG_INLINE BOOL isIPhone4()
 
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
+    }
+
+    return self;
+}
+
+
+- (instancetype)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin
+{
+    self = [self init];
+    if ( self )
+    {
+        self.target = target;
+        self.successAction = successAction;
+        self.cancelAction = cancelActionOrNil;
+
+        if ( [origin isKindOfClass:[UIBarButtonItem class]] )
+            self.barButtonItem = origin;
+        else if ( [origin isKindOfClass:[UIView class]] )
+            self.containerView = origin;
+        else
+            NSAssert(NO, @"Invalid origin provided to ActionSheetPicker ( %@ )", origin);
     }
     return self;
 }
