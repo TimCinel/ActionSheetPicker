@@ -27,28 +27,23 @@
 
 
 #import <CoreActionSheetPicker/ActionSheetDatePicker.h>
-#import "ActionSheetPickerViewController.h"
+#import "ActionSheetPickerTableViewController.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
 
-@interface ActionSheetPickerViewController()
+@interface ActionSheetPickerTableViewController()
+@property (strong, nonatomic) IBOutlet UISegmentedControl *statusBarSegmentControl;
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
 @end
 
-@implementation ActionSheetPickerViewController
+@implementation ActionSheetPickerTableViewController
 
-@synthesize animalTextField = _animalTextField;
-@synthesize dateTextField = _dateTextField;
-
-@synthesize animals = _animals;
-@synthesize selectedIndex = _selectedIndex;
-@synthesize selectedDate = _selectedDate;
-@synthesize selectedBigUnit = _selectedBigUnit;
-@synthesize selectedSmallUnit = _selectedSmallUnit;
-@synthesize actionSheetPicker = _actionSheetPicker;
+- (IBAction)statusBarStyleChanged:(UISegmentedControl *)sender {
+    self.navigationController.navigationBar.barStyle = (UIBarStyle) sender.selectedSegmentIndex;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +52,7 @@
     self.selectedDate = [NSDate date];
     self.selectedTime = [NSDate date];
 
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.barStyle = (UIBarStyle) self.statusBarSegmentControl.selectedSegmentIndex;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -224,7 +219,7 @@
     [picker setCancelButton:[[UIBarButtonItem alloc] initWithCustomView:cancelButton]];
 
 
-    NSString *string = @"Custom label:";
+    NSString *string = @"Random font:";
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
 
     UIFont *randomFont = [self getRandomFont];
