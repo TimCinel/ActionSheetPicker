@@ -5,6 +5,8 @@
 #### 09/02/15
 - *Merged pull-request:* Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
 
+- *Fixed bug:* Wrong background color of pickers [\#136](https://github.com/skywinder/ActionSheetPicker-3.0/issues/136)
+
 ## [1.3.12](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.12)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.11...1.3.12)
 #### 04/02/15
@@ -186,8 +188,6 @@
 
 - *Implemented enhancement:* Pop over direction [\#28](https://github.com/skywinder/ActionSheetPicker-3.0/issues/28)
 
-- *Fixed bug:* Show from a presented view controller [\#31](https://github.com/skywinder/ActionSheetPicker-3.0/issues/31)
-
 - *Fixed bug:* ActionSheetStringPicker not showing on iphone [\#30](https://github.com/skywinder/ActionSheetPicker-3.0/issues/30)
 
 - *Closed issue:* ActionSheetPicker needs cancel block to handle hiding [\#39](https://github.com/skywinder/ActionSheetPicker-3.0/issues/39)
@@ -196,6 +196,8 @@
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.9...1.1.10)
 #### 04/09/14
 - *Merged pull-request:* Method for presenting overlapping views. [\#32](https://github.com/skywinder/ActionSheetPicker-3.0/pull/32) ([serebryakov-av](https://github.com/serebryakov-av))
+
+- *Fixed bug:* Show from a presented view controller [\#31](https://github.com/skywinder/ActionSheetPicker-3.0/issues/31)
 
 ## [1.1.9](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.9)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.8...1.1.9)
@@ -210,18 +212,18 @@
 ## [1.1.7](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.7)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.6...1.1.7)
 #### 29/08/14
-- *Closed issue:* Still getting warnings [\#16](https://github.com/skywinder/ActionSheetPicker-3.0/issues/16)
-
 ## [1.1.6](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.6)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.5...1.1.6)
 #### 27/08/14
 - *Merged pull-request:* fix readme code [\#26](https://github.com/skywinder/ActionSheetPicker-3.0/pull/26) ([abeyuya](https://github.com/abeyuya))
 
-- *Fixed bug:* Toolbar buttons don't appear when Actionsheet is fired from an iPad Form Sheet or Page Sheet [\#22](https://github.com/skywinder/ActionSheetPicker-3.0/issues/22)
+- *Closed issue:* Still getting warnings [\#16](https://github.com/skywinder/ActionSheetPicker-3.0/issues/16)
 
 ## [1.1.5](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.5)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/compilerBug...1.1.5)
 #### 26/08/14
+- *Fixed bug:* Toolbar buttons don't appear when Actionsheet is fired from an iPad Form Sheet or Page Sheet [\#22](https://github.com/skywinder/ActionSheetPicker-3.0/issues/22)
+
 ## [compilerBug](https://github.com/skywinder/ActionSheetPicker-3.0/tree/compilerBug)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.4...compilerBug)
 #### 26/08/14
