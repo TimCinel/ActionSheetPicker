@@ -1,8 +1,15 @@
 # Changelog
 
+## [1.3.13](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.13)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.12...1.3.13)
+#### 09/02/15
+- *Merged pull-request:* Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
+
 ## [1.3.12](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.12)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.11...1.3.12)
 #### 04/02/15
+- *Fixed bug:* Light status bar style [\#119](https://github.com/skywinder/ActionSheetPicker-3.0/issues/119)
+
 ## [1.3.11](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.11)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.10...1.3.11)
 #### 15/01/15
