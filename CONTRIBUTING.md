@@ -18,6 +18,6 @@ Fork this repository, make it awesomer (preferably in a branch named for the
 topic), send a pull request!
 
 All code contributions should match our [coding
-conventions](https://github.com/github/objective-c-conventions).
+conventions](https://github.com/NYTimes/objective-c-style-guide).
 
 Thanks for contributing! :boom::camel:
