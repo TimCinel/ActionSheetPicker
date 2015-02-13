@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -127,6 +127,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="DistancePicker" id="X0c-ep-s9t" userLabel="DistancePicker">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="JsD-LK-z9t">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JsD-LK-z9t" id="Hvx-TI-Hbk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-vb-x9d">
+                                                    <rect key="frame" x="207" y="5" width="186" height="30"/>
+                                                    <state key="normal" title="ActionSheetDistancePicker">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="distancePickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="7Di-vD-hXo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="5fP-vb-x9d" secondAttribute="centerY" id="9jr-PR-Oge"/>
+                                                <constraint firstAttribute="centerX" secondItem="5fP-vb-x9d" secondAttribute="centerX" id="Uim-xT-vbB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Other" id="W3k-MW-rph">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="SDj-Yf-ZSQ">
@@ -216,7 +241,7 @@
                     <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN">
                         <barButtonItem key="rightBarButtonItem" title="picker" id="Brb-iL-vfw">
                             <connections>
-                                <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="VsD-xT-8g5"/>
+                                <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="oRt-yY-Lrn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
