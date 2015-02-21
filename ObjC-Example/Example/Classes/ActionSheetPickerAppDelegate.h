@@ -28,7 +28,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ActionSheetPickerViewController;
+@class __ActionSheetPickerViewController;
 
 @interface ActionSheetPickerAppDelegate : NSObject <UIApplicationDelegate>
 @property (nonatomic, strong) IBOutlet UIWindow *window;

@@ -27,18 +27,18 @@
 
 
 #import <CoreActionSheetPicker/ActionSheetDatePicker.h>
-#import "ActionSheetPickerViewController.h"
+#import "__ActionSheetPickerViewController.h"
 #import "NSDate+TCUtils.h"
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
 
-@interface ActionSheetPickerViewController()
+@interface __ActionSheetPickerViewController ()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
 @end
 
-@implementation ActionSheetPickerViewController
+@implementation __ActionSheetPickerViewController
 
 @synthesize animalTextField = _animalTextField;
 @synthesize dateTextField = _dateTextField;
