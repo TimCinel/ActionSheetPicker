@@ -6,6 +6,9 @@
 
 ActionSheetPicker-3.0
 ==================
+
+![Animation](Screenshots/example.gif)
+
 - [Overview](#overview)
 	- [Benefits](#benefits)
 - [QuickStart](#quickstart)
@@ -18,10 +21,6 @@ ActionSheetPicker-3.0
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
 - [Contributing](#contributing)
-
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crash-fixes and different customisation abilities.
-
-New updates will be added only in this repo.
 
 Please welcome: **ActionSheetPicker-3.0**!
 
@@ -189,7 +188,7 @@ Here is 4 projects:
 
 ## Credits
 
-- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel))
+- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crash-fixes and different customisation abilities.
 
 - And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
 
