@@ -1,12 +1,20 @@
 # Change Log
 
-## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD) (2015-02-27)
+## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD) (2015-03-02)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...HEAD)
+
+**Closed issues:**
+
+- Trying to customize ActionSheetStringPicker, but don't conform to DataSource? [\#133](https://github.com/skywinder/ActionSheetPicker-3.0/issues/133)
+
+- Dismiss action sheet by tapping on background [\#80](https://github.com/skywinder/ActionSheetPicker-3.0/issues/80)
 
 **Merged pull requests:**
 
 - Add additional showPickerWithTitle method [\#143](https://github.com/skywinder/ActionSheetPicker-3.0/pull/143) ([martinpfannemueller](https://github.com/martinpfannemueller))
+
+- Add TapAction For ActionSheetPickerView And Update The ActionSheetPickerView frame when toolbar hiden [\#140](https://github.com/skywinder/ActionSheetPicker-3.0/pull/140) ([BruceZCQ](https://github.com/BruceZCQ))
 
 ## [1.3.13](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.13) (2015-02-09)
 
