@@ -7,8 +7,6 @@
 ActionSheetPicker-3.0
 ==================
 
-![Animation](Screenshots/example.gif)
-
 - [Overview](#overview)
 	- [Benefits](#benefits)
 - [QuickStart](#quickstart)
@@ -32,7 +30,7 @@ _Regards, Petr Korolev_
 
 ##ActionSheetPicker = UIPickerView + UIActionSheet ##
 
-![ActionSheetLocalePicker](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/locale.png "ActionSheetLocalePicker")
+![Animation](Screenshots/example.gif)
 
 Well, that's how it started. Now, the following is more accurate:
 
