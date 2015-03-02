@@ -34,6 +34,7 @@ CG_INLINE BOOL isIPhone4()
 {
     struct utsname systemInfo;
     uname(&systemInfo);
+
     NSString *modelName = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     return ([modelName rangeOfString:@"iPhone3"].location != NSNotFound);
 }
@@ -100,15 +101,20 @@ CG_INLINE BOOL isIPhone4()
     {
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
+
         self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                                            supportedInterfaceOrientationsForWindow:
-                                                                            [UIApplication sharedApplication].keyWindow];
+                                                                                           supportedInterfaceOrientationsForWindow:
+                                                                                                   [UIApplication sharedApplication].keyWindow];
+
         UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
                                                              action:@selector(actionPickerDone:)];
+
         UIBarButtonItem *sysCancelButton = [self createButtonWithType:UIBarButtonSystemItemCancel target:self
                                                                action:@selector(actionPickerCancel:)];
+
         [self setCancelBarButtonItem:sysCancelButton];
         [self setDoneBarButtonItem:sysDoneButton];
+
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
     }
@@ -125,6 +131,7 @@ CG_INLINE BOOL isIPhone4()
         self.target = target;
         self.successAction = successAction;
         self.cancelAction = cancelActionOrNil;
+
         if ( [origin isKindOfClass:[UIBarButtonItem class]] )
             self.barButtonItem = origin;
         else if ( [origin isKindOfClass:[UIView class]] )
@@ -143,9 +150,12 @@ CG_INLINE BOOL isIPhone4()
 
     if ( [self.pickerView respondsToSelector:@selector(setDataSource:)] )
         [self.pickerView performSelector:@selector(setDataSource:) withObject:nil];
+
     if ( [self.pickerView respondsToSelector:@selector(removeTarget:action:forControlEvents:)] )
         [((UIControl*)self.pickerView) removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+
     self.target = nil;
+
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -176,13 +186,15 @@ CG_INLINE BOOL isIPhone4()
 - (void)showActionSheetPicker
 {
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, 260)];
+
     // to fix bug, appeared only on iPhone 4 Device: https://github.com/skywinder/ActionSheetPicker-3.0/issues/5
     if ( isIPhone4() )
     {
-        //        masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+        masterView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
     }
     self.toolbar = [self createPickerToolbarWithTitle:self.title];
     [masterView addSubview:self.toolbar];
+
     //ios7 picker draws a darkened alpha-only region on the first and last 8 pixels horizontally, but blurs the rest of its background.  To make the whole popup appear to be edge-to-edge, we have to add blurring to the remaining left and right edges.
     if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
     {
@@ -197,9 +209,10 @@ CG_INLINE BOOL isIPhone4()
         [masterView insertSubview:leftEdge atIndex:0];
         [masterView insertSubview:rightEdge atIndex:0];
     }
+
     self.pickerView = [self configuredPickerView];
     NSAssert(_pickerView != NULL, @"Picker view failed to instantiate, perhaps you have invalid component data.");
-    // toolbar hidden remove the toolbar frame and update pickerview frame
+  // toolbar hidden remove the toolbar frame and update pickerview frame
     if (self.toolbar.hidden == YES)
     {
         masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220);
@@ -211,12 +224,6 @@ CG_INLINE BOOL isIPhone4()
     self.actionSheet.window.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapDismissAction)];
     [self.actionSheet.window addGestureRecognizer:tapAction];
-}
-
-- (void)onTapDismissAction
-{
-    [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:[self storedOrigin]];
-    [self dismissPicker];
 }
 
 - (IBAction)actionPickerDone:(id)sender
@@ -253,6 +260,7 @@ CG_INLINE BOOL isIPhone4()
     if (!_customButtons) {
         _customButtons = [[NSMutableArray alloc] init];
     }
+
     return _customButtons;
 }
 
@@ -263,10 +271,10 @@ CG_INLINE BOOL isIPhone4()
     if ( !value )
         value = @0;
     NSDictionary *buttonDetails = @{
-                                    kButtonTitle : title,
-                                    kActionType  : @(ActionTypeValue),
-                                    kButtonValue : value
-                                    };
+            kButtonTitle : title,
+            kActionType  : @(ActionTypeValue),
+            kButtonValue : value
+    };
     [self.customButtons addObject:buttonDetails];
 }
 
@@ -304,13 +312,15 @@ CG_INLINE BOOL isIPhone4()
     UIBarButtonItem *button = (UIBarButtonItem *) sender;
     NSInteger index = button.tag;
     NSAssert((index >= 0 && index < self.customButtons.count), @"Bad custom button tag: %ld, custom button count: %lu", (long)index, (unsigned long)self.customButtons.count);
+
     NSDictionary *buttonDetails = (self.customButtons)[(NSUInteger) index];
     NSAssert(buttonDetails != NULL, @"Custom button dictionary is invalid");
+
     ActionType actionType = (ActionType) [buttonDetails[kActionType] integerValue];
     switch (actionType) {
         case ActionTypeValue: {
             NSAssert([self.pickerView respondsToSelector:@
-                      selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
+                    selector(selectRow:inComponent:animated:)], @"customButtonPressed not overridden, cannot interact with subclassed pickerView");
             NSInteger buttonValue = [buttonDetails[kButtonValue] integerValue];
             UIPickerView *picker = (UIPickerView *) self.pickerView;
             NSAssert(picker != NULL, @"PickerView is invalid");
@@ -322,6 +332,7 @@ CG_INLINE BOOL isIPhone4()
             }
             break;
         }
+
         case ActionTypeBlock: {
             ActionBlock actionBlock = buttonDetails[kButtonValue];
             [self dismissPicker];
@@ -329,6 +340,7 @@ CG_INLINE BOOL isIPhone4()
                 actionBlock();
             break;
         }
+
         case ActionTypeSelector: {
             SEL selector = [buttonDetails[kButtonValue] pointerValue];
             id target    = buttonDetails[kActionTarget];
@@ -336,11 +348,12 @@ CG_INLINE BOOL isIPhone4()
             if (target && [target respondsToSelector:selector])
             {
                 SuppressPerformSelectorLeakWarning (
-                                                    [target performSelector:selector];
-                                                    );
+                    [target performSelector:selector];
+                );
             }
             break;
         }
+
         default:
             NSAssert(false, @"Unknown action type");
             break;
@@ -355,6 +368,7 @@ CG_INLINE BOOL isIPhone4()
         self.hideCancel = YES;
         return;
     }
+
     if ( [button.customView isKindOfClass:[UIButton class]] )
     {
         UIButton *uiButton = (UIButton *) button.customView;
@@ -392,20 +406,25 @@ CG_INLINE BOOL isIPhone4()
     [self actionPickerCancel:nil];
 }
 
+
 - (UIToolbar *)createPickerToolbarWithTitle:(NSString *)title
 {
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
     pickerToolbar.barStyle = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
+
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
+
     if ( !self.hideCancel )
     {
         [barItems addObject:self.cancelBarButtonItem];
     }
+
     NSInteger index = 0;
     for (NSDictionary *buttonDetails in self.customButtons)
     {
         NSString *buttonTitle = buttonDetails[kButtonTitle];
+
         UIBarButtonItem *button;
         if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
         {
@@ -420,20 +439,25 @@ CG_INLINE BOOL isIPhone4()
                                                      target:self action:@selector(customButtonPressed:)];
 #pragma clang diagnostic pop
         }
+
         button.tag = index;
         [barItems addObject:button];
         index++;
     }
+
     UIBarButtonItem *flexSpace = [self createButtonWithType:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [barItems addObject:flexSpace];
     if ( title )
     {
         UIBarButtonItem *labelButton;
+
         labelButton = [self createToolbarLabelWithTitle:title titleTextAttributes:self.titleTextAttributes andAttributedTitle:self.attributedTitle];
+
         [barItems addObject:labelButton];
         [barItems addObject:flexSpace];
     }
     [barItems addObject:self.doneBarButtonItem];
+
     [pickerToolbar setItems:barItems animated:NO];
     return pickerToolbar;
 }
@@ -445,14 +469,15 @@ CG_INLINE BOOL isIPhone4()
     UILabel *toolBarItemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
     [toolBarItemLabel setTextAlignment:NSTextAlignmentCenter];
     [toolBarItemLabel setBackgroundColor:[UIColor clearColor]];
+
     CGFloat strikeWidth;
     CGSize textSize;
-    if (titleTextAttributes)
-    {
+
+
+    if (titleTextAttributes) {
         toolBarItemLabel.attributedText = [[NSAttributedString alloc] initWithString:aTitle attributes:titleTextAttributes];
         textSize = toolBarItemLabel.attributedText.size;
-    } else if (attributedTitle)
-    {
+    } else if (attributedTitle) {
         toolBarItemLabel.attributedText = attributedTitle;
         textSize = toolBarItemLabel.attributedText.size;
     }
@@ -476,11 +501,14 @@ CG_INLINE BOOL isIPhone4()
 #pragma clang diagnostic pop
         }
     }
+
     strikeWidth = textSize.width;
+
     if ( strikeWidth < 180 )
     {
         [toolBarItemLabel sizeToFit];
     }
+
     UIBarButtonItem *buttonLabel = [[UIBarButtonItem alloc] initWithCustomView:toolBarItemLabel];
     return buttonLabel;
 }
@@ -501,7 +529,8 @@ CG_INLINE BOOL isIPhone4()
     {
         return CGSizeMake(320, 320);
     }
-#if defined(__IPHONE_8_0)
+
+    #if defined(__IPHONE_8_0)
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         //iOS 7.1 or earlier
         if ( [self isViewPortrait] )
@@ -512,11 +541,11 @@ CG_INLINE BOOL isIPhone4()
         //iOS 8 or later
         return [[UIScreen mainScreen] bounds].size;
     }
-#else
-    if ( [self isViewPortrait] )
-        return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
-    return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
-#endif
+    #else
+        if ( [self isViewPortrait] )
+            return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
+        return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
+    #endif
 }
 
 - (BOOL)isViewPortrait
@@ -545,6 +574,7 @@ CG_INLINE BOOL isIPhone4()
 - (void)presentPickerForView:(UIView *)aView
 {
     self.presentFromRect = aView.frame;
+
     if ( IS_IPAD )
         [self configureAndPresentPopoverForView:aView];
     else
@@ -554,11 +584,14 @@ CG_INLINE BOOL isIPhone4()
 - (void)configureAndPresentActionSheetForView:(UIView *)aView
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+
     _actionSheet = [[SWActionSheet alloc] initWithView:aView];
+
     [self presentActionSheet:_actionSheet];
+
     // Use beginAnimations for a smoother popup animation, otherwise the UIActionSheet pops into view
     [UIView beginAnimations:nil context:nil];
-    //    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
+//    _actionSheet.bounds = CGRectMake(0, 0, self.viewSize.width, sheetHeight);
     [UIView commitAnimations];
 }
 
@@ -581,6 +614,7 @@ CG_INLINE BOOL isIPhone4()
 {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     viewController.view = aView;
+
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
@@ -594,11 +628,13 @@ CG_INLINE BOOL isIPhone4()
         viewController.contentSizeForViewInPopover = viewController.view.frame.size;
 #pragma clang diagnostic pop
     }
+
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
     if (self.popoverBackgroundViewClass) {
-        [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
+            [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
     }
+
     [self presentPopover:_popOverController];
 }
 
@@ -641,6 +677,7 @@ CG_INLINE BOOL isIPhone4()
 {
     [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:[self storedOrigin]];
 }
+
 
 @end
 
