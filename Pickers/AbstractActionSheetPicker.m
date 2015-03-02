@@ -692,7 +692,18 @@ CG_INLINE BOOL isIPhone4()
 #pragma mark - Popoverdelegate
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
-    [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:[self storedOrigin]];
+    switch (self.tapDismissAction)
+    {
+        case TapActionSucess:{
+            [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:self.storedOrigin];
+            break;
+        }
+        case TapActionNone:
+        case TapActionCancel:{
+            [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:self.storedOrigin];
+            break;
+        }
+    };
 }
 
 
