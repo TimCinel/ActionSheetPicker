@@ -225,7 +225,7 @@ CG_INLINE BOOL isIPhone4()
     switch (self.tapDismissAction)
     {
         case TapActionNone:break;
-        case TapActionSucess:{
+        case TapActionSuccess:{
             // add tap dismiss action
             self.actionSheet.window.userInteractionEnabled = YES;
             UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
@@ -694,7 +694,7 @@ CG_INLINE BOOL isIPhone4()
 {
     switch (self.tapDismissAction)
     {
-        case TapActionSucess:{
+        case TapActionSuccess:{
             [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:self.storedOrigin];
             break;
         }
