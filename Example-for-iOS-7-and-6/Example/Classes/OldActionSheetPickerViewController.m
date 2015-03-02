@@ -127,7 +127,16 @@
 
 
 - (IBAction)selectAMeasurement:(UIControl *)sender {
-    [ActionSheetDistancePicker showPickerWithTitle:@"Select Length" bigUnitString:@"m" bigUnitMax:330 selectedBigUnit:self.selectedBigUnit smallUnitString:@"cm" smallUnitMax:99 selectedSmallUnit:self.selectedSmallUnit target:self action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
+    [ActionSheetDistancePicker showPickerWithTitle:@"Select Length"
+                                     bigUnitString:@"m"
+                                        bigUnitMax:330
+                                   selectedBigUnit:self.selectedBigUnit
+                                   smallUnitString:@"cm"
+                                      smallUnitMax:99
+                                 selectedSmallUnit:self.selectedSmallUnit
+                                            target:self
+                                            action:@selector(measurementWasSelectedWithBigUnit:smallUnit:element:) origin:sender];
+
 }
 
 - (IBAction)selectAMusicalScale:(UIControl *)sender {
