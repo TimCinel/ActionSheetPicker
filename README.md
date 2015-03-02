@@ -151,6 +151,26 @@ ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWith
  //If you prefer to send selectors rather than blocks you can use this method:
 [colorPicker addCustomButtonWithTitle:@"Selector" target:self selector:@selector(awesomeSelector)];
 ```
+
+#### Other customisations:
+
+look at `AbstractActionSheetPicker` properties:
+
+- `toolbar`
+- `title`
+- `pickerView`
+- `viewSize`
+- `customButtons`
+- `hideCancel` -  show or hide cancel button.
+- `titleTextAttributes` - default is nil. Used to specify Title Label attributes.
+- `attributedTitle` - default is nil. If titleTextAttributes not nil this value ignored.
+- `popoverBackgroundViewClass` -allow popover customization on iPad
+- `supportedInterfaceOrientations` - You can set your own supportedInterfaceOrientations value to prevent dismissing picker in some special cases.
+- `tapDismissAction` -  to specify action, by clicking outside area of the picker
+    - TapActionNone,
+    - TapActionSuccess,
+    - TapActionCancel
+
  
 ##Installation##
 
