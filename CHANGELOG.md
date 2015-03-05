@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD) (2015-03-02)
+## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...HEAD)
 
@@ -14,7 +14,7 @@
 
 - Add additional showPickerWithTitle method [\#143](https://github.com/skywinder/ActionSheetPicker-3.0/pull/143) ([martinpfannemueller](https://github.com/martinpfannemueller))
 
-- Add TapAction For ActionSheetPickerView And Update The ActionSheetPickerView frame when toolbar hiden [\#140](https://github.com/skywinder/ActionSheetPicker-3.0/pull/140) ([BruceZCQ](https://github.com/BruceZCQ))
+- Add TapAction property and fix ActionSheetPickerView when toolbar hiden [\#140](https://github.com/skywinder/ActionSheetPicker-3.0/pull/140) ([BruceZCQ](https://github.com/BruceZCQ))
 
 ## [1.3.13](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.13) (2015-02-09)
 
@@ -26,7 +26,7 @@
 
 **Merged pull requests:**
 
-- Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
+- Add DateMonthPicker Example [\#88](https://github.com/skywinder/ActionSheetPicker-3.0/pull/88) ([shivanraptor](https://github.com/shivanraptor))
 
 ## [1.3.12](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.12) (2015-02-04)
 
@@ -44,8 +44,6 @@
 
 - Fixes a crash while closing when using the Classy framework for styling [\#128](https://github.com/skywinder/ActionSheetPicker-3.0/pull/128) ([sudeepsidhu](https://github.com/sudeepsidhu))
 
-- .m files should not be included in public header files [\#127](https://github.com/skywinder/ActionSheetPicker-3.0/pull/127) ([ened](https://github.com/ened))
-
 ## [1.3.10](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.10) (2015-01-09)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.9...1.3.10)
@@ -62,7 +60,11 @@
 
 **Merged pull requests:**
 
+- .m files should not be included in public header files [\#127](https://github.com/skywinder/ActionSheetPicker-3.0/pull/127) ([ened](https://github.com/ened))
+
 - add header file to public [\#115](https://github.com/skywinder/ActionSheetPicker-3.0/pull/115) ([skywinder](https://github.com/skywinder))
+
+- Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
 
 ## [1.3.9](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.9) (2014-12-11)
 
@@ -74,7 +76,7 @@
 
 **Merged pull requests:**
 
-- Fix bad interaction with Git submodules.  Fixes issue #111. [\#112](https://github.com/skywinder/ActionSheetPicker-3.0/pull/112) ([JimDabell](https://github.com/JimDabell))
+- Fix bad interaction with Git submodules.  Fixes issue \#111. [\#112](https://github.com/skywinder/ActionSheetPicker-3.0/pull/112) ([JimDabell](https://github.com/JimDabell))
 
 ## [1.3.8](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.8) (2014-12-10)
 
@@ -86,7 +88,7 @@
 
 **Merged pull requests:**
 
-- Fix for #109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
+- Fix for \#109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
 
 - Fixed an issue when more than one ActionSheetCustomPicker is used in a ViewController [\#108](https://github.com/skywinder/ActionSheetPicker-3.0/pull/108) ([venj](https://github.com/venj))
 
@@ -102,8 +104,6 @@
 
 - Added workaround for a bug in UIDatePicker in count down mode. [\#105](https://github.com/skywinder/ActionSheetPicker-3.0/pull/105) ([tomaskraina](https://github.com/tomaskraina))
 
-- Added minimumDate and maximumDate to contructor of ActionSheetDatePicker [\#98](https://github.com/skywinder/ActionSheetPicker-3.0/pull/98) ([emmanuelay](https://github.com/emmanuelay))
-
 ## [1.3.6](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.6) (2014-12-02)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.5...1.3.6)
@@ -114,11 +114,15 @@
 
 **Closed issues:**
 
-- Travis builds is broken by fix #96 [\#99](https://github.com/skywinder/ActionSheetPicker-3.0/issues/99)
+- Travis builds is broken by fix \#96 [\#99](https://github.com/skywinder/ActionSheetPicker-3.0/issues/99)
 
 **Merged pull requests:**
 
 - Add a Bitdeli Badge to README [\#107](https://github.com/skywinder/ActionSheetPicker-3.0/pull/107) ([bitdeli-chef](https://github.com/bitdeli-chef))
+
+- Added minimumDate and maximumDate to contructor of ActionSheetDatePicker [\#98](https://github.com/skywinder/ActionSheetPicker-3.0/pull/98) ([emmanuelay](https://github.com/emmanuelay))
+
+- Add UITapGestureRecognizer on the SWActionSheet to allow dismissal [\#82](https://github.com/skywinder/ActionSheetPicker-3.0/pull/82) ([anas-ambri](https://github.com/anas-ambri))
 
 ## [1.3.5](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.5) (2014-11-14)
 
@@ -168,7 +172,7 @@
 
 **Merged pull requests:**
 
-- Fix for #84 and #63 [\#85](https://github.com/skywinder/ActionSheetPicker-3.0/pull/85) ([skywinder](https://github.com/skywinder))
+- Fix for \#84 and \#63 [\#85](https://github.com/skywinder/ActionSheetPicker-3.0/pull/85) ([skywinder](https://github.com/skywinder))
 
 ## [1.3.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.0) (2014-11-03)
 
@@ -190,9 +194,7 @@
 
 **Merged pull requests:**
 
-- General fixes for #74 & #50 [\#76](https://github.com/skywinder/ActionSheetPicker-3.0/pull/76) ([skywinder](https://github.com/skywinder))
-
-- Further support for countdown timer [\#74](https://github.com/skywinder/ActionSheetPicker-3.0/pull/74) ([mgmart](https://github.com/mgmart))
+- General fixes for \#74 & \#50 [\#76](https://github.com/skywinder/ActionSheetPicker-3.0/pull/76) ([skywinder](https://github.com/skywinder))
 
 ## [1.1.21](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.21) (2014-10-13)
 
@@ -217,6 +219,10 @@
 - Using ActionSheetDatePicker as CountDownTimer-Picker [\#72](https://github.com/skywinder/ActionSheetPicker-3.0/issues/72)
 
 - Example fails when clicking "Modal Test": 'Pushing a navigation controller is not supported' [\#70](https://github.com/skywinder/ActionSheetPicker-3.0/issues/70)
+
+**Merged pull requests:**
+
+- Further support for countdown timer [\#74](https://github.com/skywinder/ActionSheetPicker-3.0/pull/74) ([mgmart](https://github.com/mgmart))
 
 ## [1.1.19](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.19) (2014-10-07)
 
@@ -268,6 +274,8 @@
 
 - add block based API to date picker [\#56](https://github.com/skywinder/ActionSheetPicker-3.0/pull/56) ([mrtj](https://github.com/mrtj))
 
+- fix compiler problem of AbstractActionSheetPicker\(not include storyboard... [\#47](https://github.com/skywinder/ActionSheetPicker-3.0/pull/47) ([yanzhiwei147](https://github.com/yanzhiwei147))
+
 ## [1.1.13](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.13) (2014-09-19)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.12...1.1.13)
@@ -282,13 +290,13 @@
 
 - Add badge [\#45](https://github.com/skywinder/ActionSheetPicker-3.0/pull/45) ([skywinder](https://github.com/skywinder))
 
-- reformat [\#44](https://github.com/skywinder/ActionSheetPicker-3.0/pull/44) ([skywinder](https://github.com/skywinder))
-
 ## [1.1.12](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.12) (2014-09-17)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.11...1.1.12)
 
 **Merged pull requests:**
+
+- reformat [\#44](https://github.com/skywinder/ActionSheetPicker-3.0/pull/44) ([skywinder](https://github.com/skywinder))
 
 - unexpected action sheet dismissing in portrait mode only [\#40](https://github.com/skywinder/ActionSheetPicker-3.0/pull/40) ([numen31337](https://github.com/numen31337))
 
