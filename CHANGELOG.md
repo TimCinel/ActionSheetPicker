@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.5.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.0) (2015-03-05)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.4.0...1.5.0)
+
+**Closed issues:**
+
+- upside down portrait mode displays incorrectly [\#146](https://github.com/skywinder/ActionSheetPicker-3.0/issues/146)
+
+**Merged pull requests:**
+
+- Added support for upside down portrait; [\#149](https://github.com/skywinder/ActionSheetPicker-3.0/pull/149) ([dtrauger](https://github.com/dtrauger))
+
 ## [1.4.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.4.0) (2015-03-05)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...1.4.0)
@@ -109,6 +121,8 @@
 **Fixed bugs:**
 
 - Example projects failed to launch [\#96](https://github.com/skywinder/ActionSheetPicker-3.0/issues/96)
+
+- Picker rotating when host view controller fixed to portrait [\#100](https://github.com/skywinder/ActionSheetPicker-3.0/issues/100)
 
 **Closed issues:**
 
