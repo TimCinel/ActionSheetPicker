@@ -1,12 +1,10 @@
 # Change Log
 
-## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
+## [1.4.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.4.0) (2015-03-05)
 
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...HEAD)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...1.4.0)
 
 **Closed issues:**
-
-- Trying to customize ActionSheetStringPicker, but don't conform to DataSource? [\#133](https://github.com/skywinder/ActionSheetPicker-3.0/issues/133)
 
 - Dismiss action sheet by tapping on background [\#80](https://github.com/skywinder/ActionSheetPicker-3.0/issues/80)
 
