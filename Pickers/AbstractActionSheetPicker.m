@@ -666,8 +666,11 @@ CG_INLINE BOOL isIPhone4()
     }
     else if ( (self.containerView) )
     {
-        [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
-               permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
+                   permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+        });
         return;
     }
     // Unfortunately, things go to hell whenever you try to present a popover from a table view cell.  These are failsafes.
@@ -677,15 +680,21 @@ CG_INLINE BOOL isIPhone4()
     {
         origin = (_containerView.superview ? _containerView.superview : _containerView);
         presentRect = origin.bounds;
-        [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny
-                               animated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [popover presentPopoverFromRect:presentRect inView:origin
+                   permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+        });
     }
     @catch (NSException *exception)
     {
         origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
         presentRect = CGRectMake(origin.center.x, origin.center.y, 1, 1);
-        [popover presentPopoverFromRect:presentRect inView:origin permittedArrowDirections:UIPopoverArrowDirectionAny
-                               animated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [popover presentPopoverFromRect:presentRect inView:origin
+                   permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+        });
     }
 }
 

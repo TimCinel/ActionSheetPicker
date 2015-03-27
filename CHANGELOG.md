@@ -1,5 +1,15 @@
 # Change Log
 
+## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.0...HEAD)
+
+**Closed issues:**
+
+- Works on simulator - never starts on device. [\#118](https://github.com/skywinder/ActionSheetPicker-3.0/issues/118)
+
+- Crash in AbstractActionSheetPicker.m line 36 [\#101](https://github.com/skywinder/ActionSheetPicker-3.0/issues/101)
+
 ## [1.5.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.0) (2015-03-05)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.4.0...1.5.0)
@@ -121,8 +131,6 @@
 **Fixed bugs:**
 
 - Example projects failed to launch [\#96](https://github.com/skywinder/ActionSheetPicker-3.0/issues/96)
-
-- Picker rotating when host view controller fixed to portrait [\#100](https://github.com/skywinder/ActionSheetPicker-3.0/issues/100)
 
 **Closed issues:**
 
