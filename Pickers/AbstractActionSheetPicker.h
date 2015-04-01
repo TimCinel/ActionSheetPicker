@@ -61,6 +61,7 @@ static NSString *const kActionType    = @"buttonAction";
 static NSString *const kActionTarget  = @"buttonActionTarget";
 
 @interface AbstractActionSheetPicker : NSObject<UIPopoverControllerDelegate>
+@property (nonatomic, assign) NSInteger tag;
 @property (nonatomic, strong) UIToolbar* toolbar;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) UIView *pickerView;
