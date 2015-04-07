@@ -102,9 +102,15 @@ CG_INLINE BOOL isIPhone4()
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
 
-        self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                                                           supportedInterfaceOrientationsForWindow:
-                                                                                                   [UIApplication sharedApplication].keyWindow];
+        if ([UIApplication instancesRespondToSelector:@selector(supportedInterfaceOrientationsForWindow:)])
+            self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                                                                                supportedInterfaceOrientationsForWindow:
+                                                                                [UIApplication sharedApplication].keyWindow];
+        else {
+            self.supportedInterfaceOrientations = (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight);
+            if (IS_IPAD)
+                self.supportedInterfaceOrientations |= (1 << UIInterfaceOrientationPortraitUpsideDown);
+        }
 
         UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
                                                              action:@selector(actionPickerDone:)];
