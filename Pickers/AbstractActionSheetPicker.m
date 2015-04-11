@@ -59,7 +59,6 @@ CG_INLINE BOOL isIPhone4()
 @property(nonatomic, unsafe_unretained) id target;
 @property(nonatomic, assign) SEL successAction;
 @property(nonatomic, assign) SEL cancelAction;
-@property(nonatomic, strong) SWActionSheet *actionSheet;
 @property(nonatomic, strong) UIPopoverController *popOverController;
 @property(nonatomic, strong) NSObject *selfReference;
 
@@ -199,9 +198,9 @@ CG_INLINE BOOL isIPhone4()
     //ios7 picker draws a darkened alpha-only region on the first and last 8 pixels horizontally, but blurs the rest of its background.  To make the whole popup appear to be edge-to-edge, we have to add blurring to the remaining left and right edges.
     if ( NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 )
     {
-        CGRect f = CGRectMake(0, self.toolbar.frame.origin.y, 8, masterView.frame.size.height - self.toolbar.frame.origin.y);
+        CGRect f = CGRectMake(0, self.toolbar.frame.origin.y, _borderWidth, masterView.frame.size.height - self.toolbar.frame.origin.y);
         UIToolbar *leftEdge = [[UIToolbar alloc] initWithFrame:f];
-        f.origin.x = masterView.frame.size.width - 8;
+        f.origin.x = masterView.frame.size.width - _borderWidth;
         UIToolbar *rightEdge = [[UIToolbar alloc] initWithFrame:f];
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
@@ -216,8 +215,9 @@ CG_INLINE BOOL isIPhone4()
     // toolbar hidden remove the toolbar frame and update pickerview frame
     if ( self.toolbar.hidden )
     {
+        int halfWidth = _borderWidth*0.5f;
         masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220);
-        self.pickerView.frame = CGRectMake(0, 4, self.viewSize.width, 216);
+        self.pickerView.frame = CGRectMake(0, halfWidth, self.viewSize.width, 220-halfWidth);
     }
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
