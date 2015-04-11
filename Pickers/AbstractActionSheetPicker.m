@@ -26,6 +26,7 @@
 //
 
 #import "AbstractActionSheetPicker.h"
+#import "SWActionSheet.h"
 #import <objc/message.h>
 #import <sys/utsname.h>
 

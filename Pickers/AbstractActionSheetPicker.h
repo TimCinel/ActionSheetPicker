@@ -27,7 +27,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SWActionSheet.h"
+
+@class SWActionSheet;
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
