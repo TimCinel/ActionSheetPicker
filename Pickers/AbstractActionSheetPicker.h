@@ -27,6 +27,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SWActionSheet.h"
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
@@ -61,7 +62,9 @@ static NSString *const kActionType    = @"buttonAction";
 static NSString *const kActionTarget  = @"buttonActionTarget";
 
 @interface AbstractActionSheetPicker : NSObject<UIPopoverControllerDelegate>
+@property (nonatomic, strong) SWActionSheet *actionSheet;
 @property (nonatomic, assign) NSInteger tag;
+@property (nonatomic, assign) int borderWidth;
 @property (nonatomic, strong) UIToolbar* toolbar;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) UIView *pickerView;
