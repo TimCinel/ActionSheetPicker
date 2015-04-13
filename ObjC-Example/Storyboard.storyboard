@@ -418,7 +418,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
         <!--Action Sheet Picker View Controller-->
         <scene sceneID="N6f-0m-5XV">
             <objects>
-                <viewController id="Rhb-1G-jv3" customClass="__ActionSheetPickerViewController" sceneMemberID="viewController">
+                <viewController id="Rhb-1G-jv3" customClass="ActionSheetPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YVk-LV-PQb"/>
                         <viewControllerLayoutGuide type="bottom" id="ZzC-q3-O6g"/>

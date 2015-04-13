@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */; };
 		1C6EE71B192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */; };
-		1C6EE71C192BB41600A27994 /* __ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* __ActionSheetPickerViewController.m */; };
+		1C6EE71C192BB41600A27994 /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */; };
 		1C6EE71D192BB41600A27994 /* NSDate+TCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */; };
 		1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE712192BB41600A27994 /* Default-568h@2x.png */; };
 		1C6EE720192BB41600A27994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
@@ -55,8 +55,8 @@
 		1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerAppDelegate.m; sourceTree = "<group>"; };
 		1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerCustomPickerDelegate.h; sourceTree = "<group>"; };
 		1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerCustomPickerDelegate.m; sourceTree = "<group>"; };
-		1C6EE70E192BB41600A27994 /* __ActionSheetPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __ActionSheetPickerViewController.h; sourceTree = "<group>"; };
-		1C6EE70F192BB41600A27994 /* __ActionSheetPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = __ActionSheetPickerViewController.m; sourceTree = "<group>"; };
+		1C6EE70E192BB41600A27994 /* ActionSheetPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerViewController.h; sourceTree = "<group>"; };
+		1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerViewController.m; sourceTree = "<group>"; };
 		1C6EE710192BB41600A27994 /* NSDate+TCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCUtils.h"; sourceTree = "<group>"; };
 		1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCUtils.m"; sourceTree = "<group>"; };
 		1C6EE712192BB41600A27994 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 				1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */,
 				1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */,
 				1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */,
-				1C6EE70E192BB41600A27994 /* __ActionSheetPickerViewController.h */,
-				1C6EE70F192BB41600A27994 /* __ActionSheetPickerViewController.m */,
+				1C6EE70E192BB41600A27994 /* ActionSheetPickerViewController.h */,
+				1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */,
 				1C6EE710192BB41600A27994 /* NSDate+TCUtils.h */,
 				1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */,
 				D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */,
@@ -343,7 +343,7 @@
 			files = (
 				1C6EE71D192BB41600A27994 /* NSDate+TCUtils.m in Sources */,
 				1C6EE720192BB41600A27994 /* main.m in Sources */,
-				1C6EE71C192BB41600A27994 /* __ActionSheetPickerViewController.m in Sources */,
+				1C6EE71C192BB41600A27994 /* ActionSheetPickerViewController.m in Sources */,
 				1C6EE71B192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m in Sources */,
 				1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */,
 				D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */,
