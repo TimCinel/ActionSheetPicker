@@ -32,7 +32,7 @@
 #import "ActionSheetPickerCustomPickerDelegate.h"
 #import "TestTableViewController.h"
 
-@interface ActionSheetPickerViewController()
+@interface ActionSheetPickerViewController ()
 - (void)measurementWasSelectedWithBigUnit:(NSNumber *)bigUnit smallUnit:(NSNumber *)smallUnit element:(id)element;
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element;
 - (void)animalWasSelected:(NSNumber *)selectedIndex element:(id)element;
@@ -121,9 +121,9 @@
                                                             doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
 
                                                                 NSLog(@"selectedDate: %@", selectedDate);
-                                                                self.counDownTextField.text = [selectedDate stringValue];
+                                                                self.countDownTextField.text = [selectedDate stringValue];
                                                                 NSLog(@"picker.countDownDuration, %f", picker.countDownDuration);
-                                                                self.counDownTextField.text = [NSString stringWithFormat:@"%f", picker.countDownDuration];
+                                                                self.countDownTextField.text = [NSString stringWithFormat:@"%f", picker.countDownDuration];
 
                                                             } cancelBlock:^(ActionSheetDatePicker *picker) {
 
@@ -265,7 +265,7 @@
 
 - (void)countDownWasSelected:(NSNumber *)selectedDate element:(id)element {
     //may have originated from textField or barButtonItem, use an IBOutlet instead of element
-    self.counDownTextField.text = selectedDate.stringValue;
+    self.countDownTextField.text = selectedDate.stringValue;
 }
 
 -(void)timeWasSelected:(NSDate *)selectedTime element:(id)element {
