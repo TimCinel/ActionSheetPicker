@@ -214,24 +214,7 @@
 		1C1B32F81ADD51DD008E962A /* CoreActionSheetPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1C1B33171ADD522F008E962A /* ActionSheetDistancePicker.h */,
-				1C1B33181ADD522F008E962A /* ActionSheetDistancePicker.m */,
-				1C1B33191ADD522F008E962A /* AbstractActionSheetPicker.h */,
-				1C1B331A1ADD522F008E962A /* AbstractActionSheetPicker.m */,
-				1C1B331B1ADD522F008E962A /* SWActionSheet.m */,
-				1C1B331C1ADD522F008E962A /* ActionSheetDatePicker.h */,
-				1C1B331D1ADD522F008E962A /* ActionSheetDatePicker.m */,
-				1C1B331E1ADD522F008E962A /* ActionSheetStringPicker.m */,
-				1C1B331F1ADD522F008E962A /* ActionSheetStringPicker.h */,
-				1C1B33201ADD522F008E962A /* ActionSheetCustomPicker.h */,
-				1C1B33211ADD522F008E962A /* ActionSheetCustomPicker.m */,
-				1C1B33221ADD522F008E962A /* ActionSheetCustomPickerDelegate.h */,
-				1C1B33231ADD522F008E962A /* ActionSheetLocalePicker.h */,
-				1C1B33241ADD522F008E962A /* ActionSheetLocalePicker.m */,
-				1C1B33251ADD522F008E962A /* ActionSheetPicker.h */,
-				1C1B33261ADD522F008E962A /* DistancePickerView.h */,
-				1C1B33271ADD522F008E962A /* DistancePickerView.m */,
-				1C1B33281ADD522F008E962A /* SWActionSheet.h */,
+				1C1B333B1ADD5342008E962A /* Pickers */,
 				1C1B32FB1ADD51DD008E962A /* CoreActionSheetPicker.h */,
 				1C1B32F91ADD51DD008E962A /* Supporting Files */,
 			);
@@ -261,6 +244,31 @@
 				1C1B33091ADD51DD008E962A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C1B333B1ADD5342008E962A /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				1C1B33171ADD522F008E962A /* ActionSheetDistancePicker.h */,
+				1C1B33181ADD522F008E962A /* ActionSheetDistancePicker.m */,
+				1C1B33191ADD522F008E962A /* AbstractActionSheetPicker.h */,
+				1C1B331A1ADD522F008E962A /* AbstractActionSheetPicker.m */,
+				1C1B331B1ADD522F008E962A /* SWActionSheet.m */,
+				1C1B331C1ADD522F008E962A /* ActionSheetDatePicker.h */,
+				1C1B331D1ADD522F008E962A /* ActionSheetDatePicker.m */,
+				1C1B331E1ADD522F008E962A /* ActionSheetStringPicker.m */,
+				1C1B331F1ADD522F008E962A /* ActionSheetStringPicker.h */,
+				1C1B33201ADD522F008E962A /* ActionSheetCustomPicker.h */,
+				1C1B33211ADD522F008E962A /* ActionSheetCustomPicker.m */,
+				1C1B33221ADD522F008E962A /* ActionSheetCustomPickerDelegate.h */,
+				1C1B33231ADD522F008E962A /* ActionSheetLocalePicker.h */,
+				1C1B33241ADD522F008E962A /* ActionSheetLocalePicker.m */,
+				1C1B33251ADD522F008E962A /* ActionSheetPicker.h */,
+				1C1B33261ADD522F008E962A /* DistancePickerView.h */,
+				1C1B33271ADD522F008E962A /* DistancePickerView.m */,
+				1C1B33281ADD522F008E962A /* SWActionSheet.h */,
+			);
+			name = Pickers;
 			sourceTree = "<group>";
 		};
 		1C6EE704192BB41600A27994 /* Example */ = {
@@ -1007,6 +1015,7 @@
 				1C1B33121ADD51DD008E962A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C1B33141ADD51DD008E962A /* Build configuration list for PBXNativeTarget "CoreActionSheetPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -1015,6 +1024,7 @@
 				1C1B33161ADD51DD008E962A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */ = {
 			isa = XCConfigurationList;
