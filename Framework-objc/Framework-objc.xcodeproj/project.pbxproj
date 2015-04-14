@@ -14,6 +14,8 @@
 		1C1B33C91ADD75B1008E962A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B33C81ADD75B1008E962A /* Images.xcassets */; };
 		1C1B33CC1ADD75B1008E962A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B33CA1ADD75B1008E962A /* LaunchScreen.xib */; };
 		1C1B33D81ADD75B1008E962A /* Framework_objcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B33D71ADD75B1008E962A /* Framework_objcTests.m */; };
+		1CC893811ADD7D340003D077 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */; };
+		1CC893821ADD7D340003D077 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 			remoteInfo = "Framework-objc";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1CC893831ADD7D340003D077 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1CC893821ADD7D340003D077 /* CoreActionSheetPicker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C1B33B81ADD75B1008E962A /* Framework-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Framework-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +56,7 @@
 		1C1B33D11ADD75B1008E962A /* Framework-objcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-objcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1B33D61ADD75B1008E962A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C1B33D71ADD75B1008E962A /* Framework_objcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Framework_objcTests.m; sourceTree = "<group>"; };
+		1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC893811ADD7D340003D077 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +81,7 @@
 		1C1B33AF1ADD75B1008E962A = {
 			isa = PBXGroup;
 			children = (
+				1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */,
 				1C1B33BA1ADD75B1008E962A /* Framework-objc */,
 				1C1B33D41ADD75B1008E962A /* Framework-objcTests */,
 				1C1B33B91ADD75B1008E962A /* Products */,
@@ -129,6 +148,7 @@
 				1C1B33B41ADD75B1008E962A /* Sources */,
 				1C1B33B51ADD75B1008E962A /* Frameworks */,
 				1C1B33B61ADD75B1008E962A /* Resources */,
+				1CC893831ADD7D340003D077 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Framework-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -360,6 +384,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Framework-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
