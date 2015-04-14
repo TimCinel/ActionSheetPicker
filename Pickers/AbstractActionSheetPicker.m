@@ -228,25 +228,27 @@ CG_INLINE BOOL isIPhone4()
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
 
-    switch (self.tapDismissAction)
-    {
-        case TapActionNone:break;
-        case TapActionSuccess:{
-            // add tap dismiss action
-            self.actionSheet.window.userInteractionEnabled = YES;
-            UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
-            [self.actionSheet.window addGestureRecognizer:tapAction];
-            break;
-        }
-        case TapActionCancel:{
-            // add tap dismiss action
-            self.actionSheet.window.userInteractionEnabled = YES;
-            UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
-            [self.actionSheet.window addGestureRecognizer:tapAction];
-            break;
-        }
-    };
-
+    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+        switch (self.tapDismissAction)
+        {
+            case TapActionNone:break;
+            case TapActionSuccess:{
+                // add tap dismiss action
+                self.actionSheet.window.userInteractionEnabled = YES;
+                UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
+                [self.actionSheet.window addGestureRecognizer:tapAction];
+                break;
+            }
+            case TapActionCancel:{
+                // add tap dismiss action
+                self.actionSheet.window.userInteractionEnabled = YES;
+                UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
+                [self.actionSheet.window addGestureRecognizer:tapAction];
+                break;
+            }
+        };
+    }
+    
 }
 
 - (IBAction)actionPickerDone:(id)sender
