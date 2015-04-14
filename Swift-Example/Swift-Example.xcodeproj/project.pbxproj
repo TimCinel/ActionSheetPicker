@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1B333D1ADD5509008E962A /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */; };
+		1C1B333F1ADD5524008E962A /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C243EE819CC5AE0000EE6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EE719CC5AE0000EE6A6 /* AppDelegate.swift */; };
 		1C243EEA19CC5AE0000EE6A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EE919CC5AE0000EE6A6 /* ViewController.swift */; };
 		1C243EED19CC5AE0000EE6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EEB19CC5AE0000EE6A6 /* Main.storyboard */; };
@@ -33,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1C1B333F1ADD5524008E962A /* CoreActionSheetPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../../Library/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		1C243EE219CC5AE0000EE6A6 /* Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C243EE619CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EE719CC5AE0000EE6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C1B333D1ADD5509008E962A /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +145,7 @@
 		D66F5025FE1F1ECC58FAF7AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
