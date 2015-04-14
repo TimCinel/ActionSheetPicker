@@ -5,9 +5,6 @@
       location = "group:Example-for-iOS-7-and-6/ActionSheetPicker-iOS6-7.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CoreActionSheetPicker/CoreActionSheetPicker.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Swift-Example/Swift-Example.xcodeproj">
    </FileRef>
    <FileRef
