@@ -83,7 +83,10 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 -  The most easiest way is through [Cocoapods](http://cocoapods.org/).
 Just add to your Podfile string: `pod 'ActionSheetPicker-3.0'`
 
+- You can integrate Cocoa Framework `CoreActionSheetPicker.framework`
+
 -  The "old school" way is manually add to your project all from [Pickers](/Pickers) folder and import necessary headers.
+
 
 ## Example Projects##
 

@@ -14,9 +14,9 @@
 		1C1B33C91ADD75B1008E962A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B33C81ADD75B1008E962A /* Images.xcassets */; };
 		1C1B33CC1ADD75B1008E962A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B33CA1ADD75B1008E962A /* LaunchScreen.xib */; };
 		1C1B33D81ADD75B1008E962A /* Framework_objcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B33D71ADD75B1008E962A /* Framework_objcTests.m */; };
-		1CC893811ADD7D340003D077 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */; };
-		1CC893821ADD7D340003D077 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1CC8938D1ADD80D70003D077 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC8938C1ADD80D70003D077 /* MyTableViewController.m */; };
+		1CF8E4C61ADE98030093F997 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF8E4C51ADE98030093F997 /* CoreActionSheetPicker.framework */; };
+		1CF8E4C71ADE98030093F997 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF8E4C51ADE98030093F997 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1CC893821ADD7D340003D077 /* CoreActionSheetPicker.framework in Embed Frameworks */,
+				1CF8E4C71ADE98030093F997 /* CoreActionSheetPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,9 +57,9 @@
 		1C1B33D11ADD75B1008E962A /* Framework-objcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework-objcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1B33D61ADD75B1008E962A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C1B33D71ADD75B1008E962A /* Framework_objcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Framework_objcTests.m; sourceTree = "<group>"; };
-		1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = "<group>"; };
 		1CC8938B1ADD80D70003D077 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		1CC8938C1ADD80D70003D077 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		1CF8E4C51ADE98030093F997 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CC893811ADD7D340003D077 /* CoreActionSheetPicker.framework in Frameworks */,
+				1CF8E4C61ADE98030093F997 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 		1C1B33AF1ADD75B1008E962A = {
 			isa = PBXGroup;
 			children = (
-				1CC893801ADD7D340003D077 /* CoreActionSheetPicker.framework */,
+				1CF8E4C51ADE98030093F997 /* CoreActionSheetPicker.framework */,
 				1C1B33BA1ADD75B1008E962A /* Framework-objc */,
 				1C1B33D41ADD75B1008E962A /* Framework-objcTests */,
 				1C1B33B91ADD75B1008E962A /* Products */,
