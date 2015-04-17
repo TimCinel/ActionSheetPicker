@@ -82,13 +82,65 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
  
 ##Installation##
 
--  The most easiest way is through [Cocoapods](http://cocoapods.org/).
-Just add to your Podfile string: `pod 'ActionSheetPicker-3.0'`
+### CocoaPods
 
-- You can integrate Cocoa Framework `CoreActionSheetPicker.framework`
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
--  The "old school" way is manually add to your project all from [Pickers](/Pickers) folder and import necessary headers.
+You can install it with the following command:
 
+```bash
+$ gem install cocoapods
+```
+
+To integrate ActionSheetPicker-3.0 into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'ActionSheetPicker-3.0'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+
+Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate ActionSheetPicker-3.0 into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "skywinder/ActionSheetPicker-3.0"
+```
+
+### Manually
+
+If you prefer not to use either of the aforementioned dependency managers, you can integrate ActionSheetPicker-3.0 into your project manually.
+
+The "old school" way is manually add to your project all from [Pickers](/Pickers) folder.
+
+### Embedded Framework
+
+- Add ActionSheetPicker-3.0 as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the following command:
+
+```bash
+$ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
+```
+
+- Open the `ActionSheetPicker-3.0` folder, and drag `CoreActionSheetPicker.xcodeproj` into the file navigator of your app project.
+- In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
+- Ensure that the deployment target of CoreActionSheetPicker.framework matches that of the application target.
+- In the tab bar at the top of that window, open the "Build Phases" panel.
+- Expand the "Target Dependencies" group, and add `CoreActionSheetPicker.framework`.
+- Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `CoreActionSheetPicker.framework`.
 
 ## Example Projects##
 
