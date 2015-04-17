@@ -1,10 +1,22 @@
 # Change Log
 
+## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.1...HEAD)
+
+**Closed issues:**
+
+- iOS 7.1 done button requires long press [\#167](https://github.com/skywinder/ActionSheetPicker-3.0/issues/167)
+
+**Merged pull requests:**
+
+- Added "tag" to AbstractActionSheet [\#159](https://github.com/skywinder/ActionSheetPicker-3.0/pull/159) ([Jeepston](https://github.com/Jeepston))
+
 ## [1.5.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.1) (2015-03-27)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.0...1.5.1)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - iOS 8 - iPad - UISplitViewController issue. [\#157](https://github.com/skywinder/ActionSheetPicker-3.0/issues/157)
 
