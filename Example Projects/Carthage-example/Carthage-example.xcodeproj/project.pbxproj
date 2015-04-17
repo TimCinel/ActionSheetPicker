@@ -14,6 +14,7 @@
 		1CCA8FE51AE0E01B00368F5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA8FE41AE0E01B00368F5E /* Images.xcassets */; };
 		1CCA8FE81AE0E01B00368F5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA8FE61AE0E01B00368F5E /* LaunchScreen.xib */; };
 		1CCA8FF41AE0E01B00368F5E /* Carthage_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA8FF31AE0E01B00368F5E /* Carthage_exampleTests.m */; };
+		1CCA8FFF1AE0E07F00368F5E /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA8FFE1AE0E07F00368F5E /* MyTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		1CCA8FED1AE0E01B00368F5E /* Carthage-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Carthage-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCA8FF21AE0E01B00368F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CCA8FF31AE0E01B00368F5E /* Carthage_exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carthage_exampleTests.m; sourceTree = "<group>"; };
+		1CCA8FFD1AE0E07F00368F5E /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		1CCA8FFE1AE0E07F00368F5E /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 			children = (
 				1CCA8FDB1AE0E01B00368F5E /* AppDelegate.h */,
 				1CCA8FDC1AE0E01B00368F5E /* AppDelegate.m */,
+				1CCA8FFD1AE0E07F00368F5E /* MyTableViewController.h */,
+				1CCA8FFE1AE0E07F00368F5E /* MyTableViewController.m */,
 				1CCA8FDE1AE0E01B00368F5E /* ViewController.h */,
 				1CCA8FDF1AE0E01B00368F5E /* ViewController.m */,
 				1CCA8FE11AE0E01B00368F5E /* Main.storyboard */,
@@ -222,6 +227,7 @@
 				1CCA8FE01AE0E01B00368F5E /* ViewController.m in Sources */,
 				1CCA8FDD1AE0E01B00368F5E /* AppDelegate.m in Sources */,
 				1CCA8FDA1AE0E01B00368F5E /* main.m in Sources */,
+				1CCA8FFF1AE0E07F00368F5E /* MyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +424,7 @@
 				1CCA8FF91AE0E01B00368F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CCA8FFA1AE0E01B00368F5E /* Build configuration list for PBXNativeTarget "Carthage-exampleTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				1CCA8FFC1AE0E01B00368F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
