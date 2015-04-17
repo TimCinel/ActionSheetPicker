@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "ActionSheetPicker.app"
-               BlueprintName = "ActionSheetPicker"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
+               BuildableName = "CoreActionSheetPicker.framework"
+               BlueprintName = "CoreActionSheetPicker"
+               ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -27,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C1B33001ADD51DD008E962A"
+               BlueprintIdentifier = "1CCA904D1AE0EFB000368F5E"
                BuildableName = "CoreActionSheetPickerTests.xctest"
                BlueprintName = "CoreActionSheetPickerTests"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C1B33001ADD51DD008E962A"
+               BlueprintIdentifier = "1CCA904D1AE0EFB000368F5E"
                BuildableName = "CoreActionSheetPickerTests.xctest"
                BlueprintName = "CoreActionSheetPickerTests"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
+            BuildableName = "CoreActionSheetPicker.framework"
+            BlueprintName = "CoreActionSheetPicker"
+            ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -71,16 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
+            BuildableName = "CoreActionSheetPicker.framework"
+            BlueprintName = "CoreActionSheetPicker"
+            ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -93,10 +93,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
+            BuildableName = "CoreActionSheetPicker.framework"
+            BlueprintName = "CoreActionSheetPicker"
+            ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
