@@ -45,9 +45,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C1B33001ADD51DD008E962A"
-               BuildableName = "CoreActionSheetPickerTests.xctest"
-               BlueprintName = "CoreActionSheetPickerTests"
+               BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
+               BuildableName = "ActionSheetPickerTests.xctest"
+               BlueprintName = "ActionSheetPickerTests"
                ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
