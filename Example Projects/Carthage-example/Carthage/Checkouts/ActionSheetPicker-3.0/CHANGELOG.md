@@ -2,13 +2,23 @@
 
 ## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
 
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.0...HEAD)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.1...HEAD)
 
 **Closed issues:**
 
-- Works on simulator - never starts on device. [\#118](https://github.com/skywinder/ActionSheetPicker-3.0/issues/118)
+- iOS 7.1 done button requires long press [\#167](https://github.com/skywinder/ActionSheetPicker-3.0/issues/167)
 
-- Crash in AbstractActionSheetPicker.m line 36 [\#101](https://github.com/skywinder/ActionSheetPicker-3.0/issues/101)
+**Merged pull requests:**
+
+- Added "tag" to AbstractActionSheet [\#159](https://github.com/skywinder/ActionSheetPicker-3.0/pull/159) ([Jeepston](https://github.com/Jeepston))
+
+## [1.5.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.1) (2015-03-27)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.0...1.5.1)
+
+**Fixed bugs:**
+
+- iOS 8 - iPad - UISplitViewController issue. [\#157](https://github.com/skywinder/ActionSheetPicker-3.0/issues/157)
 
 ## [1.5.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.0) (2015-03-05)
 
@@ -25,10 +35,6 @@
 ## [1.4.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.4.0) (2015-03-05)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...1.4.0)
-
-**Closed issues:**
-
-- Dismiss action sheet by tapping on background [\#80](https://github.com/skywinder/ActionSheetPicker-3.0/issues/80)
 
 **Merged pull requests:**
 
@@ -76,15 +82,13 @@
 
 - No "cancel" button [\#122](https://github.com/skywinder/ActionSheetPicker-3.0/issues/122)
 
-- Swift; Does not conform to protocol [\#120](https://github.com/skywinder/ActionSheetPicker-3.0/issues/120)
-
 **Merged pull requests:**
+
+- Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
 
 - .m files should not be included in public header files [\#127](https://github.com/skywinder/ActionSheetPicker-3.0/pull/127) ([ened](https://github.com/ened))
 
 - add header file to public [\#115](https://github.com/skywinder/ActionSheetPicker-3.0/pull/115) ([skywinder](https://github.com/skywinder))
-
-- Fixed an issue when initial selections applied to picker with different number of rows for different components. [\#113](https://github.com/skywinder/ActionSheetPicker-3.0/pull/113) ([venj](https://github.com/venj))
 
 ## [1.3.9](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.9) (2014-12-11)
 
@@ -108,9 +112,9 @@
 
 **Merged pull requests:**
 
-- Fix for \#109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
-
 - Fixed an issue when more than one ActionSheetCustomPicker is used in a ViewController [\#108](https://github.com/skywinder/ActionSheetPicker-3.0/pull/108) ([venj](https://github.com/venj))
+
+- Fix for \#109 [\#110](https://github.com/skywinder/ActionSheetPicker-3.0/pull/110) ([michalciolek](https://github.com/michalciolek))
 
 ## [1.3.7](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.3.7) (2014-12-04)
 
