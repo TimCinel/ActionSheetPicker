@@ -101,9 +101,15 @@ CG_INLINE BOOL isIPhone4()
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
 
-        self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                                                                                           supportedInterfaceOrientationsForWindow:
-                                                                                                   [UIApplication sharedApplication].keyWindow];
+        if ([UIApplication instancesRespondToSelector:@selector(supportedInterfaceOrientationsForWindow:)])
+            self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                                                                                supportedInterfaceOrientationsForWindow:
+                                                                                [UIApplication sharedApplication].keyWindow];
+        else {
+            self.supportedInterfaceOrientations = (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight);
+            if (IS_IPAD)
+                self.supportedInterfaceOrientations |= (1 << UIInterfaceOrientationPortraitUpsideDown);
+        }
 
         UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
                                                              action:@selector(actionPickerDone:)];
@@ -222,25 +228,27 @@ CG_INLINE BOOL isIPhone4()
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
 
-    switch (self.tapDismissAction)
-    {
-        case TapActionNone:break;
-        case TapActionSuccess:{
-            // add tap dismiss action
-            self.actionSheet.window.userInteractionEnabled = YES;
-            UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
-            [self.actionSheet.window addGestureRecognizer:tapAction];
-            break;
-        }
-        case TapActionCancel:{
-            // add tap dismiss action
-            self.actionSheet.window.userInteractionEnabled = YES;
-            UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
-            [self.actionSheet.window addGestureRecognizer:tapAction];
-            break;
-        }
-    };
-
+    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+        switch (self.tapDismissAction)
+        {
+            case TapActionNone:break;
+            case TapActionSuccess:{
+                // add tap dismiss action
+                self.actionSheet.window.userInteractionEnabled = YES;
+                UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
+                [self.actionSheet.window addGestureRecognizer:tapAction];
+                break;
+            }
+            case TapActionCancel:{
+                // add tap dismiss action
+                self.actionSheet.window.userInteractionEnabled = YES;
+                UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
+                [self.actionSheet.window addGestureRecognizer:tapAction];
+                break;
+            }
+        };
+    }
+    
 }
 
 - (IBAction)actionPickerDone:(id)sender
