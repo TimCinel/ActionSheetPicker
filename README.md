@@ -144,7 +144,7 @@ $ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 
 ## Example Projects##
 
-`open Example.xcworkspace`
+`open ActionSheetPicker-3.0.xcworkspace`
 
 Here is 4 projects:
 
