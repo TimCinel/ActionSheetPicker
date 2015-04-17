@@ -15,6 +15,8 @@
 		1CCA8FE81AE0E01B00368F5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA8FE61AE0E01B00368F5E /* LaunchScreen.xib */; };
 		1CCA8FF41AE0E01B00368F5E /* Carthage_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA8FF31AE0E01B00368F5E /* Carthage_exampleTests.m */; };
 		1CCA8FFF1AE0E07F00368F5E /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA8FFE1AE0E07F00368F5E /* MyTableViewController.m */; };
+		1CCA90011AE0E2E200368F5E /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCA90001AE0E2E200368F5E /* CoreActionSheetPicker.framework */; };
+		1CCA90021AE0E2E200368F5E /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCA90001AE0E2E200368F5E /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,20 @@
 			remoteInfo = "Carthage-example";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1CCA90031AE0E2E200368F5E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1CCA90021AE0E2E200368F5E /* CoreActionSheetPicker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1CCA8FD41AE0E01B00368F5E /* Carthage-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carthage-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +59,7 @@
 		1CCA8FF31AE0E01B00368F5E /* Carthage_exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carthage_exampleTests.m; sourceTree = "<group>"; };
 		1CCA8FFD1AE0E07F00368F5E /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		1CCA8FFE1AE0E07F00368F5E /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		1CCA90001AE0E2E200368F5E /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = Carthage/Build/iOS/CoreActionSheetPicker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCA90011AE0E2E200368F5E /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +84,7 @@
 		1CCA8FCB1AE0E01B00368F5E = {
 			isa = PBXGroup;
 			children = (
+				1CCA90001AE0E2E200368F5E /* CoreActionSheetPicker.framework */,
 				1CCA8FD61AE0E01B00368F5E /* Carthage-example */,
 				1CCA8FF01AE0E01B00368F5E /* Carthage-exampleTests */,
 				1CCA8FD51AE0E01B00368F5E /* Products */,
@@ -134,6 +153,7 @@
 				1CCA8FD01AE0E01B00368F5E /* Sources */,
 				1CCA8FD11AE0E01B00368F5E /* Frameworks */,
 				1CCA8FD21AE0E01B00368F5E /* Resources */,
+				1CCA90031AE0E2E200368F5E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,7 +375,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Carthage-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -365,7 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Carthage-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
