@@ -1,12 +1,40 @@
 # Change Log
 
+## [1.6.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.1) (2015-04-17)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.6.0...1.6.1)
+
+**Implemented enhancements:**
+
+- Carthage support [\#171](https://github.com/skywinder/ActionSheetPicker-3.0/issues/171)
+
+## [1.6.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.0) (2015-04-17)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.1...1.6.0)
+
+**Implemented enhancements:**
+
+- Integration ActionSheetPicker as dynamic framework [\#170](https://github.com/skywinder/ActionSheetPicker-3.0/issues/170)
+
+- Cancel Action unknow for `ActionSheetDistancePicker` [\#166](https://github.com/skywinder/ActionSheetPicker-3.0/issues/166)
+
+**Merged pull requests:**
+
+- iOS 5.1.1 compatibility added [\#164](https://github.com/skywinder/ActionSheetPicker-3.0/pull/164) ([kashifhisam](https://github.com/kashifhisam))
+
+- Added "tag" to AbstractActionSheet [\#159](https://github.com/skywinder/ActionSheetPicker-3.0/pull/159) ([Jeepston](https://github.com/Jeepston))
+
 ## [1.5.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.1) (2015-03-27)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.5.0...1.5.1)
 
-**Closed issues:**
+**Fixed bugs:**
 
 - iOS 8 - iPad - UISplitViewController issue. [\#157](https://github.com/skywinder/ActionSheetPicker-3.0/issues/157)
+
+**Closed issues:**
+
+- iOS 7.1 done button requires long press [\#167](https://github.com/skywinder/ActionSheetPicker-3.0/issues/167)
 
 ## [1.5.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.0) (2015-03-05)
 
@@ -23,6 +51,10 @@
 ## [1.4.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.4.0) (2015-03-05)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.3.13...1.4.0)
+
+**Implemented enhancements:**
+
+- ActionSheetDistancePicker + Swift usage [\#139](https://github.com/skywinder/ActionSheetPicker-3.0/issues/139)
 
 **Merged pull requests:**
 
