@@ -213,7 +213,7 @@ CG_INLINE BOOL isIPhone4() {
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
 
-    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+    if ([UIPresentationController class]) {
         switch (self.tapDismissAction)
         {
             case TapActionNone:break;
