@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
+               BlueprintIdentifier = "1CA8086D1A25CE49004252BA"
                BuildableName = "CoreActionSheetPicker.framework"
                BlueprintName = "CoreActionSheetPicker"
                ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
