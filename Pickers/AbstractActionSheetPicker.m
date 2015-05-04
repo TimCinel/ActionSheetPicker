@@ -213,6 +213,8 @@ CG_INLINE BOOL isIPhone4() {
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
     if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
         switch (self.tapDismissAction)
         {
@@ -233,7 +235,8 @@ CG_INLINE BOOL isIPhone4() {
             }
         };
     }
-    
+#pragma clang diagnostic pop
+
 }
 
 - (IBAction)actionPickerDone:(id)sender {
