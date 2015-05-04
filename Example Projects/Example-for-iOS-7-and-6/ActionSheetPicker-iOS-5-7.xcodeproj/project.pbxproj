@@ -161,7 +161,7 @@
 				D66F5FA2442AF8D0CA4E38C9 /* ActionSheetLocalePicker.m */,
 			);
 			name = Pickers;
-			path = ../Pickers;
+			path = ../../Pickers;
 			sourceTree = SOURCE_ROOT;
 		};
 		1CD15A30192C7A0A00B28881 /* Products */ = {
