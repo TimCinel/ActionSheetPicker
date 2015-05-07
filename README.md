@@ -55,8 +55,6 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 ### Basic Usage ##
 
-For detailed examples, please look [Wiki-page](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Basic-Usage) and check [Example Projects](#example-projects) in this repo.
-
 ```obj-c
 // Inside a IBAction method:
 
@@ -77,7 +75,14 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                       origin:sender];
 // You can also use self.view if you don't have a sender
 ```
+For detailed examples, please check [Example Projects](#example-projects) in this repo.
 
+About other customisations, please look  [Wiki-page](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Basic-Usage):
+
+- custom buttons view
+- custom buttons callbacks
+- Action by clicking outside of the picker
+- Other customisations
  
 ##Installation##
 
