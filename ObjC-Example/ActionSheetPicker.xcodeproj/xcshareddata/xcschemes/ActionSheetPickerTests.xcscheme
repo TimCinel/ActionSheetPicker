@@ -19,20 +19,6 @@
                ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C1B33001ADD51DD008E962A"
-               BuildableName = "CoreActionSheetPickerTests.xctest"
-               BlueprintName = "CoreActionSheetPickerTests"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
