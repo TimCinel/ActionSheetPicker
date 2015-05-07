@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.6.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.2) (2015-05-07)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.6.1...1.6.2)
+
+**Fixed bugs:**
+
+- TapAction calls the wrong method \(on iOS 7 only\) [\#173](https://github.com/skywinder/ActionSheetPicker-3.0/issues/173)
+
+**Merged pull requests:**
+
+- Fix tapDismissAction bug in iOS7 [\#176](https://github.com/skywinder/ActionSheetPicker-3.0/pull/176) ([foxluqi](https://github.com/foxluqi))
+
 ## [1.6.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.1) (2015-04-17)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.6.0...1.6.1)
@@ -23,6 +35,8 @@
 - iOS 5.1.1 compatibility added [\#164](https://github.com/skywinder/ActionSheetPicker-3.0/pull/164) ([kashifhisam](https://github.com/kashifhisam))
 
 - Added "tag" to AbstractActionSheet [\#159](https://github.com/skywinder/ActionSheetPicker-3.0/pull/159) ([Jeepston](https://github.com/Jeepston))
+
+- Exposed ActionSheet and created intVar for better config. [\#160](https://github.com/skywinder/ActionSheetPicker-3.0/pull/160) ([zecmo](https://github.com/zecmo))
 
 ## [1.5.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.5.1) (2015-03-27)
 
