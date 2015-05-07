@@ -14,8 +14,7 @@
 		1C243EF219CC5AE0000EE6A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C243EF019CC5AE0000EE6A6 /* LaunchScreen.xib */; };
 		1C243EFE19CC5AE0000EE6A6 /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */; };
 		1C243F0E19CC67AE000EE6A6 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */; };
-		1CEFA0131AFB7AA500110399 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEFA0121AFB7AA500110399 /* CoreActionSheetPicker.framework */; };
-		1CEFA0141AFB7AA500110399 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEFA0121AFB7AA500110399 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CEFA01B1AFB849E00110399 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEFA01A1AFB849E00110399 /* CoreActionSheetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1CEFA0141AFB7AA500110399 /* CoreActionSheetPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +41,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../../Library/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		1C243EE219CC5AE0000EE6A6 /* Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C243EE619CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EE719CC5AE0000EE6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,8 +52,7 @@
 		1C243EFC19CC5AE0000EE6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C243EFD19CC5AE0000EE6A6 /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C243F0D19CC67AE000EE6A6 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
-		1CE479DB1AE109FE00CA93B9 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
-		1CEFA0121AFB7AA500110399 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "/Users/petrkorolev/Library/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<absolute>"; };
+		1CEFA01A1AFB849E00110399 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../../Library/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CEFA0131AFB7AA500110399 /* CoreActionSheetPicker.framework in Frameworks */,
+				1CEFA01B1AFB849E00110399 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +77,6 @@
 		1C243ED919CC5AE0000EE6A6 = {
 			isa = PBXGroup;
 			children = (
-				1CEFA0121AFB7AA500110399 /* CoreActionSheetPicker.framework */,
 				1C243EE419CC5AE0000EE6A6 /* Swift-Example */,
 				1C243EFA19CC5AE0000EE6A6 /* Swift-ExampleTests */,
 				1C243EE319CC5AE0000EE6A6 /* Products */,
@@ -148,8 +143,7 @@
 		D66F5025FE1F1ECC58FAF7AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1CE479DB1AE109FE00CA93B9 /* CoreActionSheetPicker.framework */,
-				1C1B333C1ADD5509008E962A /* CoreActionSheetPicker.framework */,
+				1CEFA01A1AFB849E00110399 /* CoreActionSheetPicker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
