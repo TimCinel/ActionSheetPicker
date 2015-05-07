@@ -508,8 +508,6 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/**",
-					"$(PROJECT_DIR)",
-					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/build/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -537,8 +535,6 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/**",
-					"$(PROJECT_DIR)",
-					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/build/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
