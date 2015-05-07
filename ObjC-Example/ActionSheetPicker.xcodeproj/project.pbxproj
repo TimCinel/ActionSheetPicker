@@ -506,9 +506,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/**",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -533,9 +531,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Example-heqowupkotascefopnknxqwrfsgq/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/**",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
