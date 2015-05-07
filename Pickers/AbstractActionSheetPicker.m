@@ -48,7 +48,7 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-@interface AbstractActionSheetPicker ()
+@interface AbstractActionSheetPicker ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
 @property(nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
@@ -97,15 +97,18 @@ CG_INLINE BOOL isIPhone4() {
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
         if ([UIApplication instancesRespondToSelector:@selector(supportedInterfaceOrientationsForWindow:)])
         self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
                 supportedInterfaceOrientationsForWindow:
                         [UIApplication sharedApplication].keyWindow];
         else {
-            self.supportedInterfaceOrientations = (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight);
+            self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
             if (IS_IPAD)
                 self.supportedInterfaceOrientations |= (1 << UIInterfaceOrientationPortraitUpsideDown);
         }
+#pragma clang diagnostic pop
 
         UIBarButtonItem *sysDoneButton = [self createButtonWithType:UIBarButtonSystemItemDone target:self
                                                              action:@selector(actionPickerDone:)];
@@ -223,6 +226,7 @@ CG_INLINE BOOL isIPhone4() {
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
+                tapAction.delegate = self;
                 [self.actionSheet.window addGestureRecognizer:tapAction];
                 break;
             }
@@ -230,6 +234,7 @@ CG_INLINE BOOL isIPhone4() {
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
+                tapAction.delegate = self;
                 [self.actionSheet.window addGestureRecognizer:tapAction];
                 break;
             }
@@ -665,6 +670,11 @@ CG_INLINE BOOL isIPhone4() {
     };
 }
 
+#pragma mark UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    CGPoint location = [gestureRecognizer locationInView:self.toolbar];
+    return !CGRectContainsPoint(self.toolbar.bounds, location);
+}
 
 @end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gb7-DM-9kh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gb7-DM-9kh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +21,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOJ-Q0-gpR" id="g0L-K0-CRv">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a block..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-Dg-CO7">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a block. (with cancel action by tap outside)" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-Dg-CO7">
                                                     <rect key="frame" x="20" y="7" width="281" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="selectABlock:" destination="frx-l8-dCy" eventType="touchDown" id="JKc-S2-bhj"/>
@@ -34,7 +34,7 @@
                                             <constraints>
                                                 <constraint firstItem="Va3-Dg-CO7" firstAttribute="leading" secondItem="g0L-K0-CRv" secondAttribute="leadingMargin" constant="12" id="Lik-k1-T1l"/>
                                                 <constraint firstItem="Va3-Dg-CO7" firstAttribute="centerX" secondItem="g0L-K0-CRv" secondAttribute="centerX" id="OqL-Hb-2GU"/>
-                                                <constraint firstAttribute="centerY" secondItem="Va3-Dg-CO7" secondAttribute="centerY" constant="-0.5" id="QoC-5D-Pxz"/>
+                                                <constraint firstAttribute="centerY" secondItem="Va3-Dg-CO7" secondAttribute="centerY" id="QoC-5D-Pxz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Va3-Dg-CO7" secondAttribute="trailing" constant="11" id="oCD-Md-Dyd"/>
                                             </constraints>
                                         </tableViewCellContentView>

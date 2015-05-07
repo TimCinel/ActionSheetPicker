@@ -12,29 +12,29 @@
 
 - (NSDate *)TC_dateByAddingCalendarUnits:(NSCalendarUnit)calendarUnit amount:(NSInteger)amount {
 	NSDateComponents *components = [[NSDateComponents alloc] init];
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDate *newDate;
 	
 	switch (calendarUnit) {
-		case NSSecondCalendarUnit:
+		case NSCalendarUnitSecond:
 			[components setSecond:amount];
 			break;
-		case NSMinuteCalendarUnit:
+		case NSCalendarUnitMinute:
 			[components setMinute:amount];
 			break;
-		case NSHourCalendarUnit:
+		case NSCalendarUnitHour:
 			[components setHour:amount];
 			break;
-		case NSDayCalendarUnit:
+		case NSCalendarUnitDay:
 			[components setDay:amount];
 			break;
-		case NSWeekCalendarUnit:
-			[components setWeek:amount];
+		case NSCalendarUnitWeekOfYear:
+			[components setWeekOfYear:amount];
 			break;
-		case NSMonthCalendarUnit:
+		case NSCalendarUnitMonth:
 			[components setMonth:amount];
 			break;
-		case NSYearCalendarUnit:
+		case NSCalendarUnitYear:
 			[components setYear:amount];
 			break;
 		default:

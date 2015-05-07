@@ -167,6 +167,9 @@ Here is 4 projects:
 
 
 ## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) 
+
+If you've used this project in a live app, please let me know! Nothing makes me happier than seeing someone else take my work and go wild with it.
+
 *If you are using `ActionSheetPicker-3.0` in your app or know of an app that uses it, please add it to [this] (https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) list.*
 
 ## Maintainer and Contributor
