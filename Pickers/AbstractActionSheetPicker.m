@@ -48,7 +48,7 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-@interface AbstractActionSheetPicker ()
+@interface AbstractActionSheetPicker ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
 @property(nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
@@ -221,6 +221,7 @@ CG_INLINE BOOL isIPhone4() {
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
+                tapAction.delegate = self;
                 [self.actionSheet.window addGestureRecognizer:tapAction];
                 break;
             }
@@ -228,6 +229,7 @@ CG_INLINE BOOL isIPhone4() {
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
+                tapAction.delegate = self;
                 [self.actionSheet.window addGestureRecognizer:tapAction];
                 break;
             }
@@ -662,6 +664,11 @@ CG_INLINE BOOL isIPhone4() {
     };
 }
 
+#pragma mark UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    CGPoint location = [gestureRecognizer locationInView:self.toolbar];
+    return !CGRectContainsPoint(self.toolbar.bounds, location);
+}
 
 @end
 
