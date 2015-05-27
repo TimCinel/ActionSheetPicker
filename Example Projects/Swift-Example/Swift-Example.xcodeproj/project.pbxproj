@@ -13,6 +13,7 @@
 		1C57845C1B15BE2C00172D8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */; };
 		1C5784681B15BE2C00172D8A /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */; };
 		1C5784721B15BE8900172D8A /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784711B15BE8900172D8A /* SWTableViewController.swift */; };
+		1C8EA1491B15BFB60090F4E6 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +23,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1C57844B1B15BE2C00172D8A;
 			remoteInfo = "Swift-Example";
+		};
+		1C8EA1451B15BFA50090F4E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CCA90431AE0EFB000368F5E;
+			remoteInfo = CoreActionSheetPicker;
+		};
+		1C8EA1471B15BFA50090F4E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CCA904E1AE0EFB000368F5E;
+			remoteInfo = CoreActionSheetPickerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,6 +51,7 @@
 		1C5784661B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
+		1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreActionSheetPicker.xcodeproj; path = ../../CoreActionSheetPicker/CoreActionSheetPicker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8EA1491B15BFB60090F4E6 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +76,7 @@
 		1C5784431B15BE2C00172D8A = {
 			isa = PBXGroup;
 			children = (
+				1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */,
 				1C57844E1B15BE2C00172D8A /* Swift-Example */,
 				1C5784641B15BE2C00172D8A /* Swift-ExampleTests */,
 				1C57844D1B15BE2C00172D8A /* Products */,
@@ -110,6 +128,15 @@
 				1C5784661B15BE2C00172D8A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C8EA1411B15BFA50090F4E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */,
+				1C8EA1481B15BFA50090F4E6 /* CoreActionSheetPickerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +206,12 @@
 			mainGroup = 1C5784431B15BE2C00172D8A;
 			productRefGroup = 1C57844D1B15BE2C00172D8A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1C8EA1411B15BFA50090F4E6 /* Products */;
+					ProjectRef = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1C57844B1B15BE2C00172D8A /* Swift-Example */,
@@ -186,6 +219,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CoreActionSheetPicker.framework;
+			remoteRef = 1C8EA1451B15BFA50090F4E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1C8EA1481B15BFA50090F4E6 /* CoreActionSheetPickerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreActionSheetPickerTests.xctest;
+			remoteRef = 1C8EA1471B15BFA50090F4E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C57844A1B15BE2C00172D8A /* Resources */ = {
