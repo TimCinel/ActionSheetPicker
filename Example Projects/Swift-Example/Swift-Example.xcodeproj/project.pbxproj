@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1C5784521B15BE2C00172D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784511B15BE2C00172D8A /* AppDelegate.swift */; };
-		1C5784541B15BE2C00172D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784531B15BE2C00172D8A /* ViewController.swift */; };
 		1C5784571B15BE2C00172D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784551B15BE2C00172D8A /* Main.storyboard */; };
 		1C5784591B15BE2C00172D8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784581B15BE2C00172D8A /* Images.xcassets */; };
 		1C57845C1B15BE2C00172D8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */; };
 		1C5784681B15BE2C00172D8A /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */; };
+		1C5784721B15BE8900172D8A /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784711B15BE8900172D8A /* SWTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		1C57844C1B15BE2C00172D8A /* Swift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5784501B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784511B15BE2C00172D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C5784531B15BE2C00172D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1C5784561B15BE2C00172D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C5784581B15BE2C00172D8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1C57845B1B15BE2C00172D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1C5784611B15BE2C00172D8A /* Swift-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5784661B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
+		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				1C5784511B15BE2C00172D8A /* AppDelegate.swift */,
-				1C5784531B15BE2C00172D8A /* ViewController.swift */,
 				1C5784551B15BE2C00172D8A /* Main.storyboard */,
+				1C5784711B15BE8900172D8A /* SWTableViewController.swift */,
 				1C5784581B15BE2C00172D8A /* Images.xcassets */,
 				1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */,
 				1C57844F1B15BE2C00172D8A /* Supporting Files */,
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C5784541B15BE2C00172D8A /* ViewController.swift in Sources */,
 				1C5784521B15BE2C00172D8A /* AppDelegate.swift in Sources */,
+				1C5784721B15BE8900172D8A /* SWTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +411,7 @@
 				1C57846D1B15BE2C00172D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C57846E1B15BE2C00172D8A /* Build configuration list for PBXNativeTarget "Swift-ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				1C5784701B15BE2C00172D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

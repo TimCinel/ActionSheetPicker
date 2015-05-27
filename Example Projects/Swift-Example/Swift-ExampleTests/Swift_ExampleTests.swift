@@ -2,8 +2,8 @@
 //  Swift_ExampleTests.swift
 //  Swift-ExampleTests
 //
-//  Created by Petr Korolev on 27/05/15.
-//  Copyright (c) 2015 Petr Korolev. All rights reserved.
+//  Created by Petr Korolev on 19/09/14.
+//  Copyright (c) 2014 Petr Korolev. All rights reserved.
 //
 
 import UIKit
