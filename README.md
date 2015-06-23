@@ -108,11 +108,18 @@ Then, run the following command:
 $ pod install
 ```
 
-### For Swift projects
+### Import to project
 
 To import pod you should add string:
 
-    import ActionSheetPicker_3_0
+- For `Obj-c` projects:
+
+        #import "ActionSheetPicker.h"
+
+- For `Swift` projects:
+
+
+        import ActionSheetPicker_3_0
 
 ### Carthage
 
