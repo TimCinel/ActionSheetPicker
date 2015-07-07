@@ -368,7 +368,12 @@ BOOL isIPhone4() {
 - (void)configureAndPresentPopoverForView:(UIView *)aView {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     viewController.view = aView;
-    viewController.contentSizeForViewInPopover = viewController.view.frame.size;
+    // fix IOS 8 ContentSize issue
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
+        viewController.preferredContentSize = viewController.view.frame.size;
+    } else {
+        viewController.contentSizeForViewInPopover = viewController.view.frame.size;
+    }
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     [self presentPopover:_popOverController];
 }
