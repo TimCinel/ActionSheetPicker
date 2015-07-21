@@ -509,6 +509,15 @@ CG_INLINE BOOL isIPhone4() {
                                                                                action:buttonAction];
     return barButton;
 }
+#pragma mark - Custom Color
+
+- (UIColor *)backgroundColor {
+    return _actionSheet.bgView.backgroundColor;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    _actionSheet.bgView.backgroundColor = backgroundColor;
+}
 
 #pragma mark - Utilities and Accessors
 
