@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gb7-DM-9kh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gb7-DM-9kh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -216,6 +216,28 @@
                                                 <constraint firstItem="i3M-IL-ksq" firstAttribute="leading" secondItem="4c8-Qg-cLP" secondAttribute="leadingMargin" constant="12" id="LLJ-LI-Yzq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="i3M-IL-ksq" secondAttribute="trailing" constant="11" id="LSD-Wo-yO9"/>
                                                 <constraint firstAttribute="centerY" secondItem="i3M-IL-ksq" secondAttribute="centerY" id="ryW-ue-PMY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9nJ-2C-FxN">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nJ-2C-FxN" id="1v5-z0-rqc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom background Color and Text Attrubutes" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVw-CN-DK4">
+                                                    <rect key="frame" x="20" y="7" width="281" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="customBackgroundAndText:" destination="frx-l8-dCy" eventType="touchDown" id="4yR-xG-rix"/>
+                                                        <outlet property="delegate" destination="frx-l8-dCy" id="Gzk-2R-k9R"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mVw-CN-DK4" secondAttribute="trailing" constant="11" id="WYo-b1-a2X"/>
+                                                <constraint firstAttribute="centerY" secondItem="mVw-CN-DK4" secondAttribute="centerY" id="rt9-K6-x3k"/>
+                                                <constraint firstItem="mVw-CN-DK4" firstAttribute="leading" secondItem="1v5-z0-rqc" secondAttribute="leadingMargin" constant="12" id="yts-2H-6ri"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
