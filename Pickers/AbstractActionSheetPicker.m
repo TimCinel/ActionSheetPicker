@@ -511,11 +511,8 @@ CG_INLINE BOOL isIPhone4() {
 }
 #pragma mark - Custom Color
 
-- (UIColor *)backgroundColor {
-    return _actionSheet.bgView.backgroundColor;
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
+- (void)setPickerBackgroundColor:(UIColor *)backgroundColor {
+    _pickerBackgroundColor = backgroundColor;
     _actionSheet.bgView.backgroundColor = backgroundColor;
 }
 
@@ -577,6 +574,9 @@ CG_INLINE BOOL isIPhone4() {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
 
     _actionSheet = [[SWActionSheet alloc] initWithView:aView];
+    if (self.pickerBackgroundColor) {
+        _actionSheet.bgView.backgroundColor = self.pickerBackgroundColor;
+    }
 
     [self presentActionSheet:_actionSheet];
 
