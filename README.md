@@ -99,6 +99,9 @@ $ gem install cocoapods
 To integrate ActionSheetPicker-3.0 into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
 pod 'ActionSheetPicker-3.0'
 ```
 

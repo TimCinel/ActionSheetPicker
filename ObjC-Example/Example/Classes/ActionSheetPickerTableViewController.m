@@ -248,6 +248,15 @@
     [picker showActionSheetPicker];
 }
 
+- (IBAction)customBackgroundAndText:(id)sender {
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"" rows:@[@"choiceA", @"choiceB", @"choiceC"] initialSelection:1 doneBlock:nil cancelBlock:nil origin:sender];
+    picker.pickerBackgroundColor = [UIColor blackColor];
+    picker.pickerTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                    NSFontAttributeName:[self getRandomFont],};
+    [picker showActionSheetPicker];
+}
+
+
 - (UIFont *)getRandomFont
 {
     NSArray *familyNames = [UIFont familyNames];

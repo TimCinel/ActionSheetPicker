@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C6042751B5E776D008D9549 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6042741B5E776D008D9549 /* CoreActionSheetPicker.framework */; };
 		1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */; };
 		1C6EE71B192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */; };
 		1C6EE71C192BB41600A27994 /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */; };
@@ -24,7 +25,6 @@
 		1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BD197B1C2F005F495B /* InfoPlist.strings */; };
 		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
 		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		1CEFA0191AFB847C00110399 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEFA0181AFB847C00110399 /* CoreActionSheetPicker.framework */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
@@ -50,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreActionSheetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6042741B5E776D008D9549 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerAppDelegate.h; sourceTree = "<group>"; };
 		1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerAppDelegate.m; sourceTree = "<group>"; };
 		1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerCustomPickerDelegate.h; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CEFA0191AFB847C00110399 /* CoreActionSheetPicker.framework in Frameworks */,
+				1C6042751B5E776D008D9549 /* CoreActionSheetPicker.framework in Frameworks */,
 				1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +189,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */,
 				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
@@ -201,6 +204,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C6042741B5E776D008D9549 /* CoreActionSheetPicker.framework */,
 				1CEFA0181AFB847C00110399 /* CoreActionSheetPicker.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -405,12 +409,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -453,12 +452,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActionSheetPicker Tests/ActionSheetPicker Tests-Prefix.pch";
@@ -484,8 +478,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/build/Debug-iphoneos",
+					"$(BUILT_PRODUCTS_DIR)/**",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -510,8 +503,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-					"/Users/petrkorolev/repo/ActionSheetPicker-3.0/CoreActionSheetPicker/build/Debug-iphoneos",
+					"$(BUILT_PRODUCTS_DIR)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
@@ -531,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -544,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

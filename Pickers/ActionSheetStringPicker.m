@@ -143,7 +143,23 @@
 
     if ([obj respondsToSelector:@selector(description)])
         return [obj performSelector:@selector(description)];
+    
+    return nil;
+}
 
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    id obj = (self.data)[(NSUInteger) row];
+    
+    // return the object if it is already a NSString,
+    // otherwise, return the description, just like the toString() method in Java
+    // else, return nil to prevent exception
+    
+    if ([obj isKindOfClass:[NSString class]])
+        return [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
+    
+    if ([obj respondsToSelector:@selector(description)])
+        return [[NSAttributedString alloc] initWithString:[obj performSelector:@selector(description)] attributes:self.pickerTextAttributes];
+    
     return nil;
 }
 
