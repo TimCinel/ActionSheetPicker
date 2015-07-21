@@ -28,7 +28,7 @@
 		1CCA90801AE0EFC500368F5E /* DistancePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCA906E1AE0EFC500368F5E /* DistancePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CCA90811AE0EFC500368F5E /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA906F1AE0EFC500368F5E /* DistancePickerView.m */; };
 		1CCA90821AE0EFC500368F5E /* SWActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCA90701AE0EFC500368F5E /* SWActionSheet.h */; };
-		906291E61B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 906291E41B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h */; };
+		906291E61B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 906291E41B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		906291E71B5EA81C00A115DA /* ActionSheetMultipleStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 906291E51B5EA81C00A115DA /* ActionSheetMultipleStringPicker.m */; };
 /* End PBXBuildFile section */
 
@@ -188,8 +188,8 @@
 				1CCA90801AE0EFC500368F5E /* DistancePickerView.h in Headers */,
 				1CCA907C1AE0EFC500368F5E /* ActionSheetCustomPickerDelegate.h in Headers */,
 				1CCA907F1AE0EFC500368F5E /* ActionSheetPicker.h in Headers */,
-				1CCA907A1AE0EFC500368F5E /* ActionSheetCustomPicker.h in Headers */,
 				906291E61B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h in Headers */,
+				1CCA907A1AE0EFC500368F5E /* ActionSheetCustomPicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

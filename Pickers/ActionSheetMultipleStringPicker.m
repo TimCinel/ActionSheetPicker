@@ -32,7 +32,7 @@
 
 @interface ActionSheetMultipleStringPicker()
 @property (nonatomic,strong) NSArray *data; //Array of string arrays :)
-@property (nonatomic,assign) NSArray *selectedIndexes;
+@property (nonatomic,assign) NSMutableArray *selectedIndexes;
 @end
 
 @implementation ActionSheetMultipleStringPicker
@@ -62,7 +62,7 @@
     self = [self initWithTarget:target successAction:successAction cancelAction:cancelActionOrNil origin:origin];
     if (self) {
         self.data = data;
-        self.selectedIndexes = indexes;
+        self.selectedIndexes = [NSMutableArray arrayWithArray:indexes];
         self.title = title;
     }
     return self;
@@ -76,9 +76,9 @@
     UIPickerView *stringPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
     stringPicker.delegate = self;
     stringPicker.dataSource = self;
-    for (int i = 0; i < self.selectedIndexes.count; i++) {
-        [stringPicker selectRow:(NSInteger)self.selectedIndexes[i] inComponent:i animated:NO];
-    }
+//    for (int i = 0; i < self.selectedIndexes.count; i++) {
+//        [stringPicker selectRow:(NSInteger)self.selectedIndexes[i] inComponent:i animated:NO];
+//    }
     if (self.data.count == 0) {
         stringPicker.showsSelectionIndicator = NO;
         stringPicker.userInteractionEnabled = NO;
@@ -95,7 +95,7 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {
     if (self.onActionSheetDone) {
-        NSMutableArray *selection = [@[] copy];
+        NSMutableArray *selection = [[NSMutableArray alloc] init];
         for (int i = 0; i < self.selectedIndexes.count; i++) {
             id object = self.data[i][self.selectedIndexes[i]];
             [selection addObject: object];
@@ -129,14 +129,16 @@
 #pragma mark - UIPickerViewDelegate / DataSource
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-
+    [self updateSelectedIndex:row atKey:component];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return self.data.count;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSInteger count = ((NSArray *)self.data[component]).count;
+    NSLog(@"Component: %li, count: %li", (long)component, (long)count);
     return ((NSArray *)self.data[component]).count;
 }
 
@@ -157,7 +159,7 @@
 }
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    id obj = (self.data)[(NSUInteger) row];
+    id obj = (self.data)[component][(NSUInteger) row];
     
     // return the object if it is already a NSString,
     // otherwise, return the description, just like the toString() method in Java
@@ -172,18 +174,17 @@
     return nil;
 }
 
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    return pickerView.frame.size.width - 30;
-}
+//- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+//    return pickerView.frame.size.width - 30;
+//}
 
 - (NSInteger)getSelectedIndexAnKey:(NSInteger)key {
-    return (NSInteger)[self.selectedIndexes objectAtIndex:key] || nil;
+    return (NSInteger)[self.selectedIndexes objectAtIndex:key] || 0;
 }
 
 - (void)updateSelectedIndex:(NSInteger)index atKey:(NSInteger)key {
-    NSMutableArray * mutableArray = [self.selectedIndexes copy];
-    [mutableArray replaceObjectAtIndex:key withObject:[NSNumber numberWithInteger:index]];
-    self.selectedIndexes = mutableArray;
+    NSLog(@"%li", (long)index);
+    NSLog(@"%li", (long)key);
 }
 
 @end

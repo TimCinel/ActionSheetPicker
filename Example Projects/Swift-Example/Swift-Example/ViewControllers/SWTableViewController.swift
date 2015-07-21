@@ -105,7 +105,7 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
             println("indexes = \(indexes)")
             println("picker = \(picker)")
             return
-            }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
+            }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
     }
 
     @IBAction func localePickerClicked(sender: UIButton) {
