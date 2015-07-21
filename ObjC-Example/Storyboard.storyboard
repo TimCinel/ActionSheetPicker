@@ -219,6 +219,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9nJ-2C-FxN">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nJ-2C-FxN" id="1v5-z0-rqc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom background Color and Text Attrubutes" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVw-CN-DK4">
+                                                    <rect key="frame" x="20" y="7" width="281" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="customBackgroundAndText:" destination="frx-l8-dCy" eventType="touchDown" id="4yR-xG-rix"/>
+                                                        <outlet property="delegate" destination="frx-l8-dCy" id="Gzk-2R-k9R"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mVw-CN-DK4" secondAttribute="trailing" constant="11" id="WYo-b1-a2X"/>
+                                                <constraint firstAttribute="centerY" secondItem="mVw-CN-DK4" secondAttribute="centerY" id="rt9-K6-x3k"/>
+                                                <constraint firstItem="mVw-CN-DK4" firstAttribute="leading" secondItem="1v5-z0-rqc" secondAttribute="leadingMargin" constant="12" id="yts-2H-6ri"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Test settings" id="aOC-Gq-5oA">
