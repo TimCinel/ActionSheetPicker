@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C11947B1B5E3ECF00C68054 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */; };
+		1C11947C1B5E3ECF00C68054 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */; };
 		1C6EE71B192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */; };
 		1C6EE71C192BB41600A27994 /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */; };
@@ -24,7 +26,6 @@
 		1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BD197B1C2F005F495B /* InfoPlist.strings */; };
 		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
 		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		1CEFA0191AFB847C00110399 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEFA0181AFB847C00110399 /* CoreActionSheetPicker.framework */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
@@ -49,7 +50,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1C11947D1B5E3ECF00C68054 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C11947C1B5E3ECF00C68054 /* CoreActionSheetPicker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "/Users/petrkorolev/Library/Developer/Xcode/DerivedData/ActionSheetPicker-3.0-drgovjaugwnjjrhfeykaijqkftcs/Build/Products/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<absolute>"; };
 		1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerAppDelegate.h; sourceTree = "<group>"; };
 		1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerAppDelegate.m; sourceTree = "<group>"; };
 		1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPickerCustomPickerDelegate.h; sourceTree = "<group>"; };
@@ -108,8 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CEFA0191AFB847C00110399 /* CoreActionSheetPicker.framework in Frameworks */,
 				1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */,
+				1C11947B1B5E3ECF00C68054 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +203,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */,
 				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
@@ -248,6 +265,7 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				1CE95A561ADE7BAA00CB7CBD /* ShellScript */,
+				1C11947D1B5E3ECF00C68054 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
