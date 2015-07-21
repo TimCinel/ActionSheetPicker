@@ -95,8 +95,12 @@
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {
     if (self.onActionSheetDone) {
-        id selectedObject = (self.data.count > 0) ? (self.data)[(NSUInteger) self.selectedIndexes] : nil;
-        _onActionSheetDone(self, self.selectedIndexes, selectedObject);
+        NSMutableArray *selection = [@[] copy];
+        for (int i = 0; i < self.selectedIndexes.count; i++) {
+            id object = self.data[i][self.selectedIndexes[i]];
+            [selection addObject: object];
+        }
+        _onActionSheetDone(self, self.selectedIndexes, selection);
         return;
     }
     else if (target && [target respondsToSelector:successAction]) {
@@ -129,11 +133,11 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return self.data.count;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.data.count;
+    return ((NSArray *)self.data[component]).count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -170,6 +174,10 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     return pickerView.frame.size.width - 30;
+}
+
+- (NSInteger)getSelectedIndexAnKey:(NSInteger)key {
+    return (NSInteger)[self.selectedIndexes objectAtIndex:key] || nil;
 }
 
 - (void)updateSelectedIndex:(NSInteger)index atKey:(NSInteger)key {

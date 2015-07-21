@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKR-yZ-MrN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -239,6 +239,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN">
+                        <barButtonItem key="leftBarButtonItem" title="MultiPicker" id="ZX9-n4-tbI">
+                            <connections>
+                                <action selector="multipleStringPickerClicked:" destination="HSJ-wC-erj" id="qJ5-lP-ptK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="picker" id="Brb-iL-vfw">
                             <connections>
                                 <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="oRt-yY-Lrn"/>
