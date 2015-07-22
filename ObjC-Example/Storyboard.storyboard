@@ -16,29 +16,6 @@
                         <sections>
                             <tableViewSection headerTitle="Pickers" id="KxM-hg-Ygu">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AOJ-Q0-gpR">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOJ-Q0-gpR" id="g0L-K0-CRv">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a block. (with cancel action by tap outside)" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-Dg-CO7">
-                                                    <rect key="frame" x="20" y="7" width="281" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="selectABlock:" destination="frx-l8-dCy" eventType="touchDown" id="JKc-S2-bhj"/>
-                                                        <outlet property="delegate" destination="frx-l8-dCy" id="iEQ-4j-guZ"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Va3-Dg-CO7" firstAttribute="leading" secondItem="g0L-K0-CRv" secondAttribute="leadingMargin" constant="12" id="Lik-k1-T1l"/>
-                                                <constraint firstItem="Va3-Dg-CO7" firstAttribute="centerX" secondItem="g0L-K0-CRv" secondAttribute="centerX" id="OqL-Hb-2GU"/>
-                                                <constraint firstAttribute="centerY" secondItem="Va3-Dg-CO7" secondAttribute="centerY" id="QoC-5D-Pxz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Va3-Dg-CO7" secondAttribute="trailing" constant="11" id="oCD-Md-Dyd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sj5-Te-dpP">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sj5-Te-dpP" id="ZwE-dP-v6b">
@@ -105,6 +82,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vuw-xg-gVw">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vuw-xg-gVw" id="ndz-Dj-5jN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Locale" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGs-er-Ndh">
+                                                    <rect key="frame" x="20" y="7" width="281" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="selectALocale:" destination="frx-l8-dCy" eventType="touchDown" id="yit-l6-395"/>
+                                                        <outlet property="delegate" destination="frx-l8-dCy" id="M7L-jA-ZW0"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="LGs-er-Ndh" secondAttribute="centerY" id="cJP-lH-0QB"/>
+                                                <constraint firstItem="LGs-er-Ndh" firstAttribute="leading" secondItem="ndz-Dj-5jN" secondAttribute="leadingMargin" constant="12" id="ppa-gO-Him"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LGs-er-Ndh" secondAttribute="trailing" constant="11" id="ra4-jI-gUO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3f6-YJ-C44">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3f6-YJ-C44" id="VcQ-t2-pHL">
@@ -149,25 +148,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vuw-xg-gVw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AOJ-Q0-gpR">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vuw-xg-gVw" id="ndz-Dj-5jN">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOJ-Q0-gpR" id="g0L-K0-CRv">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Locale" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGs-er-Ndh">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Picker ( with Cancel action by tap outside)" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-Dg-CO7">
                                                     <rect key="frame" x="20" y="7" width="281" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="selectALocale:" destination="frx-l8-dCy" eventType="touchDown" id="yit-l6-395"/>
-                                                        <outlet property="delegate" destination="frx-l8-dCy" id="M7L-jA-ZW0"/>
+                                                        <action selector="selectABlock:" destination="frx-l8-dCy" eventType="touchDown" id="JKc-S2-bhj"/>
+                                                        <outlet property="delegate" destination="frx-l8-dCy" id="iEQ-4j-guZ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="LGs-er-Ndh" secondAttribute="centerY" id="cJP-lH-0QB"/>
-                                                <constraint firstItem="LGs-er-Ndh" firstAttribute="leading" secondItem="ndz-Dj-5jN" secondAttribute="leadingMargin" constant="12" id="ppa-gO-Him"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LGs-er-Ndh" secondAttribute="trailing" constant="11" id="ra4-jI-gUO"/>
+                                                <constraint firstItem="Va3-Dg-CO7" firstAttribute="leading" secondItem="g0L-K0-CRv" secondAttribute="leadingMargin" constant="12" id="Lik-k1-T1l"/>
+                                                <constraint firstItem="Va3-Dg-CO7" firstAttribute="centerX" secondItem="g0L-K0-CRv" secondAttribute="centerX" id="OqL-Hb-2GU"/>
+                                                <constraint firstAttribute="centerY" secondItem="Va3-Dg-CO7" secondAttribute="centerY" id="QoC-5D-Pxz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Va3-Dg-CO7" secondAttribute="trailing" constant="11" id="oCD-Md-Dyd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
