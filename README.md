@@ -77,7 +77,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ```
 For detailed examples, please check [Example Projects](#example-projects) in this repo.
 
-About other customisations, please look  [Wiki-page](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Basic-Usage):
+About other customisations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md):
 
 - custom buttons view
 - custom buttons callbacks
