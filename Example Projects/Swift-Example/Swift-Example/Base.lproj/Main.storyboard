@@ -154,6 +154,27 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Other" id="W3k-MW-rph">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="SQZ-RS-Qzf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SQZ-RS-Qzf" id="GuG-gB-D8q">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9j-w8-u5B">
+                                                    <rect key="frame" x="227" y="5" width="147" height="30"/>
+                                                    <state key="normal" title="Multiple String Picker">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="multipleStringPickerClicked:" destination="HSJ-wC-erj" eventType="touchUpInside" id="PzA-JY-wfA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="F9j-w8-u5B" secondAttribute="centerX" id="ZJq-bN-g9G"/>
+                                                <constraint firstAttribute="centerY" secondItem="F9j-w8-u5B" secondAttribute="centerY" id="nZT-1K-R9P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="SDj-Yf-ZSQ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SDj-Yf-ZSQ" id="Z1J-bh-1Hz">
@@ -239,11 +260,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ActionSheetPicker-3.0" id="UmP-qR-yGN">
-                        <barButtonItem key="leftBarButtonItem" title="MultiPicker" id="ZX9-n4-tbI">
-                            <connections>
-                                <action selector="multipleStringPickerClicked:" destination="HSJ-wC-erj" id="qJ5-lP-ptK"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" id="ZX9-n4-tbI"/>
                         <barButtonItem key="rightBarButtonItem" title="picker" id="Brb-iL-vfw">
                             <connections>
                                 <action selector="navigationItemPicker:" destination="HSJ-wC-erj" id="oRt-yY-Lrn"/>
