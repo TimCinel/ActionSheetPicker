@@ -98,7 +98,7 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
         ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
             ["One", "Two", "A lot"],
             ["Many", "Many more", "Infinite"]
-        ], initialSelection: [1, 2], doneBlock: {
+        ], initialSelection: [2, 2], doneBlock: {
             picker, values, indexes in
             
             println("values = \(values)")

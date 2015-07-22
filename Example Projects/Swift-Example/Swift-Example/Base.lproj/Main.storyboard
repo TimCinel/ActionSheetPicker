@@ -186,7 +186,7 @@
                                                         <constraint firstAttribute="width" constant="286" id="hFz-K8-lAh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" size="system"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -197,7 +197,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Share them here:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QZy-Ni-825">
                                                     <rect key="frame" x="245" y="28" width="110" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" size="system"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="https://github.com/skywinder/ActionSheetPicker-3.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wFx-vz-TX0">
