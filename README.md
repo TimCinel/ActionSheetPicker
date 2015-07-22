@@ -55,6 +55,15 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 ### Basic Usage ##
 
+**For detailed info about customisations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
+
+- custom buttons view
+- custom buttons callbacks
+- Action by clicking outside of the picker
+- Other customisations
+
+**For detailed examples, please check [Example Projects](#example-projects) in this repo.**
+
 ```obj-c
 // Inside a IBAction method:
 
@@ -65,9 +74,8 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                         rows:colors
                             initialSelection:0
                                    doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                      NSLog(@"Picker: %@", picker);
-                                      NSLog(@"Selected Index: %@", selectedIndex);
-                                      NSLog(@"Selected Value: %@", selectedValue);
+                                      NSLog(@"Picker: %@, Index: %@, value: %@", 
+                                      picker, selectedIndex, selectedValue);
                                     }
                                  cancelBlock:^(ActionSheetStringPicker *picker) {
                                       NSLog(@"Block Picker Canceled");
@@ -75,14 +83,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                       origin:sender];
 // You can also use self.view if you don't have a sender
 ```
-For detailed examples, please check [Example Projects](#example-projects) in this repo.
 
-About other customisations, please look  [Wiki-page](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Basic-Usage):
-
-- custom buttons view
-- custom buttons callbacks
-- Action by clicking outside of the picker
-- Other customisations
  
 ##Installation##
 
