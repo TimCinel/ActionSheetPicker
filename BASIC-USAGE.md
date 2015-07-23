@@ -21,6 +21,26 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
+###ActionSheetMultipleStringPicker
+```obj-c
+
+ NSArray *rows = @[@[@"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B"], @[@"Major", @"Minor", @"Dorian", @"Spanish Gypsy"]];
+NSArray *initialSelection = @[@2, @4];
+[ActionSheetMultipleStringPicker showPickerWithTitle:@"Select scale"
+                                                rows:rows
+                                    initialSelection:initialSelection
+                                           doneBlock:^(ActionSheetMultipleStringPicker *picker,
+                                            NSArray *selectedIndexes,
+                                            NSArray *selectedValues) {
+                                                NSLog(@"%@", selectedIndexes);
+                                                NSLog(@"%@", [selectedValues componentsJoinedByString:@", "]);
+                                            }
+                                        cancelBlock:^(ActionSheetMultipleStringPicker *picker) {
+                                            NSLog(@"picker = %@", picker);
+                                        } origin:(UIView *)sender];
+
+```
+
 ### ActionSheetCustomPicker Customisation
 
 ActionSheetCustomPicker provides the following delegate function that can be used for customisation:

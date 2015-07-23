@@ -55,6 +55,8 @@
 - (IBAction)selectAMeasurement:(id)sender;
 - (IBAction)selectAMusicalScale:(UIControl *)sender;
 
+- (IBAction)multiPickerButtonPressed:(id)sender;
+
 - (IBAction)showTableView:(id)sender;
 - (IBAction)dismiss:(id)sender;
 - (IBAction)customButtons:(id)sender;

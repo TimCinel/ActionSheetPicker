@@ -359,6 +359,18 @@
 
 }
 
+- (IBAction)multiPickerButtonPressed:(id)sender {
+    NSArray *rows = @[@[@"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B"],
+                      @[@"Major", @"Minor", @"Dorian", @"Spanish Gypsy"]];
+    NSArray *initialSelection = @[@2, @4];
+    [ActionSheetMultipleStringPicker showPickerWithTitle:@"Select scale with multipicker" rows:rows initialSelection:initialSelection doneBlock:^(ActionSheetMultipleStringPicker *picker, NSArray *selectedIndexes, id selectedValues) {
+        NSLog(@"%@", selectedIndexes);
+        NSLog(@"%@", [selectedValues componentsJoinedByString:@", "]);
+    } cancelBlock:^(ActionSheetMultipleStringPicker *picker) {
+        NSLog(@"picker = %@", picker);
+    } origin:(UIView *)sender];
+}
+
 
 #pragma mark - UITextFieldDelegate
 
