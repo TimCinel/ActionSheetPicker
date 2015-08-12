@@ -48,6 +48,24 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
+@interface MyPopoverController:UIPopoverController<UIAdaptivePresentationControllerDelegate>
+@end
+
+@implementation MyPopoverController
++(BOOL)canShowPopover {
+    if (IS_IPAD) {
+        UITraitCollection *traits=[UIApplication sharedApplication].keyWindow.traitCollection;
+        if (traits.horizontalSizeClass==UIUserInterfaceSizeClassRegular)
+            return YES;
+    }
+    return NO;
+}
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+    return UIModalPresentationNone;
+}
+@end
+
 @interface AbstractActionSheetPicker ()
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -506,7 +524,9 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        return CGSizeMake(320, 320);
+        if ( [MyPopoverController canShowPopover] )
+            return CGSizeMake(320, 320);
+        return [UIApplication sharedApplication].keyWindow.bounds.size;
     }
 
 #if defined(__IPHONE_8_0)
@@ -550,7 +570,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPickerForView:(UIView *)aView {
     self.presentFromRect = aView.frame;
 
-    if (IS_IPAD)
+    if ( [MyPopoverController canShowPopover] )
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
@@ -599,7 +619,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma clang diagnostic pop
     }
 
-    _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController = [[MyPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
     if (self.popoverBackgroundViewClass) {
         [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
