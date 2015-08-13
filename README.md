@@ -55,7 +55,14 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 ### Basic Usage ##
 
-For detailed examples, please look [Wiki-page](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Basic-Usage) and check [Example Projects](#example-projects) in this repo.
+**For detailed info about customisations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
+
+- custom buttons view
+- custom buttons callbacks
+- Action by clicking outside of the picker
+- Other customisations
+
+**For detailed examples, please check [Example Projects](#example-projects) in this repo.**
 
 ```obj-c
 // Inside a IBAction method:
@@ -67,9 +74,8 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                         rows:colors
                             initialSelection:0
                                    doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                      NSLog(@"Picker: %@", picker);
-                                      NSLog(@"Selected Index: %@", selectedIndex);
-                                      NSLog(@"Selected Value: %@", selectedValue);
+                                      NSLog(@"Picker: %@, Index: %@, value: %@", 
+                                      picker, selectedIndex, selectedValue);
                                     }
                                  cancelBlock:^(ActionSheetStringPicker *picker) {
                                       NSLog(@"Block Picker Canceled");
@@ -94,6 +100,9 @@ $ gem install cocoapods
 To integrate ActionSheetPicker-3.0 into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
 pod 'ActionSheetPicker-3.0'
 ```
 
@@ -102,6 +111,19 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+
+### Import to project
+
+To import pod you should add string:
+
+- For `Obj-c` projects:
+
+        #import "ActionSheetPicker.h"
+
+- For `Swift` projects:
+
+
+        import ActionSheetPicker_3_0
 
 ### Carthage
 
@@ -162,6 +184,9 @@ Here is 4 projects:
 
 
 ## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) 
+
+If you've used this project in a live app, please let me know! Nothing makes me happier than seeing someone else take my work and go wild with it.
+
 *If you are using `ActionSheetPicker-3.0` in your app or know of an app that uses it, please add it to [this] (https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) list.*
 
 ## Maintainer and Contributor
