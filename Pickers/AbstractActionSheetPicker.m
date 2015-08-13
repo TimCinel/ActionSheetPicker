@@ -48,27 +48,6 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-@interface MyPopoverController:UIPopoverController<UIAdaptivePresentationControllerDelegate>
-@end
-
-@implementation MyPopoverController
-+(BOOL)canShowPopover {
-    if (IS_IPAD) {
-        if ([UITraitCollection class]) {
-            UITraitCollection *traits=[UIApplication sharedApplication].keyWindow.traitCollection;
-            if (traits.horizontalSizeClass==UIUserInterfaceSizeClassCompact)
-                return NO;
-        }
-        return YES;
-    }
-    return NO;
-}
-
--(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
-    return UIModalPresentationNone;
-}
-@end
-
 @interface AbstractActionSheetPicker ()
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -234,7 +213,7 @@ CG_INLINE BOOL isIPhone4() {
     [masterView addSubview:_pickerView];
     [self presentPickerForView:masterView];
 
-    if ([UIPresentationController class]) {
+    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
         switch (self.tapDismissAction)
         {
             case TapActionNone:break;
@@ -527,9 +506,7 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        if ( [MyPopoverController canShowPopover] )
-            return CGSizeMake(320, 320);
-        return [UIApplication sharedApplication].keyWindow.bounds.size;
+        return CGSizeMake(320, 320);
     }
 
 #if defined(__IPHONE_8_0)
@@ -573,7 +550,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPickerForView:(UIView *)aView {
     self.presentFromRect = aView.frame;
 
-    if ( [MyPopoverController canShowPopover] )
+    if (IS_IPAD)
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
@@ -622,7 +599,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma clang diagnostic pop
     }
 
-    _popOverController = [[MyPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
     if (self.popoverBackgroundViewClass) {
         [self.popOverController setPopoverBackgroundViewClass:self.popoverBackgroundViewClass];
