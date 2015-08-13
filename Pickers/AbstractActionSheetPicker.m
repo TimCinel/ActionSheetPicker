@@ -218,7 +218,7 @@ CG_INLINE BOOL isIPhone4() {
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+    {
         switch (self.tapDismissAction)
         {
             case TapActionNone:break;
