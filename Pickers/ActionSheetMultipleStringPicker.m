@@ -37,13 +37,13 @@
 
 @implementation ActionSheetMultipleStringPicker
 
-+ (instancetype)showPickerWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSArray *)indexes doneBlock:(ActionMultipleStringDoneBlock)doneBlock cancelBlock:(ActionMultopleStringCancelBlock)cancelBlockOrNil origin:(id)origin {
++ (instancetype)showPickerWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSArray *)indexes doneBlock:(ActionMultipleStringDoneBlock)doneBlock cancelBlock:(ActionMultipleStringCancelBlock)cancelBlockOrNil origin:(id)origin {
     ActionSheetMultipleStringPicker * picker = [[ActionSheetMultipleStringPicker alloc] initWithTitle:title rows:strings initialSelection:indexes doneBlock:doneBlock cancelBlock:cancelBlockOrNil origin:origin];
     [picker showActionSheetPicker];
     return picker;
 }
 
-- (instancetype)initWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSArray *)indexes doneBlock:(ActionMultipleStringDoneBlock)doneBlock cancelBlock:(ActionMultopleStringCancelBlock)cancelBlockOrNil origin:(id)origin {
+- (instancetype)initWithTitle:(NSString *)title rows:(NSArray *)strings initialSelection:(NSArray *)indexes doneBlock:(ActionMultipleStringDoneBlock)doneBlock cancelBlock:(ActionMultipleStringCancelBlock)cancelBlockOrNil origin:(id)origin {
     self = [self initWithTitle:title rows:strings initialSelection:indexes target:nil successAction:nil cancelAction:nil origin:origin];
     if (self) {
         self.onActionSheetDone = doneBlock;
@@ -78,7 +78,7 @@
     stringPicker.dataSource = self;
 
     [self performInitialSelectionInPickerView:stringPicker];
-    
+
     if (self.data.count == 0) {
         stringPicker.showsSelectionIndicator = NO;
         stringPicker.userInteractionEnabled = NO;
@@ -86,10 +86,10 @@
         stringPicker.showsSelectionIndicator = YES;
         stringPicker.userInteractionEnabled = YES;
     }
-    
+
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
     self.pickerView = stringPicker;
-    
+
     return stringPicker;
 }
 
@@ -137,33 +137,33 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     id obj = (self.data)[(NSUInteger) row];
-    
+
     // return the object if it is already a NSString,
     // otherwise, return the description, just like the toString() method in Java
     // else, return nil to prevent exception
-    
+
     if ([obj isKindOfClass:[NSString class]])
         return obj;
-    
+
     if ([obj respondsToSelector:@selector(description)])
         return [obj performSelector:@selector(description)];
-    
+
     return nil;
 }
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
     id obj = (self.data)[component][(NSUInteger) row];
-    
+
     // return the object if it is already a NSString,
     // otherwise, return the description, just like the toString() method in Java
     // else, return nil to prevent exception
-    
+
     if ([obj isKindOfClass:[NSString class]])
         return [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
-    
+
     if ([obj respondsToSelector:@selector(description)])
         return [[NSAttributedString alloc] initWithString:[obj performSelector:@selector(description)] attributes:self.pickerTextAttributes];
-    
+
     return nil;
 }
 
