@@ -93,6 +93,20 @@ class SWTableViewController: UITableViewController, UITableViewDelegate {
             return
         }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
     }
+    
+    @IBAction func multipleStringPickerClicked(sender: UIButton) {
+        ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
+            ["One", "Two", "A lot"],
+            ["Many", "Many more", "Infinite"]
+        ], initialSelection: [2, 2], doneBlock: {
+            picker, values, indexes in
+            
+            println("values = \(values)")
+            println("indexes = \(indexes)")
+            println("picker = \(picker)")
+            return
+            }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
+    }
 
     @IBAction func localePickerClicked(sender: UIButton) {
         ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
