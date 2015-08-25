@@ -48,6 +48,42 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED>=80000
+
+@interface MyPopoverController:UIPopoverController<UIAdaptivePresentationControllerDelegate>
+@end
+
+@implementation MyPopoverController
++(BOOL)canShowPopover {
+    if (IS_IPAD) {
+        if ([UITraitCollection class]) {
+            UITraitCollection *traits=[UIApplication sharedApplication].keyWindow.traitCollection;
+            if (traits.horizontalSizeClass==UIUserInterfaceSizeClassCompact)
+                return NO;
+        }
+        return YES;
+    }
+    return NO;
+}
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+    return UIModalPresentationNone;
+}
+@end
+
+#else
+
+@interface MyPopoverController:UIPopoverController
+@end
+
+@implementation MyPopoverController
++(BOOL)canShowPopover {
+    return IS_IPAD;
+}
+@end
+
+#endif
+
 @interface AbstractActionSheetPicker ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
@@ -218,7 +254,7 @@ CG_INLINE BOOL isIPhone4() {
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+    {
         switch (self.tapDismissAction)
         {
             case TapActionNone:break;
@@ -520,7 +556,9 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        return CGSizeMake(320, 320);
+        if ( [MyPopoverController canShowPopover] )
+            return CGSizeMake(320, 320);
+        return [UIApplication sharedApplication].keyWindow.bounds.size;
     }
 
 #if defined(__IPHONE_8_0)
@@ -564,7 +602,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPickerForView:(UIView *)aView {
     self.presentFromRect = aView.frame;
 
-    if (IS_IPAD)
+    if ( [MyPopoverController canShowPopover] )
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
@@ -616,7 +654,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma clang diagnostic pop
     }
 
-    _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController = [[MyPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
     if (self.pickerBackgroundColor) {
         self.popOverController.backgroundColor = self.pickerBackgroundColor;

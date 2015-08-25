@@ -326,6 +326,7 @@
 
     UIButton *b2 = [UIButton buttonWithType:UIButtonTypeSystem];
     b2.frame = CGRectMake(540 - 100, 0, 100, 100);
+    b2.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
     b2.backgroundColor = [UIColor redColor];
     [b2 setTitle:@"Dismiss" forState:UIControlStateNormal];
     [b2 addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
