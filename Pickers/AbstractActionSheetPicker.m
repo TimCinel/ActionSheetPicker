@@ -48,7 +48,43 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-@interface AbstractActionSheetPicker () <UIGestureRecognizerDelegate>
+#if __IPHONE_OS_VERSION_MAX_ALLOWED>=80000
+
+@interface MyPopoverController:UIPopoverController<UIAdaptivePresentationControllerDelegate>
+@end
+
+@implementation MyPopoverController
++(BOOL)canShowPopover {
+    if (IS_IPAD) {
+        if ([UITraitCollection class]) {
+            UITraitCollection *traits=[UIApplication sharedApplication].keyWindow.traitCollection;
+            if (traits.horizontalSizeClass==UIUserInterfaceSizeClassCompact)
+                return NO;
+        }
+        return YES;
+    }
+    return NO;
+}
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+    return UIModalPresentationNone;
+}
+@end
+
+#else
+
+@interface MyPopoverController:UIPopoverController
+@end
+
+@implementation MyPopoverController
++(BOOL)canShowPopover {
+    return IS_IPAD;
+}
+@end
+
+#endif
+
+@interface AbstractActionSheetPicker ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIBarButtonItem *barButtonItem;
 @property(nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
@@ -100,9 +136,9 @@ CG_INLINE BOOL isIPhone4() {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
         if ([UIApplication instancesRespondToSelector:@selector(supportedInterfaceOrientationsForWindow:)])
-            self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
-                    supportedInterfaceOrientationsForWindow:
-                            [UIApplication sharedApplication].keyWindow];
+        self.supportedInterfaceOrientations = (UIInterfaceOrientationMask) [[UIApplication sharedApplication]
+                supportedInterfaceOrientationsForWindow:
+                        [UIApplication sharedApplication].keyWindow];
         else {
             self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
             if (IS_IPAD)
@@ -218,11 +254,11 @@ CG_INLINE BOOL isIPhone4() {
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
-    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
-        switch (self.tapDismissAction) {
-            case TapActionNone:
-                break;
-            case TapActionSuccess: {
+    {
+        switch (self.tapDismissAction)
+        {
+            case TapActionNone:break;
+            case TapActionSuccess:{
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerDone:)];
@@ -230,7 +266,7 @@ CG_INLINE BOOL isIPhone4() {
                 [self.actionSheet.window addGestureRecognizer:tapAction];
                 break;
             }
-            case TapActionCancel: {
+            case TapActionCancel:{
                 // add tap dismiss action
                 self.actionSheet.window.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionPickerCancel:)];
@@ -258,7 +294,7 @@ CG_INLINE BOOL isIPhone4() {
 #if __IPHONE_4_1 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     if (self.actionSheet)
 #else
-        if (self.actionSheet && [self.actionSheet isVisible])
+    if (self.actionSheet && [self.actionSheet isVisible])
 #endif
         [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     else if (self.popOverController && self.popOverController.popoverVisible)
@@ -509,7 +545,6 @@ CG_INLINE BOOL isIPhone4() {
                                                                                action:buttonAction];
     return barButton;
 }
-
 #pragma mark - Custom Color
 
 - (void)setPickerBackgroundColor:(UIColor *)backgroundColor {
@@ -521,7 +556,9 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        return CGSizeMake(320, 320);
+        if ( [MyPopoverController canShowPopover] )
+            return CGSizeMake(320, 320);
+        return [UIApplication sharedApplication].keyWindow.bounds.size;
     }
 
 #if defined(__IPHONE_8_0)
@@ -536,10 +573,10 @@ CG_INLINE BOOL isIPhone4() {
         return [[UIScreen mainScreen] bounds].size;
     }
 #else
-    if ( [self isViewPortrait] )
-        return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
-    return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
-#endif
+        if ( [self isViewPortrait] )
+            return CGSizeMake(320 , IS_WIDESCREEN ? 568 : 480);
+        return CGSizeMake(IS_WIDESCREEN ? 568 : 480, 320);
+    #endif
 }
 
 - (BOOL)isViewPortrait {
@@ -565,7 +602,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPickerForView:(UIView *)aView {
     self.presentFromRect = aView.frame;
 
-    if (IS_IPAD)
+    if ( [MyPopoverController canShowPopover] )
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
@@ -617,7 +654,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma clang diagnostic pop
     }
 
-    _popOverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    _popOverController = [[MyPopoverController alloc] initWithContentViewController:viewController];
     _popOverController.delegate = self;
     if (self.pickerBackgroundColor) {
         self.popOverController.backgroundColor = self.pickerBackgroundColor;
@@ -684,8 +721,7 @@ CG_INLINE BOOL isIPhone4() {
 }
 
 #pragma mark UIGestureRecognizerDelegate
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
     CGPoint location = [gestureRecognizer locationInView:self.toolbar];
     return !CGRectContainsPoint(self.toolbar.bounds, location);
 }
