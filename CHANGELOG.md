@@ -1,5 +1,16 @@
 # Change Log
 
+## [2.0.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.0) (2015-09-16)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.7.2...2.0.0)
+
+**Closed issues:**
+
+- Xcode 7 beta and Swift 2.0 [\#185](https://github.com/skywinder/ActionSheetPicker-3.0/issues/185)
+
+**Merged pull requests:**
+
+- Swift 2.0 update [\#211](https://github.com/skywinder/ActionSheetPicker-3.0/pull/211) ([skywinder](https://github.com/skywinder))
+
 ## [1.7.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.7.2) (2015-09-01)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.7.1...1.7.2)
 
