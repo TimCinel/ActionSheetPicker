@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C1194851B5E53EB00C68054 /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */; };
-		1C1194861B5E53EB00C68054 /* CoreActionSheetPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C5784521B15BE2C00172D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784511B15BE2C00172D8A /* AppDelegate.swift */; };
 		1C5784571B15BE2C00172D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784551B15BE2C00172D8A /* Main.storyboard */; };
 		1C5784591B15BE2C00172D8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784581B15BE2C00172D8A /* Images.xcassets */; };
@@ -18,33 +16,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1C1194871B5E53EB00C68054 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1CCA90421AE0EFB000368F5E;
-			remoteInfo = CoreActionSheetPicker;
-		};
 		1C5784621B15BE2C00172D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1C5784441B15BE2C00172D8A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1C57844B1B15BE2C00172D8A;
 			remoteInfo = "Swift-Example";
-		};
-		1C8EA1451B15BFA50090F4E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CCA90431AE0EFB000368F5E;
-			remoteInfo = CoreActionSheetPicker;
-		};
-		1C8EA1471B15BFA50090F4E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CCA904E1AE0EFB000368F5E;
-			remoteInfo = CoreActionSheetPickerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C1194861B5E53EB00C68054 /* CoreActionSheetPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +49,6 @@
 		1C5784661B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
-		1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreActionSheetPicker.xcodeproj; path = ../../CoreActionSheetPicker/CoreActionSheetPicker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C1194851B5E53EB00C68054 /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +72,6 @@
 		1C5784431B15BE2C00172D8A = {
 			isa = PBXGroup;
 			children = (
-				1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */,
 				1C57844E1B15BE2C00172D8A /* Swift-Example */,
 				1C5784641B15BE2C00172D8A /* Swift-ExampleTests */,
 				1C57844D1B15BE2C00172D8A /* Products */,
@@ -152,15 +125,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1C8EA1411B15BFA50090F4E6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */,
-				1C8EA1481B15BFA50090F4E6 /* CoreActionSheetPickerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,7 +140,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1C1194881B5E53EB00C68054 /* PBXTargetDependency */,
 			);
 			name = "Swift-Example";
 			productName = "Swift-Example";
@@ -208,7 +171,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Petr Korolev";
 				TargetAttributes = {
 					1C57844B1B15BE2C00172D8A = {
@@ -231,12 +194,6 @@
 			mainGroup = 1C5784431B15BE2C00172D8A;
 			productRefGroup = 1C57844D1B15BE2C00172D8A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1C8EA1411B15BFA50090F4E6 /* Products */;
-					ProjectRef = 1C8EA1401B15BFA50090F4E6 /* CoreActionSheetPicker.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1C57844B1B15BE2C00172D8A /* Swift-Example */,
@@ -244,23 +201,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1C8EA1461B15BFA50090F4E6 /* CoreActionSheetPicker.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CoreActionSheetPicker.framework;
-			remoteRef = 1C8EA1451B15BFA50090F4E6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1C8EA1481B15BFA50090F4E6 /* CoreActionSheetPickerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CoreActionSheetPickerTests.xctest;
-			remoteRef = 1C8EA1471B15BFA50090F4E6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C57844A1B15BE2C00172D8A /* Resources */ = {
@@ -303,11 +243,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1C1194881B5E53EB00C68054 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CoreActionSheetPicker;
-			targetProxy = 1C1194871B5E53EB00C68054 /* PBXContainerItemProxy */;
-		};
 		1C5784631B15BE2C00172D8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C57844B1B15BE2C00172D8A /* Swift-Example */;
@@ -356,6 +291,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -422,9 +358,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "./**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -433,9 +370,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "./**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -454,6 +392,7 @@
 				);
 				INFOPLIST_FILE = "Swift-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Example.app/Swift-Example";
 			};
@@ -469,6 +408,7 @@
 				);
 				INFOPLIST_FILE = "Swift-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Example.app/Swift-Example";
 			};
