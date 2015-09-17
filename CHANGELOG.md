@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.1) (2015-09-17)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.0...2.0.1)
+
+**Fixed bugs:**
+
+- Added missing header reference [\#212](https://github.com/skywinder/ActionSheetPicker-3.0/pull/212) ([donshefer](https://github.com/donshefer))
+
 ## [2.0.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.0) (2015-09-16)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.7.2...2.0.0)
 
