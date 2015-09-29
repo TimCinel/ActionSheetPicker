@@ -24,10 +24,6 @@ Please welcome: **ActionSheetPicker-3.0**!
 
 `pod 'ActionSheetPicker-3.0', '~> 2.0.1'` (**iOS 5.1.1-8.x** compatible!)
 
-Improvements more than welcome - they are kindly requested :)
-
-_Regards, Petr Korolev_
-
 ##ActionSheetPicker = UIPickerView + UIActionSheet ##
 
 ![Animation](Screenshots/example.gif)
@@ -211,7 +207,3 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
 [![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skywinder/actionsheetpicker-3.0/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
