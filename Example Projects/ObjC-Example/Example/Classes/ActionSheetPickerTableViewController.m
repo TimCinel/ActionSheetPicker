@@ -251,7 +251,10 @@
 - (IBAction)customBackgroundAndText:(id)sender {
     ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"" rows:@[@"choiceA", @"choiceB", @"choiceC"] initialSelection:1 doneBlock:nil cancelBlock:nil origin:sender];
     picker.pickerBackgroundColor = [UIColor blackColor];
+    NSMutableParagraphStyle *labelParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    labelParagraphStyle.alignment = NSTextAlignmentCenter;
     picker.pickerTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                    NSParagraphStyleAttributeName: labelParagraphStyle,
                                     NSFontAttributeName:[self getRandomFont],};
     [picker showActionSheetPicker];
 }
@@ -262,6 +265,9 @@
     NSArray *familyNames = [UIFont familyNames];
     NSString *familyName = familyNames[arc4random() % [familyNames count]];
     NSArray *namesForFamilyName = [UIFont fontNamesForFamilyName:familyName];
+    if ([namesForFamilyName count] == 0) {
+        return [self getRandomFont];
+    }
     NSString *fontName = namesForFamilyName[arc4random() % [namesForFamilyName count]];
     UIFont *randomFont = [UIFont fontWithName:fontName size:[UIFont systemFontSize]];
     return randomFont;
