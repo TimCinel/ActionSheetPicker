@@ -163,6 +163,30 @@
     return nil;
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    id obj = (self.data)[(NSUInteger) row];
+    UILabel *pickerLabel = (UILabel *)view;
+    if (pickerLabel == nil) {
+        pickerLabel = [[UILabel alloc] init];
+    }
+    NSAttributedString *attributeTitle = nil;
+    // return the object if it is already a NSString,
+    // otherwise, return the description, just like the toString() method in Java
+    // else, return nil to prevent exception
+    
+    if ([obj isKindOfClass:[NSString class]])
+        attributeTitle = [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
+    
+    if ([obj respondsToSelector:@selector(description)])
+        attributeTitle = [[NSAttributedString alloc] initWithString:[obj performSelector:@selector(description)] attributes:self.pickerTextAttributes];
+    
+    if (attributeTitle != nil) {
+        pickerLabel.attributedText = attributeTitle;
+        return pickerLabel;
+    }
+    return nil;
+}
+
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     return pickerView.frame.size.width - 30;
 }
