@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.2) (2015-10-08)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.1...2.0.2)
+
+**Implemented enhancements:**
+
+- make font of picker label ready for customize. [\#218](https://github.com/skywinder/ActionSheetPicker-3.0/pull/218) ([ainopara](https://github.com/ainopara))
+
 ## [2.0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.1) (2015-09-17)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.0...2.0.1)
 
@@ -52,10 +59,6 @@
 
 - Dark Mode [\#102](https://github.com/skywinder/ActionSheetPicker-3.0/issues/102)
 - Add methods to custom background color ... [\#195](https://github.com/skywinder/ActionSheetPicker-3.0/pull/195) ([ainopara](https://github.com/ainopara))
-
-**Closed issues:**
-
-- How to change font of picker data rows? [\#58](https://github.com/skywinder/ActionSheetPicker-3.0/issues/58)
 
 ## [1.6.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.2) (2015-05-07)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.6.1...1.6.2)
