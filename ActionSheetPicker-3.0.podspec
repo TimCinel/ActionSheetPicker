@@ -1,6 +1,6 @@
 Pod::Spec.new do | s |
     s.name = 'ActionSheetPicker-3.0'
-    s.version = '2.0.1'
+    s.version = '2.0.2'
     s.summary = 'Better version of ActionSheetPicker with support iOS7 and other improvements.'
     s.homepage = 'http://skywinder.github.io/ActionSheetPicker-3.0'
     s.license = 'BSD'
