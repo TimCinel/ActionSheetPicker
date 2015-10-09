@@ -164,15 +164,16 @@
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    id obj = (self.data)[(NSUInteger) row];
     UILabel *pickerLabel = (UILabel *)view;
     if (pickerLabel == nil) {
         pickerLabel = [[UILabel alloc] init];
     }
+    id obj = (self.data)[(NSUInteger) row];
+    
     NSAttributedString *attributeTitle = nil;
-    // return the object if it is already a NSString,
-    // otherwise, return the description, just like the toString() method in Java
-    // else, return nil to prevent exception
+    // use the object if it is already a NSString,
+    // otherwise, use the description, just like the toString() method in Java
+    // else, use String with no text to ensure this delegate do not return a nil value.
     
     if ([obj isKindOfClass:[NSString class]])
         attributeTitle = [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
@@ -180,11 +181,11 @@
     if ([obj respondsToSelector:@selector(description)])
         attributeTitle = [[NSAttributedString alloc] initWithString:[obj performSelector:@selector(description)] attributes:self.pickerTextAttributes];
     
-    if (attributeTitle != nil) {
-        pickerLabel.attributedText = attributeTitle;
-        return pickerLabel;
+    if (attributeTitle == nil) {
+        attributeTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
     }
-    return nil;
+    pickerLabel.attributedText = attributeTitle;
+    return pickerLabel;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
