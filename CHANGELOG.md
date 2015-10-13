@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.3](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.3) (2015-10-13)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.2...2.0.3)
+
+**Merged pull requests:**
+
+- A UIView contain no text rather than nil should be returned … [\#221](https://github.com/skywinder/ActionSheetPicker-3.0/pull/221) ([ainopara](https://github.com/ainopara))
+
 ## [2.0.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.2) (2015-10-08)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.1...2.0.2)
 
