@@ -82,7 +82,7 @@ static NSString *const kActionTarget  = @"buttonActionTarget";
 @property (nonatomic) TapAction tapDismissAction; // Specify, which action should be fired in case of tapping outside of the picker (on top darkened side). Default is TapActionNone.
 
 // For subclasses.
-- (id)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
+- (instancetype)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
 // Present the ActionSheetPicker
 - (void)showActionSheetPicker;
