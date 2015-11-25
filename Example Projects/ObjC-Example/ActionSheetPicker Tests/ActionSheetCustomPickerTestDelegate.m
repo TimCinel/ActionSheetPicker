@@ -7,7 +7,7 @@
 
 @implementation ActionSheetCustomPickerTestDelegate
 
-- (id)init
+- (instancetype)init
 {
     if (self = [super init]) {
         notesToDisplayForKey = @[@"C", @"Db", @"D", @"Eb", @"E", @"F", @"Gb", @"G", @"Ab", @"A", @"Bb", @"B"];
