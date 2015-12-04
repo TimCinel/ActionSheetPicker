@@ -158,10 +158,10 @@ CG_INLINE BOOL isIPhone4() {
         self.tapDismissAction = TapActionNone;
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
-        
+
         NSMutableParagraphStyle *labelParagraphStyle = [[NSMutableParagraphStyle alloc] init];
         labelParagraphStyle.alignment = NSTextAlignmentCenter;
-        self.pickerTextAttributes = @{NSParagraphStyleAttributeName: labelParagraphStyle};
+        self.pickerTextAttributes = @{NSParagraphStyleAttributeName : labelParagraphStyle};
     }
 
     return self;
