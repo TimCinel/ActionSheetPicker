@@ -158,10 +158,10 @@ CG_INLINE BOOL isIPhone4() {
         self.tapDismissAction = TapActionNone;
         //allows us to use this without needing to store a reference in calling class
         self.selfReference = self;
-        
+
         NSMutableParagraphStyle *labelParagraphStyle = [[NSMutableParagraphStyle alloc] init];
         labelParagraphStyle.alignment = NSTextAlignmentCenter;
-        self.pickerTextAttributes = @{NSParagraphStyleAttributeName: labelParagraphStyle};
+        self.pickerTextAttributes = @{NSParagraphStyleAttributeName : labelParagraphStyle};
     }
 
     return self;
@@ -674,8 +674,12 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPopover:(UIPopoverController *)popover {
     NSParameterAssert(popover != NULL);
     if (self.barButtonItem) {
-        [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny
-                                        animated:YES];
+        if (_containerView != nil) {
+            [popover presentPopoverFromRect:CGRectMake(_containerView.frame.size.width / 2.f, 0.f, 0, 0) inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        } else {
+            [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+
         return;
     }
     else if ((self.containerView)) {
