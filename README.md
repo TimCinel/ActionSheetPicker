@@ -22,7 +22,7 @@ ActionSheetPicker-3.0
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 2.0.3'` (**iOS 5.1.1-8.x** compatible!)
+`pod 'ActionSheetPicker-3.0', '~> 2.0.4'` (**iOS 5.1.1-8.x** compatible!)
 
 ##ActionSheetPicker = UIPickerView + UIActionSheet ##
 
