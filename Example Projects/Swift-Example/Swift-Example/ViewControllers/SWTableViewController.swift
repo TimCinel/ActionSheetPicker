@@ -9,7 +9,7 @@
 import UIKit
 import CoreActionSheetPicker
 
-class SWTableViewController: UITableViewController {
+class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var UIDatePickerModeTime: UIButton!
     @IBAction func TimePickerClicked(sender: UIButton) {
 
@@ -19,6 +19,7 @@ class SWTableViewController: UITableViewController {
         datePicker.showActionSheetPicker()
 
     }
+    @IBOutlet var textField: UITextField!
 
     @IBAction func DatePickerClicked(sender: UIButton) {
 
@@ -140,6 +141,18 @@ class SWTableViewController: UITableViewController {
     }
 
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return true
+    }
+    
+    @IBAction func hideKeyboard(sender: AnyObject) {
+        self.textField.becomeFirstResponder()
+    }
     // MARK: - Table view data source
 
     /*
