@@ -32,7 +32,7 @@
 
 @interface ActionSheetMultipleStringPicker()
 @property (nonatomic,strong) NSArray *data; //Array of string arrays :)
-@property (nonatomic,assign) NSArray *initialSelection;
+@property (nonatomic,strong) NSArray *initialSelection;
 @end
 
 @implementation ActionSheetMultipleStringPicker
