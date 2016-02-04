@@ -29,7 +29,7 @@
 
 @interface ActionSheetStringPicker()
 @property (nonatomic,strong) NSArray *data;
-@property (nonatomic,assign) NSInteger selectedIndex;
+@property (nonatomic,strong) NSInteger selectedIndex;
 @end
 
 @implementation ActionSheetStringPicker
