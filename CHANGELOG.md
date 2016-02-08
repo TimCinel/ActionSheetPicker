@@ -1,5 +1,20 @@
 # Change Log
 
+## [2.0.5](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.5) (2016-02-08)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.4...2.0.5)
+
+**Closed issues:**
+
+- Issue in origin [\#245](https://github.com/skywinder/ActionSheetPicker-3.0/issues/245)
+- NSRangeException occurs when I try to fast scroll \(apparently not selecting anything\) and click done [\#229](https://github.com/skywinder/ActionSheetPicker-3.0/issues/229)
+- Picker is duplicated when use showActionSheetPicker [\#224](https://github.com/skywinder/ActionSheetPicker-3.0/issues/224)
+- ActionSheetPickerCustomPickerDelegate [\#214](https://github.com/skywinder/ActionSheetPicker-3.0/issues/214)
+- ActionSheetDatePicker iOS 9 Problems [\#213](https://github.com/skywinder/ActionSheetPicker-3.0/issues/213)
+
+**Merged pull requests:**
+
+- Fix Swift Bug RE self.initialSelection in multi-pickers [\#252](https://github.com/skywinder/ActionSheetPicker-3.0/pull/252) ([sschale](https://github.com/sschale))
+
 ## [2.0.4](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.4) (2015-12-04)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.3...2.0.4)
 
