@@ -259,6 +259,13 @@
     [picker showActionSheetPicker];
 }
 
+- (IBAction)blurredBackground:(id)sender {
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"Select a Block" rows:self.animals initialSelection:0 doneBlock:nil cancelBlock:nil origin:sender];
+    picker.tapDismissAction = TapActionCancel;
+    picker.pickerBlurRadius = @(10);
+
+    [picker showActionSheetPicker];
+}
 
 - (UIFont *)getRandomFont
 {
