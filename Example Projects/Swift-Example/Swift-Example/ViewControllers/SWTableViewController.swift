@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreActionSheetPicker
+import ActionSheetPicker_3_0
 
 class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var UIDatePickerModeTime: UIButton!
