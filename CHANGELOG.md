@@ -1,5 +1,18 @@
 # Change Log
 
+## [2.1.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.1.0) (2016-05-19)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.5...2.1.0)
+
+**Closed issues:**
+
+- dual picker side by side [\#267](https://github.com/skywinder/ActionSheetPicker-3.0/issues/267)
+- Import statement outdated on Swift-example [\#261](https://github.com/skywinder/ActionSheetPicker-3.0/issues/261)
+
+**Merged pull requests:**
+
+- This commit resolves \#261 [\#262](https://github.com/skywinder/ActionSheetPicker-3.0/pull/262) ([guillosaracco](https://github.com/guillosaracco))
+- Fixes \#205 Add blur feature for picker background [\#251](https://github.com/skywinder/ActionSheetPicker-3.0/pull/251) ([nikola-mladenovic](https://github.com/nikola-mladenovic))
+
 ## [2.0.5](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.0.5) (2016-02-08)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.4...2.0.5)
 
@@ -10,6 +23,7 @@
 - Picker is duplicated when use showActionSheetPicker [\#224](https://github.com/skywinder/ActionSheetPicker-3.0/issues/224)
 - ActionSheetPickerCustomPickerDelegate [\#214](https://github.com/skywinder/ActionSheetPicker-3.0/issues/214)
 - ActionSheetDatePicker iOS 9 Problems [\#213](https://github.com/skywinder/ActionSheetPicker-3.0/issues/213)
+- Blur instead of semi transparent black overlay [\#205](https://github.com/skywinder/ActionSheetPicker-3.0/issues/205)
 
 **Merged pull requests:**
 
