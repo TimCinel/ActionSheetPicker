@@ -13,6 +13,7 @@
 		1C57845C1B15BE2C00172D8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */; };
 		1C5784681B15BE2C00172D8A /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */; };
 		1C5784721B15BE8900172D8A /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784711B15BE8900172D8A /* SWTableViewController.swift */; };
+		1C82C2D51C930C2B00F9520C /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1C5784661B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
+		1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C82C2D51C930C2B00F9520C /* CoreActionSheetPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 		1C5784431B15BE2C00172D8A = {
 			isa = PBXGroup;
 			children = (
+				1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */,
 				1C57844E1B15BE2C00172D8A /* Swift-Example */,
 				1C5784641B15BE2C00172D8A /* Swift-ExampleTests */,
 				1C57844D1B15BE2C00172D8A /* Products */,
