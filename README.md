@@ -119,7 +119,7 @@ To import pod you should add string:
 - For `Swift` projects:
 
 
-        import ActionSheetPicker_3_0
+        import CoreActionSheetPicker
 
 ### Carthage
 
