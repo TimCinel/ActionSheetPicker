@@ -134,6 +134,7 @@ CG_INLINE BOOL isIPhone4() {
     if (self) {
         self.presentFromRect = CGRectZero;
         self.popoverBackgroundViewClass = nil;
+        self.popoverDisabled = NO;
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "UnavailableInDeploymentTarget"
@@ -260,7 +261,7 @@ CG_INLINE BOOL isIPhone4() {
     }
     [masterView addSubview:_pickerView];
 
-    if (![MyPopoverController canShowPopover] && !self.pickerBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
+    if ((![MyPopoverController canShowPopover] || self.popoverDisabled) && !self.pickerBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
         [self blurPickerBackground];
     } else {
         [self presentPickerForView:masterView];
@@ -611,7 +612,7 @@ CG_INLINE BOOL isIPhone4() {
 
 - (CGSize)viewSize {
     if (IS_IPAD) {
-        if ([MyPopoverController canShowPopover])
+        if (!self.popoverDisabled && [MyPopoverController canShowPopover])
             return CGSizeMake(320, 320);
         return [UIApplication sharedApplication].keyWindow.bounds.size;
     }
@@ -657,7 +658,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)presentPickerForView:(UIView *)aView {
     self.presentFromRect = aView.frame;
 
-    if ([MyPopoverController canShowPopover])
+    if (!self.popoverDisabled && [MyPopoverController canShowPopover])
         [self configureAndPresentPopoverForView:aView];
     else
         [self configureAndPresentActionSheetForView:aView];
