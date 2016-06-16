@@ -53,9 +53,10 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 **For detailed info about customisations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
 
-- custom buttons view
-- custom buttons callbacks
+- Custom buttons view
+- Custom buttons callbacks
 - Action by clicking outside of the picker
+- Background color and blur effect
 - Other customisations
 
 **For detailed examples, please check [Example Projects](#example-projects) in this repo.**
