@@ -64,14 +64,17 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 #### `Swift:`
 
 ```
- ActionSheetStringPicker.showPickerWithTitle("Select a Color", rows: ["Red", "Green", "Blue", "Orange], initialSelection: 1, doneBlock: {
-            picker, value, index in
-
-            print("value = \(value)")
-            print("index = \(index)")
+ ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
+            ["One", "Two", "A lot"],
+            ["Many", "Many more", "Infinite"]
+        ], initialSelection: [2, 2], doneBlock: {
+            picker, values, indexes in
+            
+            print("values = \(values)")
+            print("indexes = \(indexes)")
             print("picker = \(picker)")
             return
-        }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
+            }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
 ```
 
 #### `Objective-C:`
@@ -136,7 +139,7 @@ To import pod you should add string:
 - For `Swift` projects:
 
 
-        import CoreActionSheetPicker
+        import ActionSheetPicker_3_0
 
 ### Carthage
 
