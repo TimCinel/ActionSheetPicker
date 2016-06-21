@@ -61,6 +61,21 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 **For detailed examples, please check [Example Projects](#example-projects) in this repo.**
 
+#### `Swift:`
+
+```
+ ActionSheetStringPicker.showPickerWithTitle("Select a Color", rows: ["Red", "Green", "Blue", "Orange], initialSelection: 1, doneBlock: {
+            picker, value, index in
+
+            print("value = \(value)")
+            print("index = \(index)")
+            print("picker = \(picker)")
+            return
+        }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
+```
+
+#### `Objective-C:`
+
 ```obj-c
 // Inside a IBAction method:
 
@@ -81,6 +96,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
+ 
  
 ##Installation##
 
