@@ -16,7 +16,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
 
         datePicker.minuteInterval = 20
-        
+
         datePicker.showActionSheetPicker()
 
     }
@@ -27,14 +27,14 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func localePickerClicked(sender: UIButton) {
         ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
             picker, index in
-            
+
             print("index = \(index)")
             print("picker = \(picker)")
             return
             }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-        
+
     }
-    
+
     @IBAction func DatePickerClicked(sender: UIButton) {
 
         let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {
@@ -48,8 +48,6 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         let secondsInWeek: NSTimeInterval = 7 * 24 * 60 * 60;
         datePicker.minimumDate = NSDate(timeInterval: -secondsInWeek, sinceDate: NSDate())
         datePicker.maximumDate = NSDate(timeInterval: secondsInWeek, sinceDate: NSDate())
-        
-        datePicker.textColor = UIColor.redColor()
 
         datePicker.showActionSheetPicker()
     }
@@ -110,20 +108,28 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
             return
         }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
     }
-    
+
     @IBAction func multipleStringPickerClicked(sender: UIButton) {
-        ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
+        let acp = ActionSheetMultipleStringPicker(title: "Multiple String Picker", rows: [
             ["One", "Two", "A lot"],
             ["Many", "Many more", "Infinite"]
-        ], initialSelection: [2, 2], doneBlock: {
-            picker, values, indexes in
-            
-            print("values = \(values)")
-            print("indexes = \(indexes)")
-            print("picker = \(picker)")
-            return
+            ], initialSelection: [2, 2], doneBlock: {
+                picker, values, indexes in
+                
+                print("values = \(values)")
+                print("indexes = \(indexes)")
+                print("picker = \(picker)")
+                return
             }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
+        
+        
+        acp.textColor = UIColor.redColor()
+        
+        acp.pickerBackgroundColor = UIColor.blackColor()
+        
+        acp.showActionSheetPicker()
     }
+        
 
     func datePicked(obj: NSDate) {
         UIDatePickerModeTime.setTitle(obj.description, forState: UIControlState.Normal)
@@ -143,11 +149,11 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
-    
+
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
     }
-    
+
     @IBAction func hideKeyboard(sender: AnyObject) {
         self.textField.becomeFirstResponder()
     }
