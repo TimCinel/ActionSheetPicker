@@ -126,7 +126,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         acp.setTextColor(UIColor.redColor())
         acp.pickerBackgroundColor = UIColor.blackColor()
         acp.toolbarBackgroundColor = UIColor.yellowColor()
-
+        acp.toolbarButtonsColor = UIColor.whiteColor()
         acp.showActionSheetPicker()
     }
 
