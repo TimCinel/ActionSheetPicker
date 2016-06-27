@@ -16,11 +16,25 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
 
         datePicker.minuteInterval = 20
+        
         datePicker.showActionSheetPicker()
 
     }
     @IBOutlet var textField: UITextField!
 
+    @IBOutlet var localePicker: UIButton!
+
+    @IBAction func localePickerClicked(sender: UIButton) {
+        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
+            picker, index in
+            
+            print("index = \(index)")
+            print("picker = \(picker)")
+            return
+            }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
+        
+    }
+    
     @IBAction func DatePickerClicked(sender: UIButton) {
 
         let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {
@@ -34,6 +48,8 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         let secondsInWeek: NSTimeInterval = 7 * 24 * 60 * 60;
         datePicker.minimumDate = NSDate(timeInterval: -secondsInWeek, sinceDate: NSDate())
         datePicker.maximumDate = NSDate(timeInterval: secondsInWeek, sinceDate: NSDate())
+        
+        datePicker.textColor
 
         datePicker.showActionSheetPicker()
     }
@@ -109,30 +125,12 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
             }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
     }
 
-    @IBAction func localePickerClicked(sender: UIButton) {
-        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
-            picker, index in
-
-            print("index = \(index)")
-            print("picker = \(picker)")
-            return
-        }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-
-    }
-    @IBOutlet var localePicker: UIButton!
-
     func datePicked(obj: NSDate) {
         UIDatePickerModeTime.setTitle(obj.description, forState: UIControlState.Normal)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
