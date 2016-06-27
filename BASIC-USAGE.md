@@ -106,6 +106,17 @@ ActionSheetStringPicker *colorPicker = [[ActionSheetStringPicker alloc] initWith
 - `TapActionSuccess`
 - `TapActionCancel`
 
+#### Customize picker by setting background color or apply blur effect to the picker background:
+
+- In order to set picker background color, use `pickerBackgroundColor` property:
+```obj-c
+ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc] initWithTitle:@"" rows:@[@"choiceA", @"choiceB", @"choiceC"] initialSelection:1 doneBlock:nil cancelBlock:nil origin:sender];
+picker.pickerBackgroundColor = [UIColor blackColor];
+```
+- For applying blur effect to the picker's background , use `pickerBlurRadius` property. You can define custom blur radius, depending on your needs:
+```obj-c
+picker.pickerBlurRadius = @(10);
+```
 #### Other customisations:
 
 look at `AbstractActionSheetPicker` properties:
