@@ -16,10 +16,24 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
 
         datePicker.minuteInterval = 20
+
         datePicker.showActionSheetPicker()
 
     }
     @IBOutlet var textField: UITextField!
+
+    @IBOutlet var localePicker: UIButton!
+
+    @IBAction func localePickerClicked(sender: UIButton) {
+        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
+            picker, index in
+
+            print("index = \(index)")
+            print("picker = \(picker)")
+            return
+            }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
+
+    }
 
     @IBAction func DatePickerClicked(sender: UIButton) {
 
@@ -94,32 +108,28 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
             return
         }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
     }
-    
+
     @IBAction func multipleStringPickerClicked(sender: UIButton) {
-        ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
+        let acp = ActionSheetMultipleStringPicker(title: "Multiple String Picker", rows: [
             ["One", "Two", "A lot"],
             ["Many", "Many more", "Infinite"]
-        ], initialSelection: [2, 2], doneBlock: {
-            picker, values, indexes in
-            
-            print("values = \(values)")
-            print("indexes = \(indexes)")
-            print("picker = \(picker)")
-            return
+            ], initialSelection: [2, 2], doneBlock: {
+                picker, values, indexes in
+                
+                print("values = \(values)")
+                print("indexes = \(indexes)")
+                print("picker = \(picker)")
+                return
             }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
+        
+        
+        acp.setTextColor(UIColor.redColor())
+        
+        acp.pickerBackgroundColor = UIColor.blackColor()
+        
+        acp.showActionSheetPicker()
     }
-
-    @IBAction func localePickerClicked(sender: UIButton) {
-        ActionSheetLocalePicker.showPickerWithTitle("Locale picker", initialSelection: NSTimeZone(), doneBlock: {
-            picker, index in
-
-            print("index = \(index)")
-            print("picker = \(picker)")
-            return
-        }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-
-    }
-    @IBOutlet var localePicker: UIButton!
+        
 
     func datePicked(obj: NSDate) {
         UIDatePickerModeTime.setTitle(obj.description, forState: UIControlState.Normal)
@@ -127,12 +137,6 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,11 +149,11 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
-    
+
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
     }
-    
+
     @IBAction func hideKeyboard(sender: AnyObject) {
         self.textField.becomeFirstResponder()
     }
