@@ -269,7 +269,7 @@ CG_INLINE BOOL isIPhone4() {
     }
     [masterView addSubview:_pickerView];
 
-    if ((![MyPopoverController canShowPopover] || self.popoverDisabled) && !self.pickerBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
+    if ((![MyPopoverController canShowPopover] || self.popoverDisabled) && !self.pickerBackgroundColor && !self.toolbarBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
         [self blurPickerBackground];
     } else {
         [self presentPickerForView:masterView];
@@ -471,6 +471,8 @@ CG_INLINE BOOL isIPhone4() {
     CGRect frame = CGRectMake(0, 0, self.viewSize.width, 44);
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:frame];
     pickerToolbar.barStyle = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
+
+    pickerToolbar.barTintColor = self.toolbarBackgroundColor;
 
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
 
