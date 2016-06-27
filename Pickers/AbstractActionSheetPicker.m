@@ -175,7 +175,6 @@ CG_INLINE BOOL isIPhone4() {
 
 
 - (void)setTextColor:(UIColor *)textColor {
-    _textColor = textColor;
     if (self.pickerTextAttributes) {
         self.pickerTextAttributes[NSForegroundColorAttributeName] = textColor;
     } else {

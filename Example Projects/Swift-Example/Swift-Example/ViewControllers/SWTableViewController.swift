@@ -123,7 +123,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
             }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
         
         
-        acp.textColor = UIColor.redColor()
+        acp.setTextColor(UIColor.redColor())
         
         acp.pickerBackgroundColor = UIColor.blackColor()
         
