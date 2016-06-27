@@ -473,6 +473,7 @@ CG_INLINE BOOL isIPhone4() {
     pickerToolbar.barStyle = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? UIBarStyleDefault : UIBarStyleBlackTranslucent;
 
     pickerToolbar.barTintColor = self.toolbarBackgroundColor;
+    pickerToolbar.tintColor = self.toolbarButtonsColor;
 
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
 
