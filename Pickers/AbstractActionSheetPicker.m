@@ -164,7 +164,7 @@ CG_INLINE BOOL isIPhone4() {
 
         NSMutableParagraphStyle *labelParagraphStyle = [[NSMutableParagraphStyle alloc] init];
         labelParagraphStyle.alignment = NSTextAlignmentCenter;
-        self.pickerTextAttributes = @{NSParagraphStyleAttributeName : labelParagraphStyle};
+        self.pickerTextAttributes = [@{NSParagraphStyleAttributeName : labelParagraphStyle} mutableCopy];
 
         self.context = [CIContext contextWithOptions:nil];
         self.filter = [CIFilter filterWithName:@"CIGaussianBlur"];
@@ -173,6 +173,15 @@ CG_INLINE BOOL isIPhone4() {
     return self;
 }
 
+
+- (void)setTextColor:(UIColor *)textColor {
+    _textColor = textColor;
+    if (self.pickerTextAttributes) {
+        self.pickerTextAttributes[NSForegroundColorAttributeName] = textColor;
+    } else {
+        self.pickerTextAttributes = [@{NSForegroundColorAttributeName : [UIColor whiteColor]} mutableCopy];
+    }
+}
 
 - (instancetype)initWithTarget:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin {
     self = [self init];

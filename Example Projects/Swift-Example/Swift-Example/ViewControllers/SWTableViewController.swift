@@ -49,7 +49,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         datePicker.minimumDate = NSDate(timeInterval: -secondsInWeek, sinceDate: NSDate())
         datePicker.maximumDate = NSDate(timeInterval: secondsInWeek, sinceDate: NSDate())
         
-        datePicker.textColor
+        datePicker.textColor = UIColor.redColor()
 
         datePicker.showActionSheetPicker()
     }

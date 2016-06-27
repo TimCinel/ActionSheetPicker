@@ -64,7 +64,7 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 @property(nonatomic, strong) SWActionSheet *actionSheet;
 @property(nonatomic, assign) NSInteger tag;
 @property(nonatomic, assign) int borderWidth;
-@property(nonatomic, strong, readonly) UIToolbar *toolbar;
+@property(nonatomic, strong) UIToolbar *toolbar;
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, strong) UIView *pickerView;
 @property(nonatomic, readonly) CGSize viewSize;
@@ -73,7 +73,7 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 @property(nonatomic, assign) CGRect presentFromRect;
 @property(nonatomic) NSDictionary *titleTextAttributes; // default is nil. Used to specify Title Label attributes.
 @property(nonatomic) NSAttributedString *attributedTitle; // default is nil. If titleTextAttributes not nil this value ignored.
-@property(nonatomic) NSDictionary *pickerTextAttributes; // default with a NSMutableParagraphStyle to set label align center. Used to specify Picker Label attributes.
+@property(nonatomic) NSMutableDictionary *pickerTextAttributes; // default with a NSMutableParagraphStyle to set label align center. Used to specify Picker Label attributes.
 @property(nonatomic) UIColor *pickerBackgroundColor;
 @property(nonatomic) NSNumber *pickerBlurRadius;
 @property(nonatomic, retain) Class popoverBackgroundViewClass; //allow popover customization on iPad
