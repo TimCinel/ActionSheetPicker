@@ -1,11 +1,25 @@
 # Change Log
 
+## [2.2.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.2.0) (2016-06-27)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.1.0...2.2.0)
+
+**Implemented enhancements:**
+
+- Change tint color / font color of Done / Cancel buttons [\#54](https://github.com/skywinder/ActionSheetPicker-3.0/issues/54)
+
+**Merged pull requests:**
+
+- add ability to set toolbar buttons color [\#288](https://github.com/skywinder/ActionSheetPicker-3.0/pull/288) ([skywinder](https://github.com/skywinder))
+- Add ability to set toolbar color via toolbarBackgroundColor property [\#287](https://github.com/skywinder/ActionSheetPicker-3.0/pull/287) ([skywinder](https://github.com/skywinder))
+- Add method to set text color: `setTextColor` [\#286](https://github.com/skywinder/ActionSheetPicker-3.0/pull/286) ([skywinder](https://github.com/skywinder))
+- Blur effect readme [\#284](https://github.com/skywinder/ActionSheetPicker-3.0/pull/284) ([nikola-mladenovic](https://github.com/nikola-mladenovic))
+- Adding the ability to disable popover behavior on iPad per picker instance [\#278](https://github.com/skywinder/ActionSheetPicker-3.0/pull/278) ([airdrummingfool](https://github.com/airdrummingfool))
+
 ## [2.1.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.1.0) (2016-05-19)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.0.5...2.1.0)
 
 **Closed issues:**
 
-- dual picker side by side [\#267](https://github.com/skywinder/ActionSheetPicker-3.0/issues/267)
 - Import statement outdated on Swift-example [\#261](https://github.com/skywinder/ActionSheetPicker-3.0/issues/261)
 
 **Merged pull requests:**
@@ -513,7 +527,6 @@
 **Closed issues:**
 
 - Presented in wrong frame when sender is a navbar bar button item [\#23](https://github.com/skywinder/ActionSheetPicker-3.0/issues/23)
-- done button color [\#21](https://github.com/skywinder/ActionSheetPicker-3.0/issues/21)
 
 ## [1.1.2](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.1.2) (2014-08-15)
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.1.1...1.1.2)
