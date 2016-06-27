@@ -115,21 +115,21 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
             ["Many", "Many more", "Infinite"]
             ], initialSelection: [2, 2], doneBlock: {
                 picker, values, indexes in
-                
+
                 print("values = \(values)")
                 print("indexes = \(indexes)")
                 print("picker = \(picker)")
                 return
             }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
-        
-        
+
+
         acp.setTextColor(UIColor.redColor())
-        
         acp.pickerBackgroundColor = UIColor.blackColor()
-        
+        acp.toolbarBackgroundColor = UIColor.yellowColor()
+        acp.toolbarButtonsColor = UIColor.whiteColor()
         acp.showActionSheetPicker()
     }
-        
+
 
     func datePicked(obj: NSDate) {
         UIDatePickerModeTime.setTitle(obj.description, forState: UIControlState.Normal)
