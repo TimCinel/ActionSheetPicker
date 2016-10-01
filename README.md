@@ -63,7 +63,7 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 #### `Swift:`
 
-```
+```swift
  ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
             ["One", "Two", "A lot"],
             ["Many", "Many more", "Infinite"]
@@ -134,13 +134,14 @@ To import pod you should add string:
 
 - For `Obj-c` projects:
 
-        #import "ActionSheetPicker.h"
-
+```obj-c
+   #import "ActionSheetPicker.h"
+```
 - For `Swift` projects:
 
-
-        import ActionSheetPicker_3_0
-
+```swift
+  import ActionSheetPicker_3_0
+```
 ### Carthage
 
 Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
