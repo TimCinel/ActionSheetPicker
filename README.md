@@ -64,17 +64,17 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 #### `Swift:`
 
 ```swift
- ActionSheetMultipleStringPicker.showPickerWithTitle("Multiple String Picker", rows: [
+ ActionSheetMultipleStringPicker.show(withTitle: "Multiple String Picker", rows: [
             ["One", "Two", "A lot"],
             ["Many", "Many more", "Infinite"]
-        ], initialSelection: [2, 2], doneBlock: {
-            picker, values, indexes in
-            
-            print("values = \(values)")
-            print("indexes = \(indexes)")
-            print("picker = \(picker)")
-            return
-            }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
+            ], initialSelection: [2, 2], doneBlock: {
+                picker, indexes, values in
+                
+                print("values = \(values)")
+                print("indexes = \(indexes)")
+                print("picker = \(picker)")
+                return
+        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
 ```
 
 #### `Objective-C:`
