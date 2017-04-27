@@ -180,19 +180,8 @@
     if (pickerLabel == nil) {
         pickerLabel = [[UILabel alloc] init];
     }
-    id obj = (self.data)[(NSUInteger) row];
     
-    NSAttributedString *attributeTitle = nil;
-    // use the object if it is already a NSString,
-    // otherwise, use the description, just like the toString() method in Java
-    // else, use String with no text to ensure this delegate do not return a nil value.
-    
-    if ([obj isKindOfClass:[NSString class]])
-        attributeTitle = [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
-    
-    if ([obj respondsToSelector:@selector(description)])
-        attributeTitle = [[NSAttributedString alloc] initWithString:[obj performSelector:@selector(description)] attributes:self.pickerTextAttributes];
-    
+    NSAttributedString *attributeTitle = [self pickerView:pickerView attributedTitleForRow:row component:component];  
     if (attributeTitle == nil) {
         attributeTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
     }
