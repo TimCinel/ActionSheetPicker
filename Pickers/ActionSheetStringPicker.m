@@ -181,7 +181,7 @@
         pickerLabel = [[UILabel alloc] init];
     }
     
-    NSAttributedString *attributeTitle = [self pickerView:pickerView attributedTitleForRow:row component:component];  
+    NSAttributedString *attributeTitle = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
     if (attributeTitle == nil) {
         attributeTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
     }
