@@ -138,6 +138,10 @@
     // otherwise, return the description, just like the toString() method in Java
     // else, return nil to prevent exception
 
+    if ([obj isKindOfClass:[NSAttributedString class]]) {
+        return [obj string];
+    }
+
     if ([obj isKindOfClass:[NSString class]])
         return obj;
 
@@ -154,6 +158,14 @@
     // otherwise, return the description, just like the toString() method in Java
     // else, return nil to prevent exception
     
+    if ([obj isKindOfClass:[NSAttributedString class]]) {
+        NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithAttributedString:obj];
+        if (self.pickerTextAttributes) {
+            [title addAttributes:self.pickerTextAttributes range:NSMakeRange(0, [title length])];
+        }
+        return title;
+    }
+
     if ([obj isKindOfClass:[NSString class]])
         return [[NSAttributedString alloc] initWithString:obj attributes:self.pickerTextAttributes];
     
