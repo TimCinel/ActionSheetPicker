@@ -525,6 +525,7 @@ CG_INLINE BOOL isIPhone4() {
     UILabel *toolBarItemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
     [toolBarItemLabel setTextAlignment:NSTextAlignmentCenter];
     [toolBarItemLabel setBackgroundColor:[UIColor clearColor]];
+    toolBarItemLabel.accessibilityTraits = UIAccessibilityTraitHeader;
 
     CGFloat strikeWidth;
     CGSize textSize;
