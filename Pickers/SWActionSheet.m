@@ -45,7 +45,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     // Window of app
     //UIWindow *appWindow = [UIApplication sharedApplication].windows.firstObject;
     // Actions
-    void (^actions)() = ^{
+    void (^actions)(void) = ^{
         self.center = fadeOutToPoint;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
     };
@@ -146,7 +146,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     CGFloat y = self.center.y - CGRectGetHeight(view.frame);
     toPoint = CGPointMake(self.center.x, y);
     // Present actions
-    void (^animations)() = ^{
+    void (^animations)(void) = ^{
         self.center = toPoint;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
     };
