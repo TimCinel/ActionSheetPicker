@@ -516,6 +516,7 @@ CG_INLINE BOOL isIPhone4() {
     [barItems addObject:self.doneBarButtonItem];
 
     [pickerToolbar setItems:barItems animated:NO];
+    [pickerToolbar layoutIfNeeded];
     return pickerToolbar;
 }
 
