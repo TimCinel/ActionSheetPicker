@@ -256,7 +256,7 @@
     labelParagraphStyle.alignment = NSTextAlignmentCenter;
     picker.pickerTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                     NSParagraphStyleAttributeName: labelParagraphStyle,
-                                    NSFontAttributeName:[self getRandomFont],};
+                                    NSFontAttributeName:[self getRandomFont],}.mutableCopy;
     [picker showActionSheetPicker];
 }
 
