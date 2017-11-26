@@ -181,11 +181,11 @@
         pickerLabel = [[UILabel alloc] init];
     }
     
-    NSAttributedString *attributeTitle = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
-    if (attributeTitle == nil) {
-        attributeTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
+    NSAttributedString *attributedTitle = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
+    if (attributedTitle == nil) {
+        attributedTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
     }
-    pickerLabel.attributedText = attributeTitle;
+    pickerLabel.attributedText = attributedTitle;
     return pickerLabel;
 }
 

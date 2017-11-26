@@ -43,8 +43,8 @@ typedef void(^ActionMultipleStringCancelBlock)(ActionSheetMultipleStringPicker *
  *  @param data              is an array of strings to use for the picker's available selection choices
  *  @param indexes           is used to establish the initially selected rows;
  *  @param target            must not be empty. It should respond to "onSuccess" actions.
- *  @param successAction     successActin
- *  @param cancelActionOrNil cancelAction
+ *  @param successAction     action called on selection
+ *  @param cancelActionOrNil action called on cancel
  *  @param origin            must not be empty. It can be either an originating container view or a UIBarButtonItem to use with a popover arrow.
  *
  *  @return  return instance of picker
