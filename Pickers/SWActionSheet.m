@@ -13,7 +13,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 
 @interface SWActionSheetVC : UIViewController
-
+@property (nonatomic) UIInterfaceOrientationMask maskVC;
 @property (nonatomic, retain) SWActionSheet *actionSheet;
 
 @end
@@ -92,7 +92,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
             UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
             window.windowLevel        = self.windowLevel;
             window.backgroundColor    = [UIColor clearColor];
-            window.rootViewController = [SWActionSheetVC new];
+            SWActionSheetVC *new = [SWActionSheetVC new];
+            new.maskVC = self.getMasking;
+            window.rootViewController = new;
             window;
         });
     }
@@ -221,11 +223,14 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     return NO;
 }
 
-// iOS6 support
-// ---
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    if (self.maskVC == UIInterfaceOrientationPortrait){
+        return NO;
+    } else {
+        return YES;
+    }
+    
 }
 
 @end
