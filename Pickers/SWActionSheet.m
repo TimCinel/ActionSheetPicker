@@ -37,6 +37,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     UIView *view;
     UIView *_bgView;
+    UIInterfaceOrientationMask mask;
 }
 
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated
@@ -102,19 +103,19 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     return (SWActionSheetVC *) [self window].rootViewController;
 }
 
-- (instancetype)initWithView:(UIView *)aView windowLevel:(UIWindowLevel)windowLevel
-{
-    if ((self = [super init]))
-    {
-        view = aView;
-        _windowLevel = windowLevel;
-        self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
-        _bgView = [UIView new];
-        _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
-        [self addSubview:_bgView];
-        [self addSubview:view];
-    }
-    return self;
+- (instancetype)initWithView:(UIView *)aView windowLevel:(UIWindowLevel)windowLevel withSupportedOrientation:(UIInterfaceOrientationMask) mask {
+        if ((self = [super init]))
+        {
+            self->mask = mask;
+            view = aView;
+            _windowLevel = windowLevel;
+            self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
+            _bgView = [UIView new];
+            _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+            [self addSubview:_bgView];
+            [self addSubview:view];
+        }
+        return self;
 }
 
 - (void)configureFrameForBounds:(CGRect)bounds
@@ -160,6 +161,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     self.presented = YES;
 }
 
+- (UIInterfaceOrientationMask) getMasking {
+    return self->mask;
+}
 @end
 
 
@@ -202,6 +206,10 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         [self.view addSubview:_actionSheet];
         [_actionSheet showInContainerViewAnimated:animated];
     }
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return [self.actionSheet getMasking];
 }
 
 - (BOOL)prefersStatusBarHidden {
