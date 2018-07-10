@@ -92,9 +92,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
             UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
             window.windowLevel        = self.windowLevel;
             window.backgroundColor    = [UIColor clearColor];
-            SWActionSheetVC *new = [SWActionSheetVC new];
-            new.maskVC = self.getMasking;
-            window.rootViewController = new;
+            SWActionSheetVC *actionSheet = [SWActionSheetVC new];
+            actionSheet.maskVC = self.getMasking;
+            window.rootViewController = actionSheet;
             window;
         });
     }
