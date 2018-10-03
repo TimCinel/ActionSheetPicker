@@ -50,7 +50,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func timePickerClicked(_ sender: UIButton) {
         // example of picker initialized with target/action parameters
         let datePicker = ActionSheetDatePicker(title: "Time:",
-                                               datePickerMode: UIDatePickerMode.time,
+                                               datePickerMode: UIDatePicker.Mode.time,
                                                selectedDate: Date(),
                                                target: self,
                                                action: #selector(datePicked(_:)),
@@ -61,7 +61,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         datePicker?.show()
     }
 
-    func datePicked(_ date: Date) {
+    @objc func datePicked(_ date: Date) {
         print("Date picked \(date)")
     }
 
@@ -69,7 +69,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func datePickerClicked(_ sender: UIButton) {
         // example of date picker with min and max values set (as a week in past and week in future from today)
         let datePicker = ActionSheetDatePicker(title: "Date within 2 weeks:",
-                                               datePickerMode: UIDatePickerMode.date,
+                                               datePickerMode: UIDatePicker.Mode.date,
                                                selectedDate: Date(),
                                                doneBlock: { picker, date, origin in
                                                     print("picker = \(String(describing: picker))")
@@ -92,7 +92,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func dateAndTimePickerClicked(_ sender: UIButton) {
         // example od datetime picker with step interval set to 20 min
         let datePicker = ActionSheetDatePicker(title: "DateTime with 20min intervals:",
-                                               datePickerMode: UIDatePickerMode.dateAndTime,
+                                               datePickerMode: UIDatePicker.Mode.dateAndTime,
                                                selectedDate: Date(),
                                                doneBlock: { picker, date, origin in
                                                     print("picker = \(String(describing: picker))")
@@ -111,13 +111,13 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
 
 
     @IBAction func countdownPickerClicked(_ sender: UIButton) {
-        // example of countdown time picker with default value set
+        // example of countdown time picker with default countdown value set
         let datePicker = ActionSheetDatePicker(title: "CountDownTimer:",
-                                               datePickerMode: UIDatePickerMode.countDownTimer,
-                                               selectedDate: Date(),
-                                               doneBlock: { picker, date, origin in
+                                               datePickerMode: UIDatePicker.Mode.countDownTimer,
+                                               selectedDate: nil,
+                                               doneBlock: { picker, duration, origin in
                                                     print("picker = \(String(describing: picker))")
-                                                    print("date = \(String(describing: date))")
+                                                    print("duration = \(String(describing: duration))")
                                                     print("origin = \(String(describing: origin))")
                                                     return
                                                },
@@ -146,11 +146,11 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         distancePicker?.show()
     }
 
-    func measurementWasSelected(_ bigUnit: NSNumber, smallUnit: NSNumber, origin: AnyObject) {
+    @objc func measurementWasSelected(_ bigUnit: NSNumber, smallUnit: NSNumber, origin: AnyObject) {
         print("measurementWasSelected")
-        print("bigUnits - \(bigUnit)")
-        print("smallUnits - \(smallUnit)")
-        print("origin - \(origin)")
+        print("bigUnits = \(bigUnit)")
+        print("smallUnits = \(smallUnit)")
+        print("origin = \(origin)")
     }
 
 
@@ -171,7 +171,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
                                                   },
                                                   origin: sender)
 
-        acp?.pickerTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)]
+        acp?.pickerTextAttributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 20.0)]
         acp?.setTextColor(UIColor.red)
         acp?.pickerBackgroundColor = UIColor.black
         acp?.toolbarBackgroundColor = UIColor.yellow
@@ -192,4 +192,9 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func hideKeyboard(_ sender: AnyObject) {
         self.textField.becomeFirstResponder()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }
