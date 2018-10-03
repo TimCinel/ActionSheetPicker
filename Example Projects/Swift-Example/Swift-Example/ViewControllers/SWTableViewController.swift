@@ -171,7 +171,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
                                                   },
                                                   origin: sender)
 
-        acp?.pickerTextAttributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 20.0)]
+        acp?.pickerTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0)]
         acp?.setTextColor(UIColor.red)
         acp?.pickerBackgroundColor = UIColor.black
         acp?.toolbarBackgroundColor = UIColor.yellow
@@ -192,9 +192,4 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func hideKeyboard(_ sender: AnyObject) {
         self.textField.becomeFirstResponder()
     }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
-	return input.rawValue
 }
