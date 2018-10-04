@@ -178,8 +178,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9j-w8-u5B">
-                                                    <rect key="frame" x="114.5" y="5" width="146" height="30"/>
-                                                    <state key="normal" title="Multiple String Picker">
+                                                    <rect key="frame" x="67.5" y="5" width="240" height="30"/>
+                                                    <state key="normal" title="Multiple String Picker (customized)">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -229,7 +229,7 @@
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="hideKeyboard:" destination="HSJ-wC-erj" eventType="touchUpInside" id="nF7-6O-mSE"/>
+                                                        <action selector="showKeyboard:" destination="HSJ-wC-erj" eventType="touchUpInside" id="nMq-5M-AuL"/>
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpE-nW-CUp">

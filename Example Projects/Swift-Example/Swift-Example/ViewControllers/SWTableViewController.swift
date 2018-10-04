@@ -90,7 +90,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
 
 
     @IBAction func dateAndTimePickerClicked(_ sender: UIButton) {
-        // example od datetime picker with step interval set to 20 min
+        // example of datetime picker with step interval set to 20 min
         let datePicker = ActionSheetDatePicker(title: "DateTime with 20min intervals:",
                                                datePickerMode: UIDatePicker.Mode.dateAndTime,
                                                selectedDate: Date(),
@@ -155,30 +155,39 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
 
 
     @IBAction func multipleStringPickerClicked(_ sender: UIButton) {
-        // example of multicolumn string picker with custom colors
+        // example of multicolumn string picker with custom colors and custom Done button
         let acp = ActionSheetMultipleStringPicker(title: "Multiple String Picker",
                                                   rows: [ ["One", "Two", "A lot"],
                                                           ["Many", "Many more", "Infinite"] ],
                                                   initialSelection: [2, 2],
                                                   doneBlock: { picker, indexes, values in
+                                                        print("picker = \(String(describing: picker))")
                                                         print("indexes = \(String(describing: indexes))")
                                                         print("values = \(String(describing: values))")
-                                                        print("picker = \(String(describing: picker))")
                                                         return
                                                     },
                                                   cancel: { picker in
                                                         return
                                                   },
                                                   origin: sender)
-
+        // customize appearance of the picker
         acp?.pickerTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0)]
         acp?.setTextColor(UIColor.red)
         acp?.pickerBackgroundColor = UIColor.black
         acp?.toolbarBackgroundColor = UIColor.yellow
         acp?.toolbarButtonsColor = UIColor.white
+        // custom done button
+        let okButton = UIButton()
+        okButton.setTitle("OK", for: .normal)
+        let customDoneButton = UIBarButtonItem.init(customView: okButton)
+        acp?.setDoneButton(customDoneButton)
         acp?.show()
     }
 
+
+    @IBAction func showKeyboard(_ sender: AnyObject) {
+        self.textField.becomeFirstResponder()
+    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -189,7 +198,4 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
 
-    @IBAction func hideKeyboard(_ sender: AnyObject) {
-        self.textField.becomeFirstResponder()
-    }
 }
