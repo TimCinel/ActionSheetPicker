@@ -747,8 +747,9 @@ CG_INLINE BOOL isIPhone4() {
         return;
     }
     else if ((self.containerView)) {
+        AbstractActionSheetPicker __weak *weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
+            [popover presentPopoverFromRect: weakSelf.containerView.bounds inView: weakSelf.containerView
                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
         });
@@ -783,11 +784,17 @@ CG_INLINE BOOL isIPhone4() {
     switch (self.tapDismissAction) {
         case TapActionSuccess: {
             [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:self.storedOrigin];
+            if (!self.popoverDisabled && [MyPopoverController canShowPopover]) {
+                [self dismissPicker];
+            }
             break;
         }
         case TapActionNone:
         case TapActionCancel: {
             [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:self.storedOrigin];
+            if (!self.popoverDisabled && [MyPopoverController canShowPopover]) {
+                [self dismissPicker];
+            }
             break;
         }
     };
