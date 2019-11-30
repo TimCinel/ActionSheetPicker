@@ -311,6 +311,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-iOS-5-7-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "ActionSheetPicker-iOS-5-7";
 				SDKROOT = iphoneos;
@@ -330,6 +331,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-iOS-5-7-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "ActionSheetPicker-iOS-5-7";
 				SDKROOT = iphoneos;
