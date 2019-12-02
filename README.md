@@ -8,10 +8,27 @@
 ActionSheetPicker-3.0
 ==================
 
+### Important update:
+
+This repo was a bit outdated for last time.
+Now I fixed most of the things and merge PR' (thanks to all the contributors!).
+
+I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
+
+I still need help with the future support of this repo. If anyone there is interested in it - please drop a comment into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348), please! 🙏
+
+---
+
+Regards,
+Petr Korolev (@skywinder)
+
+---
+
+
 - [Overview](#overview)
-	- [Benefits](#benefits)
+  - [Benefits](#benefits)
 - [QuickStart](#quickstart)
-	- [Basic Usage](#basic-usage)
+  - [Basic Usage](#basic-usage)
 - [Installation](#installation)
 - [Example Projects](#example-projects)
 - [Screenshots](#screenshots)
@@ -35,7 +52,7 @@ Well, that's how it started. Now, the following is more accurate:
 
 
 ## Overview ##
-Easily present an ActionSheet with a PickerView, allowing user to select from a number of immutable options. 
+Easily present an ActionSheet with a PickerView, allowing the user to select from a number of immutable options.
 
 ### Benefits ##
 
@@ -51,13 +68,13 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
 
 ### Basic Usage ##
 
-**For detailed info about customisations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
+**For detailed info about customizations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
 
 - Custom buttons view
 - Custom buttons callbacks
 - Action by clicking outside of the picker
 - Background color and blur effect
-- Other customisations
+- Other customizations
 
 **For detailed examples, please check [Example Projects](#example-projects) in this repo.**
 
@@ -69,7 +86,7 @@ There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionShee
             ["Many", "Many more", "Infinite"]
             ], initialSelection: [2, 2], doneBlock: {
                 picker, indexes, values in
-                
+
                 print("values = \(values)")
                 print("indexes = \(indexes)")
                 print("picker = \(picker)")
@@ -89,7 +106,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
                                         rows:colors
                             initialSelection:0
                                    doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                      NSLog(@"Picker: %@, Index: %@, value: %@", 
+                                      NSLog(@"Picker: %@, Index: %@, value: %@",
                                       picker, selectedIndex, selectedValue);
                                     }
                                  cancelBlock:^(ActionSheetStringPicker *picker) {
@@ -99,8 +116,8 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
- 
- 
+
+
 ##Installation##
 
 ### CocoaPods
@@ -163,7 +180,7 @@ github "skywinder/ActionSheetPicker-3.0"
 
 If you prefer not to use either of the aforementioned dependency managers, you can integrate ActionSheetPicker-3.0 into your project manually.
 
-The "old school" way is manually add to your project all from [Pickers](/Pickers) folder.
+The "old school" way is manually added to your project all from [Pickers](/Pickers) folder.
 
 ### Embedded Framework
 
@@ -200,7 +217,7 @@ Here is 4 projects:
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
 
-## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) 
+## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0)
 
 If you've used this project in a live app, please let me know! Nothing makes me happier than seeing someone else take my work and go wild with it.
 
@@ -212,13 +229,13 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 
 ## Credits
 
-- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crash-fixes and different customisation abilities.
+- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also a bunch of UI fixes, crash-fixes, and different customization abilities.
 
 - And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
 
 ## Contributing
 
-1. Create an issue to discuss about your idea
+1. Create an issue to discuss your idea
 2. Fork it (https://github.com/skywinder/ActionSheetPicker-3.0/fork)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
