@@ -1,9 +1,11 @@
 {
+
   "files": [
     "README.md"
   ],
   "imageSize": 100,
-  "commit": false,
+  "commit": true,
+  "commitConvention": "none",
   "contributors": [
     {
       "login": "skywinder",
