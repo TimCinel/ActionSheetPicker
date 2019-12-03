@@ -19,7 +19,8 @@ Now I fixed most of the things and merge PR' (thanks to all the contributors!).
 
 I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
 
-I still need help with the future support of this repo. If anyone there is interested in it - please drop a comment into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348), please! 🙏
+I still need help with the future support of this repo.
+If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
 
 ---
 
@@ -122,7 +123,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 
 
-##Installation##
+## Installation
 
 ### CocoaPods
 
