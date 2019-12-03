@@ -202,7 +202,7 @@ $ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 - Expand the "Target Dependencies" group, and add `CoreActionSheetPicker.framework`.
 - Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `CoreActionSheetPicker.framework`.
 
-## Example Projects##
+## Example Projects
 
 `open ActionSheetPicker-3.0.xcworkspace`
 
