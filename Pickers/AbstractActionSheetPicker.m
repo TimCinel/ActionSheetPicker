@@ -714,7 +714,18 @@ CG_INLINE BOOL isIPhone4() {
 
 - (void)configureAndPresentPopoverForView:(UIView *)aView {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.view = aView;
+    
+    if (@available(iOS 11, *)) {
+        [viewController.view addSubview:aView];
+        UILayoutGuide* guide = viewController.view.safeAreaLayoutGuide;
+        aView.translatesAutoresizingMaskIntoConstraints = NO;
+        [aView.topAnchor constraintEqualToAnchor:guide.topAnchor].active = YES;
+        [aView.leftAnchor constraintEqualToAnchor:guide.leftAnchor].active = YES;
+        [aView.rightAnchor constraintEqualToAnchor:guide.rightAnchor].active = YES;
+        [aView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+    } else {
+        viewController.view = aView;
+    }
 
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
 #pragma clang diagnostic push
