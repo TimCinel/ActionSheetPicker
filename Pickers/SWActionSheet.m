@@ -90,7 +90,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         UIWindow *window = nil;
         
 // Handle UIWindow for iOS 13 changes
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+#if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
             UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
             if (scene && [scene isKindOfClass:[UIWindowScene class]]) {
@@ -128,7 +128,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         _bgView = [UIView new];
         
 // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+#if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
             _bgView.backgroundColor = [UIColor systemBackgroundColor];
         }
@@ -234,17 +234,18 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 - (BOOL)prefersStatusBarHidden {
 	return [UIApplication sharedApplication].statusBarHidden;
 }
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return NO;
-}
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
 // iOS6 support
 // ---
 - (BOOL)shouldAutorotate
 {
     return YES;
 }
+#else
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return NO;
+}
+#endif
 @end

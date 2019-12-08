@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Gb7-DM-9kh">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Gb7-DM-9kh">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--ActionSheetPicker-->
         <scene sceneID="bK2-73-CxF">
@@ -30,11 +22,11 @@
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sj5-Te-dpP" id="ZwE-dP-v6b">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select an animal..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTd-y3-1k8">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5.5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -54,11 +46,11 @@
                                         <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ch8-Ny-oDG" id="CUg-mT-4hA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a date..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-gg-DHd">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5.5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -78,11 +70,11 @@
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yCK-BU-oP2" id="3ks-Mf-8FM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a countdown" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-nI-QlO">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5.5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -102,11 +94,11 @@
                                         <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vuw-xg-gVw" id="ndz-Dj-5jN">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Locale" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGs-er-Ndh">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -126,11 +118,11 @@
                                         <rect key="frame" x="0.0" y="231.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3f6-YJ-C44" id="VcQ-t2-pHL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a measurement..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fB-cr-Efv">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5.5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -150,11 +142,11 @@
                                         <rect key="frame" x="0.0" y="275.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WV0-NL-z3b" id="RVZ-TH-YDQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a musical scale..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4F-Kg-RKb">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -174,11 +166,11 @@
                                         <rect key="frame" x="0.0" y="319.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOJ-Q0-gpR" id="g0L-K0-CRv">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Picker ( with Cancel action by tap outside)" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-Dg-CO7">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="264" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -191,7 +183,6 @@
                                                 <constraint firstItem="Va3-Dg-CO7" firstAttribute="leading" secondItem="g0L-K0-CRv" secondAttribute="leadingMargin" constant="12" id="Lik-k1-T1l"/>
                                                 <constraint firstItem="Va3-Dg-CO7" firstAttribute="centerX" secondItem="g0L-K0-CRv" secondAttribute="centerX" id="OqL-Hb-2GU"/>
                                                 <constraint firstAttribute="centerY" secondItem="Va3-Dg-CO7" secondAttribute="centerY" id="QoC-5D-Pxz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Va3-Dg-CO7" secondAttribute="trailing" constant="11" id="oCD-Md-Dyd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -203,11 +194,11 @@
                                         <rect key="frame" x="0.0" y="411.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fT2-Tk-Trs" id="y2V-xs-z4L">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Time..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTU-Gv-8dJ">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -227,11 +218,11 @@
                                         <rect key="frame" x="0.0" y="455.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wsu-Yh-77g" id="4c8-Qg-cLP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom buttons and Label Font" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i3M-IL-ksq">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -251,11 +242,11 @@
                                         <rect key="frame" x="0.0" y="499.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nJ-2C-FxN" id="1v5-z0-rqc">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom background Color and Text Attrubutes" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVw-CN-DK4">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -275,11 +266,11 @@
                                         <rect key="frame" x="0.0" y="543.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iif-ia-9t8" id="oc6-VI-0OM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Blurred background with adjustable radius" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fop-gx-JwH">
-                                                    <rect key="frame" x="28" y="7" width="265" height="30"/>
+                                                    <rect key="frame" x="28" y="5" width="265" height="34"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -303,11 +294,11 @@
                                         <rect key="frame" x="0.0" y="635.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="10R-Ak-DxT" id="4b2-4o-uY9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7N-Vk-He4">
-                                                    <rect key="frame" x="70" y="7" width="179" height="30"/>
+                                                    <rect key="frame" x="70.5" y="7.5" width="179" height="30"/>
                                                     <state key="normal" title="Multiple String Picker Test">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -326,11 +317,11 @@
                                         <rect key="frame" x="0.0" y="679.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRs-Mo-szt" id="2LM-55-e0y">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv1-rB-tQq">
-                                                    <rect key="frame" x="94.5" y="7" width="131" height="30"/>
+                                                    <rect key="frame" x="94.5" y="7.5" width="131" height="30"/>
                                                     <state key="normal" title="TableView Example">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -349,11 +340,11 @@
                                         <rect key="frame" x="0.0" y="723.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVg-M3-7qw" id="w2F-uh-yb0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XX-K7-uUZ">
-                                                    <rect key="frame" x="117.5" y="7" width="85" height="30"/>
+                                                    <rect key="frame" x="117.5" y="7.5" width="85" height="30"/>
                                                     <state key="normal" title="PopoverTest">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -372,11 +363,11 @@
                                         <rect key="frame" x="0.0" y="767.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dsT-0u-RJ0" id="rSC-7b-PQC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-ic-p8H">
-                                                    <rect key="frame" x="123" y="7" width="75" height="30"/>
+                                                    <rect key="frame" x="123" y="7.5" width="75" height="30"/>
                                                     <state key="normal" title="Modal Test">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -395,11 +386,11 @@
                                         <rect key="frame" x="0.0" y="811.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aMu-lE-rvz" id="vuX-P4-dE5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SoL-Hc-gTj">
-                                                    <rect key="frame" x="140" y="8" width="164" height="29"/>
+                                                    <rect key="frame" x="140" y="7" width="164" height="32"/>
                                                     <segments>
                                                         <segment title="UIBarStyleDefault"/>
                                                         <segment title="UIBarStyleBlack"/>
@@ -409,7 +400,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="StatusBarStyle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Tu-O4E">
-                                                    <rect key="frame" x="16" y="11" width="114" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="114" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -428,7 +419,7 @@
                                         <rect key="frame" x="0.0" y="855.5" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRD-cn-xBX" id="9aS-8C-8yb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QKK-h4-DD7">
@@ -478,7 +469,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fte-TB-ZEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685" y="-10"/>
+            <point key="canvasLocation" x="2442.0289855072465" y="-6.6964285714285712"/>
         </scene>
         <!--Test Table View Controller-->
         <scene sceneID="3fS-AL-124">
@@ -490,10 +481,10 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" textLabel="SCb-vy-cht" detailTextLabel="DIf-ba-93p" style="IBUITableViewCellStyleValue2" id="iKJ-th-X19">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKJ-th-X19" id="1ag-Ec-jPG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SCb-vy-cht">
@@ -522,7 +513,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hd-lY-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="30"/>
+            <point key="canvasLocation" x="3086.9565217391305" y="20.089285714285712"/>
         </scene>
         <!--Action Sheet Picker View Controller-->
         <scene sceneID="N6f-0m-5XV">
@@ -533,7 +524,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                         <viewControllerLayoutGuide type="bottom" id="ZzC-q3-O6g"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IxT-xf-nLb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a date..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGo-Vq-gCL">
@@ -606,7 +597,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtS-y4-BYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="782"/>
+            <point key="canvasLocation" x="3400.0000000000005" y="523.66071428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBU-t6-gEE">
@@ -614,7 +605,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9f4-IZ-fgb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="i9y-1l-cOn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -624,7 +615,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcn-ZA-bdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="782"/>
+            <point key="canvasLocation" x="2794.202898550725" y="523.66071428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Gh-In-9X5">
@@ -632,7 +623,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gb7-DM-9kh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J29-9q-Cuh">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -642,7 +633,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN1-Bu-9Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-210"/>
+            <point key="canvasLocation" x="1913.0434782608697" y="-140.625"/>
         </scene>
     </scenes>
 </document>
