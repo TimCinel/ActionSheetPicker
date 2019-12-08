@@ -88,6 +88,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     else
     {
         UIWindow *window = nil;
+        
+// Handle UIWindow for iOS 13 changes
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
         if (@available(iOS 13.0, *)) {
             UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
             if (scene && [scene isKindOfClass:[UIWindowScene class]]) {
@@ -95,6 +98,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
                 window = [[UIWindow alloc] initWithWindowScene:windowScene];
             }
         }
+#endif
         
         if (window == nil) {
             window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
