@@ -87,13 +87,29 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
     else
     {
-        return SWActionSheetWindow = ({
-            UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-            window.windowLevel        = self.windowLevel;
-            window.backgroundColor    = [UIColor clearColor];
-            window.rootViewController = [SWActionSheetVC new];
-            window;
-        });
+        UIWindow *window = nil;
+        
+// Handle UIWindow for iOS 13 changes
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+        if (@available(iOS 13.0, *)) {
+            UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+            if (scene && [scene isKindOfClass:[UIWindowScene class]]) {
+                UIWindowScene *windowScene = (UIWindowScene *)scene;
+                window = [[UIWindow alloc] initWithWindowScene:windowScene];
+            }
+        }
+#endif
+        
+        if (window == nil) {
+            window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        }
+        
+        window.windowLevel        = self.windowLevel;
+        window.backgroundColor    = [UIColor clearColor];
+        window.rootViewController = [SWActionSheetVC new];
+        
+        SWActionSheetWindow = window;
+        return SWActionSheetWindow;
     }
 }
 
@@ -110,7 +126,18 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         _windowLevel = windowLevel;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [UIView new];
+        
+// Support iOS 13 Dark Mode - support dynamic background color in iOS 13
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+        if (@available(iOS 13.0, *)) {
+            _bgView.backgroundColor = [UIColor systemBackgroundColor];
+        }
+        else {
+            _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+        }
+#else
         _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+#endif
         [self addSubview:_bgView];
         [self addSubview:view];
     }

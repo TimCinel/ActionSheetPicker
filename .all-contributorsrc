@@ -1,0 +1,29 @@
+{
+
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "skywinder",
+      "name": "Petr Korolev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3356474?v=4",
+      "profile": "https://www.linkedin.com/in/korolevpetr",
+      "contributions": [
+        "code",
+        "review",
+        "question",
+        "example"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ActionSheetPicker-3.0",
+  "projectOwner": "skywinder",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

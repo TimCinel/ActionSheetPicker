@@ -35,7 +35,6 @@
 		D66F51ADA2999F44F2C282BF /* ActionSheetPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F572853325E5592CF945B /* ActionSheetPickerTableViewController.m */; };
 		D66F51F7B65FE68619FB9762 /* ActionSheetCustomPickerTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F576CF2A850BF7FFA6085 /* ActionSheetCustomPickerTestDelegate.m */; };
 		D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */; };
-		D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -268,7 +267,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1120;
 				TargetAttributes = {
 					1C9444B4197B1C2F005F495B = {
 						TestTargetID = 1D6058900D05DD3D006BFB54;
@@ -277,14 +276,14 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ActionSheetPicker" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
+				fr,
+				de,
+				Base,
+				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 1CD15A30192C7A0A00B28881 /* Products */;
@@ -346,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
-				D66F56BDCC3CDD653D0A86ED /* TestTableViewController.m in Sources */,
 				9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */,
 				D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */,
 				D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */,
@@ -491,6 +489,7 @@
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
@@ -515,6 +514,7 @@
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
@@ -531,11 +531,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -568,11 +570,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
