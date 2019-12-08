@@ -50,11 +50,13 @@ static const float secondColumnWidth = 160.0f;
  */
 + (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
-// Create an action sheet picker, but don't display until a subsequent call to "showActionPicker".  Receiver must release the picker when ready. */
+/// Create an action sheet picker with assigned target actions on success/cancel, but don't display until a subsequent call to "showActionPicker".
 - (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index target:(id)target successAction:(SEL)successAction cancelAction:(SEL)cancelActionOrNil origin:(id)origin;
 
+/// Create and display an action sheet picker with completion blocks on success/cancel.
 + (instancetype)showPickerWithTitle:(NSString *)title initialSelection:(NSTimeZone *)index doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlock origin:(id)origin;
 
+/// Create an action sheet picker with completion blocks on success/cancel, but don't display until a subsequent call to "showActionPicker".
 - (instancetype)initWithTitle:(NSString *)title initialSelection:(NSTimeZone *)timeZone doneBlock:(ActionLocaleDoneBlock)doneBlock cancelBlock:(ActionLocaleCancelBlock)cancelBlockOrNil origin:(id)origin;
 
 @property (nonatomic, copy) ActionLocaleDoneBlock onActionSheetDone;
