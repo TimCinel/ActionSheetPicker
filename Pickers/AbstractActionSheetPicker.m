@@ -48,7 +48,7 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
 
 @interface MyPopoverController : UIPopoverController <UIAdaptivePresentationControllerDelegate>
 @end
@@ -542,7 +542,7 @@ CG_INLINE BOOL isIPhone4() {
     }
     else {
         // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
-        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
         if (@available(iOS 13.0, *)) {
             [toolBarItemLabel setTextColor: [UIColor labelColor]];

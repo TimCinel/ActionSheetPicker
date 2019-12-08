@@ -29,6 +29,7 @@
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
 		1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100919C4C7AF0033BA4D /* Default-736w@3x.png */; };
+		4EEF6D31239D696B005ECE50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF6D30239D696B005ECE50 /* Images.xcassets */; };
 		9691A94D7D01E0FBDF9686C3 /* AbstractActionSheetPicker+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */; };
 		9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */; };
 		D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
@@ -80,6 +81,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4EEF6D30239D696B005ECE50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ActionSheetPicker/Images.xcassets; sourceTree = "<group>"; };
 		9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActionSheetPicker+CustomButton.m"; sourceTree = "<group>"; };
 		9691ABB7429A0D6A2F235006 /* AbstractActionSheetPicker+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractActionSheetPicker+CustomButton.h"; sourceTree = "<group>"; };
 		9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePickerTestCase.m; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4EEF6D30239D696B005ECE50 /* Images.xcassets */,
 				1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */,
 				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
@@ -311,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEF6D31239D696B005ECE50 /* Images.xcassets in Resources */,
 				1C7A57AC199DF30B007B9B70 /* ok.png in Resources */,
 				1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */,
 				1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */,
@@ -474,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -501,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
