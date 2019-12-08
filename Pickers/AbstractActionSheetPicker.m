@@ -541,12 +541,19 @@ CG_INLINE BOOL isIPhone4() {
         textSize = toolBarItemLabel.attributedText.size;
     }
     else {
-        if (@available(iOS 13.0, *)) { // Support iOS 13 system dark mode
+        // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+
+        if (@available(iOS 13.0, *)) {
             [toolBarItemLabel setTextColor: [UIColor labelColor]];
         }
         else {
             [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
         }
+        #else
+           [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        #endif
+
         [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
         toolBarItemLabel.text = aTitle;
 
