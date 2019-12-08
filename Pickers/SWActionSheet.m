@@ -87,13 +87,29 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
     else
     {
-        return SWActionSheetWindow = ({
-            UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-            window.windowLevel        = self.windowLevel;
-            window.backgroundColor    = [UIColor clearColor];
-            window.rootViewController = [SWActionSheetVC new];
-            window;
-        });
+        UIWindow *window = nil;
+        
+// Handle UIWindow for iOS 13 changes
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+        if (@available(iOS 13.0, *)) {
+            UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+            if (scene && [scene isKindOfClass:[UIWindowScene class]]) {
+                UIWindowScene *windowScene = (UIWindowScene *)scene;
+                window = [[UIWindow alloc] initWithWindowScene:windowScene];
+            }
+        }
+#endif
+        
+        if (window == nil) {
+            window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        }
+        
+        window.windowLevel        = self.windowLevel;
+        window.backgroundColor    = [UIColor clearColor];
+        window.rootViewController = [SWActionSheetVC new];
+        
+        SWActionSheetWindow = window;
+        return SWActionSheetWindow;
     }
 }
 
