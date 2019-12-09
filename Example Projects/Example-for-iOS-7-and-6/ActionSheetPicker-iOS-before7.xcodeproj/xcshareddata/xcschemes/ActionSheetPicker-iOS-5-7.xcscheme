@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "ActionSheetPicker.app"
-               BlueprintName = "ActionSheetPicker"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+               BuildableName = "ActionSheetPicker-iOS-before7.app"
+               BlueprintName = "ActionSheetPicker-iOS-before7"
+               ReferencedContainer = "container:ActionSheetPicker-iOS-before7.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,26 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C9444B4197B1C2F005F495B"
-               BuildableName = "ActionSheetPickerTests.xctest"
-               BlueprintName = "ActionSheetPickerTests"
-               ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
+            BuildableName = "ActionSheetPicker-iOS-before7.app"
+            BlueprintName = "ActionSheetPicker-iOS-before7"
+            ReferencedContainer = "container:ActionSheetPicker-iOS-before7.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -76,15 +57,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker.app"
-            BlueprintName = "ActionSheetPicker"
-            ReferencedContainer = "container:ActionSheetPicker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

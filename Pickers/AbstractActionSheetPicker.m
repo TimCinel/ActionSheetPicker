@@ -48,7 +48,7 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
 
 @interface MyPopoverController : UIPopoverController <UIAdaptivePresentationControllerDelegate>
 @end
@@ -527,6 +527,7 @@ CG_INLINE BOOL isIPhone4() {
     UILabel *toolBarItemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
     [toolBarItemLabel setTextAlignment:NSTextAlignmentCenter];
     [toolBarItemLabel setBackgroundColor:[UIColor clearColor]];
+    toolBarItemLabel.accessibilityTraits = UIAccessibilityTraitHeader;
 
     CGFloat strikeWidth;
     CGSize textSize;
@@ -540,7 +541,19 @@ CG_INLINE BOOL isIPhone4() {
         textSize = toolBarItemLabel.attributedText.size;
     }
     else {
-        [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+
+        if (@available(iOS 13.0, *)) {
+            [toolBarItemLabel setTextColor: [UIColor labelColor]];
+        }
+        else {
+            [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        }
+        #else
+           [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        #endif
+
         [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
         toolBarItemLabel.text = aTitle;
 
@@ -708,7 +721,18 @@ CG_INLINE BOOL isIPhone4() {
 
 - (void)configureAndPresentPopoverForView:(UIView *)aView {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.view = aView;
+    
+    if (@available(iOS 11, *)) {
+        [viewController.view addSubview:aView];
+        UILayoutGuide* guide = viewController.view.safeAreaLayoutGuide;
+        aView.translatesAutoresizingMaskIntoConstraints = NO;
+        [aView.topAnchor constraintEqualToAnchor:guide.topAnchor].active = YES;
+        [aView.leftAnchor constraintEqualToAnchor:guide.leftAnchor].active = YES;
+        [aView.rightAnchor constraintEqualToAnchor:guide.rightAnchor].active = YES;
+        [aView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+    } else {
+        viewController.view = aView;
+    }
 
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
 #pragma clang diagnostic push
@@ -747,8 +771,9 @@ CG_INLINE BOOL isIPhone4() {
         return;
     }
     else if ((self.containerView)) {
+        AbstractActionSheetPicker __weak *weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [popover presentPopoverFromRect:_containerView.bounds inView:_containerView
+            [popover presentPopoverFromRect: weakSelf.containerView.bounds inView: weakSelf.containerView
                    permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
         });
@@ -783,11 +808,17 @@ CG_INLINE BOOL isIPhone4() {
     switch (self.tapDismissAction) {
         case TapActionSuccess: {
             [self notifyTarget:self.target didSucceedWithAction:self.successAction origin:self.storedOrigin];
+            if (!self.popoverDisabled && [MyPopoverController canShowPopover]) {
+                [self dismissPicker];
+            }
             break;
         }
         case TapActionNone:
         case TapActionCancel: {
             [self notifyTarget:self.target didCancelWithAction:self.cancelAction origin:self.storedOrigin];
+            if (!self.popoverDisabled && [MyPopoverController canShowPopover]) {
+                [self dismissPicker];
+            }
             break;
         }
     };
