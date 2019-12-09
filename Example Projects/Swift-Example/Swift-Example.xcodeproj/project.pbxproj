@@ -24,6 +24,20 @@
 			remoteGlobalIDString = 1C57844B1B15BE2C00172D8A;
 			remoteInfo = "Swift-Example";
 		};
+		4EA671C6239E422B000BFE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
+			remoteInfo = "ActionSheetPicker-iOS-before7";
+		};
+		4EA671C9239E422B000BFE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
+			remoteInfo = "ActionSheetPicker-iOS-before7";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +169,22 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		4EA671C1239E422B000BFE1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EA671C7239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EA671C3239E422B000BFE1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EA671CA239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +259,16 @@
 			mainGroup = 1C5784431B15BE2C00172D8A;
 			productRefGroup = 1C57844D1B15BE2C00172D8A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4EA671C1239E422B000BFE1B /* Products */;
+					ProjectRef = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
+				},
+				{
+					ProductGroup = 4EA671C3239E422B000BFE1B /* Products */;
+					ProjectRef = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1C57844B1B15BE2C00172D8A /* Swift-Example */,
@@ -236,6 +276,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4EA671C7239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "ActionSheetPicker-iOS-before7.app";
+			remoteRef = 4EA671C6239E422B000BFE1B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4EA671CA239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "ActionSheetPicker-iOS-before7.app";
+			remoteRef = 4EA671C9239E422B000BFE1B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C57844A1B15BE2C00172D8A /* Resources */ = {

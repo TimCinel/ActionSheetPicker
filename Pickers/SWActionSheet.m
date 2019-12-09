@@ -13,7 +13,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 
 @interface SWActionSheetVC : UIViewController
-
+@property (nonatomic) UIInterfaceOrientationMask maskVC;
 @property (nonatomic, retain) SWActionSheet *actionSheet;
 
 @end
@@ -37,6 +37,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     UIView *view;
     UIView *_bgView;
+    UIInterfaceOrientationMask mask;
 }
 
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated
@@ -187,6 +188,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     self.presented = YES;
 }
 
+- (UIInterfaceOrientationMask) getMasking {
+    return self->mask;
+}
 @end
 
 
@@ -231,6 +235,10 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
+-(NSUInteger)supportedInterfaceOrientations{
+    return [self.actionSheet getMasking];
+}
+
 - (BOOL)prefersStatusBarHidden {
 	return [UIApplication sharedApplication].statusBarHidden;
 }
@@ -239,7 +247,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 // ---
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    if (self.maskVC == UIInterfaceOrientationPortrait){
+        return NO;
+    } else {
+        return YES;
+    }
+    
 }
 #else
 
