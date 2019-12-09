@@ -235,8 +235,13 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
--(NSUInteger)supportedInterfaceOrientations{
-    return [self.actionSheet getMasking];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)supportedInterfaceOrientations
+#else
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#endif
+{
+    return (NSUInteger) [self.actionSheet getMasking];
 }
 
 - (BOOL)prefersStatusBarHidden {
