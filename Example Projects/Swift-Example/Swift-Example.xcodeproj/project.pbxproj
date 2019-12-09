@@ -51,6 +51,10 @@
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
 		1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
+		4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
+		4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ActionSheetPicker-iOS-before7.xcodeproj"; path = "/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj"; sourceTree = "<absolute>"; };
+		4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
+		4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ActionSheetPicker-iOS-before7.xcodeproj"; path = "/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +79,12 @@
 		1C5784431B15BE2C00172D8A = {
 			isa = PBXGroup;
 			children = (
+				4E046A1A239E362D005417FA /* ArchiveExamples */,
 				1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */,
 				1C57844E1B15BE2C00172D8A /* Swift-Example */,
 				1C5784641B15BE2C00172D8A /* Swift-ExampleTests */,
 				1C57844D1B15BE2C00172D8A /* Products */,
+				4E046A17239E3622005417FA /* ArchiveExamples */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +133,26 @@
 				1C5784661B15BE2C00172D8A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E046A17239E3622005417FA /* ArchiveExamples */ = {
+			isa = PBXGroup;
+			children = (
+				4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */,
+				4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */,
+			);
+			name = ArchiveExamples;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		4E046A1A239E362D005417FA /* ArchiveExamples */ = {
+			isa = PBXGroup;
+			children = (
+				4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */,
+				4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */,
+			);
+			name = ArchiveExamples;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +206,13 @@
 				TargetAttributes = {
 					1C57844B1B15BE2C00172D8A = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 1000;
+						DevelopmentTeam = 5UH69GW6GE;
+						LastSwiftMigration = 1120;
 					};
 					1C5784601B15BE2C00172D8A = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 1000;
+						DevelopmentTeam = 5UH69GW6GE;
+						LastSwiftMigration = 1120;
 						TestTargetID = 1C57844B1B15BE2C00172D8A;
 					};
 				};
@@ -194,6 +222,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -390,7 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -403,7 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -423,7 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Example.app/Swift-Example";
 			};
 			name = Debug;
@@ -440,7 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Example.app/Swift-Example";
 			};
 			name = Release;

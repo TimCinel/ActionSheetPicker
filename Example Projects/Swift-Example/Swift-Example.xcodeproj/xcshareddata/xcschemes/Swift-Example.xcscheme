@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "ActionSheetPicker-iOS-5-7.app"
-               BlueprintName = "ActionSheetPicker-iOS-5-7"
-               ReferencedContainer = "container:ActionSheetPicker-iOS-5-7.xcodeproj">
+               BlueprintIdentifier = "1C57844B1B15BE2C00172D8A"
+               BuildableName = "Swift-Example.app"
+               BlueprintName = "Swift-Example"
+               ReferencedContainer = "container:Swift-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1C5784601B15BE2C00172D8A"
+               BuildableName = "Swift-ExampleTests.xctest"
+               BlueprintName = "Swift-ExampleTests"
+               ReferencedContainer = "container:Swift-Example.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -44,10 +54,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "ActionSheetPicker-iOS-5-7.app"
-            BlueprintName = "ActionSheetPicker-iOS-5-7"
-            ReferencedContainer = "container:ActionSheetPicker-iOS-5-7.xcodeproj">
+            BlueprintIdentifier = "1C57844B1B15BE2C00172D8A"
+            BuildableName = "Swift-Example.app"
+            BlueprintName = "Swift-Example"
+            ReferencedContainer = "container:Swift-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -57,6 +67,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1C57844B1B15BE2C00172D8A"
+            BuildableName = "Swift-Example.app"
+            BlueprintName = "Swift-Example"
+            ReferencedContainer = "container:Swift-Example.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
