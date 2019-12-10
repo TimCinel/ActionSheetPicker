@@ -4,7 +4,7 @@
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ActionSheetPicker-3.0
@@ -282,6 +282,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/yapiskan"><img src="https://avatars3.githubusercontent.com/u/529739?v=4" width="100px;" alt=""/><br /><sub><b>Ali Ersoz</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=yapiskan" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/ykws__"><img src="https://avatars3.githubusercontent.com/u/5770480?v=4" width="100px;" alt=""/><br /><sub><b>KAWASHIMA Yoshiyuki</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ykws" title="Documentation">📖</a></td>
   </tr>
 </table>
 

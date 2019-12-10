@@ -151,6 +151,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ykws",
+      "name": "KAWASHIMA Yoshiyuki",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5770480?v=4",
+      "profile": "https://twitter.com/ykws__",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
