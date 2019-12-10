@@ -66,6 +66,15 @@
         "code",
         "security"
       ]
+    },
+    {
+      "login": "kashifhisam",
+      "name": "Kashif Hisam",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/618660?v=4",
+      "profile": "http://www.linkedin.com/in/kashifhisam",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
