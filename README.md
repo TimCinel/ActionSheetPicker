@@ -1,5 +1,7 @@
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Carthage
 tible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
@@ -257,7 +259,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt="Tim Cinel"/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt=""/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3ATimCinel" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Documentation">📖</a></td>
   </tr>
 </table>
 
