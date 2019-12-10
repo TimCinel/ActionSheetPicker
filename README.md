@@ -3,8 +3,7 @@
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ActionSheetPicker-3.0
@@ -12,21 +11,18 @@ ActionSheetPicker-3.0
 
 ### Important update:
 
-This repo was a bit outdated for last time.
-Now I fixed most of the things and merge PR' (thanks to all the contributors!).
+Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)).
 
-I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
+I did much work to support this library from iOS 5. (and till iOS 13 and we keep going) 🚀
 
-I still need help with the future support of this repo.
-If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
+#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
 
----
 
-Regards,
-Petr Korolev (@skywinder)
+
+
+Regards, [Petr Korolev](https://github.com/skywinder)
 
 ---
-
 
 - [Overview](#overview)
   - [Benefits](#benefits)
@@ -42,9 +38,7 @@ Petr Korolev (@skywinder)
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 2.3.1'` (**iOS 5.1.1-13.x** compatible!)
-
-##ActionSheetPicker = UIPickerView + UIActionSheet ##
+## ActionSheetPicker = UIPickerView + UIActionSheet
 
 ![Animation](Screenshots/example.gif)
 
@@ -67,7 +61,13 @@ Easily present an ActionSheet with a PickerView, allowing the user to select fro
 
 ## QuickStart
 
-There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
+There are 4 distinct picker view options:
+- `ActionSheetStringPicker`,
+- `ActionSheetDistancePicker`
+-  `ActionSheetDatePicker`
+-  `ActionSheetCustomPicker`.
+
+We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
 ### Basic Usage ##
 
@@ -124,6 +124,12 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ## Installation
 
 ### CocoaPods
+
+
+`pod 'ActionSheetPicker-3.0`
+
+ (**iOS 5.1.1-13.x** compatible!)
+
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
@@ -204,12 +210,11 @@ $ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 
 `open ActionSheetPicker-3.0.xcworkspace`
 
-Here is 4 projects:
+Here is 3 projects:
 
 - **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
 - **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
-- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
 ## Screenshots
 
@@ -230,10 +235,10 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 
 - [Petr Korolev](http://github.com/skywinder) (update to iOS 7 and iOS 8, implementing new pickers, community support). I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
 
-I fixed most of the things and merge PR' (thanks to all the contributors!).
+Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)!).
 
-I still need help with the future support of this repo.
-If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
+#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
+
 
 ## Contributing
 
