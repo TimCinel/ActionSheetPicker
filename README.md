@@ -250,13 +250,11 @@ If you are interested  to help - please **drop a comment** into [Pinned issue #3
 
 [![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
 
-
 ## Credits
 
 - ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also a bunch of UI fixes, crash-fixes, and different customization abilities.
 
 - And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
-
 
 ## Contributors ✨
 
@@ -269,6 +267,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/korolevpetr"><img src="https://avatars2.githubusercontent.com/u/3356474?v=4" width="100px;" alt=""/><br /><sub><b>Petr Korolev</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=skywinder" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3Askywinder" title="Reviewed Pull Requests">👀</a> <a href="#question-skywinder" title="Answering Questions">💬</a> <a href="#example-skywinder" title="Examples">💡</a></td>
     <td align="center"><a href="https://twitter.com/xjki"><img src="https://avatars0.githubusercontent.com/u/747340?v=4" width="100px;" alt=""/><br /><sub><b>Jurģis Ķiršakmens</b></sub></a><br /><a href="#question-xjki" title="Answering Questions">💬</a> <a href="#example-xjki" title="Examples">💡</a></td>
+    <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt=""/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3ATimCinel" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Documentation">📖</a></td>
   </tr>
 </table>
 
