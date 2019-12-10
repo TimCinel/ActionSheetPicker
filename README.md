@@ -3,10 +3,7 @@
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ActionSheetPicker-3.0
@@ -14,21 +11,18 @@ ActionSheetPicker-3.0
 
 ### Important update:
 
-This repo was a bit outdated for last time.
-Now I fixed most of the things and merge PR' (thanks to all the contributors!).
+Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)).
 
-I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
+I did much work to support this library from iOS 5. (and till iOS 13 and we keep going) 🚀
 
-I still need help with the future support of this repo.
-If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
+#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
 
----
 
-Regards,
-Petr Korolev (@skywinder)
+
+
+Regards, [Petr Korolev](https://github.com/skywinder)
 
 ---
-
 
 - [Overview](#overview)
   - [Benefits](#benefits)
@@ -44,9 +38,7 @@ Petr Korolev (@skywinder)
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 2.3.1'` (**iOS 5.1.1-13.x** compatible!)
-
-##ActionSheetPicker = UIPickerView + UIActionSheet ##
+## ActionSheetPicker = UIPickerView + UIActionSheet
 
 ![Animation](Screenshots/example.gif)
 
@@ -69,7 +61,13 @@ Easily present an ActionSheet with a PickerView, allowing the user to select fro
 
 ## QuickStart
 
-There are 4 distinct picker view options: `ActionSheetStringPicker`, `ActionSheetDistancePicker`, `ActionSheetDatePicker`, and `ActionSheetCustomPicker`. We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
+There are 4 distinct picker view options:
+- `ActionSheetStringPicker`,
+- `ActionSheetDistancePicker`
+-  `ActionSheetDatePicker`
+-  `ActionSheetCustomPicker`.
+
+We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
 ### Basic Usage ##
 
@@ -126,6 +124,12 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 ## Installation
 
 ### CocoaPods
+
+
+`pod 'ActionSheetPicker-3.0`
+
+ (**iOS 5.1.1-13.x** compatible!)
+
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
@@ -206,12 +210,11 @@ $ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 
 `open ActionSheetPicker-3.0.xcworkspace`
 
-Here is 4 projects:
+Here is 3 projects:
 
 - **CoreActionSheetPicker** - all picker files combined in one Framework. (available since `iOS 8`)
 - **ActionSheetPicker** - modern and descriptive Obj-C project with many examples.
 - **Swift-Example** - example, written on Swift. (only with basic 3 Pickers examples, for all examples please run `ActionSheetPicker` project)
-- **ActionSheetPicker-iOS6-7** -  iOS 6 and 7 comparable project. or to run only this project `open Example-for-and-6/ActionSheetPicker.xcodeproj`
 
 ## Screenshots
 
@@ -232,10 +235,10 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 
 - [Petr Korolev](http://github.com/skywinder) (update to iOS 7 and iOS 8, implementing new pickers, community support). I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
 
-I fixed most of the things and merge PR' (thanks to all the contributors!).
+Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)!).
 
-I still need help with the future support of this repo.
-If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
+#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
+
 
 ## Contributing
 
@@ -266,8 +269,29 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/korolevpetr"><img src="https://avatars2.githubusercontent.com/u/3356474?v=4" width="100px;" alt=""/><br /><sub><b>Petr Korolev</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=skywinder" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3Askywinder" title="Reviewed Pull Requests">👀</a> <a href="#question-skywinder" title="Answering Questions">💬</a> <a href="#example-skywinder" title="Examples">💡</a></td>
-    <td align="center"><a href="https://twitter.com/xjki"><img src="https://avatars0.githubusercontent.com/u/747340?v=4" width="100px;" alt=""/><br /><sub><b>Jurģis Ķiršakmens</b></sub></a><br /><a href="#question-xjki" title="Answering Questions">💬</a> <a href="#example-xjki" title="Examples">💡</a></td>
     <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt=""/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3ATimCinel" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/xjki"><img src="https://avatars0.githubusercontent.com/u/747340?v=4" width="100px;" alt=""/><br /><sub><b>Jurģis Ķiršakmens</b></sub></a><br /><a href="#question-xjki" title="Answering Questions">💬</a> <a href="#example-xjki" title="Examples">💡</a></td>
+    <td align="center"><a href="https://www.bubidevs.net"><img src="https://avatars0.githubusercontent.com/u/847860?v=4" width="100px;" alt=""/><br /><sub><b>Andrea</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=BubiDevs" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/NikDude"><img src="https://avatars1.githubusercontent.com/u/1115699?v=4" width="100px;" alt=""/><br /><sub><b>Nikos</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=NikDude" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/vinhtnk"><img src="https://avatars3.githubusercontent.com/u/10373392?v=4" width="100px;" alt=""/><br /><sub><b>Vinh Tran</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=vinhtnk" title="Code">💻</a> <a href="#security-vinhtnk" title="Security">🛡️</a></td>
+    <td align="center"><a href="http://www.linkedin.com/in/kashifhisam"><img src="https://avatars1.githubusercontent.com/u/618660?v=4" width="100px;" alt=""/><br /><sub><b>Kashif Hisam</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=kashifhisam" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://user.qzone.qq.com/627426568?ptlang=2052"><img src="https://avatars1.githubusercontent.com/u/7375120?v=4" width="100px;" alt=""/><br /><sub><b>DYY_Xiaoer</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=xiaoer371" title="Code">💻</a> <a href="#security-xiaoer371" title="Security">🛡️</a></td>
+    <td align="center"><a href="https://github.com/delackner"><img src="https://avatars2.githubusercontent.com/u/478341?v=4" width="100px;" alt=""/><br /><sub><b>Seth Delackner</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=delackner" title="Code">💻</a></td>
+    <td align="center"><a href="https://blog.ainopara.com"><img src="https://avatars0.githubusercontent.com/u/1849450?v=4" width="100px;" alt=""/><br /><sub><b>Zheng Li</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ainopara" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.bubidevs.net"><img src="https://avatars0.githubusercontent.com/u/847860?v=4" width="100px;" alt=""/><br /><sub><b>Andrea</b></sub></a><br /><a href="#question-BubiDevs" title="Answering Questions">💬</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=BubiDevs" title="Code">💻</a> <a href="#content-BubiDevs" title="Content">🖋</a> <a href="#maintenance-BubiDevs" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/Bino90"><img src="https://avatars2.githubusercontent.com/u/20422095?v=4" width="100px;" alt=""/><br /><sub><b>Bino90</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=Bino90" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/arnoldxt"><img src="https://avatars3.githubusercontent.com/u/4433222?v=4" width="100px;" alt=""/><br /><sub><b>arnoldxt</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=arnoldxt" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.nowsprinting.com/"><img src="https://avatars0.githubusercontent.com/u/117617?v=4" width="100px;" alt=""/><br /><sub><b>Koji Hasegawa</b></sub></a><br /><a href="#infra-nowsprinting" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/yapiskan"><img src="https://avatars3.githubusercontent.com/u/529739?v=4" width="100px;" alt=""/><br /><sub><b>Ali Ersoz</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=yapiskan" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/ykws__"><img src="https://avatars3.githubusercontent.com/u/5770480?v=4" width="100px;" alt=""/><br /><sub><b>KAWASHIMA Yoshiyuki</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ykws" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/ricardohg"><img src="https://avatars1.githubusercontent.com/u/5543569?v=4" width="100px;" alt=""/><br /><sub><b>Ricardo Hernandez</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ricardohg" title="Code">💻</a></td>
+    <td align="center"><a href="http://vincent.narbot.com"><img src="https://avatars3.githubusercontent.com/u/8729167?v=4" width="100px;" alt=""/><br /><sub><b>Vincent Narbot</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=VincentNarbot" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://ezefranca.dev"><img src="https://avatars3.githubusercontent.com/u/3648336?v=4" width="100px;" alt=""/><br /><sub><b>Ezequiel França</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ezefranca" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/nikola-mladenovic"><img src="https://avatars3.githubusercontent.com/u/14024032?v=4" width="100px;" alt=""/><br /><sub><b>Nikola Mladenovic</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=nikola-mladenovic" title="Documentation">📖</a></td>
   </tr>
 </table>
 
