@@ -29,7 +29,6 @@
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
 		1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100919C4C7AF0033BA4D /* Default-736w@3x.png */; };
-		4E2935CE239F77E500B0E82B /* ActionSheetPicker Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */; };
 		4EEF6D31239D696B005ECE50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF6D30239D696B005ECE50 /* Images.xcassets */; };
 		9691A94D7D01E0FBDF9686C3 /* AbstractActionSheetPicker+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */; };
 		9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */; };
@@ -312,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */,
-				4E2935CE239F77E500B0E82B /* ActionSheetPicker Tests-Info.plist in Resources */,
 				1C7A57AA199DEDD5007B9B70 /* cancel.png in Resources */,
 				1C7A57AD199DF30B007B9B70 /* ok.png in Resources */,
 			);
