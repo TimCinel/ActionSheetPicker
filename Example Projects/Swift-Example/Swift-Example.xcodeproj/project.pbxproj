@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,47 +24,47 @@
 			remoteGlobalIDString = 1C57844B1B15BE2C00172D8A;
 			remoteInfo = "Swift-Example";
 		};
-		4E9FEC15239F62A6008611A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = ActionSheetPicker;
-		};
-		4E9FEC17239F62A6008611A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
-			remoteInfo = ActionSheetPickerTests;
-		};
-		4E9FEC1B239F62A6008611A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = ActionSheetPicker;
-		};
-		4E9FEC1D239F62A6008611A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
-			remoteInfo = ActionSheetPickerTests;
-		};
-		4EA671C6239E422B000BFE1B /* PBXContainerItemProxy */ = {
+		4E78D28C239E475C0016009D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
 			remoteInfo = "ActionSheetPicker-iOS-before7";
 		};
-		4EA671C9239E422B000BFE1B /* PBXContainerItemProxy */ = {
+		4E78D28F239E475C0016009D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
 			remoteInfo = "ActionSheetPicker-iOS-before7";
+		};
+		4E78D297239E475C0016009D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
+			remoteInfo = ActionSheetPicker;
+		};
+		4E78D299239E475C0016009D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
+			remoteInfo = ActionSheetPickerTests;
+		};
+		4E78D29D239E475C0016009D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
+			remoteInfo = ActionSheetPicker;
+		};
+		4E78D29F239E475C0016009D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
+			remoteInfo = ActionSheetPickerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,36 +197,36 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		4E9FEC0D239F62A6008611A5 /* Products */ = {
+		4E78D287239E475C0016009D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E9FEC16239F62A6008611A5 /* ActionSheetPicker.app */,
-				4E9FEC18239F62A6008611A5 /* ActionSheetPickerTests.xctest */,
+				4E78D28D239E475C0016009D /* ActionSheetPicker-iOS-before7.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E9FEC0F239F62A6008611A5 /* Products */ = {
+		4E78D289239E475C0016009D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E9FEC1C239F62A6008611A5 /* ActionSheetPicker.app */,
-				4E9FEC1E239F62A6008611A5 /* ActionSheetPickerTests.xctest */,
+				4E78D290239E475C0016009D /* ActionSheetPicker-iOS-before7.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4EA671C1239E422B000BFE1B /* Products */ = {
+		4E78D291239E475C0016009D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4EA671C7239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */,
+				4E78D298239E475C0016009D /* ActionSheetPicker.app */,
+				4E78D29A239E475C0016009D /* ActionSheetPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4EA671C3239E422B000BFE1B /* Products */ = {
+		4E78D293239E475C0016009D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4EA671CA239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */,
+				4E78D29E239E475C0016009D /* ActionSheetPicker.app */,
+				4E78D2A0239E475C0016009D /* ActionSheetPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 				};
 			};
 			buildConfigurationList = 1C5784471B15BE2C00172D8A /* Build configuration list for PBXProject "Swift-Example" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -307,19 +307,19 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4EA671C1239E422B000BFE1B /* Products */;
+					ProductGroup = 4E78D287239E475C0016009D /* Products */;
 					ProjectRef = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
 				},
 				{
-					ProductGroup = 4EA671C3239E422B000BFE1B /* Products */;
+					ProductGroup = 4E78D289239E475C0016009D /* Products */;
 					ProjectRef = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
 				},
 				{
-					ProductGroup = 4E9FEC0D239F62A6008611A5 /* Products */;
+					ProductGroup = 4E78D291239E475C0016009D /* Products */;
 					ProjectRef = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
 				},
 				{
-					ProductGroup = 4E9FEC0F239F62A6008611A5 /* Products */;
+					ProductGroup = 4E78D293239E475C0016009D /* Products */;
 					ProjectRef = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
 				},
 			);
@@ -332,46 +332,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4E9FEC16239F62A6008611A5 /* ActionSheetPicker.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ActionSheetPicker.app;
-			remoteRef = 4E9FEC15239F62A6008611A5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E9FEC18239F62A6008611A5 /* ActionSheetPickerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ActionSheetPickerTests.xctest;
-			remoteRef = 4E9FEC17239F62A6008611A5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E9FEC1C239F62A6008611A5 /* ActionSheetPicker.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ActionSheetPicker.app;
-			remoteRef = 4E9FEC1B239F62A6008611A5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E9FEC1E239F62A6008611A5 /* ActionSheetPickerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ActionSheetPickerTests.xctest;
-			remoteRef = 4E9FEC1D239F62A6008611A5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4EA671C7239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */ = {
+		4E78D28D239E475C0016009D /* ActionSheetPicker-iOS-before7.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "ActionSheetPicker-iOS-before7.app";
-			remoteRef = 4EA671C6239E422B000BFE1B /* PBXContainerItemProxy */;
+			remoteRef = 4E78D28C239E475C0016009D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4EA671CA239E422B000BFE1B /* ActionSheetPicker-iOS-before7.app */ = {
+		4E78D290239E475C0016009D /* ActionSheetPicker-iOS-before7.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "ActionSheetPicker-iOS-before7.app";
-			remoteRef = 4EA671C9239E422B000BFE1B /* PBXContainerItemProxy */;
+			remoteRef = 4E78D28F239E475C0016009D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E78D298239E475C0016009D /* ActionSheetPicker.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ActionSheetPicker.app;
+			remoteRef = 4E78D297239E475C0016009D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E78D29A239E475C0016009D /* ActionSheetPickerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ActionSheetPickerTests.xctest;
+			remoteRef = 4E78D299239E475C0016009D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E78D29E239E475C0016009D /* ActionSheetPicker.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ActionSheetPicker.app;
+			remoteRef = 4E78D29D239E475C0016009D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E78D2A0239E475C0016009D /* ActionSheetPickerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ActionSheetPickerTests.xctest;
+			remoteRef = 4E78D29F239E475C0016009D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -543,8 +543,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -556,10 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -572,10 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Swift-Example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -595,11 +588,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Swift-ExampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -616,11 +605,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Swift-ExampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
