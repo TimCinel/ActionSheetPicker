@@ -13,7 +13,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 
 @interface SWActionSheetVC : UIViewController
-
+@property (nonatomic) UIInterfaceOrientationMask maskVC;
 @property (nonatomic, retain) SWActionSheet *actionSheet;
 
 @end
@@ -37,6 +37,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     UIView *view;
     UIView *_bgView;
+    UIInterfaceOrientationMask mask;
 }
 
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated
@@ -88,7 +89,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     else
     {
         UIWindow *window = nil;
-        
+
 // Handle UIWindow for iOS 13 changes
 #if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
@@ -99,15 +100,15 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
             }
         }
 #endif
-        
+
         if (window == nil) {
             window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         }
-        
+
         window.windowLevel        = self.windowLevel;
         window.backgroundColor    = [UIColor clearColor];
         window.rootViewController = [SWActionSheetVC new];
-        
+
         SWActionSheetWindow = window;
         return SWActionSheetWindow;
     }
@@ -126,7 +127,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         _windowLevel = windowLevel;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [UIView new];
-        
+
 // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
 #if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
@@ -141,6 +142,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         [self addSubview:_bgView];
         [self addSubview:view];
     }
+    return self;
+}
+
+- (instancetype)initWithView:(UIView *)aView windowLevel:(UIWindowLevel)windowLevel withSupportedOrientation:(UIInterfaceOrientationMask) mask {
+    self = [[SWActionSheet alloc] initWithView:aView windowLevel:windowLevel];
+    self->mask = mask;
     return self;
 }
 
@@ -187,6 +194,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     self.presented = YES;
 }
 
+- (UIInterfaceOrientationMask) getMasking {
+    return self->mask;
+}
 @end
 
 
@@ -231,6 +241,15 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)supportedInterfaceOrientations
+#else
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#endif
+{
+    return (NSUInteger) [self.actionSheet getMasking];
+}
+
 - (BOOL)prefersStatusBarHidden {
 	return [UIApplication sharedApplication].statusBarHidden;
 }
@@ -239,7 +258,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 // ---
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    if (self.maskVC == UIInterfaceOrientationPortrait){
+        return NO;
+    } else {
+        return YES;
+    }
+
 }
 #else
 

@@ -2,15 +2,19 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Example Projects/Swift-Example/Swift-Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:CoreActionSheetPicker/CoreActionSheetPicker.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-5-7.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "ArchiveExamples">
+      <FileRef
+         location = "group:Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
