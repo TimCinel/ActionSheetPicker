@@ -89,7 +89,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     else
     {
         UIWindow *window = nil;
-        
+
 // Handle UIWindow for iOS 13 changes
 #if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
@@ -100,15 +100,15 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
             }
         }
 #endif
-        
+
         if (window == nil) {
             window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         }
-        
+
         window.windowLevel        = self.windowLevel;
         window.backgroundColor    = [UIColor clearColor];
         window.rootViewController = [SWActionSheetVC new];
-        
+
         SWActionSheetWindow = window;
         return SWActionSheetWindow;
     }
@@ -127,7 +127,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         _windowLevel = windowLevel;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [UIView new];
-        
+
 // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
 #if defined(__IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
@@ -142,6 +142,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         [self addSubview:_bgView];
         [self addSubview:view];
     }
+    return self;
+}
+
+- (instancetype)initWithView:(UIView *)aView windowLevel:(UIWindowLevel)windowLevel withSupportedOrientation:(UIInterfaceOrientationMask) mask {
+    self = [[SWActionSheet alloc] initWithView:aView windowLevel:windowLevel];
+    self->mask = mask;
     return self;
 }
 
@@ -235,8 +241,13 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
--(NSUInteger)supportedInterfaceOrientations{
-    return [self.actionSheet getMasking];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)supportedInterfaceOrientations
+#else
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#endif
+{
+    return (NSUInteger) [self.actionSheet getMasking];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -252,7 +263,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     } else {
         return YES;
     }
-    
+
 }
 #else
 

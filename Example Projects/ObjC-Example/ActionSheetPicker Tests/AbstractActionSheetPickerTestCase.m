@@ -22,10 +22,23 @@
     UIView  *_origin;
 }
 
++(UIWindow*)keyWindow
+{
+    UIWindow        *foundWindow = nil;
+    NSArray         *windows = [[UIApplication sharedApplication]windows];
+    for (UIWindow   *window in windows) {
+        if (window.isKeyWindow) {
+            foundWindow = window;
+            break;
+        }
+    }
+    return foundWindow;
+}
+
 - (void)setUp
 {
     [super setUp];
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    UIWindow *window = [AbstractActionSheetPickerTestCase keyWindow];
     UIView *topView = window.rootViewController.view;
     _origin = topView;
     _title             = @"Title";
