@@ -180,7 +180,7 @@ static const int countdownTestInt = 360;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSThread sleepForTimeInterval:0.5f];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_actionSheetDatePicker pressDoneButton];
+            [self->_actionSheetDatePicker pressDoneButton];
         });
     });
 
@@ -198,7 +198,7 @@ static const int countdownTestInt = 360;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSThread sleepForTimeInterval:0.5f];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_actionSheetDatePicker pressDoneButton];
+            [self->_actionSheetDatePicker pressDoneButton];
         });
     });
     [_actionSheetDatePicker showActionSheetPicker];
