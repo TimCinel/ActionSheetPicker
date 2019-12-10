@@ -4,7 +4,7 @@
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ActionSheetPicker-3.0
@@ -267,6 +267,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt=""/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3ATimCinel" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Documentation">📖</a></td>
     <td align="center"><a href="https://twitter.com/xjki"><img src="https://avatars0.githubusercontent.com/u/747340?v=4" width="100px;" alt=""/><br /><sub><b>Jurģis Ķiršakmens</b></sub></a><br /><a href="#question-xjki" title="Answering Questions">💬</a> <a href="#example-xjki" title="Examples">💡</a></td>
     <td align="center"><a href="https://www.bubidevs.net"><img src="https://avatars0.githubusercontent.com/u/847860?v=4" width="100px;" alt=""/><br /><sub><b>Andrea</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=BubiDevs" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/NikDude"><img src="https://avatars1.githubusercontent.com/u/1115699?v=4" width="100px;" alt=""/><br /><sub><b>Nikos</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=NikDude" title="Documentation">📖</a></td>
   </tr>
 </table>
 

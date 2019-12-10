@@ -47,6 +47,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "NikDude",
+      "name": "Nikos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1115699?v=4",
+      "profile": "https://github.com/NikDude",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
