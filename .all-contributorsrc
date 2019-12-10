@@ -169,6 +169,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "VincentNarbot",
+      "name": "Vincent Narbot",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8729167?v=4",
+      "profile": "http://vincent.narbot.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
