@@ -48,7 +48,7 @@ CG_INLINE BOOL isIPhone4() {
 #define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
 
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
 
 @interface MyPopoverController : UIPopoverController <UIAdaptivePresentationControllerDelegate>
 @end
@@ -541,7 +541,19 @@ CG_INLINE BOOL isIPhone4() {
         textSize = toolBarItemLabel.attributedText.size;
     }
     else {
-        [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+
+        if (@available(iOS 13.0, *)) {
+            [toolBarItemLabel setTextColor: [UIColor labelColor]];
+        }
+        else {
+            [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        }
+        #else
+           [toolBarItemLabel setTextColor:(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) ? [UIColor blackColor] : [UIColor whiteColor]];
+        #endif
+
         [toolBarItemLabel setFont:[UIFont boldSystemFontOfSize:16]];
         toolBarItemLabel.text = aTitle;
 
@@ -681,7 +693,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)configureAndPresentActionSheetForView:(UIView *)aView {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
 
-    _actionSheet = [[SWActionSheet alloc] initWithView:aView windowLevel:self.windowLevel];
+    _actionSheet = [[SWActionSheet alloc] initWithView:aView windowLevel:self.windowLevel withSupportedOrientation:self.supportedInterfaceOrientations];
     if (self.pickerBackgroundColor) {
         _actionSheet.bgView.backgroundColor = self.pickerBackgroundColor;
     }
@@ -709,7 +721,18 @@ CG_INLINE BOOL isIPhone4() {
 
 - (void)configureAndPresentPopoverForView:(UIView *)aView {
     UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.view = aView;
+    
+    if (@available(iOS 11, *)) {
+        [viewController.view addSubview:aView];
+        UILayoutGuide* guide = viewController.view.safeAreaLayoutGuide;
+        aView.translatesAutoresizingMaskIntoConstraints = NO;
+        [aView.topAnchor constraintEqualToAnchor:guide.topAnchor].active = YES;
+        [aView.leftAnchor constraintEqualToAnchor:guide.leftAnchor].active = YES;
+        [aView.rightAnchor constraintEqualToAnchor:guide.rightAnchor].active = YES;
+        [aView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+    } else {
+        viewController.view = aView;
+    }
 
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
 #pragma clang diagnostic push

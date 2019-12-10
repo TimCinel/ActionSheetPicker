@@ -13,7 +13,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 
 
 @interface SWActionSheetVC : UIViewController
-
+@property (nonatomic) UIInterfaceOrientationMask maskVC;
 @property (nonatomic, retain) SWActionSheet *actionSheet;
 
 @end
@@ -37,6 +37,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     UIView *view;
     UIView *_bgView;
+    UIInterfaceOrientationMask mask;
 }
 
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated
@@ -87,13 +88,29 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
     else
     {
-        return SWActionSheetWindow = ({
-            UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-            window.windowLevel        = self.windowLevel;
-            window.backgroundColor    = [UIColor clearColor];
-            window.rootViewController = [SWActionSheetVC new];
-            window;
-        });
+        UIWindow *window = nil;
+
+// Handle UIWindow for iOS 13 changes
+#if defined(__IPHONE_13_0)
+        if (@available(iOS 13.0, *)) {
+            UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+            if (scene && [scene isKindOfClass:[UIWindowScene class]]) {
+                UIWindowScene *windowScene = (UIWindowScene *)scene;
+                window = [[UIWindow alloc] initWithWindowScene:windowScene];
+            }
+        }
+#endif
+
+        if (window == nil) {
+            window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        }
+
+        window.windowLevel        = self.windowLevel;
+        window.backgroundColor    = [UIColor clearColor];
+        window.rootViewController = [SWActionSheetVC new];
+
+        SWActionSheetWindow = window;
+        return SWActionSheetWindow;
     }
 }
 
@@ -110,10 +127,27 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         _windowLevel = windowLevel;
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [UIView new];
+
+// Support iOS 13 Dark Mode - support dynamic background color in iOS 13
+#if defined(__IPHONE_13_0)
+        if (@available(iOS 13.0, *)) {
+            _bgView.backgroundColor = [UIColor systemBackgroundColor];
+        }
+        else {
+            _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+        }
+#else
         _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+#endif
         [self addSubview:_bgView];
         [self addSubview:view];
     }
+    return self;
+}
+
+- (instancetype)initWithView:(UIView *)aView windowLevel:(UIWindowLevel)windowLevel withSupportedOrientation:(UIInterfaceOrientationMask) mask {
+    self = [[SWActionSheet alloc] initWithView:aView windowLevel:windowLevel];
+    self->mask = mask;
     return self;
 }
 
@@ -160,6 +194,9 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     self.presented = YES;
 }
 
+- (UIInterfaceOrientationMask) getMasking {
+    return self->mask;
+}
 @end
 
 
@@ -204,20 +241,35 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     }
 }
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)supportedInterfaceOrientations
+#else
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#endif
+{
+    return (NSUInteger) [self.actionSheet getMasking];
+}
+
 - (BOOL)prefersStatusBarHidden {
 	return [UIApplication sharedApplication].statusBarHidden;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
+// iOS6 support
+// ---
+- (BOOL)shouldAutorotate
+{
+    if (self.maskVC == UIInterfaceOrientationPortrait){
+        return NO;
+    } else {
+        return YES;
+    }
+
+}
+#else
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return NO;
 }
-
-// iOS6 support
-// ---
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
+#endif
 @end

@@ -14,6 +14,10 @@
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
 
 - (instancetype)initWithView:(UIView *)view windowLevel:(UIWindowLevel)windowLevel;
+- (instancetype)initWithView:(UIView *)view windowLevel:(UIWindowLevel)windowLevel withSupportedOrientation:(UIInterfaceOrientationMask) mask;
+
 
 - (void)showInContainerView;
+
+- (UIInterfaceOrientationMask) getMasking;
 @end

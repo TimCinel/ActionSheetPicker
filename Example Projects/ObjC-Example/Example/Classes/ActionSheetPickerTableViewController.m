@@ -54,11 +54,20 @@
 
     self.navigationController.navigationBar.barStyle = (UIBarStyle) self.statusBarSegmentControl.selectedSegmentIndex;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
+// iOS6 support
+// ---
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+#else
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
+#endif
 
 #pragma mark - IBActions
 

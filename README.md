@@ -1,13 +1,13 @@
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-[![Carthage
-tible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 
 ActionSheetPicker-3.0
 ==================
@@ -19,7 +19,8 @@ Now I fixed most of the things and merge PR' (thanks to all the contributors!).
 
 I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
 
-I still need help with the future support of this repo. If anyone there is interested in it - please drop a comment into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348), please! 🙏
+I still need help with the future support of this repo.
+If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
 
 ---
 
@@ -43,7 +44,7 @@ Petr Korolev (@skywinder)
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 2.3.0'` (**iOS 5.1.1-13.x** compatible!)
+`pod 'ActionSheetPicker-3.0', '~> 2.3.1'` (**iOS 5.1.1-13.x** compatible!)
 
 ##ActionSheetPicker = UIPickerView + UIActionSheet ##
 
@@ -122,7 +123,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 
 
-##Installation##
+## Installation
 
 ### CocoaPods
 
@@ -201,7 +202,7 @@ $ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 - Expand the "Target Dependencies" group, and add `CoreActionSheetPicker.framework`.
 - Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `CoreActionSheetPicker.framework`.
 
-## Example Projects##
+## Example Projects
 
 `open ActionSheetPicker-3.0.xcworkspace`
 
@@ -225,17 +226,16 @@ Here is 4 projects:
 
 If you've used this project in a live app, please let me know! Nothing makes me happier than seeing someone else take my work and go wild with it.
 
-*If you are using `ActionSheetPicker-3.0` in your app or know of an app that uses it, please add it to [this] (https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0) list.*
+*If you are using `ActionSheetPicker-3.0` in your app or know of an app that uses it, please add it to [**this list**](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0).*
 
 ## Maintainer and Contributor
 
-- [Petr Korolev](http://github.com/skywinder) (update to iOS 7 and iOS 8, implementing new pickers, community support)
+- [Petr Korolev](http://github.com/skywinder) (update to iOS 7 and iOS 8, implementing new pickers, community support). I did much work to support this library from iOS 5. (and till iOS 13 and we keep going 🚀).
 
-## Credits
+I fixed most of the things and merge PR' (thanks to all the contributors!).
 
-- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also a bunch of UI fixes, crash-fixes, and different customization abilities.
-
-- And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
+I still need help with the future support of this repo.
+If you are interested  to help - please **drop a comment** into [Pinned issue #348](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348) 🙏
 
 ## Contributing
 
@@ -250,6 +250,12 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
 
+## Credits
+
+- ActionSheetPicker was originally created by [Tim Cinel](http://github.com/TimCinel) ([@TimCinel](http://twitter.com/TimCinel)) Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also a bunch of UI fixes, crash-fixes, and different customization abilities.
+
+- And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -259,6 +265,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/korolevpetr"><img src="https://avatars2.githubusercontent.com/u/3356474?v=4" width="100px;" alt=""/><br /><sub><b>Petr Korolev</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=skywinder" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3Askywinder" title="Reviewed Pull Requests">👀</a> <a href="#question-skywinder" title="Answering Questions">💬</a> <a href="#example-skywinder" title="Examples">💡</a></td>
+    <td align="center"><a href="https://twitter.com/xjki"><img src="https://avatars0.githubusercontent.com/u/747340?v=4" width="100px;" alt=""/><br /><sub><b>Jurģis Ķiršakmens</b></sub></a><br /><a href="#question-xjki" title="Answering Questions">💬</a> <a href="#example-xjki" title="Examples">💡</a></td>
     <td align="center"><a href="http://www.timcinel.com/"><img src="https://avatars1.githubusercontent.com/u/177173?v=4" width="100px;" alt=""/><br /><sub><b>Tim Cinel</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Code">💻</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/pulls?q=is%3Apr+reviewed-by%3ATimCinel" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=TimCinel" title="Documentation">📖</a></td>
   </tr>
 </table>

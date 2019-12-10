@@ -15,31 +15,27 @@
 		1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE712192BB41600A27994 /* Default-568h@2x.png */; };
 		1C6EE720192BB41600A27994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
 		1C7A57A9199DEDD5007B9B70 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57A8199DEDD5007B9B70 /* cancel.png */; };
-		1C7A57AA199DEDD5007B9B70 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57A8199DEDD5007B9B70 /* cancel.png */; };
 		1C7A57AC199DF30B007B9B70 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57AB199DF30B007B9B70 /* ok.png */; };
-		1C7A57AD199DF30B007B9B70 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A57AB199DF30B007B9B70 /* ok.png */; };
 		1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		1C9444B7197B1C2F005F495B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9444B6197B1C2F005F495B /* XCTest.framework */; };
-		1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C9444BD197B1C2F005F495B /* InfoPlist.strings */; };
-		1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
-		1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CFCACFC1980FA320056A594 /* Storyboard.storyboard */; };
 		1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100719C4C7AF0033BA4D /* Default-667h@2x.png */; };
 		1D07100B19C4C7AF0033BA4D /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100819C4C7AF0033BA4D /* Default-736h@3x.png */; };
 		1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07100919C4C7AF0033BA4D /* Default-736w@3x.png */; };
+		4E2935D7239F797A00B0E82B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		4E2935DF239F7A1000B0E82B /* ActionSheetPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2935DE239F7A1000B0E82B /* ActionSheetPickerTests.m */; };
+		4E2935E7239F7A3E00B0E82B /* ActionSheetCustomPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */; };
+		4E2935E8239F7A3E00B0E82B /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
+		4E2935E9239F7A3E00B0E82B /* ActionSheetDatePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */; };
+		4E2935EA239F7A3E00B0E82B /* AbstractActionSheetPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */; };
+		4E2935EB239F7A3E00B0E82B /* ActionSheetCustomPickerTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F576CF2A850BF7FFA6085 /* ActionSheetCustomPickerTestDelegate.m */; };
+		4EEF6D31239D696B005ECE50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF6D30239D696B005ECE50 /* Images.xcassets */; };
 		9691A94D7D01E0FBDF9686C3 /* AbstractActionSheetPicker+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */; };
-		9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */; };
-		D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */; };
 		D66F51ADA2999F44F2C282BF /* ActionSheetPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F572853325E5592CF945B /* ActionSheetPickerTableViewController.m */; };
-		D66F51F7B65FE68619FB9762 /* ActionSheetCustomPickerTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F576CF2A850BF7FFA6085 /* ActionSheetCustomPickerTestDelegate.m */; };
-		D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */; };
 		D66F5832537A4862C9F19770 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F5524D86DF2C1AA77B398 /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1C9444C3197B1C2F005F495B /* PBXContainerItemProxy */ = {
+		4E2935E1239F7A1000B0E82B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
@@ -65,7 +61,6 @@
 		1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker-Info.plist"; sourceTree = "<group>"; };
 		1C7A57A8199DEDD5007B9B70 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		1C7A57AB199DF30B007B9B70 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
-		1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9444B6197B1C2F005F495B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1C9444BC197B1C2F005F495B /* ActionSheetPicker Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionSheetPicker Tests-Info.plist"; sourceTree = "<group>"; };
 		1C9444BE197B1C2F005F495B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -80,6 +75,11 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4E2935CF239F780800B0E82B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4E2935DC239F7A1000B0E82B /* ActionSheetPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionSheetPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E2935DE239F7A1000B0E82B /* ActionSheetPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetPickerTests.m; sourceTree = "<group>"; };
+		4E2935E0239F7A1000B0E82B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EEF6D30239D696B005ECE50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ActionSheetPicker/Images.xcassets; sourceTree = "<group>"; };
 		9691A8995255E329AAABAA07 /* AbstractActionSheetPicker+CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActionSheetPicker+CustomButton.m"; sourceTree = "<group>"; };
 		9691ABB7429A0D6A2F235006 /* AbstractActionSheetPicker+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractActionSheetPicker+CustomButton.h"; sourceTree = "<group>"; };
 		9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePickerTestCase.m; sourceTree = "<group>"; };
@@ -94,23 +94,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C9444B2197B1C2F005F495B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C9444D5197B1E8F005F495B /* CoreGraphics.framework in Frameworks */,
-				1C9444B7197B1C2F005F495B /* XCTest.framework in Frameworks */,
-				1C9444B9197B1C2F005F495B /* UIKit.framework in Frameworks */,
-				1C9444B8197B1C2F005F495B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1C6042751B5E776D008D9549 /* CoreActionSheetPicker.framework in Frameworks */,
+				4E2935D7239F797A00B0E82B /* Foundation.framework in Frameworks */,
 				1C84AF9119DE9B9400EF5B2E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E2935D9239F7A1000B0E82B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +152,8 @@
 		1C9444BA197B1C2F005F495B /* ActionSheetPicker Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */,
 				1C9444BB197B1C2F005F495B /* Supporting Files */,
+				1C9444C8197B1C75005F495B /* ActionSheetCustomPickerTestCase.m */,
 				D66F51B8FD5B8B4B7A1F46E8 /* ActionSheetLocalePickerTestCase.m */,
 				9947CBEA19F811300083B32D /* ActionSheetDatePickerTestCase.m */,
 				D66F5B887137F3C8C61C74D7 /* AbstractActionSheetPickerTestCase.m */,
@@ -180,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */,
-				1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */,
+				4E2935DC239F7A1000B0E82B /* ActionSheetPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,12 +185,14 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4EEF6D30239D696B005ECE50 /* Images.xcassets */,
 				1C11947A1B5E3ECF00C68054 /* CoreActionSheetPicker.framework */,
 				1CFCACFC1980FA320056A594 /* Storyboard.storyboard */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
 				1C6EE704192BB41600A27994 /* Example */,
 				1C9444BA197B1C2F005F495B /* ActionSheetPicker Tests */,
+				4E2935DD239F7A1000B0E82B /* ActionSheetPickerTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				1CD15A30192C7A0A00B28881 /* Products */,
 			);
@@ -203,6 +202,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E2935CF239F780800B0E82B /* XCTest.framework */,
 				1C6042741B5E776D008D9549 /* CoreActionSheetPicker.framework */,
 				1CEFA0181AFB847C00110399 /* CoreActionSheetPicker.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -211,6 +211,15 @@
 				1C9444B6197B1C2F005F495B /* XCTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E2935DD239F7A1000B0E82B /* ActionSheetPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E2935DE239F7A1000B0E82B /* ActionSheetPickerTests.m */,
+				4E2935E0239F7A1000B0E82B /* Info.plist */,
+			);
+			path = ActionSheetPickerTests;
 			sourceTree = "<group>";
 		};
 		D66F56315B19D0C87B8D1933 /* Resources */ = {
@@ -225,24 +234,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C9444B4197B1C2F005F495B /* ActionSheetPickerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */;
-			buildPhases = (
-				1C9444B1197B1C2F005F495B /* Sources */,
-				1C9444B2197B1C2F005F495B /* Frameworks */,
-				1C9444B3197B1C2F005F495B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C9444C4197B1C2F005F495B /* PBXTargetDependency */,
-			);
-			name = ActionSheetPickerTests;
-			productName = "ActionSheetPicker Tests";
-			productReference = 1C9444B5197B1C2F005F495B /* ActionSheetPickerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		1D6058900D05DD3D006BFB54 /* ActionSheetPicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ActionSheetPicker" */;
@@ -261,6 +252,24 @@
 			productReference = 1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4E2935DB239F7A1000B0E82B /* ActionSheetPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E2935E3239F7A1000B0E82B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */;
+			buildPhases = (
+				4E2935D8239F7A1000B0E82B /* Sources */,
+				4E2935D9239F7A1000B0E82B /* Frameworks */,
+				4E2935DA239F7A1000B0E82B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E2935E2239F7A1000B0E82B /* PBXTargetDependency */,
+			);
+			name = ActionSheetPickerTests;
+			productName = ActionSheetPickerTests;
+			productReference = 4E2935DC239F7A1000B0E82B /* ActionSheetPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,7 +278,13 @@
 			attributes = {
 				LastUpgradeCheck = 1120;
 				TargetAttributes = {
-					1C9444B4197B1C2F005F495B = {
+					1D6058900D05DD3D006BFB54 = {
+						ProvisioningStyle = Automatic;
+					};
+					4E2935DB239F7A1000B0E82B = {
+						CreatedOnToolsVersion = 11.2.1;
+						DevelopmentTeam = 5UH69GW6GE;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
@@ -291,26 +306,17 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* ActionSheetPicker */,
-				1C9444B4197B1C2F005F495B /* ActionSheetPickerTests */,
+				4E2935DB239F7A1000B0E82B /* ActionSheetPickerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C9444B3197B1C2F005F495B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C9444BF197B1C2F005F495B /* InfoPlist.strings in Resources */,
-				1C7A57AA199DEDD5007B9B70 /* cancel.png in Resources */,
-				1C7A57AD199DF30B007B9B70 /* ok.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEF6D31239D696B005ECE50 /* Images.xcassets in Resources */,
 				1C7A57AC199DF30B007B9B70 /* ok.png in Resources */,
 				1D07100C19C4C7AF0033BA4D /* Default-736w@3x.png in Resources */,
 				1D07100A19C4C7AF0033BA4D /* Default-667h@2x.png in Resources */,
@@ -318,6 +324,13 @@
 				1C7A57A9199DEDD5007B9B70 /* cancel.png in Resources */,
 				1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */,
 				1CFCACFD1980FA320056A594 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E2935DA239F7A1000B0E82B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,18 +353,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C9444B1197B1C2F005F495B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C9444C9197B1C75005F495B /* ActionSheetCustomPickerTestCase.m in Sources */,
-				9947CBEB19F811300083B32D /* ActionSheetDatePickerTestCase.m in Sources */,
-				D66F506882340A184FC6B2C5 /* ActionSheetLocalePickerTestCase.m in Sources */,
-				D66F52867C4F51FF504876CB /* AbstractActionSheetPickerTestCase.m in Sources */,
-				D66F51F7B65FE68619FB9762 /* ActionSheetCustomPickerTestDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,13 +368,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E2935D8239F7A1000B0E82B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E2935E7239F7A3E00B0E82B /* ActionSheetCustomPickerTestCase.m in Sources */,
+				4E2935E9239F7A3E00B0E82B /* ActionSheetDatePickerTestCase.m in Sources */,
+				4E2935DF239F7A1000B0E82B /* ActionSheetPickerTests.m in Sources */,
+				4E2935EA239F7A3E00B0E82B /* AbstractActionSheetPickerTestCase.m in Sources */,
+				4E2935E8239F7A3E00B0E82B /* ActionSheetLocalePickerTestCase.m in Sources */,
+				4E2935EB239F7A3E00B0E82B /* ActionSheetCustomPickerTestDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1C9444C4197B1C2F005F495B /* PBXTargetDependency */ = {
+		4E2935E2239F7A1000B0E82B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1D6058900D05DD3D006BFB54 /* ActionSheetPicker */;
-			targetProxy = 1C9444C3197B1C2F005F495B /* PBXContainerItemProxy */;
+			targetProxy = 4E2935E1239F7A1000B0E82B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -389,93 +403,17 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1C9444C5197B1C2F005F495B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ActionSheetPicker.app/ActionSheetPicker";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActionSheetPicker Tests/ActionSheetPicker Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ActionSheetPicker Tests/ActionSheetPicker Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "PK.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		1C9444C6197B1C2F005F495B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ActionSheetPicker.app/ActionSheetPicker";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActionSheetPicker Tests/ActionSheetPicker Tests-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ActionSheetPicker Tests/ActionSheetPicker Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "PK.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_ASSET_PATHS = ../../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/**",
@@ -492,6 +430,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,8 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_ASSET_PATHS = ../../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/**",
@@ -517,8 +461,85 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E2935E4239F7A1000B0E82B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ActionSheetPickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SW.ActionSheetPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActionSheetPicker.app/ActionSheetPicker";
+			};
+			name = Debug;
+		};
+		4E2935E5239F7A1000B0E82B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ActionSheetPickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SW.ActionSheetPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActionSheetPicker.app/ActionSheetPicker";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -603,20 +624,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C9444C7197B1C2F005F495B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C9444C5197B1C2F005F495B /* Debug */,
-				1C9444C6197B1C2F005F495B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ActionSheetPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E2935E3239F7A1000B0E82B /* Build configuration list for PBXNativeTarget "ActionSheetPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E2935E4239F7A1000B0E82B /* Debug */,
+				4E2935E5239F7A1000B0E82B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
