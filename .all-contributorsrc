@@ -178,6 +178,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "ezefranca",
+      "name": "Ezequiel França",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3648336?v=4",
+      "profile": "http://ezefranca.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
