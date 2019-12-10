@@ -103,6 +103,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "BubiDevs",
+      "name": "Andrea",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/847860?v=4",
+      "profile": "https://www.bubidevs.net",
+      "contributions": [
+        "question",
+        "code",
+        "content",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
