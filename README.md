@@ -4,7 +4,7 @@
 [![Issues](http://img.shields.io/github/issues/skywinder/ActionSheetPicker-3.0.svg)](https://github.com/skywinder/ActionSheetPicker-3.0/issues?state=open)
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ActionSheetPicker-3.0
@@ -286,6 +286,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ricardohg"><img src="https://avatars1.githubusercontent.com/u/5543569?v=4" width="100px;" alt=""/><br /><sub><b>Ricardo Hernandez</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ricardohg" title="Code">💻</a></td>
     <td align="center"><a href="http://vincent.narbot.com"><img src="https://avatars3.githubusercontent.com/u/8729167?v=4" width="100px;" alt=""/><br /><sub><b>Vincent Narbot</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=VincentNarbot" title="Documentation">📖</a></td>
     <td align="center"><a href="http://ezefranca.dev"><img src="https://avatars3.githubusercontent.com/u/3648336?v=4" width="100px;" alt=""/><br /><sub><b>Ezequiel França</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ezefranca" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/nikola-mladenovic"><img src="https://avatars3.githubusercontent.com/u/14024032?v=4" width="100px;" alt=""/><br /><sub><b>Nikola Mladenovic</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=nikola-mladenovic" title="Documentation">📖</a></td>
   </tr>
 </table>
 
