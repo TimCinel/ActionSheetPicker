@@ -75,6 +75,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "xiaoer371",
+      "name": "DYY_Xiaoer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7375120?v=4",
+      "profile": "http://user.qzone.qq.com/627426568?ptlang=2052",
+      "contributions": [
+        "code",
+        "security"
+      ]
     }
   ],
   "contributorsPerLine": 7,
