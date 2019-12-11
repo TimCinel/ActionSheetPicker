@@ -196,6 +196,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "longjun-9",
+      "name": "longjun",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4412991?v=4",
+      "profile": "https://github.com/longjun-9",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
