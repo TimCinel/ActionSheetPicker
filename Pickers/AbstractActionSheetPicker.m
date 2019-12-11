@@ -45,7 +45,7 @@ CG_INLINE BOOL isIPhone4() {
 // UIInterfaceOrientationMask vs. UIInterfaceOrientation
 // As far as I know, a function like this isn't available in the API. I derived this from the enum def for
 // UIInterfaceOrientationMask.
-#define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) != 0)
+#define OrientationMaskSupportsOrientation(mask, orientation)   ((mask & (1 << orientation)) == (1 << orientation))
 
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
@@ -707,8 +707,9 @@ CG_INLINE BOOL isIPhone4() {
 }
 
 - (void)didRotate:(NSNotification *)notification {
-    if (OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION))
+    if (!OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION)) {
         [self dismissPicker];
+    }
 }
 
 - (void)presentActionSheet:(SWActionSheet *)actionSheet {
