@@ -542,7 +542,7 @@ CG_INLINE BOOL isIPhone4() {
     }
     else {
         // Support iOS 13 Dark Mode - support dynamic background color in iOS 13
-        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
+        #if defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
         if (@available(iOS 13.0, *)) {
             [toolBarItemLabel setTextColor: [UIColor labelColor]];
