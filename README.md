@@ -1,3 +1,5 @@
+# ActionSheetPicker-3.0
+
 [![Version](http://img.shields.io/cocoapods/v/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/skywinder/ActionSheetPicker-3.0.svg?branch=master)](https://travis-ci.org/skywinder/ActionSheetPicker-3.0)
@@ -5,20 +7,13 @@
 [![License](https://img.shields.io/cocoapods/l/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)
 [![Platform](https://img.shields.io/cocoapods/p/ActionSheetPicker-3.0.svg)](http://cocoadocs.org/docsets/ActionSheetPicker-3.0)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-
-ActionSheetPicker-3.0
-==================
-
-### Important update:
+## Important update
 
 Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)).
 
 I did much work to support this library from iOS 5. (and till iOS 13 and we keep going) 🚀
 
-#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
-
-
-
+### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
 
 Regards, [Petr Korolev](https://github.com/skywinder)
 
@@ -44,32 +39,33 @@ Please welcome: **ActionSheetPicker-3.0**!
 
 Well, that's how it started. Now, the following is more accurate:
 
- * _**iPhone/iPod** ActionSheetPicker = ActionSheetPicker = A Picker + UIActionSheet_
- * _**iPad** ActionSheetPicker = A Picker + UIPopoverController_
+- _**iPhone/iPod** ActionSheetPicker = ActionSheetPicker = A Picker + UIActionSheet_
+- _**iPad** ActionSheetPicker = A Picker + UIPopoverController_
 
+## Overview
 
-## Overview ##
 Easily present an ActionSheet with a PickerView, allowing the user to select from a number of immutable options.
 
-### Benefits ##
+### Benefits
 
- * Spawn pickers with convenience function - delegate or reference
+- Spawn pickers with convenience function - delegate or reference
    not required. Just provide a target/action callback.
- * Add buttons to UIToolbar for quick selection (see ActionSheetDatePicker below)
- * Delegate protocol available for more control
- * Universal (iPhone/iPod/iPad)
+- Add buttons to UIToolbar for quick selection (see ActionSheetDatePicker below)
+- Delegate protocol available for more control
+- Universal (iPhone/iPod/iPad)
 
 ## QuickStart
 
 There are 4 distinct picker view options:
-- `ActionSheetStringPicker`,
+
+- `ActionSheetStringPicker`
 - `ActionSheetDistancePicker`
--  `ActionSheetDatePicker`
--  `ActionSheetCustomPicker`.
+- `ActionSheetDatePicker`
+- `ActionSheetCustomPicker`
 
 We'll focus here on how to use the `ActionSheetStringPicker` since it's most likely the one you want to use.
 
-### Basic Usage ##
+### Basic Usage
 
 **For detailed info about customizations, please look  [BASIC USAGE](https://github.com/skywinder/ActionSheetPicker-3.0/blob/master/BASIC-USAGE.md)**
 
@@ -81,7 +77,7 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
 
 **For detailed examples, please check [Example Projects](#example-projects) in this repo.**
 
-#### `Swift:`
+#### `Swift`
 
 ```swift
  ActionSheetMultipleStringPicker.show(withTitle: "Multiple String Picker", rows: [
@@ -97,7 +93,7 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
         }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
 ```
 
-#### `Objective-C:`
+#### `Objective-C`
 
 ```obj-c
 // Inside a IBAction method:
@@ -119,24 +115,22 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 // You can also use self.view if you don't have a sender
 ```
 
-
-
 ## Installation
 
 ### CocoaPods
 
+```ruby
+pod 'ActionSheetPicker-3.0'
+```
 
-`pod 'ActionSheetPicker-3.0`
-
- (**iOS 5.1.1-13.x** compatible!)
-
+(**iOS 5.1.1-13.x** compatible!)
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
 You can install it with the following command:
 
 ```bash
-$ gem install cocoapods
+gem install cocoapods
 ```
 
 To integrate ActionSheetPicker-3.0 into your Xcode project using CocoaPods, specify it in your `Podfile`:
@@ -151,7 +145,7 @@ pod 'ActionSheetPicker-3.0'
 Then, run the following command:
 
 ```bash
-$ pod install
+pod install
 ```
 
 ### Import to project
@@ -163,11 +157,13 @@ To import pod you should add string:
 ```obj-c
    #import "ActionSheetPicker.h"
 ```
+
 - For `Swift` projects:
 
 ```swift
   import ActionSheetPicker_3_0
 ```
+
 ### Carthage
 
 Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
@@ -175,8 +171,8 @@ Carthage is a decentralized dependency manager that automates the process of add
 You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
 
 ```bash
-$ brew update
-$ brew install carthage
+brew update
+brew install carthage
 ```
 
 To integrate ActionSheetPicker-3.0 into your Xcode project using Carthage, specify it in your `Cartfile`:
@@ -196,7 +192,7 @@ The "old school" way is manually added to your project all from [Pickers](/Picke
 - Add ActionSheetPicker-3.0 as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the following command:
 
 ```bash
-$ git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
+git submodule add https://github.com/skywinder/ActionSheetPicker-3.0.git
 ```
 
 - Open the `ActionSheetPicker-3.0` folder, and drag `CoreActionSheetPicker.xcodeproj` into the file navigator of your app project.
@@ -224,7 +220,6 @@ Here is 3 projects:
 ![CustomButtons](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/custom.png "CustomButtons")
 ![iPad Support](https://raw.githubusercontent.com/skywinder/ActionSheetPicker-3.0/master/Screenshots/ipad.png "iPad Support")
 
-
 ## [Apps using this library](https://github.com/skywinder/ActionSheetPicker-3.0/wiki/Apps-using-ActionSheetPicker-3.0)
 
 If you've used this project in a live app, please let me know! Nothing makes me happier than seeing someone else take my work and go wild with it.
@@ -237,8 +232,7 @@ If you've used this project in a live app, please let me know! Nothing makes me 
 
 Now I fixed most of the things and merge PR' (thanks to [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)!).
 
-#### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested  to help - please **drop a comment into  issue #348 🙏**
-
+### [I still need help with the future support of this repo](https://github.com/skywinder/ActionSheetPicker-3.0/issues/348). If you are interested to help - please **drop a comment into  issue #348 🙏**
 
 ## Contributing
 
