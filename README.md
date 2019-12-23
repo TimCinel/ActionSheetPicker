@@ -246,6 +246,11 @@ Now I fixed most of the things and merge PR' (thanks to [![All Contributors](htt
 
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
+### Discord
+
+We have a Discord channel where discuss about new ideas and implementation. Feel free to join and discuss with us!
+
+You can join our Discord using [this link](https://discord.gg/68NeeUx).
 
 ## Credits
 
