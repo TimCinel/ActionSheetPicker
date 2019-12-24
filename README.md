@@ -28,8 +28,9 @@ Regards, [Petr Korolev](https://github.com/skywinder)
 - [Screenshots](#screenshots)
 - [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
-- [Credits](#credits)
 - [Contributing](#contributing)
+- [Credits](#credits)
+- [Contributors](#contributors)
 
 Please welcome: **ActionSheetPicker-3.0**!
 
@@ -237,7 +238,7 @@ Now I fixed most of the things and merge PR' (thanks to [![All Contributors](htt
 ## Contributing
 
 1. Create an issue to discuss your idea
-2. Fork it (https://github.com/skywinder/ActionSheetPicker-3.0/fork)
+2. Fork it [https://github.com/skywinder/ActionSheetPicker-3.0/fork](https://github.com/skywinder/ActionSheetPicker-3.0/fork)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
@@ -245,7 +246,11 @@ Now I fixed most of the things and merge PR' (thanks to [![All Contributors](htt
 
 **Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
 
-[![Analytics](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)](https://ga-beacon.appspot.com/UA-52127948-3/ActionSheetPicker-3.0/readme)
+### Discord
+
+We have a Discord channel where discuss about new ideas and implementation. Feel free to join and discuss with us!
+
+You can join our Discord using [this link](https://discord.gg/68NeeUx).
 
 ## Credits
 
