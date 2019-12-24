@@ -40,15 +40,6 @@
       ]
     },
     {
-      "login": "BubiDevs",
-      "name": "Andrea",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/847860?v=4",
-      "profile": "https://www.bubidevs.net",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
       "login": "NikDude",
       "name": "Nikos",
       "avatar_url": "https://avatars1.githubusercontent.com/u/1115699?v=4",
@@ -195,6 +186,24 @@
       "profile": "https://github.com/nikola-mladenovic",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "umerasif",
+      "name": "Umer Asif",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4849696?v=4",
+      "profile": "https://github.com/umerasif",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "longjun-9",
+      "name": "longjun",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4412991?v=4",
+      "profile": "https://github.com/longjun-9",
+      "contributions": [
+        "code"
       ]
     }
   ],
