@@ -1,12 +1,26 @@
 # Changelog
 
-## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
+## [2.4.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.4.1) (2019-12-24)
 
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.4.0...HEAD)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.4.0...2.4.1)
+
+**Implemented enhancements:**
+
+- Allow use of attributed strings as picker row titles [\#341](https://github.com/skywinder/ActionSheetPicker-3.0/issues/341)
+
+**Fixed bugs:**
+
+- iOS 13 SDK Conditional Compilation [\#453](https://github.com/skywinder/ActionSheetPicker-3.0/issues/453)
 
 **Closed issues:**
 
-- Allow use of attributed strings as picker row titles [\#341](https://github.com/skywinder/ActionSheetPicker-3.0/issues/341)
+- Xcode 11 can not run successfully, ActionSheetPicker-3.0 version \(2.4.0\) ,use cocoaPods [\#454](https://github.com/skywinder/ActionSheetPicker-3.0/issues/454)
+
+**Merged pull requests:**
+
+- Add Discord link and fix some minor issues in README.md file [\#456](https://github.com/skywinder/ActionSheetPicker-3.0/pull/456) ([BubiDevs](https://github.com/BubiDevs))
+- Fix podspec [\#455](https://github.com/skywinder/ActionSheetPicker-3.0/pull/455) ([ElfSundae](https://github.com/ElfSundae))
+- Improve Markdown syntax several .md files [\#452](https://github.com/skywinder/ActionSheetPicker-3.0/pull/452) ([BubiDevs](https://github.com/BubiDevs))
 
 ## [2.4.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.4.0) (2019-12-10)
 
@@ -251,7 +265,6 @@
 **Implemented enhancements:**
 
 - Carthage support [\#171](https://github.com/skywinder/ActionSheetPicker-3.0/issues/171)
-- Integration ActionSheetPicker as dynamic framework [\#170](https://github.com/skywinder/ActionSheetPicker-3.0/issues/170)
 
 ## [1.6.0](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.6.0) (2015-04-17)
 
@@ -259,6 +272,7 @@
 
 **Implemented enhancements:**
 
+- Integration ActionSheetPicker as dynamic framework [\#170](https://github.com/skywinder/ActionSheetPicker-3.0/issues/170)
 - Cancel Action unknow for `ActionSheetDistancePicker` [\#166](https://github.com/skywinder/ActionSheetPicker-3.0/issues/166)
 - iOS 5.1.1 compatibility added [\#164](https://github.com/skywinder/ActionSheetPicker-3.0/pull/164) ([kashifhisam](https://github.com/kashifhisam))
 - Added "tag" to AbstractActionSheet [\#159](https://github.com/skywinder/ActionSheetPicker-3.0/pull/159) ([Jeepston](https://github.com/Jeepston))
@@ -786,15 +800,15 @@
 
 ## [1.0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.1) (2014-05-19)
 
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/0.1...1.0.1)
-
-## [0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/0.1) (2012-05-11)
-
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/v0.1...0.1)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/v0.1...1.0.1)
 
 ## [v0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/v0.1) (2012-05-11)
 
-[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/d48b701d6014d66a13d398655368a369a79583bb...v0.1)
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/0.1...v0.1)
+
+## [0.1](https://github.com/skywinder/ActionSheetPicker-3.0/tree/0.1) (2012-05-11)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/d48b701d6014d66a13d398655368a369a79583bb...0.1)
 
 
 
