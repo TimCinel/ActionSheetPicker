@@ -693,7 +693,7 @@ CG_INLINE BOOL isIPhone4() {
 - (void)configureAndPresentActionSheetForView:(UIView *)aView {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
 
-    _actionSheet = [[SWActionSheet alloc] initWithView:aView windowLevel:self.windowLevel withSupportedOrientation:self.supportedInterfaceOrientations];
+    _actionSheet = [[SWActionSheet alloc] initWithView:aView windowLevel:self.windowLevel];
     if (self.pickerBackgroundColor) {
         _actionSheet.bgView.backgroundColor = self.pickerBackgroundColor;
     }
