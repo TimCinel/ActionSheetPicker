@@ -707,9 +707,11 @@ CG_INLINE BOOL isIPhone4() {
 }
 
 - (void)didRotate:(NSNotification *)notification {
-    if (!OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION)) {
+// #TODO: Rotation is broken on iphones ios 13+. so I decided just to dismiss picker as a solution.
+
+//    if (!OrientationMaskSupportsOrientation(self.supportedInterfaceOrientations, DEVICE_ORIENTATION)) {
         [self dismissPicker];
-    }
+//    }
 }
 
 - (void)presentActionSheet:(SWActionSheet *)actionSheet {
