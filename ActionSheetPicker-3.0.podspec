@@ -1,7 +1,6 @@
 Pod::Spec.new do |spec|
-
   spec.name = 'ActionSheetPicker-3.0'
-  spec.version = '2.4.1'
+  spec.version = '2.4.2'
   spec.summary = 'Easily present an ActionSheet with a PickerView, allowing the user to select from a number of immutable options.'
   spec.description  = <<-DESC
  Better version of ActionSheetPicker with support iOS7 and other improvements:
@@ -24,8 +23,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://twitter.com/skywinder/"
   spec.platform     = :ios, "6.1"
   spec.source = { :git => 'https://github.com/skywinder/ActionSheetPicker-3.0.git', :tag => "#{spec.version}" }
-  spec.source_files = 'ActionSheetPicker.h', 'Pickers/*.{h,m}'
-  spec.public_header_files = 'ActionSheetPicker.h', 'Pickers/*.h'
+  spec.source_files = 'Pickers/*.{h,m}'
   spec.framework = 'UIKit'
   spec.requires_arc = true
 end

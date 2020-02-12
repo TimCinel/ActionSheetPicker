@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Gb7-DM-9kh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Gb7-DM-9kh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -469,7 +469,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fte-TB-ZEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442.0289855072465" y="-6.6964285714285712"/>
+            <point key="canvasLocation" x="2346" y="-7"/>
         </scene>
         <!--Test Table View Controller-->
         <scene sceneID="3fS-AL-124">
@@ -513,7 +513,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hd-lY-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3086.9565217391305" y="20.089285714285712"/>
+            <point key="canvasLocation" x="2966" y="577"/>
         </scene>
         <!--Action Sheet Picker View Controller-->
         <scene sceneID="N6f-0m-5XV">
@@ -597,7 +597,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtS-y4-BYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3400.0000000000005" y="523.66071428571422"/>
+            <point key="canvasLocation" x="3710" y="-103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBU-t6-gEE">
@@ -615,7 +615,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcn-ZA-bdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2794.202898550725" y="523.66071428571422"/>
+            <point key="canvasLocation" x="2967" y="-104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Gh-In-9X5">
@@ -633,7 +633,7 @@ https://github.com/skywinder/ActionSheetPicker-3.0/</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN1-Bu-9Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913.0434782608697" y="-140.625"/>
+            <point key="canvasLocation" x="1726" y="-103"/>
         </scene>
     </scenes>
 </document>
