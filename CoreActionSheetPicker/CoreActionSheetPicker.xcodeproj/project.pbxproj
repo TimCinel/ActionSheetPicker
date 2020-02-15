@@ -67,6 +67,7 @@
 		1CCA906E1AE0EFC500368F5E /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistancePickerView.h; path = ../Pickers/DistancePickerView.h; sourceTree = "<group>"; };
 		1CCA906F1AE0EFC500368F5E /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DistancePickerView.m; path = ../Pickers/DistancePickerView.m; sourceTree = "<group>"; };
 		1CCA90701AE0EFC500368F5E /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWActionSheet.h; path = ../Pickers/SWActionSheet.h; sourceTree = "<group>"; };
+		4E63CD8223F86D2300075160 /* ActionSheetPicker */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ActionSheetPicker; path = "../../_PERSONAL/ActionSheetPicker-3.0/ActionSheetPicker"; sourceTree = "<group>"; };
 		906291E41B5EA81C00A115DA /* ActionSheetMultipleStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSheetMultipleStringPicker.h; path = ../Pickers/ActionSheetMultipleStringPicker.h; sourceTree = "<group>"; };
 		906291E51B5EA81C00A115DA /* ActionSheetMultipleStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionSheetMultipleStringPicker.m; path = ../Pickers/ActionSheetMultipleStringPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +94,7 @@
 		1CCA90391AE0EFB000368F5E = {
 			isa = PBXGroup;
 			children = (
+				4E63CD8223F86D2300075160 /* ActionSheetPicker */,
 				1CCA90451AE0EFB000368F5E /* CoreActionSheetPicker */,
 				1CCA90521AE0EFB000368F5E /* CoreActionSheetPickerTests */,
 				1CCA90441AE0EFB000368F5E /* Products */,
@@ -247,6 +249,7 @@
 					};
 					1CCA904D1AE0EFB000368F5E = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5UH69GW6GE;
 					};
 				};
 			};
