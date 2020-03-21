@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FF65A8AFC255E5913A7BCDE7153CC9C006153EAE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AEB57FD6D0B1E15DA592DA243A716A44CC8AD193" : 0,
+    "FF65A8AFC255E5913A7BCDE7153CC9C006153EAE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "26F22A76-FEB4-4FE9-B9C6-C74FFE0B0BBA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AEB57FD6D0B1E15DA592DA243A716A44CC8AD193" : "ActionSheetPicker\/actions-setup-xcode\/",
+    "FF65A8AFC255E5913A7BCDE7153CC9C006153EAE" : "ActionSheetPicker\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ActionSheetPicker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ActionSheetPicker.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mtdev2\/actions-setup-xcode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AEB57FD6D0B1E15DA592DA243A716A44CC8AD193"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mtdev2\/ActionSheetPicker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FF65A8AFC255E5913A7BCDE7153CC9C006153EAE"
+    }
+  ]
+}
