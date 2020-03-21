@@ -6,6 +6,40 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>1179D826-41E1-4659-9C8F-B0ED5C8CD2B7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1179D826-41E1-4659-9C8F-B0ED5C8CD2B7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606487354.87170804</real>
+			<key>timeStoppedRecording</key>
+			<real>606487355.18135202</real>
+			<key>title</key>
+			<string>Build ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>1179D826-41E1-4659-9C8F-B0ED5C8CD2B7</string>
+		</dict>
 		<key>45D481BE-3F8F-46B3-9732-F0D6AAEF70F8</key>
 		<dict>
 			<key>className</key>
@@ -39,6 +73,40 @@
 			<string>Analyze ActionSheetPicker</string>
 			<key>uniqueIdentifier</key>
 			<string>45D481BE-3F8F-46B3-9732-F0D6AAEF70F8</string>
+		</dict>
+		<key>F5F9F7AE-2F5C-4F2C-8BE9-8109DD050A39</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F5F9F7AE-2F5C-4F2C-8BE9-8109DD050A39.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Analyze ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606486579.75357294</real>
+			<key>timeStoppedRecording</key>
+			<real>606486580.03913105</real>
+			<key>title</key>
+			<string>Analyze ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>F5F9F7AE-2F5C-4F2C-8BE9-8109DD050A39</string>
 		</dict>
 	</dict>
 </dict>

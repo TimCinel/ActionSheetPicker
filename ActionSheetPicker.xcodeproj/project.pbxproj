@@ -61,6 +61,7 @@
 		1D5B33E22425C196002DE39F /* ActionSheetPicker.entitlements in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33E42425C196002DE39F /* ActionSheetPicker.entitlements */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1DF981E8242642A500AE1CD0 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF981E7242642A500AE1CD0 /* ExternalAccessory.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -667,6 +668,31 @@
 			);
 			script = "/usr/sbin/dtrace\n";
 		};
+		1DF981E52426424600AE1CD0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = pattern.proxy;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		1DF981E62426425000AE1CD0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
@@ -709,6 +735,7 @@
 		1D5B33E72425C199002DE39F /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = German; path = German.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
 		1D5B33E82425C19A002DE39F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Japanese; path = Japanese.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1DF981E7242642A500AE1CD0 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -719,6 +746,7 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				1DF981E8242642A500AE1CD0 /* ExternalAccessory.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +839,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DF981E7242642A500AE1CD0 /* ExternalAccessory.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -877,6 +906,8 @@
 				1D5B33B52425AEF0002DE39F /* ShellScript */,
 			);
 			buildRules = (
+				1DF981E62426425000AE1CD0 /* PBXBuildRule */,
+				1DF981E52426424600AE1CD0 /* PBXBuildRule */,
 				1D5B33B12425AA31002DE39F /* PBXBuildRule */,
 				1D5B33B02425AA2B002DE39F /* PBXBuildRule */,
 				1D5B33AF2425AA25002DE39F /* PBXBuildRule */,
@@ -1109,6 +1140,8 @@
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = ActionSheetPicker/ActionSheetPicker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				"CODE_SIGN_STYLE[sdk=*]" = "";
 				"COPYING_PRESERVES_HFS_DATA[sdk=*]" = NO;
 				"COPY_HEADERS_UNIFDEF_FLAGS[sdk=*]" = "";
@@ -1120,7 +1153,7 @@
 				DEPLOYMENT_POSTPROCESSING = NO;
 				"DEPLOYMENT_POSTPROCESSING[sdk=*]" = NO;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
-				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=*]" = DRU6GYJP2F;
 				"DONT_GENERATE_INFOPLIST_FILE[sdk=*]" = NO;
 				"DRIVERKIT_DEPLOYMENT_TARGET[arch=*]" = 19.0;
@@ -1207,7 +1240,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=*]" = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				"PUBLIC_HEADERS_FOLDER_PATH[sdk=*]" = "$(CONTENTS_FOLDER_PATH)/Headers";
 				"REEXPORTED_FRAMEWORK_NAMES[arch=*]" = "";
 				"REEXPORTED_LIBRARY_NAMES[arch=*]" = "";
@@ -1307,6 +1342,8 @@
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = ActionSheetPicker/ActionSheetPicker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				"CODE_SIGN_STYLE[sdk=*]" = "";
 				"COPYING_PRESERVES_HFS_DATA[sdk=*]" = NO;
 				"COPY_HEADERS_UNIFDEF_FLAGS[sdk=*]" = "";
@@ -1318,7 +1355,7 @@
 				DEPLOYMENT_POSTPROCESSING = NO;
 				"DEPLOYMENT_POSTPROCESSING[sdk=*]" = NO;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
-				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=*]" = DRU6GYJP2F;
 				"DONT_GENERATE_INFOPLIST_FILE[sdk=*]" = NO;
 				"DRIVERKIT_DEPLOYMENT_TARGET[arch=*]" = 19.0;
@@ -1403,7 +1440,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=*]" = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				"PUBLIC_HEADERS_FOLDER_PATH[sdk=*]" = "$(CONTENTS_FOLDER_PATH)/Headers";
 				"REEXPORTED_FRAMEWORK_NAMES[arch=*]" = "";
 				"REEXPORTED_LIBRARY_NAMES[arch=*]" = "";
