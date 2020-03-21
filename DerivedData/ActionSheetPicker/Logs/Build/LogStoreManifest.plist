@@ -40,6 +40,40 @@
 			<key>uniqueIdentifier</key>
 			<string>1F2CBD31-03AE-44BC-AE4C-FEA1DA4113C9</string>
 		</dict>
+		<key>45D481BE-3F8F-46B3-9732-F0D6AAEF70F8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>45D481BE-3F8F-46B3-9732-F0D6AAEF70F8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Analyze ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606449514.56228006</real>
+			<key>timeStoppedRecording</key>
+			<real>606449514.80331194</real>
+			<key>title</key>
+			<string>Analyze ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>45D481BE-3F8F-46B3-9732-F0D6AAEF70F8</string>
+		</dict>
 		<key>62E7D56B-936B-4BC1-9E49-3AE059985DC5</key>
 		<dict>
 			<key>className</key>
