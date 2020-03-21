@@ -25,6 +25,42 @@
 		1C6EE738192BB4F600A27994 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */; };
 		1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
 		1D5B33B42425AB5D002DE39F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B33B32425AB5C002DE39F /* Images.xcassets */; };
+		1D5B33B72425AF27002DE39F /* Images.xcassets in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33B32425AB5C002DE39F /* Images.xcassets */; };
+		1D5B33B82425AF27002DE39F /* ActionSheetPicker.entitlements in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33B22425AB38002DE39F /* ActionSheetPicker.entitlements */; };
+		1D5B33B92425AF27002DE39F /* AbstractActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE726192BB4F600A27994 /* AbstractActionSheetPicker.h */; };
+		1D5B33BA2425AF27002DE39F /* AbstractActionSheetPicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
+		1D5B33BB2425AF27002DE39F /* ActionSheetCustomPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE728192BB4F600A27994 /* ActionSheetCustomPicker.h */; };
+		1D5B33BC2425AF27002DE39F /* ActionSheetCustomPicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */; };
+		1D5B33BD2425AF27002DE39F /* ActionSheetCustomPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72A192BB4F600A27994 /* ActionSheetCustomPickerDelegate.h */; };
+		1D5B33BE2425AF27002DE39F /* ActionSheetDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72B192BB4F600A27994 /* ActionSheetDatePicker.h */; };
+		1D5B33BF2425AF27002DE39F /* ActionSheetDatePicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */; };
+		1D5B33C02425AF27002DE39F /* ActionSheetDistancePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72D192BB4F600A27994 /* ActionSheetDistancePicker.h */; };
+		1D5B33C12425AF27002DE39F /* ActionSheetDistancePicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72E192BB4F600A27994 /* ActionSheetDistancePicker.m */; };
+		1D5B33C22425AF27002DE39F /* ActionSheetStringPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE72F192BB4F600A27994 /* ActionSheetStringPicker.h */; };
+		1D5B33C32425AF27002DE39F /* ActionSheetStringPicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE730192BB4F600A27994 /* ActionSheetStringPicker.m */; };
+		1D5B33C42425AF27002DE39F /* DistancePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE731192BB4F600A27994 /* DistancePickerView.h */; };
+		1D5B33C52425AF27002DE39F /* DistancePickerView.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
+		1D5B33C62425AF27002DE39F /* ActionSheetPicker_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */; };
+		1D5B33C72425AF27002DE39F /* ActionSheetPicker-Info.plist in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; };
+		1D5B33C82425AF27002DE39F /* ActionSheetPickerViewController-iPad.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */; };
+		1D5B33C92425AF27002DE39F /* ActionSheetPickerViewController.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE708192BB41600A27994 /* ActionSheetPickerViewController.xib */; };
+		1D5B33CA2425AF27002DE39F /* ActionSheetPickerAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */; };
+		1D5B33CB2425AF27002DE39F /* ActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE725192BB49E00A27994 /* ActionSheetPicker.h */; };
+		1D5B33CC2425AF27002DE39F /* ActionSheetPickerAppDelegate.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */; };
+		1D5B33CD2425AF28002DE39F /* ActionSheetPickerCustomPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70C192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.h */; };
+		1D5B33CE2425AF28002DE39F /* ActionSheetPickerCustomPickerDelegate.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */; };
+		1D5B33CF2425AF28002DE39F /* ActionSheetPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70E192BB41600A27994 /* ActionSheetPickerViewController.h */; };
+		1D5B33D02425AF28002DE39F /* ActionSheetPickerViewController.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */; };
+		1D5B33D12425AF28002DE39F /* NSDate+TCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE710192BB41600A27994 /* NSDate+TCUtils.h */; };
+		1D5B33D22425AF28002DE39F /* NSDate+TCUtils.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */; };
+		1D5B33D32425AF28002DE39F /* Default-568h@2x.png in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE712192BB41600A27994 /* Default-568h@2x.png */; };
+		1D5B33D42425AF28002DE39F /* MainWindow-iPad.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE714192BB41600A27994 /* MainWindow-iPad.xib */; };
+		1D5B33D52425AF28002DE39F /* main.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
+		1D5B33D62425AF28002DE39F /* MainWindow.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE716192BB41600A27994 /* MainWindow.xib */; };
+		1D5B33D72425AF28002DE39F /* UIKit.framework in Headers */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1D5B33D82425AF28002DE39F /* Foundation.framework in Headers */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1D5B33D92425AF28002DE39F /* CoreGraphics.framework in Headers */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		1D5B33DA2425AF28002DE39F /* ActionSheetPicker.app in Headers */ = {isa = PBXBuildFile; fileRef = 1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -782,14 +818,62 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1D5B33B62425AEF5002DE39F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D5B33B72425AF27002DE39F /* Images.xcassets in Headers */,
+				1D5B33B82425AF27002DE39F /* ActionSheetPicker.entitlements in Headers */,
+				1D5B33B92425AF27002DE39F /* AbstractActionSheetPicker.h in Headers */,
+				1D5B33BA2425AF27002DE39F /* AbstractActionSheetPicker.m in Headers */,
+				1D5B33BB2425AF27002DE39F /* ActionSheetCustomPicker.h in Headers */,
+				1D5B33BC2425AF27002DE39F /* ActionSheetCustomPicker.m in Headers */,
+				1D5B33BD2425AF27002DE39F /* ActionSheetCustomPickerDelegate.h in Headers */,
+				1D5B33BE2425AF27002DE39F /* ActionSheetDatePicker.h in Headers */,
+				1D5B33BF2425AF27002DE39F /* ActionSheetDatePicker.m in Headers */,
+				1D5B33C02425AF27002DE39F /* ActionSheetDistancePicker.h in Headers */,
+				1D5B33C12425AF27002DE39F /* ActionSheetDistancePicker.m in Headers */,
+				1D5B33C22425AF27002DE39F /* ActionSheetStringPicker.h in Headers */,
+				1D5B33C32425AF27002DE39F /* ActionSheetStringPicker.m in Headers */,
+				1D5B33C42425AF27002DE39F /* DistancePickerView.h in Headers */,
+				1D5B33C52425AF27002DE39F /* DistancePickerView.m in Headers */,
+				1D5B33C62425AF27002DE39F /* ActionSheetPicker_Prefix.pch in Headers */,
+				1D5B33C72425AF27002DE39F /* ActionSheetPicker-Info.plist in Headers */,
+				1D5B33C82425AF27002DE39F /* ActionSheetPickerViewController-iPad.xib in Headers */,
+				1D5B33C92425AF27002DE39F /* ActionSheetPickerViewController.xib in Headers */,
+				1D5B33CA2425AF27002DE39F /* ActionSheetPickerAppDelegate.h in Headers */,
+				1D5B33CB2425AF27002DE39F /* ActionSheetPicker.h in Headers */,
+				1D5B33CC2425AF27002DE39F /* ActionSheetPickerAppDelegate.m in Headers */,
+				1D5B33CD2425AF28002DE39F /* ActionSheetPickerCustomPickerDelegate.h in Headers */,
+				1D5B33CE2425AF28002DE39F /* ActionSheetPickerCustomPickerDelegate.m in Headers */,
+				1D5B33CF2425AF28002DE39F /* ActionSheetPickerViewController.h in Headers */,
+				1D5B33D02425AF28002DE39F /* ActionSheetPickerViewController.m in Headers */,
+				1D5B33D12425AF28002DE39F /* NSDate+TCUtils.h in Headers */,
+				1D5B33D22425AF28002DE39F /* NSDate+TCUtils.m in Headers */,
+				1D5B33D32425AF28002DE39F /* Default-568h@2x.png in Headers */,
+				1D5B33D42425AF28002DE39F /* MainWindow-iPad.xib in Headers */,
+				1D5B33D52425AF28002DE39F /* main.m in Headers */,
+				1D5B33D62425AF28002DE39F /* MainWindow.xib in Headers */,
+				1D5B33D72425AF28002DE39F /* UIKit.framework in Headers */,
+				1D5B33D82425AF28002DE39F /* Foundation.framework in Headers */,
+				1D5B33D92425AF28002DE39F /* CoreGraphics.framework in Headers */,
+				1D5B33DA2425AF28002DE39F /* ActionSheetPicker.app in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1D6058900D05DD3D006BFB54 /* ActionSheetPicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ActionSheetPicker" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D5B33B62425AEF5002DE39F /* Headers */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				1D5B33B52425AEF0002DE39F /* ShellScript */,
 			);
 			buildRules = (
 				1D5B33B12425AA31002DE39F /* PBXBuildRule */,
@@ -893,6 +977,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D5B33B52425AEF0002DE39F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/newInputFile.xcfilelist",
+			);
+			inputPaths = (
+				"$(SRCROOT)/newInputFile",
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/newOutputFile.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
