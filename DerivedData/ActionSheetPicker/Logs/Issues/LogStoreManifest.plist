@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>C738C50C-81F0-4802-8C11-42E7F62D419D</key>
+		<key>AFA6E89A-FFAD-43A7-B3B2-950E365F70EA</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>C738C50C-81F0-4802-8C11-42E7F62D419D.xcactivitylog</string>
+			<string>AFA6E89A-FFAD-43A7-B3B2-950E365F70EA.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,13 +26,13 @@
 			<key>signature</key>
 			<string>ActionSheetPicker-dsdqojjdpitphcenpfwswripeetd</string>
 			<key>timeStartedRecording</key>
-			<real>606447975.06281102</real>
+			<real>606448391.23334396</real>
 			<key>timeStoppedRecording</key>
-			<real>606447975.06521702</real>
+			<real>606448391.23461604</real>
 			<key>title</key>
 			<string>Build target ActionSheetPicker</string>
 			<key>uniqueIdentifier</key>
-			<string>C738C50C-81F0-4802-8C11-42E7F62D419D</string>
+			<string>AFA6E89A-FFAD-43A7-B3B2-950E365F70EA</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

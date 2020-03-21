@@ -74,6 +74,40 @@
 			<key>uniqueIdentifier</key>
 			<string>62E7D56B-936B-4BC1-9E49-3AE059985DC5</string>
 		</dict>
+		<key>AA21052A-94FF-460F-BB6D-E7A822C82159</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>AA21052A-94FF-460F-BB6D-E7A822C82159.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606448390.98783004</real>
+			<key>timeStoppedRecording</key>
+			<real>606448391.25534904</real>
+			<key>title</key>
+			<string>Build ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>AA21052A-94FF-460F-BB6D-E7A822C82159</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
