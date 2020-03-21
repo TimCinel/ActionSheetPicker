@@ -17,7 +17,6 @@
 		1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE714192BB41600A27994 /* MainWindow-iPad.xib */; settings = {ASSET_TAGS = (New, ); }; };
 		1C6EE720192BB41600A27994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
 		1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE716192BB41600A27994 /* MainWindow.xib */; settings = {ASSET_TAGS = (New, ); }; };
-		1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; settings = {ASSET_TAGS = (New, ); }; };
 		1C6EE734192BB4F600A27994 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
 		1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */; };
 		1C6EE736192BB4F600A27994 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */; };
@@ -26,7 +25,6 @@
 		1C6EE739192BB4F600A27994 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
 		1D5B33B42425AB5D002DE39F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B33B32425AB5C002DE39F /* Images.xcassets */; };
 		1D5B33B72425AF27002DE39F /* Images.xcassets in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33B32425AB5C002DE39F /* Images.xcassets */; };
-		1D5B33B82425AF27002DE39F /* ActionSheetPicker.entitlements in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33B22425AB38002DE39F /* ActionSheetPicker.entitlements */; };
 		1D5B33B92425AF27002DE39F /* AbstractActionSheetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE726192BB4F600A27994 /* AbstractActionSheetPicker.h */; };
 		1D5B33BA2425AF27002DE39F /* AbstractActionSheetPicker.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
 		1D5B33BB2425AF27002DE39F /* ActionSheetCustomPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE728192BB4F600A27994 /* ActionSheetCustomPicker.h */; };
@@ -41,7 +39,6 @@
 		1D5B33C42425AF27002DE39F /* DistancePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE731192BB4F600A27994 /* DistancePickerView.h */; };
 		1D5B33C52425AF27002DE39F /* DistancePickerView.m in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE732192BB4F600A27994 /* DistancePickerView.m */; };
 		1D5B33C62425AF27002DE39F /* ActionSheetPicker_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */; };
-		1D5B33C72425AF27002DE39F /* ActionSheetPicker-Info.plist in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; };
 		1D5B33C82425AF27002DE39F /* ActionSheetPickerViewController-iPad.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */; };
 		1D5B33C92425AF27002DE39F /* ActionSheetPickerViewController.xib in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE708192BB41600A27994 /* ActionSheetPickerViewController.xib */; };
 		1D5B33CA2425AF27002DE39F /* ActionSheetPickerAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6EE70A192BB41600A27994 /* ActionSheetPickerAppDelegate.h */; };
@@ -61,6 +58,7 @@
 		1D5B33D82425AF28002DE39F /* Foundation.framework in Headers */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1D5B33D92425AF28002DE39F /* CoreGraphics.framework in Headers */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		1D5B33DA2425AF28002DE39F /* ActionSheetPicker.app in Headers */ = {isa = PBXBuildFile; fileRef = 1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */; };
+		1D5B33E22425C196002DE39F /* ActionSheetPicker.entitlements in Headers */ = {isa = PBXBuildFile; fileRef = 1D5B33E42425C196002DE39F /* ActionSheetPicker.entitlements */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -704,8 +702,12 @@
 		1C6EE732192BB4F600A27994 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
 		1CD15A2F192C7A0A00B28881 /* ActionSheetPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionSheetPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D5B33B22425AB38002DE39F /* ActionSheetPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ActionSheetPicker.entitlements; path = ActionSheetPicker/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
 		1D5B33B32425AB5C002DE39F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ActionSheetPicker/Images.xcassets; sourceTree = "<group>"; };
+		1D5B33E32425C196002DE39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Base; path = Base.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
+		1D5B33E52425C197002DE39F /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = English; path = English.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
+		1D5B33E62425C198002DE39F /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = French; path = French.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
+		1D5B33E72425C199002DE39F /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = German; path = German.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
+		1D5B33E82425C19A002DE39F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Japanese; path = Japanese.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -795,7 +797,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5B33B32425AB5C002DE39F /* Images.xcassets */,
-				1D5B33B22425AB38002DE39F /* ActionSheetPicker.entitlements */,
+				1D5B33E42425C196002DE39F /* ActionSheetPicker.entitlements */,
 				1C6EE733192BB4F600A27994 /* Pickers */,
 				1C6EE722192BB47000A27994 /* ActionSheetPicker_Prefix.pch */,
 				1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */,
@@ -824,7 +826,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D5B33B72425AF27002DE39F /* Images.xcassets in Headers */,
-				1D5B33B82425AF27002DE39F /* ActionSheetPicker.entitlements in Headers */,
+				1D5B33E22425C196002DE39F /* ActionSheetPicker.entitlements in Headers */,
 				1D5B33B92425AF27002DE39F /* AbstractActionSheetPicker.h in Headers */,
 				1D5B33BA2425AF27002DE39F /* AbstractActionSheetPicker.m in Headers */,
 				1D5B33BB2425AF27002DE39F /* ActionSheetCustomPicker.h in Headers */,
@@ -839,7 +841,6 @@
 				1D5B33C42425AF27002DE39F /* DistancePickerView.h in Headers */,
 				1D5B33C52425AF27002DE39F /* DistancePickerView.m in Headers */,
 				1D5B33C62425AF27002DE39F /* ActionSheetPicker_Prefix.pch in Headers */,
-				1D5B33C72425AF27002DE39F /* ActionSheetPicker-Info.plist in Headers */,
 				1D5B33C82425AF27002DE39F /* ActionSheetPickerViewController-iPad.xib in Headers */,
 				1D5B33C92425AF27002DE39F /* ActionSheetPickerViewController.xib in Headers */,
 				1D5B33CA2425AF27002DE39F /* ActionSheetPickerAppDelegate.h in Headers */,
@@ -937,7 +938,7 @@
 				KnownAssetTags = (
 					New,
 				);
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Personal Team";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ActionSheetPicker" */;
@@ -966,7 +967,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */,
 				1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */,
 				1D5B33B42425AB5D002DE39F /* Images.xcassets in Resources */,
 				1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */,
@@ -1023,6 +1023,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D5B33E42425C196002DE39F /* ActionSheetPicker.entitlements */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D5B33E32425C196002DE39F /* Base */,
+				1D5B33E52425C197002DE39F /* English */,
+				1D5B33E62425C198002DE39F /* French */,
+				1D5B33E72425C199002DE39F /* German */,
+				1D5B33E82425C19A002DE39F /* Japanese */,
+			);
+			name = ActionSheetPicker.entitlements;
+			path = ActionSheetPicker;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -1133,11 +1149,36 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
 				"INFOPLIST_FILE[sdk=*]" = "";
@@ -1155,12 +1196,36 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
 				"INFOPLIST_FILE[sdk=*]" = "";
