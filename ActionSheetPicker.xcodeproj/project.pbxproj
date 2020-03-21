@@ -62,6 +62,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		1DF981E8242642A500AE1CD0 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF981E7242642A500AE1CD0 /* ExternalAccessory.framework */; };
+		1DF981EA2426447100AE1CD0 /* ActionSheetPicker in Resources */ = {isa = PBXBuildFile; fileRef = 1DF981E92426447100AE1CD0 /* ActionSheetPicker */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -736,6 +737,7 @@
 		1D5B33E82425C19A002DE39F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Japanese; path = Japanese.lproj/ActionSheetPicker.entitlements; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1DF981E7242642A500AE1CD0 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		1DF981E92426447100AE1CD0 /* ActionSheetPicker */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ActionSheetPicker; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -824,6 +826,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1DF981E92426447100AE1CD0 /* ActionSheetPicker */,
 				1D5B33B32425AB5C002DE39F /* Images.xcassets */,
 				1D5B33E42425C196002DE39F /* ActionSheetPicker.entitlements */,
 				1C6EE733192BB4F600A27994 /* Pickers */,
@@ -1000,6 +1003,7 @@
 			files = (
 				1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */,
 				1D5B33B42425AB5D002DE39F /* Images.xcassets in Resources */,
+				1DF981EA2426447100AE1CD0 /* ActionSheetPicker in Resources */,
 				1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */,
 				1C6EE719192BB41600A27994 /* ActionSheetPickerViewController.xib in Resources */,
 				1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */,
