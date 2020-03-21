@@ -917,8 +917,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
+				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -943,8 +946,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
+				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
