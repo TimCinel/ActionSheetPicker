@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,611 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		1D02B7B524257634007833D3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.metal;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# metal\n";
+		};
+		1D02B7B624257639007833D3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.rcproject;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# rctool\n";
+		};
+		1D02B7B724257640007833D3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.scncache;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# compileSceneKitShaders\n";
+		};
+		1D02B7B824257666007833D3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.skybox;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# rctool\n";
+		};
+		1D02B7B92425766C007833D3 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = text.plist;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# builtin-copyPlist\n";
+		};
+		1D5B338C2425A934002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.bplist;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# builtin-copyPlist\n";
+		};
+		1D5B338D2425A93A002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = image.png;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# copypng\n";
+		};
+		1D5B338E2425A93F002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.scnassets;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# copySceneKitAssets\n";
+		};
+		1D5B338F2425A945002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = text.plist.strings;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# builtin-copyStrings\n";
+		};
+		1D5B33902425A94C002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = text.plist.stringsdict;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# builtin-copyStrings\n";
+		};
+		1D5B33912425A950002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = image.tiff;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# builtin-copyTiff\n";
+		};
+		1D5B33922425A957002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = folder.skatlas;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# TextureAtlas\n";
+		};
+		1D5B33932425A95D002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = folder.assetcatalog;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# actool\n";
+		};
+		1D5B33942425A963002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = folder.imagecatalog;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# actool\n";
+		};
+		1D5B33952425A969002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = folder.stickers;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# actool\n";
+		};
+		1D5B33962425A970002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.mlmodel;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# coremlc\n";
+		};
+		1D5B33972425A976002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.dtrace;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "/usr/sbin/dtrace\n";
+		};
+		1D5B33982425A980002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = folder.iconset;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# iconutil\n";
+		};
+		1D5B33992425A98A002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.iig;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# iig\n";
+		};
+		1D5B339A2425A991002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = "com.apple.instruments.package-definition";
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# $(INSTRUMENTS_PACKAGE_BUILDER)\n";
+		};
+		1D5B339B2425A99A002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.intentdefinition;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# intentbuilderc\n";
+		};
+		1D5B339C2425A9A0002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = compiled.air;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# metallib\n";
+		};
+		1D5B339D2425A9A8002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.xcdatamodeld;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# momc\n";
+		};
+		1D5B339E2425A9AF002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.xcdatamodel;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# momc\n";
+		};
+		1D5B339F2425A9B5002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.xcmappingmodel;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# mapc\n";
+		};
+		1D5B33A02425A9BC002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.nasm;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "$(DEVELOPER_BIN_DIR)/nasm\n";
+		};
+		1D5B33A12425A9C2002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.opencl;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# <com.apple.compilers.opencl>\n";
+		};
+		1D5B33A22425A9CA002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = text.xml.dae;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# scntool\n";
+		};
+		1D5B33A32425A9D0002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.xib;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# ibtool\n";
+		};
+		1D5B33A42425A9D7002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.nib;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# ibtool\n";
+		};
+		1D5B33A52425A9DD002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = file.storyboard;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# ibtool\n";
+		};
+		1D5B33A62425A9E4002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.storyboardc;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# ibtool\n";
+		};
+		1D5B33A72425A9EA002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = wrapper.storyboardc;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# ibtool\n";
+		};
+		1D5B33A82425A9F3002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.swift;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# $(SWIFT_EXEC)\n";
+		};
+		1D5B33A92425A9F9002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.c;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# <com.apple.compilers.gcc>\n";
+		};
+		1D5B33AA2425AA03002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.nasm;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "$(DEVELOPER_BIN_DIR)/nasm\n";
+		};
+		1D5B33AB2425AA0B002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.asm;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# <com.apple.compilers.gcc>\n";
+		};
+		1D5B33AC2425AA12002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.lex;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# $(LEX)\n";
+		};
+		1D5B33AD2425AA19002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.yacc;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# $(YACC)\n";
+		};
+		1D5B33AE2425AA20002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.rez;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "$(DEVELOPER_BIN_DIR)/Rez\n";
+		};
+		1D5B33AF2425AA25002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.mig;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# mig\n";
+		};
+		1D5B33B02425AA2B002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.iig;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "# iig\n";
+		};
+		1D5B33B12425AA31002DE39F /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			fileType = sourcecode.dtrace;
+			inputFiles = (
+				"$(SRCROOT)/newInputFile",
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			script = "/usr/sbin/dtrace\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ActionSheetPickerViewController-iPad.xib"; sourceTree = "<group>"; };
@@ -182,6 +787,49 @@
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 			);
 			buildRules = (
+				1D5B33B12425AA31002DE39F /* PBXBuildRule */,
+				1D5B33B02425AA2B002DE39F /* PBXBuildRule */,
+				1D5B33AF2425AA25002DE39F /* PBXBuildRule */,
+				1D5B33AE2425AA20002DE39F /* PBXBuildRule */,
+				1D5B33AD2425AA19002DE39F /* PBXBuildRule */,
+				1D5B33AC2425AA12002DE39F /* PBXBuildRule */,
+				1D5B33AB2425AA0B002DE39F /* PBXBuildRule */,
+				1D5B33AA2425AA03002DE39F /* PBXBuildRule */,
+				1D5B33A92425A9F9002DE39F /* PBXBuildRule */,
+				1D5B33A82425A9F3002DE39F /* PBXBuildRule */,
+				1D5B33A72425A9EA002DE39F /* PBXBuildRule */,
+				1D5B33A62425A9E4002DE39F /* PBXBuildRule */,
+				1D5B33A52425A9DD002DE39F /* PBXBuildRule */,
+				1D5B33A42425A9D7002DE39F /* PBXBuildRule */,
+				1D5B33A32425A9D0002DE39F /* PBXBuildRule */,
+				1D5B33A22425A9CA002DE39F /* PBXBuildRule */,
+				1D5B33A12425A9C2002DE39F /* PBXBuildRule */,
+				1D5B33A02425A9BC002DE39F /* PBXBuildRule */,
+				1D5B339F2425A9B5002DE39F /* PBXBuildRule */,
+				1D5B339E2425A9AF002DE39F /* PBXBuildRule */,
+				1D5B339D2425A9A8002DE39F /* PBXBuildRule */,
+				1D5B339C2425A9A0002DE39F /* PBXBuildRule */,
+				1D5B339B2425A99A002DE39F /* PBXBuildRule */,
+				1D5B339A2425A991002DE39F /* PBXBuildRule */,
+				1D5B33992425A98A002DE39F /* PBXBuildRule */,
+				1D5B33982425A980002DE39F /* PBXBuildRule */,
+				1D5B33972425A976002DE39F /* PBXBuildRule */,
+				1D5B33962425A970002DE39F /* PBXBuildRule */,
+				1D5B33952425A969002DE39F /* PBXBuildRule */,
+				1D5B33942425A963002DE39F /* PBXBuildRule */,
+				1D5B33932425A95D002DE39F /* PBXBuildRule */,
+				1D5B33922425A957002DE39F /* PBXBuildRule */,
+				1D5B33912425A950002DE39F /* PBXBuildRule */,
+				1D5B33902425A94C002DE39F /* PBXBuildRule */,
+				1D5B338F2425A945002DE39F /* PBXBuildRule */,
+				1D5B338E2425A93F002DE39F /* PBXBuildRule */,
+				1D5B338D2425A93A002DE39F /* PBXBuildRule */,
+				1D5B338C2425A934002DE39F /* PBXBuildRule */,
+				1D02B7B92425766C007833D3 /* PBXBuildRule */,
+				1D02B7B824257666007833D3 /* PBXBuildRule */,
+				1D02B7B724257640007833D3 /* PBXBuildRule */,
+				1D02B7B624257639007833D3 /* PBXBuildRule */,
+				1D02B7B524257634007833D3 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);

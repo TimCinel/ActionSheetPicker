@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>1F2CBD31-03AE-44BC-AE4C-FEA1DA4113C9</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1F2CBD31-03AE-44BC-AE4C-FEA1DA4113C9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606447878.85718298</real>
+			<key>timeStoppedRecording</key>
+			<real>606447975.08612299</real>
+			<key>title</key>
+			<string>Build ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>1F2CBD31-03AE-44BC-AE4C-FEA1DA4113C9</string>
+		</dict>
+		<key>62E7D56B-936B-4BC1-9E49-3AE059985DC5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>62E7D56B-936B-4BC1-9E49-3AE059985DC5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActionSheetPicker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActionSheetPicker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActionSheetPicker</string>
+			<key>timeStartedRecording</key>
+			<real>606434161.95736396</real>
+			<key>timeStoppedRecording</key>
+			<real>606434162.18875301</real>
+			<key>title</key>
+			<string>Build ActionSheetPicker</string>
+			<key>uniqueIdentifier</key>
+			<string>62E7D56B-936B-4BC1-9E49-3AE059985DC5</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
