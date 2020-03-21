@@ -3,9 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>de_DE</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleGetInfoString</key>
+			<string></string>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>Default-568h@2x.png</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
@@ -18,6 +29,22 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>Default-568h@2x</string>
+			<key>CFBundleURLTypes</key>
+			<array>
+				<dict>
+					<key>CFBundleURLName</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,6 +64,50 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTExportedTypeDeclarations</key>
+			<array>
+				<dict>
+					<key>UTTypeConformsTo</key>
+					<array>
+						<string></string>
+					</array>
+					<key>UTTypeIdentifier</key>
+					<string></string>
+					<key>UTTypeTagSpecification</key>
+					<dict/>
+				</dict>
+			</array>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>Default-568h@2x.png</string>
+			</array>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTImportedTypeDeclarations</key>
+			<array>
+				<dict>
+					<key>UTTypeConformsTo</key>
+					<array>
+						<string></string>
+					</array>
+					<key>UTTypeIdentifier</key>
+					<string></string>
+					<key>UTTypeTagSpecification</key>
+					<dict/>
+				</dict>
+			</array>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>Default-568h@2x.png</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

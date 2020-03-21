@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C6EE718192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */; };
-		1C6EE719192BB41600A27994 /* ActionSheetPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE708192BB41600A27994 /* ActionSheetPickerViewController.xib */; };
+		1C6EE718192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE707192BB41600A27994 /* ActionSheetPickerViewController-iPad.xib */; settings = {ASSET_TAGS = (New, ); }; };
+		1C6EE719192BB41600A27994 /* ActionSheetPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE708192BB41600A27994 /* ActionSheetPickerViewController.xib */; settings = {ASSET_TAGS = (New, ); }; };
 		1C6EE71A192BB41600A27994 /* ActionSheetPickerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70B192BB41600A27994 /* ActionSheetPickerAppDelegate.m */; };
 		1C6EE71B192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70D192BB41600A27994 /* ActionSheetPickerCustomPickerDelegate.m */; };
 		1C6EE71C192BB41600A27994 /* ActionSheetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE70F192BB41600A27994 /* ActionSheetPickerViewController.m */; };
 		1C6EE71D192BB41600A27994 /* NSDate+TCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE711192BB41600A27994 /* NSDate+TCUtils.m */; };
-		1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE712192BB41600A27994 /* Default-568h@2x.png */; };
-		1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE714192BB41600A27994 /* MainWindow-iPad.xib */; };
+		1C6EE71E192BB41600A27994 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE712192BB41600A27994 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (New, ); }; };
+		1C6EE71F192BB41600A27994 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE714192BB41600A27994 /* MainWindow-iPad.xib */; settings = {ASSET_TAGS = (New, ); }; };
 		1C6EE720192BB41600A27994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE715192BB41600A27994 /* main.m */; };
-		1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE716192BB41600A27994 /* MainWindow.xib */; };
-		1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; };
+		1C6EE721192BB41600A27994 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE716192BB41600A27994 /* MainWindow.xib */; settings = {ASSET_TAGS = (New, ); }; };
+		1C6EE724192BB47000A27994 /* ActionSheetPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EE723192BB47000A27994 /* ActionSheetPicker-Info.plist */; settings = {ASSET_TAGS = (New, ); }; };
 		1C6EE734192BB4F600A27994 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE727192BB4F600A27994 /* AbstractActionSheetPicker.m */; };
 		1C6EE735192BB4F600A27994 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE729192BB4F600A27994 /* ActionSheetCustomPicker.m */; };
 		1C6EE736192BB4F600A27994 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EE72C192BB4F600A27994 /* ActionSheetDatePicker.m */; };
@@ -849,6 +849,10 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Developer;
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Personal Team";
 			};
@@ -861,6 +865,7 @@
 				Japanese,
 				French,
 				German,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 1CD15A30192C7A0A00B28881 /* Products */;
@@ -915,26 +920,50 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ALWAYS_SEARCH_USER_PATHS[arch=*]" = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[arch=*]" = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CLANG_ENABLE_OBJC_ARC[arch=*]" = YES;
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
+				"COPY_PHASE_STRIP[sdk=*]" = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
 				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				"DEVELOPMENT_TEAM[sdk=*]" = DRU6GYJP2F;
+				"ENABLE_HARDENED_RUNTIME[sdk=*]" = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				"GCC_DYNAMIC_NO_PIC[arch=*]" = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				"GCC_OPTIMIZATION_LEVEL[arch=*]" = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				"GCC_PRECOMPILE_PREFIX_HEADER[arch=*]" = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
+				"GCC_PREFIX_HEADER[arch=*]" = ActionSheetPicker_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				"GCC_VERSION[arch=*]" = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				"GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS[arch=*]" = YES;
+				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
+				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				"INFOPLIST_FILE[sdk=*]" = "ActionSheetPicker-Info.plist";
+				"INSTALL_PATH[sdk=*]" = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 13.4;
 				MARKETING_VERSION = 1.0;
+				"OTHER_CFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=*]" = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
+				"SDKROOT[arch=*]" = iphoneos;
+				"STRIP_INSTALLED_PRODUCT[sdk=*]" = YES;
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -944,24 +973,48 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ALWAYS_SEARCH_USER_PATHS[arch=*]" = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[arch=*]" = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CLANG_ENABLE_OBJC_ARC[arch=*]" = YES;
 				CODE_SIGN_ENTITLEMENTS = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = ActionSheetPicker/ActionSheetPicker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = YES;
+				"COPY_PHASE_STRIP[sdk=*]" = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pickers/ActionSheetDistancePicker.m Example/Classes/NSDate+TCUtils.m Pickers/ActionSheetCustomPicker.h Pickers/ActionSheetDatePicker.h Pickers/AbstractActionSheetPicker.m Example/Classes/ActionSheetPickerCustomPickerDelegate.h Pickers/ActionSheetStringPicker.h Pickers/DistancePickerView.m Example/Classes/ActionSheetPickerCustomPickerDelegate.m Example Pickers/ActionSheetCustomPicker.m Pickers/ActionSheetCustomPickerDelegate.h Example/main.m ActionSheetPicker_Prefix.pch Pickers/ActionSheetStringPicker.m Example/Classes/ActionSheetPickerViewController.h Example/Classes/ActionSheetPicker.h Pickers/ActionSheetDistancePicker.h Pickers/AbstractActionSheetPicker.h Example/Classes/ActionSheetPickerAppDelegate.m Example/iPad/MainWindow-iPad.xib Example/Classes/ActionSheetPickerAppDelegate.h Example/Default-568h@2x.png ActionSheetPicker/Images.xcassets Example/ActionSheetPickerViewController.xib Example/MainWindow.xib Pickers/DistancePickerView.h Example/iPad ActionSheetPicker-Info.plist Example/Classes Example/Classes/ActionSheetPickerViewController.m ActionSheetPicker/ActionSheetPicker.entitlements Example/ActionSheetPickerViewController-iPad.xib Example/Classes/NSDate+TCUtils.h Pickers/ActionSheetDatePicker.m Pickers";
 				DEVELOPMENT_TEAM = DRU6GYJP2F;
+				"DEVELOPMENT_TEAM[sdk=*]" = DRU6GYJP2F;
+				"ENABLE_HARDENED_RUNTIME[sdk=*]" = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
+				"GCC_DYNAMIC_NO_PIC[arch=*]" = NO;
+				"GCC_OPTIMIZATION_LEVEL[arch=*]" = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				"GCC_PRECOMPILE_PREFIX_HEADER[arch=*]" = YES;
 				GCC_PREFIX_HEADER = ActionSheetPicker_Prefix.pch;
+				"GCC_PREFIX_HEADER[arch=*]" = ActionSheetPicker_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				"GCC_VERSION[arch=*]" = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				"GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS[arch=*]" = YES;
+				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
+				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
 				INFOPLIST_FILE = "ActionSheetPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				"INFOPLIST_FILE[sdk=*]" = "ActionSheetPicker-Info.plist";
+				"INSTALL_PATH[sdk=*]" = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 13.4;
 				MARKETING_VERSION = 1.0;
+				"OTHER_CFLAGS[arch=*]" = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=*]" = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ActionSheetPicker;
 				SDKROOT = iphoneos;
+				"SDKROOT[arch=*]" = iphoneos;
+				"STRIP_INSTALLED_PRODUCT[sdk=*]" = YES;
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -971,26 +1024,45 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				"INSTALL_PATH[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 13.4;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
+				"SDKROOT[arch=*]" = iphoneos;
+				"STRIP_INSTALLED_PRODUCT[sdk=*]" = YES;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				"GCC_C_LANGUAGE_STANDARD[arch=*]" = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				"GCC_WARN_ABOUT_RETURN_TYPE[arch=*]" = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				"GCC_WARN_UNUSED_VARIABLE[arch=*]" = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				"INSTALL_PATH[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 13.4;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"OTHER_CFLAGS[arch=*]" = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				"SDKROOT[arch=*]" = iphoneos;
+				"STRIP_INSTALLED_PRODUCT[sdk=*]" = YES;
 			};
 			name = Release;
 		};
@@ -1004,7 +1076,7 @@
 				1D6058950D05DD3E006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ActionSheetPicker" */ = {
 			isa = XCConfigurationList;
@@ -1013,7 +1085,7 @@
 				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
