@@ -100,20 +100,24 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
 // Inside a IBAction method:
 
 // Create an array of strings you want to show in the picker:
-NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
 
-[ActionSheetStringPicker showPickerWithTitle:@"Select a Color"
-                                        rows:colors
-                            initialSelection:0
-                                   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                      NSLog(@"Picker: %@, Index: %@, value: %@",
-                                      picker, selectedIndex, selectedValue);
-                                    }
-                                 cancelBlock:^(ActionSheetStringPicker *picker) {
-                                      NSLog(@"Block Picker Canceled");
-                                    }
-                                      origin:sender];
-// You can also use self.view if you don't have a sender
+// Done block:
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        NSLog(@"Picker: %@", picker);
+        NSLog(@"Selected Index: %@", selectedIndex);
+        NSLog(@"Selected Value: %@", selectedValue);
+    };
+
+
+// cancel block:
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+
+// Run!
+    [ActionSheetStringPicker showPickerWithTitle:@"Select a Color" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+
 ```
 
 ## Installation
