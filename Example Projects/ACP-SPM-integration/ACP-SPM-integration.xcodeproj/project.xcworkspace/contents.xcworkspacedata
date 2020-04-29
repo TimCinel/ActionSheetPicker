@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ActionSheetPicker.xcodeproj">
+      location = "self:ACP-SPM-integration.xcodeproj">
    </FileRef>
 </Workspace>
