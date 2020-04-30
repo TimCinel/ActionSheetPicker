@@ -100,20 +100,24 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
 // Inside a IBAction method:
 
 // Create an array of strings you want to show in the picker:
-NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange", nil];
+    NSArray *colors = @[@"Red", @"Green", @"Blue", @"Orange"];
 
-[ActionSheetStringPicker showPickerWithTitle:@"Select a Color"
-                                        rows:colors
-                            initialSelection:0
-                                   doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                      NSLog(@"Picker: %@, Index: %@, value: %@",
-                                      picker, selectedIndex, selectedValue);
-                                    }
-                                 cancelBlock:^(ActionSheetStringPicker *picker) {
-                                      NSLog(@"Block Picker Canceled");
-                                    }
-                                      origin:sender];
-// You can also use self.view if you don't have a sender
+// Done block:
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        NSLog(@"Picker: %@", picker);
+        NSLog(@"Selected Index: %@", selectedIndex);
+        NSLog(@"Selected Value: %@", selectedValue);
+    };
+
+
+// cancel block:
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+
+// Run!
+    [ActionSheetStringPicker showPickerWithTitle:@"Select a Color" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+
 ```
 
 ## Installation
@@ -279,7 +283,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/delackner"><img src="https://avatars2.githubusercontent.com/u/478341?v=4" width="100px;" alt=""/><br /><sub><b>Seth Delackner</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=delackner" title="Code">💻</a></td>
     <td align="center"><a href="https://blog.ainopara.com"><img src="https://avatars0.githubusercontent.com/u/1849450?v=4" width="100px;" alt=""/><br /><sub><b>Zheng Li</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=ainopara" title="Code">💻</a></td>
     <td align="center"><a href="https://www.bubidevs.net"><img src="https://avatars0.githubusercontent.com/u/847860?v=4" width="100px;" alt=""/><br /><sub><b>Andrea</b></sub></a><br /><a href="#question-BubiDevs" title="Answering Questions">💬</a> <a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=BubiDevs" title="Code">💻</a> <a href="#content-BubiDevs" title="Content">🖋</a> <a href="#maintenance-BubiDevs" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/Bino90"><img src="https://avatars2.githubusercontent.com/u/20422095?v=4" width="100px;" alt=""/><br /><sub><b>Bino90</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=Bino90" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Bino90"><img src="https://avatars2.githubusercontent.com/u/2.5.0095?v=4" width="100px;" alt=""/><br /><sub><b>Bino90</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=Bino90" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/arnoldxt"><img src="https://avatars3.githubusercontent.com/u/4433222?v=4" width="100px;" alt=""/><br /><sub><b>arnoldxt</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=arnoldxt" title="Code">💻</a></td>
     <td align="center"><a href="https://www.nowsprinting.com/"><img src="https://avatars0.githubusercontent.com/u/117617?v=4" width="100px;" alt=""/><br /><sub><b>Koji Hasegawa</b></sub></a><br /><a href="#infra-nowsprinting" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/yapiskan"><img src="https://avatars3.githubusercontent.com/u/529739?v=4" width="100px;" alt=""/><br /><sub><b>Ali Ersoz</b></sub></a><br /><a href="https://github.com/skywinder/ActionSheetPicker-3.0/commits?author=yapiskan" title="Code">💻</a></td>
