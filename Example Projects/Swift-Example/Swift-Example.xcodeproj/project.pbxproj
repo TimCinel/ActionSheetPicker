@@ -10,10 +10,10 @@
 		1C5784521B15BE2C00172D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784511B15BE2C00172D8A /* AppDelegate.swift */; };
 		1C5784571B15BE2C00172D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784551B15BE2C00172D8A /* Main.storyboard */; };
 		1C5784591B15BE2C00172D8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5784581B15BE2C00172D8A /* Images.xcassets */; };
-		1C57845C1B15BE2C00172D8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */; };
 		1C5784681B15BE2C00172D8A /* Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */; };
 		1C5784721B15BE8900172D8A /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5784711B15BE8900172D8A /* SWTableViewController.swift */; };
 		1C82C2D51C930C2B00F9520C /* CoreActionSheetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */; };
+		4E03C75B24597E7C00F9300B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E03C75A24597E7C00F9300B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,12 +87,12 @@
 		1C5784511B15BE2C00172D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C5784561B15BE2C00172D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C5784581B15BE2C00172D8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1C57845B1B15BE2C00172D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1C5784611B15BE2C00172D8A /* Swift-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5784661B15BE2C00172D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5784671B15BE2C00172D8A /* Swift_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ExampleTests.swift; sourceTree = "<group>"; };
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
 		1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
+		4E03C75A24597E7C00F9300B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
 		4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ActionSheetPicker-iOS-before7.xcodeproj"; path = "/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj"; sourceTree = "<absolute>"; };
 		4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				1C5784551B15BE2C00172D8A /* Main.storyboard */,
 				1C5784711B15BE8900172D8A /* SWTableViewController.swift */,
 				1C5784581B15BE2C00172D8A /* Images.xcassets */,
-				1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */,
+				4E03C75A24597E7C00F9300B /* LaunchScreen.storyboard */,
 				1C57844F1B15BE2C00172D8A /* Supporting Files */,
 			);
 			path = "Swift-Example";
@@ -381,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C5784571B15BE2C00172D8A /* Main.storyboard in Resources */,
-				1C57845C1B15BE2C00172D8A /* LaunchScreen.xib in Resources */,
+				4E03C75B24597E7C00F9300B /* LaunchScreen.storyboard in Resources */,
 				1C5784591B15BE2C00172D8A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,14 +430,6 @@
 				1C5784561B15BE2C00172D8A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1C57845A1B15BE2C00172D8A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C57845B1B15BE2C00172D8A /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
