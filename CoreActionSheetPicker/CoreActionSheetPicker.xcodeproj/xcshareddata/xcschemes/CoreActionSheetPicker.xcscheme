@@ -53,17 +53,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1CCA90421AE0EFB000368F5E"
-            BuildableName = "CoreActionSheetPicker.framework"
-            BlueprintName = "CoreActionSheetPicker"
-            ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -84,8 +73,6 @@
             ReferencedContainer = "container:CoreActionSheetPicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
