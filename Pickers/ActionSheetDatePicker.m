@@ -38,6 +38,17 @@
 
 @implementation ActionSheetDatePicker
 
+@synthesize datePickerStyle = _datePickerStyle;
+
+
+-(UIDatePickerStyle)datePickerStyle {
+    if (_datePickerStyle != UIDatePickerStyleAutomatic) {
+        return _datePickerStyle;
+    } else {
+        return UIDatePickerStyleWheels;
+    }
+}
+
 + (instancetype)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
                    target:(id)target action:(SEL)action origin:(id)origin {
