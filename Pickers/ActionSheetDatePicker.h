@@ -108,4 +108,6 @@ typedef void(^ActionDateCancelBlock)(ActionSheetDatePicker *picker);
 
 - (void)eventForDatePicker:(id)sender;
 
+- (CGFloat)getDatePickerHeight;
+
 @end
