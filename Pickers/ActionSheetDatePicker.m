@@ -38,6 +38,17 @@
 
 @implementation ActionSheetDatePicker
 
+@synthesize datePickerStyle = _datePickerStyle;
+
+
+-(UIDatePickerStyle)datePickerStyle {
+    if (_datePickerStyle != UIDatePickerStyleAutomatic) {
+        return _datePickerStyle;
+    } else {
+        return UIDatePickerStyleWheels;
+    }
+}
+
 + (instancetype)showPickerWithTitle:(NSString *)title
            datePickerMode:(UIDatePickerMode)datePickerMode selectedDate:(NSDate *)selectedDate
                    target:(id)target action:(SEL)action origin:(id)origin {
@@ -277,6 +288,29 @@
             NSAssert(false, @"Unknown action type");
             break;
     }
+}
+
+- (CGFloat)getDatePickerHeight
+{
+    CGFloat height = 216.0;
+    if (@available(iOS 14.0, *)) {
+        if (_datePickerStyle == UIDatePickerStyleCompact) {
+            height = 90.0;
+        } else if (_datePickerStyle == UIDatePickerStyleInline) {
+            switch (_datePickerMode) {
+                case UIDatePickerModeDate:
+                    height = 350.0;
+                    break;
+                case UIDatePickerModeTime:
+                    height = 90.0;
+                    break;
+                default: // UIDatePickerModeDateAndTime
+                    height = 400.0;
+                    break;
+            }
+        }
+    }
+    return height;
 }
 
 @end
