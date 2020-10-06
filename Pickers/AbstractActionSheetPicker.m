@@ -252,6 +252,13 @@ CG_INLINE BOOL isIPhone4() {
             height = [datePicker getDatePickerHeight];
         }
     }
+    
+    /// Bottom padding for iPhone X style phones (adds some additional height for the home bar).
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        height += window.safeAreaInsets.bottom;
+    }
+    
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, height)];
 
     // to fix bug, appeared only on iPhone 4 Device: https://github.com/skywinder/ActionSheetPicker-3.0/issues/5
