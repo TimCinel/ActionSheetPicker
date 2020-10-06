@@ -290,6 +290,14 @@ CG_INLINE BOOL isIPhone4() {
         masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220);
         self.pickerView.frame = CGRectMake(0, halfWidth, self.viewSize.width, 220 - halfWidth);
     }
+    
+    // Centers the pickerView frame in cases where the pickerView is not as wide as masterView
+    CGFloat xOffset = (CGRectGetWidth(masterView.frame) - CGRectGetWidth(self.pickerView.frame)) / 2;
+    self.pickerView.frame = CGRectMake(xOffset,
+                                       CGRectGetMinY(self.pickerView.frame),
+                                       CGRectGetWidth(self.pickerView.frame),
+                                       CGRectGetHeight(self.pickerView.frame));
+    
     [masterView addSubview:_pickerView];
 
     if ((![MyPopoverController canShowPopover] || self.popoverDisabled) && !self.pickerBackgroundColor && !self.toolbarBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
