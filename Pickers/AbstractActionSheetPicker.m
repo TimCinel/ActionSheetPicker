@@ -252,6 +252,13 @@ CG_INLINE BOOL isIPhone4() {
             height = [datePicker getDatePickerHeight];
         }
     }
+    
+    /// Bottom padding for iPhone X style phones (adds some additional height for the home bar).
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        height += window.safeAreaInsets.bottom;
+    }
+    
     UIView *masterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.viewSize.width, height)];
 
     // to fix bug, appeared only on iPhone 4 Device: https://github.com/skywinder/ActionSheetPicker-3.0/issues/5
@@ -283,6 +290,14 @@ CG_INLINE BOOL isIPhone4() {
         masterView.frame = CGRectMake(0, 0, self.viewSize.width, 220);
         self.pickerView.frame = CGRectMake(0, halfWidth, self.viewSize.width, 220 - halfWidth);
     }
+    
+    // Centers the pickerView frame in cases where the pickerView is not as wide as masterView
+    CGFloat xOffset = (CGRectGetWidth(masterView.frame) - CGRectGetWidth(self.pickerView.frame)) / 2;
+    self.pickerView.frame = CGRectMake(xOffset,
+                                       CGRectGetMinY(self.pickerView.frame),
+                                       CGRectGetWidth(self.pickerView.frame),
+                                       CGRectGetHeight(self.pickerView.frame));
+    
     [masterView addSubview:_pickerView];
 
     if ((![MyPopoverController canShowPopover] || self.popoverDisabled) && !self.pickerBackgroundColor && !self.toolbarBackgroundColor && [self.pickerBlurRadius intValue] > 0) {
