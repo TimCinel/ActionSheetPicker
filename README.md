@@ -105,7 +105,7 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
 // Done block:
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         NSLog(@"Picker: %@", picker);
-        NSLog(@"Selected Index: %@", selectedIndex);
+        NSLog(@"Selected Index: %@", @(selectedIndex));
         NSLog(@"Selected Value: %@", selectedValue);
     };
 
