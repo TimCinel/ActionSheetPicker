@@ -105,7 +105,7 @@ We'll focus here on how to use the `ActionSheetStringPicker` since it's most lik
 // Done block:
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         NSLog(@"Picker: %@", picker);
-        NSLog(@"Selected Index: %@", selectedIndex);
+        NSLog(@"Selected Index: %@", @(selectedIndex));
         NSLog(@"Selected Value: %@", selectedValue);
     };
 
@@ -184,6 +184,20 @@ To integrate ActionSheetPicker-3.0 into your Xcode project using Carthage, speci
 
 ```ogdl
 github "skywinder/ActionSheetPicker-3.0"
+```
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into Xcode and the Swift compiler.
+
+If you are using Xcode 11 or later:
+ 1. Click `File`
+ 2. `Swift Packages`
+ 3. `Add Package Dependency...`
+ 4. Specify the git URL for ActionSheetPicker-3.0.
+
+```swift
+https://github.com/skywinder/ActionSheetPicker-3.0
 ```
 
 ### Manually
