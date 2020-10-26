@@ -96,7 +96,7 @@ class SWTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBAction func dateAndTimePickerClicked(_ sender: UIButton) {
         // example of datetime picker with step interval set to 20 min
-        let datePicker = ActionSheetDatePicker(title: "DateTime with 20min intervals - (Default):",
+        let datePicker = ActionSheetDatePicker(title: "DateTime, 20min intervals:",
                                                datePickerMode: UIDatePicker.Mode.dateAndTime,
                                                selectedDate: Date(),
                                                doneBlock: { picker, date, origin in
