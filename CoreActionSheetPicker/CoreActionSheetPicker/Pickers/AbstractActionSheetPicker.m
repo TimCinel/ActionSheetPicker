@@ -627,8 +627,7 @@ CG_INLINE BOOL isIPhone4() {
 #pragma mark - Picker blur effect
 
 - (void)blurPickerBackground {
-    UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    UIViewController *rootViewController = window.rootViewController;
+    UIViewController *rootViewController = [self rootViewController];
 
     UIView *masterView = self.pickerView.superview;
 
@@ -712,6 +711,14 @@ CG_INLINE BOOL isIPhone4() {
 - (UIViewController *)rootViewController {
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     return window.rootViewController;
+}
+
+- (UIViewController *)topViewController {
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    return topController;
 }
 
 #pragma mark - Popovers and ActionSheets
@@ -804,7 +811,7 @@ CG_INLINE BOOL isIPhone4() {
             viewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
         }
 
-        [[self rootViewController] presentViewController:viewController animated:YES completion:nil];
+        [[self topViewController] presentViewController:viewController animated:YES completion:nil];
         return;
     }
     else if ((self.containerView)) {
@@ -814,7 +821,7 @@ CG_INLINE BOOL isIPhone4() {
             viewController.popoverPresentationController.sourceView = weakSelf.containerView;
             viewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
 
-            [[weakSelf rootViewController] presentViewController:viewController animated:YES completion:nil];
+            [[weakSelf topViewController] presentViewController:viewController animated:YES completion:nil];
         });
         return;
     }
@@ -829,18 +836,18 @@ CG_INLINE BOOL isIPhone4() {
             viewController.popoverPresentationController.sourceView = origin;
             viewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
 
-            [[self rootViewController] presentViewController:viewController animated:YES completion:nil];
+            [[self topViewController] presentViewController:viewController animated:YES completion:nil];
         });
     }
     @catch (NSException *exception) {
-        origin = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+        origin = [[self topViewController] view];
         presentRect = CGRectMake(origin.center.x, origin.center.y, 1, 1);
         dispatch_async(dispatch_get_main_queue(), ^{
             viewController.popoverPresentationController.sourceRect = presentRect;
             viewController.popoverPresentationController.sourceView = origin;
             viewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
 
-            [[self rootViewController] presentViewController:viewController animated:YES completion:nil];
+            [[self topViewController] presentViewController:viewController animated:YES completion:nil];
         });
     }
 }
