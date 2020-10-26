@@ -186,6 +186,20 @@ To integrate ActionSheetPicker-3.0 into your Xcode project using Carthage, speci
 github "skywinder/ActionSheetPicker-3.0"
 ```
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into Xcode and the Swift compiler.
+
+If you are using Xcode 11 or later:
+ 1. Click `File`
+ 2. `Swift Packages`
+ 3. `Add Package Dependency...`
+ 4. Specify the git URL for ActionSheetPicker-3.0.
+
+```swift
+https://github.com/skywinder/ActionSheetPicker-3.0
+```
+
 ### Manually
 
 If you prefer not to use either of the aforementioned dependency managers, you can integrate ActionSheetPicker-3.0 into your project manually.
