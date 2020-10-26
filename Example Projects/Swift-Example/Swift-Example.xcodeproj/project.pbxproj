@@ -24,48 +24,6 @@
 			remoteGlobalIDString = 1C57844B1B15BE2C00172D8A;
 			remoteInfo = "Swift-Example";
 		};
-		4E78D28C239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = "ActionSheetPicker-iOS-before7";
-		};
-		4E78D28F239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = "ActionSheetPicker-iOS-before7";
-		};
-		4E78D297239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = ActionSheetPicker;
-		};
-		4E78D299239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
-			remoteInfo = ActionSheetPickerTests;
-		};
-		4E78D29D239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CD15A2F192C7A0A00B28881;
-			remoteInfo = ActionSheetPicker;
-		};
-		4E78D29F239E475C0016009D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1C9444B5197B1C2F005F495B;
-			remoteInfo = ActionSheetPickerTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,10 +51,6 @@
 		1C5784711B15BE8900172D8A /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWTableViewController.swift; path = ViewControllers/SWTableViewController.swift; sourceTree = "<group>"; };
 		1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreActionSheetPicker.framework; path = "../../CoreActionSheetPicker/build/Debug-iphoneos/CoreActionSheetPicker.framework"; sourceTree = "<group>"; };
 		4E03C75A24597E7C00F9300B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
-		4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ActionSheetPicker-iOS-before7.xcodeproj"; path = "/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj"; sourceTree = "<absolute>"; };
-		4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ActionSheetPicker.xcodeproj; path = "Example Projects/ObjC-Example/ActionSheetPicker.xcodeproj"; sourceTree = "<group>"; };
-		4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ActionSheetPicker-iOS-before7.xcodeproj"; path = "/Users/pk/repo/_PERSONAL/ActionSheetPicker-3.0/Example Projects/Example-for-iOS-7-and-6/ActionSheetPicker-iOS-before7.xcodeproj"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,12 +75,10 @@
 		1C5784431B15BE2C00172D8A = {
 			isa = PBXGroup;
 			children = (
-				4E046A1A239E362D005417FA /* ArchiveExamples */,
 				1C82C2D41C930C2B00F9520C /* CoreActionSheetPicker.framework */,
 				1C57844E1B15BE2C00172D8A /* Swift-Example */,
 				1C5784641B15BE2C00172D8A /* Swift-ExampleTests */,
 				1C57844D1B15BE2C00172D8A /* Products */,
-				4E046A17239E3622005417FA /* ArchiveExamples */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,60 +127,6 @@
 				1C5784661B15BE2C00172D8A /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4E046A17239E3622005417FA /* ArchiveExamples */ = {
-			isa = PBXGroup;
-			children = (
-				4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */,
-				4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */,
-			);
-			name = ArchiveExamples;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		4E046A1A239E362D005417FA /* ArchiveExamples */ = {
-			isa = PBXGroup;
-			children = (
-				4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */,
-				4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */,
-			);
-			name = ArchiveExamples;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		4E78D287239E475C0016009D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E78D28D239E475C0016009D /* ActionSheetPicker-iOS-before7.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4E78D289239E475C0016009D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E78D290239E475C0016009D /* ActionSheetPicker-iOS-before7.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4E78D291239E475C0016009D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E78D298239E475C0016009D /* ActionSheetPicker.app */,
-				4E78D29A239E475C0016009D /* ActionSheetPickerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4E78D293239E475C0016009D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E78D29E239E475C0016009D /* ActionSheetPicker.app */,
-				4E78D2A0239E475C0016009D /* ActionSheetPickerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,24 +202,6 @@
 			mainGroup = 1C5784431B15BE2C00172D8A;
 			productRefGroup = 1C57844D1B15BE2C00172D8A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4E78D287239E475C0016009D /* Products */;
-					ProjectRef = 4E046A16239E3622005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
-				},
-				{
-					ProductGroup = 4E78D289239E475C0016009D /* Products */;
-					ProjectRef = 4E046A19239E362D005417FA /* ActionSheetPicker-iOS-before7.xcodeproj */;
-				},
-				{
-					ProductGroup = 4E78D291239E475C0016009D /* Products */;
-					ProjectRef = 4E046A15239E3622005417FA /* ActionSheetPicker.xcodeproj */;
-				},
-				{
-					ProductGroup = 4E78D293239E475C0016009D /* Products */;
-					ProjectRef = 4E046A18239E362D005417FA /* ActionSheetPicker.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1C57844B1B15BE2C00172D8A /* Swift-Example */,
@@ -329,51 +209,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4E78D28D239E475C0016009D /* ActionSheetPicker-iOS-before7.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "ActionSheetPicker-iOS-before7.app";
-			remoteRef = 4E78D28C239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E78D290239E475C0016009D /* ActionSheetPicker-iOS-before7.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "ActionSheetPicker-iOS-before7.app";
-			remoteRef = 4E78D28F239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E78D298239E475C0016009D /* ActionSheetPicker.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ActionSheetPicker.app;
-			remoteRef = 4E78D297239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E78D29A239E475C0016009D /* ActionSheetPickerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ActionSheetPickerTests.xctest;
-			remoteRef = 4E78D299239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E78D29E239E475C0016009D /* ActionSheetPicker.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ActionSheetPicker.app;
-			remoteRef = 4E78D29D239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4E78D2A0239E475C0016009D /* ActionSheetPickerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ActionSheetPickerTests.xctest;
-			remoteRef = 4E78D29F239E475C0016009D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C57844A1B15BE2C00172D8A /* Resources */ = {
@@ -489,6 +324,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -539,6 +375,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -16,3 +16,7 @@ xcuserdata
 DerivedData
 *.xcuserstate
 node_modules/
+
+
+### Swift Package Manager ###
+.build/
